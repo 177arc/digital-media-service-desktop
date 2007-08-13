@@ -1,0 +1,380 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<org.onceforall.dms.desktop.logic:MDmsApplication xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:org.onceforall.dms.desktop.logic="http://www.onceforall.org/dms/desktop/model.ecore" versionProperty="1.0" lastSaveProperty="2007-08-12T09:36:15.281+0100" ftpServerUrlProperty="ftp://ftp1.site-street.net" ftpUserNameProperty="lrbc" webServerUrlProperty="http://www.lrbc.org.uk" smtpServerProperty="217.112.88.190" smtpPasswordProperty="" burningSoftwareDirectoryPathProperty="Program Files\Nero 6.0\Nero" driveProperty="D" upgradeMessageProperty="" upgradeRelativeFtpPathProperty="/listen/Data.zip" lastUpgradeProperty="2007-02-04T22:31:31.484+0000">
+  <mNameProperty/>
+  <mDescriptionProperty/>
+  <mIconFilePathProperty/>
+  <mDataFileProperty readOnly="true"/>
+  <mLogFileProperty/>
+  <mPathProperty/>
+  <mVersionProperty/>
+  <mLastSaveProperty readOnly="true"/>
+  <mServiceFilePathProperty/>
+  <mWwxFilesPathProperty/>
+  <mMp3EncoderPathProperty/>
+  <mFtpServerUrlProperty/>
+  <ftpServerUrlPropertyHistoricValues>ftp://ftp1.site-street.net</ftpServerUrlPropertyHistoricValues>
+  <mFtpUserNameProperty/>
+  <ftpUserNamePropertyHistoricValues>lrbc</ftpUserNamePropertyHistoricValues>
+  <mFtpUserPasswordProperty/>
+  <mWebServerUrlProperty/>
+  <webServerUrlPropertyHistoricValues>http://www.lrbc.org.uk</webServerUrlPropertyHistoricValues>
+  <mSmtpServerProperty/>
+  <smtpServerPropertyHistoricValues>217.112.88.190</smtpServerPropertyHistoricValues>
+  <mSmtpUserNameProperty/>
+  <smtpUserNamePropertyHistoricValues>Admin</smtpUserNamePropertyHistoricValues>
+  <mSmtpPasswordProperty/>
+  <mBurningSoftwareDirectoryPathProperty/>
+  <mDriveProperty/>
+  <drivePropertyHistoricValues>D</drivePropertyHistoricValues>
+  <mUpgradeMessageProperty readOnly="true"/>
+  <mUpgradeRelativeFtpPathProperty/>
+  <mLastUpgradeProperty readOnly="true"/>
+  <mGetDataUpgradeInfoStep lastStateChangeProperty="2007-08-12T13:20:23.375+0100" ftpServerUrlParameter="ftp://ftp1.site-street.net" ftpUserNameParameter="lrbc" upgradeRelativeFtpPathProperty="/listen/Data.zip">
+    <mNameProperty/>
+    <mDescriptionProperty/>
+    <mIconFilePathProperty/>
+    <mStateProperty readOnly="true"/>
+    <mLastStateChangeProperty readOnly="true"/>
+    <mProgressProperty readOnly="true"/>
+    <mProgressStatusProperty readOnly="true"/>
+    <mStartTriggerProperty/>
+    <mFtpServerUrlParameter mInputValues="//@mFtpServerUrlProperty"/>
+    <mFtpUserNameParameter mInputValues="//@mFtpUserNameProperty"/>
+    <mFtpUserPasswordParameter mInputValues="//@mFtpUserPasswordProperty"/>
+    <mUpgradeRelativeFtpPathProperty mInputValues="//@mUpgradeRelativeFtpPathProperty"/>
+    <mUpgradeAvailableResult/>
+    <mUpgradeMessageResult/>
+    <mUpgradeDateResult/>
+  </mGetDataUpgradeInfoStep>
+  <mUpgradeDataStep mInputSteps="//@mGetDataUpgradeInfoStep" ftpServerUrlParameter="ftp://ftp1.site-street.net" ftpUserNameParameter="lrbc" upgradeRelativeFtpPathProperty="/listen/Data.zip">
+    <mNameProperty/>
+    <mDescriptionProperty/>
+    <mIconFilePathProperty/>
+    <mStateProperty readOnly="true"/>
+    <mLastStateChangeProperty readOnly="true"/>
+    <mProgressProperty readOnly="true"/>
+    <mProgressStatusProperty readOnly="true"/>
+    <mStartTriggerProperty/>
+    <mFtpServerUrlParameter mInputValues="//@mFtpServerUrlProperty"/>
+    <mFtpUserNameParameter mInputValues="//@mFtpUserNameProperty"/>
+    <mFtpUserPasswordParameter mInputValues="//@mFtpUserPasswordProperty"/>
+    <mUpgradeRelativeFtpPathProperty mInputValues="//@mUpgradeRelativeFtpPathProperty"/>
+    <mUpgradeMessageParameter mInputValues="//@mGetDataUpgradeInfoStep/@mUpgradeMessageResult"/>
+    <mUpgradeDateParameter mInputValues="//@mGetDataUpgradeInfoStep/@mUpgradeDateResult"/>
+  </mUpgradeDataStep>
+  <mScripts name="Normal service" description="Contains the steps necessary for recording and publishing a normal service.">
+    <mNameProperty/>
+    <mDescriptionProperty/>
+    <mIconFilePathProperty/>
+    <mStateProperty readOnly="true"/>
+    <mLastStateChangeProperty readOnly="true"/>
+    <mSteps xsi:type="org.onceforall.dms.desktop.logic:MEnterServiceInformationStep" lastStateChangeProperty="2007-08-12T09:35:57.515+0100">
+      <mNameProperty/>
+      <mDescriptionProperty/>
+      <mIconFilePathProperty/>
+      <mStateProperty/>
+      <mLastStateChangeProperty readOnly="true"/>
+      <mProgressProperty/>
+      <mProgressStatusProperty/>
+      <mStartTriggerProperty name="mStartTriggerProperty"/>
+      <mServiceDateParameter/>
+      <mServiceTypeParameter/>
+      <serviceTypeParameterHistoricValues>Family service</serviceTypeParameterHistoricValues>
+      <serviceTypeParameterHistoricValues>PM Service</serviceTypeParameterHistoricValues>
+      <serviceTypeParameterHistoricValues>Sermon</serviceTypeParameterHistoricValues>
+      <serviceTypeParameterHistoricValues>AM Service</serviceTypeParameterHistoricValues>
+      <mTitleOfTalkParameter/>
+      <mReadingParameter/>
+      <mSpeakersNameParameter/>
+      <speakersNameParameterHistoricValues>Martin Jordan</speakersNameParameterHistoricValues>
+      <speakersNameParameterHistoricValues>Tim Willcock</speakersNameParameterHistoricValues>
+      <mRecordingUsersNameParameter/>
+      <recordingUsersNameParameterHistoricValues>Colin Strange</recordingUsersNameParameterHistoricValues>
+      <recordingUsersNameParameterHistoricValues>Julie Eady</recordingUsersNameParameterHistoricValues>
+      <recordingUsersNameParameterHistoricValues>Marc Maier</recordingUsersNameParameterHistoricValues>
+      <mServiceDateResult/>
+      <mServiceTypeResult/>
+      <mTitleOfTalkResult/>
+      <mReadingResult/>
+      <mSpeakersNameResult/>
+      <mRecordingUsersNameResult/>
+    </mSteps>
+    <mSteps xsi:type="org.onceforall.dms.desktop.logic:MCheckFreeDiskSpaceStep" lastStateChangeProperty="2007-05-13T18:20:01.609+0100" requiredFreeDiskSpaceParameter="800000000" directoryParameter="Service Files">
+      <mNameProperty/>
+      <mDescriptionProperty/>
+      <mIconFilePathProperty/>
+      <mStateProperty readOnly="true"/>
+      <mLastStateChangeProperty readOnly="true"/>
+      <mProgressProperty readOnly="true"/>
+      <mProgressStatusProperty readOnly="true"/>
+      <mStartTriggerProperty/>
+      <mRequiredFreeDiskSpaceParameter/>
+      <mDirectoryParameter mInputValues="//@mServiceFilePathProperty"/>
+      <mFreeDiskSpaceResult/>
+    </mSteps>
+    <mSteps xsi:type="org.onceforall.dms.desktop.logic:MCreateDirectoryStep" lastStateChangeProperty="2007-08-12T09:36:15.109+0100" mInputSteps="//@mScripts.0/@mSteps.0" parentDirectoryParameter="Service Files">
+      <mNameProperty/>
+      <mDescriptionProperty/>
+      <mIconFilePathProperty/>
+      <mStateProperty readOnly="true"/>
+      <mLastStateChangeProperty readOnly="true"/>
+      <mProgressProperty readOnly="true"/>
+      <mProgressStatusProperty readOnly="true"/>
+      <mStartTriggerProperty/>
+      <mParentDirectoryParameter mInputValues="//@mServiceFilePathProperty"/>
+      <parentDirectoryParameterHistoricValues>Service Files</parentDirectoryParameterHistoricValues>
+      <mDirectoryNameParameter mInputValues="//@mScripts.0/@mSteps.0/@mServiceTypeResult //@mScripts.0/@mSteps.0/@mServiceDateResult"/>
+      <mDirectoryResult/>
+    </mSteps>
+    <mSteps xsi:type="org.onceforall.dms.desktop.logic:MCheckInputLevelsStep" lastStateChangeProperty="2007-05-13T10:24:46.468+0100">
+      <mNameProperty/>
+      <mDescriptionProperty/>
+      <mIconFilePathProperty/>
+      <mStateProperty readOnly="true"/>
+      <mLastStateChangeProperty readOnly="true"/>
+      <mProgressProperty readOnly="true"/>
+      <mProgressStatusProperty readOnly="true"/>
+      <mStartTriggerProperty/>
+      <mLeftInputLevelProperty description="Displays the current left input level as a value between 0 and 100. Displays the current right input level as a value between 0 and 100. If the dBFS scale is used, the 100 represents 0dBFS and 0 represents -50dBFS. Otherwise it represents the (scaled) raw readings." readOnly="true"/>
+      <mRightInputLevelProperty readOnly="true"/>
+      <mLeftInputDistortionProperty readOnly="true"/>
+      <mRightInputDistortionProperty readOnly="true"/>
+      <mUseDbProperty description="Specifies whether the meters should show the signal readings in dBFS (logarithmic) or raw (linear).  For an explanation of dBFS, please refer to http://en.wikipedia.org/wiki/DBFS."/>
+      <mHeadroomProperty description="Specifies the headroom in dBFS. This must be a number between 0 and 18.  For an explanation of the headroom please refer to http://en.wikipedia.org/wiki/Headroom. For an explanation of dBFS, please refer to http://en.wikipedia.org/wiki/DBFS.  "/>
+    </mSteps>
+    <mSteps xsi:type="org.onceforall.dms.desktop.logic:MRecordStep" name="Record pre-sermon" lastStateChangeProperty="2007-05-13T19:57:36.372+0100" mInputSteps="//@mScripts.0/@mSteps.3 //@mScripts.0/@mSteps.1 //@mScripts.0/@mSteps.2" recordingFileParameter="Pre-sermon.wav">
+      <mNameProperty/>
+      <mDescriptionProperty/>
+      <mIconFilePathProperty/>
+      <mStateProperty readOnly="true"/>
+      <mLastStateChangeProperty readOnly="true"/>
+      <mProgressProperty readOnly="true"/>
+      <mProgressStatusProperty readOnly="true"/>
+      <mStartTriggerProperty/>
+      <mLeftInputLevelProperty readOnly="true"/>
+      <mRightInputLevelProperty readOnly="true"/>
+      <mLeftInputDistortionProperty readOnly="true"/>
+      <mRightInputDistortionProperty readOnly="true"/>
+      <mUseDbProperty description="Specifies whether the meters should show the signal readings in dBFS (logarithmic) or raw (linear).  For an explanation of dBFS, please refer to http://en.wikipedia.org/wiki/DBFS."/>
+      <mHeadroomProperty description="Specifies the headroom in dBFS. This must be a number between 0 and 18.  For an explanation of the headroom please refer to http://en.wikipedia.org/wiki/Headroom. For an explanation of dBFS, please refer to http://en.wikipedia.org/wiki/DBFS.  "/>
+      <mDirectoryParameter mInputValues="//@mScripts.0/@mSteps.2/@mDirectoryResult"/>
+      <mRecordingFileParameter/>
+      <mRecordingFileResult/>
+      <mRecordingFileSizeResult/>
+      <mRecordingLengthResult/>
+    </mSteps>
+    <mSteps xsi:type="org.onceforall.dms.desktop.logic:MRecordStep" name="Record sermon" lastStateChangeProperty="2007-08-12T09:39:23.281+0100" mInputSteps="//@mScripts.0/@mSteps.3 //@mScripts.0/@mSteps.1 //@mScripts.0/@mSteps.2" recordingFileParameter="Sermon.wav">
+      <mNameProperty/>
+      <mDescriptionProperty/>
+      <mIconFilePathProperty/>
+      <mStateProperty readOnly="true"/>
+      <mLastStateChangeProperty readOnly="true"/>
+      <mProgressProperty readOnly="true"/>
+      <mProgressStatusProperty readOnly="true"/>
+      <mStartTriggerProperty/>
+      <mLeftInputLevelProperty readOnly="true"/>
+      <mRightInputLevelProperty readOnly="true"/>
+      <mLeftInputDistortionProperty readOnly="true"/>
+      <mRightInputDistortionProperty readOnly="true"/>
+      <mUseDbProperty description="Specifies whether the meters should show the signal readings in dBFS (logarithmic) or raw (linear).  For an explanation of dBFS, please refer to http://en.wikipedia.org/wiki/DBFS."/>
+      <mHeadroomProperty description="Specifies the headroom in dBFS. This must be a number between 0 and 18.  For an explanation of the headroom please refer to http://en.wikipedia.org/wiki/Headroom. For an explanation of dBFS, please refer to http://en.wikipedia.org/wiki/DBFS.  "/>
+      <mDirectoryParameter mInputValues="//@mScripts.0/@mSteps.2/@mDirectoryResult"/>
+      <mRecordingFileParameter/>
+      <mRecordingFileResult/>
+      <mRecordingFileSizeResult/>
+      <mRecordingLengthResult/>
+    </mSteps>
+    <mSteps xsi:type="org.onceforall.dms.desktop.logic:MRecordStep" name="Record post-sermon" lastStateChangeProperty="2007-05-13T20:09:12.228+0100" mInputSteps="//@mScripts.0/@mSteps.3 //@mScripts.0/@mSteps.1 //@mScripts.0/@mSteps.2" recordingFileParameter="Post-sermon.wav">
+      <mNameProperty/>
+      <mDescriptionProperty/>
+      <mIconFilePathProperty/>
+      <mStateProperty readOnly="true"/>
+      <mLastStateChangeProperty readOnly="true"/>
+      <mProgressProperty readOnly="true"/>
+      <mProgressStatusProperty readOnly="true"/>
+      <mStartTriggerProperty/>
+      <mLeftInputLevelProperty readOnly="true"/>
+      <mRightInputLevelProperty readOnly="true"/>
+      <mLeftInputDistortionProperty readOnly="true"/>
+      <mRightInputDistortionProperty readOnly="true"/>
+      <mUseDbProperty description="Specifies whether the meters should show the signal readings in dBFS (logarithmic) or raw (linear).  For an explanation of dBFS, please refer to http://en.wikipedia.org/wiki/DBFS."/>
+      <mHeadroomProperty description="Specifies the headroom in dBFS. This must be a number between 0 and 18.  For an explanation of the headroom please refer to http://en.wikipedia.org/wiki/Headroom. For an explanation of dBFS, please refer to http://en.wikipedia.org/wiki/DBFS.  "/>
+      <mDirectoryParameter mInputValues="//@mScripts.0/@mSteps.2/@mDirectoryResult"/>
+      <mRecordingFileParameter/>
+      <mRecordingFileResult/>
+      <mRecordingFileSizeResult/>
+      <mRecordingLengthResult/>
+    </mSteps>
+    <mSteps xsi:type="org.onceforall.dms.desktop.logic:MBurnCdStep" simulated="true" lastStateChangeProperty="2006-08-28T17:42:31.515+0100" mInputSteps="//@mScripts.0/@mSteps.6 //@mScripts.0/@mSteps.4 //@mScripts.0/@mSteps.5" burningSoftwareDirectoryPathParameter="Program Files\Nero 6.0\Nero" driveParameter="D">
+      <mNameProperty/>
+      <mDescriptionProperty/>
+      <mIconFilePathProperty/>
+      <mStateProperty readOnly="true"/>
+      <mLastStateChangeProperty readOnly="true"/>
+      <mProgressProperty readOnly="true"/>
+      <mProgressStatusProperty readOnly="true"/>
+      <mStartTriggerProperty/>
+      <mRecordingFilesParameter mInputValues="//@mScripts.0/@mSteps.4/@mRecordingFileResult //@mScripts.0/@mSteps.5/@mRecordingFileResult //@mScripts.0/@mSteps.6/@mRecordingFileResult"/>
+      <mBurningSoftwareDirectoryPathParameter mInputValues="//@mBurningSoftwareDirectoryPathProperty"/>
+      <mDriveParameter mInputValues="//@mDriveProperty"/>
+      <mTotalRecordingLengthParameter/>
+      <mTotalRecordingFileSizeParameter/>
+    </mSteps>
+    <mSteps xsi:type="org.onceforall.dms.desktop.logic:MConvertToMP3Step" name="Convert sermon recording to MP3" description="Converts a WAVE file to MP3 format using the MP3 encoder." lastStateChangeProperty="2007-05-13T20:11:05.182+0100" mInputSteps="//@mScripts.0/@mSteps.5 //@mScripts.0/@mSteps.0" mp3EncoderPathParameter="Program Files\LAME 3.96.1" averageBitRateParameter="64" mp3FolderReferenceParameter="//@mMp3Folders.0">
+      <mNameProperty/>
+      <mDescriptionProperty/>
+      <mIconFilePathProperty/>
+      <mStateProperty readOnly="true"/>
+      <mLastStateChangeProperty readOnly="true"/>
+      <mProgressProperty readOnly="true"/>
+      <mProgressStatusProperty readOnly="true"/>
+      <mStartTriggerProperty/>
+      <mArtistParameter mInputValues="//@mScripts.0/@mSteps.0/@mSpeakersNameResult"/>
+      <mTitleParameter mInputValues="//@mScripts.0/@mSteps.0/@mTitleOfTalkResult //@mScripts.0/@mSteps.0/@mServiceDateResult //@mScripts.0/@mSteps.0/@mReadingResult"/>
+      <mAlbumParameter mInputValues="//@mScripts.0/@mSteps.0/@mServiceTypeResult"/>
+      <mYearParameter mInputValues="//@mScripts.0/@mSteps.0/@mServiceDateResult"/>
+      <mDirectoryParameter mInputValues="//@mScripts.0/@mSteps.2/@mDirectoryResult"/>
+      <mMp3FileNameParameter mInputValues="//@mScripts.0/@mSteps.0/@mTitleOfTalkResult //@mScripts.0/@mSteps.0/@mReadingResult"/>
+      <mRecordingFileParameter mInputValues="//@mScripts.0/@mSteps.5/@mRecordingFileResult"/>
+      <mMp3EncoderPathParameter mInputValues="//@mMp3EncoderPathProperty"/>
+      <mAverageBitRateParameter/>
+      <mMp3FolderReferenceParameter description="Specifies a reference to the folder where the new MP3 entry should be stored."/>
+      <mMp3EntryNameParameter mInputValues="//@mScripts.0/@mSteps.0/@mServiceDateResult //@mScripts.0/@mSteps.0/@mServiceTypeResult"/>
+      <mMp3EntryReferenceResult description="Contains a reference to the MP3 entry that has been converted."/>
+    </mSteps>
+    <mSteps xsi:type="org.onceforall.dms.desktop.logic:MPublishNewMp3Step" name="Publish sermon as MP3" lastStateChangeProperty="2007-05-13T11:36:29.525+0100" mInputSteps="//@mScripts.0/@mSteps.0 //@mScripts.0/@mSteps.8" actionName="Publish" ftpServerUrlParameter="ftp://ftp1.site-street.net" ftpUserNameParameter="lrbc" ftpUserPasswordParameter="" maxiumumDiskSpaceParameter="200" mp3RelativeFtpPathParameter="/listen" webServerUrlParameter="http://www.lrbc.org.uk" contentPageRelativeFtpPathParameter="/listen" contentHeaderFilePathParameter="Web Files\sermon-recordings-header.html" contentFooterFilePathParameter="Web Files\sermon-recordings-footer.html" contentPageFilePathParameter="Web Files\sermon-recordings.html" podcastFilePathParameter="Web Files\sermon-recordings.xml" podcastRelativeFtpPathParameter="/listen" podcastHeaderFilePathParameter="Web Files\sermon-recordings-header.xml" mp3EntryReferenceParameter="//@mMp3Folders.0/@mMp3s.2">
+      <mNameProperty/>
+      <mDescriptionProperty/>
+      <mIconFilePathProperty/>
+      <mStateProperty readOnly="true"/>
+      <mLastStateChangeProperty readOnly="true"/>
+      <mProgressProperty readOnly="true"/>
+      <mProgressStatusProperty readOnly="true"/>
+      <mStartTriggerProperty/>
+      <mFtpServerUrlParameter mInputValues="//@mFtpServerUrlProperty"/>
+      <mFtpUserNameParameter mInputValues="//@mFtpUserNameProperty"/>
+      <mFtpUserPasswordParameter mInputValues="//@mFtpUserPasswordProperty"/>
+      <mMaxiumumDiskSpaceParameter/>
+      <mMp3RelativeFtpPathParameter/>
+      <mWebServerUrlParameter mInputValues="//@mWebServerUrlProperty"/>
+      <mContentPageRelativeFtpPathParameter/>
+      <mContentHeaderFilePathParameter/>
+      <mContentFooterFilePathParameter/>
+      <mContentPageFilePathParameter/>
+      <mPodcastFilePathParameter/>
+      <mPodcastRelativeFtpPathParameter/>
+      <mPodcastHeaderFilePathParameter/>
+      <mMp3EntryReferenceParameter mInputValues="//@mScripts.0/@mSteps.8/@mMp3EntryReferenceResult"/>
+      <mLinkTextParameter mInputValues="//@mScripts.0/@mSteps.0/@mTitleOfTalkResult //@mScripts.0/@mSteps.0/@mReadingResult"/>
+      <mLinkDescriptionParameter mInputValues="//@mScripts.0/@mSteps.0/@mServiceTypeResult //@mScripts.0/@mSteps.0/@mSpeakersNameResult //@mScripts.0/@mSteps.0/@mServiceDateResult"/>
+      <mCommentParameter mInputValues="//@mScripts.0/@mSteps.0/@mReadingResult"/>
+      <mPodcastTitleParameter mInputValues="//@mScripts.0/@mSteps.0/@mTitleOfTalkResult //@mScripts.0/@mSteps.0/@mReadingResult"/>
+      <mPodcastSubtitleParameter mInputValues="//@mScripts.0/@mSteps.0/@mServiceTypeResult //@mScripts.0/@mSteps.0/@mSpeakersNameResult //@mScripts.0/@mSteps.0/@mServiceDateResult"/>
+      <mPodcastSummaryParameter mInputValues="//@mScripts.0/@mSteps.0/@mReadingResult"/>
+      <mPodcastPublishingDateParameter/>
+      <mPublishedMp3EntryReferenceResult/>
+    </mSteps>
+    <mSteps xsi:type="org.onceforall.dms.desktop.logic:MEmailEventLogStep" lastStateChangeProperty="2007-05-13T11:37:22.741+0100" mInputSteps="//@mScripts.0/@mSteps.0" commentParameter="Everything went marvelous. Where can I buy this software?" logFileParameter="Log Files\Logged events (from 12-Aug-2007 13-20-20 onwards).txt" dataFileParameter="Application Data Files\Data.xml" sendersEmailAddressParameter="sounddesk@lrbc.org.uk" receipientsEmailAddressParameter="marc@onceforall.org" smtpServerParameter="217.112.88.190" smtpPasswordParameter="">
+      <mNameProperty/>
+      <mDescriptionProperty/>
+      <mIconFilePathProperty/>
+      <mStateProperty readOnly="true"/>
+      <mLastStateChangeProperty readOnly="true"/>
+      <mProgressProperty readOnly="true"/>
+      <mProgressStatusProperty readOnly="true"/>
+      <mStartTriggerProperty/>
+      <mRecordingUsersNameParameter mInputValues="//@mScripts.0/@mSteps.0/@mRecordingUsersNameResult"/>
+      <mCommentParameter/>
+      <mLogFileParameter mInputValues="//@mLogFileProperty"/>
+      <mDataFileParameter mInputValues="//@mDataFileProperty"/>
+      <mSubjectParameter mInputValues="//@mScripts.0/@mSteps.0/@mServiceDateResult //@mScripts.0/@mSteps.0/@mServiceTypeResult"/>
+      <mSendersEmailAddressParameter/>
+      <sendersEmailAddressParameterHistoricValues>sounddesk@lrbc.org.uk</sendersEmailAddressParameterHistoricValues>
+      <mReceipientsEmailAddressParameter/>
+      <mSmtpServerParameter mInputValues="//@mSmtpServerProperty"/>
+      <mSmtpUserNameParameter mInputValues="//@mSmtpUserNameProperty"/>
+      <mSmtpPasswordParameter mInputValues="//@mSmtpPasswordProperty"/>
+    </mSteps>
+    <mProgressProperty readOnly="true"/>
+    <mProgressStatusProperty readOnly="true"/>
+  </mScripts>
+  <mMp3Folders name="Sermon MP3s" description="Contains the sermon MP3 recordings.">
+    <mNameProperty/>
+    <mDescriptionProperty/>
+    <mIconFilePathProperty/>
+    <mSteps xsi:type="org.onceforall.dms.desktop.logic:MUpdatePublishedMp3sStep" name="Update published sermon web page and MP3s" lastStateChangeProperty="2007-05-12T18:05:23.599+0100" ftpServerUrlParameter="ftp://ftp1.site-street.net" ftpUserNameParameter="lrbc" ftpUserPasswordParameter="" maxiumumDiskSpaceParameter="200" mp3RelativeFtpPathParameter="/listen" webServerUrlParameter="http://www.lrbc.org.uk" contentPageRelativeFtpPathParameter="/listen" contentHeaderFilePathParameter="Web Files\sermon-recordings-header.html" contentFooterFilePathParameter="Web Files\sermon-recordings-footer.html" contentPageFilePathParameter="Web Files\sermon-recordings.html" podcastFilePathParameter="Web Files\sermon-recordings.xml" podcastRelativeFtpPathParameter="/listen" podcastHeaderFilePathParameter="Web Files\sermon-recordings-header.xml" mp3FolderReferenceParameter="//@mMp3Folders.0">
+      <mNameProperty/>
+      <mDescriptionProperty/>
+      <mIconFilePathProperty/>
+      <mStateProperty readOnly="true"/>
+      <mLastStateChangeProperty readOnly="true"/>
+      <mProgressProperty readOnly="true"/>
+      <mProgressStatusProperty readOnly="true"/>
+      <mStartTriggerProperty/>
+      <mFtpServerUrlParameter mInputValues="//@mFtpServerUrlProperty"/>
+      <mFtpUserNameParameter mInputValues="//@mFtpUserNameProperty"/>
+      <mFtpUserPasswordParameter mInputValues="//@mFtpUserPasswordProperty"/>
+      <mMaxiumumDiskSpaceParameter/>
+      <mMp3RelativeFtpPathParameter/>
+      <mWebServerUrlParameter mInputValues="//@mWebServerUrlProperty"/>
+      <mContentPageRelativeFtpPathParameter/>
+      <mContentHeaderFilePathParameter/>
+      <mContentFooterFilePathParameter/>
+      <mContentPageFilePathParameter/>
+      <mPodcastFilePathParameter/>
+      <mPodcastRelativeFtpPathParameter/>
+      <mPodcastHeaderFilePathParameter/>
+      <mRepublishMp3Files/>
+      <mMp3FolderReferenceParameter/>
+      <mMp3FolderReferenceResult/>
+    </mSteps>
+    <mMp3s name="Family service on 12 May 2007" lastStateChangeProperty="2007-05-12T18:05:23.084+0100" stateProperty="Published" fileProperty="Service Files\Family service on 12 May 2007\Whatever_-_Matt_28.mp3" linkTextProperty="Whatever - Matt 28" linkDescriptionProperty="12 May 2007 - Family service - Tim Willcock" commentProperty="Matt 28" podcastTitleProperty="Whatever - Matt 28" podcastSubtitleProperty="12 May 2007 - Family service - Tim Willcock" podcastSummaryProperty="Matt 28" podcastPublishingDateProperty="2007-05-12T16:32:34.125+0100" publishedFileNameProperty="Whatever_-_Matt_28.mp3">
+      <mNameProperty/>
+      <mDescriptionProperty/>
+      <mIconFilePathProperty/>
+      <mStateProperty/>
+      <mLastStateChangeProperty/>
+      <mFileProperty/>
+      <mLinkTextProperty/>
+      <mLinkDescriptionProperty/>
+      <mCommentProperty/>
+      <mPodcastTitleProperty/>
+      <mPodcastSubtitleProperty/>
+      <mPodcastSummaryProperty/>
+      <mPodcastPublishingDateProperty/>
+      <mPublishedFileNameProperty/>
+    </mMp3s>
+    <mMp3s name="Family service on 13 May 2007" lastStateChangeProperty="2007-05-13T11:36:29.277+0100" stateProperty="To be published" fileProperty="Service Files\Family service on 13 May 2007\Family_Service_-_Luke_14V15-24_John_3v16.mp3" linkTextProperty="Family Service - Luke 14V15-24 John 3v16" linkDescriptionProperty="13 May 2007 - Family service - Tim Willcock" commentProperty="Luke 14V15-24 John 3v16" podcastTitleProperty="Family Service - Luke 14V15-24 John 3v16" podcastSubtitleProperty="13 May 2007 - Family service - Tim Willcock" podcastSummaryProperty="Luke 14V15-24 John 3v16" podcastPublishingDateProperty="2007-05-13T10:21:54.765+0100" publishedFileNameProperty="Family_Service_-_Luke_14V15-24_John_3v16.mp3">
+      <mNameProperty/>
+      <mDescriptionProperty/>
+      <mIconFilePathProperty/>
+      <mStateProperty/>
+      <mLastStateChangeProperty/>
+      <mFileProperty/>
+      <mLinkTextProperty/>
+      <mLinkDescriptionProperty/>
+      <mCommentProperty/>
+      <mPodcastTitleProperty/>
+      <mPodcastSubtitleProperty/>
+      <mPodcastSummaryProperty/>
+      <mPodcastPublishingDateProperty/>
+      <mPublishedFileNameProperty/>
+    </mMp3s>
+    <mMp3s name="PM Service on 13 May 2007" fileProperty="Service Files\PM Service on 13 May 2007\Pauls_Pastoral_Heart_2_Tim_4_-_2_Timothy_4.mp3">
+      <mNameProperty/>
+      <mDescriptionProperty/>
+      <mIconFilePathProperty/>
+      <mStateProperty/>
+      <mLastStateChangeProperty/>
+      <mFileProperty/>
+      <mLinkTextProperty/>
+      <mLinkDescriptionProperty/>
+      <mCommentProperty/>
+      <mPodcastTitleProperty/>
+      <mPodcastSubtitleProperty/>
+      <mPodcastSummaryProperty/>
+      <mPodcastPublishingDateProperty/>
+      <mPublishedFileNameProperty/>
+    </mMp3s>
+  </mMp3Folders>
+</org.onceforall.dms.desktop.logic:MDmsApplication>

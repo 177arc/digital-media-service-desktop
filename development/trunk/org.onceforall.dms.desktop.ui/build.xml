@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Contains all build scripts for this project.
+
+Revision History:
+$$Log: build.xml,v $
+$Revision 1.1  2007/05/12 11:03:50  marc
+$Moved to EMF model-based application.
+$
+ 
+-->
+<project name="Digital Media Service Desktop" default="deploy" basedir=".">
+	<property name="project" value="Digital Media Service Desktop"/>
+
+  <!-- Sets global properties. -->
+	<property name="base" location="../../../../"/>
+	<property name="projects" location="${base}/Projects"/>
+	<property name="doc" location="../Documentation"/>
+	<property name="doc.source" location="${doc}/Source"/>
+
+	<property name="core" location="../org.onceforall.dms.desktop"/>
+	<property name="core.src" location="${core}/src"/>
+	<property name="core.bin" location="${core}/bin"/>
+  <property name="ui.src" location="./src"/>
+  <property name="ui.bin" location="./bin"/>
+
+  <property name="testEnv" location="test"/>
+  <property name="testEnv.webFiles" location="${testEnv}/Web Files"/>
+  <property name="testEnv.dataFiles" location="${testEnv}/Application Data Files"/>
+  <property name="testEnv.serviceFiles" location="${testEnv}/Service Files"/>
+  <property name="testEnv.libraryFiles" location="${testEnv}/Library Files"/>
+  <property name="testEnv.programFiles" location="${testEnv}/Program Files"/>
+  <property name="testEnv.installationFiles" location="${testEnv}/Installation Files"/>
+  <property name="testEnv.imageFiles" location="${testEnv}/Image Files"/>
+  <property name="deployEnv" location="deploy"/>
+
+	<property name="sdk" location="${projects}/Common/SDK"/>
+  <property name="shortcuts" location="${projects}/Common/Shortcuts"/>
+
+	<property name="commonInstallationFiles" location="${projects}/Common/Installation Files"/>
+  	
+  <property name="commonProgramFiles" location="${projects}/Common/Program Files"/>
+  <property name="commonProgramFiles.eclipse" location="${commonProgramFiles}/Eclipse 3.2"/>
+  <property name="programFiles" location="env/Program Files"/>
+
+	<!-- Defines file sets. -->
+	<fileset id="core.classes" dir="${core.bin}">
+		<include name="**/*.class"/>
+	</fileset>
+
+	<fileset id="ui.classes" dir="${ui.bin}">
+		<include name="**/*.class"/>
+	</fileset>
+
+	<fileset id="libraries" dir="${core}/lib">
+		<include name="commons-net-1.4.1.jar"/>
+		<include name="jaf-1.1.jar"/>
+		<include name="jakarta-oro-2.0.8.jar"/>
+		<include name="java-mail-1.4.jar"/>
+		<include name="tritonus-share-0.3.6.jar"/>
+		<include name="jlayer-1.0.jar"/>
+		<include name="mp3-spi-1.9.4.jar"/>
+		<!-- <include name="JDK 1.5.0\lib\jce.jar"/> -->
+	</fileset>
+
+	<fileset id="ui.eclipseLibraries" dir="${commonProgramFiles.eclipse}">
+		<include name="eclipse\plugins\org.eclipse.swt_3.2.0.v3232o.jar"/>
+		<include name="eclipse\plugins\org.eclipse.swt.win32.win32.x86_3.2.0.v3232m.jar"/>
+		<include name="eclipse\plugins\org.eclipse.jface_3.2.0.I20060605-1400.jar"/>
+		<include name="eclipse\plugins\org.eclipse.jface.text_3.2.0.v20060605-1400.jar"/>
+		<include name="eclipse\plugins\org.eclipse.text_3.2.0.v20060605-1400.jar"/>
+		<include name="eclipse\plugins\org.eclipse.ui_3.2.0.I20060605-1400.jar"/>
+		<include name="eclipse\plugins\org.eclipse.ui.workbench_3.2.0.I20060605-1400.jar"/>
+		<include name="eclipse\plugins\org.eclipse.core.commands_3.2.0.I20060605-1400.jar"/>
+		<include name="eclipse\plugins\org.eclipse.ui.forms_3.2.0.v20060602.jar"/>
+		<include name="eclipse\plugins\com.ibm.icu_3.4.4.1.jar"/>
+	</fileset>
+		
+	<fileset id="core.eclipseLibraries" dir="${commonProgramFiles.eclipse}">
+		<include name="eclipse\plugins\org.eclipse.core.runtime_3.2.0.v20060603.jar"/>
+		<include name="eclipse\plugins\org.eclipse.emf.ecore_2.2.1.v200609071016.jar"/>
+		<include name="eclipse\plugins\org.eclipse.emf.common_2.2.1.v200609071016.jar"/>
+		<include name="eclipse\plugins\org.eclipse.emf.ecore.xmi_2.2.1.v200609071016.jar"/>
+		<include name="eclipse\plugins\org.eclipse.core.jobs_3.2.0.v20060603.jar"/>
+		<include name="eclipse\plugins\org.eclipse.osgi_3.2.0.v20060601.jar"/>
+		<include name="eclipse\plugins\org.eclipse.equinox.common_3.2.0.v20060603.jar"/>
+		<include name="eclipse\plugins\org.eclipse.equinox.registry_3.2.0.v200060601.jar"/>
+		<include name="eclipse\plugins\org.eclipse.equinox.preferences_3.2.0.v200060601.jar"/>
+		<include name="eclipse\plugins\org.eclipse.equinox.contenttype_3.2.0.v200060603.jar"/>
+		<include name="eclipse\plugins\runtime_registry_compatiblity.jar"/>
+	</fileset>
+
+	<fileset id="programFiles" dir="${programFiles}">
+		<include name="LAME 3.96.1/**"/>
+		<include name="Nero 6.0/**"/>
+	</fileset>
+	
+	<fileset id="jre" dir="${commonProgramFiles}/JDK 1.6.0/jre"/>
+
+	<fileset id="installationFiles" dir="${commonInstallationFiles}">
+		<include name="Peter's XML Editor/**"/>
+		<include name="LAME 3.96.1/**"/>
+	</fileset>
+
+	<fileset id="webFiles" dir="env/Web Files">
+		<include name="*"/>
+	</fileset>
+
+	<fileset id="imageFiles" dir="env/Image Files">
+		<include name="*"/>
+	</fileset>
+		
+  <!-- Defines Ant targets. -->
+  <target name="init" description="Initialises every ant script execution.">
+    <!-- Creates the time stamp. -->
+  	<tstamp>
+    	<format property="TODAY_UK" pattern="dd-MM-yy" locale="en"/>
+  	</tstamp>
+	
+	<!-- Creates all necessary directories -->
+    <mkdir dir="${testEnv}"/>
+    <mkdir dir="${testEnv.webFiles}"/>
+    <mkdir dir="${testEnv.dataFiles}"/>
+    <mkdir dir="${testEnv.serviceFiles}"/>
+    <mkdir dir="${testEnv.libraryFiles}"/>
+  	<mkdir dir="${testEnv.programFiles}"/>
+  	<mkdir dir="${testEnv.installationFiles}"/>
+  	<mkdir dir="${testEnv.imageFiles}"/>
+    <mkdir dir="${deployEnv}"/>
+  </target>
+
+	<!-- Deploys the project to the test environment. -->		
+  <target name="deployTest" depends="init" description="Deploys the project to the test environment.">
+    <!-- Creates the jar file for the application library. --> 
+  	<jar destfile="${testEnv.libraryFiles}/desktop.jar">
+  		<fileset refid="core.classes"/>
+  		<fileset refid="ui.classes"/>
+  	</jar>
+		
+  	<!-- Copies the libraries to the test environment. -->  	
+		<copy todir="${testEnv.libraryFiles}" flatten="true" overwrite="no">
+  		<fileset refid="libraries"/>
+  		<fileset refid="core.eclipseLibraries"/>
+  		<fileset refid="ui.eclipseLibraries"/>
+		</copy>  	
+  		  	
+  	<!-- Copies the data file to the test environment. -->
+  	<copy todir="${testEnv.dataFiles}" overwrite="yes" file="env/Application Data Files/Data.xml" />
+		
+  	<!-- Copies the libraries to the test environment. -->  	
+		<copy todir="${testEnv.libraryFiles}" flatten="true" overwrite="no">
+  		<fileset refid="libraries"/>
+  		<fileset refid="core.eclipseLibraries"/>
+  		<fileset refid="ui.eclipseLibraries"/>
+		</copy>
+  	<unjar src="${testEnv.libraryFiles}\org.eclipse.swt.win32.win32.x86_3.2.0.v3232m.jar" dest="${testEnv.libraryFiles}">
+      <patternset includes="swt-win32-3232.dll"/>
+  	</unjar>
+		
+  	<!-- Copies the intallation files to the test environment. -->  	
+		<copy todir="${testEnv.installationFiles}" overwrite="no">
+  		<fileset refid="installationFiles"/>
+		</copy>	
+		
+  	<!-- Copies the program files (tools) to the test environment. -->  	
+		<copy todir="${testEnv.programFiles}" overwrite="no">
+  		<fileset refid="programFiles"/>
+		</copy>
+		<copy todir="${testEnv.programFiles}/JRE 1.6.0" overwrite="no">
+  		<fileset refid="jre"/>
+		</copy>
+		
+  	<!-- Copies the web files to the test environment. -->  	
+		<copy todir="${testEnv.webFiles}" overwrite="no">
+  		<fileset refid="webFiles"/>
+		</copy>	
+		
+  	<!-- Copies the image files to the test environment. -->  	
+		<copy todir="${testEnv.imageFiles}" overwrite="no">
+  		<fileset refid="imageFiles"/>
+		</copy>	
+		
+  	<!-- Copies the start batch file to the test environment. -->  	
+		<copy todir="${testEnv}" overwrite="no" file="env/Desktop.bat"/>	
+  </target>
+	
+	<!-- Packages the project for deployment. -->
+	<target name="deploy" description="Packages the project for deployment." depends="init, deployTest">
+		<delete file="${deployEnv}/Digitial Media Service Desktop.zip"/>
+		<zip destfile="${deployEnv}/Digitial Media Service Desktop.zip" compress="yes">
+			<fileset dir="${testEnv}">
+				<exclude name="Service Files/**"/>
+				<exclude name="Log Files/**"/>					
+			</fileset>			
+		</zip>
+	</target>
+		
+	<!-- Generates the source code documentation. -->
+	
+
+  <!-- Deletes all files in the deployment environment. -->
+  <target name="cleanDeploy" description="Deletes all files in the deployment environment.">	
+  	<delete dir="${deployEnv}"/>
+  </target>		
+
+  <!-- Deletes all files in the test environment. -->
+  <target name="cleanTest" description="Deletes all files in the test environment.">	
+  	<delete dir="${testEnv}"/>
+  </target>
+</project>
