@@ -41,7 +41,7 @@ $
   	
   <property name="commonProgramFiles" location="${projects}/Common/Program Files"/>
   <property name="commonProgramFiles.eclipse" location="${commonProgramFiles}/Eclipse 3.2"/>
-  <property name="programFiles" location="env/Program Files"/>
+  <property name="programFiles" location="dev/Program Files"/>
 
 	<!-- Defines file sets. -->
 	<fileset id="core.classes" dir="${core.bin}">
@@ -102,11 +102,11 @@ $
 		<include name="LAME 3.96.1/**"/>
 	</fileset>
 
-	<fileset id="webFiles" dir="env/Web Files">
+	<fileset id="webFiles" dir="dev/Web Files">
 		<include name="*"/>
 	</fileset>
 
-	<fileset id="imageFiles" dir="env/Image Files">
+	<fileset id="imageFiles" dir="dev/Image Files">
 		<include name="*"/>
 	</fileset>
 		
@@ -145,7 +145,7 @@ $
 		</copy>  	
   		  	
   	<!-- Copies the data file to the test environment. -->
-  	<copy todir="${testEnv.dataFiles}" overwrite="yes" file="env/Application Data Files/Data.xml" />
+  	<copy todir="${testEnv.dataFiles}" overwrite="yes" file="dev/Application Data Files/Data.xml" />
 		
   	<!-- Copies the libraries to the test environment. -->  	
 		<copy todir="${testEnv.libraryFiles}" flatten="true" overwrite="no">
@@ -181,7 +181,7 @@ $
 		</copy>	
 		
   	<!-- Copies the start batch file to the test environment. -->  	
-		<copy todir="${testEnv}" overwrite="no" file="env/Desktop.bat"/>	
+		<copy todir="${testEnv}" overwrite="no" file="dev/Desktop.bat"/>	
   </target>
 	
 	<!-- Packages the project for deployment. -->
