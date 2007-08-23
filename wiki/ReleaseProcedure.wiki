@@ -2,4 +2,3 @@
 
 To produce a software release, follow these steps:
   # Run the {{{deploy}}} target of  {{{org.onceforall.dms.desktop.ui\build.xml}}}.
-  # 
