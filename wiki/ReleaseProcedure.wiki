@@ -11,6 +11,7 @@ The result of the release procedure is a up-to-date and tested zip file that con
 To prepare the release, please follow these steps:
   # _Update documentation_: Update all the documentation in the `C:\Projects\Digital Media Service\Desktop\Documents` folder to reflect the changes that you have made.
   # _Deploy DMS Desktop Editor_: Deploy the DMS Editor to the test environment:
+    # Delete all files in the `C:\Projects\Digital Media Service\Desktop\Development\org.onceforall.dms.desktop.editor\test` directory, except the `DMS Desktop Editor` shortcut. 
     # In DMS Development Environment goto `Package Explorer->org.onceforall.dms.desktop.editor->DMS Desktop Editor.product`.
     # On the `Overview` tab of `DMS Desktop Editor.product`, select `Eclipse Product export wizard`.
     # In the `Export` dialog, don't change the default settings, just click `Finish`. 
