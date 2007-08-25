@@ -13,6 +13,8 @@ To prepare the release, please follow these steps:
   # _Deploy DMS Desktop Editor_: Deploy the DMS Editor to the test environment:
     # In DMS Development Environment goto `Package Explorer->org.onceforall.dms.desktop.editor->DMS Desktop Editor.product`.
     # On the `Overview` tab of `DMS Desktop Editor.product`, select `Eclipse Product export wizard`.
-    # In the `Export` dialog, click `Finish`. 
+    # In the `Export` dialog, don't change the default settings, just click `Finish`. 
+    # In the `C:\Projects\Digital Media Service\Desktop\Development\org.onceforall.dms.desktop.editor\test` directory, you should see now `editor.exe` together with some other folders.
+    # Test that editor starts by running the `DMS Desktop Editor` shortcut.
 To produce a software release, follow these steps:
   # Run the `deploy` target of  `org.onceforall.dms.desktop.ui\build.xml`.
