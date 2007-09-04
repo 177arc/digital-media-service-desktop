@@ -65,7 +65,7 @@ public class LogicLayerMUpgradeStepsTest extends LogicLayerTest {
 		mDmsApplication.getMUpgradeRelativeFtpPathProperty().setValueForUI("dms-test/"+UPGRADE_FILE.getName());
 		mDmsApplication.getMFtpServerUrlProperty().setValueForUI(TestData.LogicLayerTest_FtpServerUrlProperty);
 		mDmsApplication.getMFtpUserNameProperty().setValueForUI(TestData.LogicLayerTest_FtpUserNameProperty);
-		mDmsApplication.getMFtpUserPasswordProperty().setValueForUI(TestData.LogicLayerTest_FtpPasswordProperty);
+		mDmsApplication.getMFtpUserPasswordProperty().setValueForUI(Type.PASSWORD_TYPE.decryptPassword(TestData.LogicLayerTest_FtpPasswordProperty));
 		mDmsApplication.getMWebServerUrlProperty().setValueForUI(TestData.LogicLayerTest_WebServerUrlProperty);
 	}
 	

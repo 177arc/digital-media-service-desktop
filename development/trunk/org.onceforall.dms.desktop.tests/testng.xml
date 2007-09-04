@@ -18,12 +18,12 @@ Updated to checkpoint progress.
     <classes>
       <class name="org.onceforall.dms.desktop.tests.LogicLayerMUpdatePublishedMP3StepTest" />
     </classes>
-  </test>-->
+  </test>
   <test name="Logic layer WWX meeting test" annotations="JDK5">
     <classes>
       <class name="org.onceforall.dms.desktop.tests.LogicLayerWwxMeetingTest" />
     </classes>
-  </test>
+  </test>-->
   <test name="Logic layer normal service test" annotations="JDK5">
     <classes>
       <class name="org.onceforall.dms.desktop.tests.LogicLayerNormalServiceTest"  />

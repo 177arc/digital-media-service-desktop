@@ -1,0 +1,2 @@
+27-Aug-2007 19:13:47 org.onceforall.dms.desktop.tests.LogicLayerTest testMEmailEventLogStep
+SEVERE: It's monday morning!!

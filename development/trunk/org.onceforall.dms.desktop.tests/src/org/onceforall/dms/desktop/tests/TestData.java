@@ -121,6 +121,10 @@ public class TestData extends NLS {
 	public static String LogicLayerWwxMeetingTest_SpeakersNameParameter;
 
 	public static String LogicLayerWwxMeetingTest_TitleOfTalkParameter;
+
+	public static String Test_CheckRecordingLevels;
+
+	public static String Test_TestFilesPath;
 	static {
 		// initialize resource bundle
 		NLS.initializeMessages(BUNDLE_NAME, TestData.class);

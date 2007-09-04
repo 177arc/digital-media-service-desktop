@@ -63,7 +63,7 @@ public class LogicLayerNormalServiceTest extends LogicLayerTest {
 	 * @throws ParseException Thrown if a managed date parameter cannot be parsed.
 	 */
 	@Test public void testMEnterServiceInformationStep() throws ParseException {
-		MEnterServiceInformationStep mStep = (MEnterServiceInformationStep) mScript.getMSteps().get(currentStepIndex);
+		MEnterServiceInformationStep mStep = (MEnterServiceInformationStep) mScript.getMSteps().get(0);
 
 		// Sets the parametets.
 		mStep.setServiceDateParameter(DATE_FORMAT.parse(TestData.LogicLayerNormalServiceTest_DateParameter));
@@ -90,7 +90,7 @@ public class LogicLayerNormalServiceTest extends LogicLayerTest {
 	 */
 	@Test(dependsOnMethods = { "testMEnterServiceInformationStep" }, alwaysRun=true) //$NON-NLS-1$
 	public void testMCheckFreeDiskSpaceStep() {
-		MCheckFreeDiskSpaceStep mStep = (MCheckFreeDiskSpaceStep) mScript.getMSteps().get(currentStepIndex);
+		MCheckFreeDiskSpaceStep mStep = (MCheckFreeDiskSpaceStep) mScript.getMSteps().get(1);
 		
 		// Executes the step.
 		executeMStep(mStep, true);
@@ -101,7 +101,7 @@ public class LogicLayerNormalServiceTest extends LogicLayerTest {
 	 */
 	@Test(dependsOnMethods = { "testMCheckFreeDiskSpaceStep" }, alwaysRun=true) //$NON-NLS-1$
 	public void testMCreateServiceDirectoryStep() {
-		MCreateDirectoryStep mStep = (MCreateDirectoryStep) mScript.getMSteps().get(currentStepIndex);
+		MCreateDirectoryStep mStep = (MCreateDirectoryStep) mScript.getMSteps().get(2);
 		MEnterServiceInformationStep mEnterServiceInformationStep = (MEnterServiceInformationStep) mScript.getMSteps().get(0);
 		testMCreateDirectoryStep(mStep, mEnterServiceInformationStep.getMServiceTypeResult().getValueForUI()+" on "+mEnterServiceInformationStep.getMServiceDateResult().getValueForUI()); //$NON-NLS-1$
 	}
@@ -111,7 +111,7 @@ public class LogicLayerNormalServiceTest extends LogicLayerTest {
 	 */
 	@Test(dependsOnMethods = { "testMCreateServiceDirectoryStep" }, alwaysRun=true) //$NON-NLS-1$
 	public void testMCheckInputLevelsStep() {
-		MCheckInputLevelsStep mStep = (MCheckInputLevelsStep) mScript.getMSteps().get(currentStepIndex);
+		MCheckInputLevelsStep mStep = (MCheckInputLevelsStep) mScript.getMSteps().get(3);
 		testMCheckInputLevelsStep(mStep);
 	}
 	
@@ -123,7 +123,7 @@ public class LogicLayerNormalServiceTest extends LogicLayerTest {
 	 */
 	@Test(dependsOnMethods = { "testMCheckInputLevelsStep" }, alwaysRun=true) //$NON-NLS-1$
 	public void testMRecordPreSermonStep() throws UnsupportedAudioFileException, IOException {
-		testMRecordStep((MRecordStep) mScript.getMSteps().get(currentStepIndex), 
+		testMRecordStep((MRecordStep) mScript.getMSteps().get(4), 
 				new File(TestData.LogicLayerNormalServiceTest_PreSermonRecordingFileParameter), new File(TestData.LogicLayerNormalServiceTest_PreSermonAudioFile));
 	}
 	
@@ -135,7 +135,7 @@ public class LogicLayerNormalServiceTest extends LogicLayerTest {
 	 */
 	@Test(dependsOnMethods = { "testMRecordPreSermonStep" }, alwaysRun=true) //$NON-NLS-1$
 	public void testMRecordSermonStep() throws UnsupportedAudioFileException, IOException {
-		testMRecordStep((MRecordStep) mScript.getMSteps().get(currentStepIndex), 
+		testMRecordStep((MRecordStep) mScript.getMSteps().get(5), 
 				new File(TestData.LogicLayerNormalServiceTest_SermonRecordingFileParameter), new File(TestData.LogicLayerNormalServiceTest_SermonAudioFile));
 	}
 	
@@ -147,7 +147,7 @@ public class LogicLayerNormalServiceTest extends LogicLayerTest {
 	 */
 	@Test(dependsOnMethods = { "testMRecordSermonStep" }, alwaysRun=true) //$NON-NLS-1$
 	public void testMRecordPostSermonStep() throws UnsupportedAudioFileException, IOException {
-		testMRecordStep((MRecordStep) mScript.getMSteps().get(currentStepIndex), 
+		testMRecordStep((MRecordStep) mScript.getMSteps().get(6), 
 				new File(TestData.LogicLayerNormalServiceTest_PostSermonRecordingFileParameter), new File(TestData.LogicLayerNormalServiceTest_PostSermonAudioFile));
 	}
 	
@@ -156,10 +156,10 @@ public class LogicLayerNormalServiceTest extends LogicLayerTest {
 	 */
 	@Test(dependsOnMethods = { "testMRecordPostSermonStep" }, alwaysRun=true) //$NON-NLS-1$
 	public void testMBurnCdStep() {
-		MBurnCdStep mStep = (MBurnCdStep) mScript.getMSteps().get(currentStepIndex);
-		MRecordStep mRecordPreSermonStep = (MRecordStep) mScript.getMSteps().get(currentStepIndex-3);
-		MRecordStep mRecordSermonStep = (MRecordStep) mScript.getMSteps().get(currentStepIndex-2);
-		MRecordStep mRecordPostSermonStep = (MRecordStep) mScript.getMSteps().get(currentStepIndex-1);
+		MBurnCdStep mStep = (MBurnCdStep) mScript.getMSteps().get(7);
+		MRecordStep mRecordPreSermonStep = (MRecordStep) mScript.getMSteps().get(4);
+		MRecordStep mRecordSermonStep = (MRecordStep) mScript.getMSteps().get(5);
+		MRecordStep mRecordPostSermonStep = (MRecordStep) mScript.getMSteps().get(6);
 		
 		// Checks that the parameters are correct.
 		List<File> recordingFiles = mStep.getRecordingFilesParameter();
@@ -183,10 +183,10 @@ public class LogicLayerNormalServiceTest extends LogicLayerTest {
 	 */
 	@Test(dependsOnMethods = { "testMBurnCdStep" }, alwaysRun=true) //$NON-NLS-1$
 	public void testMConvertToMP3Step() throws UnsupportedAudioFileException, IOException {
-		MConvertToMP3Step mStep = (MConvertToMP3Step) mScript.getMSteps().get(currentStepIndex);
+		MConvertToMP3Step mStep = (MConvertToMP3Step) mScript.getMSteps().get(8);
 		MEnterServiceInformationStep mEnterServiceInformationStep = (MEnterServiceInformationStep) mScript.getMSteps().get(0);
 		MCreateDirectoryStep mCreateDirectoryStep = (MCreateDirectoryStep) mScript.getMSteps().get(2);
-		MRecordStep mRecordSermonStep = (MRecordStep) mScript.getMSteps().get(currentStepIndex-3);
+		MRecordStep mRecordSermonStep = (MRecordStep) mScript.getMSteps().get(5);
 		
 	    Calendar serviceDateCalendar = Calendar.getInstance();
 	    serviceDateCalendar.setTime(mEnterServiceInformationStep.getServiceDateResult());
@@ -205,8 +205,8 @@ public class LogicLayerNormalServiceTest extends LogicLayerTest {
 	 */
 	@Test(dependsOnMethods = { "testMConvertToMP3Step" }, alwaysRun=true) //$NON-NLS-1$
 	public void testMPublishMP3Step() throws Exception {
-		final MPublishNewMp3Step mStep = (MPublishNewMp3Step) mScript.getMSteps().get(currentStepIndex);
-		final MConvertToMP3Step mConvertToMP3Step = (MConvertToMP3Step) mScript.getMSteps().get(currentStepIndex-1); 
+		final MPublishNewMp3Step mStep = (MPublishNewMp3Step) mScript.getMSteps().get(9);
+		final MConvertToMP3Step mConvertToMP3Step = (MConvertToMP3Step) mScript.getMSteps().get(8); 
 		final MEnterServiceInformationStep mEnterServiceInformationStep = (MEnterServiceInformationStep) mScript.getMSteps().get(0);
 		
 		testMPublishMP3Step(mStep, 
@@ -237,7 +237,7 @@ public class LogicLayerNormalServiceTest extends LogicLayerTest {
 	 */
 	@Test(dependsOnMethods = { "testMPublishMP3Step" }, alwaysRun=true) //$NON-NLS-1$
 	public void testMEmailEventLogStepStep() throws Exception {
-		final MEmailEventLogStep mStep = (MEmailEventLogStep) mScript.getMSteps().get(currentStepIndex);
+		final MEmailEventLogStep mStep = (MEmailEventLogStep) mScript.getMSteps().get(10);
 		MEnterServiceInformationStep mEnterServiceInformationStep = (MEnterServiceInformationStep) mScript.getMSteps().get(0); 
 		testMEmailEventLogStep(mStep, mStep.getRecordingUsersNameParameter(),
 				"DMS log of "+mEnterServiceInformationStep.getMServiceTypeParameter().getValueForUI()+" on "+mEnterServiceInformationStep.getMServiceDateParameter().getValueForUI()); //$NON-NLS-1$ //$NON-NLS-2$

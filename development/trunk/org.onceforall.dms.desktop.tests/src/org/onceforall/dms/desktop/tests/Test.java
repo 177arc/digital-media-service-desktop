@@ -68,6 +68,7 @@ import org.onceforall.dms.desktop.logic.MElement;
 import org.onceforall.dms.desktop.logic.MObject;
 import org.onceforall.dms.desktop.logic.MStep;
 import org.onceforall.dms.desktop.logic.MValue;
+import org.onceforall.dms.desktop.logic.types.Type;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeClass;
 
@@ -98,18 +99,19 @@ public class Test extends org.onceforall.core.tests.Test {
 	@BeforeClass
 	public void loadMApplicationData() throws IOException {
 		// Creates a copy of the application data file.
-		System.out.print("Creating a working copy of application data file '"+MDmsApplication.DATA_FILE.getAbsolutePath()+"' ...");		
-		File newDataFile = new File("Test Files\\"+MDmsApplication.DATA_FILE.getName());
+		System.out.print("Creating a working copy of application data file '"+MDmsApplication.DATA_FILE.getAbsolutePath()+"' ...");		 //$NON-NLS-1$ //$NON-NLS-2$
+		File newDataFile = new File(TestData.Test_TestFilesPath+"\\"+MDmsApplication.DATA_FILE.getName()); //$NON-NLS-2$
+		newDataFile.getParentFile().mkdirs();
 		FileChannel sourceChannel = new FileInputStream(MDmsApplication.DATA_FILE).getChannel();
 		FileChannel destinationChannel = new FileOutputStream(newDataFile).getChannel();
 		sourceChannel.transferTo(0, sourceChannel.size(), destinationChannel);
 		sourceChannel.close();
 		destinationChannel.close();
-		System.out.println(" completed.");		
+		System.out.println(" completed.");		 //$NON-NLS-1$
 		
-		System.out.print("Loading application data from '"+newDataFile.getAbsolutePath()+"' ...");		
+		System.out.print("Loading application data from '"+newDataFile.getAbsolutePath()+"' ...");		 //$NON-NLS-1$ //$NON-NLS-2$
 		mDmsApplication = (MDmsApplication) MDmsApplication.loadInstance(newDataFile);
-		System.out.println(" completed.");		
+		System.out.println(" completed.");		 //$NON-NLS-1$
 	}
 	
 	/**
@@ -177,10 +179,10 @@ public class Test extends org.onceforall.core.tests.Test {
 			
 			System.out.println(" completed."); //$NON-NLS-1$ //$NON-NLS-2$
 				
-			assertTrue(mStep.getException() != null ? "Step execution error: ["+mStep.getException().getClass().getName()+"] "+mStep.getException().getMessage() : null, mStep.getException() == null); //$NON-NLS-1$
+			assertTrue(mStep.getException() != null ? "Step execution error: ["+mStep.getException().getClass().getName()+"] "+mStep.getException().getMessage() : null, mStep.getException() == null); //$NON-NLS-1$ //$NON-NLS-2$
 		}
 		catch(DesktopException exception) {
-			assertTrue("Step validation failed: "+exception.getMessage(), false);
+			assertTrue("Step validation failed: "+exception.getMessage(), false); //$NON-NLS-1$
 			throw exception;
 		}
 	}
@@ -198,7 +200,7 @@ public class Test extends org.onceforall.core.tests.Test {
 				Thread.sleep(100);
 			} catch (InterruptedException e) {}
 			
-		System.out.println(" completed.");
+		System.out.println(" completed."); //$NON-NLS-1$
 	}
 	
 	/**
@@ -230,7 +232,7 @@ public class Test extends org.onceforall.core.tests.Test {
 					exception.printStackTrace();
 				}
 			}
-		}, "Audio playback");
+		}, "Audio playback"); //$NON-NLS-1$
 
 		playbackThread.start();
 	}
@@ -309,9 +311,10 @@ public class Test extends org.onceforall.core.tests.Test {
 	 * @throws IOException Thrown if the audio file format cannot be read.
 	 * @throws UnsupportedAudioFileException  Thrown if the audio file format is not supported.
 	 */
-	protected boolean isAudioFileSilent(AudioInputStream audioInputStream) throws UnsupportedAudioFileException, IOException {
-		/*?AudioFileFormat fileFormat = AudioSystem.getAudioFileFormat(audioFile);
-		AudioFormat format = fileFormat.getFormat();*/
+	protected boolean isAudioFileSilent(AudioInputStream audioInputStream) throws UnsupportedAudioFileException, IOException {		
+		if(TestData.Test_CheckRecordingLevels.toLowerCase().equals(Boolean.FALSE.toString()))
+			return false;
+		
 		AudioFormat baseFormat = audioInputStream.getFormat();
 		AudioFormat decodedFormat = new AudioFormat(AudioFormat.Encoding.PCM_SIGNED, baseFormat.getSampleRate(), 16, baseFormat.getChannels(), baseFormat.getChannels() * 2,
 				baseFormat.getSampleRate(), false);
@@ -375,13 +378,13 @@ public class Test extends org.onceforall.core.tests.Test {
 		try {
 			// Gets the default session.
 			Properties props = System.getProperties();
-	        props.put("mail.pop3.host", TestData.LogicLayerTest_Pop3ServerAddress);
+	        props.put("mail.pop3.host", TestData.LogicLayerTest_Pop3ServerAddress); //$NON-NLS-1$
 			Session session = Session.getInstance(props, new Authenticator() {
 		        /**
 		         * @see javax.mail.Authenticator#getPasswordAuthentication()
 		         */
 		        protected PasswordAuthentication getPasswordAuthentication() {
-		            return(new PasswordAuthentication(TestData.LogicLayerTest_Pop3UserName, TestData.LogicLayerTest_Pop3Password));
+		            return(new PasswordAuthentication(TestData.LogicLayerTest_Pop3UserName, Type.PASSWORD_TYPE.decryptPassword(TestData.LogicLayerTest_Pop3Password)));
 		        }				
 			});
 
@@ -428,8 +431,8 @@ public class Test extends org.onceforall.core.tests.Test {
         ftpClient.setDefaultTimeout(20000);
         ftpClient.connect(ftpServerUrl.getHost());
         try {
-            if(!ftpClient.login(ftpUserName, ftpPassword))
-            	throw new Exception("The application could not log in to FTP server '"+ftpServerUrl+"' with user name '"+ftpUserName+"' because the user name and/or the password are incorrect.");
+            if(!ftpClient.login(ftpUserName, Type.PASSWORD_TYPE.decryptPassword(ftpPassword)))
+            	throw new Exception("The application could not log in to FTP server '"+ftpServerUrl+"' with user name '"+ftpUserName+"' because the user name and/or the password are incorrect."); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
 
             ftpClient.setFileType(FTPClient.IMAGE_FILE_TYPE);
             return ftpClientOperation.perform(ftpClient);
@@ -472,9 +475,9 @@ public class Test extends org.onceforall.core.tests.Test {
 			inputStream = connection.getInputStream();
 
 			// Decompresses the input stream if compresses.
-			if (contentEncoding != null && contentEncoding.equalsIgnoreCase("gzip"))
+			if (contentEncoding != null && contentEncoding.equalsIgnoreCase("gzip")) //$NON-NLS-1$
 				inputStream = new GZIPInputStream(inputStream);
-			else if (contentEncoding != null && contentEncoding.equalsIgnoreCase("zip"))
+			else if (contentEncoding != null && contentEncoding.equalsIgnoreCase("zip")) //$NON-NLS-1$
 				inputStream = new ZipInputStream(inputStream);
 			
 			if(inputStream == null)

@@ -32,6 +32,7 @@ import java.io.StringReader;
 import java.net.URL;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
@@ -64,6 +65,7 @@ import org.onceforall.dms.desktop.logic.MScript;
 import org.onceforall.dms.desktop.logic.MStep;
 import org.onceforall.dms.desktop.logic.types.DurationType;
 import org.onceforall.dms.desktop.logic.types.MMp3StateType;
+import org.onceforall.dms.desktop.logic.types.Type;
 import org.testng.annotations.BeforeClass;
 import org.tritonus.share.sampled.file.TAudioFileFormat;
 import org.xml.sax.InputSource;
@@ -112,10 +114,10 @@ public class LogicLayerTest extends org.onceforall.dms.desktop.tests.Test {
 		// Sets the default locale so that test execution does not vary depending on the host's locale settings.
 		Locale.setDefault(Locale.UK);
 
-		mDmsApplication.getMFtpServerUrlProperty().setValueForUI(TestData.LogicLayerTest_FtpServerUrlProperty);
+		/*mDmsApplication.getMFtpServerUrlProperty().setValueForUI(TestData.LogicLayerTest_FtpServerUrlProperty);
 		mDmsApplication.getMFtpUserNameProperty().setValueForUI(TestData.LogicLayerTest_FtpUserNameProperty);
-		mDmsApplication.getMFtpUserPasswordProperty().setValueForUI(TestData.LogicLayerTest_FtpPasswordProperty);
-		mDmsApplication.getMWebServerUrlProperty().setValueForUI(TestData.LogicLayerTest_WebServerUrlProperty);
+		mDmsApplication.getMFtpUserPasswordProperty().setValueForUI(Type.PASSWORD_TYPE.decryptPassword(TestData.LogicLayerTest_FtpPasswordProperty));
+		mDmsApplication.getMWebServerUrlProperty().setValueForUI(TestData.LogicLayerTest_WebServerUrlProperty);*/
 	}
 
 	/**
@@ -148,7 +150,7 @@ public class LogicLayerTest extends org.onceforall.dms.desktop.tests.Test {
 	 */
 	protected void testMCheckInputLevelsStep(MCheckInputLevelsStep mStep) {	
 		// Plays back test file so that input levels are stimulated.
-		startPlayAudioFile(new File("Test Files\\Test.mp3"));
+		startPlayAudioFile(new File(TestData.LogicLayerNormalServiceTest_PostSermonAudioFile));
 		
 		// Executes the step.
 		executeMStep(mStep, true);
@@ -156,9 +158,10 @@ public class LogicLayerTest extends org.onceforall.dms.desktop.tests.Test {
 		try {
 			Thread.sleep(500);
 		} catch (InterruptedException e) {}
-		
+
 		// Checks input levels.
-		assertTrue(mStep.getLeftInputLevelProperty() > 5 && mStep.getRightInputLevelProperty() > 5);
+		if(TestData.Test_CheckRecordingLevels.toLowerCase().equals(Boolean.TRUE.toString()))
+			assertTrue(mStep.getLeftInputLevelProperty() > 5 && mStep.getRightInputLevelProperty() > 5);
 		
 		// Stops the audio file playback.
 		stopPlayAudioFile();
@@ -181,9 +184,9 @@ public class LogicLayerTest extends org.onceforall.dms.desktop.tests.Test {
 		
 		// Checks that the parameters are correct.
 		assertTrue(mCreateDirectoryStep.getDirectoryResult().equals(mStep.getDirectoryParameter()));
-		assertTrue(recordingFileParameter.equals(mStep.getRecordingFileParameter()));
 		
 		// Deletes the recording file (if it exists).
+		mStep.setRecordingFileParameter(recordingFileParameter);
 		File recordingFile = new File(mStep.getDirectoryParameter().getPath()+File.separator+mStep.getRecordingFileParameter().getPath()); //$NON-NLS-1$
 		assertTrue(!recordingFile.exists() || recordingFile.delete());
 		
@@ -243,7 +246,7 @@ public class LogicLayerTest extends org.onceforall.dms.desktop.tests.Test {
 		assertTrue(mDmsApplication.getMp3EncoderPathProperty().equals(mStep.getMp3EncoderPathParameter()));
 		
 		// Deletes previous test products.
-		MMp3 mMp3ToDelete = null;
+		/*?MMp3 mMp3ToDelete = null;
 		for(MMp3 mMp3: (List<MMp3>) mStep.getMp3FolderReferenceParameter().getMMp3s())
 			if(mMp3.getNameForUI().equals(mStep.getMMp3EntryNameParameter().getValueForUI())) {
 				mMp3ToDelete = mMp3;
@@ -251,7 +254,13 @@ public class LogicLayerTest extends org.onceforall.dms.desktop.tests.Test {
 			}
 		
 		if(mMp3ToDelete != null)
-			mStep.getMp3FolderReferenceParameter().getMMp3s().remove(mMp3ToDelete);
+			mStep.getMp3FolderReferenceParameter().getMMp3s().remove(mMp3ToDelete);*/
+		
+		Iterator<MMp3> iterator = ((List<MMp3>) mStep.getMp3FolderReferenceParameter().getMMp3s()).iterator();
+		while(iterator.hasNext()) {
+			iterator.next();
+			iterator.remove();			
+		}		
 		
 		// Executes the step.
 		executeMStep(mStep, true);
@@ -508,9 +517,9 @@ public class LogicLayerTest extends org.onceforall.dms.desktop.tests.Test {
 		System.out.println(" completed."); //$NON-NLS-1$
 		
 		// Sets the parameters.
-		mStep.setSendersEmailAddressParameter(TestData.LogicLayerTest_SendersEmailAddressParameter);
-		mStep.setReceipientsEmailAddressParameter(TestData.LogicLayerTest_ReceipientsEmailAddressParameter);
-		mStep.setCommentParameter(TestData.LogicLayerTest_EmailCommentParameter);
+		mStep.getMSendersEmailAddressParameter().setValueForUI(TestData.LogicLayerTest_SendersEmailAddressParameter);
+		mStep.getMReceipientsEmailAddressParameter().setValueForUI(TestData.LogicLayerTest_ReceipientsEmailAddressParameter);
+		mStep.getMCommentParameter().setValueForUI(TestData.LogicLayerTest_EmailCommentParameter);
 		
 		// Checks that the parameters are correct.
 		assertTrue(recordingUserParameter.equals(mStep.getMRecordingUsersNameParameter().getValueForUI()));
@@ -555,33 +564,31 @@ public class LogicLayerTest extends org.onceforall.dms.desktop.tests.Test {
 							}
 						}
 						
-						break;
+						// Checks the message.
+						assertTrue(message != null);
+						assertTrue(message.getHeader("X-Priority")[0].equals("1")); //$NON-NLS-1$ //$NON-NLS-2$
+						assertTrue(message.getHeader("X-MSMail-Priority")[0].equals("High")); //$NON-NLS-1$ //$NON-NLS-2$
+						assertTrue(message.getHeader("Importance")[0].equals("High"));                 //$NON-NLS-1$ //$NON-NLS-2$
+						
+						// Checks the message text.
+						assertTrue(messageText.indexOf(mStep.getRecordingUsersNameParameter()) >= 0);
+						assertTrue(messageText.indexOf(mStep.getCommentParameter()) >= 0);
+						
+						// Checks the log file.
+						assertTrue(logFileStream != null);
+						String localLogFileContent = getStringFromInputStream(new FileInputStream(mStep.getLogFileParameter()));
+						String emailLogFileContent = getStringFromInputStream(logFileStream);
+						assertTrue(localLogFileContent.indexOf(emailLogFileContent) >= 0);
+						
+						// Checks the data file.
+						assertTrue(logFileStream != null);
+						ZipInputStream unzippedStream = new ZipInputStream(dataFileStream);
+						unzippedStream.getNextEntry();
+						String localDataFileContent = getStringFromInputStream(new FileInputStream(mStep.getDataFileParameter()));
+						String emailDataFileContent = getStringFromInputStream(unzippedStream);
+						assertTrue(localDataFileContent.equals(emailDataFileContent));	
 					}
 				}
-
-				// Checks the message.
-				assertTrue(message != null);
-				assertTrue(message.getHeader("X-Priority")[0].equals("1")); //$NON-NLS-1$ //$NON-NLS-2$
-				assertTrue(message.getHeader("X-MSMail-Priority")[0].equals("High")); //$NON-NLS-1$ //$NON-NLS-2$
-				assertTrue(message.getHeader("Importance")[0].equals("High"));                 //$NON-NLS-1$ //$NON-NLS-2$
-				
-				// Checks the message text.
-				assertTrue(messageText.indexOf(mStep.getRecordingUsersNameParameter()) >= 0);
-				assertTrue(messageText.indexOf(mStep.getCommentParameter()) >= 0);
-				
-				// Checks the log file.
-				assertTrue(logFileStream != null);
-				String localLogFileContent = getStringFromInputStream(new FileInputStream(mStep.getLogFileParameter()));
-				String emailLogFileContent = getStringFromInputStream(logFileStream);
-				assertTrue(localLogFileContent.indexOf(emailLogFileContent) >= 0);
-				
-				// Checks the data file.
-				assertTrue(logFileStream != null);
-				ZipInputStream unzippedStream = new ZipInputStream(dataFileStream);
-				unzippedStream.getNextEntry();
-				String localDataFileContent = getStringFromInputStream(new FileInputStream(mStep.getDataFileParameter()));
-				String emailDataFileContent = getStringFromInputStream(unzippedStream);
-				assertTrue(localDataFileContent.equals(emailDataFileContent));	
 				
 				return null;
 			}});

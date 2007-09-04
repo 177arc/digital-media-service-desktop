@@ -29,6 +29,7 @@ import org.onceforall.dms.desktop.logic.MMp3;
 import org.onceforall.dms.desktop.logic.MMp3Folder;
 import org.onceforall.dms.desktop.logic.MUpdatePublishedMp3sStep;
 import org.onceforall.dms.desktop.logic.types.MMp3StateType;
+import org.onceforall.dms.desktop.logic.types.Type;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
@@ -90,7 +91,7 @@ public class LogicLayerMUpdatePublishedMP3StepTest extends LogicLayerTest {
 		mStep.setName("Update published MP3s");
 		mStep.getMFtpServerUrlParameter().setValueForUI(TestData.LogicLayerTest_FtpServerUrlProperty);
 		mStep.getMFtpUserNameParameter().setValueForUI(TestData.LogicLayerTest_FtpUserNameProperty);
-		mStep.getMFtpUserPasswordParameter().setValueForUI(TestData.LogicLayerTest_FtpPasswordProperty);
+		mStep.getMFtpUserPasswordParameter().setValueForUI(Type.PASSWORD_TYPE.decryptPassword(TestData.LogicLayerTest_FtpPasswordProperty));
 		mStep.getMMaxiumumDiskSpaceParameter().setValueForUI("1");
 		mStep.getMMp3RelativeFtpPathParameter().setValueForUI("/dms-test");
 		mStep.getMWebServerUrlParameter().setValueForUI(TestData.LogicLayerTest_WebServerUrlProperty);
