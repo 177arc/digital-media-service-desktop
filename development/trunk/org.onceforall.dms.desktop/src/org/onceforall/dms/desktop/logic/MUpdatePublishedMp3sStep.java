@@ -682,22 +682,22 @@ public class MUpdatePublishedMp3sStep extends MPublishMp3sStep {
 	 */
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case LogicPackage.MUPDATE_PUBLISHED_MP3S_STEP__MREPUBLISH_MP3_FILES:
+			case LogicPackage.MUPDATE_PUBLISHED_MP3S_STEP__MREPUBLISH_MP3_FILES:    
 				setMRepublishMp3Files((MParameter)newValue);
 				return;
-			case LogicPackage.MUPDATE_PUBLISHED_MP3S_STEP__REPUBLISH_MP3_FILES:
+			case LogicPackage.MUPDATE_PUBLISHED_MP3S_STEP__REPUBLISH_MP3_FILES:    
 				setRepublishMp3Files((Boolean)newValue);
 				return;
-			case LogicPackage.MUPDATE_PUBLISHED_MP3S_STEP__MMP3_FOLDER_REFERENCE_PARAMETER:
+			case LogicPackage.MUPDATE_PUBLISHED_MP3S_STEP__MMP3_FOLDER_REFERENCE_PARAMETER:    
 				setMMp3FolderReferenceParameter((MParameter)newValue);
 				return;
-			case LogicPackage.MUPDATE_PUBLISHED_MP3S_STEP__MP3_FOLDER_REFERENCE_PARAMETER:
+			case LogicPackage.MUPDATE_PUBLISHED_MP3S_STEP__MP3_FOLDER_REFERENCE_PARAMETER:    
 				setMp3FolderReferenceParameter((MMp3Folder)newValue);
 				return;
-			case LogicPackage.MUPDATE_PUBLISHED_MP3S_STEP__MMP3_FOLDER_REFERENCE_RESULT:
+			case LogicPackage.MUPDATE_PUBLISHED_MP3S_STEP__MMP3_FOLDER_REFERENCE_RESULT:    
 				setMMp3FolderReferenceResult((MResult)newValue);
 				return;
-			case LogicPackage.MUPDATE_PUBLISHED_MP3S_STEP__MP3_FOLDER_REFERENCE_RESULT:
+			case LogicPackage.MUPDATE_PUBLISHED_MP3S_STEP__MP3_FOLDER_REFERENCE_RESULT:    
 				setMp3FolderReferenceResult((MMp3Folder)newValue);
 				return;
 		}

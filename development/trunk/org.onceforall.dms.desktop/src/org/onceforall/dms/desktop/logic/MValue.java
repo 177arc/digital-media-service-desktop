@@ -242,15 +242,6 @@ public abstract class MValue extends MElement {
 	protected boolean readOnly = READ_ONLY_EDEFAULT;
 
 	/**
-	 * This is true if the Read Only attribute has been set.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	protected boolean readOnlyESet = false;
-
-	/**
 	 * Sets the default value of the '{@link #isReadOnly() <em>ReadOnly</em>}' attribute.
 	 * 
 	 * @param defaultReadOnly Specifies the default value of the '{@link #isReadOnly() <em>ReadOnly</em>}' attribute.
@@ -258,7 +249,7 @@ public abstract class MValue extends MElement {
 	 */
 	public void setDefaultReadOnly(boolean defaultReadOnly) {
 		this.defaultReadOnly = defaultReadOnly;
-		if(!readOnlyESet)
+		if(!readOnly)
 			readOnly = defaultReadOnly;
 	}
 
@@ -457,7 +448,7 @@ public abstract class MValue extends MElement {
 	 * @see org.onceforall.dms.desktop.logic.LogicPackage#getMValue_Value()
 	 * @model transient="true" volatile="true" derived="true"
 	 */
-	public synchronized Object getValue() {
+	public synchronized Object getValue() {		
 		return ((InternalEObject) eContainer()).eGet(valueEFeature.getFeatureID(), false, false);
 	}
 
@@ -527,11 +518,9 @@ public abstract class MValue extends MElement {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Read Only</em>' attribute.
-	 * @see #isSetReadOnly()
-	 * @see #unsetReadOnly()
 	 * @see #setReadOnly(boolean)
 	 * @see org.onceforall.dms.desktop.logic.LogicPackage#getMValue_ReadOnly()
-	 * @model unsettable="true" required="true"
+	 * @model required="true"
 	 * @generated
 	 */
 	public boolean isReadOnly() {
@@ -543,50 +532,14 @@ public abstract class MValue extends MElement {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param newReadOnly the new value of the '<em>Read Only</em>' attribute.
-	 * @see #isSetReadOnly()
-	 * @see #unsetReadOnly()
 	 * @see #isReadOnly()
 	 * @generated
 	 */
 	public void setReadOnly(boolean newReadOnly) {
 		boolean oldReadOnly = readOnly;
 		readOnly = newReadOnly;
-		boolean oldReadOnlyESet = readOnlyESet;
-		readOnlyESet = true;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, LogicPackage.MVALUE__READ_ONLY, oldReadOnly, readOnly, !oldReadOnlyESet));
-	}
-
-	/**
-	 * Unsets the value of the '{@link org.onceforall.dms.desktop.logic.MValue#isReadOnly <em>Read Only</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isSetReadOnly()
-	 * @see #isReadOnly()
-	 * @see #setReadOnly(boolean)
-	 * @generated
-	 */
-	public void unsetReadOnly() {
-		boolean oldReadOnly = readOnly;
-		boolean oldReadOnlyESet = readOnlyESet;
-		readOnly = getDefaultReadOnly();
-		readOnlyESet = false;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.UNSET, LogicPackage.MVALUE__READ_ONLY, oldReadOnly, getDefaultReadOnly(), oldReadOnlyESet));
-	}
-
-	/**
-	 * Returns whether the value of the '{@link org.onceforall.dms.desktop.logic.MValue#isReadOnly <em>Read Only</em>}' attribute is set.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return whether the value of the '<em>Read Only</em>' attribute is set.
-	 * @see #unsetReadOnly()
-	 * @see #isReadOnly()
-	 * @see #setReadOnly(boolean)
-	 * @generated
-	 */
-	public boolean isSetReadOnly() {
-		return readOnlyESet;
+			eNotify(new ENotificationImpl(this, Notification.SET, LogicPackage.MVALUE__READ_ONLY, oldReadOnly, readOnly));
 	}
 
 	/**
@@ -616,7 +569,6 @@ public abstract class MValue extends MElement {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
@@ -670,7 +622,7 @@ public abstract class MValue extends MElement {
 				getHistoricValuesForUI().clear();
 				return;
 			case LogicPackage.MVALUE__READ_ONLY:
-				unsetReadOnly();
+				setReadOnly(getDefaultReadOnly());
 				return;
 		}
 		super.eUnset(featureID);
@@ -695,7 +647,7 @@ public abstract class MValue extends MElement {
 			case LogicPackage.MVALUE__HISTORIC_VALUES_FOR_UI:
 				return !getHistoricValuesForUI().isEmpty();
 			case LogicPackage.MVALUE__READ_ONLY:
-				return isSetReadOnly();
+				return readOnly != getDefaultReadOnly();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -711,7 +663,7 @@ public abstract class MValue extends MElement {
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (readOnly: ");
-		if (readOnlyESet) result.append(readOnly); else result.append("<unset>");
+		result.append(readOnly);
 		result.append(')');
 		return result.toString();
 	}

@@ -211,7 +211,7 @@ public class MObject extends MElement implements EObject, SubstitutionLabelProvi
 					 
 		setMNameProperty(new MProperty(false, "Name", "Specifies the name.", null));			 
 		setMDescriptionProperty(new MProperty(false, "Description", "Specifies a detailed description.", null));			 
-		setMIconFilePathProperty(new MProperty(true, "Icon file path", "Specifies the file path to the icon that represents this element.", null));
+		setMIconFilePathProperty(new MProperty(false, "Icon file path", "Specifies the file path to the icon that represents this element.", null));
 
 		lastMObjectConstructorHook();		
 	}
@@ -395,7 +395,7 @@ public class MObject extends MElement implements EObject, SubstitutionLabelProvi
 	 * @see #setMIconFilePathProperty(MProperty)
 	 * @see org.onceforall.dms.desktop.logic.LogicPackage#getMObject_MIconFilePathProperty()
 	 * @model containment="true" required="true"
-	 *        annotation="http://www.onceforall.org/mcore name='Icon file path' description='Specifies the file path to the icon that represents this element.' readOnly='true' valueEFeature='iconFilePath'"
+	 *        annotation="http://www.onceforall.org/mcore name='Icon file path' description='Specifies the file path to the icon that represents this element.' valueEFeature='iconFilePath'"
 	 * @generated
 	 */
 	public MProperty getMIconFilePathProperty() {
@@ -431,8 +431,8 @@ public class MObject extends MElement implements EObject, SubstitutionLabelProvi
 			if (mIconFilePathProperty != null)
 				msgs = ((InternalEObject)mIconFilePathProperty).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - LogicPackage.MOBJECT__MICON_FILE_PATH_PROPERTY, null, msgs);
 			if (newMIconFilePathProperty != null) {				
-				newMIconFilePathProperty.setDefaultDescription("Specifies the file path to the icon that represents this element.");
 				newMIconFilePathProperty.setDefaultName("Icon file path");
+				newMIconFilePathProperty.setDefaultDescription("Specifies the file path to the icon that represents this element.");
 				newMIconFilePathProperty.setValueType(Type.getTypeForName("File"));
 				newMIconFilePathProperty.setValueEFeature((EStructuralFeature) eClass().getEStructuralFeature(LogicPackage.MOBJECT__ICON_FILE_PATH));
 				newMIconFilePathProperty.setHistoricValuesEFeature(null);
@@ -541,13 +541,13 @@ public class MObject extends MElement implements EObject, SubstitutionLabelProvi
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case LogicPackage.MOBJECT__MNAME_PROPERTY:
+			case LogicPackage.MOBJECT__MNAME_PROPERTY:    
 				setMNameProperty((MProperty)newValue);
 				return;
-			case LogicPackage.MOBJECT__MDESCRIPTION_PROPERTY:
+			case LogicPackage.MOBJECT__MDESCRIPTION_PROPERTY:    
 				setMDescriptionProperty((MProperty)newValue);
 				return;
-			case LogicPackage.MOBJECT__MICON_FILE_PATH_PROPERTY:
+			case LogicPackage.MOBJECT__MICON_FILE_PATH_PROPERTY:    
 				setMIconFilePathProperty((MProperty)newValue);
 				return;
 			case LogicPackage.MOBJECT__FIXED_MPROPERTIES:

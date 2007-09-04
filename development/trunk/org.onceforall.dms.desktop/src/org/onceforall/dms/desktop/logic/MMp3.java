@@ -209,6 +209,12 @@ public class MMp3 extends MStatefulObject {
 
 
 
+
+
+
+
+
+
 	/**
 	 * The default value of the '{@link #getStateProperty() <em>State Property</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -1834,61 +1840,61 @@ public class MMp3 extends MStatefulObject {
 	 */
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case LogicPackage.MMP3__STATE_PROPERTY:
+			case LogicPackage.MMP3__STATE_PROPERTY:    
 				setStateProperty((State)newValue);
 				return;
-			case LogicPackage.MMP3__MFILE_PROPERTY:
+			case LogicPackage.MMP3__MFILE_PROPERTY:    
 				setMFileProperty((MProperty)newValue);
 				return;
-			case LogicPackage.MMP3__FILE_PROPERTY:
+			case LogicPackage.MMP3__FILE_PROPERTY:    
 				setFileProperty((File)newValue);
 				return;
-			case LogicPackage.MMP3__MLINK_TEXT_PROPERTY:
+			case LogicPackage.MMP3__MLINK_TEXT_PROPERTY:    
 				setMLinkTextProperty((MProperty)newValue);
 				return;
-			case LogicPackage.MMP3__LINK_TEXT_PROPERTY:
+			case LogicPackage.MMP3__LINK_TEXT_PROPERTY:    
 				setLinkTextProperty((String)newValue);
 				return;
-			case LogicPackage.MMP3__MLINK_DESCRIPTION_PROPERTY:
+			case LogicPackage.MMP3__MLINK_DESCRIPTION_PROPERTY:    
 				setMLinkDescriptionProperty((MProperty)newValue);
 				return;
-			case LogicPackage.MMP3__LINK_DESCRIPTION_PROPERTY:
+			case LogicPackage.MMP3__LINK_DESCRIPTION_PROPERTY:    
 				setLinkDescriptionProperty((String)newValue);
 				return;
-			case LogicPackage.MMP3__MCOMMENT_PROPERTY:
+			case LogicPackage.MMP3__MCOMMENT_PROPERTY:    
 				setMCommentProperty((MProperty)newValue);
 				return;
-			case LogicPackage.MMP3__COMMENT_PROPERTY:
+			case LogicPackage.MMP3__COMMENT_PROPERTY:    
 				setCommentProperty((String)newValue);
 				return;
-			case LogicPackage.MMP3__MPODCAST_TITLE_PROPERTY:
+			case LogicPackage.MMP3__MPODCAST_TITLE_PROPERTY:    
 				setMPodcastTitleProperty((MProperty)newValue);
 				return;
-			case LogicPackage.MMP3__PODCAST_TITLE_PROPERTY:
+			case LogicPackage.MMP3__PODCAST_TITLE_PROPERTY:    
 				setPodcastTitleProperty((String)newValue);
 				return;
-			case LogicPackage.MMP3__MPODCAST_SUBTITLE_PROPERTY:
+			case LogicPackage.MMP3__MPODCAST_SUBTITLE_PROPERTY:    
 				setMPodcastSubtitleProperty((MProperty)newValue);
 				return;
-			case LogicPackage.MMP3__PODCAST_SUBTITLE_PROPERTY:
+			case LogicPackage.MMP3__PODCAST_SUBTITLE_PROPERTY:    
 				setPodcastSubtitleProperty((String)newValue);
 				return;
-			case LogicPackage.MMP3__MPODCAST_SUMMARY_PROPERTY:
+			case LogicPackage.MMP3__MPODCAST_SUMMARY_PROPERTY:    
 				setMPodcastSummaryProperty((MProperty)newValue);
 				return;
-			case LogicPackage.MMP3__PODCAST_SUMMARY_PROPERTY:
+			case LogicPackage.MMP3__PODCAST_SUMMARY_PROPERTY:    
 				setPodcastSummaryProperty((String)newValue);
 				return;
-			case LogicPackage.MMP3__MPODCAST_PUBLISHING_DATE_PROPERTY:
+			case LogicPackage.MMP3__MPODCAST_PUBLISHING_DATE_PROPERTY:    
 				setMPodcastPublishingDateProperty((MProperty)newValue);
 				return;
-			case LogicPackage.MMP3__PODCAST_PUBLISHING_DATE_PROPERTY:
+			case LogicPackage.MMP3__PODCAST_PUBLISHING_DATE_PROPERTY:    
 				setPodcastPublishingDateProperty((Date)newValue);
 				return;
-			case LogicPackage.MMP3__MPUBLISHED_FILE_NAME_PROPERTY:
+			case LogicPackage.MMP3__MPUBLISHED_FILE_NAME_PROPERTY:    
 				setMPublishedFileNameProperty((MProperty)newValue);
 				return;
-			case LogicPackage.MMP3__PUBLISHED_FILE_NAME_PROPERTY:
+			case LogicPackage.MMP3__PUBLISHED_FILE_NAME_PROPERTY:    
 				setPublishedFileNameProperty((String)newValue);
 				return;
 		}

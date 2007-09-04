@@ -115,6 +115,12 @@ public class MCheckFreeDiskSpaceStep extends MStep {
 
 
 
+
+
+
+
+
+
 	/**
 	 * The cached value of the '{@link #getMRequiredFreeDiskSpaceParameter() <em>MRequired Free Disk Space Parameter</em>}' containment reference.
 	 * <!-- begin-user-doc -->
@@ -750,22 +756,22 @@ public class MCheckFreeDiskSpaceStep extends MStep {
 	 */
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case LogicPackage.MCHECK_FREE_DISK_SPACE_STEP__MREQUIRED_FREE_DISK_SPACE_PARAMETER:
+			case LogicPackage.MCHECK_FREE_DISK_SPACE_STEP__MREQUIRED_FREE_DISK_SPACE_PARAMETER:    
 				setMRequiredFreeDiskSpaceParameter((MParameter)newValue);
 				return;
-			case LogicPackage.MCHECK_FREE_DISK_SPACE_STEP__REQUIRED_FREE_DISK_SPACE_PARAMETER:
+			case LogicPackage.MCHECK_FREE_DISK_SPACE_STEP__REQUIRED_FREE_DISK_SPACE_PARAMETER:    
 				setRequiredFreeDiskSpaceParameter((Long)newValue);
 				return;
-			case LogicPackage.MCHECK_FREE_DISK_SPACE_STEP__MDIRECTORY_PARAMETER:
+			case LogicPackage.MCHECK_FREE_DISK_SPACE_STEP__MDIRECTORY_PARAMETER:    
 				setMDirectoryParameter((MParameter)newValue);
 				return;
-			case LogicPackage.MCHECK_FREE_DISK_SPACE_STEP__DIRECTORY_PARAMETER:
+			case LogicPackage.MCHECK_FREE_DISK_SPACE_STEP__DIRECTORY_PARAMETER:    
 				setDirectoryParameter((File)newValue);
 				return;
-			case LogicPackage.MCHECK_FREE_DISK_SPACE_STEP__MFREE_DISK_SPACE_RESULT:
+			case LogicPackage.MCHECK_FREE_DISK_SPACE_STEP__MFREE_DISK_SPACE_RESULT:    
 				setMFreeDiskSpaceResult((MResult)newValue);
 				return;
-			case LogicPackage.MCHECK_FREE_DISK_SPACE_STEP__FREE_DISK_SPACE_RESULT:
+			case LogicPackage.MCHECK_FREE_DISK_SPACE_STEP__FREE_DISK_SPACE_RESULT:    
 				setFreeDiskSpaceResult((Long)newValue);
 				return;
 		}
@@ -851,6 +857,7 @@ public class MCheckFreeDiskSpaceStep extends MStep {
 		long freeDiskSpace = getDirectoryParameter().getUsableSpace();
 		long requiredDiskSpace = getRequiredFreeDiskSpaceParameter();
 		
+		getDirectoryParameter().mkdirs();
 		setFreeDiskSpaceResult(getDirectoryParameter().getFreeSpace());
 
 		if(freeDiskSpace < requiredDiskSpace)

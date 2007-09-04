@@ -2965,124 +2965,132 @@ public class MDmsApplication extends MApplication {
 	 */
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case LogicPackage.MDMS_APPLICATION__MSERVICE_FILE_PATH_PROPERTY:
+			case LogicPackage.MDMS_APPLICATION__MSERVICE_FILE_PATH_PROPERTY:    
 				setMServiceFilePathProperty((MProperty)newValue);
 				return;
-			case LogicPackage.MDMS_APPLICATION__SERVICE_FILE_PATH_PROPERTY:
+			case LogicPackage.MDMS_APPLICATION__SERVICE_FILE_PATH_PROPERTY:    
 				setServiceFilePathProperty((File)newValue);
 				return;
-			case LogicPackage.MDMS_APPLICATION__MWWX_FILES_PATH_PROPERTY:
+			case LogicPackage.MDMS_APPLICATION__MWWX_FILES_PATH_PROPERTY:    
 				setMWwxFilesPathProperty((MProperty)newValue);
 				return;
-			case LogicPackage.MDMS_APPLICATION__WWX_FILES_PATH_PROPERTY:
+			case LogicPackage.MDMS_APPLICATION__WWX_FILES_PATH_PROPERTY:    
 				setWwxFilesPathProperty((File)newValue);
 				return;
-			case LogicPackage.MDMS_APPLICATION__MMP3_ENCODER_PATH_PROPERTY:
+			case LogicPackage.MDMS_APPLICATION__MMP3_ENCODER_PATH_PROPERTY:    
 				setMMp3EncoderPathProperty((MProperty)newValue);
 				return;
-			case LogicPackage.MDMS_APPLICATION__MP3_ENCODER_PATH_PROPERTY:
+			case LogicPackage.MDMS_APPLICATION__MP3_ENCODER_PATH_PROPERTY:    
 				setMp3EncoderPathProperty((File)newValue);
 				return;
-			case LogicPackage.MDMS_APPLICATION__MFTP_SERVER_URL_PROPERTY:
+			case LogicPackage.MDMS_APPLICATION__MFTP_SERVER_URL_PROPERTY:    
 				setMFtpServerUrlProperty((MProperty)newValue);
 				return;
-			case LogicPackage.MDMS_APPLICATION__FTP_SERVER_URL_PROPERTY:
+			case LogicPackage.MDMS_APPLICATION__FTP_SERVER_URL_PROPERTY:    
 				setFtpServerUrlProperty((URL)newValue);
 				return;
 			case LogicPackage.MDMS_APPLICATION__FTP_SERVER_URL_PROPERTY_HISTORIC_VALUES:
 				getFtpServerUrlPropertyHistoricValues().clear();
 				getFtpServerUrlPropertyHistoricValues().addAll((Collection)newValue);
 				return;
-			case LogicPackage.MDMS_APPLICATION__MFTP_USER_NAME_PROPERTY:
+			case LogicPackage.MDMS_APPLICATION__MFTP_USER_NAME_PROPERTY:    
 				setMFtpUserNameProperty((MProperty)newValue);
 				return;
-			case LogicPackage.MDMS_APPLICATION__FTP_USER_NAME_PROPERTY:
+			case LogicPackage.MDMS_APPLICATION__FTP_USER_NAME_PROPERTY:    
 				setFtpUserNameProperty((String)newValue);
 				return;
 			case LogicPackage.MDMS_APPLICATION__FTP_USER_NAME_PROPERTY_HISTORIC_VALUES:
 				getFtpUserNamePropertyHistoricValues().clear();
 				getFtpUserNamePropertyHistoricValues().addAll((Collection)newValue);
 				return;
-			case LogicPackage.MDMS_APPLICATION__MFTP_USER_PASSWORD_PROPERTY:
+			case LogicPackage.MDMS_APPLICATION__MFTP_USER_PASSWORD_PROPERTY:    
 				setMFtpUserPasswordProperty((MProperty)newValue);
 				return;
 			case LogicPackage.MDMS_APPLICATION__FTP_USER_PASSWORD_PROPERTY:
+				// Makes sure that that plain text password will be encrypted if they are not. TODO: Remove this code after migration. Then all passwords should encrypted anyway.
+				if(newValue != null && !((String) newValue).endsWith("="))
+						newValue = Type.PASSWORD_TYPE.encryptPassword((String) newValue);
+				    
 				setFtpUserPasswordProperty((String)newValue);
 				return;
-			case LogicPackage.MDMS_APPLICATION__MWEB_SERVER_URL_PROPERTY:
+			case LogicPackage.MDMS_APPLICATION__MWEB_SERVER_URL_PROPERTY:    
 				setMWebServerUrlProperty((MProperty)newValue);
 				return;
-			case LogicPackage.MDMS_APPLICATION__WEB_SERVER_URL_PROPERTY:
+			case LogicPackage.MDMS_APPLICATION__WEB_SERVER_URL_PROPERTY:    
 				setWebServerUrlProperty((URL)newValue);
 				return;
 			case LogicPackage.MDMS_APPLICATION__WEB_SERVER_URL_PROPERTY_HISTORIC_VALUES:
 				getWebServerUrlPropertyHistoricValues().clear();
 				getWebServerUrlPropertyHistoricValues().addAll((Collection)newValue);
 				return;
-			case LogicPackage.MDMS_APPLICATION__MSMTP_SERVER_PROPERTY:
+			case LogicPackage.MDMS_APPLICATION__MSMTP_SERVER_PROPERTY:    
 				setMSmtpServerProperty((MProperty)newValue);
 				return;
-			case LogicPackage.MDMS_APPLICATION__SMTP_SERVER_PROPERTY:
+			case LogicPackage.MDMS_APPLICATION__SMTP_SERVER_PROPERTY:    
 				setSmtpServerProperty((String)newValue);
 				return;
 			case LogicPackage.MDMS_APPLICATION__SMTP_SERVER_PROPERTY_HISTORIC_VALUES:
 				getSmtpServerPropertyHistoricValues().clear();
 				getSmtpServerPropertyHistoricValues().addAll((Collection)newValue);
 				return;
-			case LogicPackage.MDMS_APPLICATION__MSMTP_USER_NAME_PROPERTY:
+			case LogicPackage.MDMS_APPLICATION__MSMTP_USER_NAME_PROPERTY:    
 				setMSmtpUserNameProperty((MProperty)newValue);
 				return;
-			case LogicPackage.MDMS_APPLICATION__SMTP_USER_NAME_PROPERTY:
+			case LogicPackage.MDMS_APPLICATION__SMTP_USER_NAME_PROPERTY:    
 				setSmtpUserNameProperty((String)newValue);
 				return;
 			case LogicPackage.MDMS_APPLICATION__SMTP_USER_NAME_PROPERTY_HISTORIC_VALUES:
 				getSmtpUserNamePropertyHistoricValues().clear();
 				getSmtpUserNamePropertyHistoricValues().addAll((Collection)newValue);
 				return;
-			case LogicPackage.MDMS_APPLICATION__MSMTP_PASSWORD_PROPERTY:
+			case LogicPackage.MDMS_APPLICATION__MSMTP_PASSWORD_PROPERTY:    
 				setMSmtpPasswordProperty((MProperty)newValue);
 				return;
 			case LogicPackage.MDMS_APPLICATION__SMTP_PASSWORD_PROPERTY:
+				// Makes sure that that plain text password will be encrypted if they are not. TODO: Remove this code after migration. Then all passwords should encrypted anyway.
+				if(newValue != null && !((String) newValue).endsWith("="))
+						newValue = Type.PASSWORD_TYPE.encryptPassword((String) newValue);
+				    
 				setSmtpPasswordProperty((String)newValue);
 				return;
-			case LogicPackage.MDMS_APPLICATION__MBURNING_SOFTWARE_DIRECTORY_PATH_PROPERTY:
+			case LogicPackage.MDMS_APPLICATION__MBURNING_SOFTWARE_DIRECTORY_PATH_PROPERTY:    
 				setMBurningSoftwareDirectoryPathProperty((MProperty)newValue);
 				return;
-			case LogicPackage.MDMS_APPLICATION__BURNING_SOFTWARE_DIRECTORY_PATH_PROPERTY:
+			case LogicPackage.MDMS_APPLICATION__BURNING_SOFTWARE_DIRECTORY_PATH_PROPERTY:    
 				setBurningSoftwareDirectoryPathProperty((File)newValue);
 				return;
-			case LogicPackage.MDMS_APPLICATION__MDRIVE_PROPERTY:
+			case LogicPackage.MDMS_APPLICATION__MDRIVE_PROPERTY:    
 				setMDriveProperty((MProperty)newValue);
 				return;
-			case LogicPackage.MDMS_APPLICATION__DRIVE_PROPERTY:
+			case LogicPackage.MDMS_APPLICATION__DRIVE_PROPERTY:    
 				setDriveProperty((String)newValue);
 				return;
 			case LogicPackage.MDMS_APPLICATION__DRIVE_PROPERTY_HISTORIC_VALUES:
 				getDrivePropertyHistoricValues().clear();
 				getDrivePropertyHistoricValues().addAll((Collection)newValue);
 				return;
-			case LogicPackage.MDMS_APPLICATION__MUPGRADE_MESSAGE_PROPERTY:
+			case LogicPackage.MDMS_APPLICATION__MUPGRADE_MESSAGE_PROPERTY:    
 				setMUpgradeMessageProperty((MProperty)newValue);
 				return;
-			case LogicPackage.MDMS_APPLICATION__UPGRADE_MESSAGE_PROPERTY:
+			case LogicPackage.MDMS_APPLICATION__UPGRADE_MESSAGE_PROPERTY:    
 				setUpgradeMessageProperty((String)newValue);
 				return;
-			case LogicPackage.MDMS_APPLICATION__MUPGRADE_RELATIVE_FTP_PATH_PROPERTY:
+			case LogicPackage.MDMS_APPLICATION__MUPGRADE_RELATIVE_FTP_PATH_PROPERTY:    
 				setMUpgradeRelativeFtpPathProperty((MProperty)newValue);
 				return;
-			case LogicPackage.MDMS_APPLICATION__UPGRADE_RELATIVE_FTP_PATH_PROPERTY:
+			case LogicPackage.MDMS_APPLICATION__UPGRADE_RELATIVE_FTP_PATH_PROPERTY:    
 				setUpgradeRelativeFtpPathProperty((String)newValue);
 				return;
-			case LogicPackage.MDMS_APPLICATION__MLAST_UPGRADE_PROPERTY:
+			case LogicPackage.MDMS_APPLICATION__MLAST_UPGRADE_PROPERTY:    
 				setMLastUpgradeProperty((MProperty)newValue);
 				return;
-			case LogicPackage.MDMS_APPLICATION__LAST_UPGRADE_PROPERTY:
+			case LogicPackage.MDMS_APPLICATION__LAST_UPGRADE_PROPERTY:    
 				setLastUpgradeProperty((Date)newValue);
 				return;
-			case LogicPackage.MDMS_APPLICATION__MGET_DATA_UPGRADE_INFO_STEP:
+			case LogicPackage.MDMS_APPLICATION__MGET_DATA_UPGRADE_INFO_STEP:    
 				setMGetDataUpgradeInfoStep((MDmsApplicationMGetDataUpgradeInfoStep)newValue);
 				return;
-			case LogicPackage.MDMS_APPLICATION__MUPGRADE_DATA_STEP:
+			case LogicPackage.MDMS_APPLICATION__MUPGRADE_DATA_STEP:    
 				setMUpgradeDataStep((MDmsApplicationMUpgradeDataStep)newValue);
 				return;
 			case LogicPackage.MDMS_APPLICATION__MSCRIPTS:

@@ -661,22 +661,26 @@ public abstract class MFtpStep extends MStep {
 	 */
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case LogicPackage.MFTP_STEP__MFTP_SERVER_URL_PARAMETER:
+			case LogicPackage.MFTP_STEP__MFTP_SERVER_URL_PARAMETER:    
 				setMFtpServerUrlParameter((MParameter)newValue);
 				return;
-			case LogicPackage.MFTP_STEP__FTP_SERVER_URL_PARAMETER:
+			case LogicPackage.MFTP_STEP__FTP_SERVER_URL_PARAMETER:    
 				setFtpServerUrlParameter((URL)newValue);
 				return;
-			case LogicPackage.MFTP_STEP__MFTP_USER_NAME_PARAMETER:
+			case LogicPackage.MFTP_STEP__MFTP_USER_NAME_PARAMETER:    
 				setMFtpUserNameParameter((MParameter)newValue);
 				return;
-			case LogicPackage.MFTP_STEP__FTP_USER_NAME_PARAMETER:
+			case LogicPackage.MFTP_STEP__FTP_USER_NAME_PARAMETER:    
 				setFtpUserNameParameter((String)newValue);
 				return;
-			case LogicPackage.MFTP_STEP__MFTP_USER_PASSWORD_PARAMETER:
+			case LogicPackage.MFTP_STEP__MFTP_USER_PASSWORD_PARAMETER:    
 				setMFtpUserPasswordParameter((MParameter)newValue);
 				return;
 			case LogicPackage.MFTP_STEP__FTP_USER_PASSWORD_PARAMETER:
+				// Makes sure that that plain text password will be encrypted if they are not. TODO: Remove this code after migration. Then all passwords should encrypted anyway.
+				if(newValue != null && !((String) newValue).endsWith("="))
+						newValue = Type.PASSWORD_TYPE.encryptPassword((String) newValue);
+				    
 				setFtpUserPasswordParameter((String)newValue);
 				return;
 		}
@@ -766,7 +770,7 @@ public abstract class MFtpStep extends MStep {
         	ftpClient.setDataTimeout(20000);
             ftpClient.connect(ftpServerUrl.getHost());
             try {
-	            if(!ftpClient.login(getFtpUserNameParameter(), getFtpUserPasswordParameter()))
+	            if(!ftpClient.login(getFtpUserNameParameter(), Type.PASSWORD_TYPE.decryptPassword(getFtpUserPasswordParameter())))
 	            	throw new DesktopException("The application could not authenticate to the FTP server '"+ftpServerUrl+"' with user name '"+getFtpUserNameParameter()+"' because the user name and/or the password are incorrect.", "Please check the user name and the password. Then try again.", DesktopException.ERROR_SEVERITY, null);
 	           
 	            ftpClient.setFileType(FTPClient.IMAGE_FILE_TYPE); // Sets the transfer mode to binary.

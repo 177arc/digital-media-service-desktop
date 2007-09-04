@@ -141,7 +141,7 @@ class Utility {
 	 * @return Returns the value type initialiser code from the actual value feature.
 	 */
 	String getValueTypeForGenFeature(GenFeature genValueFeature) {
-		if(!(genValueFeature.getEcoreFeature() instanceof EStructuralFeature)) throw new IllegalArgumentException("The parameter 'genValueFeature' must represent a EStructuralFeature object.");
+		if(!(genValueFeature.getEcoreFeature() instanceof EStructuralFeature)) throw new IllegalArgumentException("The parameter 'genValueFeature' must represent an EStructuralFeature object.");
 		
 		if(!genValueFeature.isReferenceType()) {
 			EDataType eDataType = genValueFeature.getTypeGenDataType().getEcoreDataType();
@@ -1800,7 +1800,7 @@ genModel.addImport("org.onceforall.dms.desktop.logic.types.ReferenceType");%>
 				return ((<%=genModel.getImportedName("org.eclipse.emf.ecore.util.FeatureMap")%>.Internal)<%=genFeature.getGetAccessor()%>()).getWrapper();
     <%} else {%>
 				return <%=genFeature.getGetAccessor()%>();
-    <%}%>
+    <% }%>
   <%}%>
 <%}%>
 		}
@@ -1842,7 +1842,13 @@ genModel.addImport("org.onceforall.dms.desktop.logic.types.ReferenceType");%>
       <%}%>
     <%} else if (genFeature.isPrimitiveType()) {%>
 				set<%=genFeature.getAccessorName()%>(((<%=genFeature.getObjectType()%>)newValue).<%=genFeature.getPrimitiveValueFunction()%>());
-    <%} else {%>
+    <%} else {
+    		if (genFeature.getTypeGenDataType() !=	null  && genFeature.getTypeGenDataType().getName().equals("MPassword")) {
+    			genModel.addImport("org.onceforall.dms.desktop.logic.types.PasswordType"); %>
+				// Makes sure that that plain text password will be encrypted if they are not. TODO: Remove this code after migration. Then all passwords should encrypted anyway.
+				if(newValue != null && !((String) newValue).endsWith("="))
+						newValue = Type.PASSWORD_TYPE.encryptPassword((String) newValue);
+				<%}%>    
 				set<%=genFeature.getAccessorName()%>((<%=genFeature.getImportedType()%>)newValue);
     <%}%>
 				return;

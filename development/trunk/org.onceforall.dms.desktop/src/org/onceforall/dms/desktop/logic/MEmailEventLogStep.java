@@ -389,37 +389,14 @@ public class MEmailEventLogStep extends MStep {
 	protected MParameter mReceipientsEmailAddressParameter = null;
 
 	/**
-	 * The default value of the '{@link #getReceipientsEmailAddressParameter() <em>Receipients Email Address Parameter</em>}' attribute.
+	 * The cached value of the '{@link #getReceipientsEmailAddressParameter() <em>Receipients Email Address Parameter</em>}' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getReceipientsEmailAddressParameter()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String RECEIPIENTS_EMAIL_ADDRESS_PARAMETER_EDEFAULT = null;
-
-	/**
-	 * Get the default value of the '{@link #getReceipientsEmailAddressParameter() <em>Receipients Email Address Parameter</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return Returns the default value of the '{@link #getReceipientsEmailAddressParameter() <em>Receipients Email Address Parameter</em>}' attribute.
-	 * @see #getReceipientsEmailAddressParameter()
-	 * @generated
-	 * @ordered
-	 */
-	public String getDefaultReceipientsEmailAddressParameter() {
-		return RECEIPIENTS_EMAIL_ADDRESS_PARAMETER_EDEFAULT;
-	}
-	
-	/**
-	 * The cached value of the '{@link #getReceipientsEmailAddressParameter() <em>Receipients Email Address Parameter</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getReceipientsEmailAddressParameter()
-	 * @generated
-	 * @ordered
-	 */
-	protected String receipientsEmailAddressParameter = RECEIPIENTS_EMAIL_ADDRESS_PARAMETER_EDEFAULT;
+	protected EList receipientsEmailAddressParameter = null;
 
 	/**
 	 * The cached value of the '{@link #getMSmtpServerParameter() <em>MSmtp Server Parameter</em>}' containment reference.
@@ -664,7 +641,7 @@ public class MEmailEventLogStep extends MStep {
 		setMDataFileParameter(new MParameter(false, "Data file", "Specifies the file that contains the application data.", null));			 
 		setMSubjectParameter(new MParameter(false, "Subject", "Specifies the subject of the email.", null));			 
 		setMSendersEmailAddressParameter(new MParameter(false, "Sender\'s email address", "Specifies the sender\'s email address. Please enter your own email address here. Alternatively use \'sounddesk@ccbromley.net\'.", null));			 
-		setMReceipientsEmailAddressParameter(new MParameter(false, "Receipient\'s email address", "Specifies the receipient\'s email address.", null));			 
+		setMReceipientsEmailAddressParameter(new MParameter(false, "Receipient\'s email address", "Specifies the email addresses of the recipients, i.e. the To field of the email.", null));			 
 		setMSmtpServerParameter(new MParameter(false, "SMTP server", "Specifies the name or IP address of the (SMTP) server that is responsible for sending the email.", null));			 
 		setMSmtpUserNameParameter(new MParameter(false, "SMTP user name", "Specifies user name used to authenticate on the (SMTP) server that is responsible for sending the email.", null));			 
 		setMSmtpPasswordParameter(new MParameter(false, "SMTP password", "Specifies password used to authenticate on (SMTP) server that is responsible for sending the email.", null));
@@ -1367,7 +1344,7 @@ public class MEmailEventLogStep extends MStep {
 	 * @see #setMReceipientsEmailAddressParameter(MParameter)
 	 * @see org.onceforall.dms.desktop.logic.LogicPackage#getMEmailEventLogStep_MReceipientsEmailAddressParameter()
 	 * @model containment="true" required="true"
-	 *        annotation="http://www.onceforall.org/mcore name='Receipient\'s email address' description='Specifies the receipient\'s email address.'"
+	 *        annotation="http://www.onceforall.org/mcore name='Receipient\'s email address' description='Specifies the email addresses of the recipients, i.e. the To field of the email.'"
 	 * @generated
 	 */
 	public MParameter getMReceipientsEmailAddressParameter() {
@@ -1404,7 +1381,7 @@ public class MEmailEventLogStep extends MStep {
 			if (mReceipientsEmailAddressParameter != null)
 				msgs = ((InternalEObject)mReceipientsEmailAddressParameter).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - LogicPackage.MEMAIL_EVENT_LOG_STEP__MRECEIPIENTS_EMAIL_ADDRESS_PARAMETER, null, msgs);
 			if (newMReceipientsEmailAddressParameter != null) {				
-				newMReceipientsEmailAddressParameter.setDefaultDescription("Specifies the receipient\'s email address.");
+				newMReceipientsEmailAddressParameter.setDefaultDescription("Specifies the email addresses of the recipients, i.e. the To field of the email.");
 				newMReceipientsEmailAddressParameter.setDefaultName("Receipient\'s email address");
 				newMReceipientsEmailAddressParameter.setValueType(Type.getTypeForName("Text"));
 				newMReceipientsEmailAddressParameter.setValueEFeature((EStructuralFeature) eClass().getEStructuralFeature(LogicPackage.MEMAIL_EVENT_LOG_STEP__RECEIPIENTS_EMAIL_ADDRESS_PARAMETER));
@@ -1427,37 +1404,24 @@ public class MEmailEventLogStep extends MStep {
 	}
 
 	/**
-	 * Returns the value of the '<em><b>Receipients Email Address Parameter</b></em>' attribute.
+	 * Returns the value of the '<em><b>Receipients Email Address Parameter</b></em>' attribute list.
+	 * The list contents are of type {@link java.lang.String}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Receipients Email Address Parameter</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Receipients Email Address Parameter</em>' attribute.
-	 * @see #setReceipientsEmailAddressParameter(String)
+	 * @return the value of the '<em>Receipients Email Address Parameter</em>' attribute list.
 	 * @see org.onceforall.dms.desktop.logic.LogicPackage#getMEmailEventLogStep_ReceipientsEmailAddressParameter()
-	 * @model dataType="org.onceforall.dms.desktop.logic.MString" required="true"
+	 * @model type="java.lang.String" dataType="org.onceforall.dms.desktop.logic.MString" required="true"
 	 * @generated
 	 */
-	public String getReceipientsEmailAddressParameter() {
+	public EList getReceipientsEmailAddressParameter() {
+		if (receipientsEmailAddressParameter == null) {
+			receipientsEmailAddressParameter = new EDataTypeUniqueEList(String.class, this, LogicPackage.MEMAIL_EVENT_LOG_STEP__RECEIPIENTS_EMAIL_ADDRESS_PARAMETER);
+		}
 		return receipientsEmailAddressParameter;
-	}
-
-	/**
-	 * Sets the value of the '{@link org.onceforall.dms.desktop.logic.MEmailEventLogStep#getReceipientsEmailAddressParameter <em>Receipients Email Address Parameter</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	   
-	 * @param newReceipientsEmailAddressParameter the new value of the '<em>Receipients Email Address Parameter</em>' attribute.
-	 * @see #getReceipientsEmailAddressParameter()
-	 * @generated
-	 */
-	public void setReceipientsEmailAddressParameter(String newReceipientsEmailAddressParameter) {
-		String oldReceipientsEmailAddressParameter = receipientsEmailAddressParameter;
-		receipientsEmailAddressParameter = newReceipientsEmailAddressParameter;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, LogicPackage.MEMAIL_EVENT_LOG_STEP__RECEIPIENTS_EMAIL_ADDRESS_PARAMETER, oldReceipientsEmailAddressParameter, receipientsEmailAddressParameter));
 	}
 
 	/**
@@ -1869,68 +1833,73 @@ public class MEmailEventLogStep extends MStep {
 	 */
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case LogicPackage.MEMAIL_EVENT_LOG_STEP__MRECORDING_USERS_NAME_PARAMETER:
+			case LogicPackage.MEMAIL_EVENT_LOG_STEP__MRECORDING_USERS_NAME_PARAMETER:    
 				setMRecordingUsersNameParameter((MParameter)newValue);
 				return;
-			case LogicPackage.MEMAIL_EVENT_LOG_STEP__RECORDING_USERS_NAME_PARAMETER:
+			case LogicPackage.MEMAIL_EVENT_LOG_STEP__RECORDING_USERS_NAME_PARAMETER:    
 				setRecordingUsersNameParameter((String)newValue);
 				return;
-			case LogicPackage.MEMAIL_EVENT_LOG_STEP__MCOMMENT_PARAMETER:
+			case LogicPackage.MEMAIL_EVENT_LOG_STEP__MCOMMENT_PARAMETER:    
 				setMCommentParameter((MParameter)newValue);
 				return;
-			case LogicPackage.MEMAIL_EVENT_LOG_STEP__COMMENT_PARAMETER:
+			case LogicPackage.MEMAIL_EVENT_LOG_STEP__COMMENT_PARAMETER:    
 				setCommentParameter((String)newValue);
 				return;
-			case LogicPackage.MEMAIL_EVENT_LOG_STEP__MLOG_FILE_PARAMETER:
+			case LogicPackage.MEMAIL_EVENT_LOG_STEP__MLOG_FILE_PARAMETER:    
 				setMLogFileParameter((MParameter)newValue);
 				return;
-			case LogicPackage.MEMAIL_EVENT_LOG_STEP__LOG_FILE_PARAMETER:
+			case LogicPackage.MEMAIL_EVENT_LOG_STEP__LOG_FILE_PARAMETER:    
 				setLogFileParameter((File)newValue);
 				return;
-			case LogicPackage.MEMAIL_EVENT_LOG_STEP__MDATA_FILE_PARAMETER:
+			case LogicPackage.MEMAIL_EVENT_LOG_STEP__MDATA_FILE_PARAMETER:    
 				setMDataFileParameter((MParameter)newValue);
 				return;
-			case LogicPackage.MEMAIL_EVENT_LOG_STEP__DATA_FILE_PARAMETER:
+			case LogicPackage.MEMAIL_EVENT_LOG_STEP__DATA_FILE_PARAMETER:    
 				setDataFileParameter((File)newValue);
 				return;
-			case LogicPackage.MEMAIL_EVENT_LOG_STEP__MSUBJECT_PARAMETER:
+			case LogicPackage.MEMAIL_EVENT_LOG_STEP__MSUBJECT_PARAMETER:    
 				setMSubjectParameter((MParameter)newValue);
 				return;
-			case LogicPackage.MEMAIL_EVENT_LOG_STEP__SUBJECT_PARAMETER:
+			case LogicPackage.MEMAIL_EVENT_LOG_STEP__SUBJECT_PARAMETER:    
 				setSubjectParameter((String)newValue);
 				return;
-			case LogicPackage.MEMAIL_EVENT_LOG_STEP__MSENDERS_EMAIL_ADDRESS_PARAMETER:
+			case LogicPackage.MEMAIL_EVENT_LOG_STEP__MSENDERS_EMAIL_ADDRESS_PARAMETER:    
 				setMSendersEmailAddressParameter((MParameter)newValue);
 				return;
-			case LogicPackage.MEMAIL_EVENT_LOG_STEP__SENDERS_EMAIL_ADDRESS_PARAMETER:
+			case LogicPackage.MEMAIL_EVENT_LOG_STEP__SENDERS_EMAIL_ADDRESS_PARAMETER:    
 				setSendersEmailAddressParameter((String)newValue);
 				return;
 			case LogicPackage.MEMAIL_EVENT_LOG_STEP__SENDERS_EMAIL_ADDRESS_PARAMETER_HISTORIC_VALUES:
 				getSendersEmailAddressParameterHistoricValues().clear();
 				getSendersEmailAddressParameterHistoricValues().addAll((Collection)newValue);
 				return;
-			case LogicPackage.MEMAIL_EVENT_LOG_STEP__MRECEIPIENTS_EMAIL_ADDRESS_PARAMETER:
+			case LogicPackage.MEMAIL_EVENT_LOG_STEP__MRECEIPIENTS_EMAIL_ADDRESS_PARAMETER:    
 				setMReceipientsEmailAddressParameter((MParameter)newValue);
 				return;
 			case LogicPackage.MEMAIL_EVENT_LOG_STEP__RECEIPIENTS_EMAIL_ADDRESS_PARAMETER:
-				setReceipientsEmailAddressParameter((String)newValue);
+				getReceipientsEmailAddressParameter().clear();
+				getReceipientsEmailAddressParameter().addAll((Collection)newValue);
 				return;
-			case LogicPackage.MEMAIL_EVENT_LOG_STEP__MSMTP_SERVER_PARAMETER:
+			case LogicPackage.MEMAIL_EVENT_LOG_STEP__MSMTP_SERVER_PARAMETER:    
 				setMSmtpServerParameter((MParameter)newValue);
 				return;
-			case LogicPackage.MEMAIL_EVENT_LOG_STEP__SMTP_SERVER_PARAMETER:
+			case LogicPackage.MEMAIL_EVENT_LOG_STEP__SMTP_SERVER_PARAMETER:    
 				setSmtpServerParameter((String)newValue);
 				return;
-			case LogicPackage.MEMAIL_EVENT_LOG_STEP__MSMTP_USER_NAME_PARAMETER:
+			case LogicPackage.MEMAIL_EVENT_LOG_STEP__MSMTP_USER_NAME_PARAMETER:    
 				setMSmtpUserNameParameter((MParameter)newValue);
 				return;
-			case LogicPackage.MEMAIL_EVENT_LOG_STEP__SMTP_USER_NAME_PARAMETER:
+			case LogicPackage.MEMAIL_EVENT_LOG_STEP__SMTP_USER_NAME_PARAMETER:    
 				setSmtpUserNameParameter((String)newValue);
 				return;
-			case LogicPackage.MEMAIL_EVENT_LOG_STEP__MSMTP_PASSWORD_PARAMETER:
+			case LogicPackage.MEMAIL_EVENT_LOG_STEP__MSMTP_PASSWORD_PARAMETER:    
 				setMSmtpPasswordParameter((MParameter)newValue);
 				return;
 			case LogicPackage.MEMAIL_EVENT_LOG_STEP__SMTP_PASSWORD_PARAMETER:
+				// Makes sure that that plain text password will be encrypted if they are not. TODO: Remove this code after migration. Then all passwords should encrypted anyway.
+				if(newValue != null && !((String) newValue).endsWith("="))
+						newValue = Type.PASSWORD_TYPE.encryptPassword((String) newValue);
+				    
 				setSmtpPasswordParameter((String)newValue);
 				return;
 		}
@@ -1987,7 +1956,7 @@ public class MEmailEventLogStep extends MStep {
 				setMReceipientsEmailAddressParameter((MParameter)null);
 				return;
 			case LogicPackage.MEMAIL_EVENT_LOG_STEP__RECEIPIENTS_EMAIL_ADDRESS_PARAMETER:
-				setReceipientsEmailAddressParameter(getDefaultReceipientsEmailAddressParameter());
+				getReceipientsEmailAddressParameter().clear();
 				return;
 			case LogicPackage.MEMAIL_EVENT_LOG_STEP__MSMTP_SERVER_PARAMETER:
 				setMSmtpServerParameter((MParameter)null);
@@ -2047,7 +2016,7 @@ public class MEmailEventLogStep extends MStep {
 			case LogicPackage.MEMAIL_EVENT_LOG_STEP__MRECEIPIENTS_EMAIL_ADDRESS_PARAMETER:
 				return mReceipientsEmailAddressParameter != null;
 			case LogicPackage.MEMAIL_EVENT_LOG_STEP__RECEIPIENTS_EMAIL_ADDRESS_PARAMETER:
-				return getDefaultReceipientsEmailAddressParameter() == null ? receipientsEmailAddressParameter != null : !getDefaultReceipientsEmailAddressParameter().equals(receipientsEmailAddressParameter);
+				return receipientsEmailAddressParameter != null && !receipientsEmailAddressParameter.isEmpty();
 			case LogicPackage.MEMAIL_EVENT_LOG_STEP__MSMTP_SERVER_PARAMETER:
 				return mSmtpServerParameter != null;
 			case LogicPackage.MEMAIL_EVENT_LOG_STEP__SMTP_SERVER_PARAMETER:
@@ -2112,7 +2081,7 @@ public class MEmailEventLogStep extends MStep {
 
         String host = getSmtpServerParameter();
         String from = getSendersEmailAddressParameter();
-        String to = getReceipientsEmailAddressParameter();
+        EList to = getReceipientsEmailAddressParameter();
 
         // Gets the system properties.
         Properties props = System.getProperties();
@@ -2126,8 +2095,10 @@ public class MEmailEventLogStep extends MStep {
         // Defines the message.
         MimeMessage message = new MimeMessage(session);
         message.setFrom(new InternetAddress(from));
-        message.addRecipient(Message.RecipientType.TO, 
-          new InternetAddress(to));
+        
+        for(int index = 0; index < to.size(); ++index)	
+        	message.addRecipient(Message.RecipientType.TO, 
+        			new InternetAddress((String) to.get(index)));
         message.setSubject(subject);
         
         // Finds the DMS memory handler to determine whether a serious event has been logged. 
@@ -2228,7 +2199,7 @@ public class MEmailEventLogStep extends MStep {
          * @see javax.mail.Authenticator#getPasswordAuthentication()
          */
         protected PasswordAuthentication getPasswordAuthentication() {
-            return(new PasswordAuthentication(getSmtpUserNameParameter(), getSmtpPasswordParameter()));
+            return(new PasswordAuthentication(getSmtpUserNameParameter(), Type.PASSWORD_TYPE.decryptPassword(getSmtpPasswordParameter())));
         }
     }
 } // MEmailEventLogStep

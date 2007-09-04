@@ -13,7 +13,6 @@
  */
 package org.onceforall.dms.desktop.logic;
 
-import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Collection;
@@ -56,12 +55,13 @@ import org.onceforall.dms.desktop.logic.types.Type;
  *   <li>{@link org.onceforall.dms.desktop.logic.MStep#isStoppable <em>Stoppable</em>}</li>
  *   <li>{@link org.onceforall.dms.desktop.logic.MStep#isTerminatable <em>Terminatable</em>}</li>
  *   <li>{@link org.onceforall.dms.desktop.logic.MStep#getActionName <em>Action Name</em>}</li>
+ *   <li>{@link org.onceforall.dms.desktop.logic.MStep#getException <em>Exception</em>}</li>
  * </ul>
  * </p>
  *
  * @see org.onceforall.dms.desktop.logic.LogicPackage#getMStep()
  * @model kind="class" abstract="true"
- *        annotation="http://www.onceforall.org/mcore typeNameForUI='Task' compositeClassName='org.onceforall.dms.desktop.ui.MStepComposite' iconFilePath='Image Files/Step.gif'"
+ *        annotation="http://www.onceforall.org/mcore typeNameForUI='Task' compositeClassName='org.onceforall.dms.desktop.ui.MStepComposite'"
  * @generated
  */
 public abstract class MStep extends MStatefulObject implements Runnable {
@@ -442,6 +442,29 @@ public abstract class MStep extends MStatefulObject implements Runnable {
 	protected String actionName = ACTION_NAME_EDEFAULT;
 	
 	
+	/**
+	 * The default value of the '{@link #getException() <em>Exception</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getException()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final Throwable EXCEPTION_EDEFAULT = null;
+
+	/**
+	 * Get the default value of the '{@link #getException() <em>Exception</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return Returns the default value of the '{@link #getException() <em>Exception</em>}' attribute.
+	 * @see #getException()
+	 * @generated
+	 * @ordered
+	 */
+	public Throwable getDefaultException() {
+		return EXCEPTION_EDEFAULT;
+	}
+	
 	/** Specifies (if any) the exception that was thrown during execution of this managed step. If the exception is set, the managed step state should be either 'Warning' or 'Error'. */
 	protected Throwable exception;
 	
@@ -463,18 +486,6 @@ public abstract class MStep extends MStatefulObject implements Runnable {
 	}
 
 	/**
-	 * Get the default value of the '{@link #getIconFilePath() <em>Icon File Path</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return Returns the default value of the '{@link #getIconFilePath() <em>Icon File Path</em>}' attribute.
-	 * @see #getIconFilePath()
-	 * @generated
-	 * @ordered
-	 */
-	public File getDefaultIconFilePath() {
-		return (File)LogicFactory.eINSTANCE.createFromString(LogicPackage.eINSTANCE.getMFile(), "Image Files/Step.gif");
-	}
-	/**
 	 * Get the default value of the '{@link #getTypeNameForUI() <em>Type Name For UI</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -486,7 +497,6 @@ public abstract class MStep extends MStatefulObject implements Runnable {
 	public String getDefaultTypeNameForUI() {
 		return "Task";
 	}
-
 	/** Specifies the managed parameters of this managed object. This list is compiled on demand and therefore
 	 * you should use the {@link #getFixedMParameters()} method to get them .*/
 	protected EList fixedMParameters;
@@ -546,9 +556,8 @@ public abstract class MStep extends MStatefulObject implements Runnable {
 		
 		firstMStepConstructorHook();
 				
-		typeNameForUI = "Task";
 		compositeClassName = "org.onceforall.dms.desktop.ui.MStepComposite";
-		iconFilePath = (File)LogicFactory.eINSTANCE.createFromString(LogicPackage.eINSTANCE.getMFile(), "Image Files/Step.gif");
+		typeNameForUI = "Task";
 					 
 		setMStateProperty(new MProperty(true, "State", "Specifies the current state.", null));			 
 		setMProgressProperty(new MProperty(true, "Progress", "Specifies the progress of the processing in %.", null));			 
@@ -1232,6 +1241,8 @@ public abstract class MStep extends MStatefulObject implements Runnable {
 				return isTerminatable() ? Boolean.TRUE : Boolean.FALSE;
 			case LogicPackage.MSTEP__ACTION_NAME:
 				return getActionName();
+			case LogicPackage.MSTEP__EXCEPTION:
+				return getException();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -1256,31 +1267,31 @@ public abstract class MStep extends MStatefulObject implements Runnable {
 				getFixedMResults().clear();
 				getFixedMResults().addAll((Collection)newValue);
 				return;
-			case LogicPackage.MSTEP__EXCLUSIVE_PROPERTY:
+			case LogicPackage.MSTEP__EXCLUSIVE_PROPERTY:    
 				setExclusiveProperty((Boolean)newValue);
 				return;
-			case LogicPackage.MSTEP__STATE_PROPERTY:
+			case LogicPackage.MSTEP__STATE_PROPERTY:    
 				setStateProperty((State)newValue);
 				return;
-			case LogicPackage.MSTEP__MPROGRESS_PROPERTY:
+			case LogicPackage.MSTEP__MPROGRESS_PROPERTY:    
 				setMProgressProperty((MProperty)newValue);
 				return;
-			case LogicPackage.MSTEP__PROGRESS_PROPERTY:
+			case LogicPackage.MSTEP__PROGRESS_PROPERTY:    
 				setProgressProperty((Long)newValue);
 				return;
-			case LogicPackage.MSTEP__MPROGRESS_STATUS_PROPERTY:
+			case LogicPackage.MSTEP__MPROGRESS_STATUS_PROPERTY:    
 				setMProgressStatusProperty((MProperty)newValue);
 				return;
-			case LogicPackage.MSTEP__PROGRESS_STATUS_PROPERTY:
+			case LogicPackage.MSTEP__PROGRESS_STATUS_PROPERTY:    
 				setProgressStatusProperty((String)newValue);
 				return;
-			case LogicPackage.MSTEP__MSTART_TRIGGER_PROPERTY:
+			case LogicPackage.MSTEP__MSTART_TRIGGER_PROPERTY:    
 				setMStartTriggerProperty((MProperty)newValue);
 				return;
-			case LogicPackage.MSTEP__START_TRIGGER_PROPERTY:
+			case LogicPackage.MSTEP__START_TRIGGER_PROPERTY:    
 				setStartTriggerProperty((String)newValue);
 				return;
-			case LogicPackage.MSTEP__ACTION_NAME:
+			case LogicPackage.MSTEP__ACTION_NAME:    
 				setActionName((String)newValue);
 				return;
 		}
@@ -1373,6 +1384,8 @@ public abstract class MStep extends MStatefulObject implements Runnable {
 				return terminatable != getDefaultTerminatable();
 			case LogicPackage.MSTEP__ACTION_NAME:
 				return getDefaultActionName() == null ? actionName != null : !getDefaultActionName().equals(actionName);
+			case LogicPackage.MSTEP__EXCEPTION:
+				return getDefaultException() == null ? exception != null : !getDefaultException().equals(exception);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -1405,6 +1418,8 @@ public abstract class MStep extends MStatefulObject implements Runnable {
 		result.append(terminatable);
 		result.append(", actionName: ");
 		result.append(actionName);
+		result.append(", exception: ");
+		result.append(exception);
 		result.append(')');
 		return result.toString();
 	}

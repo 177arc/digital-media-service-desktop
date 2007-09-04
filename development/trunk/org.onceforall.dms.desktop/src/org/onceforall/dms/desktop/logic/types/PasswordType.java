@@ -38,9 +38,10 @@ import javax.crypto.NoSuchPaddingException;
 import javax.crypto.SecretKey;
 import javax.crypto.spec.SecretKeySpec;
 
-import org.onceforall.dms.desktop.Base64;
 import org.onceforall.dms.desktop.exception.ConversionException;
-import org.onceforall.dms.desktop.exception.DesktopException;
+
+import com.sun.org.apache.xml.internal.security.exceptions.Base64DecodingException;
+import com.sun.org.apache.xml.internal.security.utils.Base64;
 
 
 /**
@@ -79,21 +80,23 @@ public class PasswordType extends Type {
     @Override
 	public Object getValueFromUI(String valueFromUI) throws ConversionException {
         if(valueFromUI != null && !valueFromUI.equals(PASSWORD_MASK))
-            return super.getValueFromUI(valueFromUI);
+            return super.getValueFromUI(encryptPassword(valueFromUI));
         else
             throw new ConversionException("The password cannot be set to '"+PASSWORD_MASK+".");
     }
     
     /**
-     * @see org.onceforall.dms.desktop.logic.types.Type#getValueForDOM(java.lang.Object)
+     * Encrypts the given password and then encodes it using Base64.
+     * 
+     * @param password Specifies the password to encrypt.
+     * @return Returns the encrypted, Base64-encoded password.
      */
-    @Override
-	public synchronized String getValueForDOM(Object value) throws DesktopException {
+	public String encryptPassword(String password) {
         byte[] encryptedPassword = new byte[0];
         try {
             Cipher cipher = Cipher.getInstance("DES");
             cipher.init(Cipher.ENCRYPT_MODE, KEY);
-            encryptedPassword = cipher.doFinal(((String) value).getBytes());
+            encryptedPassword = cipher.doFinal(password.getBytes());
         } catch (NoSuchAlgorithmException exception) {
             exception.printStackTrace();
         } catch (NoSuchPaddingException exception) {
@@ -106,35 +109,45 @@ public class PasswordType extends Type {
             exception.printStackTrace();
         }
         
-        return Base64.encodeBytes(encryptedPassword);
+        return Base64.encode(encryptedPassword);
     }
     
-    
     /**
-     * @see org.onceforall.dms.desktop.logic.types.Type#getValueFromDOM(java.lang.String)
+     * Decrypts a Base64 encoded password. If the password is not Base64 encoded, it assumes that it is
+     * a plain text password and returns without decrypting it.
+     * 
+     * @param password Specifies the password to decrypt.
+     * @return Returns the plain text password.on
      */
-    @Override
-	public Object getValueFromDOM(String valueFromDOM)
+	public String decryptPassword(String password)
             throws ConversionException {
-        byte[] encryptedPassword = valueFromDOM.getBytes();
-        byte[] decodedEncryptedPassword = Base64.decode(encryptedPassword, 0, encryptedPassword.length);
-        
-        byte[] decryptedPassword = new byte[0];
-        try {
-            Cipher cipher = Cipher.getInstance("DES");
-            cipher.init(Cipher.DECRYPT_MODE, KEY);
-            decryptedPassword = cipher.doFinal(decodedEncryptedPassword);
-        } catch (NoSuchAlgorithmException exception) {
-            exception.printStackTrace();
-        } catch (NoSuchPaddingException exception) {
-            exception.printStackTrace();
-        } catch (InvalidKeyException exception) {
-            exception.printStackTrace();
-        } catch (IllegalBlockSizeException exception) {
-            exception.printStackTrace();
-        } catch (BadPaddingException exception) {
-            exception.printStackTrace();
-        }
+		
+        byte[] encryptedPassword = password.getBytes();
+        byte[] decodedEncryptedPassword;
+        byte[] decryptedPassword;
+		try {
+			decodedEncryptedPassword = Base64.decode(encryptedPassword);
+			
+			decryptedPassword = encryptedPassword;
+	        try {
+	            Cipher cipher = Cipher.getInstance("DES");
+	            cipher.init(Cipher.DECRYPT_MODE, KEY);
+	            decryptedPassword = cipher.doFinal(decodedEncryptedPassword);
+	        } catch (NoSuchAlgorithmException exception) {
+	            exception.printStackTrace();
+	        } catch (NoSuchPaddingException exception) {
+	            exception.printStackTrace();
+	        } catch (InvalidKeyException exception) {
+	            exception.printStackTrace();
+	        } catch (IllegalBlockSizeException exception) {
+	            exception.printStackTrace();
+	        } catch (BadPaddingException exception) {
+	            exception.printStackTrace();
+	        }
+		} catch (Base64DecodingException e) {
+			// Assumes that if the password is not Base64 encoded, it is a plain text password.
+			decryptedPassword = encryptedPassword;
+		}
        
         return new String(decryptedPassword);
     }

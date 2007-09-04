@@ -692,22 +692,22 @@ public class MDmsApplicationMUpgradeDataStep extends MFtpStep {
 	 */
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case LogicPackage.MDMS_APPLICATION_MUPGRADE_DATA_STEP__MUPGRADE_RELATIVE_FTP_PATH_PROPERTY:
+			case LogicPackage.MDMS_APPLICATION_MUPGRADE_DATA_STEP__MUPGRADE_RELATIVE_FTP_PATH_PROPERTY:    
 				setMUpgradeRelativeFtpPathProperty((MParameter)newValue);
 				return;
-			case LogicPackage.MDMS_APPLICATION_MUPGRADE_DATA_STEP__UPGRADE_RELATIVE_FTP_PATH_PROPERTY:
+			case LogicPackage.MDMS_APPLICATION_MUPGRADE_DATA_STEP__UPGRADE_RELATIVE_FTP_PATH_PROPERTY:    
 				setUpgradeRelativeFtpPathProperty((String)newValue);
 				return;
-			case LogicPackage.MDMS_APPLICATION_MUPGRADE_DATA_STEP__MUPGRADE_MESSAGE_PARAMETER:
+			case LogicPackage.MDMS_APPLICATION_MUPGRADE_DATA_STEP__MUPGRADE_MESSAGE_PARAMETER:    
 				setMUpgradeMessageParameter((MParameter)newValue);
 				return;
-			case LogicPackage.MDMS_APPLICATION_MUPGRADE_DATA_STEP__UPGRADE_MESSAGE_PARAMETER:
+			case LogicPackage.MDMS_APPLICATION_MUPGRADE_DATA_STEP__UPGRADE_MESSAGE_PARAMETER:    
 				setUpgradeMessageParameter((String)newValue);
 				return;
-			case LogicPackage.MDMS_APPLICATION_MUPGRADE_DATA_STEP__MUPGRADE_DATE_PARAMETER:
+			case LogicPackage.MDMS_APPLICATION_MUPGRADE_DATA_STEP__MUPGRADE_DATE_PARAMETER:    
 				setMUpgradeDateParameter((MParameter)newValue);
 				return;
-			case LogicPackage.MDMS_APPLICATION_MUPGRADE_DATA_STEP__UPGRADE_DATE_PARAMETER:
+			case LogicPackage.MDMS_APPLICATION_MUPGRADE_DATA_STEP__UPGRADE_DATE_PARAMETER:    
 				setUpgradeDateParameter((Date)newValue);
 				return;
 		}

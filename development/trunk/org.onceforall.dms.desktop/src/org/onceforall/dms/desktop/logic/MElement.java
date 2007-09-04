@@ -67,6 +67,7 @@ import org.onceforall.dms.desktop.notify.ThreadAdapter;
  *
  * @see org.onceforall.dms.desktop.logic.LogicPackage#getMElement()
  * @model kind="class" abstract="true"
+ *        annotation="http://www.onceforall.org/mcore typeNameForUI='Element'"
  * @extends ThreadAdapter
  * @generated
  */
@@ -133,6 +134,12 @@ public abstract class MElement extends EObjectImpl implements ThreadAdapter {
 	static {
 		Type.VALUE_TYPES_BY_NAME.put("Reference to "+MElement.TYPE_NAME, new ReferenceType("Reference to "+MElement.TYPE_NAME, "Specifies a reference to a "+MElement.TYPE_NAME_FOR_UI, MElement.class));
 	}
+
+
+
+
+
+
 
 
 
@@ -269,13 +276,11 @@ public abstract class MElement extends EObjectImpl implements ThreadAdapter {
 	 * <!-- end-user-doc -->
 	 * @return Returns the default value of the '{@link #getTypeNameForUI() <em>Type Name For UI</em>}' attribute.
 	 * @see #getTypeNameForUI()
-	 * @generated
 	 * @ordered
 	 */
 	public String getDefaultTypeNameForUI() {
-		return TYPE_NAME_FOR_UI_EDEFAULT;
+		return "Element";
 	}
-	
 	/**
 	 * The cached value of the '{@link #getTypeNameForUI() <em>Type Name For UI</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -868,16 +873,16 @@ public abstract class MElement extends EObjectImpl implements ThreadAdapter {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case LogicPackage.MELEMENT__NAME:
+			case LogicPackage.MELEMENT__NAME:    
 				setName((String)newValue);
 				return;
-			case LogicPackage.MELEMENT__TYPE_NAME_FOR_UI:
+			case LogicPackage.MELEMENT__TYPE_NAME_FOR_UI:    
 				setTypeNameForUI((String)newValue);
 				return;
-			case LogicPackage.MELEMENT__DESCRIPTION:
+			case LogicPackage.MELEMENT__DESCRIPTION:    
 				setDescription((String)newValue);
 				return;
-			case LogicPackage.MELEMENT__COMPOSITE_CLASS_NAME:
+			case LogicPackage.MELEMENT__COMPOSITE_CLASS_NAME:    
 				setCompositeClassName((String)newValue);
 				return;
 			case LogicPackage.MELEMENT__SIMULATED:

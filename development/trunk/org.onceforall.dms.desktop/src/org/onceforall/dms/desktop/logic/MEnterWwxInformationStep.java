@@ -2234,92 +2234,92 @@ public class MEnterWwxInformationStep extends MEnterInformationStep {
 	 */
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case LogicPackage.MENTER_WWX_INFORMATION_STEP__MWWX_DATE_PARAMETER:
+			case LogicPackage.MENTER_WWX_INFORMATION_STEP__MWWX_DATE_PARAMETER:    
 				setMWwxDateParameter((MParameter)newValue);
 				return;
-			case LogicPackage.MENTER_WWX_INFORMATION_STEP__WWX_DATE_PARAMETER:
+			case LogicPackage.MENTER_WWX_INFORMATION_STEP__WWX_DATE_PARAMETER:    
 				setWwxDateParameter((Date)newValue);
 				return;
-			case LogicPackage.MENTER_WWX_INFORMATION_STEP__MTITLE_OF_TALK_PARAMETER:
+			case LogicPackage.MENTER_WWX_INFORMATION_STEP__MTITLE_OF_TALK_PARAMETER:    
 				setMTitleOfTalkParameter((MParameter)newValue);
 				return;
-			case LogicPackage.MENTER_WWX_INFORMATION_STEP__TITLE_OF_TALK_PARAMETER:
+			case LogicPackage.MENTER_WWX_INFORMATION_STEP__TITLE_OF_TALK_PARAMETER:    
 				setTitleOfTalkParameter((String)newValue);
 				return;
-			case LogicPackage.MENTER_WWX_INFORMATION_STEP__MSPEAKERS_NAME_PARAMETER:
+			case LogicPackage.MENTER_WWX_INFORMATION_STEP__MSPEAKERS_NAME_PARAMETER:    
 				setMSpeakersNameParameter((MParameter)newValue);
 				return;
-			case LogicPackage.MENTER_WWX_INFORMATION_STEP__SPEAKERS_NAME_PARAMETER:
+			case LogicPackage.MENTER_WWX_INFORMATION_STEP__SPEAKERS_NAME_PARAMETER:    
 				setSpeakersNameParameter((String)newValue);
 				return;
 			case LogicPackage.MENTER_WWX_INFORMATION_STEP__SPEAKERS_NAME_PARAMETER_HISTORIC_VALUES:
 				getSpeakersNameParameterHistoricValues().clear();
 				getSpeakersNameParameterHistoricValues().addAll((Collection)newValue);
 				return;
-			case LogicPackage.MENTER_WWX_INFORMATION_STEP__MFIRST_PART_PARAMETER:
+			case LogicPackage.MENTER_WWX_INFORMATION_STEP__MFIRST_PART_PARAMETER:    
 				setMFirstPartParameter((MParameter)newValue);
 				return;
-			case LogicPackage.MENTER_WWX_INFORMATION_STEP__FIRST_PART_PARAMETER:
+			case LogicPackage.MENTER_WWX_INFORMATION_STEP__FIRST_PART_PARAMETER:    
 				setFirstPartParameter((String)newValue);
 				return;
 			case LogicPackage.MENTER_WWX_INFORMATION_STEP__FIRST_PART_PARAMETER_HISTORIC_VALUES:
 				getFirstPartParameterHistoricValues().clear();
 				getFirstPartParameterHistoricValues().addAll((Collection)newValue);
 				return;
-			case LogicPackage.MENTER_WWX_INFORMATION_STEP__MSECOND_PART_PARAMETER:
+			case LogicPackage.MENTER_WWX_INFORMATION_STEP__MSECOND_PART_PARAMETER:    
 				setMSecondPartParameter((MParameter)newValue);
 				return;
-			case LogicPackage.MENTER_WWX_INFORMATION_STEP__SECOND_PART_PARAMETER:
+			case LogicPackage.MENTER_WWX_INFORMATION_STEP__SECOND_PART_PARAMETER:    
 				setSecondPartParameter((String)newValue);
 				return;
 			case LogicPackage.MENTER_WWX_INFORMATION_STEP__SECOND_PART_PARAMETER_HISTORIC_VALUES:
 				getSecondPartParameterHistoricValues().clear();
 				getSecondPartParameterHistoricValues().addAll((Collection)newValue);
 				return;
-			case LogicPackage.MENTER_WWX_INFORMATION_STEP__MRECORDING_USERS_NAME_PARAMETER:
+			case LogicPackage.MENTER_WWX_INFORMATION_STEP__MRECORDING_USERS_NAME_PARAMETER:    
 				setMRecordingUsersNameParameter((MParameter)newValue);
 				return;
-			case LogicPackage.MENTER_WWX_INFORMATION_STEP__RECORDING_USERS_NAME_PARAMETER:
+			case LogicPackage.MENTER_WWX_INFORMATION_STEP__RECORDING_USERS_NAME_PARAMETER:    
 				setRecordingUsersNameParameter((String)newValue);
 				return;
 			case LogicPackage.MENTER_WWX_INFORMATION_STEP__RECORDING_USERS_NAME_PARAMETER_HISTORIC_VALUES:
 				getRecordingUsersNameParameterHistoricValues().clear();
 				getRecordingUsersNameParameterHistoricValues().addAll((Collection)newValue);
 				return;
-			case LogicPackage.MENTER_WWX_INFORMATION_STEP__MWWX_DATE_RESULT:
+			case LogicPackage.MENTER_WWX_INFORMATION_STEP__MWWX_DATE_RESULT:    
 				setMWwxDateResult((MResult)newValue);
 				return;
-			case LogicPackage.MENTER_WWX_INFORMATION_STEP__WWX_DATE_RESULT:
+			case LogicPackage.MENTER_WWX_INFORMATION_STEP__WWX_DATE_RESULT:    
 				setWwxDateResult((Date)newValue);
 				return;
-			case LogicPackage.MENTER_WWX_INFORMATION_STEP__MTITLE_OF_TALK_RESULT:
+			case LogicPackage.MENTER_WWX_INFORMATION_STEP__MTITLE_OF_TALK_RESULT:    
 				setMTitleOfTalkResult((MResult)newValue);
 				return;
-			case LogicPackage.MENTER_WWX_INFORMATION_STEP__TITLE_OF_TALK_RESULT:
+			case LogicPackage.MENTER_WWX_INFORMATION_STEP__TITLE_OF_TALK_RESULT:    
 				setTitleOfTalkResult((String)newValue);
 				return;
-			case LogicPackage.MENTER_WWX_INFORMATION_STEP__MSPEAKERS_NAME_RESULT:
+			case LogicPackage.MENTER_WWX_INFORMATION_STEP__MSPEAKERS_NAME_RESULT:    
 				setMSpeakersNameResult((MResult)newValue);
 				return;
-			case LogicPackage.MENTER_WWX_INFORMATION_STEP__SPEAKERS_NAME_RESULT:
+			case LogicPackage.MENTER_WWX_INFORMATION_STEP__SPEAKERS_NAME_RESULT:    
 				setSpeakersNameResult((String)newValue);
 				return;
-			case LogicPackage.MENTER_WWX_INFORMATION_STEP__MFIRST_PART_RESULT:
+			case LogicPackage.MENTER_WWX_INFORMATION_STEP__MFIRST_PART_RESULT:    
 				setMFirstPartResult((MResult)newValue);
 				return;
-			case LogicPackage.MENTER_WWX_INFORMATION_STEP__FIRST_PART_RESULT:
+			case LogicPackage.MENTER_WWX_INFORMATION_STEP__FIRST_PART_RESULT:    
 				setFirstPartResult((String)newValue);
 				return;
-			case LogicPackage.MENTER_WWX_INFORMATION_STEP__MSECOND_PART_RESULT:
+			case LogicPackage.MENTER_WWX_INFORMATION_STEP__MSECOND_PART_RESULT:    
 				setMSecondPartResult((MResult)newValue);
 				return;
-			case LogicPackage.MENTER_WWX_INFORMATION_STEP__SECOND_PART_RESULT:
+			case LogicPackage.MENTER_WWX_INFORMATION_STEP__SECOND_PART_RESULT:    
 				setSecondPartResult((String)newValue);
 				return;
-			case LogicPackage.MENTER_WWX_INFORMATION_STEP__MRECORDING_USERS_NAME_RESULT:
+			case LogicPackage.MENTER_WWX_INFORMATION_STEP__MRECORDING_USERS_NAME_RESULT:    
 				setMRecordingUsersNameResult((MResult)newValue);
 				return;
-			case LogicPackage.MENTER_WWX_INFORMATION_STEP__RECORDING_USERS_NAME_RESULT:
+			case LogicPackage.MENTER_WWX_INFORMATION_STEP__RECORDING_USERS_NAME_RESULT:    
 				setRecordingUsersNameResult((String)newValue);
 				return;
 		}

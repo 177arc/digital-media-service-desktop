@@ -1189,40 +1189,40 @@ public abstract class MAudioStep extends MStep {
 	 */
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case LogicPackage.MAUDIO_STEP__MLEFT_INPUT_LEVEL_PROPERTY:
+			case LogicPackage.MAUDIO_STEP__MLEFT_INPUT_LEVEL_PROPERTY:    
 				setMLeftInputLevelProperty((MProperty)newValue);
 				return;
-			case LogicPackage.MAUDIO_STEP__LEFT_INPUT_LEVEL_PROPERTY:
+			case LogicPackage.MAUDIO_STEP__LEFT_INPUT_LEVEL_PROPERTY:    
 				setLeftInputLevelProperty((Long)newValue);
 				return;
-			case LogicPackage.MAUDIO_STEP__MRIGHT_INPUT_LEVEL_PROPERTY:
+			case LogicPackage.MAUDIO_STEP__MRIGHT_INPUT_LEVEL_PROPERTY:    
 				setMRightInputLevelProperty((MProperty)newValue);
 				return;
-			case LogicPackage.MAUDIO_STEP__RIGHT_INPUT_LEVEL_PROPERTY:
+			case LogicPackage.MAUDIO_STEP__RIGHT_INPUT_LEVEL_PROPERTY:    
 				setRightInputLevelProperty((Long)newValue);
 				return;
-			case LogicPackage.MAUDIO_STEP__MLEFT_INPUT_DISTORTION_PROPERTY:
+			case LogicPackage.MAUDIO_STEP__MLEFT_INPUT_DISTORTION_PROPERTY:    
 				setMLeftInputDistortionProperty((MProperty)newValue);
 				return;
-			case LogicPackage.MAUDIO_STEP__LEFT_INPUT_DISTORTION_PROPERTY:
+			case LogicPackage.MAUDIO_STEP__LEFT_INPUT_DISTORTION_PROPERTY:    
 				setLeftInputDistortionProperty((Boolean)newValue);
 				return;
-			case LogicPackage.MAUDIO_STEP__MRIGHT_INPUT_DISTORTION_PROPERTY:
+			case LogicPackage.MAUDIO_STEP__MRIGHT_INPUT_DISTORTION_PROPERTY:    
 				setMRightInputDistortionProperty((MProperty)newValue);
 				return;
-			case LogicPackage.MAUDIO_STEP__RIGHT_INPUT_DISTORTION_PROPERTY:
+			case LogicPackage.MAUDIO_STEP__RIGHT_INPUT_DISTORTION_PROPERTY:    
 				setRightInputDistortionProperty((Boolean)newValue);
 				return;
-			case LogicPackage.MAUDIO_STEP__MUSE_DB_PROPERTY:
+			case LogicPackage.MAUDIO_STEP__MUSE_DB_PROPERTY:    
 				setMUseDbProperty((MProperty)newValue);
 				return;
-			case LogicPackage.MAUDIO_STEP__USE_DB_PROPERTY:
+			case LogicPackage.MAUDIO_STEP__USE_DB_PROPERTY:    
 				setUseDbProperty((Boolean)newValue);
 				return;
-			case LogicPackage.MAUDIO_STEP__MHEADROOM_PROPERTY:
+			case LogicPackage.MAUDIO_STEP__MHEADROOM_PROPERTY:    
 				setMHeadroomProperty((MProperty)newValue);
 				return;
-			case LogicPackage.MAUDIO_STEP__HEADROOM_PROPERTY:
+			case LogicPackage.MAUDIO_STEP__HEADROOM_PROPERTY:    
 				setHeadroomProperty((Long)newValue);
 				return;
 		}
@@ -1384,9 +1384,9 @@ public abstract class MAudioStep extends MStep {
             		setLeftInputLevelProperty((long) Math.round(audioInputStream.getLeftLevel()/(float) MonitoredAudioInputStream.MAXIMUM_LEVEL*100));
             		setRightInputLevelProperty((long) Math.round(audioInputStream.getRightLevel()/(float) MonitoredAudioInputStream.MAXIMUM_LEVEL*100));           		
             	}
-            	
-            	setLeftInputDistortionProperty(new Boolean(audioInputStream.getLeftDistortionAlert()));
-            	setRightInputDistortionProperty(new Boolean(audioInputStream.getRightDistortionAlert()));
+            	/* TODO: Fix distortion alert implementation */
+            	/* setLeftInputDistortionProperty(new Boolean(audioInputStream.getLeftDistortionAlert()));
+            	setRightInputDistortionProperty(new Boolean(audioInputStream.getRightDistortionAlert())); */
     
             	lastInputLevelsUpdate = System.currentTimeMillis();
             }

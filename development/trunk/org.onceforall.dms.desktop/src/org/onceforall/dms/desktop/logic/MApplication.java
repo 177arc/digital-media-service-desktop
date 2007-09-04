@@ -129,6 +129,12 @@ public abstract class MApplication extends MObject {
 	}
 
 
+
+
+
+
+
+
 	/**
 	 * The cached value of the '{@link #getMDataFileProperty() <em>MData File Property</em>}' containment reference.
 	 * <!-- begin-user-doc -->
@@ -487,9 +493,9 @@ public abstract class MApplication extends MObject {
 		iconFilePath = (File)LogicFactory.eINSTANCE.createFromString(LogicPackage.eINSTANCE.getMFile(), "Image Files\\Application.gif");
 					 
 		setMDataFileProperty(new MProperty(true, "Data file", "Specifies the file that contains the application data.", null));			 
-		setMLogFileProperty(new MProperty(true, "Log file", "Specifies the file that contains the log data.", null));			 
-		setMPathProperty(new MProperty(true, "Path", "Specifies the path where this application has been started from.", null));			 
-		setMVersionProperty(new MProperty(true, "Version", "Specifies the version of the application.", null));			 
+		setMLogFileProperty(new MProperty(false, "Log file", "Specifies the file that contains the log data.", null));			 
+		setMPathProperty(new MProperty(false, "Path", "Specifies the path where this application has been started from.", null));			 
+		setMVersionProperty(new MProperty(false, "Version", "Specifies the version of the application.", null));			 
 		setMLastSaveProperty(new MProperty(true, "Last application data save", "Specifies the date and time when the application data was last saved.", null));
 
 		lastMApplicationConstructorHook();		
@@ -650,7 +656,7 @@ public abstract class MApplication extends MObject {
 	 * @see #setMLogFileProperty(MProperty)
 	 * @see org.onceforall.dms.desktop.logic.LogicPackage#getMApplication_MLogFileProperty()
 	 * @model containment="true" required="true"
-	 *        annotation="http://www.onceforall.org/mcore name='Log file' description='Specifies the file that contains the log data.' readOnly='true'"
+	 *        annotation="http://www.onceforall.org/mcore name='Log file' description='Specifies the file that contains the log data.'"
 	 * @generated
 	 */
 	public MProperty getMLogFileProperty() {
@@ -686,8 +692,8 @@ public abstract class MApplication extends MObject {
 			if (mLogFileProperty != null)
 				msgs = ((InternalEObject)mLogFileProperty).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - LogicPackage.MAPPLICATION__MLOG_FILE_PROPERTY, null, msgs);
 			if (newMLogFileProperty != null) {				
-				newMLogFileProperty.setDefaultName("Log file");
 				newMLogFileProperty.setDefaultDescription("Specifies the file that contains the log data.");
+				newMLogFileProperty.setDefaultName("Log file");
 				newMLogFileProperty.setValueType(Type.getTypeForName("File"));
 				newMLogFileProperty.setValueEFeature((EStructuralFeature) eClass().getEStructuralFeature(LogicPackage.MAPPLICATION__LOG_FILE_PROPERTY));
 				newMLogFileProperty.setHistoricValuesEFeature(null);
@@ -753,7 +759,7 @@ public abstract class MApplication extends MObject {
 	 * @see #setMPathProperty(MProperty)
 	 * @see org.onceforall.dms.desktop.logic.LogicPackage#getMApplication_MPathProperty()
 	 * @model containment="true" required="true"
-	 *        annotation="http://www.onceforall.org/mcore name='Path' description='Specifies the path where this application has been started from.' readOnly='true'"
+	 *        annotation="http://www.onceforall.org/mcore name='Path' description='Specifies the path where this application has been started from.'"
 	 * @generated
 	 */
 	public MProperty getMPathProperty() {
@@ -789,8 +795,8 @@ public abstract class MApplication extends MObject {
 			if (mPathProperty != null)
 				msgs = ((InternalEObject)mPathProperty).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - LogicPackage.MAPPLICATION__MPATH_PROPERTY, null, msgs);
 			if (newMPathProperty != null) {				
-				newMPathProperty.setDefaultName("Path");
 				newMPathProperty.setDefaultDescription("Specifies the path where this application has been started from.");
+				newMPathProperty.setDefaultName("Path");
 				newMPathProperty.setValueType(Type.getTypeForName("File"));
 				newMPathProperty.setValueEFeature((EStructuralFeature) eClass().getEStructuralFeature(LogicPackage.MAPPLICATION__PATH_PROPERTY));
 				newMPathProperty.setHistoricValuesEFeature(null);
@@ -857,7 +863,7 @@ public abstract class MApplication extends MObject {
 	 * @see #setMVersionProperty(MProperty)
 	 * @see org.onceforall.dms.desktop.logic.LogicPackage#getMApplication_MVersionProperty()
 	 * @model containment="true" required="true"
-	 *        annotation="http://www.onceforall.org/mcore name='Version' description='Specifies the version of the application.' readOnly='true'"
+	 *        annotation="http://www.onceforall.org/mcore name='Version' description='Specifies the version of the application.'"
 	 * @generated
 	 */
 	public MProperty getMVersionProperty() {
@@ -893,8 +899,8 @@ public abstract class MApplication extends MObject {
 			if (mVersionProperty != null)
 				msgs = ((InternalEObject)mVersionProperty).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - LogicPackage.MAPPLICATION__MVERSION_PROPERTY, null, msgs);
 			if (newMVersionProperty != null) {				
-				newMVersionProperty.setDefaultName("Version");
 				newMVersionProperty.setDefaultDescription("Specifies the version of the application.");
+				newMVersionProperty.setDefaultName("Version");
 				newMVersionProperty.setValueType(Type.getTypeForName("Text"));
 				newMVersionProperty.setValueEFeature((EStructuralFeature) eClass().getEStructuralFeature(LogicPackage.MAPPLICATION__VERSION_PROPERTY));
 				newMVersionProperty.setHistoricValuesEFeature(null);
@@ -1119,35 +1125,35 @@ public abstract class MApplication extends MObject {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case LogicPackage.MAPPLICATION__MDATA_FILE_PROPERTY:
+			case LogicPackage.MAPPLICATION__MDATA_FILE_PROPERTY:    
 				setMDataFileProperty((MProperty)newValue);
 				return;
 			case LogicPackage.MAPPLICATION__DATA_FILE_PROPERTY_HISTORIC_VALUES:
 				getDataFilePropertyHistoricValues().clear();
 				getDataFilePropertyHistoricValues().addAll((Collection)newValue);
 				return;
-			case LogicPackage.MAPPLICATION__MLOG_FILE_PROPERTY:
+			case LogicPackage.MAPPLICATION__MLOG_FILE_PROPERTY:    
 				setMLogFileProperty((MProperty)newValue);
 				return;
-			case LogicPackage.MAPPLICATION__LOG_FILE_PROPERTY:
+			case LogicPackage.MAPPLICATION__LOG_FILE_PROPERTY:    
 				setLogFileProperty((File)newValue);
 				return;
-			case LogicPackage.MAPPLICATION__MPATH_PROPERTY:
+			case LogicPackage.MAPPLICATION__MPATH_PROPERTY:    
 				setMPathProperty((MProperty)newValue);
 				return;
-			case LogicPackage.MAPPLICATION__PATH_PROPERTY:
+			case LogicPackage.MAPPLICATION__PATH_PROPERTY:    
 				setPathProperty((File)newValue);
 				return;
-			case LogicPackage.MAPPLICATION__MVERSION_PROPERTY:
+			case LogicPackage.MAPPLICATION__MVERSION_PROPERTY:    
 				setMVersionProperty((MProperty)newValue);
 				return;
-			case LogicPackage.MAPPLICATION__VERSION_PROPERTY:
+			case LogicPackage.MAPPLICATION__VERSION_PROPERTY:    
 				setVersionProperty((String)newValue);
 				return;
-			case LogicPackage.MAPPLICATION__MLAST_SAVE_PROPERTY:
+			case LogicPackage.MAPPLICATION__MLAST_SAVE_PROPERTY:    
 				setMLastSaveProperty((MProperty)newValue);
 				return;
-			case LogicPackage.MAPPLICATION__LAST_SAVE_PROPERTY:
+			case LogicPackage.MAPPLICATION__LAST_SAVE_PROPERTY:    
 				setLastSaveProperty((Date)newValue);
 				return;
 		}

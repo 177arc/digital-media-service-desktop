@@ -526,16 +526,16 @@ public class MTestStep extends MStep {
 	 */
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case LogicPackage.MTEST_STEP__MPERSISTENT_STRING_PARAMETER:
+			case LogicPackage.MTEST_STEP__MPERSISTENT_STRING_PARAMETER:    
 				setMPersistentStringParameter((MParameter)newValue);
 				return;
-			case LogicPackage.MTEST_STEP__PERSISTENT_STRING_PARAMETER:
+			case LogicPackage.MTEST_STEP__PERSISTENT_STRING_PARAMETER:    
 				setPersistentStringParameter((String)newValue);
 				return;
-			case LogicPackage.MTEST_STEP__MSTRING_PARAMETER:
+			case LogicPackage.MTEST_STEP__MSTRING_PARAMETER:    
 				setMStringParameter((MParameter)newValue);
 				return;
-			case LogicPackage.MTEST_STEP__STRING_PARAMETER:
+			case LogicPackage.MTEST_STEP__STRING_PARAMETER:    
 				setStringParameter((String)newValue);
 				return;
 		}

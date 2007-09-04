@@ -1006,35 +1006,35 @@ public class MBurnCdStep extends MStep {
 	 */
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case LogicPackage.MBURN_CD_STEP__MRECORDING_FILES_PARAMETER:
+			case LogicPackage.MBURN_CD_STEP__MRECORDING_FILES_PARAMETER:    
 				setMRecordingFilesParameter((MParameter)newValue);
 				return;
 			case LogicPackage.MBURN_CD_STEP__RECORDING_FILES_PARAMETER:
 				getRecordingFilesParameter().clear();
 				getRecordingFilesParameter().addAll((Collection)newValue);
 				return;
-			case LogicPackage.MBURN_CD_STEP__MBURNING_SOFTWARE_DIRECTORY_PATH_PARAMETER:
+			case LogicPackage.MBURN_CD_STEP__MBURNING_SOFTWARE_DIRECTORY_PATH_PARAMETER:    
 				setMBurningSoftwareDirectoryPathParameter((MParameter)newValue);
 				return;
-			case LogicPackage.MBURN_CD_STEP__BURNING_SOFTWARE_DIRECTORY_PATH_PARAMETER:
+			case LogicPackage.MBURN_CD_STEP__BURNING_SOFTWARE_DIRECTORY_PATH_PARAMETER:    
 				setBurningSoftwareDirectoryPathParameter((File)newValue);
 				return;
-			case LogicPackage.MBURN_CD_STEP__MDRIVE_PARAMETER:
+			case LogicPackage.MBURN_CD_STEP__MDRIVE_PARAMETER:    
 				setMDriveParameter((MParameter)newValue);
 				return;
-			case LogicPackage.MBURN_CD_STEP__DRIVE_PARAMETER:
+			case LogicPackage.MBURN_CD_STEP__DRIVE_PARAMETER:    
 				setDriveParameter((String)newValue);
 				return;
-			case LogicPackage.MBURN_CD_STEP__MTOTAL_RECORDING_LENGTH_PARAMETER:
+			case LogicPackage.MBURN_CD_STEP__MTOTAL_RECORDING_LENGTH_PARAMETER:    
 				setMTotalRecordingLengthParameter((MParameter)newValue);
 				return;
-			case LogicPackage.MBURN_CD_STEP__TOTAL_RECORDING_LENGTH_PARAMETER:
+			case LogicPackage.MBURN_CD_STEP__TOTAL_RECORDING_LENGTH_PARAMETER:    
 				setTotalRecordingLengthParameter((Long)newValue);
 				return;
-			case LogicPackage.MBURN_CD_STEP__MTOTAL_RECORDING_FILE_SIZE_PARAMETER:
+			case LogicPackage.MBURN_CD_STEP__MTOTAL_RECORDING_FILE_SIZE_PARAMETER:    
 				setMTotalRecordingFileSizeParameter((MParameter)newValue);
 				return;
-			case LogicPackage.MBURN_CD_STEP__TOTAL_RECORDING_FILE_SIZE_PARAMETER:
+			case LogicPackage.MBURN_CD_STEP__TOTAL_RECORDING_FILE_SIZE_PARAMETER:    
 				setTotalRecordingFileSizeParameter((Long)newValue);
 				return;
 		}

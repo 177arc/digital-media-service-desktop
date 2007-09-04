@@ -116,6 +116,18 @@ public class MResult extends MValue {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
 	/**
 	 * Get the default value of the '{@link #getTypeNameForUI() <em>Type Name For UI</em>}' attribute.
 	 * <!-- begin-user-doc -->

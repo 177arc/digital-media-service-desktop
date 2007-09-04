@@ -2121,76 +2121,76 @@ public class MConvertToMP3Step extends MStep {
 	 */
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case LogicPackage.MCONVERT_TO_MP3_STEP__MARTIST_PARAMETER:
+			case LogicPackage.MCONVERT_TO_MP3_STEP__MARTIST_PARAMETER:    
 				setMArtistParameter((MParameter)newValue);
 				return;
-			case LogicPackage.MCONVERT_TO_MP3_STEP__ARTIST_PARAMETER:
+			case LogicPackage.MCONVERT_TO_MP3_STEP__ARTIST_PARAMETER:    
 				setArtistParameter((String)newValue);
 				return;
-			case LogicPackage.MCONVERT_TO_MP3_STEP__MTITLE_PARAMETER:
+			case LogicPackage.MCONVERT_TO_MP3_STEP__MTITLE_PARAMETER:    
 				setMTitleParameter((MParameter)newValue);
 				return;
-			case LogicPackage.MCONVERT_TO_MP3_STEP__TITLE_PARAMETER:
+			case LogicPackage.MCONVERT_TO_MP3_STEP__TITLE_PARAMETER:    
 				setTitleParameter((String)newValue);
 				return;
-			case LogicPackage.MCONVERT_TO_MP3_STEP__MALBUM_PARAMETER:
+			case LogicPackage.MCONVERT_TO_MP3_STEP__MALBUM_PARAMETER:    
 				setMAlbumParameter((MParameter)newValue);
 				return;
-			case LogicPackage.MCONVERT_TO_MP3_STEP__ALBUM_PARAMETER:
+			case LogicPackage.MCONVERT_TO_MP3_STEP__ALBUM_PARAMETER:    
 				setAlbumParameter((String)newValue);
 				return;
-			case LogicPackage.MCONVERT_TO_MP3_STEP__MYEAR_PARAMETER:
+			case LogicPackage.MCONVERT_TO_MP3_STEP__MYEAR_PARAMETER:    
 				setMYearParameter((MParameter)newValue);
 				return;
-			case LogicPackage.MCONVERT_TO_MP3_STEP__YEAR_PARAMETER:
+			case LogicPackage.MCONVERT_TO_MP3_STEP__YEAR_PARAMETER:    
 				setYearParameter((String)newValue);
 				return;
-			case LogicPackage.MCONVERT_TO_MP3_STEP__MDIRECTORY_PARAMETER:
+			case LogicPackage.MCONVERT_TO_MP3_STEP__MDIRECTORY_PARAMETER:    
 				setMDirectoryParameter((MParameter)newValue);
 				return;
-			case LogicPackage.MCONVERT_TO_MP3_STEP__DIRECTORY_PARAMETER:
+			case LogicPackage.MCONVERT_TO_MP3_STEP__DIRECTORY_PARAMETER:    
 				setDirectoryParameter((File)newValue);
 				return;
-			case LogicPackage.MCONVERT_TO_MP3_STEP__MMP3_FILE_NAME_PARAMETER:
+			case LogicPackage.MCONVERT_TO_MP3_STEP__MMP3_FILE_NAME_PARAMETER:    
 				setMMp3FileNameParameter((MParameter)newValue);
 				return;
-			case LogicPackage.MCONVERT_TO_MP3_STEP__MP3_FILE_NAME_PARAMETER:
+			case LogicPackage.MCONVERT_TO_MP3_STEP__MP3_FILE_NAME_PARAMETER:    
 				setMp3FileNameParameter((File)newValue);
 				return;
-			case LogicPackage.MCONVERT_TO_MP3_STEP__MRECORDING_FILE_PARAMETER:
+			case LogicPackage.MCONVERT_TO_MP3_STEP__MRECORDING_FILE_PARAMETER:    
 				setMRecordingFileParameter((MParameter)newValue);
 				return;
-			case LogicPackage.MCONVERT_TO_MP3_STEP__RECORDING_FILE_PARAMETER:
+			case LogicPackage.MCONVERT_TO_MP3_STEP__RECORDING_FILE_PARAMETER:    
 				setRecordingFileParameter((File)newValue);
 				return;
-			case LogicPackage.MCONVERT_TO_MP3_STEP__MMP3_ENCODER_PATH_PARAMETER:
+			case LogicPackage.MCONVERT_TO_MP3_STEP__MMP3_ENCODER_PATH_PARAMETER:    
 				setMMp3EncoderPathParameter((MParameter)newValue);
 				return;
-			case LogicPackage.MCONVERT_TO_MP3_STEP__MP3_ENCODER_PATH_PARAMETER:
+			case LogicPackage.MCONVERT_TO_MP3_STEP__MP3_ENCODER_PATH_PARAMETER:    
 				setMp3EncoderPathParameter((File)newValue);
 				return;
-			case LogicPackage.MCONVERT_TO_MP3_STEP__MAVERAGE_BIT_RATE_PARAMETER:
+			case LogicPackage.MCONVERT_TO_MP3_STEP__MAVERAGE_BIT_RATE_PARAMETER:    
 				setMAverageBitRateParameter((MParameter)newValue);
 				return;
-			case LogicPackage.MCONVERT_TO_MP3_STEP__AVERAGE_BIT_RATE_PARAMETER:
+			case LogicPackage.MCONVERT_TO_MP3_STEP__AVERAGE_BIT_RATE_PARAMETER:    
 				setAverageBitRateParameter((Long)newValue);
 				return;
-			case LogicPackage.MCONVERT_TO_MP3_STEP__MMP3_FOLDER_REFERENCE_PARAMETER:
+			case LogicPackage.MCONVERT_TO_MP3_STEP__MMP3_FOLDER_REFERENCE_PARAMETER:    
 				setMMp3FolderReferenceParameter((MParameter)newValue);
 				return;
-			case LogicPackage.MCONVERT_TO_MP3_STEP__MP3_FOLDER_REFERENCE_PARAMETER:
+			case LogicPackage.MCONVERT_TO_MP3_STEP__MP3_FOLDER_REFERENCE_PARAMETER:    
 				setMp3FolderReferenceParameter((MMp3Folder)newValue);
 				return;
-			case LogicPackage.MCONVERT_TO_MP3_STEP__MMP3_ENTRY_NAME_PARAMETER:
+			case LogicPackage.MCONVERT_TO_MP3_STEP__MMP3_ENTRY_NAME_PARAMETER:    
 				setMMp3EntryNameParameter((MParameter)newValue);
 				return;
-			case LogicPackage.MCONVERT_TO_MP3_STEP__MP3_ENTRY_NAME_PARAMETER:
+			case LogicPackage.MCONVERT_TO_MP3_STEP__MP3_ENTRY_NAME_PARAMETER:    
 				setMp3EntryNameParameter((String)newValue);
 				return;
-			case LogicPackage.MCONVERT_TO_MP3_STEP__MMP3_ENTRY_REFERENCE_RESULT:
+			case LogicPackage.MCONVERT_TO_MP3_STEP__MMP3_ENTRY_REFERENCE_RESULT:    
 				setMMp3EntryReferenceResult((MResult)newValue);
 				return;
-			case LogicPackage.MCONVERT_TO_MP3_STEP__MP3_ENTRY_REFERENCE_RESULT:
+			case LogicPackage.MCONVERT_TO_MP3_STEP__MP3_ENTRY_REFERENCE_RESULT:    
 				setMp3EntryReferenceResult((MMp3)newValue);
 				return;
 		}

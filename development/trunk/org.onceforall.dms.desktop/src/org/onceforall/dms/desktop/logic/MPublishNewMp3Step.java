@@ -1629,58 +1629,58 @@ public class MPublishNewMp3Step extends MPublishMp3sStep {
 	 */
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case LogicPackage.MPUBLISH_NEW_MP3_STEP__MMP3_ENTRY_REFERENCE_PARAMETER:
+			case LogicPackage.MPUBLISH_NEW_MP3_STEP__MMP3_ENTRY_REFERENCE_PARAMETER:    
 				setMMp3EntryReferenceParameter((MParameter)newValue);
 				return;
-			case LogicPackage.MPUBLISH_NEW_MP3_STEP__MP3_ENTRY_REFERENCE_PARAMETER:
+			case LogicPackage.MPUBLISH_NEW_MP3_STEP__MP3_ENTRY_REFERENCE_PARAMETER:    
 				setMp3EntryReferenceParameter((MMp3)newValue);
 				return;
-			case LogicPackage.MPUBLISH_NEW_MP3_STEP__MLINK_TEXT_PARAMETER:
+			case LogicPackage.MPUBLISH_NEW_MP3_STEP__MLINK_TEXT_PARAMETER:    
 				setMLinkTextParameter((MParameter)newValue);
 				return;
-			case LogicPackage.MPUBLISH_NEW_MP3_STEP__LINK_TEXT_PARAMETER:
+			case LogicPackage.MPUBLISH_NEW_MP3_STEP__LINK_TEXT_PARAMETER:    
 				setLinkTextParameter((String)newValue);
 				return;
-			case LogicPackage.MPUBLISH_NEW_MP3_STEP__MLINK_DESCRIPTION_PARAMETER:
+			case LogicPackage.MPUBLISH_NEW_MP3_STEP__MLINK_DESCRIPTION_PARAMETER:    
 				setMLinkDescriptionParameter((MParameter)newValue);
 				return;
-			case LogicPackage.MPUBLISH_NEW_MP3_STEP__LINK_DESCRIPTION_PARAMETER:
+			case LogicPackage.MPUBLISH_NEW_MP3_STEP__LINK_DESCRIPTION_PARAMETER:    
 				setLinkDescriptionParameter((String)newValue);
 				return;
-			case LogicPackage.MPUBLISH_NEW_MP3_STEP__MCOMMENT_PARAMETER:
+			case LogicPackage.MPUBLISH_NEW_MP3_STEP__MCOMMENT_PARAMETER:    
 				setMCommentParameter((MParameter)newValue);
 				return;
-			case LogicPackage.MPUBLISH_NEW_MP3_STEP__COMMENT_PARAMETER:
+			case LogicPackage.MPUBLISH_NEW_MP3_STEP__COMMENT_PARAMETER:    
 				setCommentParameter((String)newValue);
 				return;
-			case LogicPackage.MPUBLISH_NEW_MP3_STEP__MPODCAST_TITLE_PARAMETER:
+			case LogicPackage.MPUBLISH_NEW_MP3_STEP__MPODCAST_TITLE_PARAMETER:    
 				setMPodcastTitleParameter((MParameter)newValue);
 				return;
-			case LogicPackage.MPUBLISH_NEW_MP3_STEP__PODCAST_TITLE_PARAMETER:
+			case LogicPackage.MPUBLISH_NEW_MP3_STEP__PODCAST_TITLE_PARAMETER:    
 				setPodcastTitleParameter((String)newValue);
 				return;
-			case LogicPackage.MPUBLISH_NEW_MP3_STEP__MPODCAST_SUBTITLE_PARAMETER:
+			case LogicPackage.MPUBLISH_NEW_MP3_STEP__MPODCAST_SUBTITLE_PARAMETER:    
 				setMPodcastSubtitleParameter((MParameter)newValue);
 				return;
-			case LogicPackage.MPUBLISH_NEW_MP3_STEP__PODCAST_SUBTITLE_PARAMETER:
+			case LogicPackage.MPUBLISH_NEW_MP3_STEP__PODCAST_SUBTITLE_PARAMETER:    
 				setPodcastSubtitleParameter((String)newValue);
 				return;
-			case LogicPackage.MPUBLISH_NEW_MP3_STEP__MPODCAST_SUMMARY_PARAMETER:
+			case LogicPackage.MPUBLISH_NEW_MP3_STEP__MPODCAST_SUMMARY_PARAMETER:    
 				setMPodcastSummaryParameter((MParameter)newValue);
 				return;
-			case LogicPackage.MPUBLISH_NEW_MP3_STEP__PODCAST_SUMMARY_PARAMETER:
+			case LogicPackage.MPUBLISH_NEW_MP3_STEP__PODCAST_SUMMARY_PARAMETER:    
 				setPodcastSummaryParameter((String)newValue);
 				return;
-			case LogicPackage.MPUBLISH_NEW_MP3_STEP__MPODCAST_PUBLISHING_DATE_PARAMETER:
+			case LogicPackage.MPUBLISH_NEW_MP3_STEP__MPODCAST_PUBLISHING_DATE_PARAMETER:    
 				setMPodcastPublishingDateParameter((MParameter)newValue);
 				return;
-			case LogicPackage.MPUBLISH_NEW_MP3_STEP__PODCAST_PUBLISHING_DATE_PARAMETER:
+			case LogicPackage.MPUBLISH_NEW_MP3_STEP__PODCAST_PUBLISHING_DATE_PARAMETER:    
 				setPodcastPublishingDateParameter((Date)newValue);
 				return;
-			case LogicPackage.MPUBLISH_NEW_MP3_STEP__MPUBLISHED_MP3_ENTRY_REFERENCE_RESULT:
+			case LogicPackage.MPUBLISH_NEW_MP3_STEP__MPUBLISHED_MP3_ENTRY_REFERENCE_RESULT:    
 				setMPublishedMp3EntryReferenceResult((MResult)newValue);
 				return;
-			case LogicPackage.MPUBLISH_NEW_MP3_STEP__PUBLISHED_MP3_ENTRY_REFERENCE_RESULT:
+			case LogicPackage.MPUBLISH_NEW_MP3_STEP__PUBLISHED_MP3_ENTRY_REFERENCE_RESULT:    
 				setPublishedMp3EntryReferenceResult((MMp3)newValue);
 				return;
 		}

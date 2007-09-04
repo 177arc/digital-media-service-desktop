@@ -2197,88 +2197,88 @@ public class MEnterServiceInformationStep extends MEnterInformationStep {
 	 */
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case LogicPackage.MENTER_SERVICE_INFORMATION_STEP__MSERVICE_DATE_PARAMETER:
+			case LogicPackage.MENTER_SERVICE_INFORMATION_STEP__MSERVICE_DATE_PARAMETER:    
 				setMServiceDateParameter((MParameter)newValue);
 				return;
-			case LogicPackage.MENTER_SERVICE_INFORMATION_STEP__SERVICE_DATE_PARAMETER:
+			case LogicPackage.MENTER_SERVICE_INFORMATION_STEP__SERVICE_DATE_PARAMETER:    
 				setServiceDateParameter((Date)newValue);
 				return;
-			case LogicPackage.MENTER_SERVICE_INFORMATION_STEP__MSERVICE_TYPE_PARAMETER:
+			case LogicPackage.MENTER_SERVICE_INFORMATION_STEP__MSERVICE_TYPE_PARAMETER:    
 				setMServiceTypeParameter((MParameter)newValue);
 				return;
-			case LogicPackage.MENTER_SERVICE_INFORMATION_STEP__SERVICE_TYPE_PARAMETER:
+			case LogicPackage.MENTER_SERVICE_INFORMATION_STEP__SERVICE_TYPE_PARAMETER:    
 				setServiceTypeParameter((String)newValue);
 				return;
 			case LogicPackage.MENTER_SERVICE_INFORMATION_STEP__SERVICE_TYPE_PARAMETER_HISTORIC_VALUES:
 				getServiceTypeParameterHistoricValues().clear();
 				getServiceTypeParameterHistoricValues().addAll((Collection)newValue);
 				return;
-			case LogicPackage.MENTER_SERVICE_INFORMATION_STEP__MTITLE_OF_TALK_PARAMETER:
+			case LogicPackage.MENTER_SERVICE_INFORMATION_STEP__MTITLE_OF_TALK_PARAMETER:    
 				setMTitleOfTalkParameter((MParameter)newValue);
 				return;
-			case LogicPackage.MENTER_SERVICE_INFORMATION_STEP__TITLE_OF_TALK_PARAMETER:
+			case LogicPackage.MENTER_SERVICE_INFORMATION_STEP__TITLE_OF_TALK_PARAMETER:    
 				setTitleOfTalkParameter((String)newValue);
 				return;
-			case LogicPackage.MENTER_SERVICE_INFORMATION_STEP__MREADING_PARAMETER:
+			case LogicPackage.MENTER_SERVICE_INFORMATION_STEP__MREADING_PARAMETER:    
 				setMReadingParameter((MParameter)newValue);
 				return;
-			case LogicPackage.MENTER_SERVICE_INFORMATION_STEP__READING_PARAMETER:
+			case LogicPackage.MENTER_SERVICE_INFORMATION_STEP__READING_PARAMETER:    
 				setReadingParameter((String)newValue);
 				return;
-			case LogicPackage.MENTER_SERVICE_INFORMATION_STEP__MSPEAKERS_NAME_PARAMETER:
+			case LogicPackage.MENTER_SERVICE_INFORMATION_STEP__MSPEAKERS_NAME_PARAMETER:    
 				setMSpeakersNameParameter((MParameter)newValue);
 				return;
-			case LogicPackage.MENTER_SERVICE_INFORMATION_STEP__SPEAKERS_NAME_PARAMETER:
+			case LogicPackage.MENTER_SERVICE_INFORMATION_STEP__SPEAKERS_NAME_PARAMETER:    
 				setSpeakersNameParameter((String)newValue);
 				return;
 			case LogicPackage.MENTER_SERVICE_INFORMATION_STEP__SPEAKERS_NAME_PARAMETER_HISTORIC_VALUES:
 				getSpeakersNameParameterHistoricValues().clear();
 				getSpeakersNameParameterHistoricValues().addAll((Collection)newValue);
 				return;
-			case LogicPackage.MENTER_SERVICE_INFORMATION_STEP__MRECORDING_USERS_NAME_PARAMETER:
+			case LogicPackage.MENTER_SERVICE_INFORMATION_STEP__MRECORDING_USERS_NAME_PARAMETER:    
 				setMRecordingUsersNameParameter((MParameter)newValue);
 				return;
-			case LogicPackage.MENTER_SERVICE_INFORMATION_STEP__RECORDING_USERS_NAME_PARAMETER:
+			case LogicPackage.MENTER_SERVICE_INFORMATION_STEP__RECORDING_USERS_NAME_PARAMETER:    
 				setRecordingUsersNameParameter((String)newValue);
 				return;
 			case LogicPackage.MENTER_SERVICE_INFORMATION_STEP__RECORDING_USERS_NAME_PARAMETER_HISTORIC_VALUES:
 				getRecordingUsersNameParameterHistoricValues().clear();
 				getRecordingUsersNameParameterHistoricValues().addAll((Collection)newValue);
 				return;
-			case LogicPackage.MENTER_SERVICE_INFORMATION_STEP__MSERVICE_DATE_RESULT:
+			case LogicPackage.MENTER_SERVICE_INFORMATION_STEP__MSERVICE_DATE_RESULT:    
 				setMServiceDateResult((MResult)newValue);
 				return;
-			case LogicPackage.MENTER_SERVICE_INFORMATION_STEP__SERVICE_DATE_RESULT:
+			case LogicPackage.MENTER_SERVICE_INFORMATION_STEP__SERVICE_DATE_RESULT:    
 				setServiceDateResult((Date)newValue);
 				return;
-			case LogicPackage.MENTER_SERVICE_INFORMATION_STEP__MSERVICE_TYPE_RESULT:
+			case LogicPackage.MENTER_SERVICE_INFORMATION_STEP__MSERVICE_TYPE_RESULT:    
 				setMServiceTypeResult((MResult)newValue);
 				return;
-			case LogicPackage.MENTER_SERVICE_INFORMATION_STEP__SERVICE_TYPE_RESULT:
+			case LogicPackage.MENTER_SERVICE_INFORMATION_STEP__SERVICE_TYPE_RESULT:    
 				setServiceTypeResult((String)newValue);
 				return;
-			case LogicPackage.MENTER_SERVICE_INFORMATION_STEP__MTITLE_OF_TALK_RESULT:
+			case LogicPackage.MENTER_SERVICE_INFORMATION_STEP__MTITLE_OF_TALK_RESULT:    
 				setMTitleOfTalkResult((MResult)newValue);
 				return;
-			case LogicPackage.MENTER_SERVICE_INFORMATION_STEP__TITLE_OF_TALK_RESULT:
+			case LogicPackage.MENTER_SERVICE_INFORMATION_STEP__TITLE_OF_TALK_RESULT:    
 				setTitleOfTalkResult((String)newValue);
 				return;
-			case LogicPackage.MENTER_SERVICE_INFORMATION_STEP__MREADING_RESULT:
+			case LogicPackage.MENTER_SERVICE_INFORMATION_STEP__MREADING_RESULT:    
 				setMReadingResult((MResult)newValue);
 				return;
-			case LogicPackage.MENTER_SERVICE_INFORMATION_STEP__READING_RESULT:
+			case LogicPackage.MENTER_SERVICE_INFORMATION_STEP__READING_RESULT:    
 				setReadingResult((String)newValue);
 				return;
-			case LogicPackage.MENTER_SERVICE_INFORMATION_STEP__MSPEAKERS_NAME_RESULT:
+			case LogicPackage.MENTER_SERVICE_INFORMATION_STEP__MSPEAKERS_NAME_RESULT:    
 				setMSpeakersNameResult((MResult)newValue);
 				return;
-			case LogicPackage.MENTER_SERVICE_INFORMATION_STEP__SPEAKERS_NAME_RESULT:
+			case LogicPackage.MENTER_SERVICE_INFORMATION_STEP__SPEAKERS_NAME_RESULT:    
 				setSpeakersNameResult((String)newValue);
 				return;
-			case LogicPackage.MENTER_SERVICE_INFORMATION_STEP__MRECORDING_USERS_NAME_RESULT:
+			case LogicPackage.MENTER_SERVICE_INFORMATION_STEP__MRECORDING_USERS_NAME_RESULT:    
 				setMRecordingUsersNameResult((MResult)newValue);
 				return;
-			case LogicPackage.MENTER_SERVICE_INFORMATION_STEP__RECORDING_USERS_NAME_RESULT:
+			case LogicPackage.MENTER_SERVICE_INFORMATION_STEP__RECORDING_USERS_NAME_RESULT:    
 				setRecordingUsersNameResult((String)newValue);
 				return;
 		}

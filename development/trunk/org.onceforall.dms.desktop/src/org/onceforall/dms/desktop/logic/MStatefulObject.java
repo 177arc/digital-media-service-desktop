@@ -202,6 +202,12 @@ public abstract class MStatefulObject extends MObject {
 
 
 
+
+
+
+
+
+
 	
 	/**
 	 * The cached value of the '{@link #getMStateProperty() <em>MState Property</em>}' containment reference.
@@ -537,13 +543,13 @@ public abstract class MStatefulObject extends MObject {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case LogicPackage.MSTATEFUL_OBJECT__MSTATE_PROPERTY:
+			case LogicPackage.MSTATEFUL_OBJECT__MSTATE_PROPERTY:    
 				setMStateProperty((MProperty)newValue);
 				return;
-			case LogicPackage.MSTATEFUL_OBJECT__MLAST_STATE_CHANGE_PROPERTY:
+			case LogicPackage.MSTATEFUL_OBJECT__MLAST_STATE_CHANGE_PROPERTY:    
 				setMLastStateChangeProperty((MProperty)newValue);
 				return;
-			case LogicPackage.MSTATEFUL_OBJECT__LAST_STATE_CHANGE_PROPERTY:
+			case LogicPackage.MSTATEFUL_OBJECT__LAST_STATE_CHANGE_PROPERTY:    
 				setLastStateChangeProperty((Date)newValue);
 				return;
 		}

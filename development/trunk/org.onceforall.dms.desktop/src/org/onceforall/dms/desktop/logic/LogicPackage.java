@@ -1488,13 +1488,22 @@ public class LogicPackage extends EPackageImpl {
 	public static final int MSTEP__ACTION_NAME = MSTATEFUL_OBJECT_FEATURE_COUNT + 14;
 
 	/**
+	 * The feature id for the '<em><b>Exception</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MSTEP__EXCEPTION = MSTATEFUL_OBJECT_FEATURE_COUNT + 15;
+
+	/**
 	 * The number of structural features of the '<em>MStep</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	public static final int MSTEP_FEATURE_COUNT = MSTATEFUL_OBJECT_FEATURE_COUNT + 15;
+	public static final int MSTEP_FEATURE_COUNT = MSTATEFUL_OBJECT_FEATURE_COUNT + 16;
 
 	/**
 	 * The meta object id for the '{@link org.onceforall.dms.desktop.logic.MApplication <em>MApplication</em>}' class.
@@ -2905,6 +2914,15 @@ public class LogicPackage extends EPackageImpl {
 	public static final int MENTER_INFORMATION_STEP__ACTION_NAME = MSTEP__ACTION_NAME;
 
 	/**
+	 * The feature id for the '<em><b>Exception</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MENTER_INFORMATION_STEP__EXCEPTION = MSTEP__EXCEPTION;
+
+	/**
 	 * The number of structural features of the '<em>MEnter Information Step</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3219,6 +3237,15 @@ public class LogicPackage extends EPackageImpl {
 	 * @ordered
 	 */
 	public static final int MENTER_WWX_INFORMATION_STEP__ACTION_NAME = MENTER_INFORMATION_STEP__ACTION_NAME;
+
+	/**
+	 * The feature id for the '<em><b>Exception</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MENTER_WWX_INFORMATION_STEP__EXCEPTION = MENTER_INFORMATION_STEP__EXCEPTION;
 
 	/**
 	 * The feature id for the '<em><b>MWwx Date Parameter</b></em>' containment reference.
@@ -3789,6 +3816,15 @@ public class LogicPackage extends EPackageImpl {
 	public static final int MENTER_SERVICE_INFORMATION_STEP__ACTION_NAME = MENTER_INFORMATION_STEP__ACTION_NAME;
 
 	/**
+	 * The feature id for the '<em><b>Exception</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MENTER_SERVICE_INFORMATION_STEP__EXCEPTION = MENTER_INFORMATION_STEP__EXCEPTION;
+
+	/**
 	 * The feature id for the '<em><b>MService Date Parameter</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4348,6 +4384,15 @@ public class LogicPackage extends EPackageImpl {
 	public static final int MCREATE_DIRECTORY_STEP__ACTION_NAME = MSTEP__ACTION_NAME;
 
 	/**
+	 * The feature id for the '<em><b>Exception</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MCREATE_DIRECTORY_STEP__EXCEPTION = MSTEP__EXCEPTION;
+
+	/**
 	 * The feature id for the '<em><b>MParent Directory Parameter</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4727,6 +4772,15 @@ public class LogicPackage extends EPackageImpl {
 	public static final int MCHECK_FREE_DISK_SPACE_STEP__ACTION_NAME = MSTEP__ACTION_NAME;
 
 	/**
+	 * The feature id for the '<em><b>Exception</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MCHECK_FREE_DISK_SPACE_STEP__EXCEPTION = MSTEP__EXCEPTION;
+
+	/**
 	 * The feature id for the '<em><b>MRequired Free Disk Space Parameter</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -5095,6 +5149,15 @@ public class LogicPackage extends EPackageImpl {
 	 * @ordered
 	 */
 	public static final int MAUDIO_STEP__ACTION_NAME = MSTEP__ACTION_NAME;
+
+	/**
+	 * The feature id for the '<em><b>Exception</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MAUDIO_STEP__EXCEPTION = MSTEP__EXCEPTION;
 
 	/**
 	 * The feature id for the '<em><b>MLeft Input Level Property</b></em>' containment reference.
@@ -5521,6 +5584,15 @@ public class LogicPackage extends EPackageImpl {
 	public static final int MCHECK_INPUT_LEVELS_STEP__ACTION_NAME = MAUDIO_STEP__ACTION_NAME;
 
 	/**
+	 * The feature id for the '<em><b>Exception</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MCHECK_INPUT_LEVELS_STEP__EXCEPTION = MAUDIO_STEP__EXCEPTION;
+
+	/**
 	 * The feature id for the '<em><b>MLeft Input Level Property</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -5943,6 +6015,15 @@ public class LogicPackage extends EPackageImpl {
 	 * @ordered
 	 */
 	public static final int MRECORD_STEP__ACTION_NAME = MAUDIO_STEP__ACTION_NAME;
+
+	/**
+	 * The feature id for the '<em><b>Exception</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MRECORD_STEP__EXCEPTION = MAUDIO_STEP__EXCEPTION;
 
 	/**
 	 * The feature id for the '<em><b>MLeft Input Level Property</b></em>' containment reference.
@@ -6457,6 +6538,15 @@ public class LogicPackage extends EPackageImpl {
 	 * @ordered
 	 */
 	public static final int MCONVERT_TO_MP3_STEP__ACTION_NAME = MSTEP__ACTION_NAME;
+
+	/**
+	 * The feature id for the '<em><b>Exception</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MCONVERT_TO_MP3_STEP__EXCEPTION = MSTEP__EXCEPTION;
 
 	/**
 	 * The feature id for the '<em><b>MArtist Parameter</b></em>' containment reference.
@@ -7061,6 +7151,15 @@ public class LogicPackage extends EPackageImpl {
 	public static final int MFTP_STEP__ACTION_NAME = MSTEP__ACTION_NAME;
 
 	/**
+	 * The feature id for the '<em><b>Exception</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MFTP_STEP__EXCEPTION = MSTEP__EXCEPTION;
+
+	/**
 	 * The feature id for the '<em><b>MFtp Server Url Parameter</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -7419,6 +7518,15 @@ public class LogicPackage extends EPackageImpl {
 	 * @ordered
 	 */
 	public static final int MPUBLISH_MP3S_STEP__ACTION_NAME = MFTP_STEP__ACTION_NAME;
+
+	/**
+	 * The feature id for the '<em><b>Exception</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MPUBLISH_MP3S_STEP__EXCEPTION = MFTP_STEP__EXCEPTION;
 
 	/**
 	 * The feature id for the '<em><b>MFtp Server Url Parameter</b></em>' containment reference.
@@ -7959,6 +8067,15 @@ public class LogicPackage extends EPackageImpl {
 	 * @ordered
 	 */
 	public static final int MUPDATE_PUBLISHED_MP3S_STEP__ACTION_NAME = MPUBLISH_MP3S_STEP__ACTION_NAME;
+
+	/**
+	 * The feature id for the '<em><b>Exception</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MUPDATE_PUBLISHED_MP3S_STEP__EXCEPTION = MPUBLISH_MP3S_STEP__EXCEPTION;
 
 	/**
 	 * The feature id for the '<em><b>MFtp Server Url Parameter</b></em>' containment reference.
@@ -8553,6 +8670,15 @@ public class LogicPackage extends EPackageImpl {
 	 * @ordered
 	 */
 	public static final int MPUBLISH_NEW_MP3_STEP__ACTION_NAME = MPUBLISH_MP3S_STEP__ACTION_NAME;
+
+	/**
+	 * The feature id for the '<em><b>Exception</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MPUBLISH_NEW_MP3_STEP__EXCEPTION = MPUBLISH_MP3S_STEP__EXCEPTION;
 
 	/**
 	 * The feature id for the '<em><b>MFtp Server Url Parameter</b></em>' containment reference.
@@ -9257,6 +9383,15 @@ public class LogicPackage extends EPackageImpl {
 	public static final int MEMAIL_EVENT_LOG_STEP__ACTION_NAME = MSTEP__ACTION_NAME;
 
 	/**
+	 * The feature id for the '<em><b>Exception</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MEMAIL_EVENT_LOG_STEP__EXCEPTION = MSTEP__EXCEPTION;
+
+	/**
 	 * The feature id for the '<em><b>MRecording Users Name Parameter</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -9383,7 +9518,7 @@ public class LogicPackage extends EPackageImpl {
 	public static final int MEMAIL_EVENT_LOG_STEP__MRECEIPIENTS_EMAIL_ADDRESS_PARAMETER = MSTEP_FEATURE_COUNT + 13;
 
 	/**
-	 * The feature id for the '<em><b>Receipients Email Address Parameter</b></em>' attribute.
+	 * The feature id for the '<em><b>Receipients Email Address Parameter</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -10256,6 +10391,15 @@ public class LogicPackage extends EPackageImpl {
 	public static final int MBURN_CD_STEP__ACTION_NAME = MSTEP__ACTION_NAME;
 
 	/**
+	 * The feature id for the '<em><b>Exception</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MBURN_CD_STEP__EXCEPTION = MSTEP__EXCEPTION;
+
+	/**
 	 * The feature id for the '<em><b>MRecording Files Parameter</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -10662,6 +10806,15 @@ public class LogicPackage extends EPackageImpl {
 	public static final int MTEST_STEP__ACTION_NAME = MSTEP__ACTION_NAME;
 
 	/**
+	 * The feature id for the '<em><b>Exception</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MTEST_STEP__EXCEPTION = MSTEP__EXCEPTION;
+
+	/**
 	 * The feature id for the '<em><b>MPersistent String Parameter</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -11012,6 +11165,15 @@ public class LogicPackage extends EPackageImpl {
 	 * @ordered
 	 */
 	public static final int MDMS_APPLICATION_MGET_DATA_UPGRADE_INFO_STEP__ACTION_NAME = MFTP_STEP__ACTION_NAME;
+
+	/**
+	 * The feature id for the '<em><b>Exception</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MDMS_APPLICATION_MGET_DATA_UPGRADE_INFO_STEP__EXCEPTION = MFTP_STEP__EXCEPTION;
 
 	/**
 	 * The feature id for the '<em><b>MFtp Server Url Parameter</b></em>' containment reference.
@@ -11454,6 +11616,15 @@ public class LogicPackage extends EPackageImpl {
 	 * @ordered
 	 */
 	public static final int MDMS_APPLICATION_MUPGRADE_DATA_STEP__ACTION_NAME = MFTP_STEP__ACTION_NAME;
+
+	/**
+	 * The feature id for the '<em><b>Exception</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MDMS_APPLICATION_MUPGRADE_DATA_STEP__EXCEPTION = MFTP_STEP__EXCEPTION;
 
 	/**
 	 * The feature id for the '<em><b>MFtp Server Url Parameter</b></em>' containment reference.
@@ -12633,6 +12804,19 @@ public class LogicPackage extends EPackageImpl {
 	 */
 	public EAttribute getMStep_ActionName() {
 		return (EAttribute)mStepEClass.getEStructuralFeatures().get(14);
+	}
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.onceforall.dms.desktop.logic.MStep#getException <em>Exception</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Exception</em>'.
+	 * @see org.onceforall.dms.desktop.logic.MStep#getException()
+	 * @see #getMStep()
+	 * @generated
+	 */
+	public EAttribute getMStep_Exception() {
+		return (EAttribute)mStepEClass.getEStructuralFeatures().get(15);
 	}
 
 	/**
@@ -15882,10 +16066,10 @@ public class LogicPackage extends EPackageImpl {
 	}
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.onceforall.dms.desktop.logic.MEmailEventLogStep#getReceipientsEmailAddressParameter <em>Receipients Email Address Parameter</em>}'.
+	 * Returns the meta object for the attribute list '{@link org.onceforall.dms.desktop.logic.MEmailEventLogStep#getReceipientsEmailAddressParameter <em>Receipients Email Address Parameter</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Receipients Email Address Parameter</em>'.
+	 * @return the meta object for the attribute list '<em>Receipients Email Address Parameter</em>'.
 	 * @see org.onceforall.dms.desktop.logic.MEmailEventLogStep#getReceipientsEmailAddressParameter()
 	 * @see #getMEmailEventLogStep()
 	 * @generated
@@ -17069,6 +17253,7 @@ public class LogicPackage extends EPackageImpl {
 		createEAttribute(mStepEClass, MSTEP__STOPPABLE);
 		createEAttribute(mStepEClass, MSTEP__TERMINATABLE);
 		createEAttribute(mStepEClass, MSTEP__ACTION_NAME);
+		createEAttribute(mStepEClass, MSTEP__EXCEPTION);
 
 		mValueEClass = createEClass(MVALUE);
 		createEReference(mValueEClass, MVALUE__MINPUT_VALUES);
@@ -17545,6 +17730,7 @@ public class LogicPackage extends EPackageImpl {
 		initEAttribute(getMStep_Stoppable(), ecorePackage.getEBoolean(), "stoppable", "false", 1, 1, MStep.class, IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMStep_Terminatable(), ecorePackage.getEBoolean(), "terminatable", "false", 1, 1, MStep.class, IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMStep_ActionName(), ecorePackage.getEString(), "actionName", "Start", 1, 1, MStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getMStep_Exception(), this.getEThrowable(), "exception", null, 1, 1, MStep.class, IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		
 
 		initEClass(mValueEClass, MValue.class, "MValue", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -17553,7 +17739,7 @@ public class LogicPackage extends EPackageImpl {
 		initEAttribute(getMValue_Value(), ecorePackage.getEJavaObject(), "value", null, 0, 1, MValue.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMValue_HistoricValues(), ecorePackage.getEJavaObject(), "historicValues", null, 0, -1, MValue.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getMValue_HistoricValuesForUI(), ecorePackage.getEString(), "historicValuesForUI", null, 0, -1, MValue.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
-		initEAttribute(getMValue_ReadOnly(), ecorePackage.getEBoolean(), "readOnly", null, 1, 1, MValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getMValue_ReadOnly(), ecorePackage.getEBoolean(), "readOnly", null, 1, 1, MValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		
 
 		initEClass(mApplicationEClass, MApplication.class, "MApplication", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -17831,7 +18017,7 @@ public class LogicPackage extends EPackageImpl {
 		initEAttribute(getMEmailEventLogStep_SendersEmailAddressParameter(), this.getMString(), "sendersEmailAddressParameter", null, 1, 1, MEmailEventLogStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMEmailEventLogStep_SendersEmailAddressParameterHistoricValues(), this.getMString(), "sendersEmailAddressParameterHistoricValues", null, 0, 6, MEmailEventLogStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getMEmailEventLogStep_MReceipientsEmailAddressParameter(), this.getMParameter(), null, "mReceipientsEmailAddressParameter", "", 1, 1, MEmailEventLogStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getMEmailEventLogStep_ReceipientsEmailAddressParameter(), this.getMString(), "receipientsEmailAddressParameter", null, 1, 1, MEmailEventLogStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getMEmailEventLogStep_ReceipientsEmailAddressParameter(), this.getMString(), "receipientsEmailAddressParameter", null, 1, -1, MEmailEventLogStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getMEmailEventLogStep_MSmtpServerParameter(), this.getMParameter(), null, "mSmtpServerParameter", "", 1, 1, MEmailEventLogStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMEmailEventLogStep_SmtpServerParameter(), this.getMString(), "smtpServerParameter", null, 1, 1, MEmailEventLogStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getMEmailEventLogStep_MSmtpUserNameParameter(), this.getMParameter(), null, "mSmtpUserNameParameter", "", 1, 1, MEmailEventLogStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -17978,8 +18164,13 @@ public class LogicPackage extends EPackageImpl {
 		   new String[] {
 			 "name", "Icon file path",
 			 "description", "Specifies the file path to the icon that represents this element.",
-			 "readOnly", "true",
 			 "valueEFeature", "iconFilePath"
+		   });		
+		addAnnotation
+		  (mElementEClass, 
+		   source, 
+		   new String[] {
+			 "typeNameForUI", "Element"
 		   });		
 		addAnnotation
 		  (mParameterEClass, 
@@ -18020,8 +18211,7 @@ public class LogicPackage extends EPackageImpl {
 		   source, 
 		   new String[] {
 			 "typeNameForUI", "Task",
-			 "compositeClassName", "org.onceforall.dms.desktop.ui.MStepComposite",
-			 "iconFilePath", "Image Files/Step.gif"
+			 "compositeClassName", "org.onceforall.dms.desktop.ui.MStepComposite"
 		   });		
 		addAnnotation
 		  (getMStep_MProgressProperty(), 
@@ -18069,24 +18259,21 @@ public class LogicPackage extends EPackageImpl {
 		   source, 
 		   new String[] {
 			 "name", "Log file",
-			 "description", "Specifies the file that contains the log data.",
-			 "readOnly", "true"
+			 "description", "Specifies the file that contains the log data."
 		   });		
 		addAnnotation
 		  (getMApplication_MPathProperty(), 
 		   source, 
 		   new String[] {
 			 "name", "Path",
-			 "description", "Specifies the path where this application has been started from.",
-			 "readOnly", "true"
+			 "description", "Specifies the path where this application has been started from."
 		   });		
 		addAnnotation
 		  (getMApplication_MVersionProperty(), 
 		   source, 
 		   new String[] {
 			 "name", "Version",
-			 "description", "Specifies the version of the application.",
-			 "readOnly", "true"
+			 "description", "Specifies the version of the application."
 		   });		
 		addAnnotation
 		  (getMApplication_MLastSaveProperty(), 
@@ -18102,8 +18289,7 @@ public class LogicPackage extends EPackageImpl {
 		   new String[] {
 			 "typeNameForUI", "Script",
 			 "name", "Script",
-			 "description", "Contains a number of tasks that should be completed.",
-			 "iconFilePath", "Image Files/Script.gif"
+			 "description", "Contains a number of tasks that should be completed."
 		   });		
 		addAnnotation
 		  (getMScript_MProgressProperty(), 
@@ -19124,7 +19310,7 @@ public class LogicPackage extends EPackageImpl {
 		   source, 
 		   new String[] {
 			 "name", "Receipient\'s email address",
-			 "description", "Specifies the receipient\'s email address."
+			 "description", "Specifies the email addresses of the recipients, i.e. the To field of the email."
 		   });		
 		addAnnotation
 		  (getMEmailEventLogStep_MSmtpServerParameter(), 
@@ -19682,6 +19868,14 @@ public class LogicPackage extends EPackageImpl {
 		 * @generated
 		 */
 		public static final EAttribute MSTEP__ACTION_NAME = eINSTANCE.getMStep_ActionName();
+
+		/**
+		 * The meta object literal for the '<em><b>Exception</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		public static final EAttribute MSTEP__EXCEPTION = eINSTANCE.getMStep_Exception();
 
 		/**
 		 * The meta object literal for the '{@link org.onceforall.dms.desktop.logic.MValue <em>MValue</em>}' class.
@@ -21734,7 +21928,7 @@ public class LogicPackage extends EPackageImpl {
 		public static final EReference MEMAIL_EVENT_LOG_STEP__MRECEIPIENTS_EMAIL_ADDRESS_PARAMETER = eINSTANCE.getMEmailEventLogStep_MReceipientsEmailAddressParameter();
 
 		/**
-		 * The meta object literal for the '<em><b>Receipients Email Address Parameter</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Receipients Email Address Parameter</b></em>' attribute list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated

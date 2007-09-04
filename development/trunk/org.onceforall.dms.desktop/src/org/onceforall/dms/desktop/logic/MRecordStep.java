@@ -1016,34 +1016,34 @@ public class MRecordStep extends MAudioStep {
 	 */
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case LogicPackage.MRECORD_STEP__MDIRECTORY_PARAMETER:
+			case LogicPackage.MRECORD_STEP__MDIRECTORY_PARAMETER:    
 				setMDirectoryParameter((MParameter)newValue);
 				return;
-			case LogicPackage.MRECORD_STEP__DIRECTORY_PARAMETER:
+			case LogicPackage.MRECORD_STEP__DIRECTORY_PARAMETER:    
 				setDirectoryParameter((File)newValue);
 				return;
-			case LogicPackage.MRECORD_STEP__MRECORDING_FILE_PARAMETER:
+			case LogicPackage.MRECORD_STEP__MRECORDING_FILE_PARAMETER:    
 				setMRecordingFileParameter((MParameter)newValue);
 				return;
-			case LogicPackage.MRECORD_STEP__RECORDING_FILE_PARAMETER:
+			case LogicPackage.MRECORD_STEP__RECORDING_FILE_PARAMETER:    
 				setRecordingFileParameter((File)newValue);
 				return;
-			case LogicPackage.MRECORD_STEP__MRECORDING_FILE_RESULT:
+			case LogicPackage.MRECORD_STEP__MRECORDING_FILE_RESULT:    
 				setMRecordingFileResult((MResult)newValue);
 				return;
-			case LogicPackage.MRECORD_STEP__RECORDING_FILE_RESULT:
+			case LogicPackage.MRECORD_STEP__RECORDING_FILE_RESULT:    
 				setRecordingFileResult((File)newValue);
 				return;
-			case LogicPackage.MRECORD_STEP__MRECORDING_FILE_SIZE_RESULT:
+			case LogicPackage.MRECORD_STEP__MRECORDING_FILE_SIZE_RESULT:    
 				setMRecordingFileSizeResult((MResult)newValue);
 				return;
-			case LogicPackage.MRECORD_STEP__RECORDING_FILE_SIZE_RESULT:
+			case LogicPackage.MRECORD_STEP__RECORDING_FILE_SIZE_RESULT:    
 				setRecordingFileSizeResult((Long)newValue);
 				return;
-			case LogicPackage.MRECORD_STEP__MRECORDING_LENGTH_RESULT:
+			case LogicPackage.MRECORD_STEP__MRECORDING_LENGTH_RESULT:    
 				setMRecordingLengthResult((MResult)newValue);
 				return;
-			case LogicPackage.MRECORD_STEP__RECORDING_LENGTH_RESULT:
+			case LogicPackage.MRECORD_STEP__RECORDING_LENGTH_RESULT:    
 				setRecordingLengthResult((Long)newValue);
 				return;
 		}
@@ -1151,6 +1151,8 @@ public class MRecordStep extends MAudioStep {
 	@Override
 	protected void execute() throws Throwable {
         File recordingFile = null;
+
+        getDirectoryParameter().mkdirs();
         
         thread.setPriority(Thread.MAX_PRIORITY);
 

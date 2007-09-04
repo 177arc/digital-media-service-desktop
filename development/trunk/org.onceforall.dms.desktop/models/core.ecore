@@ -29,7 +29,6 @@
       <eAnnotations source="http://www.onceforall.org/mcore">
         <details key="name" value="Icon file path"/>
         <details key="description" value="Specifies the file path to the icon that represents this element."/>
-        <details key="readOnly" value="true"/>
         <details key="valueEFeature" value="iconFilePath"/>
       </eAnnotations>
     </eStructuralFeatures>
@@ -41,6 +40,9 @@
         derived="true" resolveProxies="false"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="MElement" abstract="true">
+    <eAnnotations source="http://www.onceforall.org/mcore">
+      <details key="typeNameForUI" value="Element"/>		
+    </eAnnotations>
     <eOperations name="validate" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eParameters name="diagnosticsChain" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain"/>
       <eParameters name="context" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EMap"/>
@@ -107,7 +109,6 @@
     <eAnnotations source="http://www.onceforall.org/mcore">
       <details key="typeNameForUI" value="Task"/>
       <details key="compositeClassName" value="org.onceforall.dms.desktop.ui.MStepComposite"/>
-      <details key="iconFilePath" value="Image Files/Step.gif"/> 
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="mInputSteps" ordered="false"
         upperBound="-1" eType="#//MStep" resolveProxies="false"/>
@@ -163,6 +164,8 @@
         defaultValueLiteral="false"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="actionName" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" defaultValueLiteral="Start"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="exception" lowerBound="1" transient="true"
+        eType="#//EThrowable" changeable="false"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="MValue" abstract="true" eSuperTypes="#//MElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="mInputValues" upperBound="-1"
@@ -179,7 +182,7 @@
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" volatile="true"
         transient="true" derived="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="readOnly" lowerBound="1"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean" unsettable="true"/>
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="MApplication" abstract="true" eSuperTypes="#//MObject">
     <eAnnotations source="http://www.onceforall.org/mcore">
@@ -207,7 +210,6 @@
       <eAnnotations source="http://www.onceforall.org/mcore">
         <details key="name" value="Log file"/>
         <details key="description" value="Specifies the file that contains the log data."/>
-        <details key="readOnly" value="true"/>
       </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="logFileProperty" lowerBound="1"
@@ -217,7 +219,6 @@
       <eAnnotations source="http://www.onceforall.org/mcore">
         <details key="name" value="Path"/>
         <details key="description" value="Specifies the path where this application has been started from."/>
-        <details key="readOnly" value="true"/>
       </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="pathProperty" lowerBound="1"
@@ -227,7 +228,6 @@
       <eAnnotations source="http://www.onceforall.org/mcore">
         <details key="name" value="Version"/>
         <details key="description" value="Specifies the version of the application."/>
-        <details key="readOnly" value="true"/>
       </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="versionProperty" lowerBound="1"
@@ -247,7 +247,6 @@
       <details key="typeNameForUI" value="Script"/>
       <details key="name" value="Script"/>
       <details key="description" value="Contains a number of tasks that should be completed."/>
-      <details key="iconFilePath" value="Image Files/Script.gif"/> 
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="mSteps" upperBound="-1"
         eType="#//MStep" containment="true" resolveProxies="false"/>
@@ -1493,10 +1492,10 @@ For an explanation of dBFS, please refer to http://en.wikipedia.org/wiki/DBFS.
 	      containment="true" resolveProxies="false">
 	     <eAnnotations source="http://www.onceforall.org/mcore">
 	       <details key="name" value="Receipient&apos;s email address"/>
-	       <details key="description" value="Specifies the receipient&apos;s email address."/>
+	       <details key="description" value="Specifies the email addresses of the recipients, i.e. the To field of the email."/>
 	     </eAnnotations>
 	   </eStructuralFeatures>  		
-       <eStructuralFeatures xsi:type="ecore:EAttribute" name="receipientsEmailAddressParameter" lowerBound="1" upperBound="1" transient="false" eType="//MString" derived="false" volatile="false"/>
+       <eStructuralFeatures xsi:type="ecore:EAttribute" name="receipientsEmailAddressParameter" lowerBound="1" upperBound="-1" transient="false" eType="//MString" derived="false" volatile="false"/>
 	   	<eStructuralFeatures xsi:type="ecore:EReference" name="mSmtpServerParameter"
 	      lowerBound="1" eType="#//MParameter" defaultValueLiteral=""
 	      containment="true" resolveProxies="false">

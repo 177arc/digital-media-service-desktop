@@ -1841,64 +1841,64 @@ public abstract class MPublishMp3sStep extends MFtpStep {
 	 */
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case LogicPackage.MPUBLISH_MP3S_STEP__MMAXIUMUM_DISK_SPACE_PARAMETER:
+			case LogicPackage.MPUBLISH_MP3S_STEP__MMAXIUMUM_DISK_SPACE_PARAMETER:    
 				setMMaxiumumDiskSpaceParameter((MParameter)newValue);
 				return;
-			case LogicPackage.MPUBLISH_MP3S_STEP__MAXIUMUM_DISK_SPACE_PARAMETER:
+			case LogicPackage.MPUBLISH_MP3S_STEP__MAXIUMUM_DISK_SPACE_PARAMETER:    
 				setMaxiumumDiskSpaceParameter((Long)newValue);
 				return;
-			case LogicPackage.MPUBLISH_MP3S_STEP__MMP3_RELATIVE_FTP_PATH_PARAMETER:
+			case LogicPackage.MPUBLISH_MP3S_STEP__MMP3_RELATIVE_FTP_PATH_PARAMETER:    
 				setMMp3RelativeFtpPathParameter((MParameter)newValue);
 				return;
-			case LogicPackage.MPUBLISH_MP3S_STEP__MP3_RELATIVE_FTP_PATH_PARAMETER:
+			case LogicPackage.MPUBLISH_MP3S_STEP__MP3_RELATIVE_FTP_PATH_PARAMETER:    
 				setMp3RelativeFtpPathParameter((String)newValue);
 				return;
-			case LogicPackage.MPUBLISH_MP3S_STEP__MWEB_SERVER_URL_PARAMETER:
+			case LogicPackage.MPUBLISH_MP3S_STEP__MWEB_SERVER_URL_PARAMETER:    
 				setMWebServerUrlParameter((MParameter)newValue);
 				return;
-			case LogicPackage.MPUBLISH_MP3S_STEP__WEB_SERVER_URL_PARAMETER:
+			case LogicPackage.MPUBLISH_MP3S_STEP__WEB_SERVER_URL_PARAMETER:    
 				setWebServerUrlParameter((URL)newValue);
 				return;
-			case LogicPackage.MPUBLISH_MP3S_STEP__MCONTENT_PAGE_RELATIVE_FTP_PATH_PARAMETER:
+			case LogicPackage.MPUBLISH_MP3S_STEP__MCONTENT_PAGE_RELATIVE_FTP_PATH_PARAMETER:    
 				setMContentPageRelativeFtpPathParameter((MParameter)newValue);
 				return;
-			case LogicPackage.MPUBLISH_MP3S_STEP__CONTENT_PAGE_RELATIVE_FTP_PATH_PARAMETER:
+			case LogicPackage.MPUBLISH_MP3S_STEP__CONTENT_PAGE_RELATIVE_FTP_PATH_PARAMETER:    
 				setContentPageRelativeFtpPathParameter((String)newValue);
 				return;
-			case LogicPackage.MPUBLISH_MP3S_STEP__MCONTENT_HEADER_FILE_PATH_PARAMETER:
+			case LogicPackage.MPUBLISH_MP3S_STEP__MCONTENT_HEADER_FILE_PATH_PARAMETER:    
 				setMContentHeaderFilePathParameter((MParameter)newValue);
 				return;
-			case LogicPackage.MPUBLISH_MP3S_STEP__CONTENT_HEADER_FILE_PATH_PARAMETER:
+			case LogicPackage.MPUBLISH_MP3S_STEP__CONTENT_HEADER_FILE_PATH_PARAMETER:    
 				setContentHeaderFilePathParameter((File)newValue);
 				return;
-			case LogicPackage.MPUBLISH_MP3S_STEP__MCONTENT_FOOTER_FILE_PATH_PARAMETER:
+			case LogicPackage.MPUBLISH_MP3S_STEP__MCONTENT_FOOTER_FILE_PATH_PARAMETER:    
 				setMContentFooterFilePathParameter((MParameter)newValue);
 				return;
-			case LogicPackage.MPUBLISH_MP3S_STEP__CONTENT_FOOTER_FILE_PATH_PARAMETER:
+			case LogicPackage.MPUBLISH_MP3S_STEP__CONTENT_FOOTER_FILE_PATH_PARAMETER:    
 				setContentFooterFilePathParameter((File)newValue);
 				return;
-			case LogicPackage.MPUBLISH_MP3S_STEP__MCONTENT_PAGE_FILE_PATH_PARAMETER:
+			case LogicPackage.MPUBLISH_MP3S_STEP__MCONTENT_PAGE_FILE_PATH_PARAMETER:    
 				setMContentPageFilePathParameter((MParameter)newValue);
 				return;
-			case LogicPackage.MPUBLISH_MP3S_STEP__CONTENT_PAGE_FILE_PATH_PARAMETER:
+			case LogicPackage.MPUBLISH_MP3S_STEP__CONTENT_PAGE_FILE_PATH_PARAMETER:    
 				setContentPageFilePathParameter((File)newValue);
 				return;
-			case LogicPackage.MPUBLISH_MP3S_STEP__MPODCAST_FILE_PATH_PARAMETER:
+			case LogicPackage.MPUBLISH_MP3S_STEP__MPODCAST_FILE_PATH_PARAMETER:    
 				setMPodcastFilePathParameter((MParameter)newValue);
 				return;
-			case LogicPackage.MPUBLISH_MP3S_STEP__PODCAST_FILE_PATH_PARAMETER:
+			case LogicPackage.MPUBLISH_MP3S_STEP__PODCAST_FILE_PATH_PARAMETER:    
 				setPodcastFilePathParameter((File)newValue);
 				return;
-			case LogicPackage.MPUBLISH_MP3S_STEP__MPODCAST_RELATIVE_FTP_PATH_PARAMETER:
+			case LogicPackage.MPUBLISH_MP3S_STEP__MPODCAST_RELATIVE_FTP_PATH_PARAMETER:    
 				setMPodcastRelativeFtpPathParameter((MParameter)newValue);
 				return;
-			case LogicPackage.MPUBLISH_MP3S_STEP__PODCAST_RELATIVE_FTP_PATH_PARAMETER:
+			case LogicPackage.MPUBLISH_MP3S_STEP__PODCAST_RELATIVE_FTP_PATH_PARAMETER:    
 				setPodcastRelativeFtpPathParameter((String)newValue);
 				return;
-			case LogicPackage.MPUBLISH_MP3S_STEP__MPODCAST_HEADER_FILE_PATH_PARAMETER:
+			case LogicPackage.MPUBLISH_MP3S_STEP__MPODCAST_HEADER_FILE_PATH_PARAMETER:    
 				setMPodcastHeaderFilePathParameter((MParameter)newValue);
 				return;
-			case LogicPackage.MPUBLISH_MP3S_STEP__PODCAST_HEADER_FILE_PATH_PARAMETER:
+			case LogicPackage.MPUBLISH_MP3S_STEP__PODCAST_HEADER_FILE_PATH_PARAMETER:    
 				setPodcastHeaderFilePathParameter((File)newValue);
 				return;
 		}

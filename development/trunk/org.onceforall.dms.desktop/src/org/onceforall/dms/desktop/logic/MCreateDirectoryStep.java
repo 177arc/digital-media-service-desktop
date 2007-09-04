@@ -733,26 +733,26 @@ public class MCreateDirectoryStep extends MStep {
 	 */
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case LogicPackage.MCREATE_DIRECTORY_STEP__MPARENT_DIRECTORY_PARAMETER:
+			case LogicPackage.MCREATE_DIRECTORY_STEP__MPARENT_DIRECTORY_PARAMETER:    
 				setMParentDirectoryParameter((MParameter)newValue);
 				return;
-			case LogicPackage.MCREATE_DIRECTORY_STEP__PARENT_DIRECTORY_PARAMETER:
+			case LogicPackage.MCREATE_DIRECTORY_STEP__PARENT_DIRECTORY_PARAMETER:    
 				setParentDirectoryParameter((File)newValue);
 				return;
 			case LogicPackage.MCREATE_DIRECTORY_STEP__PARENT_DIRECTORY_PARAMETER_HISTORIC_VALUES:
 				getParentDirectoryParameterHistoricValues().clear();
 				getParentDirectoryParameterHistoricValues().addAll((Collection)newValue);
 				return;
-			case LogicPackage.MCREATE_DIRECTORY_STEP__MDIRECTORY_NAME_PARAMETER:
+			case LogicPackage.MCREATE_DIRECTORY_STEP__MDIRECTORY_NAME_PARAMETER:    
 				setMDirectoryNameParameter((MParameter)newValue);
 				return;
-			case LogicPackage.MCREATE_DIRECTORY_STEP__DIRECTORY_NAME_PARAMETER:
+			case LogicPackage.MCREATE_DIRECTORY_STEP__DIRECTORY_NAME_PARAMETER:    
 				setDirectoryNameParameter((File)newValue);
 				return;
-			case LogicPackage.MCREATE_DIRECTORY_STEP__MDIRECTORY_RESULT:
+			case LogicPackage.MCREATE_DIRECTORY_STEP__MDIRECTORY_RESULT:    
 				setMDirectoryResult((MResult)newValue);
 				return;
-			case LogicPackage.MCREATE_DIRECTORY_STEP__DIRECTORY_RESULT:
+			case LogicPackage.MCREATE_DIRECTORY_STEP__DIRECTORY_RESULT:    
 				setDirectoryResult((File)newValue);
 				return;
 		}

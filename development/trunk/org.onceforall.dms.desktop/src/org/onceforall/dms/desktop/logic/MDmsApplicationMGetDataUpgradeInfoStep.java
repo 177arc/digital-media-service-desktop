@@ -139,6 +139,12 @@ public class MDmsApplicationMGetDataUpgradeInfoStep extends MFtpStep {
 
 
 
+
+
+
+
+
+
 	
 	/**
 	 * The cached value of the '{@link #getMUpgradeRelativeFtpPathProperty() <em>MUpgrade Relative Ftp Path Property</em>}' containment reference.
@@ -931,28 +937,28 @@ public class MDmsApplicationMGetDataUpgradeInfoStep extends MFtpStep {
 	 */
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case LogicPackage.MDMS_APPLICATION_MGET_DATA_UPGRADE_INFO_STEP__MUPGRADE_RELATIVE_FTP_PATH_PROPERTY:
+			case LogicPackage.MDMS_APPLICATION_MGET_DATA_UPGRADE_INFO_STEP__MUPGRADE_RELATIVE_FTP_PATH_PROPERTY:    
 				setMUpgradeRelativeFtpPathProperty((MParameter)newValue);
 				return;
-			case LogicPackage.MDMS_APPLICATION_MGET_DATA_UPGRADE_INFO_STEP__UPGRADE_RELATIVE_FTP_PATH_PROPERTY:
+			case LogicPackage.MDMS_APPLICATION_MGET_DATA_UPGRADE_INFO_STEP__UPGRADE_RELATIVE_FTP_PATH_PROPERTY:    
 				setUpgradeRelativeFtpPathProperty((String)newValue);
 				return;
-			case LogicPackage.MDMS_APPLICATION_MGET_DATA_UPGRADE_INFO_STEP__MUPGRADE_AVAILABLE_RESULT:
+			case LogicPackage.MDMS_APPLICATION_MGET_DATA_UPGRADE_INFO_STEP__MUPGRADE_AVAILABLE_RESULT:    
 				setMUpgradeAvailableResult((MResult)newValue);
 				return;
-			case LogicPackage.MDMS_APPLICATION_MGET_DATA_UPGRADE_INFO_STEP__UPGRADE_AVAILABLE_RESULT:
+			case LogicPackage.MDMS_APPLICATION_MGET_DATA_UPGRADE_INFO_STEP__UPGRADE_AVAILABLE_RESULT:    
 				setUpgradeAvailableResult((Boolean)newValue);
 				return;
-			case LogicPackage.MDMS_APPLICATION_MGET_DATA_UPGRADE_INFO_STEP__MUPGRADE_MESSAGE_RESULT:
+			case LogicPackage.MDMS_APPLICATION_MGET_DATA_UPGRADE_INFO_STEP__MUPGRADE_MESSAGE_RESULT:    
 				setMUpgradeMessageResult((MResult)newValue);
 				return;
-			case LogicPackage.MDMS_APPLICATION_MGET_DATA_UPGRADE_INFO_STEP__UPGRADE_MESSAGE_RESULT:
+			case LogicPackage.MDMS_APPLICATION_MGET_DATA_UPGRADE_INFO_STEP__UPGRADE_MESSAGE_RESULT:    
 				setUpgradeMessageResult((String)newValue);
 				return;
-			case LogicPackage.MDMS_APPLICATION_MGET_DATA_UPGRADE_INFO_STEP__MUPGRADE_DATE_RESULT:
+			case LogicPackage.MDMS_APPLICATION_MGET_DATA_UPGRADE_INFO_STEP__MUPGRADE_DATE_RESULT:    
 				setMUpgradeDateResult((MResult)newValue);
 				return;
-			case LogicPackage.MDMS_APPLICATION_MGET_DATA_UPGRADE_INFO_STEP__UPGRADE_DATE_RESULT:
+			case LogicPackage.MDMS_APPLICATION_MGET_DATA_UPGRADE_INFO_STEP__UPGRADE_DATE_RESULT:    
 				setUpgradeDateResult((Date)newValue);
 				return;
 		}
