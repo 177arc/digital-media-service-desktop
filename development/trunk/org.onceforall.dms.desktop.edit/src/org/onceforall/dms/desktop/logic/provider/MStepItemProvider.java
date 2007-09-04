@@ -85,6 +85,7 @@ public class MStepItemProvider
 			addStoppablePropertyDescriptor(object);
 			addTerminatablePropertyDescriptor(object);
 			addActionNamePropertyDescriptor(object);
+			addExceptionPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -310,6 +311,28 @@ public class MStepItemProvider
 	}
 
 	/**
+	 * This adds a property descriptor for the Exception feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addExceptionPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_MStep_exception_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_MStep_exception_feature", "_UI_MStep_type"),
+				 LogicPackage.Literals.MSTEP__EXCEPTION,
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
 	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
@@ -373,6 +396,7 @@ public class MStepItemProvider
 			case LogicPackage.MSTEP__STOPPABLE:
 			case LogicPackage.MSTEP__TERMINATABLE:
 			case LogicPackage.MSTEP__ACTION_NAME:
+			case LogicPackage.MSTEP__EXCEPTION:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case LogicPackage.MSTEP__MPROGRESS_PROPERTY:
