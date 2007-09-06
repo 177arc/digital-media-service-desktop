@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" version="2.0">
+<channel>
+<title>Sermons</title>
+<link>http://www.abm-rz.de</link>
+<description>The latest sermon of the regular morning and evening services. </description>
+<itunes:summary>The latest sermon of the regular morning and evening services. </itunes:summary>
+<language>en-gb</language>
+<itunes:author>Digital Media Service</itunes:author>
+<itunes:owner>
+    <itunes:name>Digital Media Service</itunes:name>
+    <itunes:email></itunes:email>
+</itunes:owner>
+<!-- iTunes Browse Podcasts Category -->
+<itunes:category text="Religion &amp; Spirituality">
+    <!-- iTunes Browse Podcasts Subcategory -->
+    <itunes:category text="Christianity"/>
+</itunes:category>
+<itunes:explicit>No</itunes:explicit>
