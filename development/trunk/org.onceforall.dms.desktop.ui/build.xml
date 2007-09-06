@@ -13,34 +13,58 @@ $
 	<property name="project" value="Digital Media Service Desktop"/>
 
   <!-- Sets global properties. -->
-	<property name="base" location="../../../../"/>
-	<property name="projects" location="${base}/Projects"/>
+	<property name="root" location="../../../../../"/>
+	<property name="projects" location="${root}/Projects"/>
 	<property name="doc" location="../Documentation"/>
 	<property name="doc.source" location="${doc}/Source"/>
 
 	<property name="core" location="../org.onceforall.dms.desktop"/>
 	<property name="core.src" location="${core}/src"/>
+	<property name="core.lib" location="${core}/lib"/>
 	<property name="core.bin" location="${core}/bin"/>
-  <property name="ui.src" location="./src"/>
+	<property name="autoTest" location="../org.onceforall.dms.desktop.tests"/>
+	<property name="editor" location="../org.onceforall.dms.desktop.editor"/>
+	<property name="ui.src" location="./src"/>
+  <property name="ui.lib" location="./lib"/>
   <property name="ui.bin" location="./bin"/>
+  <property name="ui.config.testEnv" location="./config/test"/>
+  <property name="ui.config.deployEnv" location="./config/deploy"/>	
 
   <property name="testEnv" location="test"/>
   <property name="testEnv.webFiles" location="${testEnv}/Web Files"/>
   <property name="testEnv.dataFiles" location="${testEnv}/Application Data Files"/>
-  <property name="testEnv.serviceFiles" location="${testEnv}/Service Files"/>
+  <property name="testEnv.recordingFiles" location="${testEnv}/Recording Files"/>
   <property name="testEnv.libraryFiles" location="${testEnv}/Library Files"/>
   <property name="testEnv.programFiles" location="${testEnv}/Program Files"/>
   <property name="testEnv.installationFiles" location="${testEnv}/Installation Files"/>
   <property name="testEnv.imageFiles" location="${testEnv}/Image Files"/>
-  <property name="deployEnv" location="deploy"/>
 
+  <property name="autoTestEnv" location="${autoTest}/test"/>
+  <property name="autoTestEnv.testFiles" location="${autoTestEnv}/Test Files"/>
+  <property name="autoTestEnv.webFiles" location="${autoTestEnv}/Web Files"/>
+  <property name="autoTestEnv.dataFiles" location="${autoTestEnv}/Application Data Files"/>
+  <property name="autoTestEnv.recordingFiles" location="${autoTestEnv}/Recording Files"/>
+  <property name="autoTestEnv.libraryFiles" location="${autoTestEnv}/Library Files"/>
+  <property name="autoTestEnv.programFiles" location="${autoTestEnv}/Program Files"/>
+  <property name="autoTestEnv.installationFiles" location="${autoTestEnv}/Installation Files"/>
+  <property name="autoTestEnv.imageFiles" location="${autoTestEnv}/Image Files"/>
+  
+	<property name="autoTest.config.testEnv" location="${autoTest}/config/test"/>
+	
+	<property name="deployEnv" location="../Releases"/>
+	
+	<property name="editor.testEnv" location="${editor}/test"/>
+  <property name="editor.config.testEnv" location="${editor}/config/test"/>
+  <property name="editor.config.deployEnv" location="${editor}/config/deploy"/>	
+	
 	<property name="sdk" location="${projects}/Common/SDK"/>
   <property name="shortcuts" location="${projects}/Common/Shortcuts"/>
 
 	<property name="commonInstallationFiles" location="${projects}/Common/Installation Files"/>
   	
   <property name="commonProgramFiles" location="${projects}/Common/Program Files"/>
-  <property name="commonProgramFiles.eclipse" location="${commonProgramFiles}/Eclipse 3.2"/>
+  <property name="commonProgramFiles.eclipse" location="${commonProgramFiles}/DMS Desktop Development Kit"/>
+  <property name="commonProgramFiles.jre" location="${projects}/Common/Program Files/JDK 1.6.0/jre"/>
   <property name="programFiles" location="dev/Program Files"/>
 
 	<!-- Defines file sets. -->
@@ -52,7 +76,7 @@ $
 		<include name="**/*.class"/>
 	</fileset>
 
-	<fileset id="libraries" dir="${core}/lib">
+	<fileset id="libraries" dir="${core.lib}">
 		<include name="commons-net-1.4.1.jar"/>
 		<include name="jaf-1.1.jar"/>
 		<include name="jakarta-oro-2.0.8.jar"/>
@@ -63,31 +87,31 @@ $
 		<!-- <include name="JDK 1.5.0\lib\jce.jar"/> -->
 	</fileset>
 
-	<fileset id="ui.eclipseLibraries" dir="${commonProgramFiles.eclipse}">
-		<include name="eclipse\plugins\org.eclipse.swt_3.2.0.v3232o.jar"/>
-		<include name="eclipse\plugins\org.eclipse.swt.win32.win32.x86_3.2.0.v3232m.jar"/>
-		<include name="eclipse\plugins\org.eclipse.jface_3.2.0.I20060605-1400.jar"/>
-		<include name="eclipse\plugins\org.eclipse.jface.text_3.2.0.v20060605-1400.jar"/>
-		<include name="eclipse\plugins\org.eclipse.text_3.2.0.v20060605-1400.jar"/>
-		<include name="eclipse\plugins\org.eclipse.ui_3.2.0.I20060605-1400.jar"/>
-		<include name="eclipse\plugins\org.eclipse.ui.workbench_3.2.0.I20060605-1400.jar"/>
-		<include name="eclipse\plugins\org.eclipse.core.commands_3.2.0.I20060605-1400.jar"/>
-		<include name="eclipse\plugins\org.eclipse.ui.forms_3.2.0.v20060602.jar"/>
-		<include name="eclipse\plugins\com.ibm.icu_3.4.4.1.jar"/>
+	<fileset id="ui.eclipseLibraries" dir="${ui.lib}">
+		<include name="org.eclipse.swt_3.2.0.v3232o.jar"/>
+		<include name="org.eclipse.swt.win32.win32.x86_3.2.0.v3232m.jar"/>
+		<include name="org.eclipse.jface_3.2.0.I20060605-1400.jar"/>
+		<include name="org.eclipse.jface.text_3.2.0.v20060605-1400.jar"/>
+		<include name="org.eclipse.text_3.2.0.v20060605-1400.jar"/>
+		<include name="org.eclipse.ui_3.2.0.I20060605-1400.jar"/>
+		<include name="org.eclipse.ui.workbench_3.2.0.I20060605-1400.jar"/>
+		<include name="org.eclipse.core.commands_3.2.0.I20060605-1400.jar"/>
+		<include name="org.eclipse.ui.forms_3.2.0.v20060602.jar"/>
+		<include name="com.ibm.icu_3.4.4.1.jar"/>
 	</fileset>
 		
-	<fileset id="core.eclipseLibraries" dir="${commonProgramFiles.eclipse}">
-		<include name="eclipse\plugins\org.eclipse.core.runtime_3.2.0.v20060603.jar"/>
-		<include name="eclipse\plugins\org.eclipse.emf.ecore_2.2.1.v200609071016.jar"/>
-		<include name="eclipse\plugins\org.eclipse.emf.common_2.2.1.v200609071016.jar"/>
-		<include name="eclipse\plugins\org.eclipse.emf.ecore.xmi_2.2.1.v200609071016.jar"/>
-		<include name="eclipse\plugins\org.eclipse.core.jobs_3.2.0.v20060603.jar"/>
-		<include name="eclipse\plugins\org.eclipse.osgi_3.2.0.v20060601.jar"/>
-		<include name="eclipse\plugins\org.eclipse.equinox.common_3.2.0.v20060603.jar"/>
-		<include name="eclipse\plugins\org.eclipse.equinox.registry_3.2.0.v200060601.jar"/>
-		<include name="eclipse\plugins\org.eclipse.equinox.preferences_3.2.0.v200060601.jar"/>
-		<include name="eclipse\plugins\org.eclipse.equinox.contenttype_3.2.0.v200060603.jar"/>
-		<include name="eclipse\plugins\runtime_registry_compatiblity.jar"/>
+	<fileset id="core.eclipseLibraries" dir="${core.lib}">
+		<include name="org.eclipse.core.runtime_3.2.0.v20060603.jar"/>
+		<include name="org.eclipse.emf.ecore_2.2.0.v200606271057.jar"/>
+		<include name="org.eclipse.emf.common_2.2.0.v200606271057.jar"/>
+		<include name="org.eclipse.emf.ecore.xmi_2.2.0.v200606271057.jar"/>
+		<include name="org.eclipse.core.jobs_3.2.0.v20060603.jar"/>
+		<include name="org.eclipse.core.contenttype_3.2.0.v200060603.jar"/>
+		<include name="org.eclipse.osgi_3.2.0.v20060601.jar"/>
+		<include name="org.eclipse.equinox.common_3.2.0.v20060603.jar"/>
+		<include name="org.eclipse.equinox.registry_3.2.0.v200060601.jar"/>
+		<include name="org.eclipse.equinox.preferences_3.2.0.v200060601.jar"/>
+		<include name="runtime_registry_compatiblity.jar"/>
 	</fileset>
 
 	<fileset id="programFiles" dir="${programFiles}">
@@ -95,8 +119,10 @@ $
 		<include name="Nero 6.0/**"/>
 	</fileset>
 	
-	<fileset id="jre" dir="${commonProgramFiles}/JDK 1.6.0/jre"/>
-
+	<fileset id="jre" dir="${projects}">
+		<include name="Common/Program Files/JDK 1.6.0/jre/**"/>
+	</fileset>
+		
 	<fileset id="installationFiles" dir="${commonInstallationFiles}">
 		<include name="Peter's XML Editor/**"/>
 		<include name="LAME 3.96.1/**"/>
@@ -109,29 +135,73 @@ $
 	<fileset id="imageFiles" dir="dev/Image Files">
 		<include name="*"/>
 	</fileset>
-		
-  <!-- Defines Ant targets. -->
+
+	<fileset id="testFiles" dir="dev/Test Files">
+		<include name="*"/>
+	</fileset> 
+
+	<!-- Defines Ant targets. -->
   <target name="init" description="Initialises every ant script execution.">
     <!-- Creates the time stamp. -->
   	<tstamp>
     	<format property="TODAY_UK" pattern="dd-MM-yy" locale="en"/>
   	</tstamp>
-	
-	<!-- Creates all necessary directories -->
+  </target>
+
+	<!-- Deploys automated tests to their own test environment. -->		
+  <target name="deploy-auto-test" depends="init" description="Deploys automated tests to their own test environment."> 	
+  	<!-- Creates all necessary directories -->
+    <mkdir dir="${autoTestEnv}"/>
+    <mkdir dir="${autoTestEnv.testFiles}"/>
+    <mkdir dir="${autoTestEnv.webFiles}"/>
+    <mkdir dir="${autoTestEnv.dataFiles}"/>
+    <mkdir dir="${autoTestEnv.recordingFiles}"/>
+    <mkdir dir="${autoTestEnv.programFiles}"/>
+    <mkdir dir="${autoTestEnv.imageFiles}"/>
+  		  	
+  	<!-- Copies the data file to the test environment. -->
+  	<copy todir="${autoTestEnv.dataFiles}" overwrite="yes" file="dev/Application Data Files/Data.xml" />
+		
+  	<!-- Copies the program files (tools) to the test environment. -->  	
+		<copy todir="${autoTestEnv.programFiles}" overwrite="no">
+  		<fileset refid="programFiles"/>
+		</copy>
+		
+  	<!-- Copies the web files to the test environment. -->  	
+		<copy todir="${autoTestEnv.webFiles}" overwrite="no">
+  		<fileset refid="webFiles"/>
+		</copy>	
+		
+  	<!-- Copies the image files to the test environment. -->  	
+		<copy todir="${autoTestEnv.imageFiles}" overwrite="no">
+  		<fileset refid="imageFiles"/>
+		</copy>	
+		
+  	<!-- Copies the configuration files to the test environment. -->  	
+		<copy todir="${autoTestEnv.dataFiles}" overwrite="yes" file="${autoTest.config.testEnv}\Data.xml"/>	
+		<copy todir="${autoTestEnv.webFiles}" overwrite="yes">
+			<fileset dir="${autoTest.config.testEnv}" includes="recordings-*"/>
+		</copy>
+		<copy todir="${autoTestEnv.testFiles}" overwrite="yes">
+			<fileset dir="${autoTest.config.testEnv}" includes="*.mp3"/>
+			<fileset dir="${autoTest.config.testEnv}" includes="*.wav"/>
+		</copy>
+  </target>
+
+	<!-- Deploys the DMS Desktop and the DMS Desktop Editor to their own test environments. -->		
+  <target name="deploy-test" depends="init" description="Deploys the DMS Desktop and the DMS Desktop Editor to their own test environments."> 	
+  	<!-- Creates all necessary directories -->
     <mkdir dir="${testEnv}"/>
     <mkdir dir="${testEnv.webFiles}"/>
     <mkdir dir="${testEnv.dataFiles}"/>
-    <mkdir dir="${testEnv.serviceFiles}"/>
+    <mkdir dir="${testEnv.recordingFiles}"/>
     <mkdir dir="${testEnv.libraryFiles}"/>
-  	<mkdir dir="${testEnv.programFiles}"/>
-  	<mkdir dir="${testEnv.installationFiles}"/>
-  	<mkdir dir="${testEnv.imageFiles}"/>
-    <mkdir dir="${deployEnv}"/>
-  </target>
-
-	<!-- Deploys the project to the test environment. -->		
-  <target name="deployTest" depends="init" description="Deploys the project to the test environment.">
-    <!-- Creates the jar file for the application library. --> 
+    <mkdir dir="${testEnv.programFiles}"/>
+    <mkdir dir="${testEnv.programFiles}/Editor"/>
+    <mkdir dir="${testEnv.installationFiles}"/>
+    <mkdir dir="${testEnv.imageFiles}"/>
+  	
+  	<!-- Creates the jar file for the application library. --> 
   	<jar destfile="${testEnv.libraryFiles}/desktop.jar">
   		<fileset refid="core.classes"/>
   		<fileset refid="ui.classes"/>
@@ -139,16 +209,16 @@ $
 		
   	<!-- Copies the libraries to the test environment. -->  	
 		<copy todir="${testEnv.libraryFiles}" flatten="true" overwrite="no">
+  		<fileset refid="ui.eclipseLibraries"/>
   		<fileset refid="libraries"/>
   		<fileset refid="core.eclipseLibraries"/>
-  		<fileset refid="ui.eclipseLibraries"/>
 		</copy>  	
   		  	
   	<!-- Copies the data file to the test environment. -->
   	<copy todir="${testEnv.dataFiles}" overwrite="yes" file="dev/Application Data Files/Data.xml" />
-		
+	
   	<!-- Copies the libraries to the test environment. -->  	
-		<copy todir="${testEnv.libraryFiles}" flatten="true" overwrite="no">
+		<copy todir="${testEnv.libraryFiles}" flatten="true" overwrite="no" failonerror="true">
   		<fileset refid="libraries"/>
   		<fileset refid="core.eclipseLibraries"/>
   		<fileset refid="ui.eclipseLibraries"/>
@@ -158,17 +228,19 @@ $
   	</unjar>
 		
   	<!-- Copies the intallation files to the test environment. -->  	
-		<copy todir="${testEnv.installationFiles}" overwrite="no">
+  	<!-- <copy todir="${testEnv.installationFiles}" overwrite="no">
   		<fileset refid="installationFiles"/>
-		</copy>	
+		</copy>	-->
 		
   	<!-- Copies the program files (tools) to the test environment. -->  	
 		<copy todir="${testEnv.programFiles}" overwrite="no">
   		<fileset refid="programFiles"/>
 		</copy>
-		<copy todir="${testEnv.programFiles}/JRE 1.6.0" overwrite="no">
-  		<fileset refid="jre"/>
-		</copy>
+  	
+  	<!-- Copies the DMS Desktop Editor to the test environment. -->  	
+		<copy todir="${testEnv.programFiles}\Editor" overwrite="yes">
+  		<fileset dir="${editor.testEnv}"/>
+		</copy> 	
 		
   	<!-- Copies the web files to the test environment. -->  	
 		<copy todir="${testEnv.webFiles}" overwrite="no">
@@ -180,31 +252,50 @@ $
   		<fileset refid="imageFiles"/>
 		</copy>	
 		
-  	<!-- Copies the start batch file to the test environment. -->  	
-		<copy todir="${testEnv}" overwrite="no" file="dev/Desktop.bat"/>	
+  	<!-- Copies the start batch files to the test environment. -->  	
+		<copy todir="${testEnv}" overwrite="no" file="${ui.config.testEnv}\Desktop.bat"/>	
+		<copy todir="${editor.testEnv}" overwrite="no" file="${editor.config.testEnv}\editor.ini"/>	
   </target>
 	
-	<!-- Packages the project for deployment. -->
-	<target name="deploy" description="Packages the project for deployment." depends="init, deployTest">
-		<delete file="${deployEnv}/Digitial Media Service Desktop.zip"/>
-		<zip destfile="${deployEnv}/Digitial Media Service Desktop.zip" compress="yes">
-			<fileset dir="${testEnv}">
+	<!-- Packages the DMS Desktop and the DMS Desktop Editor from their own test environments for a release. -->
+	<target name="deploy" description="Packages the DMS Desktop and the DMS Desktop Editor from their own test environments for a release." depends="init, deploy-test">
+		<!-- Creates all necessary directories -->
+	  <mkdir dir="${deployEnv}"/>
+		
+		<delete file="${deployEnv}/Digitial Media Service Desktop (without JRE 1.6.0).zip" failonerror="false"/>
+		<delete file="${deployEnv}/Digitial Media Service Desktop (with JRE 1.6.0).zip" failonerror="false"/>
+				
+		<zip destfile="${deployEnv}/Digitial Media Service Desktop (without JRE 1.6.0).zip" compress="yes">
+			<zipfileset dir="${testEnv}" prefix="DMS Desktop">
+				<exclude name="Installation Files/**"/>
 				<exclude name="Service Files/**"/>
-				<exclude name="Log Files/**"/>					
-			</fileset>			
+				<exclude name="Log Files/**"/>
+				<exclude name="Desktop.bat"/>
+				<exclude name="Program Files/Editor/editor.ini"/>
+			</zipfileset>
+			<zipfileset file="${ui.config.deployEnv}\Desktop.bat" prefix="DMS Desktop"/>
+			<zipfileset file="${editor.config.deployEnv}\editor.ini" prefix="DMS Desktop\Program Files\Editor"/>
+		</zip>
+		
+		<zip destfile="${deployEnv}/Digitial Media Service Desktop (with JRE 1.6.0).zip" compress="yes">
+			<zipfileset dir="${testEnv}" prefix="DMS Desktop">
+				<exclude name="Installation Files/**"/>
+			  <exclude name="Service Files/**"/>
+				<exclude name="Log Files/**"/>
+				<exclude name="Desktop.bat"/>
+				<exclude name="Program Files/Editor/editor.ini"/>
+			</zipfileset>
+			<fileset refid="jre"/>
+			<zipfileset file="${ui.config.deployEnv}\Desktop.bat" prefix="DMS Desktop"/>
+			<zipfileset file="${editor.config.deployEnv}\editor.ini" prefix="DMS Desktop\Program Files\Editor"/>
 		</zip>
 	</target>
 		
 	<!-- Generates the source code documentation. -->
-	
-
-  <!-- Deletes all files in the deployment environment. -->
-  <target name="cleanDeploy" description="Deletes all files in the deployment environment.">	
-  	<delete dir="${deployEnv}"/>
-  </target>		
 
   <!-- Deletes all files in the test environment. -->
-  <target name="cleanTest" description="Deletes all files in the test environment.">	
+  <target name="clean-test" description="Deletes all files in the test environments.">	
   	<delete dir="${testEnv}"/>
+  	<delete dir="${editor.testEnv}"/>
   </target>
 </project>
