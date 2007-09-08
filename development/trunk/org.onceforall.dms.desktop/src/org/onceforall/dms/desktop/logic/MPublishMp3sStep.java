@@ -21,6 +21,9 @@ import java.io.IOException;
 import java.net.URL;
 import java.text.NumberFormat;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
@@ -2115,7 +2118,22 @@ public abstract class MPublishMp3sStep extends MFtpStep {
 
             // Determines the total number of bytes to publish.
             StringBuffer publishedMP3sHTML = new StringBuffer();
-            List<MMp3> mMp3s = mMp3Folder.getMMp3s();
+            List<MMp3> mMp3s = new ArrayList(mMp3Folder.getMMp3s());
+            
+            // Makes sure that entries are ordered in reverse date order.
+            Collections.sort(mMp3s, new Comparator<MMp3>() {
+
+				public int compare(MMp3 o1, MMp3 o2) {
+					if(o1.getPodcastPublishingDateProperty() == null && o2.getPodcastPublishingDateProperty() == null)
+						return 0;
+					else if(o1.getPodcastPublishingDateProperty() == null && o2.getPodcastPublishingDateProperty() != null)
+						return 1;
+					else if(o1.getPodcastPublishingDateProperty() != null && o2.getPodcastPublishingDateProperty() == null)
+						return -1;
+					else
+						return o2.getPodcastPublishingDateProperty().compareTo(o1.getPodcastPublishingDateProperty());				
+				}  
+			});
 	                    
             // Writes a table row for each published MP3.
             for(MMp3 mMp3: mMp3s) {
