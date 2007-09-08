@@ -41,10 +41,15 @@
 package org.onceforall.dms.desktop.ui;
 
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Properties;
+import java.util.ResourceBundle;
 import java.util.logging.Handler;
 import java.util.logging.Level;
 import java.util.logging.LogRecord;
@@ -81,6 +86,7 @@ import org.eclipse.ui.forms.FormColors;
 import org.eclipse.ui.forms.widgets.ExpandableComposite;
 import org.eclipse.ui.forms.widgets.ScrolledForm;
 import org.eclipse.ui.forms.widgets.Section;
+import org.eclipse.ui.internal.BundleGroupProperties;
 import org.onceforall.dms.desktop.Main;
 import org.onceforall.dms.desktop.exception.DesktopException;
 import org.onceforall.dms.desktop.logging.Logger;
@@ -402,8 +408,9 @@ public class MainComposite extends MElementComposite {
 	 * the user.
 	 * 
 	 * @throws DesktopException Thrown if the application cannot load the application data.
+	 * @throws IOException Thrown if the build information cannot be loaded.
 	 */
-	public static void show() throws DesktopException {	    
+	public static void show() throws DesktopException, IOException {	    
 	    Shell shell = new Shell();
 	    Display display = shell.getDisplay();
 	    
@@ -415,6 +422,13 @@ public class MainComposite extends MElementComposite {
 	    MainComposite mainComposite = new MainComposite(shell, SWT.NONE);
 	    
 	    MApplication mApplication = MApplication.getInstance();
+	    
+	    ResourceBundle bundle = ResourceBundle.getBundle("build-info");
+	    String version = bundle.getString("version");
+	    String user = bundle.getString("user");
+	    String date = bundle.getString("date");
+	    String build = bundle.getString("build");
+	    mApplication.setVersionProperty(version+"."+build+" (built on "+date+" by "+user+")");
 	    
 	    // Set the window title, icon and size.
 	    Image smallIcon = new Image(display, mApplication.getIconFilePath().getAbsolutePath());
