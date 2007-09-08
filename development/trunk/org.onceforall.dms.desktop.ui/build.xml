@@ -29,6 +29,7 @@ $
   <property name="ui.bin" location="./bin"/>
   <property name="ui.config.testEnv" location="./config/test"/>
   <property name="ui.config.deployEnv" location="./config/deploy"/>	
+  <property name="ui.buildInfoProperties" location="${ui.src}/build-info.properties"/>
 
   <property name="testEnv" location="test"/>
   <property name="testEnv.webFiles" location="${testEnv}/Web Files"/>
@@ -38,18 +39,6 @@ $
   <property name="testEnv.programFiles" location="${testEnv}/Program Files"/>
   <property name="testEnv.installationFiles" location="${testEnv}/Installation Files"/>
   <property name="testEnv.imageFiles" location="${testEnv}/Image Files"/>
-
-  <property name="autoTestEnv" location="${autoTest}/test"/>
-  <property name="autoTestEnv.testFiles" location="${autoTestEnv}/Test Files"/>
-  <property name="autoTestEnv.webFiles" location="${autoTestEnv}/Web Files"/>
-  <property name="autoTestEnv.dataFiles" location="${autoTestEnv}/Application Data Files"/>
-  <property name="autoTestEnv.recordingFiles" location="${autoTestEnv}/Recording Files"/>
-  <property name="autoTestEnv.libraryFiles" location="${autoTestEnv}/Library Files"/>
-  <property name="autoTestEnv.programFiles" location="${autoTestEnv}/Program Files"/>
-  <property name="autoTestEnv.installationFiles" location="${autoTestEnv}/Installation Files"/>
-  <property name="autoTestEnv.imageFiles" location="${autoTestEnv}/Image Files"/>
-  
-	<property name="autoTest.config.testEnv" location="${autoTest}/config/test"/>
 	
 	<property name="deployEnv" location="../Releases"/>
 	
@@ -66,6 +55,8 @@ $
   <property name="commonProgramFiles.eclipse" location="${commonProgramFiles}/DMS Desktop Development Kit"/>
   <property name="commonProgramFiles.jre" location="${projects}/Common/Program Files/JDK 1.6.0/jre"/>
   <property name="programFiles" location="dev/Program Files"/>
+	
+	<property file="${ui.buildInfoProperties}"/>
 
 	<!-- Defines file sets. -->
 	<fileset id="core.classes" dir="${core.bin}">
@@ -148,46 +139,6 @@ $
   	</tstamp>
   </target>
 
-	<!-- Deploys automated tests to their own test environment. -->		
-  <target name="deploy-auto-test" depends="init" description="Deploys automated tests to their own test environment."> 	
-  	<!-- Creates all necessary directories -->
-    <mkdir dir="${autoTestEnv}"/>
-    <mkdir dir="${autoTestEnv.testFiles}"/>
-    <mkdir dir="${autoTestEnv.webFiles}"/>
-    <mkdir dir="${autoTestEnv.dataFiles}"/>
-    <mkdir dir="${autoTestEnv.recordingFiles}"/>
-    <mkdir dir="${autoTestEnv.programFiles}"/>
-    <mkdir dir="${autoTestEnv.imageFiles}"/>
-  		  	
-  	<!-- Copies the data file to the test environment. -->
-  	<copy todir="${autoTestEnv.dataFiles}" overwrite="yes" file="dev/Application Data Files/Data.xml" />
-		
-  	<!-- Copies the program files (tools) to the test environment. -->  	
-		<copy todir="${autoTestEnv.programFiles}" overwrite="no">
-  		<fileset refid="programFiles"/>
-		</copy>
-		
-  	<!-- Copies the web files to the test environment. -->  	
-		<copy todir="${autoTestEnv.webFiles}" overwrite="no">
-  		<fileset refid="webFiles"/>
-		</copy>	
-		
-  	<!-- Copies the image files to the test environment. -->  	
-		<copy todir="${autoTestEnv.imageFiles}" overwrite="no">
-  		<fileset refid="imageFiles"/>
-		</copy>	
-		
-  	<!-- Copies the configuration files to the test environment. -->  	
-		<copy todir="${autoTestEnv.dataFiles}" overwrite="yes" file="${autoTest.config.testEnv}\Data.xml"/>	
-		<copy todir="${autoTestEnv.webFiles}" overwrite="yes">
-			<fileset dir="${autoTest.config.testEnv}" includes="recordings-*"/>
-		</copy>
-		<copy todir="${autoTestEnv.testFiles}" overwrite="yes">
-			<fileset dir="${autoTest.config.testEnv}" includes="*.mp3"/>
-			<fileset dir="${autoTest.config.testEnv}" includes="*.wav"/>
-		</copy>
-  </target>
-
 	<!-- Deploys the DMS Desktop and the DMS Desktop Editor to their own test environments. -->		
   <target name="deploy-test" depends="init" description="Deploys the DMS Desktop and the DMS Desktop Editor to their own test environments."> 	
   	<!-- Creates all necessary directories -->
@@ -262,10 +213,17 @@ $
 		<!-- Creates all necessary directories -->
 	  <mkdir dir="${deployEnv}"/>
 		
-		<delete file="${deployEnv}/Digitial Media Service Desktop (without JRE 1.6.0).zip" failonerror="false"/>
-		<delete file="${deployEnv}/Digitial Media Service Desktop (with JRE 1.6.0).zip" failonerror="false"/>
-				
-		<zip destfile="${deployEnv}/Digitial Media Service Desktop (without JRE 1.6.0).zip" compress="yes">
+		<delete file="${deployEnv}/Digitial Media Service Desktop ${version} (without JRE 1.6.0).zip" failonerror="false"/>
+		<delete file="${deployEnv}/Digitial Media Service Desktop ${version} (with JRE 1.6.0).zip" failonerror="false"/>
+		
+		
+		<propertyfile file="${ui.buildInfoProperties}" comment="Please only update the version, all other properties are updated automatically.">
+		  <entry key="date" type="date" pattern="dd MMM yyyy" value="now"/>
+		  <entry key="user" value="${user.name}"/>
+			<entry key="build" type="int" default="1" operation="+"/>
+		</propertyfile>
+		
+		<zip destfile="${deployEnv}/Digitial Media Service Desktop ${version} (without JRE 1.6.0).zip" compress="yes">
 			<zipfileset dir="${testEnv}" prefix="DMS Desktop">
 				<exclude name="Installation Files/**"/>
 				<exclude name="Service Files/**"/>
@@ -277,7 +235,7 @@ $
 			<zipfileset file="${editor.config.deployEnv}\editor.ini" prefix="DMS Desktop\Program Files\Editor"/>
 		</zip>
 		
-		<zip destfile="${deployEnv}/Digitial Media Service Desktop (with JRE 1.6.0).zip" compress="yes">
+		<zip destfile="${deployEnv}/Digitial Media Service Desktop ${version} (with JRE 1.6.0).zip" compress="yes">
 			<zipfileset dir="${testEnv}" prefix="DMS Desktop">
 				<exclude name="Installation Files/**"/>
 			  <exclude name="Service Files/**"/>
