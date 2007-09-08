@@ -18,6 +18,44 @@ import org.eclipse.osgi.util.NLS;
 public class TestData extends NLS {
 	private static final String BUNDLE_NAME = "org.onceforall.dms.desktop.tests.TestData"; //$NON-NLS-1$
 
+	public static String LogicLayerMUpdatePublishedMP3StepTest_17;
+
+	public static String LogicLayerMUpdatePublishedMP3StepTest_27;
+
+	public static String LogicLayerMUpdatePublishedMP3StepTest_ContentFooterFilePathParameter;
+
+	public static String LogicLayerMUpdatePublishedMP3StepTest_ContentHeaderFilePathParameter;
+
+	public static String LogicLayerMUpdatePublishedMP3StepTest_ContentPageFilePathParameter;
+
+	public static String LogicLayerMUpdatePublishedMP3StepTest_ContentPageRelativeFtpPathParameter;
+
+	public static String LogicLayerMUpdatePublishedMP3StepTest_MaximumDiskSpaceParameter;
+
+	public static String LogicLayerMUpdatePublishedMP3StepTest_MMp3RelativeFtpPathParameter;
+
+	public static String LogicLayerMUpdatePublishedMP3StepTest_Mp31DateTime;
+
+	public static String LogicLayerMUpdatePublishedMP3StepTest_Mp31Name;
+
+	public static String LogicLayerMUpdatePublishedMP3StepTest_Mp32DateTime;
+
+	public static String LogicLayerMUpdatePublishedMP3StepTest_Mp32Name;
+
+	public static String LogicLayerMUpdatePublishedMP3StepTest_Mp33DateTime;
+
+	public static String LogicLayerMUpdatePublishedMP3StepTest_Mp33Name;
+
+	public static String LogicLayerMUpdatePublishedMP3StepTest_Mp34DateTime;
+
+	public static String LogicLayerMUpdatePublishedMP3StepTest_Mp34Name;
+
+	public static String LogicLayerMUpdatePublishedMP3StepTest_PodcastFilePathParameter;
+
+	public static String LogicLayerMUpdatePublishedMP3StepTest_PodcastHeaderFilePathParameter;
+
+	public static String LogicLayerMUpdatePublishedMP3StepTest_PodcastRelativeFtpPathParameter;
+
 	public static String LogicLayerNormalServiceTest_DateParameter;
 
 	public static String LogicLayerNormalServiceTest_PostSermonAudioFile;

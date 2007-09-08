@@ -59,15 +59,15 @@ public class LogicLayerMUpdatePublishedMP3StepTest extends LogicLayerTest {
 	public MMp3 createMMp3(String name, String podcastPublishingDate) {
 		MMp3 result = LogicFactory.eINSTANCE.createMMp3();
 		result.getMNameProperty().setValueForUI(name);
-		result.getMCommentProperty().setValueForUI(name+" comment");
-		result.getMFileProperty().setValueForUI("Test Files\\"+name+".mp3");
-		result.getMLinkDescriptionProperty().setValueForUI(name+" link description");
-		result.getMLinkTextProperty().setValueForUI(name+" link text");
+		result.getMCommentProperty().setValueForUI(name+" comment"); //$NON-NLS-1$
+		result.getMFileProperty().setValueForUI(TestData.Test_TestFilesPath+"\\"+name+".mp3"); //$NON-NLS-1$ //$NON-NLS-2$
+		result.getMLinkDescriptionProperty().setValueForUI(name+" link description"); //$NON-NLS-1$
+		result.getMLinkTextProperty().setValueForUI(name+" link text"); //$NON-NLS-1$
 		result.getMPodcastPublishingDateProperty().setValueForUI(podcastPublishingDate);
-		result.getMPodcastSubtitleProperty().setValueForUI(name+" podcast subtitle");
-		result.getMPodcastSummaryProperty().setValueForUI(name+" podcast summary");
-		result.getMPodcastTitleProperty().setValueForUI(name+" podcast title");
-		result.getMPublishedFileNameProperty().setValueForUI(Utilities.convertToFileName(name)+".mp3");
+		result.getMPodcastSubtitleProperty().setValueForUI(name+" podcast subtitle"); //$NON-NLS-1$
+		result.getMPodcastSummaryProperty().setValueForUI(name+" podcast summary"); //$NON-NLS-1$
+		result.getMPodcastTitleProperty().setValueForUI(name+" podcast title"); //$NON-NLS-1$
+		result.getMPublishedFileNameProperty().setValueForUI(Utilities.convertToFileName(name)+".mp3"); //$NON-NLS-1$
 		
 		return result;
 	}
@@ -82,26 +82,26 @@ public class LogicLayerMUpdatePublishedMP3StepTest extends LogicLayerTest {
 	public void createMMp3FolderAndStep() throws Exception {
 		mDmsApplication = (MDmsApplication) MApplication.getInstance();
 		
-		mMp31 = createMMp3("Test 1", "1-Oct-2006 00:00:00");
-		mMp32 = createMMp3("Test 2", "2-Oct-2006 00:00:00");
-		mMp33 = createMMp3("Test 3", "3-Oct-2006 00:00:00");
-		mMp34 = createMMp3("Test 4", "4-Oct-2006 00:00:00");
+		mMp31 = createMMp3(TestData.LogicLayerMUpdatePublishedMP3StepTest_Mp31Name, TestData.LogicLayerMUpdatePublishedMP3StepTest_Mp31DateTime);
+		mMp32 = createMMp3(TestData.LogicLayerMUpdatePublishedMP3StepTest_Mp32Name, TestData.LogicLayerMUpdatePublishedMP3StepTest_Mp32DateTime);
+		mMp33 = createMMp3(TestData.LogicLayerMUpdatePublishedMP3StepTest_Mp33Name, TestData.LogicLayerMUpdatePublishedMP3StepTest_Mp33DateTime);
+		mMp34 = createMMp3(TestData.LogicLayerMUpdatePublishedMP3StepTest_Mp34Name, TestData.LogicLayerMUpdatePublishedMP3StepTest_Mp34DateTime);
 		
 		mStep = LogicFactory.eINSTANCE.createMUpdatePublishedMp3sStep();
-		mStep.setName("Update published MP3s");
+		mStep.setName(TestData.LogicLayerMUpdatePublishedMP3StepTest_17);
 		mStep.getMFtpServerUrlParameter().setValueForUI(TestData.LogicLayerTest_FtpServerUrlProperty);
 		mStep.getMFtpUserNameParameter().setValueForUI(TestData.LogicLayerTest_FtpUserNameProperty);
 		mStep.getMFtpUserPasswordParameter().setValueForUI(Type.PASSWORD_TYPE.decryptPassword(TestData.LogicLayerTest_FtpPasswordProperty));
-		mStep.getMMaxiumumDiskSpaceParameter().setValueForUI("1");
-		mStep.getMMp3RelativeFtpPathParameter().setValueForUI("/dms-test");
+		mStep.getMMaxiumumDiskSpaceParameter().setValueForUI(TestData.LogicLayerMUpdatePublishedMP3StepTest_MaximumDiskSpaceParameter);
+		mStep.getMMp3RelativeFtpPathParameter().setValueForUI(TestData.LogicLayerMUpdatePublishedMP3StepTest_MMp3RelativeFtpPathParameter);
 		mStep.getMWebServerUrlParameter().setValueForUI(TestData.LogicLayerTest_WebServerUrlProperty);
-		mStep.getMContentPageRelativeFtpPathParameter().setValueForUI("/dms-test");
-		mStep.getMContentHeaderFilePathParameter().setValueForUI("Test Files\\sermon-recordings-header.html");
-		mStep.getMContentFooterFilePathParameter().setValueForUI("Test Files\\sermon-recordings-footer.html");
-		mStep.getMContentPageFilePathParameter().setValueForUI("Test Output Files\\sermon-recordings.html");
-		mStep.getMPodcastRelativeFtpPathParameter().setValueForUI("/dms-test");
-		mStep.getMPodcastHeaderFilePathParameter().setValueForUI("Web Files\\sermon-recordings-header.xml");
-		mStep.getMPodcastFilePathParameter().setValueForUI("Test Output Files\\sermon-recordings.xml");
+		mStep.getMContentPageRelativeFtpPathParameter().setValueForUI(TestData.LogicLayerMUpdatePublishedMP3StepTest_ContentPageRelativeFtpPathParameter);
+		mStep.getMContentHeaderFilePathParameter().setValueForUI(TestData.LogicLayerMUpdatePublishedMP3StepTest_ContentHeaderFilePathParameter);
+		mStep.getMContentFooterFilePathParameter().setValueForUI(TestData.LogicLayerMUpdatePublishedMP3StepTest_ContentFooterFilePathParameter);
+		mStep.getMContentPageFilePathParameter().setValueForUI(TestData.LogicLayerMUpdatePublishedMP3StepTest_ContentPageFilePathParameter);
+		mStep.getMPodcastRelativeFtpPathParameter().setValueForUI(TestData.LogicLayerMUpdatePublishedMP3StepTest_PodcastRelativeFtpPathParameter);
+		mStep.getMPodcastHeaderFilePathParameter().setValueForUI(TestData.LogicLayerMUpdatePublishedMP3StepTest_PodcastHeaderFilePathParameter);
+		mStep.getMPodcastFilePathParameter().setValueForUI(TestData.LogicLayerMUpdatePublishedMP3StepTest_PodcastFilePathParameter);
 		
 		mMp3Folder = LogicFactory.eINSTANCE.createMMp3Folder();
 		mMp3Folder.getMSteps().add(mStep);
@@ -134,8 +134,8 @@ public class LogicLayerMUpdatePublishedMP3StepTest extends LogicLayerTest {
 		List<Difference> differences = new ArrayList<Difference>();
 		compareMElements(mMp31, mMp31Clone, true, differences);
 		differences.clear();
-		
-		mStep.getMRepublishMp3Files().setValueForUI("No");
+        
+		mStep.getMRepublishMp3Files().setValueForUI(TestData.LogicLayerMUpdatePublishedMP3StepTest_27);
 		executeMStep(mStep, true, true);
 		
         URL webServerUrl = mStep.getWebServerUrlParameter();
@@ -145,15 +145,15 @@ public class LogicLayerMUpdatePublishedMP3StepTest extends LogicLayerTest {
         URL mMp32Url = new URL(webServerUrl.toExternalForm()+mStep.getMp3RelativeFtpPathParameter()+"/"+mMp32.getPublishedFileNameProperty()); //$NON-NLS-1$
         URL mMp33Url = new URL(webServerUrl.toExternalForm()+mStep.getMp3RelativeFtpPathParameter()+"/"+mMp33.getPublishedFileNameProperty()); //$NON-NLS-1$
         URL mMp34Url = new URL(webServerUrl.toExternalForm()+mStep.getMp3RelativeFtpPathParameter()+"/"+mMp34.getPublishedFileNameProperty()); //$NON-NLS-1$
-		
         // Checks the results.
         //assertTrue(mMp3Folder.getPath().equals(mStep.getMMp3FolderReferenceResult().getValueForUI()));
+
         
 		// Checks the managed MP3s.
         assertTrue(verifyMObjectDifferences(mMp31, mMp31Clone, null));
-        assertTrue(verifyMObjectDifferences(mMp32, mMp32Clone, new int[] { LogicPackage.MMP3__STATE_PROPERTY }));
-        assertTrue(verifyMObjectDifferences(mMp33, mMp33Clone, null));
-        assertTrue(verifyMObjectDifferences(mMp34, mMp34Clone, null));
+        assertTrue(verifyMObjectDifferences(mMp32, mMp32Clone, new int[] { LogicPackage.MMP3__STATE_PROPERTY, LogicPackage.MMP3__LAST_STATE_CHANGE_PROPERTY }));
+        assertTrue(verifyMObjectDifferences(mMp33, mMp33Clone, new int[] { LogicPackage.MMP3__LAST_STATE_CHANGE_PROPERTY }) || verifyMObjectDifferences(mMp33, mMp33Clone, null));
+        assertTrue(verifyMObjectDifferences(mMp34, mMp34Clone, new int[] { LogicPackage.MMP3__LAST_STATE_CHANGE_PROPERTY }) || verifyMObjectDifferences(mMp34, mMp34Clone, null));
         
 		assertTrue(mMp33.getMStateProperty().getValueForUI().equals(MMp3StateType.PUBLISHED_STATE.getNameForUI()));
 		
@@ -163,12 +163,20 @@ public class LogicLayerMUpdatePublishedMP3StepTest extends LogicLayerTest {
 		assertFalse(contentPage.indexOf("href=\""+mMp31Url.toExternalForm()+"\">"+mMp31.getLinkTextProperty()+"</a>") >= 0); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
 		assertFalse(contentPage.indexOf(mMp31.getLinkDescriptionProperty()) >= 0);
 		assertFalse(contentPage.indexOf(mMp31.getCommentProperty()) >= 0);
-		assertTrue(contentPage.indexOf("href=\""+mMp32Url.toExternalForm()+"\">"+mMp32.getLinkTextProperty()+"</a>") >= 0); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+
+		int mMp32Index = contentPage.indexOf("href=\""+mMp32Url.toExternalForm()+"\">"+mMp32.getLinkTextProperty()+"</a>"); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+		assertTrue(mMp32Index >= 0); 
 		assertTrue(contentPage.indexOf(mMp32.getLinkDescriptionProperty()) >= 0);
 		assertTrue(contentPage.indexOf(mMp32.getCommentProperty()) >= 0);
-		assertTrue(contentPage.indexOf("href=\""+mMp33Url.toExternalForm()+"\">"+mMp33.getLinkTextProperty()+"</a>") >= 0); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+		
+		int mMp33Index = contentPage.indexOf("href=\""+mMp33Url.toExternalForm()+"\">"+mMp33.getLinkTextProperty()+"</a>"); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+		assertTrue(mMp33Index >= 0); 
 		assertTrue(contentPage.indexOf(mMp33.getLinkDescriptionProperty()) >= 0);
 		assertTrue(contentPage.indexOf(mMp33.getCommentProperty()) >= 0);
+		
+		// Checks that MP3s are published in reverse date order.
+		assertTrue(mMp33Index < mMp32Index);
+		
 		assertFalse(contentPage.indexOf("href=\""+mMp34Url.toExternalForm()+"\">"+mMp34.getLinkTextProperty()+"</a>") >= 0); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
 		assertFalse(contentPage.indexOf(mMp34.getLinkDescriptionProperty()) >= 0);
 		assertFalse(contentPage.indexOf(mMp34.getCommentProperty()) >= 0);
