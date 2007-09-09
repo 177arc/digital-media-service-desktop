@@ -13,6 +13,7 @@
  */
 package org.onceforall.dms.desktop.logic;
 
+import java.io.File;
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
@@ -51,7 +52,7 @@ import org.onceforall.dms.desktop.logic.types.Type;
  *
  * @see org.onceforall.dms.desktop.logic.LogicPackage#getMScript()
  * @model kind="class"
- *        annotation="http://www.onceforall.org/mcore typeNameForUI='Script' name='Script' description='Contains a number of tasks that should be completed.'"
+ *        annotation="http://www.onceforall.org/mcore typeNameForUI='Script' name='Script' description='Contains a number of tasks that should be completed.' iconFilePath='Image Files\\Script.gif'"
  * @generated
  */
 public class MScript extends MStatefulObject implements EObject {
@@ -87,6 +88,7 @@ public class MScript extends MStatefulObject implements EObject {
 	static {
 		Type.VALUE_TYPES_BY_NAME.put("Reference to "+MScript.TYPE_NAME, new ReferenceType("Reference to "+MScript.TYPE_NAME, "Specifies a reference to a "+MScript.TYPE_NAME_FOR_UI, MScript.class));
 	}
+
 
 
 
@@ -380,6 +382,18 @@ public class MScript extends MStatefulObject implements EObject {
 	}
 
 	/**
+	 * Get the default value of the '{@link #getIconFilePath() <em>Icon File Path</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return Returns the default value of the '{@link #getIconFilePath() <em>Icon File Path</em>}' attribute.
+	 * @see #getIconFilePath()
+	 * @generated
+	 * @ordered
+	 */
+	public File getDefaultIconFilePath() {
+		return (File)LogicFactory.eINSTANCE.createFromString(LogicPackage.eINSTANCE.getMFile(), "Image Files\\Script.gif");
+	}
+	/**
 	 * Get the default value of the '{@link #getDescription() <em>Description</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -391,6 +405,7 @@ public class MScript extends MStatefulObject implements EObject {
 	public String getDefaultDescription() {
 		return "Contains a number of tasks that should be completed.";
 	}
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -402,8 +417,9 @@ public class MScript extends MStatefulObject implements EObject {
 		firstMScriptConstructorHook();
 				
 		typeNameForUI = "Script";
-		name = "Script";
 		description = "Contains a number of tasks that should be completed.";
+		name = "Script";
+		iconFilePath = (File)LogicFactory.eINSTANCE.createFromString(LogicPackage.eINSTANCE.getMFile(), "Image Files\\Script.gif");
 					 
 		setMStateProperty(new MProperty(true, "State", "Specifies the current state.", null));			 
 		setMProgressProperty(new MProperty(true, "Progress", "Specifies the progress of the processing in %.", null));			 
