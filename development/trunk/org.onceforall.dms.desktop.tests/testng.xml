@@ -14,12 +14,12 @@ Updated to checkpoint progress.
 -->
 
 <suite name="All" verbose="1">
-  <!-- <test name="Logic layer Update published MP3s test" annotations="JDK5">
+<test name="Logic layer Update published MP3s test" annotations="JDK5">
     <classes>
       <class name="org.onceforall.dms.desktop.tests.LogicLayerMUpdatePublishedMP3StepTest" />
     </classes>
   </test>
-  <test name="Logic layer WWX meeting test" annotations="JDK5">
+  <!--   <test name="Logic layer WWX meeting test" annotations="JDK5">
     <classes>
       <class name="org.onceforall.dms.desktop.tests.LogicLayerWwxMeetingTest" />
     </classes>
