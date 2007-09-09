@@ -18289,7 +18289,8 @@ public class LogicPackage extends EPackageImpl {
 		   new String[] {
 			 "typeNameForUI", "Script",
 			 "name", "Script",
-			 "description", "Contains a number of tasks that should be completed."
+			 "description", "Contains a number of tasks that should be completed.",
+			 "iconFilePath", "Image Files\\Script.gif"
 		   });		
 		addAnnotation
 		  (getMScript_MProgressProperty(), 
