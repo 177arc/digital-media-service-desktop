@@ -145,6 +145,7 @@ public class MDmsApplicationMGetDataUpgradeInfoStep extends MFtpStep {
 
 
 
+
 	
 	/**
 	 * The cached value of the '{@link #getMUpgradeRelativeFtpPathProperty() <em>MUpgrade Relative Ftp Path Property</em>}' containment reference.
