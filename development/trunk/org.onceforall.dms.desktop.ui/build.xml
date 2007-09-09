@@ -61,10 +61,12 @@ $
 	<!-- Defines file sets. -->
 	<fileset id="core.classes" dir="${core.bin}">
 		<include name="**/*.class"/>
+		<include name="**/*.properties"/>
 	</fileset>
 
 	<fileset id="ui.classes" dir="${ui.bin}">
 		<include name="**/*.class"/>
+		<include name="**/*.properties"/>
 	</fileset>
 
 	<fileset id="libraries" dir="${core.lib}">
@@ -151,7 +153,14 @@ $
     <mkdir dir="${testEnv.programFiles}/Editor"/>
     <mkdir dir="${testEnv.installationFiles}"/>
     <mkdir dir="${testEnv.imageFiles}"/>
-  	
+		
+  	<!-- Updates the build information file. --> 
+		<propertyfile file="${ui.buildInfoProperties}" comment="Please only update the version, all other properties are updated automatically.">
+		  <entry key="date" type="date" pattern="dd MMM yyyy" value="now"/>
+		  <entry key="user" value="${user.name}"/>
+			<entry key="build" type="int" default="1" operation="+"/>
+		</propertyfile>
+
   	<!-- Creates the jar file for the application library. --> 
   	<jar destfile="${testEnv.libraryFiles}/desktop.jar">
   		<fileset refid="core.classes"/>
@@ -216,16 +225,10 @@ $
 		<delete file="${deployEnv}/Digitial Media Service Desktop ${version} (without JRE 1.6.0).zip" failonerror="false"/>
 		<delete file="${deployEnv}/Digitial Media Service Desktop ${version} (with JRE 1.6.0).zip" failonerror="false"/>
 		
-		
-		<propertyfile file="${ui.buildInfoProperties}" comment="Please only update the version, all other properties are updated automatically.">
-		  <entry key="date" type="date" pattern="dd MMM yyyy" value="now"/>
-		  <entry key="user" value="${user.name}"/>
-			<entry key="build" type="int" default="1" operation="+"/>
-		</propertyfile>
-		
 		<zip destfile="${deployEnv}/Digitial Media Service Desktop ${version} (without JRE 1.6.0).zip" compress="yes">
 			<zipfileset dir="${testEnv}" prefix="DMS Desktop">
 				<exclude name="Installation Files/**"/>
+			  <exclude name="Recording Files/**"/>
 				<exclude name="Service Files/**"/>
 				<exclude name="Log Files/**"/>
 				<exclude name="Desktop.bat"/>
@@ -238,6 +241,7 @@ $
 		<zip destfile="${deployEnv}/Digitial Media Service Desktop ${version} (with JRE 1.6.0).zip" compress="yes">
 			<zipfileset dir="${testEnv}" prefix="DMS Desktop">
 				<exclude name="Installation Files/**"/>
+			  <exclude name="Recording Files/**"/>
 			  <exclude name="Service Files/**"/>
 				<exclude name="Log Files/**"/>
 				<exclude name="Desktop.bat"/>
