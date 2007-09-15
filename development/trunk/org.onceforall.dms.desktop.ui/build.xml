@@ -238,6 +238,7 @@ $
 				<exclude name="Log Files/**"/>
 				<exclude name="Desktop.bat"/>
 				<exclude name="Program Files/Editor/editor.ini"/>
+				<exclude name="Program Files/Nero */**"/>
 			</zipfileset>
 			<zipfileset file="${ui.config.deployEnv}\Desktop.bat" prefix="DMS Desktop ${version}"/>
 			<zipfileset file="${ui.config.deployEnv}\Desktop (using pre-installed JRE 6 or higher).bat" prefix="DMS Desktop ${version}"/>
@@ -257,6 +258,7 @@ $
 				<exclude name="Log Files/**"/>
 				<exclude name="Desktop.bat"/>
 				<exclude name="Program Files/Editor/editor.ini"/>
+				<exclude name="Program Files/Nero */**"/>
 			</zipfileset>
 			<fileset refid="jre"/>
 			<zipfileset file="${ui.config.deployEnv}\Desktop.bat" prefix="DMS Desktop ${version}"/>
