@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Contains all build scripts for this project.
+
+Revision History:
+$$Log: build.xml,v $
+$Revision 1.1  2007/05/12 11:03:50  marc
+$Moved to EMF model-based application.
+$
+ 
+-->
+<project name="Digital Media Service Desktop" default="release" basedir=".">
+	<property name="project" value="Digital Media Service Desktop"/>
+
+  <!-- Sets global properties. -->
+	<property name="root" location="../../../../../"/>
+	<property name="projects" location="${root}/Projects"/>
+	<property name="doc" location="../Documentation"/>
+	<property name="doc.source" location="${doc}/Source"/>
+
+	<property name="core" location="../org.onceforall.dms.desktop"/>
+	<property name="core.src" location="${core}/src"/>
+	<property name="core.lib" location="${core}/lib"/>
+	<property name="core.bin" location="${core}/bin"/>
+	<property name="autoTest" location="../org.onceforall.dms.desktop.tests"/>
+	<property name="editor" location="../org.onceforall.dms.desktop.editor"/>
+	<property name="ui.src" location="./src"/>
+  <property name="ui.lib" location="./lib"/>
+  <property name="ui.bin" location="./bin"/>
+  <property name="ui.config.testEnv" location="./config/test"/>
+  <property name="ui.config.deployEnv" location="./config/deploy"/>	
+  <property name="ui.buildInfoProperties" location="${ui.src}/build-info.properties"/>
+
+  <property name="testEnv" location="test"/>
+  <property name="testEnv.webFiles" location="${testEnv}/Web Files"/>
+  <property name="testEnv.dataFiles" location="${testEnv}/Application Data Files"/>
+  <property name="testEnv.recordingFiles" location="${testEnv}/Recording Files"/>
+  <property name="testEnv.libraryFiles" location="${testEnv}/Library Files"/>
+  <property name="testEnv.programFiles" location="${testEnv}/Program Files"/>
+  <property name="testEnv.installationFiles" location="${testEnv}/Installation Files"/>
+  <property name="testEnv.imageFiles" location="${testEnv}/Image Files"/>
+	
+	<property name="deployEnv" location="../Releases"/>
+	
+	<property name="editor.testEnv" location="${editor}/test"/>
+  <property name="editor.config.testEnv" location="${editor}/config/test"/>
+  <property name="editor.config.deployEnv" location="${editor}/config/deploy"/>	
+	
+	<property name="sdk" location="${projects}/Common/SDK"/>
+  <property name="shortcuts" location="${projects}/Common/Shortcuts"/>
+
+	<property name="commonInstallationFiles" location="${projects}/Common/Installation Files"/>
+  	
+  <property name="commonProgramFiles" location="${projects}/Common/Program Files"/>
+  <property name="commonProgramFiles.eclipse" location="${commonProgramFiles}/DMS Desktop Development Kit"/>
+  <property name="commonProgramFiles.jre" location="${projects}/Common/Program Files/JDK 6/jre"/>
+  <property name="programFiles" location="dev/Program Files"/>
+	
+	<property file="${ui.buildInfoProperties}"/>
+
+	<!-- Defines file sets. -->
+	<fileset id="core.classes" dir="${core.bin}">
+		<include name="**/*.class"/>
+		<include name="**/*.properties"/>
+	</fileset>
+
+	<fileset id="ui.classes" dir="${ui.bin}">
+		<include name="**/*.class"/>
+		<include name="**/*.properties"/>
+	</fileset>
+
+	<fileset id="libraries" dir="${core.lib}">
+		<include name="commons-net-1.4.1.jar"/>
+		<include name="jaf-1.1.jar"/>
+		<include name="jakarta-oro-2.0.8.jar"/>
+		<include name="java-mail-1.4.jar"/>
+		<include name="tritonus-share-0.3.6.jar"/>
+		<include name="jlayer-1.0.jar"/>
+		<include name="mp3-spi-1.9.4.jar"/>
+		<!-- <include name="JDK 1.5.0\lib\jce.jar"/> -->
+	</fileset>
+
+	<fileset id="ui.eclipseLibraries" dir="${ui.lib}">
+		<include name="org.eclipse.swt_3.2.0.v3232o.jar"/>
+		<include name="org.eclipse.swt.win32.win32.x86_3.2.0.v3232m.jar"/>
+		<include name="org.eclipse.jface_3.2.0.I20060605-1400.jar"/>
+		<include name="org.eclipse.jface.text_3.2.0.v20060605-1400.jar"/>
+		<include name="org.eclipse.text_3.2.0.v20060605-1400.jar"/>
+		<include name="org.eclipse.ui_3.2.0.I20060605-1400.jar"/>
+		<include name="org.eclipse.ui.workbench_3.2.0.I20060605-1400.jar"/>
+		<include name="org.eclipse.core.commands_3.2.0.I20060605-1400.jar"/>
+		<include name="org.eclipse.ui.forms_3.2.0.v20060602.jar"/>
+		<include name="com.ibm.icu_3.4.4.1.jar"/>
+	</fileset>
+		
+	<fileset id="core.eclipseLibraries" dir="${core.lib}">
+		<include name="org.eclipse.core.runtime_3.2.0.v20060603.jar"/>
+		<include name="org.eclipse.emf.ecore_2.2.0.v200606271057.jar"/>
+		<include name="org.eclipse.emf.common_2.2.0.v200606271057.jar"/>
+		<include name="org.eclipse.emf.ecore.xmi_2.2.0.v200606271057.jar"/>
+		<include name="org.eclipse.core.jobs_3.2.0.v20060603.jar"/>
+		<include name="org.eclipse.core.contenttype_3.2.0.v200060603.jar"/>
+		<include name="org.eclipse.osgi_3.2.0.v20060601.jar"/>
+		<include name="org.eclipse.equinox.common_3.2.0.v20060603.jar"/>
+		<include name="org.eclipse.equinox.registry_3.2.0.v200060601.jar"/>
+		<include name="org.eclipse.equinox.preferences_3.2.0.v200060601.jar"/>
+		<include name="runtime_registry_compatiblity.jar"/>
+	</fileset>
+
+	<fileset id="programFiles" dir="${programFiles}">
+		<include name="LAME 3.96.1/**"/>
+		<include name="Nero 6.0/**"/>
+	</fileset>
+	
+	<fileset id="jre" dir="${projects}">
+		<include name="Common/Program Files/JDK 6/jre/**"/>
+	</fileset>
+		
+	<fileset id="installationFiles" dir="${commonInstallationFiles}">
+		<include name="Peter's XML Editor/**"/>
+		<include name="LAME 3.96.1/**"/>
+	</fileset>
+
+	<fileset id="webFiles" dir="dev/Web Files">
+		<include name="*"/>
+	</fileset>
+
+	<fileset id="imageFiles" dir="dev/Image Files">
+		<include name="*"/>
+	</fileset>
+
+	<fileset id="testFiles" dir="dev/Test Files">
+		<include name="*"/>
+	</fileset> 
+
+	<!-- Defines Ant targets. -->
+  <target name="init" description="Initialises every ant script execution.">
+    <!-- Creates the time stamp. -->
+  	<tstamp>
+    	<format property="TODAY_UK" pattern="dd-MM-yy" locale="en"/>
+  	</tstamp>
+  </target>
+
+	<!-- Deploys the DMS Desktop and the DMS Desktop Editor to their own test environments. -->		
+  <target name="deploy-test" depends="init" description="Deploys the DMS Desktop and the DMS Desktop Editor to their own test environments."> 	
+  	<!-- Creates all necessary directories -->
+    <mkdir dir="${testEnv}"/>
+    <mkdir dir="${testEnv.webFiles}"/>
+    <mkdir dir="${testEnv.dataFiles}"/>
+    <mkdir dir="${testEnv.recordingFiles}"/>
+    <mkdir dir="${testEnv.libraryFiles}"/>
+    <mkdir dir="${testEnv.programFiles}"/>
+    <mkdir dir="${testEnv.programFiles}/Editor"/>
+    <mkdir dir="${testEnv.installationFiles}"/>
+    <mkdir dir="${testEnv.imageFiles}"/>
+		
+  	<!-- Updates the build information file. --> 
+		<propertyfile file="${ui.buildInfoProperties}" comment="Please only update the version, all other properties are updated automatically.">
+		  <entry key="date" type="date" pattern="dd MMM yyyy" value="now"/>
+		  <entry key="user" value="${user.name}"/>
+			<entry key="build" type="int" default="1" operation="+"/>
+		</propertyfile>
+
+  	<!-- Creates the jar file for the application library. --> 
+  	<jar destfile="${testEnv.libraryFiles}/desktop.jar">
+  		<fileset refid="core.classes"/>
+  		<fileset refid="ui.classes"/>
+  	</jar>
+		
+  	<!-- Copies the libraries to the test environment. -->  	
+		<copy todir="${testEnv.libraryFiles}" flatten="true" overwrite="no">
+  		<fileset refid="ui.eclipseLibraries"/>
+  		<fileset refid="libraries"/>
+  		<fileset refid="core.eclipseLibraries"/>
+		</copy>  	
+  		  	
+  	<!-- Copies the data file to the test environment. -->
+  	<copy todir="${testEnv.dataFiles}" overwrite="yes" file="dev/Application Data Files/Data.xml" />
+	
+  	<!-- Copies the libraries to the test environment. -->  	
+		<copy todir="${testEnv.libraryFiles}" flatten="true" overwrite="no" failonerror="true">
+  		<fileset refid="libraries"/>
+  		<fileset refid="core.eclipseLibraries"/>
+  		<fileset refid="ui.eclipseLibraries"/>
+		</copy>
+  	<unjar src="${testEnv.libraryFiles}\org.eclipse.swt.win32.win32.x86_3.2.0.v3232m.jar" dest="${testEnv.libraryFiles}">
+      <patternset includes="swt-win32-3232.dll"/>
+  	</unjar>
+		
+  	<!-- Copies the intallation files to the test environment. -->  	
+  	<!-- <copy todir="${testEnv.installationFiles}" overwrite="no">
+  		<fileset refid="installationFiles"/>
+		</copy>	-->
+		
+  	<!-- Copies the program files (tools) to the test environment. -->  	
+		<copy todir="${testEnv.programFiles}" overwrite="no">
+  		<fileset refid="programFiles"/>
+		</copy>
+  	
+  	<!-- Copies the DMS Desktop Editor to the test environment. -->  	
+		<copy todir="${testEnv.programFiles}\Editor" overwrite="yes">
+  		<fileset dir="${editor.testEnv}"/>
+		</copy> 	
+		
+  	<!-- Copies the web files to the test environment. -->  	
+		<copy todir="${testEnv.webFiles}" overwrite="no">
+  		<fileset refid="webFiles"/>
+		</copy>	
+		
+  	<!-- Copies the image files to the test environment. -->  	
+		<copy todir="${testEnv.imageFiles}" overwrite="no">
+  		<fileset refid="imageFiles"/>
+		</copy>	
+		
+  	<!-- Copies the start batch files to the test environment. -->  	
+		<copy todir="${testEnv}" overwrite="no" file="${ui.config.testEnv}\Desktop.bat"/>	
+		<copy todir="${editor.testEnv}" overwrite="no" file="${editor.config.testEnv}\editor.ini"/>	
+  </target>
+	
+	<!-- Packages the DMS Desktop and the DMS Desktop Editor from their own test environments for a release. -->
+	<target name="release" description="Packages the DMS Desktop and the DMS Desktop Editor from their own test environments for a release." depends="init, deploy-test">
+		<!-- Creates all necessary directories -->
+	  <mkdir dir="${deployEnv}"/>
+		
+		<delete file="${deployEnv}/Digitial Media Service Desktop ${version} (without JRE 6).zip" failonerror="false"/>
+		<delete file="${deployEnv}/Digitial Media Service Desktop ${version} (with JRE 6).zip" failonerror="false"/>
+		
+		<zip destfile="${deployEnv}/Digitial Media Service Desktop ${version} (without JRE 6).zip" compress="yes">
+			<zipfileset dir="${testEnv}" prefix="DMS Desktop ${version}">
+				<exclude name="Application Data Files/*.zip"/>
+				<exclude name="Web Files/recordings.html"/>
+				<exclude name="Web Files/recordings.xml"/>
+				<exclude name="Installation Files/**"/>
+			  <exclude name="Recording Files/**"/>
+				<exclude name="Service Files/**"/>
+			  <exclude name="WWX Files/**"/>
+			  <exclude name="Test Files/**"/>
+				<exclude name="Log Files/**"/>
+				<exclude name="Desktop.bat"/>
+				<exclude name="Program Files/Editor/editor.ini"/>
+				<exclude name="Program Files/Nero */**"/>
+			</zipfileset>
+			<zipfileset file="${ui.config.deployEnv}\Desktop.bat" prefix="DMS Desktop ${version}"/>
+			<zipfileset file="${ui.config.deployEnv}\Desktop (using pre-installed JRE 6 or higher).bat" prefix="DMS Desktop ${version}"/>
+			<zipfileset file="${editor.config.deployEnv}\editor.ini" prefix="DMS Desktop ${version}\Program Files\Editor"/>
+		</zip>
+		
+		<zip destfile="${deployEnv}/Digitial Media Service Desktop ${version} (with JRE 6).zip" compress="yes">
+			<zipfileset dir="${testEnv}" prefix="DMS Desktop ${version}">
+				<exclude name="Application Data Files/*.zip"/>
+				<exclude name="Web Files/recordings.html"/>
+				<exclude name="Web Files/recordings.xml"/>
+				<exclude name="Installation Files/**"/>
+			  <exclude name="Recording Files/**"/>
+			  <exclude name="Service Files/**"/>
+			  <exclude name="WWX Files/**"/>
+			  <exclude name="Test Files/**"/>
+				<exclude name="Log Files/**"/>
+				<exclude name="Desktop.bat"/>
+				<exclude name="Program Files/Editor/editor.ini"/>
+				<exclude name="Program Files/Nero */**"/>
+			</zipfileset>
+			<fileset refid="jre"/>
+			<zipfileset file="${ui.config.deployEnv}\Desktop.bat" prefix="DMS Desktop ${version}"/>
+			<zipfileset file="${ui.config.deployEnv}\Desktop (using pre-installed JRE 6 or higher).bat" prefix="DMS Desktop ${version}"/>
+			<zipfileset file="${editor.config.deployEnv}\editor.ini" prefix="DMS Desktop ${version}\Program Files\Editor"/>
+		</zip>
+	</target>
+		
+	<!-- Generates the source code documentation. -->
+
+  <!-- Deletes all files in the test environment. -->
+  <target name="clean-test" description="Deletes all files in the test environments.">	
+  	<delete dir="${testEnv}"/>
+  	<delete dir="${editor.testEnv}"/>
+  </target>
+</project>
