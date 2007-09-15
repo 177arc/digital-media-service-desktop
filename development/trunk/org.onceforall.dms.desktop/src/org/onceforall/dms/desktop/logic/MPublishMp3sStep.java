@@ -2283,17 +2283,6 @@ public abstract class MPublishMp3sStep extends MFtpStep {
         }
         totalBytesToPublish += pageFile.length();
         totalBytesToPublish += podcastFile.length();
-
-        if(supportingFiles.size() > 0)
-        	setProgressStatusProperty("Uploading supporting files ...");
-
-        // Uploads new or updated supporting files, e.g. images.
-        for(File supportingFile: supportingFiles) {
-        	ftpClient.setFileType(FTP.BINARY_FILE_TYPE);
-            FileInputStream fileInputStream = new FileInputStream(supportingFile);
-            ftpClient.storeFile(supportingFile.getName(), new MonitoredInputStream(fileInputStream, bytesPublished, supportingFile.length(), totalBytesToPublish));
-            bytesPublished += supportingFile.length();        	
-        }
         
         // Uploads MP3 files.
         for(MMp3 mMp3: mMp3s) {
@@ -2320,9 +2309,21 @@ public abstract class MPublishMp3sStep extends MFtpStep {
 	        }
 	    }
 	            
+        String contentPageFTPPath = ftpServerUrl.getPath()+getContentPageRelativeFtpPathParameter();
+    	changeFtpWorkingDirectory(ftpClient, contentPageFTPPath);
+        if(supportingFiles.size() > 0)
+        	setProgressStatusProperty("Uploading supporting files ...");
+        
+        // Uploads new or updated supporting files, e.g. images.
+        for(File supportingFile: supportingFiles) {
+        	ftpClient.setFileType(FTP.BINARY_FILE_TYPE);
+            FileInputStream fileInputStream = new FileInputStream(supportingFile);
+            ftpClient.storeFile(supportingFile.getName(), new MonitoredInputStream(fileInputStream, bytesPublished, supportingFile.length(), totalBytesToPublish));
+            bytesPublished += supportingFile.length();        	
+        }
+
         // Uploads the contents page.
         setProgressStatusProperty("Publishing content web page ...");
-        String contentPageFTPPath = ftpServerUrl.getPath()+getContentPageRelativeFtpPathParameter();
         changeFtpWorkingDirectory(ftpClient, contentPageFTPPath);
         FileInputStream contentFileInputStream = new FileInputStream(pageFile);
         ftpClient.storeFile(pageFile.getName(), new MonitoredInputStream(contentFileInputStream, bytesPublished, pageFile.length(), totalBytesToPublish));
