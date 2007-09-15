@@ -9,7 +9,7 @@ $Moved to EMF model-based application.
 $
  
 -->
-<project name="Digital Media Service Desktop" default="deploy" basedir=".">
+<project name="Digital Media Service Desktop" default="release" basedir=".">
 	<property name="project" value="Digital Media Service Desktop"/>
 
   <!-- Sets global properties. -->
@@ -218,7 +218,7 @@ $
   </target>
 	
 	<!-- Packages the DMS Desktop and the DMS Desktop Editor from their own test environments for a release. -->
-	<target name="deploy" description="Packages the DMS Desktop and the DMS Desktop Editor from their own test environments for a release." depends="init, deploy-test">
+	<target name="release" description="Packages the DMS Desktop and the DMS Desktop Editor from their own test environments for a release." depends="init, deploy-test">
 		<!-- Creates all necessary directories -->
 	  <mkdir dir="${deployEnv}"/>
 		
@@ -226,7 +226,10 @@ $
 		<delete file="${deployEnv}/Digitial Media Service Desktop ${version} (with JRE 1.6.0).zip" failonerror="false"/>
 		
 		<zip destfile="${deployEnv}/Digitial Media Service Desktop ${version} (without JRE 1.6.0).zip" compress="yes">
-			<zipfileset dir="${testEnv}" prefix="DMS Desktop">
+			<zipfileset dir="${testEnv}" prefix="DMS Desktop ${version}">
+				<exclude name="Application Data Files/*.zip"/>
+				<exclude name="Web Files/*.recordings.html"/>
+				<exclude name="Web Files/*.recordings.xml"/>
 				<exclude name="Installation Files/**"/>
 			  <exclude name="Recording Files/**"/>
 				<exclude name="Service Files/**"/>
@@ -234,12 +237,15 @@ $
 				<exclude name="Desktop.bat"/>
 				<exclude name="Program Files/Editor/editor.ini"/>
 			</zipfileset>
-			<zipfileset file="${ui.config.deployEnv}\Desktop.bat" prefix="DMS Desktop"/>
-			<zipfileset file="${editor.config.deployEnv}\editor.ini" prefix="DMS Desktop\Program Files\Editor"/>
+			<zipfileset file="${ui.config.deployEnv}\Desktop.bat" prefix="DMS Desktop ${version}"/>
+			<zipfileset file="${editor.config.deployEnv}\editor.ini" prefix="DMS Desktop ${version}\Program Files\Editor"/>
 		</zip>
 		
 		<zip destfile="${deployEnv}/Digitial Media Service Desktop ${version} (with JRE 1.6.0).zip" compress="yes">
-			<zipfileset dir="${testEnv}" prefix="DMS Desktop">
+			<zipfileset dir="${testEnv}" prefix="DMS Desktop ${version}">
+				<exclude name="Application Data Files/*.zip"/>
+				<exclude name="Web Files/*.recordings.html"/>
+				<exclude name="Web Files/*.recordings.xml"/>
 				<exclude name="Installation Files/**"/>
 			  <exclude name="Recording Files/**"/>
 			  <exclude name="Service Files/**"/>
@@ -248,8 +254,8 @@ $
 				<exclude name="Program Files/Editor/editor.ini"/>
 			</zipfileset>
 			<fileset refid="jre"/>
-			<zipfileset file="${ui.config.deployEnv}\Desktop.bat" prefix="DMS Desktop"/>
-			<zipfileset file="${editor.config.deployEnv}\editor.ini" prefix="DMS Desktop\Program Files\Editor"/>
+			<zipfileset file="${ui.config.deployEnv}\Desktop.bat" prefix="DMS Desktop ${version}"/>
+			<zipfileset file="${editor.config.deployEnv}\editor.ini" prefix="DMS Desktop ${version}\Program Files\Editor"/>
 		</zip>
 	</target>
 		
