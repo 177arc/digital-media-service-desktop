@@ -53,7 +53,7 @@ $
   	
   <property name="commonProgramFiles" location="${projects}/Common/Program Files"/>
   <property name="commonProgramFiles.eclipse" location="${commonProgramFiles}/DMS Desktop Development Kit"/>
-  <property name="commonProgramFiles.jre" location="${projects}/Common/Program Files/JDK 1.6.0/jre"/>
+  <property name="commonProgramFiles.jre" location="${projects}/Common/Program Files/JDK 6/jre"/>
   <property name="programFiles" location="dev/Program Files"/>
 	
 	<property file="${ui.buildInfoProperties}"/>
@@ -113,7 +113,7 @@ $
 	</fileset>
 	
 	<fileset id="jre" dir="${projects}">
-		<include name="Common/Program Files/JDK 1.6.0/jre/**"/>
+		<include name="Common/Program Files/JDK 6/jre/**"/>
 	</fileset>
 		
 	<fileset id="installationFiles" dir="${commonInstallationFiles}">
@@ -222,39 +222,45 @@ $
 		<!-- Creates all necessary directories -->
 	  <mkdir dir="${deployEnv}"/>
 		
-		<delete file="${deployEnv}/Digitial Media Service Desktop ${version} (without JRE 1.6.0).zip" failonerror="false"/>
-		<delete file="${deployEnv}/Digitial Media Service Desktop ${version} (with JRE 1.6.0).zip" failonerror="false"/>
+		<delete file="${deployEnv}/Digitial Media Service Desktop ${version} (without JRE 6).zip" failonerror="false"/>
+		<delete file="${deployEnv}/Digitial Media Service Desktop ${version} (with JRE 6).zip" failonerror="false"/>
 		
-		<zip destfile="${deployEnv}/Digitial Media Service Desktop ${version} (without JRE 1.6.0).zip" compress="yes">
+		<zip destfile="${deployEnv}/Digitial Media Service Desktop ${version} (without JRE 6).zip" compress="yes">
 			<zipfileset dir="${testEnv}" prefix="DMS Desktop ${version}">
 				<exclude name="Application Data Files/*.zip"/>
-				<exclude name="Web Files/*.recordings.html"/>
-				<exclude name="Web Files/*.recordings.xml"/>
+				<exclude name="Web Files/recordings.html"/>
+				<exclude name="Web Files/recordings.xml"/>
 				<exclude name="Installation Files/**"/>
 			  <exclude name="Recording Files/**"/>
 				<exclude name="Service Files/**"/>
+			  <exclude name="WWX Files/**"/>
+			  <exclude name="Test Files/**"/>
 				<exclude name="Log Files/**"/>
 				<exclude name="Desktop.bat"/>
 				<exclude name="Program Files/Editor/editor.ini"/>
 			</zipfileset>
 			<zipfileset file="${ui.config.deployEnv}\Desktop.bat" prefix="DMS Desktop ${version}"/>
+			<zipfileset file="${ui.config.deployEnv}\Desktop (using pre-installed JRE 6 or higher).bat" prefix="DMS Desktop ${version}"/>
 			<zipfileset file="${editor.config.deployEnv}\editor.ini" prefix="DMS Desktop ${version}\Program Files\Editor"/>
 		</zip>
 		
-		<zip destfile="${deployEnv}/Digitial Media Service Desktop ${version} (with JRE 1.6.0).zip" compress="yes">
+		<zip destfile="${deployEnv}/Digitial Media Service Desktop ${version} (with JRE 6).zip" compress="yes">
 			<zipfileset dir="${testEnv}" prefix="DMS Desktop ${version}">
 				<exclude name="Application Data Files/*.zip"/>
-				<exclude name="Web Files/*.recordings.html"/>
-				<exclude name="Web Files/*.recordings.xml"/>
+				<exclude name="Web Files/recordings.html"/>
+				<exclude name="Web Files/recordings.xml"/>
 				<exclude name="Installation Files/**"/>
 			  <exclude name="Recording Files/**"/>
 			  <exclude name="Service Files/**"/>
+			  <exclude name="WWX Files/**"/>
+			  <exclude name="Test Files/**"/>
 				<exclude name="Log Files/**"/>
 				<exclude name="Desktop.bat"/>
 				<exclude name="Program Files/Editor/editor.ini"/>
 			</zipfileset>
 			<fileset refid="jre"/>
 			<zipfileset file="${ui.config.deployEnv}\Desktop.bat" prefix="DMS Desktop ${version}"/>
+			<zipfileset file="${ui.config.deployEnv}\Desktop (using pre-installed JRE 6 or higher).bat" prefix="DMS Desktop ${version}"/>
 			<zipfileset file="${editor.config.deployEnv}\editor.ini" prefix="DMS Desktop ${version}\Program Files\Editor"/>
 		</zip>
 	</target>
