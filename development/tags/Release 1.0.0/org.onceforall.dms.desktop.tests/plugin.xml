@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+Revision History:
+$Log: plugin.xml,v $
+Revision 1.2  2006/09/19 12:54:59  marc
+Updated to checkpoint progress.
+
+-->
+
+<plugin>
+</plugin>
+
