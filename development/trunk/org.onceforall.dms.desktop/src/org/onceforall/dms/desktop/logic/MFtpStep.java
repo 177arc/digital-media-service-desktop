@@ -678,7 +678,7 @@ public abstract class MFtpStep extends MStep {
 				return;
 			case LogicPackage.MFTP_STEP__FTP_USER_PASSWORD_PARAMETER:
 				// Makes sure that that plain text password will be encrypted if they are not. TODO: Remove this code after migration. Then all passwords should encrypted anyway.
-				if(newValue != null && !((String) newValue).endsWith("="))
+				if(newValue != null && (((String) newValue).startsWith("esio") || ((String) newValue).startsWith("site")))
 						newValue = Type.PASSWORD_TYPE.encryptPassword((String) newValue);
 				    
 				setFtpUserPasswordParameter((String)newValue);
