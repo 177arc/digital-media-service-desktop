@@ -112,9 +112,9 @@ $
 		<include name="Nero 6.0/**"/>
 	</fileset>
 	
-	<fileset id="jre" dir="${projects}">
+	<zipfileset id="jre" dir="${projects}" prefix="Onceforall">
 		<include name="Common/Program Files/JDK 6/jre/**"/>
-	</fileset>
+	</zipfileset>
 		
 	<fileset id="installationFiles" dir="${commonInstallationFiles}">
 		<include name="Peter's XML Editor/**"/>
@@ -226,7 +226,7 @@ $
 		<delete file="${deployEnv}/Digitial Media Service Desktop ${version} (with JRE 6).zip" failonerror="false"/>
 		
 		<zip destfile="${deployEnv}/Digitial Media Service Desktop ${version} (without JRE 6).zip" compress="yes">
-			<zipfileset dir="${testEnv}" prefix="DMS Desktop ${version}">
+			<zipfileset dir="${testEnv}" prefix="Onceforall\DMS Desktop ${version}">
 				<exclude name="Application Data Files/*.zip"/>
 				<exclude name="Web Files/recordings.html"/>
 				<exclude name="Web Files/recordings.xml"/>
@@ -240,13 +240,13 @@ $
 				<exclude name="Program Files/Editor/editor.ini"/>
 				<exclude name="Program Files/Nero */**"/>
 			</zipfileset>
-			<zipfileset file="${ui.config.deployEnv}\Desktop.bat" prefix="DMS Desktop ${version}"/>
-			<zipfileset file="${ui.config.deployEnv}\Desktop (using pre-installed JRE 6 or higher).bat" prefix="DMS Desktop ${version}"/>
-			<zipfileset file="${editor.config.deployEnv}\editor.ini" prefix="DMS Desktop ${version}\Program Files\Editor"/>
+			<zipfileset file="${ui.config.deployEnv}\Desktop.bat" prefix="Onceforall\DMS Desktop ${version}"/>
+			<zipfileset file="${ui.config.deployEnv}\Desktop (using pre-installed JRE 6 or higher).bat" prefix="Onceforall\DMS Desktop ${version}"/>
+			<zipfileset file="${editor.config.deployEnv}\editor.ini" prefix="Onceforall\DMS Desktop ${version}\Program Files\Editor"/>
 		</zip>
 		
 		<zip destfile="${deployEnv}/Digitial Media Service Desktop ${version} (with JRE 6).zip" compress="yes">
-			<zipfileset dir="${testEnv}" prefix="DMS Desktop ${version}">
+			<zipfileset dir="${testEnv}" prefix="Onceforall\DMS Desktop ${version}">
 				<exclude name="Application Data Files/*.zip"/>
 				<exclude name="Web Files/recordings.html"/>
 				<exclude name="Web Files/recordings.xml"/>
@@ -260,10 +260,10 @@ $
 				<exclude name="Program Files/Editor/editor.ini"/>
 				<exclude name="Program Files/Nero */**"/>
 			</zipfileset>
-			<fileset refid="jre"/>
-			<zipfileset file="${ui.config.deployEnv}\Desktop.bat" prefix="DMS Desktop ${version}"/>
-			<zipfileset file="${ui.config.deployEnv}\Desktop (using pre-installed JRE 6 or higher).bat" prefix="DMS Desktop ${version}"/>
-			<zipfileset file="${editor.config.deployEnv}\editor.ini" prefix="DMS Desktop ${version}\Program Files\Editor"/>
+			<zipfileset refid="jre"/>
+			<zipfileset file="${ui.config.deployEnv}\Desktop.bat" prefix="Onceforall\DMS Desktop ${version}"/>
+			<zipfileset file="${ui.config.deployEnv}\Desktop (using pre-installed JRE 6 or higher).bat" prefix="Onceforall\DMS Desktop ${version}"/>
+			<zipfileset file="${editor.config.deployEnv}\editor.ini" prefix="Onceforall\DMS Desktop ${version}\Program Files\Editor"/>
 		</zip>
 	</target>
 		
