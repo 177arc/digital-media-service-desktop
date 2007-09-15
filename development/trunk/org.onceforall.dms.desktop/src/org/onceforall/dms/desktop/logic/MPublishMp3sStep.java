@@ -2082,7 +2082,7 @@ public abstract class MPublishMp3sStep extends MFtpStep {
             filesMappedByName.put(files[index].getName(), files[index]);
         
         ensureEnoughDiskSpace(ftpClient, filesMappedByName, mMp3Folder);
-
+        
         setProgressStatusProperty("Generating web page and podcast file ...");
 
         char[] buffer = new char[20000];
@@ -2169,9 +2169,12 @@ public abstract class MPublishMp3sStep extends MFtpStep {
 			            Date podcastPublicationDate = mMp3.getPodcastPublishingDateProperty();
 			             
 			            // Gets the duration of the MP3 file.
-			    		AudioFileFormat baseFileFormat = AudioSystem.getAudioFileFormat(mMp3.getFileProperty());
-			    		Long duration = (Long) ((TAudioFileFormat) baseFileFormat).properties().get("duration");					            
-			            String podcastDuration = DurationType.FORMATTER.format(new Date(duration/1000));
+			            String podcastDuration = null;
+			            if(mMp3.getFileProperty() != null && mMp3.getFileProperty().exists()) {
+			            	AudioFileFormat baseFileFormat = AudioSystem.getAudioFileFormat(mMp3.getFileProperty());
+			            	Long duration = (Long) ((TAudioFileFormat) baseFileFormat).properties().get("duration");					            
+			            	podcastDuration = DurationType.FORMATTER.format(new Date(duration/1000));
+			            }
 			            
 			            if(podcastTitle != null) {
 			                podcastWriter.write("<item>\n");
@@ -2254,6 +2257,21 @@ public abstract class MPublishMp3sStep extends MFtpStep {
 
         // Determines the total number of bytes to publish.       
         long totalBytesToPublish = 0;
+        long bytesPublished = 0;        
+
+        List<File> supportingFiles = new ArrayList<File>();
+        File[] webFiles = getContentPageFilePathParameter().getParentFile().listFiles();
+        for(File webFile: webFiles) {
+        	String webFileName = webFile.getName();
+        	if(webFileName.endsWith(".gif") || webFileName.endsWith(".jpeg") || webFileName.endsWith(".png")) {
+        		FTPFile remoteFile = filesMappedByName.get(webFileName);
+        		if(remoteFile == null || remoteFile.getTimestamp().getTimeInMillis() < webFile.lastModified()) {
+        			supportingFiles.add(webFile);
+        			totalBytesToPublish += webFile.length();
+        		}
+        	}
+        }
+        
         List<MMp3> mMp3s = mMp3Folder.getMMp3s();
         for(MMp3 mMp3: mMp3s) {
             File publishedMP3File = mMp3.getFileProperty();
@@ -2265,8 +2283,19 @@ public abstract class MPublishMp3sStep extends MFtpStep {
         }
         totalBytesToPublish += pageFile.length();
         totalBytesToPublish += podcastFile.length();
+
+        if(supportingFiles.size() > 0)
+        	setProgressStatusProperty("Uploading supporting files ...");
+
+        // Uploads new or updated supporting files, e.g. images.
+        for(File supportingFile: supportingFiles) {
+        	ftpClient.setFileType(FTP.BINARY_FILE_TYPE);
+            FileInputStream fileInputStream = new FileInputStream(supportingFile);
+            ftpClient.storeFile(supportingFile.getName(), new MonitoredInputStream(fileInputStream, bytesPublished, supportingFile.length(), totalBytesToPublish));
+            bytesPublished += supportingFile.length();        	
+        }
         
-        long bytesPublished = 0;
+        // Uploads MP3 files.
         for(MMp3 mMp3: mMp3s) {
         	File publishedMP3File = mMp3.getFileProperty();
         
