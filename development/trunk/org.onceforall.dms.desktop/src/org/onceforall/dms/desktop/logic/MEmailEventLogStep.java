@@ -28,6 +28,7 @@ import javax.mail.MessagingException;
 import javax.mail.Multipart;
 import javax.mail.PasswordAuthentication;
 import javax.mail.Session;
+import javax.mail.Store;
 import javax.mail.Transport;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeBodyPart;
@@ -1897,7 +1898,7 @@ public class MEmailEventLogStep extends MStep {
 				return;
 			case LogicPackage.MEMAIL_EVENT_LOG_STEP__SMTP_PASSWORD_PARAMETER:
 				// Makes sure that that plain text password will be encrypted if they are not. TODO: Remove this code after migration. Then all passwords should encrypted anyway.
-				if(newValue != null && !((String) newValue).endsWith("="))
+				if(newValue != null && (((String) newValue).startsWith("esio") || ((String) newValue).startsWith("site")))
 						newValue = Type.PASSWORD_TYPE.encryptPassword((String) newValue);
 				    
 				setSmtpPasswordParameter((String)newValue);
@@ -2083,6 +2084,8 @@ public class MEmailEventLogStep extends MStep {
         String from = getSendersEmailAddressParameter();
         EList to = getReceipientsEmailAddressParameter();
 
+        setProgressStatusProperty("Compiling email ...");
+
         // Gets the system properties.
         Properties props = System.getProperties();
 
@@ -2096,9 +2099,10 @@ public class MEmailEventLogStep extends MStep {
         MimeMessage message = new MimeMessage(session);
         message.setFrom(new InternetAddress(from));
         
+        InternetAddress[] recipients = new InternetAddress[to.size()];
         for(int index = 0; index < to.size(); ++index)	
-        	message.addRecipient(Message.RecipientType.TO, 
-        			new InternetAddress((String) to.get(index)));
+        	recipients[index] = new InternetAddress((String) to.get(index));
+        message.setRecipients(Message.RecipientType.TO, recipients);
         message.setSubject(subject);
         
         // Finds the DMS memory handler to determine whether a serious event has been logged. 
@@ -2160,6 +2164,23 @@ public class MEmailEventLogStep extends MStep {
         // Sets the content.
         message.setContent(multipart);
 
+        setProgressStatusProperty("Connecting to POP3 server ...");
+        
+        // Attempt first to connect using POP to work around the security set-up of some SMTP servers.
+        Store store = session.getStore("pop3");
+        try {
+        	store.connect(host, getSmtpUserNameParameter(), Type.PASSWORD_TYPE.decryptPassword(getSmtpPasswordParameter()));
+        }
+        catch(MessagingException exception) {
+        	Logger.getLogger().warning("The application could not connect to the POP3 server. Nevertheless the email may still be sent successfully.");
+        }
+        finally {
+        	if(store != null)
+        		store.close();
+        }
+        
+        setProgressStatusProperty("Sending email ...");
+       
         // Sends the  message.
         try {
             Transport.send(message);
