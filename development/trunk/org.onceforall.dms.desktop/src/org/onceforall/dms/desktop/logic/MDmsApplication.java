@@ -3048,7 +3048,7 @@ public class MDmsApplication extends MApplication {
 				return;
 			case LogicPackage.MDMS_APPLICATION__SMTP_PASSWORD_PROPERTY:
 				// Makes sure that that plain text password will be encrypted if they are not. TODO: Remove this code after migration. Then all passwords should encrypted anyway.
-				if(newValue != null && !((String) newValue).endsWith("="))
+				if(newValue != null && (((String) newValue).startsWith("esio") || ((String) newValue).startsWith("site")))
 						newValue = Type.PASSWORD_TYPE.encryptPassword((String) newValue);
 				    
 				setSmtpPasswordProperty((String)newValue);
