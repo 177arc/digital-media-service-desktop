@@ -18,8 +18,6 @@ package org.onceforall.dms.desktop.logic.types;
 
 import java.io.File;
 
-import org.onceforall.dms.desktop.logic.types.State;
-
 
 
 /**
