@@ -15,7 +15,6 @@ package org.onceforall.dms.desktop.notify;
 
 import java.util.Collection;
 
-
 import org.eclipse.emf.common.notify.Notifier;
 import org.eclipse.emf.common.notify.impl.BasicNotifierImpl.EAdapterList;
 import org.onceforall.dms.desktop.logic.MElement;

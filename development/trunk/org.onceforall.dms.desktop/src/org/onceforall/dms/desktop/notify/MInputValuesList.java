@@ -16,7 +16,6 @@ package org.onceforall.dms.desktop.notify;
 import java.util.Collection;
 import java.util.List;
 
-
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.util.EObjectEList;
 import org.onceforall.dms.desktop.logic.LogicPackage;
