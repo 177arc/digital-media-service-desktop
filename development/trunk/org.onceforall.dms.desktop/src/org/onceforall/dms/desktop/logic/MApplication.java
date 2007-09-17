@@ -135,6 +135,7 @@ public abstract class MApplication extends MObject {
 
 
 
+
 	/**
 	 * The cached value of the '{@link #getMDataFileProperty() <em>MData File Property</em>}' containment reference.
 	 * <!-- begin-user-doc -->
