@@ -209,6 +209,7 @@ public abstract class MElement extends EObjectImpl implements ThreadAdapter {
 
 
 
+
 	/**
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -270,7 +271,7 @@ public abstract class MElement extends EObjectImpl implements ThreadAdapter {
 	 * @ordered
 	 */
 	protected static final String TYPE_NAME_FOR_UI_EDEFAULT = null;
-	
+
 	/**
 	 * Get the default value of the '{@link #getTypeNameForUI() <em>Type Name For UI</em>}' attribute.
 	 * <!-- begin-user-doc -->
