@@ -1,0 +1,21 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: %pluginName
+Bundle-SymbolicName: org.onceforall.dms.tests; singleton:=true
+Bundle-Version: 0.1.0
+Bundle-ClassPath: .,
+ lib/commons-net-1.4.1.jar,
+ lib/jaf-1.1.jar,
+ lib/jakarta-oro-2.0.8.jar,
+ lib/java-mail-1.4.jar,
+ lib/jlayer-1.0.jar,
+ lib/mp3-spi-1.9.4.jar,
+ lib/tritonus-share-0.3.6.jar
+Bundle-Vendor: %providerName
+Bundle-Localization: plugin
+Export-Package: org.onceforall.dms.desktop.tests
+Require-Bundle: org.eclipse.core.runtime,
+ org.onceforall.dms.desktop;visibility:=reexport,
+ org.eclipse.emf.ecore.xmi;visibility:=reexport,
+ org.junit;visibility:=reexport
+Eclipse-LazyStart: true
