@@ -2080,8 +2080,24 @@ public abstract class MPublishMp3sStep extends MFtpStep {
         Map<String, FTPFile> filesMappedByName = new HashMap<String, FTPFile>();
         for(int index = 0; index < files.length; ++index)
             filesMappedByName.put(files[index].getName(), files[index]);
+        List<MMp3> mMp3s = new ArrayList(mMp3Folder.getMMp3s());
         
-        ensureEnoughDiskSpace(ftpClient, filesMappedByName, mMp3Folder);
+        // Makes sure that entries are ordered in reverse date order.
+        Collections.sort(mMp3s, new Comparator<MMp3>() {
+
+			public int compare(MMp3 o1, MMp3 o2) {
+				if(o1.getPodcastPublishingDateProperty() == null && o2.getPodcastPublishingDateProperty() == null)
+					return 0;
+				else if(o1.getPodcastPublishingDateProperty() == null && o2.getPodcastPublishingDateProperty() != null)
+					return 1;
+				else if(o1.getPodcastPublishingDateProperty() != null && o2.getPodcastPublishingDateProperty() == null)
+					return -1;
+				else
+					return o2.getPodcastPublishingDateProperty().compareTo(o1.getPodcastPublishingDateProperty());				
+			}  
+		});
+      
+        ensureEnoughDiskSpace(ftpClient, filesMappedByName, mMp3s);
         
         setProgressStatusProperty("Generating web page and podcast file ...");
 
@@ -2116,24 +2132,7 @@ public abstract class MPublishMp3sStep extends MFtpStep {
                 charactersRead = podcastHeaderFileReader.read(buffer, 0, 20000);
             }
 
-            // Determines the total number of bytes to publish.
             StringBuffer publishedMP3sHTML = new StringBuffer();
-            List<MMp3> mMp3s = new ArrayList(mMp3Folder.getMMp3s());
-            
-            // Makes sure that entries are ordered in reverse date order.
-            Collections.sort(mMp3s, new Comparator<MMp3>() {
-
-				public int compare(MMp3 o1, MMp3 o2) {
-					if(o1.getPodcastPublishingDateProperty() == null && o2.getPodcastPublishingDateProperty() == null)
-						return 0;
-					else if(o1.getPodcastPublishingDateProperty() == null && o2.getPodcastPublishingDateProperty() != null)
-						return 1;
-					else if(o1.getPodcastPublishingDateProperty() != null && o2.getPodcastPublishingDateProperty() == null)
-						return -1;
-					else
-						return o2.getPodcastPublishingDateProperty().compareTo(o1.getPodcastPublishingDateProperty());				
-				}  
-			});
 	                    
             // Writes a table row for each published MP3.
             for(MMp3 mMp3: mMp3s) {
@@ -2272,7 +2271,6 @@ public abstract class MPublishMp3sStep extends MFtpStep {
         	}
         }
         
-        List<MMp3> mMp3s = mMp3Folder.getMMp3s();
         for(MMp3 mMp3: mMp3s) {
             File publishedMP3File = mMp3.getFileProperty();
             
@@ -2363,10 +2361,9 @@ public abstract class MPublishMp3sStep extends MFtpStep {
     * @throws IOException Thrown if a file cannot be deleted from the server.
      * @throws DesktopException Thrown if not a single MP3 file can be published due to lack of disk space.
      */
-    protected void ensureEnoughDiskSpace(FTPClient ftpClient, Map filesMappedByName, MMp3Folder mMp3Folder) throws IOException, DesktopException {
+    protected void ensureEnoughDiskSpace(FTPClient ftpClient, Map filesMappedByName, List<MMp3> mMp3s) throws IOException, DesktopException {
         long totalFileSize = 0;
         long maxTotalFileSize = getMaxiumumDiskSpaceParameter()*1024*1024;
-        List<MMp3> mMp3s = mMp3Folder.getMMp3s();
 
         setProgressStatusProperty("Checking disk space on FTP server ...");
         
