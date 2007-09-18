@@ -222,10 +222,10 @@ $
 		<!-- Creates all necessary directories -->
 	  <mkdir dir="${deployEnv}"/>
 		
-		<delete file="${deployEnv}/Digitial Media Service Desktop ${version} (without JRE 6).zip" failonerror="false"/>
-		<delete file="${deployEnv}/Digitial Media Service Desktop ${version} (with JRE 6).zip" failonerror="false"/>
+		<delete file="${deployEnv}/Digital Media Service Desktop ${version} (without JRE 6).zip" failonerror="false"/>
+		<delete file="${deployEnv}/Digital Media Service Desktop ${version} (with JRE 6).zip" failonerror="false"/>
 		
-		<zip destfile="${deployEnv}/Digitial Media Service Desktop ${version} (without JRE 6).zip" compress="yes">
+		<zip destfile="${deployEnv}/Digital Media Service Desktop ${version} (without JRE 6).zip" compress="yes">
 			<zipfileset dir="${testEnv}" prefix="Onceforall\DMS Desktop ${version}">
 				<exclude name="Application Data Files/*.zip"/>
 				<exclude name="Web Files/recordings.html"/>
@@ -245,7 +245,7 @@ $
 			<zipfileset file="${editor.config.deployEnv}\editor.ini" prefix="Onceforall\DMS Desktop ${version}\Program Files\Editor"/>
 		</zip>
 		
-		<zip destfile="${deployEnv}/Digitial Media Service Desktop ${version} (with JRE 6).zip" compress="yes">
+		<zip destfile="${deployEnv}/Digital Media Service Desktop ${version} (with JRE 6).zip" compress="yes">
 			<zipfileset dir="${testEnv}" prefix="Onceforall\DMS Desktop ${version}">
 				<exclude name="Application Data Files/*.zip"/>
 				<exclude name="Web Files/recordings.html"/>
