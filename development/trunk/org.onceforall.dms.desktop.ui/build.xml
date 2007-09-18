@@ -162,9 +162,10 @@ $
 		</propertyfile>
 
   	<!-- Creates the jar file for the application library. --> 
-  	<jar destfile="${testEnv.libraryFiles}/desktop.jar">
+  	<jar destfile="${testEnv.libraryFiles}/desktop.jar" >
   		<fileset refid="core.classes"/>
   		<fileset refid="ui.classes"/>
+  		<include name="${ui.buildInfoProperties}"/>
   	</jar>
 		
   	<!-- Copies the libraries to the test environment. -->  	
