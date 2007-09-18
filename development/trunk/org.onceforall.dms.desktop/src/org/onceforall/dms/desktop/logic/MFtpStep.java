@@ -8,6 +8,7 @@ package org.onceforall.dms.desktop.logic;
 
 import java.io.IOException;
 import java.net.ConnectException;
+import java.net.SocketTimeoutException;
 import java.net.URL;
 import java.net.UnknownHostException;
 
@@ -781,6 +782,9 @@ public abstract class MFtpStep extends MStep {
 	            ftpClient.disconnect();                    
 	        }
         } 
+        catch(SocketTimeoutException exception) {
+            throw new DesktopException("The application could not connect to the FTP server '"+ftpServerUrl.getHost()+"'.", "Please make sure that the computer is connected to the internet and that the FTP server is not blocking your IP address.", DesktopException.ERROR_SEVERITY, exception);
+        }
         catch(ConnectException exception) {
             throw new DesktopException("The application could not connect to the FTP server '"+ftpServerUrl.getHost()+"'.", "Please make sure that the computer is connected to the internet and that the FTP server is running.", DesktopException.ERROR_SEVERITY, exception);
         }
