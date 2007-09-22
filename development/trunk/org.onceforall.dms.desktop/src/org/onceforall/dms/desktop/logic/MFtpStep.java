@@ -768,7 +768,7 @@ public abstract class MFtpStep extends MStep {
         URL ftpServerUrl = getFtpServerUrlParameter();
         try {
         	ftpClient.setDefaultTimeout(20000);
-        	ftpClient.setDataTimeout(20000);
+        	//ftpClient.setDataTimeout(20000);
         	ftpClient.setReaderThread(false);
             ftpClient.connect(ftpServerUrl.getHost());
             try {
