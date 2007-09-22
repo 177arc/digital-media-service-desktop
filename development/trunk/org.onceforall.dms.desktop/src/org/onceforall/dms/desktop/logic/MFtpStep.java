@@ -769,6 +769,7 @@ public abstract class MFtpStep extends MStep {
         try {
         	ftpClient.setDefaultTimeout(20000);
         	ftpClient.setDataTimeout(20000);
+        	ftpClient.setReaderThread(false);
             ftpClient.connect(ftpServerUrl.getHost());
             try {
 	            if(!ftpClient.login(getFtpUserNameParameter(), Type.PASSWORD_TYPE.decryptPassword(getFtpUserPasswordParameter())))
