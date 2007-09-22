@@ -2377,10 +2377,10 @@ public class MConvertToMP3Step extends MStep {
 	 */
 	@Override
 	protected void execute() throws Throwable {    
-	    String title = getMTitleParameter().getValueForUI();
-	    String album = getMAlbumParameter().getValueForUI();
-	    String artist = getMArtistParameter().getValueForUI();
-	    String year = getMYearParameter().getValueForUI();
+	    String title = CommandLineInterface.escapeArgument(getMTitleParameter().getValueForUI());
+	    String album = CommandLineInterface.escapeArgument(getMAlbumParameter().getValueForUI());
+	    String artist = CommandLineInterface.escapeArgument(getMArtistParameter().getValueForUI());
+	    String year = CommandLineInterface.escapeArgument(getMYearParameter().getValueForUI());
 
 	    File inputFile = getRecordingFileParameter();
 	    File directory = getDirectoryParameter();
@@ -2417,7 +2417,7 @@ public class MConvertToMP3Step extends MStep {
 	    
 	    setMp3EntryReferenceResult(newMMp3);
 	}
-
+	
 	/**
 	 * @see org.onceforall.dms.desktop.logic.MObject#convertMInputValues(org.onceforall.dms.desktop.logic.MValue)
 	 */

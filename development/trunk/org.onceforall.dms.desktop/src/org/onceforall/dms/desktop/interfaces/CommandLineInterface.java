@@ -54,6 +54,16 @@ public class CommandLineInterface {
     public static String execute(String[] commandAndArguments, MStep mStep) throws DesktopException {
         return(execute(commandAndArguments, mStep, null));
     }
+    
+    /**
+     * Escapes the given command line argument. It replaces occurrances of <code>\</code> and <code>&quote;</code>.
+     * 
+     * @param parameter Specifies the command line argument to escape.
+     * @return Returns the escaped argument.
+     */
+    public static String escapeArgument(String argument) {
+    	return argument.replaceAll("\\\\", "\\\\\\\\").replaceAll("\"", "\\\\\"");
+    }
   
     /**
      * Runs a given command together with the specified arguments.
