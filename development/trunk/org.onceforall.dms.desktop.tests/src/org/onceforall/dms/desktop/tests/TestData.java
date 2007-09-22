@@ -50,6 +50,10 @@ public class TestData extends NLS {
 
 	public static String LogicLayerMUpdatePublishedMP3StepTest_Mp34Name;
 
+	public static String LogicLayerMUpdatePublishedMP3StepTest_Mp35DateTime;
+
+	public static String LogicLayerMUpdatePublishedMP3StepTest_Mp35Name;
+	
 	public static String LogicLayerMUpdatePublishedMP3StepTest_PodcastFilePathParameter;
 
 	public static String LogicLayerMUpdatePublishedMP3StepTest_PodcastHeaderFilePathParameter;

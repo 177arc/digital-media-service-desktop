@@ -366,6 +366,7 @@ public class LogicLayerTest extends org.onceforall.dms.desktop.tests.Test {
         URL mp3Url = new URL(webServerUrl.toExternalForm()+mStep.getMp3RelativeFtpPathParameter()+"/"+mp3Entry.getFileProperty().getName()); //$NON-NLS-1$
         
 		System.out.print("Checking podcast file on web server ..."); //$NON-NLS-1$
+		Thread.sleep(1000);
 		String podcast = getHttpFile(podcastUrl);
 		String podcastHeader = getStringFromInputStream(new FileInputStream(mStep.getPodcastHeaderFilePathParameter()));
 		assertTrue(podcast.startsWith(podcastHeader));
@@ -408,7 +409,7 @@ public class LogicLayerTest extends org.onceforall.dms.desktop.tests.Test {
 		
 		// Checks the HTML page on the FTP server.
 		System.out.print("Checking content page on FTP server ..."); //$NON-NLS-1$
-		performFtpClientOperation(mStep.getFtpServerUrlParameter(), mStep.getFtpUserNameParameter(), mStep.getFtpUserPasswordParameter(), new FtpClientOperation() {
+		performFtpClientOperation(mStep.getFtpServerUrlParameter(), mStep.getFtpUserNameParameter(), Type.PASSWORD_TYPE.decryptPassword(mStep.getFtpUserPasswordParameter()), new FtpClientOperation() {
 			public Object perform(FTPClient ftpClient) throws Exception {
 	            assertTrue(ftpClient.changeWorkingDirectory(mStep.getFtpServerUrlParameter().getPath()+mStep.getContentPageRelativeFtpPathParameter()));
 	            
@@ -434,7 +435,7 @@ public class LogicLayerTest extends org.onceforall.dms.desktop.tests.Test {
 		System.out.println(" completed.");	 //$NON-NLS-1$
         
 		System.out.print("Checking MP3 file on FTP server ..."); //$NON-NLS-1$
-		performFtpClientOperation(mStep.getFtpServerUrlParameter(), mStep.getFtpUserNameParameter(), mStep.getFtpUserPasswordParameter(), new FtpClientOperation() {
+		performFtpClientOperation(mStep.getFtpServerUrlParameter(), mStep.getFtpUserNameParameter(), Type.PASSWORD_TYPE.decryptPassword(mStep.getFtpUserPasswordParameter()), new FtpClientOperation() {
 			public Object perform(FTPClient ftpClient) throws Exception {
 	            String mp3FTPPath = mStep.getFtpServerUrlParameter().getPath()+mStep.getMp3RelativeFtpPathParameter();
 	            if(ftpClient.changeWorkingDirectory(mp3FTPPath)) {
@@ -462,7 +463,7 @@ public class LogicLayerTest extends org.onceforall.dms.desktop.tests.Test {
 			assertTrue(mStep.getPodcastFilePathParameter().delete());
 		
 		System.out.print("Deleting old test files on FTP server ..."); //$NON-NLS-1$
-		performFtpClientOperation(mStep.getFtpServerUrlParameter(), mStep.getFtpUserNameParameter(), mStep.getFtpUserPasswordParameter(), new FtpClientOperation() {
+		performFtpClientOperation(mStep.getFtpServerUrlParameter(), mStep.getFtpUserNameParameter(), Type.PASSWORD_TYPE.decryptPassword(mStep.getFtpUserPasswordParameter()), new FtpClientOperation() {
 			public Object perform(FTPClient ftpClient) throws Exception {
 	            // Deletes the files in the MP3 folder.
 				String ftpPath = mStep.getFtpServerUrlParameter().getPath()+mStep.getMp3RelativeFtpPathParameter();

@@ -78,7 +78,7 @@ public class LogicLayerMUpgradeStepsTest extends LogicLayerTest {
 	protected void testUpgrade() throws Exception {
 		try {
 			System.out.print("Uploading application data upgrade file to the FTP server ..."); //$NON-NLS-1$
-			performFtpClientOperation(mDmsApplication.getFtpServerUrlProperty(), mDmsApplication.getFtpUserNameProperty(), mDmsApplication.getFtpUserPasswordProperty(), new FtpClientOperation() {
+			performFtpClientOperation(mDmsApplication.getFtpServerUrlProperty(), mDmsApplication.getFtpUserNameProperty(), Type.PASSWORD_TYPE.decryptPassword(mDmsApplication.getFtpUserPasswordProperty()), new FtpClientOperation() {
 				public Object perform(FTPClient ftpClient) throws Exception {
 					URL ftpServerUrl = mDmsApplication.getFtpServerUrlProperty();
 					URL dataFtpUrl = new URL(ftpServerUrl.toExternalForm()+mDmsApplication.getUpgradeRelativeFtpPathProperty());
@@ -125,7 +125,7 @@ public class LogicLayerMUpgradeStepsTest extends LogicLayerTest {
 	protected void testCompressedUpgrade() throws Exception {
 		try {
 			System.out.print("Uploading compressed application data upgrade file to the FTP server ..."); //$NON-NLS-1$
-			performFtpClientOperation(mDmsApplication.getFtpServerUrlProperty(), mDmsApplication.getFtpUserNameProperty(), mDmsApplication.getFtpUserPasswordProperty(), new FtpClientOperation() {
+			performFtpClientOperation(mDmsApplication.getFtpServerUrlProperty(), mDmsApplication.getFtpUserNameProperty(), Type.PASSWORD_TYPE.decryptPassword(mDmsApplication.getFtpUserPasswordProperty()), new FtpClientOperation() {
 				public Object perform(FTPClient ftpClient) throws Exception {
 					URL ftpServerUrl = mDmsApplication.getFtpServerUrlProperty();
 					URL dataFtpUrl = new URL(ftpServerUrl.toExternalForm()+mDmsApplication.getUpgradeRelativeFtpPathProperty());

@@ -428,7 +428,8 @@ public class Test extends org.onceforall.core.tests.Test {
 	 */
 	protected Object performFtpClientOperation(URL ftpServerUrl, String ftpUserName, String ftpPassword, FtpClientOperation ftpClientOperation) throws Exception {
 		FTPClient ftpClient = new FTPClient();
-        ftpClient.setDefaultTimeout(20000);
+        ftpClient.setDefaultTimeout(10000);
+        ftpClient.setReaderThread(false);
         ftpClient.connect(ftpServerUrl.getHost());
         try {
             if(!ftpClient.login(ftpUserName, Type.PASSWORD_TYPE.decryptPassword(ftpPassword)))

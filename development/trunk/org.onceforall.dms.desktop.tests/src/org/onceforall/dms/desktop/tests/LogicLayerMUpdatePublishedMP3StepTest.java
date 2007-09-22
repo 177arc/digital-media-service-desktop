@@ -45,6 +45,7 @@ public class LogicLayerMUpdatePublishedMP3StepTest extends LogicLayerTest {
 	protected MMp3 mMp32;
 	protected MMp3 mMp33;
 	protected MMp3 mMp34;
+	protected MMp3 mMp35;
 
 	/**
 	 * Creates a managed MP3 entry based on the given name and publishing date.
@@ -86,6 +87,7 @@ public class LogicLayerMUpdatePublishedMP3StepTest extends LogicLayerTest {
 		mMp32 = createMMp3(TestData.LogicLayerMUpdatePublishedMP3StepTest_Mp32Name, TestData.LogicLayerMUpdatePublishedMP3StepTest_Mp32DateTime);
 		mMp33 = createMMp3(TestData.LogicLayerMUpdatePublishedMP3StepTest_Mp33Name, TestData.LogicLayerMUpdatePublishedMP3StepTest_Mp33DateTime);
 		mMp34 = createMMp3(TestData.LogicLayerMUpdatePublishedMP3StepTest_Mp34Name, TestData.LogicLayerMUpdatePublishedMP3StepTest_Mp34DateTime);
+		mMp35 = createMMp3(TestData.LogicLayerMUpdatePublishedMP3StepTest_Mp35Name, TestData.LogicLayerMUpdatePublishedMP3StepTest_Mp35DateTime);
 		
 		mStep = LogicFactory.eINSTANCE.createMUpdatePublishedMp3sStep();
 		mStep.setName(TestData.LogicLayerMUpdatePublishedMP3StepTest_17);
@@ -109,6 +111,7 @@ public class LogicLayerMUpdatePublishedMP3StepTest extends LogicLayerTest {
 		mMp3Folder.getMMp3s().add(mMp32);
 		mMp3Folder.getMMp3s().add(mMp33);
 		mMp3Folder.getMMp3s().add(mMp34);
+		mMp3Folder.getMMp3s().add(mMp35);
 		mDmsApplication.getMMp3Folders().add(mMp3Folder);
 		
 		mStep.getMMp3FolderReferenceParameter().setValueForUI(mMp3Folder.getPath());
@@ -124,12 +127,30 @@ public class LogicLayerMUpdatePublishedMP3StepTest extends LogicLayerTest {
 		mMp32.getMStateProperty().setValueForUI(MMp3StateType.TO_BE_PUBLISHED_STATE.getNameForUI());
 		mMp33.getMStateProperty().setValueForUI(MMp3StateType.PUBLISHED_STATE.getNameForUI());
 		mMp34.getMStateProperty().setValueForUI(MMp3StateType.ARCHIVED_STATE.getNameForUI());
+		mMp35.getMStateProperty().setValueForUI(MMp3StateType.PUBLISHED_STATE.getNameForUI());
+		
+		
+		// Uploads published files.
+		System.out.print("Uploading published files ..."); //$NON-NLS-1$
+		performFtpClientOperation(mStep.getFtpServerUrlParameter(), mStep.getFtpUserNameParameter(), Type.PASSWORD_TYPE.decryptPassword(mStep.getFtpUserPasswordParameter()), new FtpClientOperation() {
+			public Object perform(FTPClient ftpClient) throws Exception {				
+	            String mp3FTPPath = mStep.getFtpServerUrlParameter().getPath()+mStep.getMp3RelativeFtpPathParameter();
+	            assertTrue(ftpClient.changeWorkingDirectory(mp3FTPPath));
+	            
+	            ftpClient.storeFile(mMp35.getPublishedFileNameProperty(), new FileInputStream(mMp35.getFileProperty()));
+	            ftpClient.storeFile(mMp33.getPublishedFileNameProperty(), new FileInputStream(mMp33.getFileProperty()));
+	            
+				return null;
+			}});
+		System.out.println(" completed.");	 //$NON-NLS-1$		
+		
 		
 		// Clones the managed MP3s to check for changes later.
 		MMp3 mMp31Clone = (MMp3) mMp31.clone();
 		MMp3 mMp32Clone = (MMp3) mMp32.clone();
 		MMp3 mMp33Clone = (MMp3) mMp33.clone();
 		MMp3 mMp34Clone = (MMp3) mMp34.clone();
+		MMp3 mMp35Clone = (MMp3) mMp35.clone();
 
 		List<Difference> differences = new ArrayList<Difference>();
 		compareMElements(mMp31, mMp31Clone, true, differences);
@@ -145,6 +166,7 @@ public class LogicLayerMUpdatePublishedMP3StepTest extends LogicLayerTest {
         URL mMp32Url = new URL(webServerUrl.toExternalForm()+mStep.getMp3RelativeFtpPathParameter()+"/"+mMp32.getPublishedFileNameProperty()); //$NON-NLS-1$
         URL mMp33Url = new URL(webServerUrl.toExternalForm()+mStep.getMp3RelativeFtpPathParameter()+"/"+mMp33.getPublishedFileNameProperty()); //$NON-NLS-1$
         URL mMp34Url = new URL(webServerUrl.toExternalForm()+mStep.getMp3RelativeFtpPathParameter()+"/"+mMp34.getPublishedFileNameProperty()); //$NON-NLS-1$
+        URL mMp35Url = new URL(webServerUrl.toExternalForm()+mStep.getMp3RelativeFtpPathParameter()+"/"+mMp35.getPublishedFileNameProperty()); //$NON-NLS-1$
         // Checks the results.
         //assertTrue(mMp3Folder.getPath().equals(mStep.getMMp3FolderReferenceResult().getValueForUI()));
 
@@ -154,8 +176,10 @@ public class LogicLayerMUpdatePublishedMP3StepTest extends LogicLayerTest {
         assertTrue(verifyMObjectDifferences(mMp32, mMp32Clone, new int[] { LogicPackage.MMP3__STATE_PROPERTY, LogicPackage.MMP3__LAST_STATE_CHANGE_PROPERTY }));
         assertTrue(verifyMObjectDifferences(mMp33, mMp33Clone, new int[] { LogicPackage.MMP3__LAST_STATE_CHANGE_PROPERTY }) || verifyMObjectDifferences(mMp33, mMp33Clone, null));
         assertTrue(verifyMObjectDifferences(mMp34, mMp34Clone, new int[] { LogicPackage.MMP3__LAST_STATE_CHANGE_PROPERTY }) || verifyMObjectDifferences(mMp34, mMp34Clone, null));
+        assertTrue(verifyMObjectDifferences(mMp35, mMp35Clone, new int[] { LogicPackage.MMP3__STATE_PROPERTY, LogicPackage.MMP3__LAST_STATE_CHANGE_PROPERTY } ));
         
 		assertTrue(mMp33.getMStateProperty().getValueForUI().equals(MMp3StateType.PUBLISHED_STATE.getNameForUI()));
+		assertTrue(mMp35.getMStateProperty().getValueForUI().equals(MMp3StateType.NOT_PUBLISHED_STATE.getNameForUI()));
 		
     	// Checks the HTML content page on the web server.
 		System.out.print("Checking content page on web server ..."); //$NON-NLS-1$
@@ -174,17 +198,22 @@ public class LogicLayerMUpdatePublishedMP3StepTest extends LogicLayerTest {
 		assertTrue(contentPage.indexOf(mMp33.getLinkDescriptionProperty()) >= 0);
 		assertTrue(contentPage.indexOf(mMp33.getCommentProperty()) >= 0);
 		
-		// Checks that MP3s are published in reverse date order.
-		assertTrue(mMp33Index < mMp32Index);
-		
 		assertFalse(contentPage.indexOf("href=\""+mMp34Url.toExternalForm()+"\">"+mMp34.getLinkTextProperty()+"</a>") >= 0); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
 		assertFalse(contentPage.indexOf(mMp34.getLinkDescriptionProperty()) >= 0);
 		assertFalse(contentPage.indexOf(mMp34.getCommentProperty()) >= 0);
+		
+		assertFalse(contentPage.indexOf("href=\""+mMp35Url.toExternalForm()+"\">"+mMp35.getLinkTextProperty()+"</a>") >= 0); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+		assertFalse(contentPage.indexOf(mMp35.getLinkDescriptionProperty()) >= 0);
+		assertFalse(contentPage.indexOf(mMp35.getCommentProperty()) >= 0);
+		
+		// Checks that MP3s are published in reverse date order.
+		assertTrue(mMp33Index < mMp32Index);
+		
 		System.out.println(" completed.");	 //$NON-NLS-1$		
 		
 		// Checks the HTML page on the FTP server.
 		System.out.print("Checking content page on FTP server ..."); //$NON-NLS-1$
-		performFtpClientOperation(mStep.getFtpServerUrlParameter(), mStep.getFtpUserNameParameter(), mStep.getFtpUserPasswordParameter(), new FtpClientOperation() {
+		performFtpClientOperation(mStep.getFtpServerUrlParameter(), mStep.getFtpUserNameParameter(), Type.PASSWORD_TYPE.decryptPassword(mStep.getFtpUserPasswordParameter()), new FtpClientOperation() {
 			public Object perform(FTPClient ftpClient) throws Exception {
 	            assertTrue(ftpClient.changeWorkingDirectory(mStep.getFtpServerUrlParameter().getPath()+mStep.getContentPageRelativeFtpPathParameter()));
 	            
@@ -209,18 +238,20 @@ public class LogicLayerMUpdatePublishedMP3StepTest extends LogicLayerTest {
 		testPodcastMp3Exists(podcast, mStep, mMp32, true);
 		testPodcastMp3Exists(podcast, mStep, mMp33, true);
 		testPodcastMp3Exists(podcast, mStep, mMp34, false);
+		testPodcastMp3Exists(podcast, mStep, mMp35, false);
 		System.out.println(" completed.");	 //$NON-NLS-1$		
 	
 		// Checks the MP3 files.
 		System.out.print("Checking MP3 files on web server ...");		 //$NON-NLS-1$
 		assertFalse(isUrlContentNotEmpty(mMp31Url));
 		assertTrue(isUrlContentNotEmpty(mMp32Url));
-		assertFalse(isUrlContentNotEmpty(mMp33Url));
+		assertTrue(isUrlContentNotEmpty(mMp33Url));
 		assertFalse(isUrlContentNotEmpty(mMp34Url));
+		assertFalse(isUrlContentNotEmpty(mMp35Url));
 		System.out.println(" completed.");	 //$NON-NLS-1$
         
 		System.out.print("Checking MP3 files on FTP server ..."); //$NON-NLS-1$
-		performFtpClientOperation(mStep.getFtpServerUrlParameter(), mStep.getFtpUserNameParameter(), mStep.getFtpUserPasswordParameter(), new FtpClientOperation() {
+		performFtpClientOperation(mStep.getFtpServerUrlParameter(), mStep.getFtpUserNameParameter(), Type.PASSWORD_TYPE.decryptPassword(mStep.getFtpUserPasswordParameter()), new FtpClientOperation() {
 			public Object perform(FTPClient ftpClient) throws Exception {
 	            String mp3FTPPath = mStep.getFtpServerUrlParameter().getPath()+mStep.getMp3RelativeFtpPathParameter();
 	            assertTrue(ftpClient.changeWorkingDirectory(mp3FTPPath));
@@ -231,12 +262,15 @@ public class LogicLayerMUpdatePublishedMP3StepTest extends LogicLayerTest {
 
             	assertFalse(ftpFileNames.contains(mMp31.getPublishedFileNameProperty()));
             	assertTrue(ftpFileNames.contains(mMp32.getPublishedFileNameProperty()));
-            	assertFalse(ftpFileNames.contains(mMp33.getPublishedFileNameProperty()));
+            	assertTrue(ftpFileNames.contains(mMp33.getPublishedFileNameProperty()));
             	assertFalse(ftpFileNames.contains(mMp34.getPublishedFileNameProperty()));
+            	assertFalse(ftpFileNames.contains(mMp35.getPublishedFileNameProperty()));
             	
             	for(FTPFile ftpFile: ftpFiles) {	            	
             		if(ftpFile.getName().equals(mMp32.getPublishedFileNameProperty()))
             			assertTrue(mMp32.getFileProperty().length() == ftpFile.getSize());
+            		else if(ftpFile.getName().equals(mMp33.getPublishedFileNameProperty()))
+            			assertTrue(mMp33.getFileProperty().length() == ftpFile.getSize());
             	}
 	            
 				return null;
