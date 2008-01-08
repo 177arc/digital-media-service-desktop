@@ -99,7 +99,7 @@ public class StreamReaderThread extends Thread {
 	                    if(line.startsWith("average: "))
 	                        progress = "100";
 	                    
-	                    if(progress.length() > 0) {
+	                    if(progress.length() > 0 && mStep != null) {
 	                    		try {
 	                    			Long progressValue = new Long(progress);
 	                    			mStep.setProgressProperty(progressValue);
