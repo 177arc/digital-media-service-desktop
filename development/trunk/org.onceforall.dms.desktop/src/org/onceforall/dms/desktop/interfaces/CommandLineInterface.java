@@ -47,7 +47,7 @@ public class CommandLineInterface {
      * Runs a given command together with the specified arguments.
      *
      * @param commandAndArguments Specifies an array containing the command and its arguments. The first element in the array must be the command.
-     * @param mStep Holds the managed step that controls the execution of the command line process.
+     * @param mStep Holds the managed step that controls the execution of the command line process. (optional)
      * @return Returns the output of the command execution. It returns the error text if an error occurs, the normal output otherwise.
      * @throws DesktopException Thrown if an error occurs during the execution.
      */
@@ -69,7 +69,7 @@ public class CommandLineInterface {
      * Runs a given command together with the specified arguments.
      *
      * @param commandAndArguments Specifies an array containing the command and its arguments. The first element in the array must be the command.
-     * @param mStep Holds the managed step that controls the execution of the command line process.
+     * @param mStep Holds the managed step that controls the execution of the command line process. (optional)
      * @param input Specifies the sequence of charaters to be send to the input stream. This is useful if the command requires user interaction after its execution.
      * @return Returns the output of the command execution. It returns the error text if an error occurs, the normal output otherwise.
      * @throws DesktopException Thrown if an error occurs during the execution.

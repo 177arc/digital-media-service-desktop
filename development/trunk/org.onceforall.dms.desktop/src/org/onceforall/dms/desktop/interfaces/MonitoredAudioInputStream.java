@@ -127,7 +127,7 @@ public class MonitoredAudioInputStream extends AudioInputStream implements Notif
     
     /** Specifies the notifier to hold all adapters of this object.
       * The notfier is added by delegation and not inheritance because Java does not
-      * support multiple inheritance and this class HAS TO inherit from AudioInputStream. */
+      * support multiple inheritance and this class HAS TO inherit from Notifier. */
     protected Notifier notifier;
     
     /** Specifies the event that is triggered when the levels change. */
