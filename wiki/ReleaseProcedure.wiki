@@ -21,7 +21,7 @@ To prepare the release, please follow these steps:
 
 ==Test==
 Once the DMS Desktop and DMS Desktop Editor have been deployed to the test environment in the `org.onceforall.dms.desktop.ui\test` directory two types of tests have be executed:
-  # _Automatic tests_: TBC.
+  # _Automatic tests_: Select `Run->Run History->DMS Desktop tests` to run the TestNG unit tests. Because one of them tests whether the software actually records what is being played back, a microphone and loud speakers have to be attached to the computer running the tests. Another test requires the CD-ROM burning software Nero 6.0 to be in the `org.onceforall.dms.desktop.ui\dev\Program Files\Nero 6.0\Nero` directory to be present (which is not part of the source code for copyright reasons) for the test to succeed. 
   # _Manual tests_: TBC.
 
 ==Release==
