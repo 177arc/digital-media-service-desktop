@@ -24,7 +24,7 @@ Once the DMS Desktop and DMS Desktop Editor have been deployed to the test envir
   # _Automatic tests_: Select `Run->Run History->DMS Desktop tests` to run the TestNG unit tests. Because one of them tests whether the software actually records what is being played back, a microphone and loud speakers have to be attached to the computer running the tests. Another test requires the CD-ROM burning software Nero 6.0 to be in the `org.onceforall.dms.desktop.ui\dev\Program Files\Nero 6.0\Nero` directory to be present (which is not part of the source code for copyright reasons) for the test to succeed. 
   # _Manual tests_: It's essential to also perform manual testing because the automated test do not cover the user interface and may not cover certain logic. Performing manual testing consists of two parts:
     # _Change test_: Test all new features and bug fixes that have status of `Fixed`. Do not mark them as `Verified` until you successfully regression tested the application (see next step).
-    # _Regression test_: Running through whole process of entering information, recording and publishing to make sure that any change have not broken essential functionality.
+    # _Regression test_: Running through whole process of entering information, recording and publishing a test web site to make sure that any change have not broken essential functionality.
 
 ==Release==
 To package the DMS Desktop and the DMS Desktop Editor into a software release, follow these steps:
