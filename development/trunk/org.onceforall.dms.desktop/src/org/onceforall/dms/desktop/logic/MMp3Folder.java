@@ -65,7 +65,7 @@ public class MMp3Folder extends MObject {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final String copyright = "Copyright 2006, Marc Maier";
+	public static final String copyright = "Copyright 2007, Marc Maier";
 
 	/**
      * Adds a value type for this class.
@@ -76,6 +76,37 @@ public class MMp3Folder extends MObject {
 	static {
 		Type.VALUE_TYPES_BY_NAME.put("Reference to "+MMp3Folder.TYPE_NAME, new ReferenceType("Reference to "+MMp3Folder.TYPE_NAME, "Specifies a reference to a "+MMp3Folder.TYPE_NAME_FOR_UI, MMp3Folder.class));
 	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
