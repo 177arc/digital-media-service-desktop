@@ -74,7 +74,7 @@ public abstract class MValue extends MElement {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final String copyright = "Copyright 2006, Marc Maier";
+	public static final String copyright = "Copyright 2007, Marc Maier";
     
 	/**
      * Adds a value type for this class.
@@ -1033,11 +1033,10 @@ public abstract class MValue extends MElement {
 	}
 	
 	/**
-     * Gets the user-friendly representation of the managed input value with the given class.
-     * This method is intended as a helper for classes that extend this class.
+     * Gets the user-friendly representation of the managed input value for the given feature identifier.
      *
-    * @param mValueFeatureID Holds feature identifier of the <b>managed</b> input value.
-     * @return Returns the user-friendly representation of the managed input value if it exists. Otherwise it returns <code>null</code>.
+     * @param mValueFeatureID Holds the feature identifier of the <b>managed</b> input value.
+     * @return Returns the user-friendly representation of the managed input value for the given feature identifier.
 	 */
     public String getMInputValueForUI(int mValueFeatureID) {
 		MValue mValue = getMInputValue(mValueFeatureID);
@@ -1050,13 +1049,13 @@ public abstract class MValue extends MElement {
     
     
     /**
-     * Gets the user-friendly representation of the input value with one of the given class.
-     * The input value names are considered in the order of the method parameters.
-     * This method is intended as a helper for classes that extend this class.
+     * Gets the user-friendly representation of the managed input value for the given feature identifiers or <code>null</code>
+     * if the input value is <code>null</null>. The input feature identifiers are considered in the order of the method parameters.
      *
-     * @param mValueFeatureID1 Holds the name of the first input value.
-     * @param mValueFeatureID2 Holds the name of the second input value.
-     * @return Returns the user-friendly representation of the input value if it exists. Otherwise it returns <code>null</code>.
+     * @param mValueFeatureID1 Holds the first feature identifier of the <b>managed</b> input value.
+     * @param mValueFeatureID2 Holds the second feature identifier of the <b>managed</b> input value.
+     * @return Returns the user-friendly representation of the managed input values for the given feature identifier or <code>null</code>
+     * if the input values are <code>null</null>.
      */
     protected String getMInputValueForUI(int mValueFeatureID1, int mValueFeatureID2) {
 		MValue mValue = getMInputValue(mValueFeatureID1, mValueFeatureID2);
@@ -1067,6 +1066,42 @@ public abstract class MValue extends MElement {
 		return mValue.getValueForUI();
     }
     
+	
+	/**
+     * Gets the user-friendly representation of the managed input value for the given feature identifier or <code>null</code>
+     * if the input value is <code>null</null>.
+     *
+     * @param mValueFeatureID Holds the feature identifier of the <b>managed</b> input value.
+     * @return Returns the user-friendly representation of the managed input value for the given feature identifier or <code>null</code>
+     * if the input value is <code>null</null>.
+	 */
+    public String getMInputValueForUIOrNull(int mValueFeatureID) {
+		MValue mValue = getMInputValue(mValueFeatureID);
+		
+		if(mValue == null || mValue.getValue() == null)
+			return null;
+		
+		return mValue.getValueForUI();
+     }
+    
+    
+    /**
+     * Gets the user-friendly representation of the managed input value for the given feature identifiers or <code>null</code>
+     * if the input value is <code>null</null>. The input feature identifiers are considered in the order of the method parameters.
+     *
+     * @param mValueFeatureID1 Holds the first feature identifier of the <b>managed</b> input value.
+     * @param mValueFeatureID2 Holds the second feature identifier of the <b>managed</b> input value.
+     * @return Returns the user-friendly representation of the managed input values for the given feature identifier or <code>null</code>
+     * if the input values are <code>null</null>.
+     */
+    protected String getMInputValueForUIOrNull(int mValueFeatureID1, int mValueFeatureID2) {
+		MValue mValue = getMInputValue(mValueFeatureID1, mValueFeatureID2);
+		
+		if(mValue == null || mValue.getValue() == null)
+			return null;
+		
+		return mValue.getValueForUI();
+    }
     
     /**
      * Gets the managed input value with given feature ID.
