@@ -44,7 +44,7 @@ import org.onceforall.dms.desktop.logic.types.Type;
  *
  * @see org.onceforall.dms.desktop.logic.LogicPackage#getMCreateDirectoryStep()
  * @model kind="class"
- *        annotation="http://www.onceforall.org/mcore name='Create directory' description='Creates a directory where the recorded files and other related files will be stored.' iconFilePath='Image Files/Create directory step.gif' actionName='Create' interruptable='false' stoppable='false' terminatable='false'"
+ *        annotation="http://www.onceforall.org/mcore name='Create directory' description='Creates a directory where the recorded files and other related files will be stored.' iconFilePath='Image Files/Create directory step.gif' actionName='Create' actionIconFilePath='Image Files/Create directory.gif' interruptable='false' stoppable='false' terminatable='false'"
  * @generated
  */
 public class MCreateDirectoryStep extends MStep {
@@ -61,7 +61,7 @@ public class MCreateDirectoryStep extends MStep {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final String copyright = "Copyright 2006, Marc Maier";
+	public static final String copyright = "Copyright 2007, Marc Maier";
 
 	/**
      * Adds a value type for this class.
@@ -223,7 +223,6 @@ public class MCreateDirectoryStep extends MStep {
 	public String getDefaultActionName() {
 		return "Create";
 	}
-
 	/**
 	 * Get the default value of the '{@link #isStoppable() <em>Stoppable</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -235,6 +234,19 @@ public class MCreateDirectoryStep extends MStep {
 	 */
 	public boolean getDefaultStoppable() {
 		return false;
+	}
+
+	/**
+	 * Get the default value of the '{@link #getActionIconFilePath() <em>Action Icon File Path</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return Returns the default value of the '{@link #getActionIconFilePath() <em>Action Icon File Path</em>}' attribute.
+	 * @see #getActionIconFilePath()
+	 * @generated
+	 * @ordered
+	 */
+	public File getDefaultActionIconFilePath() {
+		return (File)LogicFactory.eINSTANCE.createFromString(LogicPackage.eINSTANCE.getMFile(), "Image Files/Create directory.gif");
 	}
 
 	/**
@@ -301,6 +313,7 @@ public class MCreateDirectoryStep extends MStep {
 	public boolean getDefaultTerminatable() {
 		return false;
 	}
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -311,13 +324,14 @@ public class MCreateDirectoryStep extends MStep {
 		
 		firstMCreateDirectoryStepConstructorHook();
 				
-		actionName = "Create";
-		stoppable = false;
-		iconFilePath = (File)LogicFactory.eINSTANCE.createFromString(LogicPackage.eINSTANCE.getMFile(), "Image Files/Create directory step.gif");
 		description = "Creates a directory where the recorded files and other related files will be stored.";
+		stoppable = false;
+		actionIconFilePath = (File)LogicFactory.eINSTANCE.createFromString(LogicPackage.eINSTANCE.getMFile(), "Image Files/Create directory.gif");
 		name = "Create directory";
-		interruptable = false;
+		iconFilePath = (File)LogicFactory.eINSTANCE.createFromString(LogicPackage.eINSTANCE.getMFile(), "Image Files/Create directory step.gif");
 		terminatable = false;
+		interruptable = false;
+		actionName = "Create";
 					 
 		setMParentDirectoryParameter(new MParameter(false, "Parent directory", "Specifies the path to the directory in which the new directory is to be created.", null));			 
 		setMDirectoryNameParameter(new MParameter(false, "Directory name", "Specifies the name of the directory to be created.", null));			 
