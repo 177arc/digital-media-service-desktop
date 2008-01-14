@@ -53,6 +53,8 @@ import org.onceforall.dms.desktop.logic.types.Type;
  *   <li>{@link org.onceforall.dms.desktop.logic.MMp3#getPodcastPublishingDateProperty <em>Podcast Publishing Date Property</em>}</li>
  *   <li>{@link org.onceforall.dms.desktop.logic.MMp3#getMPublishedFileNameProperty <em>MPublished File Name Property</em>}</li>
  *   <li>{@link org.onceforall.dms.desktop.logic.MMp3#getPublishedFileNameProperty <em>Published File Name Property</em>}</li>
+ *   <li>{@link org.onceforall.dms.desktop.logic.MMp3#getMKeepPublishedProperty <em>MKeep Published Property</em>}</li>
+ *   <li>{@link org.onceforall.dms.desktop.logic.MMp3#getKeepPublishedProperty <em>Keep Published Property</em>}</li>
  * </ul>
  * </p>
  *
@@ -83,7 +85,7 @@ public class MMp3 extends MStatefulObject {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final String copyright = "Copyright 2006, Marc Maier";
+	public static final String copyright = "Copyright 2007, Marc Maier";
 
 	/**
      * Adds a value type for this class.
@@ -94,6 +96,37 @@ public class MMp3 extends MStatefulObject {
 	static {
 		Type.VALUE_TYPES_BY_NAME.put("Reference to "+MMp3.TYPE_NAME, new ReferenceType("Reference to "+MMp3.TYPE_NAME, "Specifies a reference to a "+MMp3.TYPE_NAME_FOR_UI, MMp3.class));
 	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -638,6 +671,50 @@ public class MMp3 extends MStatefulObject {
 	protected String publishedFileNameProperty = PUBLISHED_FILE_NAME_PROPERTY_EDEFAULT;
 
 	/**
+	 * The cached value of the '{@link #getMKeepPublishedProperty() <em>MKeep Published Property</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMKeepPublishedProperty()
+	 * @generated
+	 * @ordered
+	 */
+	protected MProperty mKeepPublishedProperty = null;
+
+	/**
+	 * The default value of the '{@link #getKeepPublishedProperty() <em>Keep Published Property</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getKeepPublishedProperty()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final Boolean KEEP_PUBLISHED_PROPERTY_EDEFAULT = Boolean.FALSE;
+
+	/**
+	 * Get the default value of the '{@link #getKeepPublishedProperty() <em>Keep Published Property</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return Returns the default value of the '{@link #getKeepPublishedProperty() <em>Keep Published Property</em>}' attribute.
+	 * @see #getKeepPublishedProperty()
+	 * @generated
+	 * @ordered
+	 */
+	public Boolean getDefaultKeepPublishedProperty() {
+		return KEEP_PUBLISHED_PROPERTY_EDEFAULT;
+	}
+	
+	/**
+	 * The cached value of the '{@link #getKeepPublishedProperty() <em>Keep Published Property</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getKeepPublishedProperty()
+	 * @generated
+	 * @ordered
+	 */
+	protected Boolean keepPublishedProperty = KEEP_PUBLISHED_PROPERTY_EDEFAULT;
+
+
+	/**
 	 * Get the default value of the '{@link #getTypeNameForUI() <em>Type Name For UI</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -712,12 +789,13 @@ public class MMp3 extends MStatefulObject {
 		setMPodcastSubtitleProperty(new MProperty(false, "Podcast subtitle", "Specifies the podcast subtitle. The subtitle appears as in the Description column in iTunes.", null));			 
 		setMPodcastSummaryProperty(new MProperty(false, "Podcast summary", "Specifies the podcast summary. The summary appears  when the circled (i) in the Description column is clicked.", null));			 
 		setMPodcastPublishingDateProperty(new MProperty(false, "Podcast publishing date", "Specifies the publishing date of the MP3 file. The publishing date appears in the Release Date column in iTunes.", null));			 
-		setMPublishedFileNameProperty(new MProperty(false, "Published file name", "Specifies the name of published file on the FTP server.", null));
+		setMPublishedFileNameProperty(new MProperty(false, "Published file name", "Specifies the name of published file on the FTP server.", null));			 
+		setMKeepPublishedProperty(new MProperty(false, "Keep published", "Specifies whether to keep this recording published as long as the server disk quota for recordings is not exceeded.", null));
 
 		lastMMp3ConstructorHook();		
 	}
 	
-		/**
+	/**
 	 * Executes after the <code>super()</code> call of the generated constructor but before all generated constructor code.
 	 * @generated
 	 */
@@ -725,7 +803,7 @@ public class MMp3 extends MStatefulObject {
 		// Does nothing by default. Remove the @generated tag to provide an implementation for this method.
 	}
 	
-		/**
+	/**
 	 * Executes after all generated constructor code.
 	 * @generated
 	 */
@@ -1758,6 +1836,113 @@ public class MMp3 extends MStatefulObject {
 	}
 
 	/**
+	 * Returns the value of the '<em><b>MKeep Published Property</b></em>' containment reference.
+	 * The default value is <code>""</code>.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>MKeep Published Property</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>MKeep Published Property</em>' containment reference.
+	 * @see #setMKeepPublishedProperty(MProperty)
+	 * @see org.onceforall.dms.desktop.logic.LogicPackage#getMMp3_MKeepPublishedProperty()
+	 * @model containment="true" required="true"
+	 *        annotation="http://www.onceforall.org/mcore name='Keep published' description='Specifies whether to keep this recording published as long as the server disk quota for recordings is not exceeded.' readOnly='false'"
+	 * @generated
+	 */
+	public MProperty getMKeepPublishedProperty() {
+		return mKeepPublishedProperty;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetMKeepPublishedProperty(MProperty newMKeepPublishedProperty, NotificationChain msgs) {
+		MProperty oldMKeepPublishedProperty = mKeepPublishedProperty;
+		mKeepPublishedProperty = newMKeepPublishedProperty;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, LogicPackage.MMP3__MKEEP_PUBLISHED_PROPERTY, oldMKeepPublishedProperty, newMKeepPublishedProperty);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * Sets the value of the '{@link org.onceforall.dms.desktop.logic.MMp3#getMKeepPublishedProperty <em>MKeep Published Property</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	   
+	 * @param newMKeepPublishedProperty the new value of the '<em>MKeep Published Property</em>' containment reference.
+	 * @see #getMKeepPublishedProperty()
+	 * @generated
+	 */
+	public void setMKeepPublishedProperty(MProperty newMKeepPublishedProperty) {
+		if (newMKeepPublishedProperty != mKeepPublishedProperty) {
+			NotificationChain msgs = null;
+			if (mKeepPublishedProperty != null)
+				msgs = ((InternalEObject)mKeepPublishedProperty).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - LogicPackage.MMP3__MKEEP_PUBLISHED_PROPERTY, null, msgs);
+			if (newMKeepPublishedProperty != null) {				
+				newMKeepPublishedProperty.setDefaultName("Keep published");
+				newMKeepPublishedProperty.setDefaultDescription("Specifies whether to keep this recording published as long as the server disk quota for recordings is not exceeded.");
+				newMKeepPublishedProperty.setValueType(Type.getTypeForName("Yes/No"));
+				newMKeepPublishedProperty.setValueEFeature((EStructuralFeature) eClass().getEStructuralFeature(LogicPackage.MMP3__KEEP_PUBLISHED_PROPERTY));
+				newMKeepPublishedProperty.setHistoricValuesEFeature(null);
+				msgs = ((InternalEObject)newMKeepPublishedProperty).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - LogicPackage.MMP3__MKEEP_PUBLISHED_PROPERTY, null, msgs);
+			}
+			
+			// Transfers the adpaters from the old managed value to the new one.
+			if(mKeepPublishedProperty != null) {
+				if(newMKeepPublishedProperty != null)
+					newMKeepPublishedProperty.eAdapters().addAll(mKeepPublishedProperty.eAdapters());			
+			
+				mKeepPublishedProperty.eAdapters().clear();
+			}
+			msgs = basicSetMKeepPublishedProperty(newMKeepPublishedProperty, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, LogicPackage.MMP3__MKEEP_PUBLISHED_PROPERTY, newMKeepPublishedProperty, newMKeepPublishedProperty));
+	}
+
+	/**
+	 * Returns the value of the '<em><b>Keep Published Property</b></em>' attribute.
+	 * The default value is <code>"false"</code>.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Keep Published Property</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Keep Published Property</em>' attribute.
+	 * @see #setKeepPublishedProperty(Boolean)
+	 * @see org.onceforall.dms.desktop.logic.LogicPackage#getMMp3_KeepPublishedProperty()
+	 * @model default="false" dataType="org.onceforall.dms.desktop.logic.MBoolean" required="true"
+	 * @generated
+	 */
+	public Boolean getKeepPublishedProperty() {
+		return keepPublishedProperty;
+	}
+
+	/**
+	 * Sets the value of the '{@link org.onceforall.dms.desktop.logic.MMp3#getKeepPublishedProperty <em>Keep Published Property</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	   
+	 * @param newKeepPublishedProperty the new value of the '<em>Keep Published Property</em>' attribute.
+	 * @see #getKeepPublishedProperty()
+	 * @generated
+	 */
+	public void setKeepPublishedProperty(Boolean newKeepPublishedProperty) {
+		Boolean oldKeepPublishedProperty = keepPublishedProperty;
+		keepPublishedProperty = newKeepPublishedProperty;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, LogicPackage.MMP3__KEEP_PUBLISHED_PROPERTY, oldKeepPublishedProperty, keepPublishedProperty));
+	}
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1782,6 +1967,8 @@ public class MMp3 extends MStatefulObject {
 				return basicSetMPodcastPublishingDateProperty(null, msgs);
 			case LogicPackage.MMP3__MPUBLISHED_FILE_NAME_PROPERTY:
 				return basicSetMPublishedFileNameProperty(null, msgs);
+			case LogicPackage.MMP3__MKEEP_PUBLISHED_PROPERTY:
+				return basicSetMKeepPublishedProperty(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -1831,6 +2018,10 @@ public class MMp3 extends MStatefulObject {
 				return getMPublishedFileNameProperty();
 			case LogicPackage.MMP3__PUBLISHED_FILE_NAME_PROPERTY:
 				return getPublishedFileNameProperty();
+			case LogicPackage.MMP3__MKEEP_PUBLISHED_PROPERTY:
+				return getMKeepPublishedProperty();
+			case LogicPackage.MMP3__KEEP_PUBLISHED_PROPERTY:
+				return getKeepPublishedProperty();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -1898,6 +2089,12 @@ public class MMp3 extends MStatefulObject {
 				return;
 			case LogicPackage.MMP3__PUBLISHED_FILE_NAME_PROPERTY:    
 				setPublishedFileNameProperty((String)newValue);
+				return;
+			case LogicPackage.MMP3__MKEEP_PUBLISHED_PROPERTY:    
+				setMKeepPublishedProperty((MProperty)newValue);
+				return;
+			case LogicPackage.MMP3__KEEP_PUBLISHED_PROPERTY:    
+				setKeepPublishedProperty((Boolean)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -1967,6 +2164,12 @@ public class MMp3 extends MStatefulObject {
 			case LogicPackage.MMP3__PUBLISHED_FILE_NAME_PROPERTY:
 				setPublishedFileNameProperty(getDefaultPublishedFileNameProperty());
 				return;
+			case LogicPackage.MMP3__MKEEP_PUBLISHED_PROPERTY:
+				setMKeepPublishedProperty((MProperty)null);
+				return;
+			case LogicPackage.MMP3__KEEP_PUBLISHED_PROPERTY:
+				setKeepPublishedProperty(getDefaultKeepPublishedProperty());
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -2016,6 +2219,10 @@ public class MMp3 extends MStatefulObject {
 				return mPublishedFileNameProperty != null;
 			case LogicPackage.MMP3__PUBLISHED_FILE_NAME_PROPERTY:
 				return getDefaultPublishedFileNameProperty() == null ? publishedFileNameProperty != null : !getDefaultPublishedFileNameProperty().equals(publishedFileNameProperty);
+			case LogicPackage.MMP3__MKEEP_PUBLISHED_PROPERTY:
+				return mKeepPublishedProperty != null;
+			case LogicPackage.MMP3__KEEP_PUBLISHED_PROPERTY:
+				return getDefaultKeepPublishedProperty() == null ? keepPublishedProperty != null : !getDefaultKeepPublishedProperty().equals(keepPublishedProperty);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -2049,6 +2256,8 @@ public class MMp3 extends MStatefulObject {
 		result.append(podcastPublishingDateProperty);
 		result.append(", publishedFileNameProperty: ");
 		result.append(publishedFileNameProperty);
+		result.append(", keepPublishedProperty: ");
+		result.append(keepPublishedProperty);
 		result.append(')');
 		return result.toString();
 	}
