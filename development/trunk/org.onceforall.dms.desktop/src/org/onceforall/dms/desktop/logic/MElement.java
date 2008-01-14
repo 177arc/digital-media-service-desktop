@@ -67,7 +67,6 @@ import org.onceforall.dms.desktop.notify.ThreadAdapter;
  *
  * @see org.onceforall.dms.desktop.logic.LogicPackage#getMElement()
  * @model kind="class" abstract="true"
- *        annotation="http://www.onceforall.org/mcore typeNameForUI='Element'"
  * @extends ThreadAdapter
  * @generated
  */
@@ -123,7 +122,7 @@ public abstract class MElement extends EObjectImpl implements ThreadAdapter {
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final String copyright = "Copyright 2006, Marc Maier";
+	public static final String copyright = "Copyright 2007, Marc Maier";
 
 	/**
      * Adds a value type for this class.
@@ -134,6 +133,27 @@ public abstract class MElement extends EObjectImpl implements ThreadAdapter {
 	static {
 		Type.VALUE_TYPES_BY_NAME.put("Reference to "+MElement.TYPE_NAME, new ReferenceType("Reference to "+MElement.TYPE_NAME, "Specifies a reference to a "+MElement.TYPE_NAME_FOR_UI, MElement.class));
 	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -270,7 +290,7 @@ public abstract class MElement extends EObjectImpl implements ThreadAdapter {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String TYPE_NAME_FOR_UI_EDEFAULT = null;
+	protected static final String TYPE_NAME_FOR_UI_EDEFAULT = "Element";
 
 	/**
 	 * Get the default value of the '{@link #getTypeNameForUI() <em>Type Name For UI</em>}' attribute.
@@ -278,11 +298,13 @@ public abstract class MElement extends EObjectImpl implements ThreadAdapter {
 	 * <!-- end-user-doc -->
 	 * @return Returns the default value of the '{@link #getTypeNameForUI() <em>Type Name For UI</em>}' attribute.
 	 * @see #getTypeNameForUI()
+	 * @generated
 	 * @ordered
 	 */
 	public String getDefaultTypeNameForUI() {
-		return "Element";
+		return TYPE_NAME_FOR_UI_EDEFAULT;
 	}
+	
 	/**
 	 * The cached value of the '{@link #getTypeNameForUI() <em>Type Name For UI</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -299,7 +321,7 @@ public abstract class MElement extends EObjectImpl implements ThreadAdapter {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String NAME_FOR_UI_EDEFAULT = "";
+	protected static final String NAME_FOR_UI_EDEFAULT = "Element";
 
 	/**
 	 * Get the default value of the '{@link #getNameForUI() <em>Name For UI</em>}' attribute.
@@ -611,6 +633,7 @@ public abstract class MElement extends EObjectImpl implements ThreadAdapter {
 
 	/**
 	 * Returns the value of the '<em><b>Type Name For UI</b></em>' attribute.
+	 * The default value is <code>"Element"</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Type Name For UI</em>' attribute isn't
@@ -620,7 +643,7 @@ public abstract class MElement extends EObjectImpl implements ThreadAdapter {
 	 * @return the value of the '<em>Type Name For UI</em>' attribute.
 	 * @see #setTypeNameForUI(String)
 	 * @see org.onceforall.dms.desktop.logic.LogicPackage#getMElement_TypeNameForUI()
-	 * @model dataType="org.onceforall.dms.desktop.logic.MString" required="true" transient="true"
+	 * @model default="Element" dataType="org.onceforall.dms.desktop.logic.MString" required="true" transient="true"
 	 * @generated
 	 */
 	public String getTypeNameForUI() {
@@ -720,12 +743,29 @@ public abstract class MElement extends EObjectImpl implements ThreadAdapter {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Icon File Path</em>' attribute.
+	 * @see #setIconFilePath(File)
 	 * @see org.onceforall.dms.desktop.logic.LogicPackage#getMElement_IconFilePath()
-	 * @model dataType="org.onceforall.dms.desktop.logic.MFile" transient="true" changeable="false"
+	 * @model dataType="org.onceforall.dms.desktop.logic.MFile"
 	 * @generated
 	 */
 	public File getIconFilePath() {
 		return iconFilePath;
+	}
+
+	/**
+	 * Sets the value of the '{@link org.onceforall.dms.desktop.logic.MElement#getIconFilePath <em>Icon File Path</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	   
+	 * @param newIconFilePath the new value of the '<em>Icon File Path</em>' attribute.
+	 * @see #getIconFilePath()
+	 * @generated
+	 */
+	public void setIconFilePath(File newIconFilePath) {
+		File oldIconFilePath = iconFilePath;
+		iconFilePath = newIconFilePath;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, LogicPackage.MELEMENT__ICON_FILE_PATH, oldIconFilePath, iconFilePath));
 	}
 
 	/**
@@ -737,12 +777,29 @@ public abstract class MElement extends EObjectImpl implements ThreadAdapter {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Overlay Icon File Path</em>' attribute.
+	 * @see #setOverlayIconFilePath(File)
 	 * @see org.onceforall.dms.desktop.logic.LogicPackage#getMElement_OverlayIconFilePath()
-	 * @model dataType="org.onceforall.dms.desktop.logic.MFile" transient="true" changeable="false"
+	 * @model dataType="org.onceforall.dms.desktop.logic.MFile" transient="true"
 	 * @generated
 	 */
 	public File getOverlayIconFilePath() {
 		return overlayIconFilePath;
+	}
+
+	/**
+	 * Sets the value of the '{@link org.onceforall.dms.desktop.logic.MElement#getOverlayIconFilePath <em>Overlay Icon File Path</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	   
+	 * @param newOverlayIconFilePath the new value of the '<em>Overlay Icon File Path</em>' attribute.
+	 * @see #getOverlayIconFilePath()
+	 * @generated
+	 */
+	public void setOverlayIconFilePath(File newOverlayIconFilePath) {
+		File oldOverlayIconFilePath = overlayIconFilePath;
+		overlayIconFilePath = newOverlayIconFilePath;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, LogicPackage.MELEMENT__OVERLAY_ICON_FILE_PATH, oldOverlayIconFilePath, overlayIconFilePath));
 	}
 
 	/**
@@ -884,6 +941,12 @@ public abstract class MElement extends EObjectImpl implements ThreadAdapter {
 			case LogicPackage.MELEMENT__DESCRIPTION:    
 				setDescription((String)newValue);
 				return;
+			case LogicPackage.MELEMENT__ICON_FILE_PATH:    
+				setIconFilePath((File)newValue);
+				return;
+			case LogicPackage.MELEMENT__OVERLAY_ICON_FILE_PATH:    
+				setOverlayIconFilePath((File)newValue);
+				return;
 			case LogicPackage.MELEMENT__COMPOSITE_CLASS_NAME:    
 				setCompositeClassName((String)newValue);
 				return;
@@ -909,6 +972,12 @@ public abstract class MElement extends EObjectImpl implements ThreadAdapter {
 				return;
 			case LogicPackage.MELEMENT__DESCRIPTION:
 				setDescription(getDefaultDescription());
+				return;
+			case LogicPackage.MELEMENT__ICON_FILE_PATH:
+				setIconFilePath(getDefaultIconFilePath());
+				return;
+			case LogicPackage.MELEMENT__OVERLAY_ICON_FILE_PATH:
+				setOverlayIconFilePath(getDefaultOverlayIconFilePath());
 				return;
 			case LogicPackage.MELEMENT__COMPOSITE_CLASS_NAME:
 				setCompositeClassName(getDefaultCompositeClassName());
