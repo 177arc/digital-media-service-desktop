@@ -13,10 +13,12 @@
  */
 package org.onceforall.dms.desktop.logic;
 
+import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Collection;
 import java.util.List;
+import java.util.logging.Level;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -27,6 +29,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectEList;
 import org.onceforall.dms.desktop.exception.DesktopException;
+import org.onceforall.dms.desktop.logging.Logger;
 import org.onceforall.dms.desktop.logic.types.MStepStateType;
 import org.onceforall.dms.desktop.logic.types.ReferenceType;
 import org.onceforall.dms.desktop.logic.types.State;
@@ -55,6 +58,7 @@ import org.onceforall.dms.desktop.logic.types.Type;
  *   <li>{@link org.onceforall.dms.desktop.logic.MStep#isStoppable <em>Stoppable</em>}</li>
  *   <li>{@link org.onceforall.dms.desktop.logic.MStep#isTerminatable <em>Terminatable</em>}</li>
  *   <li>{@link org.onceforall.dms.desktop.logic.MStep#getActionName <em>Action Name</em>}</li>
+ *   <li>{@link org.onceforall.dms.desktop.logic.MStep#getActionIconFilePath <em>Action Icon File Path</em>}</li>
  *   <li>{@link org.onceforall.dms.desktop.logic.MStep#getException <em>Exception</em>}</li>
  * </ul>
  * </p>
@@ -93,7 +97,7 @@ public abstract class MStep extends MStatefulObject implements Runnable {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final String copyright = "Copyright 2006, Marc Maier";
+	public static final String copyright = "Copyright 2007, Marc Maier";
 
 	/**
      * Adds a value type for this class.
@@ -416,7 +420,7 @@ public abstract class MStep extends MStatefulObject implements Runnable {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String ACTION_NAME_EDEFAULT = "Start";
+	protected static final String ACTION_NAME_EDEFAULT = "Mark as completed";
 	
 	/**
 	 * Get the default value of the '{@link #getActionName() <em>Action Name</em>}' attribute.
@@ -442,6 +446,39 @@ public abstract class MStep extends MStatefulObject implements Runnable {
 	protected String actionName = ACTION_NAME_EDEFAULT;
 	
 	
+	/**
+	 * The default value of the '{@link #getActionIconFilePath() <em>Action Icon File Path</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getActionIconFilePath()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final File ACTION_ICON_FILE_PATH_EDEFAULT = (File)LogicFactory.eINSTANCE.createFromString(LogicPackage.eINSTANCE.getMFile(), "Image Files\\Mark as completed.gif");
+
+	/**
+	 * Get the default value of the '{@link #getActionIconFilePath() <em>Action Icon File Path</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return Returns the default value of the '{@link #getActionIconFilePath() <em>Action Icon File Path</em>}' attribute.
+	 * @see #getActionIconFilePath()
+	 * @generated
+	 * @ordered
+	 */
+	public File getDefaultActionIconFilePath() {
+		return ACTION_ICON_FILE_PATH_EDEFAULT;
+	}
+	
+	/**
+	 * The cached value of the '{@link #getActionIconFilePath() <em>Action Icon File Path</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getActionIconFilePath()
+	 * @generated
+	 * @ordered
+	 */
+	protected File actionIconFilePath = ACTION_ICON_FILE_PATH_EDEFAULT;
+
 	/**
 	 * The default value of the '{@link #getException() <em>Exception</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -1117,7 +1154,7 @@ public abstract class MStep extends MStatefulObject implements Runnable {
 
 	/**
 	 * Returns the value of the '<em><b>Action Name</b></em>' attribute.
-	 * The default value is <code>"Start"</code>.
+	 * The default value is <code>"Mark as completed"</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Action Name</em>' attribute isn't clear,
@@ -1127,7 +1164,7 @@ public abstract class MStep extends MStatefulObject implements Runnable {
 	 * @return the value of the '<em>Action Name</em>' attribute.
 	 * @see #setActionName(String)
 	 * @see org.onceforall.dms.desktop.logic.LogicPackage#getMStep_ActionName()
-	 * @model default="Start" required="true"
+	 * @model default="Mark as completed" required="true"
 	 * @generated
 	 */
 	public String getActionName() {
@@ -1150,6 +1187,41 @@ public abstract class MStep extends MStatefulObject implements Runnable {
 	}
 
 	/**
+	 * Returns the value of the '<em><b>Action Icon File Path</b></em>' attribute.
+	 * The default value is <code>"Image Files\\Mark as completed.gif"</code>.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Action Icon File Path</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Action Icon File Path</em>' attribute.
+	 * @see #setActionIconFilePath(File)
+	 * @see org.onceforall.dms.desktop.logic.LogicPackage#getMStep_ActionIconFilePath()
+	 * @model default="Image Files\\Mark as completed.gif" dataType="org.onceforall.dms.desktop.logic.MFile"
+	 * @generated
+	 */
+	public File getActionIconFilePath() {
+		return actionIconFilePath;
+	}
+
+	/**
+	 * Sets the value of the '{@link org.onceforall.dms.desktop.logic.MStep#getActionIconFilePath <em>Action Icon File Path</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	   
+	 * @param newActionIconFilePath the new value of the '<em>Action Icon File Path</em>' attribute.
+	 * @see #getActionIconFilePath()
+	 * @generated
+	 */
+	public void setActionIconFilePath(File newActionIconFilePath) {
+		File oldActionIconFilePath = actionIconFilePath;
+		actionIconFilePath = newActionIconFilePath;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, LogicPackage.MSTEP__ACTION_ICON_FILE_PATH, oldActionIconFilePath, actionIconFilePath));
+	}
+
+	/**
 	 * Gets (if any) the exception that was thrown during execution of this managed step.
 	 * If the exception is set, the managed step state should be either 'Warning' or 'Error'.
 	 * 
@@ -1169,11 +1241,16 @@ public abstract class MStep extends MStatefulObject implements Runnable {
         this.exception = exception;
         
         if(!(exception instanceof DesktopException) 
-        		|| ((DesktopException) exception).getSeverity() >= DesktopException.ERROR_SEVERITY)
+        		|| ((DesktopException) exception).getSeverity() >= DesktopException.ERROR_SEVERITY) {
         	setStateProperty(MStepStateType.ERROR_STATE);
-        
-        if(exception instanceof DesktopException && ((DesktopException) exception).getSeverity() == DesktopException.WARNING_SEVERITY)
-    		setStateProperty(MStepStateType.WARNING_STATE);       	
+            Logger.getLogger().log(Level.SEVERE, "The following error occurred while executing task '"+getNameForUI()+"': "+exception.getMessage(), exception);
+        }
+        else if(exception instanceof DesktopException && ((DesktopException) exception).getSeverity() == DesktopException.WARNING_SEVERITY) {
+    		setStateProperty(MStepStateType.WARNING_STATE);
+            Logger.getLogger().log(Level.SEVERE, "The following warning occurred while executing task '"+getNameForUI()+"': "+exception.getMessage(), exception);
+        }
+        else
+            Logger.getLogger().log(Level.SEVERE, "The following error occurred while executing task '"+getNameForUI()+"': "+exception.getMessage(), exception);
     }
 
 	/**
@@ -1241,6 +1318,8 @@ public abstract class MStep extends MStatefulObject implements Runnable {
 				return isTerminatable() ? Boolean.TRUE : Boolean.FALSE;
 			case LogicPackage.MSTEP__ACTION_NAME:
 				return getActionName();
+			case LogicPackage.MSTEP__ACTION_ICON_FILE_PATH:
+				return getActionIconFilePath();
 			case LogicPackage.MSTEP__EXCEPTION:
 				return getException();
 		}
@@ -1294,6 +1373,9 @@ public abstract class MStep extends MStatefulObject implements Runnable {
 			case LogicPackage.MSTEP__ACTION_NAME:    
 				setActionName((String)newValue);
 				return;
+			case LogicPackage.MSTEP__ACTION_ICON_FILE_PATH:    
+				setActionIconFilePath((File)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -1342,6 +1424,9 @@ public abstract class MStep extends MStatefulObject implements Runnable {
 			case LogicPackage.MSTEP__ACTION_NAME:
 				setActionName(getDefaultActionName());
 				return;
+			case LogicPackage.MSTEP__ACTION_ICON_FILE_PATH:
+				setActionIconFilePath(getDefaultActionIconFilePath());
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -1384,6 +1469,8 @@ public abstract class MStep extends MStatefulObject implements Runnable {
 				return terminatable != getDefaultTerminatable();
 			case LogicPackage.MSTEP__ACTION_NAME:
 				return getDefaultActionName() == null ? actionName != null : !getDefaultActionName().equals(actionName);
+			case LogicPackage.MSTEP__ACTION_ICON_FILE_PATH:
+				return getDefaultActionIconFilePath() == null ? actionIconFilePath != null : !getDefaultActionIconFilePath().equals(actionIconFilePath);
 			case LogicPackage.MSTEP__EXCEPTION:
 				return getDefaultException() == null ? exception != null : !getDefaultException().equals(exception);
 		}
@@ -1418,6 +1505,8 @@ public abstract class MStep extends MStatefulObject implements Runnable {
 		result.append(terminatable);
 		result.append(", actionName: ");
 		result.append(actionName);
+		result.append(", actionIconFilePath: ");
+		result.append(actionIconFilePath);
 		result.append(", exception: ");
 		result.append(exception);
 		result.append(')');
