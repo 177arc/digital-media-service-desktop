@@ -10,6 +10,7 @@
  */
 package org.onceforall.dms.desktop.logic;
 
+import java.io.File;
 import java.util.Collection;
 import java.util.Date;
 
@@ -65,7 +66,7 @@ import org.onceforall.dms.desktop.logic.types.Type;
  *
  * @see org.onceforall.dms.desktop.logic.LogicPackage#getMEnterWwxInformationStep()
  * @model kind="class"
- *        annotation="http://www.onceforall.org/mcore name='Enter WordWiseXtra information' description='Please enter information about the WordWiseXtra meeting and then select \'Mark as completed\'.' interruptable='false' stoppable='false' terminatable='false'"
+ *        annotation="http://www.onceforall.org/mcore name='Enter WordWiseXtra information' description='Please enter information about the WordWiseXtra meeting and then select \'Mark as completed\'.' actionIconFilePath='Image Files/Mark as completed.gif' interruptable='false' stoppable='false' terminatable='false'"
  * @generated
  */
 public class MEnterWwxInformationStep extends MEnterInformationStep {
@@ -82,7 +83,7 @@ public class MEnterWwxInformationStep extends MEnterInformationStep {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final String copyright = "Copyright 2006, Marc Maier";
+	public static final String copyright = "Copyright 2007, Marc Maier";
 
 	/**
      * Adds a value type for this class.
@@ -662,6 +663,19 @@ public class MEnterWwxInformationStep extends MEnterInformationStep {
 	}
 
 	/**
+	 * Get the default value of the '{@link #getActionIconFilePath() <em>Action Icon File Path</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return Returns the default value of the '{@link #getActionIconFilePath() <em>Action Icon File Path</em>}' attribute.
+	 * @see #getActionIconFilePath()
+	 * @generated
+	 * @ordered
+	 */
+	public File getDefaultActionIconFilePath() {
+		return (File)LogicFactory.eINSTANCE.createFromString(LogicPackage.eINSTANCE.getMFile(), "Image Files/Mark as completed.gif");
+	}
+
+	/**
 	 * Get the default value of the '{@link #isInterruptable() <em>Interruptable</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -699,7 +713,6 @@ public class MEnterWwxInformationStep extends MEnterInformationStep {
 	public String getDefaultName() {
 		return "Enter WordWiseXtra information";
 	}
-
 	/**
 	 * Get the default value of the '{@link #isTerminatable() <em>Terminatable</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -712,6 +725,7 @@ public class MEnterWwxInformationStep extends MEnterInformationStep {
 	public boolean getDefaultTerminatable() {
 		return false;
 	}
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -722,11 +736,12 @@ public class MEnterWwxInformationStep extends MEnterInformationStep {
 		
 		firstMEnterWwxInformationStepConstructorHook();
 				
-		stoppable = false;
 		interruptable = false;
-		description = "Please enter information about the WordWiseXtra meeting and then select \'Mark as completed\'.";
-		name = "Enter WordWiseXtra information";
 		terminatable = false;
+		description = "Please enter information about the WordWiseXtra meeting and then select \'Mark as completed\'.";
+		stoppable = false;
+		actionIconFilePath = (File)LogicFactory.eINSTANCE.createFromString(LogicPackage.eINSTANCE.getMFile(), "Image Files/Mark as completed.gif");
+		name = "Enter WordWiseXtra information";
 					 
 		setMWwxDateParameter(new MParameter(false, "Date", "Specifies the date of the WordWiseXtra meeting.", null));			 
 		setMTitleOfTalkParameter(new MParameter(false, "Topic", "Specifies the title of the talk.", null));			 

@@ -6,6 +6,7 @@
  */
 package org.onceforall.dms.desktop.logic;
 
+import java.io.File;
 import java.io.IOException;
 import java.net.ConnectException;
 import java.net.SocketTimeoutException;
@@ -42,7 +43,7 @@ import org.onceforall.dms.desktop.logic.types.Type;
  *
  * @see org.onceforall.dms.desktop.logic.LogicPackage#getMFtpStep()
  * @model kind="class" abstract="true"
- *        annotation="http://www.onceforall.org/mcore actionName='Mark as completed' interruptable='false' stoppable='false' terminatable='false'"
+ *        annotation="http://www.onceforall.org/mcore actionName='Mark as completed' actionIconFilePath='Image Files\\Mark as completed.gif' interruptable='false' stoppable='false' terminatable='false'"
  * @generated
  */
 public abstract class MFtpStep extends MStep {
@@ -59,7 +60,7 @@ public abstract class MFtpStep extends MStep {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final String copyright = "Copyright 2006, Marc Maier";
+	public static final String copyright = "Copyright 2007, Marc Maier";
 
 	/**
      * Adds a value type for this class.
@@ -213,6 +214,19 @@ public abstract class MFtpStep extends MStep {
 	}
 
 	/**
+	 * Get the default value of the '{@link #getActionIconFilePath() <em>Action Icon File Path</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return Returns the default value of the '{@link #getActionIconFilePath() <em>Action Icon File Path</em>}' attribute.
+	 * @see #getActionIconFilePath()
+	 * @generated
+	 * @ordered
+	 */
+	public File getDefaultActionIconFilePath() {
+		return (File)LogicFactory.eINSTANCE.createFromString(LogicPackage.eINSTANCE.getMFile(), "Image Files\\Mark as completed.gif");
+	}
+
+	/**
 	 * Get the default value of the '{@link #isStoppable() <em>Stoppable</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -260,8 +274,9 @@ public abstract class MFtpStep extends MStep {
 		
 		firstMFtpStepConstructorHook();
 				
-		interruptable = false;
 		stoppable = false;
+		interruptable = false;
+		actionIconFilePath = (File)LogicFactory.eINSTANCE.createFromString(LogicPackage.eINSTANCE.getMFile(), "Image Files\\Mark as completed.gif");
 		terminatable = false;
 		actionName = "Mark as completed";
 					 
