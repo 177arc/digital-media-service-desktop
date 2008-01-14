@@ -13,6 +13,9 @@ package org.onceforall.dms.desktop.logic;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
+import java.text.DecimalFormat;
+import java.text.Format;
+import java.text.SimpleDateFormat;
 import java.util.Collection;
 import java.util.Properties;
 import java.util.logging.Handler;
@@ -83,10 +86,19 @@ import org.onceforall.dms.desktop.logic.types.Type;
  *
  * @see org.onceforall.dms.desktop.logic.LogicPackage#getMEmailEventLogStep()
  * @model kind="class"
- *        annotation="http://www.onceforall.org/mcore name='Email event log' description='Sends an email with the log and application data to the Digital Media Service email post box. Please enter your name and an optional comment.' iconFilePath='Image Files/Email event log step.gif' actionName='Send' interruptable='false' stoppable='false' terminatable='false'"
+ *        annotation="http://www.onceforall.org/mcore name='Email event log' description='Sends an email with the log and application data to the Digital Media Service email post box. Please enter your name and an optional comment.' iconFilePath='Image Files/Email event log step.gif' actionName='Send' actionIconFilePath='Image Files/Email.gif' interruptable='false' stoppable='false' terminatable='false'"
  * @generated
  */
 public class MEmailEventLogStep extends MStep {
+	/** Specifies the date/time formatter to be used for compiling the file system information. */
+	protected static final Format FILE_DATE_FORMATTER = new SimpleDateFormat("dd MMM yyyy hh:mm:ss z"); 
+	
+	/** Specifies the size formatter to be used for compiling the file system information. */
+	protected static final Format FILE_SIZE_FORMATTER = new DecimalFormat("#,##0"); 
+	
+	/** Specifies how many times the warning about the sender's email address has been be shown. */
+	protected int emailAddressWarningCount;
+	
 	/**
 	 * Specifies the type name of this managed element.
 	 * <!-- begin-user-doc -->
@@ -100,7 +112,7 @@ public class MEmailEventLogStep extends MStep {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final String copyright = "Copyright 2006, Marc Maier";
+	public static final String copyright = "Copyright 2007, Marc Maier";
 
 	/**
      * Adds a value type for this class.
@@ -540,7 +552,6 @@ public class MEmailEventLogStep extends MStep {
 	public String getDefaultActionName() {
 		return "Send";
 	}
-
 	/**
 	 * Get the default value of the '{@link #isStoppable() <em>Stoppable</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -552,6 +563,19 @@ public class MEmailEventLogStep extends MStep {
 	 */
 	public boolean getDefaultStoppable() {
 		return false;
+	}
+
+	/**
+	 * Get the default value of the '{@link #getActionIconFilePath() <em>Action Icon File Path</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return Returns the default value of the '{@link #getActionIconFilePath() <em>Action Icon File Path</em>}' attribute.
+	 * @see #getActionIconFilePath()
+	 * @generated
+	 * @ordered
+	 */
+	public File getDefaultActionIconFilePath() {
+		return (File)LogicFactory.eINSTANCE.createFromString(LogicPackage.eINSTANCE.getMFile(), "Image Files/Email.gif");
 	}
 
 	/**
@@ -618,6 +642,7 @@ public class MEmailEventLogStep extends MStep {
 	public boolean getDefaultTerminatable() {
 		return false;
 	}
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -628,20 +653,21 @@ public class MEmailEventLogStep extends MStep {
 		
 		firstMEmailEventLogStepConstructorHook();
 				
-		actionName = "Send";
-		stoppable = false;
-		iconFilePath = (File)LogicFactory.eINSTANCE.createFromString(LogicPackage.eINSTANCE.getMFile(), "Image Files/Email event log step.gif");
 		description = "Sends an email with the log and application data to the Digital Media Service email post box. Please enter your name and an optional comment.";
+		stoppable = false;
+		actionIconFilePath = (File)LogicFactory.eINSTANCE.createFromString(LogicPackage.eINSTANCE.getMFile(), "Image Files/Email.gif");
 		name = "Email event log";
-		interruptable = false;
+		iconFilePath = (File)LogicFactory.eINSTANCE.createFromString(LogicPackage.eINSTANCE.getMFile(), "Image Files/Email event log step.gif");
 		terminatable = false;
+		interruptable = false;
+		actionName = "Send";
 					 
 		setMRecordingUsersNameParameter(new MParameter(false, "Recording user\'s name", "Specifies the name of the recording user. Please enter your name.", null));			 
 		setMCommentParameter(new MParameter(false, "Comment", "Specifies a comment for the receipient of the email.", null));			 
 		setMLogFileParameter(new MParameter(false, "Log file", "Specifies the file that contains the log data.", null));			 
 		setMDataFileParameter(new MParameter(false, "Data file", "Specifies the file that contains the application data.", null));			 
 		setMSubjectParameter(new MParameter(false, "Subject", "Specifies the subject of the email.", null));			 
-		setMSendersEmailAddressParameter(new MParameter(false, "Sender\'s email address", "Specifies the sender\'s email address. Please enter your own email address here. Alternatively use \'sounddesk@ccbromley.net\'.", null));			 
+		setMSendersEmailAddressParameter(new MParameter(false, "Sender\'s email address", "Specifies the sender\'s email address. Please enter your own email address here so that we can contact you if we have any questions. Alternatively use \'sounddesk@ccbromley.net\'.", null));			 
 		setMReceipientsEmailAddressParameter(new MParameter(false, "Receipient\'s email address", "Specifies the email addresses of the recipients, i.e. the To field of the email.", null));			 
 		setMSmtpServerParameter(new MParameter(false, "SMTP server", "Specifies the name or IP address of the (SMTP) server that is responsible for sending the email.", null));			 
 		setMSmtpUserNameParameter(new MParameter(false, "SMTP user name", "Specifies user name used to authenticate on the (SMTP) server that is responsible for sending the email.", null));			 
@@ -864,7 +890,7 @@ public class MEmailEventLogStep extends MStep {
 	 * @return the value of the '<em>Comment Parameter</em>' attribute.
 	 * @see #setCommentParameter(String)
 	 * @see org.onceforall.dms.desktop.logic.LogicPackage#getMEmailEventLogStep_CommentParameter()
-	 * @model dataType="org.onceforall.dms.desktop.logic.MString"
+	 * @model dataType="org.onceforall.dms.desktop.logic.MString" required="true" transient="true"
 	 * @generated
 	 */
 	public String getCommentParameter() {
@@ -1218,7 +1244,7 @@ public class MEmailEventLogStep extends MStep {
 	 * @see #setMSendersEmailAddressParameter(MParameter)
 	 * @see org.onceforall.dms.desktop.logic.LogicPackage#getMEmailEventLogStep_MSendersEmailAddressParameter()
 	 * @model containment="true" required="true"
-	 *        annotation="http://www.onceforall.org/mcore name='Sender\'s email address' description='Specifies the sender\'s email address. Please enter your own email address here. Alternatively use \'sounddesk@ccbromley.net\'.'"
+	 *        annotation="http://www.onceforall.org/mcore name='Sender\'s email address' description='Specifies the sender\'s email address. Please enter your own email address here so that we can contact you if we have any questions. Alternatively use \'sounddesk@ccbromley.net\'.'"
 	 * @generated
 	 */
 	public MParameter getMSendersEmailAddressParameter() {
@@ -1255,7 +1281,7 @@ public class MEmailEventLogStep extends MStep {
 			if (mSendersEmailAddressParameter != null)
 				msgs = ((InternalEObject)mSendersEmailAddressParameter).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - LogicPackage.MEMAIL_EVENT_LOG_STEP__MSENDERS_EMAIL_ADDRESS_PARAMETER, null, msgs);
 			if (newMSendersEmailAddressParameter != null) {				
-				newMSendersEmailAddressParameter.setDefaultDescription("Specifies the sender\'s email address. Please enter your own email address here. Alternatively use \'sounddesk@ccbromley.net\'.");
+				newMSendersEmailAddressParameter.setDefaultDescription("Specifies the sender\'s email address. Please enter your own email address here so that we can contact you if we have any questions. Alternatively use \'sounddesk@ccbromley.net\'.");
 				newMSendersEmailAddressParameter.setDefaultName("Sender\'s email address");
 				newMSendersEmailAddressParameter.setValueType(Type.getTypeForName("Text"));
 				newMSendersEmailAddressParameter.setValueEFeature((EStructuralFeature) eClass().getEStructuralFeature(LogicPackage.MEMAIL_EVENT_LOG_STEP__SENDERS_EMAIL_ADDRESS_PARAMETER));
@@ -1288,7 +1314,7 @@ public class MEmailEventLogStep extends MStep {
 	 * @return the value of the '<em>Senders Email Address Parameter</em>' attribute.
 	 * @see #setSendersEmailAddressParameter(String)
 	 * @see org.onceforall.dms.desktop.logic.LogicPackage#getMEmailEventLogStep_SendersEmailAddressParameter()
-	 * @model dataType="org.onceforall.dms.desktop.logic.MString" required="true"
+	 * @model dataType="org.onceforall.dms.desktop.logic.MString" required="true" transient="true"
 	 * @generated
 	 */
 	public String getSendersEmailAddressParameter() {
@@ -2070,6 +2096,19 @@ public class MEmailEventLogStep extends MStep {
 	}
 
 	/**
+	 * @see org.onceforall.dms.desktop.logic.MStep#validate()
+	 */
+	@Override
+	public void validate() throws DesktopException {
+		super.validate();
+		
+		if(emailAddressWarningCount == 0) {
+			++emailAddressWarningCount;
+			throw new DesktopException("Please make sure that you have entered your own email address as the sender's address so that we can contact you if we have any questions.", null, DesktopException.WARNING_SEVERITY, null);		
+		}
+	}
+	
+	/**
 	 * @see org.onceforall.dms.desktop.logic.MStep#execute()
 	 */
 	@Override
@@ -2152,6 +2191,17 @@ public class MEmailEventLogStep extends MStep {
         zipFileOutputStream.closeEntry();
         dataFileInputStream.close();
         
+        // Compiles the directory content.
+        StringBuilder contentBuilder = new StringBuilder();
+        File applicationDirectory = MApplication.getInstance().getPathProperty();
+        compileFileSystemInfo(applicationDirectory, 0, contentBuilder);
+        zipFileOutputStream.putNextEntry(new ZipEntry("File system information.txt"));
+        
+        // Writes the entry.
+        zipFileOutputStream.write(contentBuilder.toString().getBytes());
+        
+        // Completes the entry.
+        zipFileOutputStream.closeEntry();
         zipFileOutputStream.close();
         
         // Adds the appliation data as an attachment to the message.
@@ -2189,7 +2239,61 @@ public class MEmailEventLogStep extends MStep {
             throw new DesktopException("The application could not connect to the mail server.", "Please make sure that the computer is connected to the internet and that the mail server is running.", DesktopException.ERROR_SEVERITY, exception);
         }
 	}
-
+	
+	/**
+	 * Compiles the file system information starting from the given file and then recursively including the whole
+	 * file sub-tree. It indents the entries to reflect the level of each file entry and write the result
+	 * to the given string builder.
+	 * 
+	 * @param startFile Specifies the file use as the root of the file system information.
+	 * @param level Specifies the level of start file starting from 0.
+	 * @param contentBuilder Specifies the string builder that will contain the result after the method has completed.
+	 */
+	protected void compileFileSystemInfo(File startFile, int level, StringBuilder contentBuilder) {
+		if(startFile == null)
+			return;
+		
+		for(int currentLevel = 0; level > currentLevel; ++currentLevel)
+			contentBuilder.append("  ");
+		
+		String filePath = level > 0 ? startFile.getName() : startFile.getAbsolutePath();
+		if(startFile.isFile()) {
+			padText(contentBuilder, filePath, 70-level*2, false);
+			padText(contentBuilder, FILE_DATE_FORMATTER.format(startFile.lastModified()), 27, true);		
+			padText(contentBuilder, FILE_SIZE_FORMATTER.format(startFile.length()), 16, true);
+		}
+		else
+			contentBuilder.append(filePath);
+		
+		contentBuilder.append("\r\n");
+	
+		if(startFile.isDirectory())
+			for(File file: startFile.listFiles())
+				compileFileSystemInfo(file, level+1, contentBuilder);
+	}
+	
+	/**
+	 * Pads the given text with spaces to that is at least the given width and adds the result to the given string builder.
+	 * 
+	 * @param builder Specifies the string builder to add the padded text to.
+	 * @param text Specifies the text to pad.
+	 * @param width Specifies the minimum width of the padded text.
+	 * @param leftPadding Specifies whether to pad the text on left or the right.
+	 */
+	protected void padText(StringBuilder builder, String text, int width, boolean leftPadding) {
+		if(text.length() < width && leftPadding) {
+			for(int index = 0; index < width-text.length(); ++index)
+				builder.append(" ");
+		}
+		
+		builder.append(text);
+		
+		if(text.length() < width && !leftPadding) {
+			for(int index = 0; index < width-text.length(); ++index)
+				builder.append(" ");
+		}
+	}
+	
 	/**
 	 * @see org.onceforall.dms.desktop.logic.MObject#convertMInputValues(org.onceforall.dms.desktop.logic.MValue)
 	 */
