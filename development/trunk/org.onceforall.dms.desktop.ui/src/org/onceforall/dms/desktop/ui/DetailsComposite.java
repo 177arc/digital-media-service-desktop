@@ -32,6 +32,7 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.graphics.Color;
 import org.eclipse.swt.graphics.Font;
+import org.eclipse.swt.graphics.Rectangle;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Composite;
@@ -39,6 +40,7 @@ import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Text;
 import org.eclipse.ui.forms.FormColors;
+import org.eclipse.ui.forms.widgets.ScrolledForm;
 import org.onceforall.dms.desktop.logic.LogicPackage;
 import org.onceforall.dms.desktop.logic.MElement;
 import org.onceforall.dms.desktop.logic.MObject;
@@ -55,6 +57,9 @@ public class DetailsComposite extends MElementComposite {
     
     /** Specifies the text area that displays the description of the managed object. */
     protected Text descriptionText;
+    
+	/** Specifies the scrollable form that contains the actual content of this composite. */
+	protected ScrolledForm contentForm;
     
     /**
      * Creates a new details composite object.
@@ -91,6 +96,14 @@ public class DetailsComposite extends MElementComposite {
         getDefaultFormToolkit().setBorderStyle(borderStyle);
         descriptionText.setBackground(backgroundColour);
 		descriptionText.setLayoutData(layoutData);
+        
+        // Adds the scrollable content form.
+        contentForm = getDefaultFormToolkit().createScrolledForm(this);
+		contentForm.setLayoutData(new GridData(GridData.FILL, GridData.FILL, true, true));
+        contentForm.getBody().setLayout(new GridLayout());
+        contentForm.setExpandVertical(true);
+        contentForm.setMinWidth(400);
+        contentForm.setDelayedReflow(true);
     }
     
 
@@ -187,4 +200,31 @@ public class DetailsComposite extends MElementComposite {
     public Text getDescriptionText() {
         return descriptionText;
     }
+
+
+	/**
+	 * @see org.eclipse.swt.widgets.Control#setBounds(int, int, int, int)
+	 */
+	@Override
+	public void setBounds(int x, int y, int width, int height) {
+		super.setBounds(x, y, width, height);
+		
+		//contentForm.reflow(true);
+		//contentForm.layout(true);
+		Rectangle bounds = contentForm.getBounds();
+		contentForm.getBody().setBounds(bounds);
+		contentForm.reflow(true);
+	}
+
+
+	/**
+	 * @see org.eclipse.swt.widgets.Control#setBounds(org.eclipse.swt.graphics.Rectangle)
+	 */
+	@Override
+	public void setBounds(Rectangle bounds) {
+		setBounds(bounds.x, bounds.y, bounds.width, bounds.height);
+	}
+
+    
+    
 }
