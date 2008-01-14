@@ -51,7 +51,7 @@ public class MMp3ItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final String copyright = "Copyright 2006, Marc Maier";
+	public static final String copyright = "Copyright 2007, Marc Maier";
 
 	/**
 	 * This constructs an instance from a factory and a notifier.
@@ -83,6 +83,7 @@ public class MMp3ItemProvider
 			addPodcastSummaryPropertyPropertyDescriptor(object);
 			addPodcastPublishingDatePropertyPropertyDescriptor(object);
 			addPublishedFileNamePropertyPropertyDescriptor(object);
+			addKeepPublishedPropertyPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -308,6 +309,28 @@ public class MMp3ItemProvider
 	}
 
 	/**
+	 * This adds a property descriptor for the Keep Published Property feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addKeepPublishedPropertyPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_MMp3_keepPublishedProperty_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_MMp3_keepPublishedProperty_feature", "_UI_MMp3_type"),
+				 LogicPackage.Literals.MMP3__KEEP_PUBLISHED_PROPERTY,
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
 	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
@@ -327,6 +350,7 @@ public class MMp3ItemProvider
 			childrenFeatures.add(LogicPackage.Literals.MMP3__MPODCAST_SUMMARY_PROPERTY);
 			childrenFeatures.add(LogicPackage.Literals.MMP3__MPODCAST_PUBLISHING_DATE_PROPERTY);
 			childrenFeatures.add(LogicPackage.Literals.MMP3__MPUBLISHED_FILE_NAME_PROPERTY);
+			childrenFeatures.add(LogicPackage.Literals.MMP3__MKEEP_PUBLISHED_PROPERTY);
 		}
 		return childrenFeatures;
 	}
@@ -387,6 +411,7 @@ public class MMp3ItemProvider
 			case LogicPackage.MMP3__PODCAST_SUMMARY_PROPERTY:
 			case LogicPackage.MMP3__PODCAST_PUBLISHING_DATE_PROPERTY:
 			case LogicPackage.MMP3__PUBLISHED_FILE_NAME_PROPERTY:
+			case LogicPackage.MMP3__KEEP_PUBLISHED_PROPERTY:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case LogicPackage.MMP3__MFILE_PROPERTY:
@@ -398,6 +423,7 @@ public class MMp3ItemProvider
 			case LogicPackage.MMP3__MPODCAST_SUMMARY_PROPERTY:
 			case LogicPackage.MMP3__MPODCAST_PUBLISHING_DATE_PROPERTY:
 			case LogicPackage.MMP3__MPUBLISHED_FILE_NAME_PROPERTY:
+			case LogicPackage.MMP3__MKEEP_PUBLISHED_PROPERTY:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -458,6 +484,11 @@ public class MMp3ItemProvider
 			(createChildParameter
 				(LogicPackage.Literals.MMP3__MPUBLISHED_FILE_NAME_PROPERTY,
 				 LogicFactory.eINSTANCE.createMProperty()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(LogicPackage.Literals.MMP3__MKEEP_PUBLISHED_PROPERTY,
+				 LogicFactory.eINSTANCE.createMProperty()));
 	}
 
 	/**
@@ -479,7 +510,8 @@ public class MMp3ItemProvider
 			childFeature == LogicPackage.Literals.MMP3__MPODCAST_SUBTITLE_PROPERTY ||
 			childFeature == LogicPackage.Literals.MMP3__MPODCAST_SUMMARY_PROPERTY ||
 			childFeature == LogicPackage.Literals.MMP3__MPODCAST_PUBLISHING_DATE_PROPERTY ||
-			childFeature == LogicPackage.Literals.MMP3__MPUBLISHED_FILE_NAME_PROPERTY;
+			childFeature == LogicPackage.Literals.MMP3__MPUBLISHED_FILE_NAME_PROPERTY ||
+			childFeature == LogicPackage.Literals.MMP3__MKEEP_PUBLISHED_PROPERTY;
 
 		if (qualify) {
 			return getString

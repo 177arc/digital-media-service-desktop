@@ -53,7 +53,7 @@ public class MStepItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final String copyright = "Copyright 2006, Marc Maier";
+	public static final String copyright = "Copyright 2007, Marc Maier";
 
 	/**
 	 * This constructs an instance from a factory and a notifier.
@@ -85,6 +85,7 @@ public class MStepItemProvider
 			addStoppablePropertyDescriptor(object);
 			addTerminatablePropertyDescriptor(object);
 			addActionNamePropertyDescriptor(object);
+			addActionIconFilePathPropertyDescriptor(object);
 			addExceptionPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
@@ -311,6 +312,28 @@ public class MStepItemProvider
 	}
 
 	/**
+	 * This adds a property descriptor for the Action Icon File Path feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addActionIconFilePathPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_MStep_actionIconFilePath_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_MStep_actionIconFilePath_feature", "_UI_MStep_type"),
+				 LogicPackage.Literals.MSTEP__ACTION_ICON_FILE_PATH,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This adds a property descriptor for the Exception feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -396,6 +419,7 @@ public class MStepItemProvider
 			case LogicPackage.MSTEP__STOPPABLE:
 			case LogicPackage.MSTEP__TERMINATABLE:
 			case LogicPackage.MSTEP__ACTION_NAME:
+			case LogicPackage.MSTEP__ACTION_ICON_FILE_PATH:
 			case LogicPackage.MSTEP__EXCEPTION:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;

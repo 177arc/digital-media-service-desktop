@@ -53,7 +53,7 @@ public class MUpdatePublishedMp3sStepItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final String copyright = "Copyright 2006, Marc Maier";
+	public static final String copyright = "Copyright 2007, Marc Maier";
 
 	/**
 	 * This constructs an instance from a factory and a notifier.
@@ -276,8 +276,13 @@ public class MUpdatePublishedMp3sStepItemProvider
 			childFeature == LogicPackage.Literals.MPUBLISH_MP3S_STEP__MPODCAST_FILE_PATH_PARAMETER ||
 			childFeature == LogicPackage.Literals.MPUBLISH_MP3S_STEP__MPODCAST_RELATIVE_FTP_PATH_PARAMETER ||
 			childFeature == LogicPackage.Literals.MPUBLISH_MP3S_STEP__MPODCAST_HEADER_FILE_PATH_PARAMETER ||
+			childFeature == LogicPackage.Literals.MPUBLISH_MP3S_STEP__MCONTENT_INCLUDE_MP3_PLAYER_PARAMETER ||
+			childFeature == LogicPackage.Literals.MPUBLISH_MP3S_STEP__MCONTENT_GROUP_RECORDINGS_PARAMETER ||
 			childFeature == LogicPackage.Literals.MUPDATE_PUBLISHED_MP3S_STEP__MREPUBLISH_MP3_FILES ||
-			childFeature == LogicPackage.Literals.MUPDATE_PUBLISHED_MP3S_STEP__MMP3_FOLDER_REFERENCE_PARAMETER;
+			childFeature == LogicPackage.Literals.MUPDATE_PUBLISHED_MP3S_STEP__MMP3_FOLDER_REFERENCE_PARAMETER ||
+			childFeature == LogicPackage.Literals.MPUBLISH_MP3S_STEP__MCONTENT_PAGE_URL_RESULT ||
+			childFeature == LogicPackage.Literals.MPUBLISH_MP3S_STEP__MPODCAST_FILE_URL_RESULT ||
+			childFeature == LogicPackage.Literals.MUPDATE_PUBLISHED_MP3S_STEP__MMP3_FOLDER_REFERENCE_RESULT;
 
 		if (qualify) {
 			return getString

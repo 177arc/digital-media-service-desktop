@@ -53,7 +53,7 @@ public class MPublishMp3sStepItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final String copyright = "Copyright 2006, Marc Maier";
+	public static final String copyright = "Copyright 2007, Marc Maier";
 
 	/**
 	 * This constructs an instance from a factory and a notifier.
@@ -85,6 +85,10 @@ public class MPublishMp3sStepItemProvider
 			addPodcastFilePathParameterPropertyDescriptor(object);
 			addPodcastRelativeFtpPathParameterPropertyDescriptor(object);
 			addPodcastHeaderFilePathParameterPropertyDescriptor(object);
+			addContentIncludeMp3PlayerParameterPropertyDescriptor(object);
+			addContentGroupRecordingsParameterPropertyDescriptor(object);
+			addContentPageUrlResultPropertyDescriptor(object);
+			addPodcastFileUrlResultPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -310,6 +314,94 @@ public class MPublishMp3sStepItemProvider
 	}
 
 	/**
+	 * This adds a property descriptor for the Content Include Mp3 Player Parameter feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addContentIncludeMp3PlayerParameterPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_MPublishMp3sStep_contentIncludeMp3PlayerParameter_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_MPublishMp3sStep_contentIncludeMp3PlayerParameter_feature", "_UI_MPublishMp3sStep_type"),
+				 LogicPackage.Literals.MPUBLISH_MP3S_STEP__CONTENT_INCLUDE_MP3_PLAYER_PARAMETER,
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Content Group Recordings Parameter feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addContentGroupRecordingsParameterPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_MPublishMp3sStep_contentGroupRecordingsParameter_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_MPublishMp3sStep_contentGroupRecordingsParameter_feature", "_UI_MPublishMp3sStep_type"),
+				 LogicPackage.Literals.MPUBLISH_MP3S_STEP__CONTENT_GROUP_RECORDINGS_PARAMETER,
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Content Page Url Result feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addContentPageUrlResultPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_MPublishMp3sStep_contentPageUrlResult_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_MPublishMp3sStep_contentPageUrlResult_feature", "_UI_MPublishMp3sStep_type"),
+				 LogicPackage.Literals.MPUBLISH_MP3S_STEP__CONTENT_PAGE_URL_RESULT,
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Podcast File Url Result feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addPodcastFileUrlResultPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_MPublishMp3sStep_podcastFileUrlResult_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_MPublishMp3sStep_podcastFileUrlResult_feature", "_UI_MPublishMp3sStep_type"),
+				 LogicPackage.Literals.MPUBLISH_MP3S_STEP__PODCAST_FILE_URL_RESULT,
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
 	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
@@ -330,6 +422,10 @@ public class MPublishMp3sStepItemProvider
 			childrenFeatures.add(LogicPackage.Literals.MPUBLISH_MP3S_STEP__MPODCAST_FILE_PATH_PARAMETER);
 			childrenFeatures.add(LogicPackage.Literals.MPUBLISH_MP3S_STEP__MPODCAST_RELATIVE_FTP_PATH_PARAMETER);
 			childrenFeatures.add(LogicPackage.Literals.MPUBLISH_MP3S_STEP__MPODCAST_HEADER_FILE_PATH_PARAMETER);
+			childrenFeatures.add(LogicPackage.Literals.MPUBLISH_MP3S_STEP__MCONTENT_INCLUDE_MP3_PLAYER_PARAMETER);
+			childrenFeatures.add(LogicPackage.Literals.MPUBLISH_MP3S_STEP__MCONTENT_GROUP_RECORDINGS_PARAMETER);
+			childrenFeatures.add(LogicPackage.Literals.MPUBLISH_MP3S_STEP__MCONTENT_PAGE_URL_RESULT);
+			childrenFeatures.add(LogicPackage.Literals.MPUBLISH_MP3S_STEP__MPODCAST_FILE_URL_RESULT);
 		}
 		return childrenFeatures;
 	}
@@ -390,6 +486,10 @@ public class MPublishMp3sStepItemProvider
 			case LogicPackage.MPUBLISH_MP3S_STEP__PODCAST_FILE_PATH_PARAMETER:
 			case LogicPackage.MPUBLISH_MP3S_STEP__PODCAST_RELATIVE_FTP_PATH_PARAMETER:
 			case LogicPackage.MPUBLISH_MP3S_STEP__PODCAST_HEADER_FILE_PATH_PARAMETER:
+			case LogicPackage.MPUBLISH_MP3S_STEP__CONTENT_INCLUDE_MP3_PLAYER_PARAMETER:
+			case LogicPackage.MPUBLISH_MP3S_STEP__CONTENT_GROUP_RECORDINGS_PARAMETER:
+			case LogicPackage.MPUBLISH_MP3S_STEP__CONTENT_PAGE_URL_RESULT:
+			case LogicPackage.MPUBLISH_MP3S_STEP__PODCAST_FILE_URL_RESULT:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case LogicPackage.MPUBLISH_MP3S_STEP__MMAXIUMUM_DISK_SPACE_PARAMETER:
@@ -402,6 +502,10 @@ public class MPublishMp3sStepItemProvider
 			case LogicPackage.MPUBLISH_MP3S_STEP__MPODCAST_FILE_PATH_PARAMETER:
 			case LogicPackage.MPUBLISH_MP3S_STEP__MPODCAST_RELATIVE_FTP_PATH_PARAMETER:
 			case LogicPackage.MPUBLISH_MP3S_STEP__MPODCAST_HEADER_FILE_PATH_PARAMETER:
+			case LogicPackage.MPUBLISH_MP3S_STEP__MCONTENT_INCLUDE_MP3_PLAYER_PARAMETER:
+			case LogicPackage.MPUBLISH_MP3S_STEP__MCONTENT_GROUP_RECORDINGS_PARAMETER:
+			case LogicPackage.MPUBLISH_MP3S_STEP__MCONTENT_PAGE_URL_RESULT:
+			case LogicPackage.MPUBLISH_MP3S_STEP__MPODCAST_FILE_URL_RESULT:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -467,6 +571,26 @@ public class MPublishMp3sStepItemProvider
 			(createChildParameter
 				(LogicPackage.Literals.MPUBLISH_MP3S_STEP__MPODCAST_HEADER_FILE_PATH_PARAMETER,
 				 LogicFactory.eINSTANCE.createMParameter()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(LogicPackage.Literals.MPUBLISH_MP3S_STEP__MCONTENT_INCLUDE_MP3_PLAYER_PARAMETER,
+				 LogicFactory.eINSTANCE.createMParameter()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(LogicPackage.Literals.MPUBLISH_MP3S_STEP__MCONTENT_GROUP_RECORDINGS_PARAMETER,
+				 LogicFactory.eINSTANCE.createMParameter()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(LogicPackage.Literals.MPUBLISH_MP3S_STEP__MCONTENT_PAGE_URL_RESULT,
+				 LogicFactory.eINSTANCE.createMResult()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(LogicPackage.Literals.MPUBLISH_MP3S_STEP__MPODCAST_FILE_URL_RESULT,
+				 LogicFactory.eINSTANCE.createMResult()));
 	}
 
 	/**
@@ -492,7 +616,11 @@ public class MPublishMp3sStepItemProvider
 			childFeature == LogicPackage.Literals.MPUBLISH_MP3S_STEP__MCONTENT_PAGE_FILE_PATH_PARAMETER ||
 			childFeature == LogicPackage.Literals.MPUBLISH_MP3S_STEP__MPODCAST_FILE_PATH_PARAMETER ||
 			childFeature == LogicPackage.Literals.MPUBLISH_MP3S_STEP__MPODCAST_RELATIVE_FTP_PATH_PARAMETER ||
-			childFeature == LogicPackage.Literals.MPUBLISH_MP3S_STEP__MPODCAST_HEADER_FILE_PATH_PARAMETER;
+			childFeature == LogicPackage.Literals.MPUBLISH_MP3S_STEP__MPODCAST_HEADER_FILE_PATH_PARAMETER ||
+			childFeature == LogicPackage.Literals.MPUBLISH_MP3S_STEP__MCONTENT_INCLUDE_MP3_PLAYER_PARAMETER ||
+			childFeature == LogicPackage.Literals.MPUBLISH_MP3S_STEP__MCONTENT_GROUP_RECORDINGS_PARAMETER ||
+			childFeature == LogicPackage.Literals.MPUBLISH_MP3S_STEP__MCONTENT_PAGE_URL_RESULT ||
+			childFeature == LogicPackage.Literals.MPUBLISH_MP3S_STEP__MPODCAST_FILE_URL_RESULT;
 
 		if (qualify) {
 			return getString

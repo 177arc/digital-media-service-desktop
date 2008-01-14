@@ -48,7 +48,7 @@ public class MElementItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final String copyright = "Copyright 2006, Marc Maier";
+	public static final String copyright = "Copyright 2007, Marc Maier";
 
 	/**
 	 * This constructs an instance from a factory and a notifier.
@@ -184,7 +184,7 @@ public class MElementItemProvider
 				 getString("_UI_MElement_iconFilePath_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_MElement_iconFilePath_feature", "_UI_MElement_type"),
 				 LogicPackage.Literals.MELEMENT__ICON_FILE_PATH,
-				 false,
+				 true,
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,

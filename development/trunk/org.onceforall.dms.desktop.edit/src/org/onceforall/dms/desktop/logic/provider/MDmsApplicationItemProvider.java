@@ -53,7 +53,7 @@ public class MDmsApplicationItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final String copyright = "Copyright 2006, Marc Maier";
+	public static final String copyright = "Copyright 2007, Marc Maier";
 
 	/**
 	 * This constructs an instance from a factory and a notifier.
@@ -807,6 +807,7 @@ public class MDmsApplicationItemProvider
 		Object childObject = child;
 
 		boolean qualify =
+			childFeature == LogicPackage.Literals.MAPPLICATION__MINFO_WEB_PAGE_PROPERTY ||
 			childFeature == LogicPackage.Literals.MAPPLICATION__MLAST_SAVE_PROPERTY ||
 			childFeature == LogicPackage.Literals.MDMS_APPLICATION__MSERVICE_FILE_PATH_PROPERTY ||
 			childFeature == LogicPackage.Literals.MDMS_APPLICATION__MWWX_FILES_PATH_PROPERTY ||

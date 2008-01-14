@@ -53,7 +53,7 @@ public class MPublishNewMp3StepItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final String copyright = "Copyright 2006, Marc Maier";
+	public static final String copyright = "Copyright 2007, Marc Maier";
 
 	/**
 	 * This constructs an instance from a factory and a notifier.
@@ -462,6 +462,8 @@ public class MPublishNewMp3StepItemProvider
 			childFeature == LogicPackage.Literals.MPUBLISH_MP3S_STEP__MPODCAST_FILE_PATH_PARAMETER ||
 			childFeature == LogicPackage.Literals.MPUBLISH_MP3S_STEP__MPODCAST_RELATIVE_FTP_PATH_PARAMETER ||
 			childFeature == LogicPackage.Literals.MPUBLISH_MP3S_STEP__MPODCAST_HEADER_FILE_PATH_PARAMETER ||
+			childFeature == LogicPackage.Literals.MPUBLISH_MP3S_STEP__MCONTENT_INCLUDE_MP3_PLAYER_PARAMETER ||
+			childFeature == LogicPackage.Literals.MPUBLISH_MP3S_STEP__MCONTENT_GROUP_RECORDINGS_PARAMETER ||
 			childFeature == LogicPackage.Literals.MPUBLISH_NEW_MP3_STEP__MMP3_ENTRY_REFERENCE_PARAMETER ||
 			childFeature == LogicPackage.Literals.MPUBLISH_NEW_MP3_STEP__MLINK_TEXT_PARAMETER ||
 			childFeature == LogicPackage.Literals.MPUBLISH_NEW_MP3_STEP__MLINK_DESCRIPTION_PARAMETER ||
@@ -469,7 +471,10 @@ public class MPublishNewMp3StepItemProvider
 			childFeature == LogicPackage.Literals.MPUBLISH_NEW_MP3_STEP__MPODCAST_TITLE_PARAMETER ||
 			childFeature == LogicPackage.Literals.MPUBLISH_NEW_MP3_STEP__MPODCAST_SUBTITLE_PARAMETER ||
 			childFeature == LogicPackage.Literals.MPUBLISH_NEW_MP3_STEP__MPODCAST_SUMMARY_PARAMETER ||
-			childFeature == LogicPackage.Literals.MPUBLISH_NEW_MP3_STEP__MPODCAST_PUBLISHING_DATE_PARAMETER;
+			childFeature == LogicPackage.Literals.MPUBLISH_NEW_MP3_STEP__MPODCAST_PUBLISHING_DATE_PARAMETER ||
+			childFeature == LogicPackage.Literals.MPUBLISH_MP3S_STEP__MCONTENT_PAGE_URL_RESULT ||
+			childFeature == LogicPackage.Literals.MPUBLISH_MP3S_STEP__MPODCAST_FILE_URL_RESULT ||
+			childFeature == LogicPackage.Literals.MPUBLISH_NEW_MP3_STEP__MPUBLISHED_MP3_ENTRY_REFERENCE_RESULT;
 
 		if (qualify) {
 			return getString

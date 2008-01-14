@@ -53,7 +53,7 @@ public class MApplicationItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final String copyright = "Copyright 2006, Marc Maier";
+	public static final String copyright = "Copyright 2007, Marc Maier";
 
 	/**
 	 * This constructs an instance from a factory and a notifier.
@@ -76,6 +76,7 @@ public class MApplicationItemProvider
 			super.getPropertyDescriptors(object);
 
 			addDataFilePropertyPropertyDescriptor(object);
+			addInfoWebPagePropertyPropertyDescriptor(object);
 			addDataFilePropertyHistoricValuesPropertyDescriptor(object);
 			addLogFilePropertyPropertyDescriptor(object);
 			addPathPropertyPropertyDescriptor(object);
@@ -100,6 +101,28 @@ public class MApplicationItemProvider
 				 getString("_UI_PropertyDescriptor_description", "_UI_MApplication_dataFileProperty_feature", "_UI_MApplication_type"),
 				 LogicPackage.Literals.MAPPLICATION__DATA_FILE_PROPERTY,
 				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Info Web Page Property feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addInfoWebPagePropertyPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_MApplication_infoWebPageProperty_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_MApplication_infoWebPageProperty_feature", "_UI_MApplication_type"),
+				 LogicPackage.Literals.MAPPLICATION__INFO_WEB_PAGE_PROPERTY,
+				 true,
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
@@ -229,6 +252,7 @@ public class MApplicationItemProvider
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(LogicPackage.Literals.MAPPLICATION__MDATA_FILE_PROPERTY);
+			childrenFeatures.add(LogicPackage.Literals.MAPPLICATION__MINFO_WEB_PAGE_PROPERTY);
 			childrenFeatures.add(LogicPackage.Literals.MAPPLICATION__MLOG_FILE_PROPERTY);
 			childrenFeatures.add(LogicPackage.Literals.MAPPLICATION__MPATH_PROPERTY);
 			childrenFeatures.add(LogicPackage.Literals.MAPPLICATION__MVERSION_PROPERTY);
@@ -274,6 +298,7 @@ public class MApplicationItemProvider
 
 		switch (notification.getFeatureID(MApplication.class)) {
 			case LogicPackage.MAPPLICATION__DATA_FILE_PROPERTY:
+			case LogicPackage.MAPPLICATION__INFO_WEB_PAGE_PROPERTY:
 			case LogicPackage.MAPPLICATION__DATA_FILE_PROPERTY_HISTORIC_VALUES:
 			case LogicPackage.MAPPLICATION__LOG_FILE_PROPERTY:
 			case LogicPackage.MAPPLICATION__PATH_PROPERTY:
@@ -282,6 +307,7 @@ public class MApplicationItemProvider
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case LogicPackage.MAPPLICATION__MDATA_FILE_PROPERTY:
+			case LogicPackage.MAPPLICATION__MINFO_WEB_PAGE_PROPERTY:
 			case LogicPackage.MAPPLICATION__MLOG_FILE_PROPERTY:
 			case LogicPackage.MAPPLICATION__MPATH_PROPERTY:
 			case LogicPackage.MAPPLICATION__MVERSION_PROPERTY:
@@ -304,8 +330,35 @@ public class MApplicationItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
+				(LogicPackage.Literals.MAPPLICATION__MINFO_WEB_PAGE_PROPERTY,
+				 LogicFactory.eINSTANCE.createMProperty()));
+
+		newChildDescriptors.add
+			(createChildParameter
 				(LogicPackage.Literals.MAPPLICATION__MLAST_SAVE_PROPERTY,
 				 LogicFactory.eINSTANCE.createMProperty()));
+	}
+
+	/**
+	 * This returns the label text for {@link org.eclipse.emf.edit.command.CreateChildCommand}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getCreateChildText(Object owner, Object feature, Object child, Collection selection) {
+		Object childFeature = feature;
+		Object childObject = child;
+
+		boolean qualify =
+			childFeature == LogicPackage.Literals.MAPPLICATION__MINFO_WEB_PAGE_PROPERTY ||
+			childFeature == LogicPackage.Literals.MAPPLICATION__MLAST_SAVE_PROPERTY;
+
+		if (qualify) {
+			return getString
+				("_UI_CreateChild_text2",
+				 new Object[] { getTypeText(childObject), getFeatureText(childFeature), getTypeText(owner) });
+		}
+		return super.getCreateChildText(owner, feature, child, selection);
 	}
 
 	/**
