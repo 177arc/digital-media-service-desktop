@@ -25,7 +25,7 @@ import org.onceforall.dms.desktop.logic.types.Type;
  *
  * @see org.onceforall.dms.desktop.logic.LogicPackage#getMCheckInputLevelsStep()
  * @model kind="class"
- *        annotation="http://www.onceforall.org/mcore name='Check input levels' description='Please make sure that the input level will not exceed the maximum and the recording is not distorted. Important: Use the sounddesk \'Recording computer\' input line to verify the audio quality.' iconFilePath='Image Files/Task.gif' actionName='Mark as completed' interruptable='false' stoppable='false' terminatable='false'"
+ *        annotation="http://www.onceforall.org/mcore name='Check input levels' description='Please make sure that the input level will not exceed the maximum and the recording is not distorted. Important: Use the sounddesk \'Recording computer\' input line to verify the audio quality.' iconFilePath='Image Files/Task.gif' actionName='Mark as completed' actionIconFilePath='Image Files/Mark as completed.gif' interruptable='false' stoppable='false' terminatable='false'"
  * @generated
  */
 public class MCheckInputLevelsStep extends MAudioStep {
@@ -42,7 +42,7 @@ public class MCheckInputLevelsStep extends MAudioStep {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final String copyright = "Copyright 2006, Marc Maier";
+	public static final String copyright = "Copyright 2007, Marc Maier";
 
 	/**
      * Adds a value type for this class.
@@ -53,6 +53,68 @@ public class MCheckInputLevelsStep extends MAudioStep {
 	static {
 		Type.VALUE_TYPES_BY_NAME.put("Reference to "+MCheckInputLevelsStep.TYPE_NAME, new ReferenceType("Reference to "+MCheckInputLevelsStep.TYPE_NAME, "Specifies a reference to a "+MCheckInputLevelsStep.TYPE_NAME_FOR_UI, MCheckInputLevelsStep.class));
 	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -133,7 +195,6 @@ public class MCheckInputLevelsStep extends MAudioStep {
 	public String getDefaultActionName() {
 		return "Mark as completed";
 	}
-
 	/**
 	 * Get the default value of the '{@link #isStoppable() <em>Stoppable</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -145,6 +206,19 @@ public class MCheckInputLevelsStep extends MAudioStep {
 	 */
 	public boolean getDefaultStoppable() {
 		return false;
+	}
+
+	/**
+	 * Get the default value of the '{@link #getActionIconFilePath() <em>Action Icon File Path</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return Returns the default value of the '{@link #getActionIconFilePath() <em>Action Icon File Path</em>}' attribute.
+	 * @see #getActionIconFilePath()
+	 * @generated
+	 * @ordered
+	 */
+	public File getDefaultActionIconFilePath() {
+		return (File)LogicFactory.eINSTANCE.createFromString(LogicPackage.eINSTANCE.getMFile(), "Image Files/Mark as completed.gif");
 	}
 
 	/**
@@ -211,6 +285,7 @@ public class MCheckInputLevelsStep extends MAudioStep {
 	public boolean getDefaultTerminatable() {
 		return false;
 	}
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -221,13 +296,14 @@ public class MCheckInputLevelsStep extends MAudioStep {
 		
 		firstMCheckInputLevelsStepConstructorHook();
 				
-		actionName = "Mark as completed";
-		stoppable = false;
-		iconFilePath = (File)LogicFactory.eINSTANCE.createFromString(LogicPackage.eINSTANCE.getMFile(), "Image Files/Task.gif");
 		description = "Please make sure that the input level will not exceed the maximum and the recording is not distorted. Important: Use the sounddesk \'Recording computer\' input line to verify the audio quality.";
+		stoppable = false;
+		actionIconFilePath = (File)LogicFactory.eINSTANCE.createFromString(LogicPackage.eINSTANCE.getMFile(), "Image Files/Mark as completed.gif");
 		name = "Check input levels";
-		interruptable = false;
+		iconFilePath = (File)LogicFactory.eINSTANCE.createFromString(LogicPackage.eINSTANCE.getMFile(), "Image Files/Task.gif");
 		terminatable = false;
+		interruptable = false;
+		actionName = "Mark as completed";
 		
 
 		lastMCheckInputLevelsStepConstructorHook();		
