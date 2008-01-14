@@ -12,12 +12,14 @@
 package org.onceforall.dms.desktop.ui;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.HashMap;
 import java.util.Map;
 
-
+import org.eclipse.swt.SWTException;
 import org.eclipse.swt.graphics.Image;
 import org.eclipse.swt.widgets.Display;
+import org.onceforall.dms.desktop.logging.Logger;
 import org.onceforall.dms.desktop.logic.MElement;
 
 /**
@@ -27,8 +29,18 @@ import org.onceforall.dms.desktop.logic.MElement;
  * @author Marc
  */
 public class IconFactory {
-	// Specifies the map that contains the already created icons, indexed by a combination of file path of the icon and the overlay icon.
+	/** Specifies the map that contains the already created icons, indexed by a combination of file path of the icon and the overlay icon. */
 	protected Map<String, Image> iconsByPaths = new HashMap<String, Image>();
+	
+	/** Specifies the only instance of this class. */
+	protected static IconFactory instance = new IconFactory();
+	
+	/**
+	 * Creates a new icon factory.
+	 */
+	private IconFactory() {
+		super();
+	}
 	
 	/**
 	 *  Gets the icon with the given file paths. If it does not exist, it creates it, 
@@ -64,20 +76,43 @@ public class IconFactory {
 		if(baseIconFilePath == null)
 			return null;
 		
-		Image icon = iconsByPaths.get(baseIconFilePath+"::"+overlayIconFilePath);
-		if(icon == null) {
-			if(overlayIconFilePath != null) {
-				OverlayImageDescriptor descriptor = new OverlayImageDescriptor(
-					new Image(Display.getCurrent(), baseIconFilePath.getPath()),
-					new Image(Display.getCurrent(), overlayIconFilePath.getPath()));
-				icon = descriptor.createImage();
+		Image icon = null;
+		try {
+			icon = iconsByPaths.get(baseIconFilePath+"::"+overlayIconFilePath);
+			if(icon == null) {
+				if(overlayIconFilePath != null) {
+					OverlayImageDescriptor descriptor = new OverlayImageDescriptor(
+						new Image(Display.getCurrent(), baseIconFilePath.getPath()),
+						new Image(Display.getCurrent(), overlayIconFilePath.getPath()));
+					icon = descriptor.createImage();
+				}
+				else
+					icon = new Image(Display.getCurrent(), baseIconFilePath.getPath());
+				
+				iconsByPaths.put(baseIconFilePath+"::"+overlayIconFilePath, icon);
 			}
-			else
-				icon = new Image(Display.getCurrent(), baseIconFilePath.getPath());
+		}
+		catch(SWTException exception) {
+			if(!(exception.getCause() instanceof FileNotFoundException))
+				throw exception;
+					
+			// Makes sure that missing icons do not terminate the application.
+			if(baseIconFilePath != null && !baseIconFilePath.exists())
+				Logger.getLogger().warning("No icon could be found at '"+baseIconFilePath.getAbsolutePath()+"'.");
 			
-			iconsByPaths.put(baseIconFilePath+"::"+overlayIconFilePath, icon);
+			if(overlayIconFilePath != null && !overlayIconFilePath.exists())
+				Logger.getLogger().warning("No icon could be found at '"+overlayIconFilePath.getAbsolutePath()+"'.");
 		}
 		
 		return icon;
+	}
+
+	/**
+	 * Gets the only instance of this class.
+	 * 
+	 * @return Returns  the only instance of this class.
+	 */
+	public static IconFactory getInstance() {
+		return instance;
 	}
 }
