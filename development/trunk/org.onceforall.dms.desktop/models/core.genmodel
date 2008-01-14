@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <genmodel:GenModel xmi:version="2.0"
     xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
-    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" copyrightText="Copyright 2006, Marc Maier"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" copyrightText="Copyright 2007, Marc Maier"
     modelDirectory="/org.onceforall.dms.desktop/src" editDirectory="/org.onceforall.dms.desktop.edit/src"
     modelPluginID="org.onceforall.dms.desktop" templateDirectory="/org.onceforall.dms.desktop/templates"
     dynamicTemplates="true" redirection="" modelName="DMSDesktop" modelPluginClass=""
@@ -29,7 +29,7 @@
       <genFeatures property="None" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MElement/nameForUI"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MElement/description"/>
       <genFeatures property="None" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MElement/descriptionForUI"/>
-      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MElement/iconFilePath"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MElement/iconFilePath"/>
       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MElement/overlayIconFilePath"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MElement/compositeClassName"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MElement/simulated"/>
@@ -60,6 +60,7 @@
       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MStep/stoppable"/>
       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MStep/terminatable"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MStep/actionName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MStep/actionIconFilePath"/>
       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MStep/exception"/>
     </genClasses>
     <genClasses image="false" ecoreClass="core.ecore#//MValue">
@@ -313,6 +314,14 @@
        <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MPublishMp3sStep/podcastRelativeFtpPathParameter"/>
        <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference core.ecore#//MPublishMp3sStep/MPodcastHeaderFilePathParameter"/>
        <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MPublishMp3sStep/podcastHeaderFilePathParameter"/>
+       <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference core.ecore#//MPublishMp3sStep/MContentIncludeMp3PlayerParameter"/>
+       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MPublishMp3sStep/contentIncludeMp3PlayerParameter"/>
+       <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference core.ecore#//MPublishMp3sStep/MContentGroupRecordingsParameter"/>
+       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MPublishMp3sStep/contentGroupRecordingsParameter"/>
+       <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference core.ecore#//MPublishMp3sStep/MContentPageUrlResult"/>
+       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MPublishMp3sStep/contentPageUrlResult"/>
+       <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference core.ecore#//MPublishMp3sStep/MPodcastFileUrlResult"/>
+       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MPublishMp3sStep/podcastFileUrlResult"/>
     </genClasses>
     <genClasses ecoreClass="core.ecore#//MUpdatePublishedMp3sStep">
        <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference core.ecore#//MUpdatePublishedMp3sStep/MRepublishMp3Files"/>
@@ -389,6 +398,8 @@
        <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MMp3/podcastPublishingDateProperty"/>
        <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference core.ecore#//MMp3/MPublishedFileNameProperty"/>
        <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MMp3/publishedFileNameProperty"/>
+       <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference core.ecore#//MMp3/MKeepPublishedProperty"/>
+       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MMp3/keepPublishedProperty"/>
     </genClasses>
     <genClasses ecoreClass="core.ecore#//MBurnCdStep">
        <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference core.ecore#//MBurnCdStep/MRecordingFilesParameter"/>
