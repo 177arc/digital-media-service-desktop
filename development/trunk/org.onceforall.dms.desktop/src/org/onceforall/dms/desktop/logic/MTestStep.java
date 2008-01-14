@@ -7,6 +7,8 @@
  */
 package org.onceforall.dms.desktop.logic;
 
+import java.io.File;
+
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
@@ -33,7 +35,7 @@ import org.onceforall.dms.desktop.logic.types.Type;
  *
  * @see org.onceforall.dms.desktop.logic.LogicPackage#getMTestStep()
  * @model kind="class"
- *        annotation="http://www.onceforall.org/mcore name='Test' description='Serves as test step for automatic tests.' actionName='Test' interruptable='false' stoppable='false' terminatable='false'"
+ *        annotation="http://www.onceforall.org/mcore name='Test' description='Serves as test step for automatic tests.' actionName='Test' actionIconFilePath='Image Files\\Mark as completed.gif' interruptable='false' stoppable='false' terminatable='false'"
  * @generated
  */
 public class MTestStep extends MStep {
@@ -50,7 +52,7 @@ public class MTestStep extends MStep {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final String copyright = "Copyright 2006, Marc Maier";
+	public static final String copyright = "Copyright 2007, Marc Maier";
 
 	/**
      * Adds a value type for this class.
@@ -173,7 +175,6 @@ public class MTestStep extends MStep {
 	public boolean getDefaultTerminatable() {
 		return false;
 	}
-
 	/**
 	 * Get the default value of the '{@link #getDescription() <em>Description</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -214,6 +215,19 @@ public class MTestStep extends MStep {
 	}
 
 	/**
+	 * Get the default value of the '{@link #getActionIconFilePath() <em>Action Icon File Path</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return Returns the default value of the '{@link #getActionIconFilePath() <em>Action Icon File Path</em>}' attribute.
+	 * @see #getActionIconFilePath()
+	 * @generated
+	 * @ordered
+	 */
+	public File getDefaultActionIconFilePath() {
+		return (File)LogicFactory.eINSTANCE.createFromString(LogicPackage.eINSTANCE.getMFile(), "Image Files\\Mark as completed.gif");
+	}
+
+	/**
 	 * Get the default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -225,6 +239,7 @@ public class MTestStep extends MStep {
 	public String getDefaultName() {
 		return "Test";
 	}
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -235,12 +250,13 @@ public class MTestStep extends MStep {
 		
 		firstMTestStepConstructorHook();
 				
+		actionName = "Test";
+		actionIconFilePath = (File)LogicFactory.eINSTANCE.createFromString(LogicPackage.eINSTANCE.getMFile(), "Image Files\\Mark as completed.gif");
+		stoppable = false;
+		description = "Serves as test step for automatic tests.";
+		name = "Test";
 		interruptable = false;
 		terminatable = false;
-		description = "Serves as test step for automatic tests.";
-		stoppable = false;
-		actionName = "Test";
-		name = "Test";
 					 
 		setMPersistentStringParameter(new MParameter(false, "Persistent string", "Specifies a string that is saved with the application data.", null));			 
 		setMStringParameter(new MParameter(false, "String", "Specifies a string that is not saved with the application data.", null));
