@@ -51,7 +51,7 @@ import org.onceforall.dms.desktop.logic.types.Type;
  *
  * @see org.onceforall.dms.desktop.logic.LogicPackage#getMRecordStep()
  * @model kind="class"
- *        annotation="http://www.onceforall.org/mcore name='Record' description='Records from the main audio input line to an uncompressed WAV file. Please make sure that the input level will not exceed the maximum.' iconFilePath='Image Files/Record step.gif' actionName='Record' interruptable='true' stoppable='true' terminatable='false'"
+ *        annotation="http://www.onceforall.org/mcore name='Record' description='Records from the main audio input line to an uncompressed WAV file. Please make sure that the input level will not exceed the maximum.' iconFilePath='Image Files/Record step.gif' actionName='Record' actionIconFilePath='Image Files/Record.gif' interruptable='true' stoppable='true' terminatable='false'"
  * @generated
  */
 public class MRecordStep extends MAudioStep {
@@ -68,7 +68,7 @@ public class MRecordStep extends MAudioStep {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final String copyright = "Copyright 2006, Marc Maier";
+	public static final String copyright = "Copyright 2007, Marc Maier";
 
 	/**
      * Adds a value type for this class.
@@ -306,7 +306,6 @@ public class MRecordStep extends MAudioStep {
 	public String getDefaultActionName() {
 		return "Record";
 	}
-
 	/**
 	 * Get the default value of the '{@link #isStoppable() <em>Stoppable</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -318,6 +317,19 @@ public class MRecordStep extends MAudioStep {
 	 */
 	public boolean getDefaultStoppable() {
 		return true;
+	}
+
+	/**
+	 * Get the default value of the '{@link #getActionIconFilePath() <em>Action Icon File Path</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return Returns the default value of the '{@link #getActionIconFilePath() <em>Action Icon File Path</em>}' attribute.
+	 * @see #getActionIconFilePath()
+	 * @generated
+	 * @ordered
+	 */
+	public File getDefaultActionIconFilePath() {
+		return (File)LogicFactory.eINSTANCE.createFromString(LogicPackage.eINSTANCE.getMFile(), "Image Files/Record.gif");
 	}
 
 	/**
@@ -384,6 +396,7 @@ public class MRecordStep extends MAudioStep {
 	public boolean getDefaultTerminatable() {
 		return false;
 	}
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -394,13 +407,14 @@ public class MRecordStep extends MAudioStep {
 		
 		firstMRecordStepConstructorHook();
 				
-		actionName = "Record";
-		stoppable = true;
-		iconFilePath = (File)LogicFactory.eINSTANCE.createFromString(LogicPackage.eINSTANCE.getMFile(), "Image Files/Record step.gif");
 		description = "Records from the main audio input line to an uncompressed WAV file. Please make sure that the input level will not exceed the maximum.";
+		stoppable = true;
+		actionIconFilePath = (File)LogicFactory.eINSTANCE.createFromString(LogicPackage.eINSTANCE.getMFile(), "Image Files/Record.gif");
 		name = "Record";
-		interruptable = true;
+		iconFilePath = (File)LogicFactory.eINSTANCE.createFromString(LogicPackage.eINSTANCE.getMFile(), "Image Files/Record step.gif");
 		terminatable = false;
+		interruptable = true;
+		actionName = "Record";
 					 
 		setMDirectoryParameter(new MParameter(false, "Directory", "Specifies the path of the created directory where the recordings will be stored.", null));			 
 		setMRecordingFileParameter(new MParameter(false, "Recording file", "Specifies the name of the WAVE file to be recorded.", null));			 

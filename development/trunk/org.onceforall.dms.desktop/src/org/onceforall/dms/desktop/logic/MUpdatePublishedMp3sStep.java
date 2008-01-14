@@ -12,6 +12,8 @@ package org.onceforall.dms.desktop.logic;
 
 
 
+import java.io.File;
+
 import org.apache.commons.net.ftp.FTPClient;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -43,7 +45,7 @@ import org.onceforall.dms.desktop.logic.types.Type;
  *
  * @see org.onceforall.dms.desktop.logic.LogicPackage#getMUpdatePublishedMp3sStep()
  * @model kind="class"
- *        annotation="http://www.onceforall.org/mcore name='Update published MP3s' description='Updates the published MP3 recordings on the Christ Chruch Bromley web site and updates the podcast RSS file accordingly. It reads the states of the MP3 entries to determine whether to publish or unpublish.' actionName='Update published MP3s' interruptable='false' stoppable='false' terminatable='false'"
+ *        annotation="http://www.onceforall.org/mcore name='Update published MP3s' description='Updates the published MP3 recordings on the Christ Chruch Bromley web site and updates the podcast RSS file accordingly. It reads the states of the MP3 entries to determine whether to publish or unpublish.' actionName='Update published MP3s' actionIconFilePath='Image Files/Publish.gif' interruptable='false' stoppable='false' terminatable='false'"
  * @generated
  */
 public class MUpdatePublishedMp3sStep extends MPublishMp3sStep {
@@ -60,7 +62,7 @@ public class MUpdatePublishedMp3sStep extends MPublishMp3sStep {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final String copyright = "Copyright 2006, Marc Maier";
+	public static final String copyright = "Copyright 2007, Marc Maier";
 
 	/**
      * Adds a value type for this class.
@@ -179,7 +181,6 @@ public class MUpdatePublishedMp3sStep extends MPublishMp3sStep {
 	public boolean getDefaultTerminatable() {
 		return false;
 	}
-
 	/**
 	 * Get the default value of the '{@link #getDescription() <em>Description</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -220,6 +221,19 @@ public class MUpdatePublishedMp3sStep extends MPublishMp3sStep {
 	}
 
 	/**
+	 * Get the default value of the '{@link #getActionIconFilePath() <em>Action Icon File Path</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return Returns the default value of the '{@link #getActionIconFilePath() <em>Action Icon File Path</em>}' attribute.
+	 * @see #getActionIconFilePath()
+	 * @generated
+	 * @ordered
+	 */
+	public File getDefaultActionIconFilePath() {
+		return (File)LogicFactory.eINSTANCE.createFromString(LogicPackage.eINSTANCE.getMFile(), "Image Files/Publish.gif");
+	}
+
+	/**
 	 * Get the default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -231,6 +245,7 @@ public class MUpdatePublishedMp3sStep extends MPublishMp3sStep {
 	public String getDefaultName() {
 		return "Update published MP3s";
 	}
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -241,12 +256,13 @@ public class MUpdatePublishedMp3sStep extends MPublishMp3sStep {
 		
 		firstMUpdatePublishedMp3sStepConstructorHook();
 				
+		actionName = "Update published MP3s";
+		actionIconFilePath = (File)LogicFactory.eINSTANCE.createFromString(LogicPackage.eINSTANCE.getMFile(), "Image Files/Publish.gif");
+		stoppable = false;
+		description = "Updates the published MP3 recordings on the Christ Chruch Bromley web site and updates the podcast RSS file accordingly. It reads the states of the MP3 entries to determine whether to publish or unpublish.";
+		name = "Update published MP3s";
 		interruptable = false;
 		terminatable = false;
-		description = "Updates the published MP3 recordings on the Christ Chruch Bromley web site and updates the podcast RSS file accordingly. It reads the states of the MP3 entries to determine whether to publish or unpublish.";
-		stoppable = false;
-		actionName = "Update published MP3s";
-		name = "Update published MP3s";
 					 
 		setMRepublishMp3Files(new MParameter(false, "Republish MP3 files", "Specifies whether all already published MP3 files should be uploaded to the web site again.", null));			 
 		setMMp3FolderReferenceParameter(new MParameter(false, "MP3 folder reference", "Speficies a reference to the MP3 folder that contains the MP3 entries to be published or unpublished.", null));			 
