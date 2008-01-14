@@ -50,7 +50,7 @@ public class LogicPackage extends EPackageImpl {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final String copyright = "Copyright 2006, Marc Maier";
+	public static final String copyright = "Copyright 2007, Marc Maier";
 
 	/**
 	 * The package name.
@@ -1488,13 +1488,22 @@ public class LogicPackage extends EPackageImpl {
 	public static final int MSTEP__ACTION_NAME = MSTATEFUL_OBJECT_FEATURE_COUNT + 14;
 
 	/**
+	 * The feature id for the '<em><b>Action Icon File Path</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MSTEP__ACTION_ICON_FILE_PATH = MSTATEFUL_OBJECT_FEATURE_COUNT + 15;
+
+	/**
 	 * The feature id for the '<em><b>Exception</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	public static final int MSTEP__EXCEPTION = MSTATEFUL_OBJECT_FEATURE_COUNT + 15;
+	public static final int MSTEP__EXCEPTION = MSTATEFUL_OBJECT_FEATURE_COUNT + 16;
 
 	/**
 	 * The number of structural features of the '<em>MStep</em>' class.
@@ -1503,7 +1512,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int MSTEP_FEATURE_COUNT = MSTATEFUL_OBJECT_FEATURE_COUNT + 16;
+	public static final int MSTEP_FEATURE_COUNT = MSTATEFUL_OBJECT_FEATURE_COUNT + 17;
 
 	/**
 	 * The meta object id for the '{@link org.onceforall.dms.desktop.logic.MApplication <em>MApplication</em>}' class.
@@ -1669,13 +1678,31 @@ public class LogicPackage extends EPackageImpl {
 	public static final int MAPPLICATION__DATA_FILE_PROPERTY = MOBJECT_FEATURE_COUNT + 1;
 
 	/**
+	 * The feature id for the '<em><b>Info Web Page Property</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MAPPLICATION__INFO_WEB_PAGE_PROPERTY = MOBJECT_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>MInfo Web Page Property</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MAPPLICATION__MINFO_WEB_PAGE_PROPERTY = MOBJECT_FEATURE_COUNT + 3;
+
+	/**
 	 * The feature id for the '<em><b>Data File Property Historic Values</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	public static final int MAPPLICATION__DATA_FILE_PROPERTY_HISTORIC_VALUES = MOBJECT_FEATURE_COUNT + 2;
+	public static final int MAPPLICATION__DATA_FILE_PROPERTY_HISTORIC_VALUES = MOBJECT_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>MLog File Property</b></em>' containment reference.
@@ -1684,7 +1711,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int MAPPLICATION__MLOG_FILE_PROPERTY = MOBJECT_FEATURE_COUNT + 3;
+	public static final int MAPPLICATION__MLOG_FILE_PROPERTY = MOBJECT_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Log File Property</b></em>' attribute.
@@ -1693,7 +1720,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int MAPPLICATION__LOG_FILE_PROPERTY = MOBJECT_FEATURE_COUNT + 4;
+	public static final int MAPPLICATION__LOG_FILE_PROPERTY = MOBJECT_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>MPath Property</b></em>' containment reference.
@@ -1702,7 +1729,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int MAPPLICATION__MPATH_PROPERTY = MOBJECT_FEATURE_COUNT + 5;
+	public static final int MAPPLICATION__MPATH_PROPERTY = MOBJECT_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Path Property</b></em>' attribute.
@@ -1711,7 +1738,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int MAPPLICATION__PATH_PROPERTY = MOBJECT_FEATURE_COUNT + 6;
+	public static final int MAPPLICATION__PATH_PROPERTY = MOBJECT_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>MVersion Property</b></em>' containment reference.
@@ -1720,7 +1747,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int MAPPLICATION__MVERSION_PROPERTY = MOBJECT_FEATURE_COUNT + 7;
+	public static final int MAPPLICATION__MVERSION_PROPERTY = MOBJECT_FEATURE_COUNT + 9;
 
 	/**
 	 * The feature id for the '<em><b>Version Property</b></em>' attribute.
@@ -1729,7 +1756,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int MAPPLICATION__VERSION_PROPERTY = MOBJECT_FEATURE_COUNT + 8;
+	public static final int MAPPLICATION__VERSION_PROPERTY = MOBJECT_FEATURE_COUNT + 10;
 
 	/**
 	 * The feature id for the '<em><b>MLast Save Property</b></em>' containment reference.
@@ -1738,7 +1765,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int MAPPLICATION__MLAST_SAVE_PROPERTY = MOBJECT_FEATURE_COUNT + 9;
+	public static final int MAPPLICATION__MLAST_SAVE_PROPERTY = MOBJECT_FEATURE_COUNT + 11;
 
 	/**
 	 * The feature id for the '<em><b>Last Save Property</b></em>' attribute.
@@ -1747,7 +1774,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int MAPPLICATION__LAST_SAVE_PROPERTY = MOBJECT_FEATURE_COUNT + 10;
+	public static final int MAPPLICATION__LAST_SAVE_PROPERTY = MOBJECT_FEATURE_COUNT + 12;
 
 	/**
 	 * The number of structural features of the '<em>MApplication</em>' class.
@@ -1756,7 +1783,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int MAPPLICATION_FEATURE_COUNT = MOBJECT_FEATURE_COUNT + 11;
+	public static final int MAPPLICATION_FEATURE_COUNT = MOBJECT_FEATURE_COUNT + 13;
 
 	/**
 	 * The meta object id for the '{@link org.onceforall.dms.desktop.logic.MScript <em>MScript</em>}' class.
@@ -2155,6 +2182,24 @@ public class LogicPackage extends EPackageImpl {
 	 * @ordered
 	 */
 	public static final int MDMS_APPLICATION__DATA_FILE_PROPERTY = MAPPLICATION__DATA_FILE_PROPERTY;
+
+	/**
+	 * The feature id for the '<em><b>Info Web Page Property</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MDMS_APPLICATION__INFO_WEB_PAGE_PROPERTY = MAPPLICATION__INFO_WEB_PAGE_PROPERTY;
+
+	/**
+	 * The feature id for the '<em><b>MInfo Web Page Property</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MDMS_APPLICATION__MINFO_WEB_PAGE_PROPERTY = MAPPLICATION__MINFO_WEB_PAGE_PROPERTY;
 
 	/**
 	 * The feature id for the '<em><b>Data File Property Historic Values</b></em>' attribute list.
@@ -2914,6 +2959,15 @@ public class LogicPackage extends EPackageImpl {
 	public static final int MENTER_INFORMATION_STEP__ACTION_NAME = MSTEP__ACTION_NAME;
 
 	/**
+	 * The feature id for the '<em><b>Action Icon File Path</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MENTER_INFORMATION_STEP__ACTION_ICON_FILE_PATH = MSTEP__ACTION_ICON_FILE_PATH;
+
+	/**
 	 * The feature id for the '<em><b>Exception</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3237,6 +3291,15 @@ public class LogicPackage extends EPackageImpl {
 	 * @ordered
 	 */
 	public static final int MENTER_WWX_INFORMATION_STEP__ACTION_NAME = MENTER_INFORMATION_STEP__ACTION_NAME;
+
+	/**
+	 * The feature id for the '<em><b>Action Icon File Path</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MENTER_WWX_INFORMATION_STEP__ACTION_ICON_FILE_PATH = MENTER_INFORMATION_STEP__ACTION_ICON_FILE_PATH;
 
 	/**
 	 * The feature id for the '<em><b>Exception</b></em>' attribute.
@@ -3816,6 +3879,15 @@ public class LogicPackage extends EPackageImpl {
 	public static final int MENTER_SERVICE_INFORMATION_STEP__ACTION_NAME = MENTER_INFORMATION_STEP__ACTION_NAME;
 
 	/**
+	 * The feature id for the '<em><b>Action Icon File Path</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MENTER_SERVICE_INFORMATION_STEP__ACTION_ICON_FILE_PATH = MENTER_INFORMATION_STEP__ACTION_ICON_FILE_PATH;
+
+	/**
 	 * The feature id for the '<em><b>Exception</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4384,6 +4456,15 @@ public class LogicPackage extends EPackageImpl {
 	public static final int MCREATE_DIRECTORY_STEP__ACTION_NAME = MSTEP__ACTION_NAME;
 
 	/**
+	 * The feature id for the '<em><b>Action Icon File Path</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MCREATE_DIRECTORY_STEP__ACTION_ICON_FILE_PATH = MSTEP__ACTION_ICON_FILE_PATH;
+
+	/**
 	 * The feature id for the '<em><b>Exception</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4772,6 +4853,15 @@ public class LogicPackage extends EPackageImpl {
 	public static final int MCHECK_FREE_DISK_SPACE_STEP__ACTION_NAME = MSTEP__ACTION_NAME;
 
 	/**
+	 * The feature id for the '<em><b>Action Icon File Path</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MCHECK_FREE_DISK_SPACE_STEP__ACTION_ICON_FILE_PATH = MSTEP__ACTION_ICON_FILE_PATH;
+
+	/**
 	 * The feature id for the '<em><b>Exception</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -5149,6 +5239,15 @@ public class LogicPackage extends EPackageImpl {
 	 * @ordered
 	 */
 	public static final int MAUDIO_STEP__ACTION_NAME = MSTEP__ACTION_NAME;
+
+	/**
+	 * The feature id for the '<em><b>Action Icon File Path</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MAUDIO_STEP__ACTION_ICON_FILE_PATH = MSTEP__ACTION_ICON_FILE_PATH;
 
 	/**
 	 * The feature id for the '<em><b>Exception</b></em>' attribute.
@@ -5584,6 +5683,15 @@ public class LogicPackage extends EPackageImpl {
 	public static final int MCHECK_INPUT_LEVELS_STEP__ACTION_NAME = MAUDIO_STEP__ACTION_NAME;
 
 	/**
+	 * The feature id for the '<em><b>Action Icon File Path</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MCHECK_INPUT_LEVELS_STEP__ACTION_ICON_FILE_PATH = MAUDIO_STEP__ACTION_ICON_FILE_PATH;
+
+	/**
 	 * The feature id for the '<em><b>Exception</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -6015,6 +6123,15 @@ public class LogicPackage extends EPackageImpl {
 	 * @ordered
 	 */
 	public static final int MRECORD_STEP__ACTION_NAME = MAUDIO_STEP__ACTION_NAME;
+
+	/**
+	 * The feature id for the '<em><b>Action Icon File Path</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MRECORD_STEP__ACTION_ICON_FILE_PATH = MAUDIO_STEP__ACTION_ICON_FILE_PATH;
 
 	/**
 	 * The feature id for the '<em><b>Exception</b></em>' attribute.
@@ -6538,6 +6655,15 @@ public class LogicPackage extends EPackageImpl {
 	 * @ordered
 	 */
 	public static final int MCONVERT_TO_MP3_STEP__ACTION_NAME = MSTEP__ACTION_NAME;
+
+	/**
+	 * The feature id for the '<em><b>Action Icon File Path</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MCONVERT_TO_MP3_STEP__ACTION_ICON_FILE_PATH = MSTEP__ACTION_ICON_FILE_PATH;
 
 	/**
 	 * The feature id for the '<em><b>Exception</b></em>' attribute.
@@ -7151,6 +7277,15 @@ public class LogicPackage extends EPackageImpl {
 	public static final int MFTP_STEP__ACTION_NAME = MSTEP__ACTION_NAME;
 
 	/**
+	 * The feature id for the '<em><b>Action Icon File Path</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MFTP_STEP__ACTION_ICON_FILE_PATH = MSTEP__ACTION_ICON_FILE_PATH;
+
+	/**
 	 * The feature id for the '<em><b>Exception</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -7520,6 +7655,15 @@ public class LogicPackage extends EPackageImpl {
 	public static final int MPUBLISH_MP3S_STEP__ACTION_NAME = MFTP_STEP__ACTION_NAME;
 
 	/**
+	 * The feature id for the '<em><b>Action Icon File Path</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MPUBLISH_MP3S_STEP__ACTION_ICON_FILE_PATH = MFTP_STEP__ACTION_ICON_FILE_PATH;
+
+	/**
 	 * The feature id for the '<em><b>Exception</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -7763,13 +7907,85 @@ public class LogicPackage extends EPackageImpl {
 	public static final int MPUBLISH_MP3S_STEP__PODCAST_HEADER_FILE_PATH_PARAMETER = MFTP_STEP_FEATURE_COUNT + 19;
 
 	/**
+	 * The feature id for the '<em><b>MContent Include Mp3 Player Parameter</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MPUBLISH_MP3S_STEP__MCONTENT_INCLUDE_MP3_PLAYER_PARAMETER = MFTP_STEP_FEATURE_COUNT + 20;
+
+	/**
+	 * The feature id for the '<em><b>Content Include Mp3 Player Parameter</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MPUBLISH_MP3S_STEP__CONTENT_INCLUDE_MP3_PLAYER_PARAMETER = MFTP_STEP_FEATURE_COUNT + 21;
+
+	/**
+	 * The feature id for the '<em><b>MContent Group Recordings Parameter</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MPUBLISH_MP3S_STEP__MCONTENT_GROUP_RECORDINGS_PARAMETER = MFTP_STEP_FEATURE_COUNT + 22;
+
+	/**
+	 * The feature id for the '<em><b>Content Group Recordings Parameter</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MPUBLISH_MP3S_STEP__CONTENT_GROUP_RECORDINGS_PARAMETER = MFTP_STEP_FEATURE_COUNT + 23;
+
+	/**
+	 * The feature id for the '<em><b>MContent Page Url Result</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MPUBLISH_MP3S_STEP__MCONTENT_PAGE_URL_RESULT = MFTP_STEP_FEATURE_COUNT + 24;
+
+	/**
+	 * The feature id for the '<em><b>Content Page Url Result</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MPUBLISH_MP3S_STEP__CONTENT_PAGE_URL_RESULT = MFTP_STEP_FEATURE_COUNT + 25;
+
+	/**
+	 * The feature id for the '<em><b>MPodcast File Url Result</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MPUBLISH_MP3S_STEP__MPODCAST_FILE_URL_RESULT = MFTP_STEP_FEATURE_COUNT + 26;
+
+	/**
+	 * The feature id for the '<em><b>Podcast File Url Result</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MPUBLISH_MP3S_STEP__PODCAST_FILE_URL_RESULT = MFTP_STEP_FEATURE_COUNT + 27;
+
+	/**
 	 * The number of structural features of the '<em>MPublish Mp3s Step</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	public static final int MPUBLISH_MP3S_STEP_FEATURE_COUNT = MFTP_STEP_FEATURE_COUNT + 20;
+	public static final int MPUBLISH_MP3S_STEP_FEATURE_COUNT = MFTP_STEP_FEATURE_COUNT + 28;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -8069,6 +8285,15 @@ public class LogicPackage extends EPackageImpl {
 	public static final int MUPDATE_PUBLISHED_MP3S_STEP__ACTION_NAME = MPUBLISH_MP3S_STEP__ACTION_NAME;
 
 	/**
+	 * The feature id for the '<em><b>Action Icon File Path</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MUPDATE_PUBLISHED_MP3S_STEP__ACTION_ICON_FILE_PATH = MPUBLISH_MP3S_STEP__ACTION_ICON_FILE_PATH;
+
+	/**
 	 * The feature id for the '<em><b>Exception</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -8310,6 +8535,78 @@ public class LogicPackage extends EPackageImpl {
 	 * @ordered
 	 */
 	public static final int MUPDATE_PUBLISHED_MP3S_STEP__PODCAST_HEADER_FILE_PATH_PARAMETER = MPUBLISH_MP3S_STEP__PODCAST_HEADER_FILE_PATH_PARAMETER;
+
+	/**
+	 * The feature id for the '<em><b>MContent Include Mp3 Player Parameter</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MUPDATE_PUBLISHED_MP3S_STEP__MCONTENT_INCLUDE_MP3_PLAYER_PARAMETER = MPUBLISH_MP3S_STEP__MCONTENT_INCLUDE_MP3_PLAYER_PARAMETER;
+
+	/**
+	 * The feature id for the '<em><b>Content Include Mp3 Player Parameter</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MUPDATE_PUBLISHED_MP3S_STEP__CONTENT_INCLUDE_MP3_PLAYER_PARAMETER = MPUBLISH_MP3S_STEP__CONTENT_INCLUDE_MP3_PLAYER_PARAMETER;
+
+	/**
+	 * The feature id for the '<em><b>MContent Group Recordings Parameter</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MUPDATE_PUBLISHED_MP3S_STEP__MCONTENT_GROUP_RECORDINGS_PARAMETER = MPUBLISH_MP3S_STEP__MCONTENT_GROUP_RECORDINGS_PARAMETER;
+
+	/**
+	 * The feature id for the '<em><b>Content Group Recordings Parameter</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MUPDATE_PUBLISHED_MP3S_STEP__CONTENT_GROUP_RECORDINGS_PARAMETER = MPUBLISH_MP3S_STEP__CONTENT_GROUP_RECORDINGS_PARAMETER;
+
+	/**
+	 * The feature id for the '<em><b>MContent Page Url Result</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MUPDATE_PUBLISHED_MP3S_STEP__MCONTENT_PAGE_URL_RESULT = MPUBLISH_MP3S_STEP__MCONTENT_PAGE_URL_RESULT;
+
+	/**
+	 * The feature id for the '<em><b>Content Page Url Result</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MUPDATE_PUBLISHED_MP3S_STEP__CONTENT_PAGE_URL_RESULT = MPUBLISH_MP3S_STEP__CONTENT_PAGE_URL_RESULT;
+
+	/**
+	 * The feature id for the '<em><b>MPodcast File Url Result</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MUPDATE_PUBLISHED_MP3S_STEP__MPODCAST_FILE_URL_RESULT = MPUBLISH_MP3S_STEP__MPODCAST_FILE_URL_RESULT;
+
+	/**
+	 * The feature id for the '<em><b>Podcast File Url Result</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MUPDATE_PUBLISHED_MP3S_STEP__PODCAST_FILE_URL_RESULT = MPUBLISH_MP3S_STEP__PODCAST_FILE_URL_RESULT;
 
 	/**
 	 * The feature id for the '<em><b>MRepublish Mp3 Files</b></em>' containment reference.
@@ -8672,6 +8969,15 @@ public class LogicPackage extends EPackageImpl {
 	public static final int MPUBLISH_NEW_MP3_STEP__ACTION_NAME = MPUBLISH_MP3S_STEP__ACTION_NAME;
 
 	/**
+	 * The feature id for the '<em><b>Action Icon File Path</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MPUBLISH_NEW_MP3_STEP__ACTION_ICON_FILE_PATH = MPUBLISH_MP3S_STEP__ACTION_ICON_FILE_PATH;
+
+	/**
 	 * The feature id for the '<em><b>Exception</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -8913,6 +9219,78 @@ public class LogicPackage extends EPackageImpl {
 	 * @ordered
 	 */
 	public static final int MPUBLISH_NEW_MP3_STEP__PODCAST_HEADER_FILE_PATH_PARAMETER = MPUBLISH_MP3S_STEP__PODCAST_HEADER_FILE_PATH_PARAMETER;
+
+	/**
+	 * The feature id for the '<em><b>MContent Include Mp3 Player Parameter</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MPUBLISH_NEW_MP3_STEP__MCONTENT_INCLUDE_MP3_PLAYER_PARAMETER = MPUBLISH_MP3S_STEP__MCONTENT_INCLUDE_MP3_PLAYER_PARAMETER;
+
+	/**
+	 * The feature id for the '<em><b>Content Include Mp3 Player Parameter</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MPUBLISH_NEW_MP3_STEP__CONTENT_INCLUDE_MP3_PLAYER_PARAMETER = MPUBLISH_MP3S_STEP__CONTENT_INCLUDE_MP3_PLAYER_PARAMETER;
+
+	/**
+	 * The feature id for the '<em><b>MContent Group Recordings Parameter</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MPUBLISH_NEW_MP3_STEP__MCONTENT_GROUP_RECORDINGS_PARAMETER = MPUBLISH_MP3S_STEP__MCONTENT_GROUP_RECORDINGS_PARAMETER;
+
+	/**
+	 * The feature id for the '<em><b>Content Group Recordings Parameter</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MPUBLISH_NEW_MP3_STEP__CONTENT_GROUP_RECORDINGS_PARAMETER = MPUBLISH_MP3S_STEP__CONTENT_GROUP_RECORDINGS_PARAMETER;
+
+	/**
+	 * The feature id for the '<em><b>MContent Page Url Result</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MPUBLISH_NEW_MP3_STEP__MCONTENT_PAGE_URL_RESULT = MPUBLISH_MP3S_STEP__MCONTENT_PAGE_URL_RESULT;
+
+	/**
+	 * The feature id for the '<em><b>Content Page Url Result</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MPUBLISH_NEW_MP3_STEP__CONTENT_PAGE_URL_RESULT = MPUBLISH_MP3S_STEP__CONTENT_PAGE_URL_RESULT;
+
+	/**
+	 * The feature id for the '<em><b>MPodcast File Url Result</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MPUBLISH_NEW_MP3_STEP__MPODCAST_FILE_URL_RESULT = MPUBLISH_MP3S_STEP__MPODCAST_FILE_URL_RESULT;
+
+	/**
+	 * The feature id for the '<em><b>Podcast File Url Result</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MPUBLISH_NEW_MP3_STEP__PODCAST_FILE_URL_RESULT = MPUBLISH_MP3S_STEP__PODCAST_FILE_URL_RESULT;
 
 	/**
 	 * The feature id for the '<em><b>MMp3 Entry Reference Parameter</b></em>' containment reference.
@@ -9381,6 +9759,15 @@ public class LogicPackage extends EPackageImpl {
 	 * @ordered
 	 */
 	public static final int MEMAIL_EVENT_LOG_STEP__ACTION_NAME = MSTEP__ACTION_NAME;
+
+	/**
+	 * The feature id for the '<em><b>Action Icon File Path</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MEMAIL_EVENT_LOG_STEP__ACTION_ICON_FILE_PATH = MSTEP__ACTION_ICON_FILE_PATH;
 
 	/**
 	 * The feature id for the '<em><b>Exception</b></em>' attribute.
@@ -10085,13 +10472,31 @@ public class LogicPackage extends EPackageImpl {
 	public static final int MMP3__PUBLISHED_FILE_NAME_PROPERTY = MSTATEFUL_OBJECT_FEATURE_COUNT + 18;
 
 	/**
+	 * The feature id for the '<em><b>MKeep Published Property</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MMP3__MKEEP_PUBLISHED_PROPERTY = MSTATEFUL_OBJECT_FEATURE_COUNT + 19;
+
+	/**
+	 * The feature id for the '<em><b>Keep Published Property</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MMP3__KEEP_PUBLISHED_PROPERTY = MSTATEFUL_OBJECT_FEATURE_COUNT + 20;
+
+	/**
 	 * The number of structural features of the '<em>MMp3</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	public static final int MMP3_FEATURE_COUNT = MSTATEFUL_OBJECT_FEATURE_COUNT + 19;
+	public static final int MMP3_FEATURE_COUNT = MSTATEFUL_OBJECT_FEATURE_COUNT + 21;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -10389,6 +10794,15 @@ public class LogicPackage extends EPackageImpl {
 	 * @ordered
 	 */
 	public static final int MBURN_CD_STEP__ACTION_NAME = MSTEP__ACTION_NAME;
+
+	/**
+	 * The feature id for the '<em><b>Action Icon File Path</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MBURN_CD_STEP__ACTION_ICON_FILE_PATH = MSTEP__ACTION_ICON_FILE_PATH;
 
 	/**
 	 * The feature id for the '<em><b>Exception</b></em>' attribute.
@@ -10806,6 +11220,15 @@ public class LogicPackage extends EPackageImpl {
 	public static final int MTEST_STEP__ACTION_NAME = MSTEP__ACTION_NAME;
 
 	/**
+	 * The feature id for the '<em><b>Action Icon File Path</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MTEST_STEP__ACTION_ICON_FILE_PATH = MSTEP__ACTION_ICON_FILE_PATH;
+
+	/**
 	 * The feature id for the '<em><b>Exception</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -11165,6 +11588,15 @@ public class LogicPackage extends EPackageImpl {
 	 * @ordered
 	 */
 	public static final int MDMS_APPLICATION_MGET_DATA_UPGRADE_INFO_STEP__ACTION_NAME = MFTP_STEP__ACTION_NAME;
+
+	/**
+	 * The feature id for the '<em><b>Action Icon File Path</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MDMS_APPLICATION_MGET_DATA_UPGRADE_INFO_STEP__ACTION_ICON_FILE_PATH = MFTP_STEP__ACTION_ICON_FILE_PATH;
 
 	/**
 	 * The feature id for the '<em><b>Exception</b></em>' attribute.
@@ -11616,6 +12048,15 @@ public class LogicPackage extends EPackageImpl {
 	 * @ordered
 	 */
 	public static final int MDMS_APPLICATION_MUPGRADE_DATA_STEP__ACTION_NAME = MFTP_STEP__ACTION_NAME;
+
+	/**
+	 * The feature id for the '<em><b>Action Icon File Path</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MDMS_APPLICATION_MUPGRADE_DATA_STEP__ACTION_ICON_FILE_PATH = MFTP_STEP__ACTION_ICON_FILE_PATH;
 
 	/**
 	 * The feature id for the '<em><b>Exception</b></em>' attribute.
@@ -12807,6 +13248,19 @@ public class LogicPackage extends EPackageImpl {
 	}
 
 	/**
+	 * Returns the meta object for the attribute '{@link org.onceforall.dms.desktop.logic.MStep#getActionIconFilePath <em>Action Icon File Path</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Action Icon File Path</em>'.
+	 * @see org.onceforall.dms.desktop.logic.MStep#getActionIconFilePath()
+	 * @see #getMStep()
+	 * @generated
+	 */
+	public EAttribute getMStep_ActionIconFilePath() {
+		return (EAttribute)mStepEClass.getEStructuralFeatures().get(15);
+	}
+
+	/**
 	 * Returns the meta object for the attribute '{@link org.onceforall.dms.desktop.logic.MStep#getException <em>Exception</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -12816,7 +13270,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @generated
 	 */
 	public EAttribute getMStep_Exception() {
-		return (EAttribute)mStepEClass.getEStructuralFeatures().get(15);
+		return (EAttribute)mStepEClass.getEStructuralFeatures().get(16);
 	}
 
 	/**
@@ -12948,6 +13402,32 @@ public class LogicPackage extends EPackageImpl {
 	}
 
 	/**
+	 * Returns the meta object for the attribute '{@link org.onceforall.dms.desktop.logic.MApplication#getInfoWebPageProperty <em>Info Web Page Property</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Info Web Page Property</em>'.
+	 * @see org.onceforall.dms.desktop.logic.MApplication#getInfoWebPageProperty()
+	 * @see #getMApplication()
+	 * @generated
+	 */
+	public EAttribute getMApplication_InfoWebPageProperty() {
+		return (EAttribute)mApplicationEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * Returns the meta object for the containment reference '{@link org.onceforall.dms.desktop.logic.MApplication#getMInfoWebPageProperty <em>MInfo Web Page Property</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>MInfo Web Page Property</em>'.
+	 * @see org.onceforall.dms.desktop.logic.MApplication#getMInfoWebPageProperty()
+	 * @see #getMApplication()
+	 * @generated
+	 */
+	public EReference getMApplication_MInfoWebPageProperty() {
+		return (EReference)mApplicationEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
 	 * Returns the meta object for the attribute list '{@link org.onceforall.dms.desktop.logic.MApplication#getDataFilePropertyHistoricValues <em>Data File Property Historic Values</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -12957,7 +13437,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @generated
 	 */
 	public EAttribute getMApplication_DataFilePropertyHistoricValues() {
-		return (EAttribute)mApplicationEClass.getEStructuralFeatures().get(2);
+		return (EAttribute)mApplicationEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -12970,7 +13450,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @generated
 	 */
 	public EReference getMApplication_MLogFileProperty() {
-		return (EReference)mApplicationEClass.getEStructuralFeatures().get(3);
+		return (EReference)mApplicationEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -12983,7 +13463,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @generated
 	 */
 	public EAttribute getMApplication_LogFileProperty() {
-		return (EAttribute)mApplicationEClass.getEStructuralFeatures().get(4);
+		return (EAttribute)mApplicationEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -12996,7 +13476,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @generated
 	 */
 	public EReference getMApplication_MPathProperty() {
-		return (EReference)mApplicationEClass.getEStructuralFeatures().get(5);
+		return (EReference)mApplicationEClass.getEStructuralFeatures().get(7);
 	}
 
 	/**
@@ -13009,7 +13489,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @generated
 	 */
 	public EAttribute getMApplication_PathProperty() {
-		return (EAttribute)mApplicationEClass.getEStructuralFeatures().get(6);
+		return (EAttribute)mApplicationEClass.getEStructuralFeatures().get(8);
 	}
 
 	/**
@@ -13022,7 +13502,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @generated
 	 */
 	public EReference getMApplication_MVersionProperty() {
-		return (EReference)mApplicationEClass.getEStructuralFeatures().get(7);
+		return (EReference)mApplicationEClass.getEStructuralFeatures().get(9);
 	}
 
 	/**
@@ -13035,7 +13515,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @generated
 	 */
 	public EAttribute getMApplication_VersionProperty() {
-		return (EAttribute)mApplicationEClass.getEStructuralFeatures().get(8);
+		return (EAttribute)mApplicationEClass.getEStructuralFeatures().get(10);
 	}
 
 	/**
@@ -13048,7 +13528,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @generated
 	 */
 	public EReference getMApplication_MLastSaveProperty() {
-		return (EReference)mApplicationEClass.getEStructuralFeatures().get(9);
+		return (EReference)mApplicationEClass.getEStructuralFeatures().get(11);
 	}
 
 	/**
@@ -13061,7 +13541,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @generated
 	 */
 	public EAttribute getMApplication_LastSaveProperty() {
-		return (EAttribute)mApplicationEClass.getEStructuralFeatures().get(10);
+		return (EAttribute)mApplicationEClass.getEStructuralFeatures().get(12);
 	}
 
 	/**
@@ -15536,6 +16016,110 @@ public class LogicPackage extends EPackageImpl {
 	}
 
 	/**
+	 * Returns the meta object for the containment reference '{@link org.onceforall.dms.desktop.logic.MPublishMp3sStep#getMContentIncludeMp3PlayerParameter <em>MContent Include Mp3 Player Parameter</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>MContent Include Mp3 Player Parameter</em>'.
+	 * @see org.onceforall.dms.desktop.logic.MPublishMp3sStep#getMContentIncludeMp3PlayerParameter()
+	 * @see #getMPublishMp3sStep()
+	 * @generated
+	 */
+	public EReference getMPublishMp3sStep_MContentIncludeMp3PlayerParameter() {
+		return (EReference)mPublishMp3sStepEClass.getEStructuralFeatures().get(20);
+	}
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.onceforall.dms.desktop.logic.MPublishMp3sStep#getContentIncludeMp3PlayerParameter <em>Content Include Mp3 Player Parameter</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Content Include Mp3 Player Parameter</em>'.
+	 * @see org.onceforall.dms.desktop.logic.MPublishMp3sStep#getContentIncludeMp3PlayerParameter()
+	 * @see #getMPublishMp3sStep()
+	 * @generated
+	 */
+	public EAttribute getMPublishMp3sStep_ContentIncludeMp3PlayerParameter() {
+		return (EAttribute)mPublishMp3sStepEClass.getEStructuralFeatures().get(21);
+	}
+
+	/**
+	 * Returns the meta object for the containment reference '{@link org.onceforall.dms.desktop.logic.MPublishMp3sStep#getMContentGroupRecordingsParameter <em>MContent Group Recordings Parameter</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>MContent Group Recordings Parameter</em>'.
+	 * @see org.onceforall.dms.desktop.logic.MPublishMp3sStep#getMContentGroupRecordingsParameter()
+	 * @see #getMPublishMp3sStep()
+	 * @generated
+	 */
+	public EReference getMPublishMp3sStep_MContentGroupRecordingsParameter() {
+		return (EReference)mPublishMp3sStepEClass.getEStructuralFeatures().get(22);
+	}
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.onceforall.dms.desktop.logic.MPublishMp3sStep#getContentGroupRecordingsParameter <em>Content Group Recordings Parameter</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Content Group Recordings Parameter</em>'.
+	 * @see org.onceforall.dms.desktop.logic.MPublishMp3sStep#getContentGroupRecordingsParameter()
+	 * @see #getMPublishMp3sStep()
+	 * @generated
+	 */
+	public EAttribute getMPublishMp3sStep_ContentGroupRecordingsParameter() {
+		return (EAttribute)mPublishMp3sStepEClass.getEStructuralFeatures().get(23);
+	}
+
+	/**
+	 * Returns the meta object for the containment reference '{@link org.onceforall.dms.desktop.logic.MPublishMp3sStep#getMContentPageUrlResult <em>MContent Page Url Result</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>MContent Page Url Result</em>'.
+	 * @see org.onceforall.dms.desktop.logic.MPublishMp3sStep#getMContentPageUrlResult()
+	 * @see #getMPublishMp3sStep()
+	 * @generated
+	 */
+	public EReference getMPublishMp3sStep_MContentPageUrlResult() {
+		return (EReference)mPublishMp3sStepEClass.getEStructuralFeatures().get(24);
+	}
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.onceforall.dms.desktop.logic.MPublishMp3sStep#getContentPageUrlResult <em>Content Page Url Result</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Content Page Url Result</em>'.
+	 * @see org.onceforall.dms.desktop.logic.MPublishMp3sStep#getContentPageUrlResult()
+	 * @see #getMPublishMp3sStep()
+	 * @generated
+	 */
+	public EAttribute getMPublishMp3sStep_ContentPageUrlResult() {
+		return (EAttribute)mPublishMp3sStepEClass.getEStructuralFeatures().get(25);
+	}
+
+	/**
+	 * Returns the meta object for the containment reference '{@link org.onceforall.dms.desktop.logic.MPublishMp3sStep#getMPodcastFileUrlResult <em>MPodcast File Url Result</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>MPodcast File Url Result</em>'.
+	 * @see org.onceforall.dms.desktop.logic.MPublishMp3sStep#getMPodcastFileUrlResult()
+	 * @see #getMPublishMp3sStep()
+	 * @generated
+	 */
+	public EReference getMPublishMp3sStep_MPodcastFileUrlResult() {
+		return (EReference)mPublishMp3sStepEClass.getEStructuralFeatures().get(26);
+	}
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.onceforall.dms.desktop.logic.MPublishMp3sStep#getPodcastFileUrlResult <em>Podcast File Url Result</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Podcast File Url Result</em>'.
+	 * @see org.onceforall.dms.desktop.logic.MPublishMp3sStep#getPodcastFileUrlResult()
+	 * @see #getMPublishMp3sStep()
+	 * @generated
+	 */
+	public EAttribute getMPublishMp3sStep_PodcastFileUrlResult() {
+		return (EAttribute)mPublishMp3sStepEClass.getEStructuralFeatures().get(27);
+	}
+
+	/**
 	 * Returns the meta object for class '{@link org.onceforall.dms.desktop.logic.MUpdatePublishedMp3sStep <em>MUpdate Published Mp3s Step</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -16454,6 +17038,32 @@ public class LogicPackage extends EPackageImpl {
 	}
 
 	/**
+	 * Returns the meta object for the containment reference '{@link org.onceforall.dms.desktop.logic.MMp3#getMKeepPublishedProperty <em>MKeep Published Property</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>MKeep Published Property</em>'.
+	 * @see org.onceforall.dms.desktop.logic.MMp3#getMKeepPublishedProperty()
+	 * @see #getMMp3()
+	 * @generated
+	 */
+	public EReference getMMp3_MKeepPublishedProperty() {
+		return (EReference)mMp3EClass.getEStructuralFeatures().get(19);
+	}
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.onceforall.dms.desktop.logic.MMp3#getKeepPublishedProperty <em>Keep Published Property</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Keep Published Property</em>'.
+	 * @see org.onceforall.dms.desktop.logic.MMp3#getKeepPublishedProperty()
+	 * @see #getMMp3()
+	 * @generated
+	 */
+	public EAttribute getMMp3_KeepPublishedProperty() {
+		return (EAttribute)mMp3EClass.getEStructuralFeatures().get(20);
+	}
+
+	/**
 	 * Returns the meta object for class '{@link org.onceforall.dms.desktop.logic.MBurnCdStep <em>MBurn Cd Step</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -17253,6 +17863,7 @@ public class LogicPackage extends EPackageImpl {
 		createEAttribute(mStepEClass, MSTEP__STOPPABLE);
 		createEAttribute(mStepEClass, MSTEP__TERMINATABLE);
 		createEAttribute(mStepEClass, MSTEP__ACTION_NAME);
+		createEAttribute(mStepEClass, MSTEP__ACTION_ICON_FILE_PATH);
 		createEAttribute(mStepEClass, MSTEP__EXCEPTION);
 
 		mValueEClass = createEClass(MVALUE);
@@ -17266,6 +17877,8 @@ public class LogicPackage extends EPackageImpl {
 		mApplicationEClass = createEClass(MAPPLICATION);
 		createEReference(mApplicationEClass, MAPPLICATION__MDATA_FILE_PROPERTY);
 		createEAttribute(mApplicationEClass, MAPPLICATION__DATA_FILE_PROPERTY);
+		createEAttribute(mApplicationEClass, MAPPLICATION__INFO_WEB_PAGE_PROPERTY);
+		createEReference(mApplicationEClass, MAPPLICATION__MINFO_WEB_PAGE_PROPERTY);
 		createEAttribute(mApplicationEClass, MAPPLICATION__DATA_FILE_PROPERTY_HISTORIC_VALUES);
 		createEReference(mApplicationEClass, MAPPLICATION__MLOG_FILE_PROPERTY);
 		createEAttribute(mApplicationEClass, MAPPLICATION__LOG_FILE_PROPERTY);
@@ -17479,6 +18092,14 @@ public class LogicPackage extends EPackageImpl {
 		createEAttribute(mPublishMp3sStepEClass, MPUBLISH_MP3S_STEP__PODCAST_RELATIVE_FTP_PATH_PARAMETER);
 		createEReference(mPublishMp3sStepEClass, MPUBLISH_MP3S_STEP__MPODCAST_HEADER_FILE_PATH_PARAMETER);
 		createEAttribute(mPublishMp3sStepEClass, MPUBLISH_MP3S_STEP__PODCAST_HEADER_FILE_PATH_PARAMETER);
+		createEReference(mPublishMp3sStepEClass, MPUBLISH_MP3S_STEP__MCONTENT_INCLUDE_MP3_PLAYER_PARAMETER);
+		createEAttribute(mPublishMp3sStepEClass, MPUBLISH_MP3S_STEP__CONTENT_INCLUDE_MP3_PLAYER_PARAMETER);
+		createEReference(mPublishMp3sStepEClass, MPUBLISH_MP3S_STEP__MCONTENT_GROUP_RECORDINGS_PARAMETER);
+		createEAttribute(mPublishMp3sStepEClass, MPUBLISH_MP3S_STEP__CONTENT_GROUP_RECORDINGS_PARAMETER);
+		createEReference(mPublishMp3sStepEClass, MPUBLISH_MP3S_STEP__MCONTENT_PAGE_URL_RESULT);
+		createEAttribute(mPublishMp3sStepEClass, MPUBLISH_MP3S_STEP__CONTENT_PAGE_URL_RESULT);
+		createEReference(mPublishMp3sStepEClass, MPUBLISH_MP3S_STEP__MPODCAST_FILE_URL_RESULT);
+		createEAttribute(mPublishMp3sStepEClass, MPUBLISH_MP3S_STEP__PODCAST_FILE_URL_RESULT);
 
 		mUpdatePublishedMp3sStepEClass = createEClass(MUPDATE_PUBLISHED_MP3S_STEP);
 		createEReference(mUpdatePublishedMp3sStepEClass, MUPDATE_PUBLISHED_MP3S_STEP__MREPUBLISH_MP3_FILES);
@@ -17555,6 +18176,8 @@ public class LogicPackage extends EPackageImpl {
 		createEAttribute(mMp3EClass, MMP3__PODCAST_PUBLISHING_DATE_PROPERTY);
 		createEReference(mMp3EClass, MMP3__MPUBLISHED_FILE_NAME_PROPERTY);
 		createEAttribute(mMp3EClass, MMP3__PUBLISHED_FILE_NAME_PROPERTY);
+		createEReference(mMp3EClass, MMP3__MKEEP_PUBLISHED_PROPERTY);
+		createEAttribute(mMp3EClass, MMP3__KEEP_PUBLISHED_PROPERTY);
 
 		mBurnCdStepEClass = createEClass(MBURN_CD_STEP);
 		createEReference(mBurnCdStepEClass, MBURN_CD_STEP__MRECORDING_FILES_PARAMETER);
@@ -17685,12 +18308,12 @@ public class LogicPackage extends EPackageImpl {
 		initEClass(mElementEClass, MElement.class, "MElement", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getMElement_Name(), this.getMString(), "name", "", 1, 1, MElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMElement_TypeName(), this.getMString(), "typeName", null, 1, 1, MElement.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
-		initEAttribute(getMElement_TypeNameForUI(), this.getMString(), "typeNameForUI", null, 1, 1, MElement.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getMElement_NameForUI(), ecorePackage.getEString(), "nameForUI", "", 1, 1, MElement.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEAttribute(getMElement_TypeNameForUI(), this.getMString(), "typeNameForUI", "Element", 1, 1, MElement.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getMElement_NameForUI(), ecorePackage.getEString(), "nameForUI", "Element", 1, 1, MElement.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMElement_Description(), this.getMString(), "description", "", 1, 1, MElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMElement_DescriptionForUI(), ecorePackage.getEString(), "descriptionForUI", "", 1, 1, MElement.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
-		initEAttribute(getMElement_IconFilePath(), this.getMFile(), "iconFilePath", null, 0, 1, MElement.class, IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getMElement_OverlayIconFilePath(), this.getMFile(), "overlayIconFilePath", null, 0, 1, MElement.class, IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getMElement_IconFilePath(), this.getMFile(), "iconFilePath", null, 0, 1, MElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getMElement_OverlayIconFilePath(), this.getMFile(), "overlayIconFilePath", null, 0, 1, MElement.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMElement_CompositeClassName(), ecorePackage.getEString(), "compositeClassName", "", 0, 1, MElement.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMElement_Simulated(), ecorePackage.getEBoolean(), "simulated", null, 1, 1, MElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		
@@ -17729,7 +18352,8 @@ public class LogicPackage extends EPackageImpl {
 		initEAttribute(getMStep_Interruptable(), ecorePackage.getEBoolean(), "interruptable", "false", 1, 1, MStep.class, IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMStep_Stoppable(), ecorePackage.getEBoolean(), "stoppable", "false", 1, 1, MStep.class, IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMStep_Terminatable(), ecorePackage.getEBoolean(), "terminatable", "false", 1, 1, MStep.class, IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getMStep_ActionName(), ecorePackage.getEString(), "actionName", "Start", 1, 1, MStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getMStep_ActionName(), ecorePackage.getEString(), "actionName", "Mark as completed", 1, 1, MStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getMStep_ActionIconFilePath(), this.getMFile(), "actionIconFilePath", "Image Files\\Mark as completed.gif", 0, 1, MStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMStep_Exception(), this.getEThrowable(), "exception", null, 1, 1, MStep.class, IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		
 
@@ -17745,6 +18369,8 @@ public class LogicPackage extends EPackageImpl {
 		initEClass(mApplicationEClass, MApplication.class, "MApplication", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getMApplication_MDataFileProperty(), this.getMProperty(), null, "mDataFileProperty", "new MDataFileProperty()", 1, 1, MApplication.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMApplication_DataFileProperty(), this.getMFile(), "dataFileProperty", "Application Data Files\\Data.xml", 1, 1, MApplication.class, IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getMApplication_InfoWebPageProperty(), this.getMUrl(), "infoWebPageProperty", "http://www.onceforall.org/dms-desktop/info.html", 1, 1, MApplication.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMApplication_MInfoWebPageProperty(), this.getMProperty(), null, "mInfoWebPageProperty", "new MInfoWebPageProperty()", 1, 1, MApplication.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMApplication_DataFilePropertyHistoricValues(), this.getMFile(), "dataFilePropertyHistoricValues", null, 0, 5, MApplication.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getMApplication_MLogFileProperty(), this.getMProperty(), null, "mLogFileProperty", "", 1, 1, MApplication.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMApplication_LogFileProperty(), this.getMFile(), "logFileProperty", null, 1, 1, MApplication.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -17753,7 +18379,7 @@ public class LogicPackage extends EPackageImpl {
 		initEReference(getMApplication_MVersionProperty(), this.getMProperty(), null, "mVersionProperty", "", 1, 1, MApplication.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMApplication_VersionProperty(), this.getMString(), "versionProperty", "0.9.0", 1, 1, MApplication.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getMApplication_MLastSaveProperty(), this.getMProperty(), null, "mLastSaveProperty", "", 1, 1, MApplication.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getMApplication_LastSaveProperty(), this.getMDateTime(), "lastSaveProperty", null, 0, 1, MApplication.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getMApplication_LastSaveProperty(), this.getMDateTime(), "lastSaveProperty", null, 0, 1, MApplication.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		
 
 		initEClass(mScriptEClass, MScript.class, "MScript", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -17851,7 +18477,7 @@ public class LogicPackage extends EPackageImpl {
 		initEReference(getMEnterServiceInformationStep_MTitleOfTalkParameter(), this.getMParameter(), null, "mTitleOfTalkParameter", "", 1, 1, MEnterServiceInformationStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMEnterServiceInformationStep_TitleOfTalkParameter(), this.getMString(), "titleOfTalkParameter", null, 1, 1, MEnterServiceInformationStep.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getMEnterServiceInformationStep_MReadingParameter(), this.getMParameter(), null, "mReadingParameter", "", 1, 1, MEnterServiceInformationStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getMEnterServiceInformationStep_ReadingParameter(), this.getMString(), "readingParameter", null, 1, 1, MEnterServiceInformationStep.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getMEnterServiceInformationStep_ReadingParameter(), this.getMString(), "readingParameter", null, 0, 1, MEnterServiceInformationStep.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getMEnterServiceInformationStep_MSpeakersNameParameter(), this.getMParameter(), null, "mSpeakersNameParameter", "", 1, 1, MEnterServiceInformationStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMEnterServiceInformationStep_SpeakersNameParameter(), this.getMString(), "speakersNameParameter", null, 1, 1, MEnterServiceInformationStep.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMEnterServiceInformationStep_SpeakersNameParameterHistoricValues(), this.getMString(), "speakersNameParameterHistoricValues", null, 0, 5, MEnterServiceInformationStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -17865,7 +18491,7 @@ public class LogicPackage extends EPackageImpl {
 		initEReference(getMEnterServiceInformationStep_MTitleOfTalkResult(), this.getMResult(), null, "mTitleOfTalkResult", "", 1, 1, MEnterServiceInformationStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMEnterServiceInformationStep_TitleOfTalkResult(), this.getMString(), "titleOfTalkResult", null, 1, 1, MEnterServiceInformationStep.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getMEnterServiceInformationStep_MReadingResult(), this.getMResult(), null, "mReadingResult", "", 1, 1, MEnterServiceInformationStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getMEnterServiceInformationStep_ReadingResult(), this.getMString(), "readingResult", null, 1, 1, MEnterServiceInformationStep.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getMEnterServiceInformationStep_ReadingResult(), this.getMString(), "readingResult", null, 0, 1, MEnterServiceInformationStep.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getMEnterServiceInformationStep_MSpeakersNameResult(), this.getMResult(), null, "mSpeakersNameResult", "", 1, 1, MEnterServiceInformationStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMEnterServiceInformationStep_SpeakersNameResult(), this.getMString(), "speakersNameResult", null, 1, 1, MEnterServiceInformationStep.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getMEnterServiceInformationStep_MRecordingUsersNameResult(), this.getMResult(), null, "mRecordingUsersNameResult", "", 1, 1, MEnterServiceInformationStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -17970,6 +18596,14 @@ public class LogicPackage extends EPackageImpl {
 		initEAttribute(getMPublishMp3sStep_PodcastRelativeFtpPathParameter(), this.getMString(), "podcastRelativeFtpPathParameter", null, 1, 1, MPublishMp3sStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getMPublishMp3sStep_MPodcastHeaderFilePathParameter(), this.getMParameter(), null, "mPodcastHeaderFilePathParameter", "", 1, 1, MPublishMp3sStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMPublishMp3sStep_PodcastHeaderFilePathParameter(), this.getMExistingFile(), "podcastHeaderFilePathParameter", null, 1, 1, MPublishMp3sStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMPublishMp3sStep_MContentIncludeMp3PlayerParameter(), this.getMParameter(), null, "mContentIncludeMp3PlayerParameter", "", 1, 1, MPublishMp3sStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getMPublishMp3sStep_ContentIncludeMp3PlayerParameter(), this.getMBoolean(), "contentIncludeMp3PlayerParameter", "true", 0, 1, MPublishMp3sStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMPublishMp3sStep_MContentGroupRecordingsParameter(), this.getMParameter(), null, "mContentGroupRecordingsParameter", "", 1, 1, MPublishMp3sStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getMPublishMp3sStep_ContentGroupRecordingsParameter(), this.getMBoolean(), "contentGroupRecordingsParameter", "true", 1, 1, MPublishMp3sStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMPublishMp3sStep_MContentPageUrlResult(), this.getMResult(), null, "mContentPageUrlResult", "", 1, 1, MPublishMp3sStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getMPublishMp3sStep_ContentPageUrlResult(), this.getMUrl(), "contentPageUrlResult", null, 1, 1, MPublishMp3sStep.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMPublishMp3sStep_MPodcastFileUrlResult(), this.getMResult(), null, "mPodcastFileUrlResult", "", 1, 1, MPublishMp3sStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getMPublishMp3sStep_PodcastFileUrlResult(), this.getMUrl(), "podcastFileUrlResult", null, 1, 1, MPublishMp3sStep.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		
 
 		initEClass(mUpdatePublishedMp3sStepEClass, MUpdatePublishedMp3sStep.class, "MUpdatePublishedMp3sStep", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -17995,7 +18629,7 @@ public class LogicPackage extends EPackageImpl {
 		initEReference(getMPublishNewMp3Step_MPodcastSubtitleParameter(), this.getMParameter(), null, "mPodcastSubtitleParameter", "", 1, 1, MPublishNewMp3Step.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMPublishNewMp3Step_PodcastSubtitleParameter(), this.getMString(), "podcastSubtitleParameter", null, 1, 1, MPublishNewMp3Step.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getMPublishNewMp3Step_MPodcastSummaryParameter(), this.getMParameter(), null, "mPodcastSummaryParameter", "", 1, 1, MPublishNewMp3Step.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getMPublishNewMp3Step_PodcastSummaryParameter(), this.getMString(), "podcastSummaryParameter", null, 1, 1, MPublishNewMp3Step.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getMPublishNewMp3Step_PodcastSummaryParameter(), this.getMString(), "podcastSummaryParameter", null, 0, 1, MPublishNewMp3Step.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getMPublishNewMp3Step_MPodcastPublishingDateParameter(), this.getMParameter(), null, "mPodcastPublishingDateParameter", "", 1, 1, MPublishNewMp3Step.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMPublishNewMp3Step_PodcastPublishingDateParameter(), this.getMDateTime(), "podcastPublishingDateParameter", null, 1, 1, MPublishNewMp3Step.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getMPublishNewMp3Step_MPublishedMp3EntryReferenceResult(), this.getMResult(), null, "mPublishedMp3EntryReferenceResult", "", 1, 1, MPublishNewMp3Step.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -18006,7 +18640,7 @@ public class LogicPackage extends EPackageImpl {
 		initEReference(getMEmailEventLogStep_MRecordingUsersNameParameter(), this.getMParameter(), null, "mRecordingUsersNameParameter", "", 1, 1, MEmailEventLogStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMEmailEventLogStep_RecordingUsersNameParameter(), this.getMString(), "recordingUsersNameParameter", null, 1, 1, MEmailEventLogStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getMEmailEventLogStep_MCommentParameter(), this.getMParameter(), null, "mCommentParameter", "", 1, 1, MEmailEventLogStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getMEmailEventLogStep_CommentParameter(), this.getMString(), "commentParameter", null, 0, 1, MEmailEventLogStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getMEmailEventLogStep_CommentParameter(), this.getMString(), "commentParameter", null, 1, 1, MEmailEventLogStep.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getMEmailEventLogStep_MLogFileParameter(), this.getMParameter(), null, "mLogFileParameter", "", 1, 1, MEmailEventLogStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMEmailEventLogStep_LogFileParameter(), this.getMExistingFile(), "logFileParameter", null, 1, 1, MEmailEventLogStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getMEmailEventLogStep_MDataFileParameter(), this.getMParameter(), null, "mDataFileParameter", "", 1, 1, MEmailEventLogStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -18014,7 +18648,7 @@ public class LogicPackage extends EPackageImpl {
 		initEReference(getMEmailEventLogStep_MSubjectParameter(), this.getMParameter(), null, "mSubjectParameter", "", 1, 1, MEmailEventLogStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMEmailEventLogStep_SubjectParameter(), this.getMString(), "subjectParameter", null, 1, 1, MEmailEventLogStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getMEmailEventLogStep_MSendersEmailAddressParameter(), this.getMParameter(), null, "mSendersEmailAddressParameter", "", 1, 1, MEmailEventLogStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getMEmailEventLogStep_SendersEmailAddressParameter(), this.getMString(), "sendersEmailAddressParameter", null, 1, 1, MEmailEventLogStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getMEmailEventLogStep_SendersEmailAddressParameter(), this.getMString(), "sendersEmailAddressParameter", null, 1, 1, MEmailEventLogStep.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMEmailEventLogStep_SendersEmailAddressParameterHistoricValues(), this.getMString(), "sendersEmailAddressParameterHistoricValues", null, 0, 6, MEmailEventLogStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getMEmailEventLogStep_MReceipientsEmailAddressParameter(), this.getMParameter(), null, "mReceipientsEmailAddressParameter", "", 1, 1, MEmailEventLogStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMEmailEventLogStep_ReceipientsEmailAddressParameter(), this.getMString(), "receipientsEmailAddressParameter", null, 1, -1, MEmailEventLogStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -18051,6 +18685,8 @@ public class LogicPackage extends EPackageImpl {
 		initEAttribute(getMMp3_PodcastPublishingDateProperty(), this.getMDateTime(), "podcastPublishingDateProperty", null, 0, 1, MMp3.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getMMp3_MPublishedFileNameProperty(), this.getMProperty(), null, "mPublishedFileNameProperty", "", 1, 1, MMp3.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMMp3_PublishedFileNameProperty(), this.getMString(), "publishedFileNameProperty", null, 0, 1, MMp3.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMMp3_MKeepPublishedProperty(), this.getMProperty(), null, "mKeepPublishedProperty", "", 1, 1, MMp3.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getMMp3_KeepPublishedProperty(), this.getMBoolean(), "keepPublishedProperty", "false", 1, 1, MMp3.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		
 
 		initEClass(mBurnCdStepEClass, MBurnCdStep.class, "MBurnCdStep", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -18167,12 +18803,6 @@ public class LogicPackage extends EPackageImpl {
 			 "valueEFeature", "iconFilePath"
 		   });		
 		addAnnotation
-		  (mElementEClass, 
-		   source, 
-		   new String[] {
-			 "typeNameForUI", "Element"
-		   });		
-		addAnnotation
 		  (mParameterEClass, 
 		   source, 
 		   new String[] {
@@ -18252,6 +18882,14 @@ public class LogicPackage extends EPackageImpl {
 		   new String[] {
 			 "name", "Data file",
 			 "description", "Specifies the file that contains the application data.",
+			 "readOnly", "true"
+		   });		
+		addAnnotation
+		  (getMApplication_MInfoWebPageProperty(), 
+		   source, 
+		   new String[] {
+			 "name", "Information web page URL",
+			 "description", "Specifies the URL of a web page that provides up-to-date information that is relevant to the users of this application.",
 			 "readOnly", "true"
 		   });		
 		addAnnotation
@@ -18514,6 +19152,7 @@ public class LogicPackage extends EPackageImpl {
 			 "name", "Get application data upgrade info",
 			 "description", "Tries to find the application data upgrade file at the given FTP server location and retrieves the upgrade message if present.",
 			 "actionName", "Get",
+			 "actionIconFilePath", "Image Files\\Mark as completed.gif",
 			 "interruptable", "false",
 			 "stoppable", "false",
 			 "terminatable", "false"
@@ -18553,6 +19192,7 @@ public class LogicPackage extends EPackageImpl {
 			 "name", "Upgrade application data",
 			 "description", "Tried to find an upgrade file on the given FTP server location, optionally displays an upgrade message and upgrades the application data.",
 			 "actionName", "Upgrade",
+			 "actionIconFilePath", "Image Files\\Mark as completed.gif",
 			 "interruptable", "false",
 			 "stoppable", "false",
 			 "terminatable", "false"
@@ -18587,6 +19227,7 @@ public class LogicPackage extends EPackageImpl {
 			 "description", "Please enter the required information and then select \'Mark as completed\'.",
 			 "iconFilePath", "Image Files/Enter information step.gif",
 			 "actionName", "Mark as completed",
+			 "actionIconFilePath", "Image Files/Mark as completed.gif",
 			 "interruptable", "false",
 			 "stoppable", "false",
 			 "terminatable", "false"
@@ -18597,6 +19238,7 @@ public class LogicPackage extends EPackageImpl {
 		   new String[] {
 			 "name", "Enter WordWiseXtra information",
 			 "description", "Please enter information about the WordWiseXtra meeting and then select \'Mark as completed\'.",
+			 "actionIconFilePath", "Image Files/Mark as completed.gif",
 			 "interruptable", "false",
 			 "stoppable", "false",
 			 "terminatable", "false"
@@ -18692,6 +19334,7 @@ public class LogicPackage extends EPackageImpl {
 			 "name", "Enter service information",
 			 "description", "Please enter the required information about the service and then select \'Mark as completed\'.",
 			 "iconFilePath", "Image Files/Enter information step.gif",
+			 "actionIconFilePath", "Image Files/Mark as completed.gif",
 			 "interruptable", "false",
 			 "stoppable", "false",
 			 "terminatable", "false"
@@ -18788,6 +19431,7 @@ public class LogicPackage extends EPackageImpl {
 			 "description", "Creates a directory where the recorded files and other related files will be stored.",
 			 "iconFilePath", "Image Files/Create directory step.gif",
 			 "actionName", "Create",
+			 "actionIconFilePath", "Image Files/Create directory.gif",
 			 "interruptable", "false",
 			 "stoppable", "false",
 			 "terminatable", "false"
@@ -18821,6 +19465,7 @@ public class LogicPackage extends EPackageImpl {
 			 "description", "Please make sure that there is enough disk space free on this computer. There must be at least 1 GB (i.e. 1024 MB) available for the recordings. If not enough disk space is available, please delete the oldest services till enough disk space is free.",
 			 "iconFilePath", "Image Files/Task.gif",
 			 "actionName", "Check",
+			 "actionIconFilePath", "Image Files/Mark as completed.gif",
 			 "interruptable", "false",
 			 "stoppable", "false",
 			 "terminatable", "false"
@@ -18852,6 +19497,7 @@ public class LogicPackage extends EPackageImpl {
 		   new String[] {
 			 "iconFilePath", "Image Files/Audio step.gif",
 			 "compositeClassName", "org.onceforall.dms.desktop.ui.MAudioStepComposite",
+			 "actionIconFilePath", "Image Files/Mark as completed.gif",
 			 "interruptable", "false",
 			 "stoppable", "false",
 			 "terminatable", "false"
@@ -18911,6 +19557,7 @@ public class LogicPackage extends EPackageImpl {
 			 "description", "Please make sure that the input level will not exceed the maximum and the recording is not distorted. Important: Use the sounddesk \'Recording computer\' input line to verify the audio quality.",
 			 "iconFilePath", "Image Files/Task.gif",
 			 "actionName", "Mark as completed",
+			 "actionIconFilePath", "Image Files/Mark as completed.gif",
 			 "interruptable", "false",
 			 "stoppable", "false",
 			 "terminatable", "false"
@@ -18923,6 +19570,7 @@ public class LogicPackage extends EPackageImpl {
 			 "description", "Records from the main audio input line to an uncompressed WAV file. Please make sure that the input level will not exceed the maximum.",
 			 "iconFilePath", "Image Files/Record step.gif",
 			 "actionName", "Record",
+			 "actionIconFilePath", "Image Files/Record.gif",
 			 "interruptable", "true",
 			 "stoppable", "true",
 			 "terminatable", "false"
@@ -18970,6 +19618,7 @@ public class LogicPackage extends EPackageImpl {
 			 "description", "Converts a WAVE file to MP3 format using the LAME encoder.",
 			 "iconFilePath", "Image Files/Convert to MP3 step.gif",
 			 "actionName", "Convert",
+			 "actionIconFilePath", "Image Files/Convert.gif",
 			 "interruptable", "false",
 			 "stoppable", "false",
 			 "terminatable", "true"
@@ -19068,6 +19717,7 @@ public class LogicPackage extends EPackageImpl {
 			 "description", "Publishes or republishes MP3 recordings to the Christ Chruch Bromley web site and creates/updates the podcast RSS file accordingly.",
 			 "iconFilePath", "Image Files/Publish MP3s step.gif",
 			 "actionName", "Publish",
+			 "actionIconFilePath", "Image Files/Publish.gif",
 			 "interruptable", "false",
 			 "stoppable", "false",
 			 "terminatable", "false"
@@ -19144,12 +19794,43 @@ public class LogicPackage extends EPackageImpl {
 			 "readOnly", "false"
 		   });		
 		addAnnotation
+		  (getMPublishMp3sStep_MContentIncludeMp3PlayerParameter(), 
+		   source, 
+		   new String[] {
+			 "name", "Include MP3 player on content page",
+			 "description", "Specifies whether an MP3 player should included on the content page or not.",
+			 "readOnly", "false"
+		   });		
+		addAnnotation
+		  (getMPublishMp3sStep_MContentGroupRecordingsParameter(), 
+		   source, 
+		   new String[] {
+			 "name", "Group recordings by month on content page",
+			 "description", "Specifies whether the recordings on the content page should be grouped by month.",
+			 "readOnly", "false"
+		   });		
+		addAnnotation
+		  (getMPublishMp3sStep_MContentPageUrlResult(), 
+		   source, 
+		   new String[] {
+			 "name", "Content page URL",
+			 "description", "Specifies the URL to content page."
+		   });		
+		addAnnotation
+		  (getMPublishMp3sStep_MPodcastFileUrlResult(), 
+		   source, 
+		   new String[] {
+			 "name", "Podcast file URL",
+			 "description", "Specifies the URL to podcast file."
+		   });		
+		addAnnotation
 		  (mUpdatePublishedMp3sStepEClass, 
 		   source, 
 		   new String[] {
 			 "name", "Update published MP3s",
 			 "description", "Updates the published MP3 recordings on the Christ Chruch Bromley web site and updates the podcast RSS file accordingly. It reads the states of the MP3 entries to determine whether to publish or unpublish.",
 			 "actionName", "Update published MP3s",
+			 "actionIconFilePath", "Image Files/Publish.gif",
 			 "interruptable", "false",
 			 "stoppable", "false",
 			 "terminatable", "false"
@@ -19182,7 +19863,8 @@ public class LogicPackage extends EPackageImpl {
 		   new String[] {
 			 "name", "Publish MP3",
 			 "description", "Publishes a new MP3 recording to the Christ Chruch Bromley web site and creates/updates the podcast RSS file accordingly.",
-			 "actionName", "Mark as completed",
+			 "actionName", "Publish",
+			 "actionIconFilePath", "Image Files/Publish.gif",
 			 "interruptable", "false",
 			 "stoppable", "false",
 			 "terminatable", "false"
@@ -19259,6 +19941,7 @@ public class LogicPackage extends EPackageImpl {
 			 "description", "Sends an email with the log and application data to the Digital Media Service email post box. Please enter your name and an optional comment.",
 			 "iconFilePath", "Image Files/Email event log step.gif",
 			 "actionName", "Send",
+			 "actionIconFilePath", "Image Files/Email.gif",
 			 "interruptable", "false",
 			 "stoppable", "false",
 			 "terminatable", "false"
@@ -19304,7 +19987,7 @@ public class LogicPackage extends EPackageImpl {
 		   source, 
 		   new String[] {
 			 "name", "Sender\'s email address",
-			 "description", "Specifies the sender\'s email address. Please enter your own email address here. Alternatively use \'sounddesk@ccbromley.net\'."
+			 "description", "Specifies the sender\'s email address. Please enter your own email address here so that we can contact you if we have any questions. Alternatively use \'sounddesk@ccbromley.net\'."
 		   });		
 		addAnnotation
 		  (getMEmailEventLogStep_MReceipientsEmailAddressParameter(), 
@@ -19418,6 +20101,14 @@ public class LogicPackage extends EPackageImpl {
 			 "description", "Specifies the name of published file on the FTP server."
 		   });		
 		addAnnotation
+		  (getMMp3_MKeepPublishedProperty(), 
+		   source, 
+		   new String[] {
+			 "name", "Keep published",
+			 "description", "Specifies whether to keep this recording published as long as the server disk quota for recordings is not exceeded.",
+			 "readOnly", "false"
+		   });		
+		addAnnotation
 		  (mBurnCdStepEClass, 
 		   source, 
 		   new String[] {
@@ -19425,6 +20116,7 @@ public class LogicPackage extends EPackageImpl {
 			 "description", "Burns the recordings on a writable CD for sale. Please insert a blank CD before initiating the burning process. Note that the post-sermon recording does not need to be included.",
 			 "iconFilePath", "Image Files/Burn CD step.gif",
 			 "actionName", "Burn",
+			 "actionIconFilePath", "Image Files/Burn CD.gif",
 			 "interruptable", "false",
 			 "stoppable", "false",
 			 "terminatable", "false"
@@ -19470,6 +20162,7 @@ public class LogicPackage extends EPackageImpl {
 		   source, 
 		   new String[] {
 			 "actionName", "Mark as completed",
+			 "actionIconFilePath", "Image Files\\Mark as completed.gif",
 			 "interruptable", "false",
 			 "stoppable", "false",
 			 "terminatable", "false"
@@ -19503,6 +20196,7 @@ public class LogicPackage extends EPackageImpl {
 			 "name", "Test",
 			 "description", "Serves as test step for automatic tests.",
 			 "actionName", "Test",
+			 "actionIconFilePath", "Image Files\\Mark as completed.gif",
 			 "interruptable", "false",
 			 "stoppable", "false",
 			 "terminatable", "false"
@@ -19871,6 +20565,14 @@ public class LogicPackage extends EPackageImpl {
 		public static final EAttribute MSTEP__ACTION_NAME = eINSTANCE.getMStep_ActionName();
 
 		/**
+		 * The meta object literal for the '<em><b>Action Icon File Path</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		public static final EAttribute MSTEP__ACTION_ICON_FILE_PATH = eINSTANCE.getMStep_ActionIconFilePath();
+
+		/**
 		 * The meta object literal for the '<em><b>Exception</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -19961,6 +20663,22 @@ public class LogicPackage extends EPackageImpl {
 		 * @generated
 		 */
 		public static final EAttribute MAPPLICATION__DATA_FILE_PROPERTY = eINSTANCE.getMApplication_DataFileProperty();
+
+		/**
+		 * The meta object literal for the '<em><b>Info Web Page Property</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		public static final EAttribute MAPPLICATION__INFO_WEB_PAGE_PROPERTY = eINSTANCE.getMApplication_InfoWebPageProperty();
+
+		/**
+		 * The meta object literal for the '<em><b>MInfo Web Page Property</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		public static final EReference MAPPLICATION__MINFO_WEB_PAGE_PROPERTY = eINSTANCE.getMApplication_MInfoWebPageProperty();
 
 		/**
 		 * The meta object literal for the '<em><b>Data File Property Historic Values</b></em>' attribute list feature.
@@ -21595,6 +22313,70 @@ public class LogicPackage extends EPackageImpl {
 		public static final EAttribute MPUBLISH_MP3S_STEP__PODCAST_HEADER_FILE_PATH_PARAMETER = eINSTANCE.getMPublishMp3sStep_PodcastHeaderFilePathParameter();
 
 		/**
+		 * The meta object literal for the '<em><b>MContent Include Mp3 Player Parameter</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		public static final EReference MPUBLISH_MP3S_STEP__MCONTENT_INCLUDE_MP3_PLAYER_PARAMETER = eINSTANCE.getMPublishMp3sStep_MContentIncludeMp3PlayerParameter();
+
+		/**
+		 * The meta object literal for the '<em><b>Content Include Mp3 Player Parameter</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		public static final EAttribute MPUBLISH_MP3S_STEP__CONTENT_INCLUDE_MP3_PLAYER_PARAMETER = eINSTANCE.getMPublishMp3sStep_ContentIncludeMp3PlayerParameter();
+
+		/**
+		 * The meta object literal for the '<em><b>MContent Group Recordings Parameter</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		public static final EReference MPUBLISH_MP3S_STEP__MCONTENT_GROUP_RECORDINGS_PARAMETER = eINSTANCE.getMPublishMp3sStep_MContentGroupRecordingsParameter();
+
+		/**
+		 * The meta object literal for the '<em><b>Content Group Recordings Parameter</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		public static final EAttribute MPUBLISH_MP3S_STEP__CONTENT_GROUP_RECORDINGS_PARAMETER = eINSTANCE.getMPublishMp3sStep_ContentGroupRecordingsParameter();
+
+		/**
+		 * The meta object literal for the '<em><b>MContent Page Url Result</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		public static final EReference MPUBLISH_MP3S_STEP__MCONTENT_PAGE_URL_RESULT = eINSTANCE.getMPublishMp3sStep_MContentPageUrlResult();
+
+		/**
+		 * The meta object literal for the '<em><b>Content Page Url Result</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		public static final EAttribute MPUBLISH_MP3S_STEP__CONTENT_PAGE_URL_RESULT = eINSTANCE.getMPublishMp3sStep_ContentPageUrlResult();
+
+		/**
+		 * The meta object literal for the '<em><b>MPodcast File Url Result</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		public static final EReference MPUBLISH_MP3S_STEP__MPODCAST_FILE_URL_RESULT = eINSTANCE.getMPublishMp3sStep_MPodcastFileUrlResult();
+
+		/**
+		 * The meta object literal for the '<em><b>Podcast File Url Result</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		public static final EAttribute MPUBLISH_MP3S_STEP__PODCAST_FILE_URL_RESULT = eINSTANCE.getMPublishMp3sStep_PodcastFileUrlResult();
+
+		/**
 		 * The meta object literal for the '{@link org.onceforall.dms.desktop.logic.MUpdatePublishedMp3sStep <em>MUpdate Published Mp3s Step</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -22171,6 +22953,22 @@ public class LogicPackage extends EPackageImpl {
 		 * @generated
 		 */
 		public static final EAttribute MMP3__PUBLISHED_FILE_NAME_PROPERTY = eINSTANCE.getMMp3_PublishedFileNameProperty();
+
+		/**
+		 * The meta object literal for the '<em><b>MKeep Published Property</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		public static final EReference MMP3__MKEEP_PUBLISHED_PROPERTY = eINSTANCE.getMMp3_MKeepPublishedProperty();
+
+		/**
+		 * The meta object literal for the '<em><b>Keep Published Property</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		public static final EAttribute MMP3__KEEP_PUBLISHED_PROPERTY = eINSTANCE.getMMp3_KeepPublishedProperty();
 
 		/**
 		 * The meta object literal for the '{@link org.onceforall.dms.desktop.logic.MBurnCdStep <em>MBurn Cd Step</em>}' class.
