@@ -64,6 +64,19 @@ public class Test {
      * @throws IOException Thrown if an error occurs while trying to read from the input stream.
      */
     protected String getStringFromInputStream(InputStream inputStream) throws IOException {
+    	return getStringFromInputStream(inputStream, true);
+    }
+    
+    /**
+     * Converts the given input stream into a string by reading the input stream completely.
+     * It also closes the input stream depending of the <code>closeStream</code> parameter.
+     * 
+     * @param inputStream Specifies the input stream to converted.
+     * @param closeStream Specifies whether to close the input stream.
+     * @return Returns the converted input stream.
+     * @throws IOException Thrown if an error occurs while trying to read from the input stream.
+     */
+    protected String getStringFromInputStream(InputStream inputStream, boolean closeStream) throws IOException {
     	StringBuilder builder = new StringBuilder();
     	
     	if(inputStream.markSupported())
@@ -80,7 +93,8 @@ public class Test {
 	    	}
     	}
     	finally {
-    		inputStream.close();
+    		if(closeStream)
+    			inputStream.close();
     	}
     	
     	return builder.toString();
