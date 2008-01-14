@@ -65,7 +65,7 @@ import org.onceforall.dms.desktop.logic.types.Type;
  *
  * @see org.onceforall.dms.desktop.logic.LogicPackage#getMAudioStep()
  * @model kind="class" abstract="true"
- *        annotation="http://www.onceforall.org/mcore iconFilePath='Image Files/Audio step.gif' compositeClassName='org.onceforall.dms.desktop.ui.MAudioStepComposite' interruptable='false' stoppable='false' terminatable='false'"
+ *        annotation="http://www.onceforall.org/mcore iconFilePath='Image Files/Audio step.gif' compositeClassName='org.onceforall.dms.desktop.ui.MAudioStepComposite' actionIconFilePath='Image Files/Mark as completed.gif' interruptable='false' stoppable='false' terminatable='false'"
  * @generated
  */
 public abstract class MAudioStep extends MStep {
@@ -106,7 +106,7 @@ public abstract class MAudioStep extends MStep {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final String copyright = "Copyright 2006, Marc Maier";
+	public static final String copyright = "Copyright 2007, Marc Maier";
 
 	/**
      * Adds a value type for this class.
@@ -387,7 +387,6 @@ public abstract class MAudioStep extends MStep {
 	public String getDefaultCompositeClassName() {
 		return "org.onceforall.dms.desktop.ui.MAudioStepComposite";
 	}
-
 	/**
 	 * Get the default value of the '{@link #isStoppable() <em>Stoppable</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -439,6 +438,20 @@ public abstract class MAudioStep extends MStep {
 	public File getDefaultIconFilePath() {
 		return (File)LogicFactory.eINSTANCE.createFromString(LogicPackage.eINSTANCE.getMFile(), "Image Files/Audio step.gif");
 	}
+
+	/**
+	 * Get the default value of the '{@link #getActionIconFilePath() <em>Action Icon File Path</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return Returns the default value of the '{@link #getActionIconFilePath() <em>Action Icon File Path</em>}' attribute.
+	 * @see #getActionIconFilePath()
+	 * @generated
+	 * @ordered
+	 */
+	public File getDefaultActionIconFilePath() {
+		return (File)LogicFactory.eINSTANCE.createFromString(LogicPackage.eINSTANCE.getMFile(), "Image Files/Mark as completed.gif");
+	}
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -449,11 +462,12 @@ public abstract class MAudioStep extends MStep {
 		
 		firstMAudioStepConstructorHook();
 				
-		compositeClassName = "org.onceforall.dms.desktop.ui.MAudioStepComposite";
-		stoppable = false;
 		interruptable = false;
 		terminatable = false;
+		stoppable = false;
 		iconFilePath = (File)LogicFactory.eINSTANCE.createFromString(LogicPackage.eINSTANCE.getMFile(), "Image Files/Audio step.gif");
+		actionIconFilePath = (File)LogicFactory.eINSTANCE.createFromString(LogicPackage.eINSTANCE.getMFile(), "Image Files/Mark as completed.gif");
+		compositeClassName = "org.onceforall.dms.desktop.ui.MAudioStepComposite";
 					 
 		setMLeftInputLevelProperty(new MProperty(true, "Left input level", "Displays the current left input level as a value between 0 and 100. If the dBFS scale is used, the 100 represents 0dBFS and 0 represents -50dBFS. Otherwise it represents the (scaled) raw readings.", null));			 
 		setMRightInputLevelProperty(new MProperty(true, "Right input level", "Displays the current right input level as a value between 0 and 100. If the dBFS scale is used, the 100 represents 0dBFS and 0 represents -50dBFS. Otherwise it represents the (scaled) raw readings.", null));			 
