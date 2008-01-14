@@ -41,28 +41,23 @@
 package org.onceforall.dms.desktop.ui;
 
 import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
 import java.io.IOException;
-import java.util.ArrayList;
+import java.net.URL;
 import java.util.Date;
-import java.util.Iterator;
 import java.util.List;
-import java.util.Properties;
 import java.util.ResourceBundle;
 import java.util.logging.Handler;
 import java.util.logging.Level;
 import java.util.logging.LogRecord;
 
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.ecore.EReference;
+import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.custom.SashForm;
 import org.eclipse.swt.custom.ScrolledComposite;
 import org.eclipse.swt.events.DisposeEvent;
 import org.eclipse.swt.events.DisposeListener;
-import org.eclipse.swt.events.SelectionAdapter;
-import org.eclipse.swt.events.SelectionEvent;
+import org.eclipse.swt.graphics.Cursor;
 import org.eclipse.swt.graphics.Image;
 import org.eclipse.swt.layout.FormAttachment;
 import org.eclipse.swt.layout.FormData;
@@ -80,13 +75,10 @@ import org.eclipse.swt.widgets.Table;
 import org.eclipse.swt.widgets.TableColumn;
 import org.eclipse.swt.widgets.TableItem;
 import org.eclipse.swt.widgets.Tree;
-import org.eclipse.swt.widgets.TreeItem;
-import org.eclipse.swt.widgets.Widget;
 import org.eclipse.ui.forms.FormColors;
 import org.eclipse.ui.forms.widgets.ExpandableComposite;
 import org.eclipse.ui.forms.widgets.ScrolledForm;
 import org.eclipse.ui.forms.widgets.Section;
-import org.eclipse.ui.internal.BundleGroupProperties;
 import org.onceforall.dms.desktop.Main;
 import org.onceforall.dms.desktop.exception.DesktopException;
 import org.onceforall.dms.desktop.logging.Logger;
@@ -95,7 +87,7 @@ import org.onceforall.dms.desktop.logic.LogicPackage;
 import org.onceforall.dms.desktop.logic.MApplication;
 import org.onceforall.dms.desktop.logic.MDmsApplication;
 import org.onceforall.dms.desktop.logic.MDmsApplicationMGetDataUpgradeInfoStep;
-import org.onceforall.dms.desktop.logic.MDmsApplicationMUpgradeDataStep;
+import org.onceforall.dms.desktop.logic.MElement;
 import org.onceforall.dms.desktop.logic.MObject;
 import org.onceforall.dms.desktop.logic.MScript;
 import org.onceforall.dms.desktop.logic.MStatefulObject;
@@ -128,6 +120,9 @@ public class MainComposite extends MElementComposite {
 	
 	/** Specifies the application navigation tree. */
 	protected Tree applicationTree;
+	
+	/** Specifies the main tree selector for the application. */
+	protected MElementTreeSelectorComposite treeSelectorComposite;
 	
 	/** Specifies the label of the event log table. */
 	protected Label eventLogTableLabel;
@@ -172,6 +167,8 @@ public class MainComposite extends MElementComposite {
     public MainComposite(Shell shell, int style) throws DesktopException {
         super(shell, style);
         
+        setCursor(waitCursor);
+        
        // Sets the background colour according to the forms colour scheme.
        FormColors formColours =  getDefaultFormToolkit().getColors();
        setBackground(formColours.getBackground());
@@ -196,7 +193,10 @@ public class MainComposite extends MElementComposite {
 		
 		MApplication.getInstance().getMLogFileProperty().setValue(new File(Logger.getLogger().getLogFileName()));
 		
-		createApplicationTree(form);	
+		//createApplicationTree(form);
+		treeSelectorComposite = new MElementTreeSelectorComposite(form, SWT.NONE);
+		treeSelectorComposite.eAdapters().add(this);
+		treeSelectorComposite.setMElement(MDmsApplication.getInstance());
 		
 		scrolledComposite = new ScrolledComposite(form, SWT.V_SCROLL);
         scrolledComposite.setExpandHorizontal(true);
@@ -227,13 +227,25 @@ public class MainComposite extends MElementComposite {
             }
 		    
 		});
+		
+		
+		TreeIterator iterator = MApplication.getInstance().eAllContents();
+		while(iterator.hasNext()) {
+			Object object = iterator.next();
+			
+		    if(object instanceof MStatefulObject)
+		    	((MStatefulObject) object).getMStateProperty().eAdapters().add(this);
+		}
+		
+		setCursor(null);
     }
 	
 	/**
 	 * Called when the application is closed.
 	 */
 	protected void widgetDisposedEvent() {
-        mElementComposite.setMElement(null);                	    
+		if(mElementComposite != null)
+			mElementComposite.setMElement(null);                	    
 	}
 	
 	/**
@@ -321,7 +333,7 @@ public class MainComposite extends MElementComposite {
 	 * 
 	 * @param form Specifies the sash form that will diplay this tree on the left-hand side.
 	 */
-	protected void createApplicationTree(SashForm form) {
+	/*?protected void createApplicationTree(SashForm form) {
 	    applicationTree = getDefaultFormToolkit().createTree(form, SWT.SINGLE);
 		applicationTree.addSelectionListener(new SelectionAdapter() {
 		    @Override
@@ -331,7 +343,7 @@ public class MainComposite extends MElementComposite {
 		});
 		
 		updateApplicationTree();
-	}
+	}*/
 	
 	/**
 	 * Creates the table for listing all logged events.
@@ -347,7 +359,7 @@ public class MainComposite extends MElementComposite {
 		eventScrollForm.setExpandVertical(true);
 		eventLogTable = getDefaultFormToolkit().createTable(eventScrollForm.getBody(), SWT.FULL_SELECTION);
 		eventLogTable.setHeaderVisible(true);
-		GridData layoutData = new GridData(GridData.FILL, GridData.FILL, true, true);
+		GridData layoutData = new GridData(GridData.FILL, GridData.FILL, true, false);
 		layoutData.heightHint = 100;
 		eventLogTable.setLayoutData(layoutData);
 		
@@ -376,7 +388,8 @@ public class MainComposite extends MElementComposite {
 	/**
 	 * Processes the windows messages.
 	 */
-	protected void processMessages() {	    
+	protected void processMessages() {
+	
 	    // Defines the main message loop.
 	    while(!isDisposed())
 		    try {
@@ -396,7 +409,18 @@ public class MainComposite extends MElementComposite {
 	             Thread.sleep(100);
 	 	    }
 	 	    catch(Throwable throwable) {
-	 	        Logger.getLogger().log(Level.SEVERE, throwable.getMessage(), throwable);
+	 	    	Logger.getLogger().log(Level.SEVERE, throwable.getMessage(), throwable);
+	 	       
+	 	       	String message = throwable.getMessage();
+	 	        if(message != null) {
+		 	        if(throwable instanceof DesktopException)
+		 	        	message += "\n\n"+((DesktopException) throwable).getAdvice();
+		 	        
+			    	MessageBox messageBox = new MessageBox(getShell(), SWT.OK | SWT.ICON_ERROR);
+					messageBox.setMessage(message);
+					messageBox.setText("Digital Media Service Desktop Error");
+					messageBox.open();
+	 	        }
 	 	    }
 	 	   
  	    // Saves the application data after the application has been shut down.
@@ -429,6 +453,9 @@ public class MainComposite extends MElementComposite {
 	    String date = bundle.getString("date");
 	    String build = bundle.getString("build");
 	    mApplication.setVersionProperty(version+"."+build+" (built on "+date+" by "+user+")");
+	    
+	    String infoWebPageUrl = bundle.getString("info");
+	    mApplication.setInfoWebPageProperty(new URL(infoWebPageUrl));
 	    
 	    // Set the window title, icon and size.
 	    Image smallIcon = new Image(display, mApplication.getIconFilePath().getAbsolutePath());
@@ -575,12 +602,12 @@ public class MainComposite extends MElementComposite {
 	 * Updates the application tree. It clears the tree and adds all stateful objects that are in the 
 	 * sub tree of the application object.
 	 */
-	protected void updateApplicationTree() {
+	/*?protected void updateApplicationTree() {
 	   applicationTree.removeAll();
        TreeItem applicationTreeItem  = createTreeItem(MApplication.getInstance(), applicationTree);
        if(applicationTreeItem != null)
     	   applicationTreeItem.setExpanded(true);
-	}
+	}*/
 	
 	/**
 	 * Creates the tree item and all its sub item for the given managed object. It adds the new tree item
@@ -591,7 +618,7 @@ public class MainComposite extends MElementComposite {
 	 * This can be a tree or a tree item.
 	 * @retrun Returns the created tree item.
 	 */
-	protected TreeItem createTreeItem(MObject mObject, Widget treeItemParent) {
+	/*?protected TreeItem createTreeItem(MObject mObject, Widget treeItemParent) {
 		// Makes sure that application data upgrade steps are not included. TODO: Makes these steps save for usage in the UI.
 		if(mObject == ((MDmsApplication) MApplication.getInstance()).getMGetDataUpgradeInfoStep()
 				|| mObject == ((MDmsApplication) MApplication.getInstance()).getMUpgradeDataStep())
@@ -623,17 +650,17 @@ public class MainComposite extends MElementComposite {
 	       createTreeItem(iterator.next(), treeItem);
 	    
 	    return treeItem;
-	}
+	}*/
 	
 	/**
 	 * Implements the selection event handler for the application tree.
 	 * 
 	 * @param event Specifies the selection event.
 	 */
-	protected void applicationTreeSelected(SelectionEvent event) {
+	/*?protected void applicationTreeSelected(SelectionEvent event) {
 		MObject mObject = (MObject) applicationTree.getSelection()[0].getData();
 	    selectMElement(mObject, true);
-	}
+	}*/
 	
 	/**
 	 * Selects a managed element, i.e. makes it visible in the detail composite.
@@ -641,9 +668,11 @@ public class MainComposite extends MElementComposite {
 	 * @param mElement Specifies the managed element to select.
 	 * @param userEvent Specifies whether a user has triggered the event.
 	 */
-	protected void selectMElement(MObject mElement, boolean userEvent) {
+	protected void selectMElement(MElement mElement, boolean userEvent) {
 		if(this.mElement == mElement)
 			return;
+		
+		setCursor(new Cursor(getDisplay(), SWT.CURSOR_WAIT));
 		
 		setLayoutDeferred(true);
 		try {
@@ -666,56 +695,17 @@ public class MainComposite extends MElementComposite {
 	                mElementComposite.setMElement(mElement);
 	                mElementComposite.setParent(scrolledComposite);
 	        		scrolledComposite.setContent(mElementComposite);
-	        		mElementComposite.setVisible(true);	
+	        		mElementComposite.setVisible(true);
+	        		mElementComposite.layout();
 	            }
 		    }
 		    
 		    if(!userEvent)
-		        applicationTree.setSelection(getTreeItemsFromData(applicationTree.getItems(), mElement));
+		        treeSelectorComposite.setSelectedMElement(mElement);
 		}
 		finally {
 			setLayoutDeferred(false);			
-		}
-	}
-	
-	/**
-	 * Performs a depth first search for a tree items whose data is the same as the
-	 * given data object.
-	 *
-	 * @param rootTreeItems Specifies the root tree items from which to start the search.
-	 * @param data Specifies the data to search for.
-	 * @return Returns the tree items. If no tree items are found an empty array is returned.
-	 */
-	protected TreeItem[] getTreeItemsFromData(TreeItem rootTreeItems[], Object data) {
-	    if(data == null)
-	        return new TreeItem[] {};
-
-	    ArrayList resultList = new ArrayList();
-		getTreeItemsFromData(rootTreeItems, data, resultList);
-		
-		TreeItem[] result = new TreeItem[resultList.size()];
-		int index = 0;
-		Iterator iterator = resultList.iterator();
-		while(iterator.hasNext())
-		    result[index++] = (TreeItem) iterator.next();
-
-		return result;		
-	}
-	
-	/**
-	 * Performs a depth first search for a tree items whose data is the same as the
-	 * given data object.
-	 *
-	 * @param rootTreeItems Specifies the root tree items from which to start the search.
-	 * @param data Specifies the data to search for.
-	 * @param resultList Specifies a list of so far collected results.
-	 */
-	private void getTreeItemsFromData(TreeItem rootTreeItems[], Object data, ArrayList resultList) {
-	    for(int index = 0; index < rootTreeItems.length; ++index) {
-	        if(data.equals(rootTreeItems[index].getData()))
-	            resultList.add(rootTreeItems[index]);
-	        
-	        getTreeItemsFromData(rootTreeItems[index].getItems(), data, resultList);
+			setCursor(null);
 		}
 	}
 
@@ -727,7 +717,7 @@ public class MainComposite extends MElementComposite {
      * @param treeItems Specifies the tree items to be used as root nodes for the search.
      * @param mObject Specifies the managed object.
      */
-    protected void updateTreeItem(TreeItem[] treeItems, MObject mObject) {
+    /*?protected void updateTreeItem(TreeItem[] treeItems, MObject mObject) {
         for(int index = 0; index < treeItems.length; ++index) {
             if(treeItems[index].getData().equals(mObject)) {
                 treeItems[index].setText(getTreeNodeText(mObject));
@@ -735,39 +725,7 @@ public class MainComposite extends MElementComposite {
             }
             updateTreeItem(treeItems[index].getItems(), mObject);
         }
-    }
-    
-    /**
-     * Conducts a depth-first search through the application tree to find the tree item that
-     * has the given managed objects as data. It adds a tree node for the managed object to be added
-     * under those tree nodes.
-     *
-     * @param treeItems Specifies the tree items to be used as root nodes for the search.
-     * @param parentMObject Specifies the managed object to look for.
-     * @param newMObject Specifies the managed object to be added.
-     */
-    protected void addTreeItem(TreeItem[] treeItems, MObject parentMObject, MObject newMObject) {
-    	TreeItem[] targetTreeItems = getTreeItemsFromData(treeItems, parentMObject);
-    	
-    	for(TreeItem treeItem: targetTreeItems)
-    		createTreeItem(newMObject, treeItem);
-    }
-    
-    /**
-     * Conducts a depth-first search through the application tree to find the tree item that
-     * has the given managed objects as data. It removes the tree node that corresponds to the given managed object.
-     *
-     * @param treeItems Specifies the tree items to be used as root nodes for the search.
-     * @param mObject Specifies the simple object to be removed.
-     */
-    protected void removeTreeItem(TreeItem[] treeItems, MObject mObject) {
-    	for(TreeItem treeItem: treeItems) {
-            if(treeItem.getData().equals(mObject))
-            	treeItem.dispose();
-            
-            removeTreeItem(treeItem.getItems(), mObject);
-        }
-    }
+    }*/
     
     /**
      * Gets the text for an item in the application tree from a given managed object. 
@@ -775,7 +733,7 @@ public class MainComposite extends MElementComposite {
      * @param mObject Specifies the managed object for which to get the tree item text.
      * @return Returns the text for an item in the application tree from a given managed object.
      */
-    protected String getTreeNodeText(MObject mObject) {
+    /*?protected String getTreeNodeText(MObject mObject) {
         String result;
         if(mObject instanceof MStatefulObject && ((MStatefulObject) mObject).getStateProperty() != null) {
             result = mObject.getNameForUI()+" ("+((MStatefulObject) mObject).getStateProperty().getNameForUI();
@@ -794,7 +752,7 @@ public class MainComposite extends MElementComposite {
             result = mObject.getNameForUI();
         
         return(result);
-    }
+    }*/
 
     
     /**
@@ -823,7 +781,7 @@ public class MainComposite extends MElementComposite {
             		|| mValue.eContainingFeatureID() == LogicPackage.MSTEP__MPROGRESS_PROPERTY 
             		|| mValue.eContainingFeatureID() == LogicPackage.MSTEP__MPROGRESS_STATUS_PROPERTY)) {
             	MObject mObject = (MObject) mValue.eContainer();
-                updateTreeItem(applicationTree.getItems(), mObject);
+                //? updateTreeItem(applicationTree.getItems(), mObject);
                 
                 if(mObject instanceof MStep && !((MStep) mObject).isSynchronous() && mValue.eContainingFeatureID() == LogicPackage.MSTATEFUL_OBJECT__MSTATE_PROPERTY) {
                     MStep mStep = (MStep) mObject;
@@ -865,10 +823,10 @@ public class MainComposite extends MElementComposite {
                     else if(state.equals(MStepStateType.COMPLETED_STATE)) {
                     	Logger.getLogger().info("'"+mStep.getNameForUI()+"' completed successfully.");
 
-                    	if(mStep instanceof MDmsApplicationMUpgradeDataStep) {
+                    	/*?if(mStep instanceof MDmsApplicationMUpgradeDataStep) {
                     		updateApplicationTree();
                     		selectMElement(MApplication.getInstance(), false);
-                    	}
+                    	} */
                     	
                     	// Starts the next mStep if this has been previously requested.
                     	if(nextStep != null && triggerStepForNextStep != null && state.equals(MStepStateType.COMPLETED_STATE) && mStep.equals(triggerStepForNextStep))
@@ -890,13 +848,8 @@ public class MainComposite extends MElementComposite {
                 }
             }
         }
-        else if(notification.getEventType() == Notification.ADD && notification.getNotifier() instanceof MObject
-        		&& notification.getFeature() instanceof EReference && ((EReference) notification.getFeature()).isContainment()) {
-                addTreeItem(applicationTree.getItems(), (MObject) notification.getNotifier(), (MObject) notification.getNewValue());
-        }
-        else if(notification.getEventType() == Notification.REMOVE && notification.getNotifier() instanceof MObject
-        		&& notification.getFeature() instanceof EReference && ((EReference) notification.getFeature()).isContainment()) {
-            removeTreeItem(applicationTree.getItems(), (MObject) notification.getOldValue());
+        else if(notification.getEventType() == Notification.SET && notification.getNotifier() instanceof MElementSelector){
+            selectMElement((MElement) notification.getNewValue(), true);
         }
 	}
     
