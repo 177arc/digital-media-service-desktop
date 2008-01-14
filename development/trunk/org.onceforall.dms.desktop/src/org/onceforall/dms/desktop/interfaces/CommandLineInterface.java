@@ -139,7 +139,7 @@ public class CommandLineInterface {
             
             // Throws an exception only if the error code is not 0 and the process has not been terminated forcefully.
 			if(errorCode != 0 && !terminated)
-				throw new DesktopException("The command \""+StringArrayUtility.getString(commandAndArguments)+"\" reported the following error during the execution:\n\n"+result, "Please contact your administrator.", DesktopException.CRITICAL_SEVERITY, null);
+				throw new DesktopException("The command \""+StringArrayUtility.getString(commandAndArguments)+"\" reported the following error during the execution: "+result, "Please contact your administrator.", DesktopException.CRITICAL_SEVERITY, null);
 		}
       	catch(IOException exception) {
 			throw new DesktopException("The system could not execute command \""+StringArrayUtility.getString(commandAndArguments)+"\".", "Please contact your administrator.", DesktopException.CRITICAL_SEVERITY, exception);
