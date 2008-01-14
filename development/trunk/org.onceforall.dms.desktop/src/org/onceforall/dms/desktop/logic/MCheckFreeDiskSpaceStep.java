@@ -43,7 +43,7 @@ import org.onceforall.dms.desktop.logic.types.Type;
  *
  * @see org.onceforall.dms.desktop.logic.LogicPackage#getMCheckFreeDiskSpaceStep()
  * @model kind="class"
- *        annotation="http://www.onceforall.org/mcore name='Check free disk space' description='Please make sure that there is enough disk space free on this computer. There must be at least 1 GB (i.e. 1024 MB) available for the recordings. If not enough disk space is available, please delete the oldest services till enough disk space is free.' iconFilePath='Image Files/Task.gif' actionName='Check' interruptable='false' stoppable='false' terminatable='false'"
+ *        annotation="http://www.onceforall.org/mcore name='Check free disk space' description='Please make sure that there is enough disk space free on this computer. There must be at least 1 GB (i.e. 1024 MB) available for the recordings. If not enough disk space is available, please delete the oldest services till enough disk space is free.' iconFilePath='Image Files/Task.gif' actionName='Check' actionIconFilePath='Image Files/Mark as completed.gif' interruptable='false' stoppable='false' terminatable='false'"
  * @generated
  */
 public class MCheckFreeDiskSpaceStep extends MStep {
@@ -60,7 +60,7 @@ public class MCheckFreeDiskSpaceStep extends MStep {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final String copyright = "Copyright 2006, Marc Maier";
+	public static final String copyright = "Copyright 2007, Marc Maier";
 
 	/**
      * Adds a value type for this class.
@@ -71,6 +71,37 @@ public class MCheckFreeDiskSpaceStep extends MStep {
 	static {
 		Type.VALUE_TYPES_BY_NAME.put("Reference to "+MCheckFreeDiskSpaceStep.TYPE_NAME, new ReferenceType("Reference to "+MCheckFreeDiskSpaceStep.TYPE_NAME, "Specifies a reference to a "+MCheckFreeDiskSpaceStep.TYPE_NAME_FOR_UI, MCheckFreeDiskSpaceStep.class));
 	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -264,7 +295,6 @@ public class MCheckFreeDiskSpaceStep extends MStep {
 	public String getDefaultActionName() {
 		return "Check";
 	}
-
 	/**
 	 * Get the default value of the '{@link #isStoppable() <em>Stoppable</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -276,6 +306,19 @@ public class MCheckFreeDiskSpaceStep extends MStep {
 	 */
 	public boolean getDefaultStoppable() {
 		return false;
+	}
+
+	/**
+	 * Get the default value of the '{@link #getActionIconFilePath() <em>Action Icon File Path</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return Returns the default value of the '{@link #getActionIconFilePath() <em>Action Icon File Path</em>}' attribute.
+	 * @see #getActionIconFilePath()
+	 * @generated
+	 * @ordered
+	 */
+	public File getDefaultActionIconFilePath() {
+		return (File)LogicFactory.eINSTANCE.createFromString(LogicPackage.eINSTANCE.getMFile(), "Image Files/Mark as completed.gif");
 	}
 
 	/**
@@ -342,6 +385,7 @@ public class MCheckFreeDiskSpaceStep extends MStep {
 	public boolean getDefaultTerminatable() {
 		return false;
 	}
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -352,13 +396,14 @@ public class MCheckFreeDiskSpaceStep extends MStep {
 		
 		firstMCheckFreeDiskSpaceStepConstructorHook();
 				
-		actionName = "Check";
-		stoppable = false;
-		iconFilePath = (File)LogicFactory.eINSTANCE.createFromString(LogicPackage.eINSTANCE.getMFile(), "Image Files/Task.gif");
 		description = "Please make sure that there is enough disk space free on this computer. There must be at least 1 GB (i.e. 1024 MB) available for the recordings. If not enough disk space is available, please delete the oldest services till enough disk space is free.";
+		stoppable = false;
+		actionIconFilePath = (File)LogicFactory.eINSTANCE.createFromString(LogicPackage.eINSTANCE.getMFile(), "Image Files/Mark as completed.gif");
 		name = "Check free disk space";
-		interruptable = false;
+		iconFilePath = (File)LogicFactory.eINSTANCE.createFromString(LogicPackage.eINSTANCE.getMFile(), "Image Files/Task.gif");
 		terminatable = false;
+		interruptable = false;
+		actionName = "Check";
 					 
 		setMRequiredFreeDiskSpaceParameter(new MParameter(false, "Required free disk space", "Specifies the estimated required free disk space in bytes on the drive where the recording will be stored.", null));			 
 		setMDirectoryParameter(new MParameter(false, "Directory", "Specifies the path of the created directory where the recordings will be stored.", null));			 
