@@ -26,7 +26,7 @@ import org.onceforall.dms.desktop.logic.types.Type;
  *
  * @see org.onceforall.dms.desktop.logic.LogicPackage#getMEnterInformationStep()
  * @model kind="class" abstract="true"
- *        annotation="http://www.onceforall.org/mcore name='Enter information' description='Please enter the required information and then select \'Mark as completed\'.' iconFilePath='Image Files/Enter information step.gif' actionName='Mark as completed' interruptable='false' stoppable='false' terminatable='false'"
+ *        annotation="http://www.onceforall.org/mcore name='Enter information' description='Please enter the required information and then select \'Mark as completed\'.' iconFilePath='Image Files/Enter information step.gif' actionName='Mark as completed' actionIconFilePath='Image Files/Mark as completed.gif' interruptable='false' stoppable='false' terminatable='false'"
  * @generated
  */
 public abstract class MEnterInformationStep extends MStep {
@@ -43,7 +43,7 @@ public abstract class MEnterInformationStep extends MStep {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final String copyright = "Copyright 2006, Marc Maier";
+	public static final String copyright = "Copyright 2007, Marc Maier";
 
 	/**
      * Adds a value type for this class.
@@ -54,6 +54,68 @@ public abstract class MEnterInformationStep extends MStep {
 	static {
 		Type.VALUE_TYPES_BY_NAME.put("Reference to "+MEnterInformationStep.TYPE_NAME, new ReferenceType("Reference to "+MEnterInformationStep.TYPE_NAME, "Specifies a reference to a "+MEnterInformationStep.TYPE_NAME_FOR_UI, MEnterInformationStep.class));
 	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -134,7 +196,6 @@ public abstract class MEnterInformationStep extends MStep {
 	public String getDefaultActionName() {
 		return "Mark as completed";
 	}
-
 	/**
 	 * Get the default value of the '{@link #isStoppable() <em>Stoppable</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -146,6 +207,19 @@ public abstract class MEnterInformationStep extends MStep {
 	 */
 	public boolean getDefaultStoppable() {
 		return false;
+	}
+
+	/**
+	 * Get the default value of the '{@link #getActionIconFilePath() <em>Action Icon File Path</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return Returns the default value of the '{@link #getActionIconFilePath() <em>Action Icon File Path</em>}' attribute.
+	 * @see #getActionIconFilePath()
+	 * @generated
+	 * @ordered
+	 */
+	public File getDefaultActionIconFilePath() {
+		return (File)LogicFactory.eINSTANCE.createFromString(LogicPackage.eINSTANCE.getMFile(), "Image Files/Mark as completed.gif");
 	}
 
 	/**
@@ -212,6 +286,7 @@ public abstract class MEnterInformationStep extends MStep {
 	public boolean getDefaultTerminatable() {
 		return false;
 	}
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -222,13 +297,14 @@ public abstract class MEnterInformationStep extends MStep {
 		
 		firstMEnterInformationStepConstructorHook();
 				
-		actionName = "Mark as completed";
-		stoppable = false;
-		iconFilePath = (File)LogicFactory.eINSTANCE.createFromString(LogicPackage.eINSTANCE.getMFile(), "Image Files/Enter information step.gif");
 		description = "Please enter the required information and then select \'Mark as completed\'.";
+		stoppable = false;
+		actionIconFilePath = (File)LogicFactory.eINSTANCE.createFromString(LogicPackage.eINSTANCE.getMFile(), "Image Files/Mark as completed.gif");
 		name = "Enter information";
-		interruptable = false;
+		iconFilePath = (File)LogicFactory.eINSTANCE.createFromString(LogicPackage.eINSTANCE.getMFile(), "Image Files/Enter information step.gif");
 		terminatable = false;
+		interruptable = false;
+		actionName = "Mark as completed";
 		
 
 		lastMEnterInformationStepConstructorHook();		
