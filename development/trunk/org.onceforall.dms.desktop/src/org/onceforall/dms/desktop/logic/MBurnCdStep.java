@@ -55,7 +55,7 @@ import org.onceforall.dms.desktop.logic.types.Type;
  *
  * @see org.onceforall.dms.desktop.logic.LogicPackage#getMBurnCdStep()
  * @model kind="class"
- *        annotation="http://www.onceforall.org/mcore name='Burn CDs for sale' description='Burns the recordings on a writable CD for sale. Please insert a blank CD before initiating the burning process. Note that the post-sermon recording does not need to be included.' iconFilePath='Image Files/Burn CD step.gif' actionName='Burn' interruptable='false' stoppable='false' terminatable='false'"
+ *        annotation="http://www.onceforall.org/mcore name='Burn CDs for sale' description='Burns the recordings on a writable CD for sale. Please insert a blank CD before initiating the burning process. Note that the post-sermon recording does not need to be included.' iconFilePath='Image Files/Burn CD step.gif' actionName='Burn' actionIconFilePath='Image Files/Burn CD.gif' interruptable='false' stoppable='false' terminatable='false'"
  * @generated
  */
 public class MBurnCdStep extends MStep {
@@ -79,7 +79,7 @@ public class MBurnCdStep extends MStep {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final String copyright = "Copyright 2006, Marc Maier";
+	public static final String copyright = "Copyright 2007, Marc Maier";
 
 	/**
      * Adds a value type for this class.
@@ -294,7 +294,6 @@ public class MBurnCdStep extends MStep {
 	public String getDefaultActionName() {
 		return "Burn";
 	}
-
 	/**
 	 * Get the default value of the '{@link #isStoppable() <em>Stoppable</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -306,6 +305,19 @@ public class MBurnCdStep extends MStep {
 	 */
 	public boolean getDefaultStoppable() {
 		return false;
+	}
+
+	/**
+	 * Get the default value of the '{@link #getActionIconFilePath() <em>Action Icon File Path</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return Returns the default value of the '{@link #getActionIconFilePath() <em>Action Icon File Path</em>}' attribute.
+	 * @see #getActionIconFilePath()
+	 * @generated
+	 * @ordered
+	 */
+	public File getDefaultActionIconFilePath() {
+		return (File)LogicFactory.eINSTANCE.createFromString(LogicPackage.eINSTANCE.getMFile(), "Image Files/Burn CD.gif");
 	}
 
 	/**
@@ -372,6 +384,7 @@ public class MBurnCdStep extends MStep {
 	public boolean getDefaultTerminatable() {
 		return false;
 	}
+
 	/** 
 	 * Specifies an empty string array that can be used for typed conversions of collection.
 	 * @see java.util.Collection#toArray(Object[])
@@ -388,13 +401,14 @@ public class MBurnCdStep extends MStep {
 		
 		firstMBurnCdStepConstructorHook();
 				
-		actionName = "Burn";
-		stoppable = false;
-		iconFilePath = (File)LogicFactory.eINSTANCE.createFromString(LogicPackage.eINSTANCE.getMFile(), "Image Files/Burn CD step.gif");
 		description = "Burns the recordings on a writable CD for sale. Please insert a blank CD before initiating the burning process. Note that the post-sermon recording does not need to be included.";
+		stoppable = false;
+		actionIconFilePath = (File)LogicFactory.eINSTANCE.createFromString(LogicPackage.eINSTANCE.getMFile(), "Image Files/Burn CD.gif");
 		name = "Burn CDs for sale";
-		interruptable = false;
+		iconFilePath = (File)LogicFactory.eINSTANCE.createFromString(LogicPackage.eINSTANCE.getMFile(), "Image Files/Burn CD step.gif");
 		terminatable = false;
+		interruptable = false;
+		actionName = "Burn";
 					 
 		setMRecordingFilesParameter(new MParameter(false, "Recording files", "Specifies the file paths (relative or absolute) of the recorded WAV files.", null));			 
 		setMBurningSoftwareDirectoryPathParameter(new MParameter(false, "CD-ROM burning software directory path", "Specifies the path to the directory that contains the \'nerocmd.exe\'.", null));			 
