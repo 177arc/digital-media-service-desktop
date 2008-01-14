@@ -58,7 +58,7 @@ public abstract class MStatefulObject extends MObject {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final String copyright = "Copyright 2006, Marc Maier";
+	public static final String copyright = "Copyright 2007, Marc Maier";
 
 	/**
      * Adds a value type for this class.
@@ -69,6 +69,37 @@ public abstract class MStatefulObject extends MObject {
 	static {
 		Type.VALUE_TYPES_BY_NAME.put("Reference to "+MStatefulObject.TYPE_NAME, new ReferenceType("Reference to "+MStatefulObject.TYPE_NAME, "Specifies a reference to a "+MStatefulObject.TYPE_NAME_FOR_UI, MStatefulObject.class));
 	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
