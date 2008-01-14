@@ -77,7 +77,7 @@ public class MScript extends MStatefulObject implements EObject {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final String copyright = "Copyright 2006, Marc Maier";
+	public static final String copyright = "Copyright 2007, Marc Maier";
 
 	/**
      * Adds a value type for this class.
@@ -88,6 +88,37 @@ public class MScript extends MStatefulObject implements EObject {
 	static {
 		Type.VALUE_TYPES_BY_NAME.put("Reference to "+MScript.TYPE_NAME, new ReferenceType("Reference to "+MScript.TYPE_NAME, "Specifies a reference to a "+MScript.TYPE_NAME_FOR_UI, MScript.class));
 	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
