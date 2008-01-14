@@ -29,7 +29,7 @@ public class LogicAdapterFactory extends AdapterFactoryImpl {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final String copyright = "Copyright 2006, Marc Maier";
+	public static final String copyright = "Copyright 2007, Marc Maier";
 
 	/**
 	 * The cached model package.
