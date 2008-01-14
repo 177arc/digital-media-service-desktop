@@ -19,15 +19,20 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.net.URL;
+import java.net.URLEncoder;
+import java.text.DateFormat;
 import java.text.NumberFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.SortedSet;
+import java.util.TreeSet;
 
 import javax.sound.sampled.AudioFileFormat;
 import javax.sound.sampled.AudioSystem;
@@ -79,15 +84,65 @@ import org.tritonus.share.sampled.file.TAudioFileFormat;
  *   <li>{@link org.onceforall.dms.desktop.logic.MPublishMp3sStep#getPodcastRelativeFtpPathParameter <em>Podcast Relative Ftp Path Parameter</em>}</li>
  *   <li>{@link org.onceforall.dms.desktop.logic.MPublishMp3sStep#getMPodcastHeaderFilePathParameter <em>MPodcast Header File Path Parameter</em>}</li>
  *   <li>{@link org.onceforall.dms.desktop.logic.MPublishMp3sStep#getPodcastHeaderFilePathParameter <em>Podcast Header File Path Parameter</em>}</li>
+ *   <li>{@link org.onceforall.dms.desktop.logic.MPublishMp3sStep#getMContentIncludeMp3PlayerParameter <em>MContent Include Mp3 Player Parameter</em>}</li>
+ *   <li>{@link org.onceforall.dms.desktop.logic.MPublishMp3sStep#getContentIncludeMp3PlayerParameter <em>Content Include Mp3 Player Parameter</em>}</li>
+ *   <li>{@link org.onceforall.dms.desktop.logic.MPublishMp3sStep#getMContentGroupRecordingsParameter <em>MContent Group Recordings Parameter</em>}</li>
+ *   <li>{@link org.onceforall.dms.desktop.logic.MPublishMp3sStep#getContentGroupRecordingsParameter <em>Content Group Recordings Parameter</em>}</li>
+ *   <li>{@link org.onceforall.dms.desktop.logic.MPublishMp3sStep#getMContentPageUrlResult <em>MContent Page Url Result</em>}</li>
+ *   <li>{@link org.onceforall.dms.desktop.logic.MPublishMp3sStep#getContentPageUrlResult <em>Content Page Url Result</em>}</li>
+ *   <li>{@link org.onceforall.dms.desktop.logic.MPublishMp3sStep#getMPodcastFileUrlResult <em>MPodcast File Url Result</em>}</li>
+ *   <li>{@link org.onceforall.dms.desktop.logic.MPublishMp3sStep#getPodcastFileUrlResult <em>Podcast File Url Result</em>}</li>
  * </ul>
  * </p>
  *
  * @see org.onceforall.dms.desktop.logic.LogicPackage#getMPublishMp3sStep()
  * @model kind="class" abstract="true"
- *        annotation="http://www.onceforall.org/mcore name='Publish MP3s' description='Publishes or republishes MP3 recordings to the Christ Chruch Bromley web site and creates/updates the podcast RSS file accordingly.' iconFilePath='Image Files/Publish MP3s step.gif' actionName='Publish' interruptable='false' stoppable='false' terminatable='false'"
+ *        annotation="http://www.onceforall.org/mcore name='Publish MP3s' description='Publishes or republishes MP3 recordings to the Christ Chruch Bromley web site and creates/updates the podcast RSS file accordingly.' iconFilePath='Image Files/Publish MP3s step.gif' actionName='Publish' actionIconFilePath='Image Files/Publish.gif' interruptable='false' stoppable='false' terminatable='false'"
  * @generated
  */
 public abstract class MPublishMp3sStep extends MFtpStep {
+	/** Specifies the comparator that determines the order in which the MP3s will appear on the web content page. */
+	public static final Comparator MP3_DATE_COMPARATOR = new Comparator<MMp3>() {
+		public int compare(MMp3 mMp31, MMp3 mMp32) {
+			if(mMp31.getPodcastPublishingDateProperty() == null && mMp32.getPodcastPublishingDateProperty() == null)
+				return 0;
+			else if(mMp31.getPodcastPublishingDateProperty() == null && mMp32.getPodcastPublishingDateProperty() != null)
+				return 1;
+			else if(mMp31.getPodcastPublishingDateProperty() != null && mMp32.getPodcastPublishingDateProperty() == null)
+				return -1;
+			else
+				return mMp32.getPodcastPublishingDateProperty().compareTo(mMp31.getPodcastPublishingDateProperty());				
+		}  
+	};	
+	
+	/** Specifies the comparator that determines the order in which the MP3s will be deleted from the FTP site to make space for new ones. The order of deletion is <code>PUBLISHED_STATE</code>, <code>KEEP_PUBLISHED_STATE</code>, <code>TO_BE_PUBLISHED_STATE</code>. */
+	public static final Comparator MP3_DELETE_COMPARATOR = new Comparator<MMp3>() {
+		public int compare(MMp3 mMp31, MMp3 mMp32) {
+			State state1 = mMp31.getStateProperty();
+			State state2 = mMp32.getStateProperty();
+			if(state1 == null && state2 == null)
+				return 0;
+			else if(state1 == null && state2 != null)
+				return 1;
+			else if(state1 != null && state2 == null)
+				return -1;
+			else {
+				if(state1.equals(MMp3StateType.PUBLISHED_STATE) && state2.equals(MMp3StateType.TO_BE_PUBLISHED_STATE))
+					return 1;
+				else if(state1.equals(MMp3StateType.TO_BE_PUBLISHED_STATE) && state2.equals(MMp3StateType.PUBLISHED_STATE))
+					return -1;
+				else if(!state1.equals(state2) || state1.equals(state2) && mMp31.getKeepPublishedProperty() == mMp32.getKeepPublishedProperty())
+					return MP3_DATE_COMPARATOR.compare(mMp31, mMp32);
+				else if(mMp31.getKeepPublishedProperty())
+					return -1;
+				else if(mMp32.getKeepPublishedProperty())
+					return 1;
+				else
+					return 0;
+			}
+		}  
+	};	
+	
 	/**
 	 * Specifies the type name of this managed element.
 	 * <!-- begin-user-doc -->
@@ -101,7 +156,7 @@ public abstract class MPublishMp3sStep extends MFtpStep {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final String copyright = "Copyright 2006, Marc Maier";
+	public static final String copyright = "Copyright 2007, Marc Maier";
 
 	/**
      * Adds a value type for this class.
@@ -147,6 +202,9 @@ public abstract class MPublishMp3sStep extends MFtpStep {
 	
     /** Specifies the number formatter. */
 	protected static final NumberFormat NUMBER_FORMATTER = NumberFormat.getIntegerInstance();
+	
+    /** Specifies the group date formatter. */
+	protected static final DateFormat GROUP_DATE_FORMATTER = new SimpleDateFormat("MMMM yyyy");
 
 	/**
 	 * The cached value of the '{@link #getMaxiumumDiskSpaceParameter() <em>Maxiumum Disk Space Parameter</em>}' attribute.
@@ -549,6 +607,180 @@ public abstract class MPublishMp3sStep extends MFtpStep {
 	protected File podcastHeaderFilePathParameter = PODCAST_HEADER_FILE_PATH_PARAMETER_EDEFAULT;
 	
 	/**
+	 * The cached value of the '{@link #getMContentIncludeMp3PlayerParameter() <em>MContent Include Mp3 Player Parameter</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMContentIncludeMp3PlayerParameter()
+	 * @generated
+	 * @ordered
+	 */
+	protected MParameter mContentIncludeMp3PlayerParameter = null;
+
+	/**
+	 * The default value of the '{@link #getContentIncludeMp3PlayerParameter() <em>Content Include Mp3 Player Parameter</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getContentIncludeMp3PlayerParameter()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final Boolean CONTENT_INCLUDE_MP3_PLAYER_PARAMETER_EDEFAULT = Boolean.TRUE;
+
+	/**
+	 * Get the default value of the '{@link #getContentIncludeMp3PlayerParameter() <em>Content Include Mp3 Player Parameter</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return Returns the default value of the '{@link #getContentIncludeMp3PlayerParameter() <em>Content Include Mp3 Player Parameter</em>}' attribute.
+	 * @see #getContentIncludeMp3PlayerParameter()
+	 * @generated
+	 * @ordered
+	 */
+	public Boolean getDefaultContentIncludeMp3PlayerParameter() {
+		return CONTENT_INCLUDE_MP3_PLAYER_PARAMETER_EDEFAULT;
+	}
+	
+	/**
+	 * The cached value of the '{@link #getContentIncludeMp3PlayerParameter() <em>Content Include Mp3 Player Parameter</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getContentIncludeMp3PlayerParameter()
+	 * @generated
+	 * @ordered
+	 */
+	protected Boolean contentIncludeMp3PlayerParameter = CONTENT_INCLUDE_MP3_PLAYER_PARAMETER_EDEFAULT;
+
+
+	/**
+	 * The cached value of the '{@link #getMContentGroupRecordingsParameter() <em>MContent Group Recordings Parameter</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMContentGroupRecordingsParameter()
+	 * @generated
+	 * @ordered
+	 */
+	protected MParameter mContentGroupRecordingsParameter = null;
+
+	/**
+	 * The default value of the '{@link #getContentGroupRecordingsParameter() <em>Content Group Recordings Parameter</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getContentGroupRecordingsParameter()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final Boolean CONTENT_GROUP_RECORDINGS_PARAMETER_EDEFAULT = Boolean.TRUE;
+
+	/**
+	 * Get the default value of the '{@link #getContentGroupRecordingsParameter() <em>Content Group Recordings Parameter</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return Returns the default value of the '{@link #getContentGroupRecordingsParameter() <em>Content Group Recordings Parameter</em>}' attribute.
+	 * @see #getContentGroupRecordingsParameter()
+	 * @generated
+	 * @ordered
+	 */
+	public Boolean getDefaultContentGroupRecordingsParameter() {
+		return CONTENT_GROUP_RECORDINGS_PARAMETER_EDEFAULT;
+	}
+	
+	/**
+	 * The cached value of the '{@link #getContentGroupRecordingsParameter() <em>Content Group Recordings Parameter</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getContentGroupRecordingsParameter()
+	 * @generated
+	 * @ordered
+	 */
+	protected Boolean contentGroupRecordingsParameter = CONTENT_GROUP_RECORDINGS_PARAMETER_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getMContentPageUrlResult() <em>MContent Page Url Result</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMContentPageUrlResult()
+	 * @generated
+	 * @ordered
+	 */
+	protected MResult mContentPageUrlResult = null;
+
+	/**
+	 * The default value of the '{@link #getContentPageUrlResult() <em>Content Page Url Result</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getContentPageUrlResult()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final URL CONTENT_PAGE_URL_RESULT_EDEFAULT = null;
+
+	/**
+	 * Get the default value of the '{@link #getContentPageUrlResult() <em>Content Page Url Result</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return Returns the default value of the '{@link #getContentPageUrlResult() <em>Content Page Url Result</em>}' attribute.
+	 * @see #getContentPageUrlResult()
+	 * @generated
+	 * @ordered
+	 */
+	public URL getDefaultContentPageUrlResult() {
+		return CONTENT_PAGE_URL_RESULT_EDEFAULT;
+	}
+	
+	/**
+	 * The cached value of the '{@link #getContentPageUrlResult() <em>Content Page Url Result</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getContentPageUrlResult()
+	 * @generated
+	 * @ordered
+	 */
+	protected URL contentPageUrlResult = CONTENT_PAGE_URL_RESULT_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getMPodcastFileUrlResult() <em>MPodcast File Url Result</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMPodcastFileUrlResult()
+	 * @generated
+	 * @ordered
+	 */
+	protected MResult mPodcastFileUrlResult = null;
+
+	/**
+	 * The default value of the '{@link #getPodcastFileUrlResult() <em>Podcast File Url Result</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPodcastFileUrlResult()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final URL PODCAST_FILE_URL_RESULT_EDEFAULT = null;
+
+	/**
+	 * Get the default value of the '{@link #getPodcastFileUrlResult() <em>Podcast File Url Result</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return Returns the default value of the '{@link #getPodcastFileUrlResult() <em>Podcast File Url Result</em>}' attribute.
+	 * @see #getPodcastFileUrlResult()
+	 * @generated
+	 * @ordered
+	 */
+	public URL getDefaultPodcastFileUrlResult() {
+		return PODCAST_FILE_URL_RESULT_EDEFAULT;
+	}
+	
+	/**
+	 * The cached value of the '{@link #getPodcastFileUrlResult() <em>Podcast File Url Result</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPodcastFileUrlResult()
+	 * @generated
+	 * @ordered
+	 */
+	protected URL podcastFileUrlResult = PODCAST_FILE_URL_RESULT_EDEFAULT;
+
+
+	/**
 	 * Get the default value of the '{@link #getActionName() <em>Action Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -560,7 +792,6 @@ public abstract class MPublishMp3sStep extends MFtpStep {
 	public String getDefaultActionName() {
 		return "Publish";
 	}
-
 	/**
 	 * Get the default value of the '{@link #isStoppable() <em>Stoppable</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -572,6 +803,19 @@ public abstract class MPublishMp3sStep extends MFtpStep {
 	 */
 	public boolean getDefaultStoppable() {
 		return false;
+	}
+
+	/**
+	 * Get the default value of the '{@link #getActionIconFilePath() <em>Action Icon File Path</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return Returns the default value of the '{@link #getActionIconFilePath() <em>Action Icon File Path</em>}' attribute.
+	 * @see #getActionIconFilePath()
+	 * @generated
+	 * @ordered
+	 */
+	public File getDefaultActionIconFilePath() {
+		return (File)LogicFactory.eINSTANCE.createFromString(LogicPackage.eINSTANCE.getMFile(), "Image Files/Publish.gif");
 	}
 
 	/**
@@ -638,6 +882,7 @@ public abstract class MPublishMp3sStep extends MFtpStep {
 	public boolean getDefaultTerminatable() {
 		return false;
 	}
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -648,13 +893,14 @@ public abstract class MPublishMp3sStep extends MFtpStep {
 		
 		firstMPublishMp3sStepConstructorHook();
 				
-		actionName = "Publish";
-		stoppable = false;
-		iconFilePath = (File)LogicFactory.eINSTANCE.createFromString(LogicPackage.eINSTANCE.getMFile(), "Image Files/Publish MP3s step.gif");
 		description = "Publishes or republishes MP3 recordings to the Christ Chruch Bromley web site and creates/updates the podcast RSS file accordingly.";
+		stoppable = false;
+		actionIconFilePath = (File)LogicFactory.eINSTANCE.createFromString(LogicPackage.eINSTANCE.getMFile(), "Image Files/Publish.gif");
 		name = "Publish MP3s";
-		interruptable = false;
+		iconFilePath = (File)LogicFactory.eINSTANCE.createFromString(LogicPackage.eINSTANCE.getMFile(), "Image Files/Publish MP3s step.gif");
 		terminatable = false;
+		interruptable = false;
+		actionName = "Publish";
 					 
 		setMMaxiumumDiskSpaceParameter(new MParameter(false, "Maxiumum disk space", "Specifies the maximum disk space that the recordings are allowed to use on the FTP server in mega bytes.", null));			 
 		setMMp3RelativeFtpPathParameter(new MParameter(false, "MP3 relative FTP path", "Specifies the path of the directory on the FTP server to publish the MP3 files to, e.g. \'/recordings\'.", null));			 
@@ -665,7 +911,11 @@ public abstract class MPublishMp3sStep extends MFtpStep {
 		setMContentPageFilePathParameter(new MParameter(false, "Content page file path", "Specifies the content web page that lists the MP3s recordings. This page is generated from the header and footer files and the published MP3 files.", null));			 
 		setMPodcastFilePathParameter(new MParameter(false, "Podcast file path", "Specifies the podcast file. This file is generated from the header file and the published MP3 files.", null));			 
 		setMPodcastRelativeFtpPathParameter(new MParameter(false, "Podcast relative FTP path", "Specifies the path relative to the FTP path where the podcast RSS feed should be created or updated.", null));			 
-		setMPodcastHeaderFilePathParameter(new MParameter(false, "Podcast header file path", "Specifies the file path to the header for the podcast file.", null));
+		setMPodcastHeaderFilePathParameter(new MParameter(false, "Podcast header file path", "Specifies the file path to the header for the podcast file.", null));			 
+		setMContentIncludeMp3PlayerParameter(new MParameter(false, "Include MP3 player on content page", "Specifies whether an MP3 player should included on the content page or not.", null));			 
+		setMContentGroupRecordingsParameter(new MParameter(false, "Group recordinds by month on content page", "Specifies whether the recordings on the content page should be grouped by month.", null));			 
+		setMContentPageUrlResult(new MResult(false, "Content page URL", "Specifies the URL to content page.", null));			 
+		setMPodcastFileUrlResult(new MResult(false, "Podcast file URL", "Specifies the URL to podcast file.", null));
 
 		lastMPublishMp3sStepConstructorHook();		
 	}
@@ -1756,6 +2006,432 @@ public abstract class MPublishMp3sStep extends MFtpStep {
 	}
 
 	/**
+	 * Returns the value of the '<em><b>MContent Include Mp3 Player Parameter</b></em>' containment reference.
+	 * The default value is <code>""</code>.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>MContent Include Mp3 Player Parameter</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>MContent Include Mp3 Player Parameter</em>' containment reference.
+	 * @see #setMContentIncludeMp3PlayerParameter(MParameter)
+	 * @see org.onceforall.dms.desktop.logic.LogicPackage#getMPublishMp3sStep_MContentIncludeMp3PlayerParameter()
+	 * @model containment="true" required="true"
+	 *        annotation="http://www.onceforall.org/mcore name='Include MP3 player on content page' description='Specifies whether an MP3 player should included on the content page or not.' readOnly='false'"
+	 * @generated
+	 */
+	public MParameter getMContentIncludeMp3PlayerParameter() {
+		return mContentIncludeMp3PlayerParameter;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetMContentIncludeMp3PlayerParameter(MParameter newMContentIncludeMp3PlayerParameter, NotificationChain msgs) {
+		MParameter oldMContentIncludeMp3PlayerParameter = mContentIncludeMp3PlayerParameter;
+		mContentIncludeMp3PlayerParameter = newMContentIncludeMp3PlayerParameter;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, LogicPackage.MPUBLISH_MP3S_STEP__MCONTENT_INCLUDE_MP3_PLAYER_PARAMETER, oldMContentIncludeMp3PlayerParameter, newMContentIncludeMp3PlayerParameter);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * Sets the value of the '{@link org.onceforall.dms.desktop.logic.MPublishMp3sStep#getMContentIncludeMp3PlayerParameter <em>MContent Include Mp3 Player Parameter</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	   
+	 * @param newMContentIncludeMp3PlayerParameter the new value of the '<em>MContent Include Mp3 Player Parameter</em>' containment reference.
+	 * @see #getMContentIncludeMp3PlayerParameter()
+	 * @generated
+	 */
+	public void setMContentIncludeMp3PlayerParameter(MParameter newMContentIncludeMp3PlayerParameter) {
+		if (newMContentIncludeMp3PlayerParameter != mContentIncludeMp3PlayerParameter) {
+			NotificationChain msgs = null;
+			if (mContentIncludeMp3PlayerParameter != null)
+				msgs = ((InternalEObject)mContentIncludeMp3PlayerParameter).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - LogicPackage.MPUBLISH_MP3S_STEP__MCONTENT_INCLUDE_MP3_PLAYER_PARAMETER, null, msgs);
+			if (newMContentIncludeMp3PlayerParameter != null) {				
+				newMContentIncludeMp3PlayerParameter.setDefaultName("Include MP3 player on content page");
+				newMContentIncludeMp3PlayerParameter.setDefaultDescription("Specifies whether an MP3 player should included on the content page or not.");
+				newMContentIncludeMp3PlayerParameter.setValueType(Type.getTypeForName("Yes/No"));
+				newMContentIncludeMp3PlayerParameter.setValueEFeature((EStructuralFeature) eClass().getEStructuralFeature(LogicPackage.MPUBLISH_MP3S_STEP__CONTENT_INCLUDE_MP3_PLAYER_PARAMETER));
+				newMContentIncludeMp3PlayerParameter.setHistoricValuesEFeature(null);
+				msgs = ((InternalEObject)newMContentIncludeMp3PlayerParameter).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - LogicPackage.MPUBLISH_MP3S_STEP__MCONTENT_INCLUDE_MP3_PLAYER_PARAMETER, null, msgs);
+			}
+			
+			// Transfers the adpaters from the old managed value to the new one.
+			if(mContentIncludeMp3PlayerParameter != null) {
+				if(newMContentIncludeMp3PlayerParameter != null)
+					newMContentIncludeMp3PlayerParameter.eAdapters().addAll(mContentIncludeMp3PlayerParameter.eAdapters());			
+			
+				mContentIncludeMp3PlayerParameter.eAdapters().clear();
+			}
+			msgs = basicSetMContentIncludeMp3PlayerParameter(newMContentIncludeMp3PlayerParameter, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, LogicPackage.MPUBLISH_MP3S_STEP__MCONTENT_INCLUDE_MP3_PLAYER_PARAMETER, newMContentIncludeMp3PlayerParameter, newMContentIncludeMp3PlayerParameter));
+	}
+
+	/**
+	 * Returns the value of the '<em><b>Content Include Mp3 Player Parameter</b></em>' attribute.
+	 * The default value is <code>"true"</code>.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Content Include Mp3 Player Parameter</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Content Include Mp3 Player Parameter</em>' attribute.
+	 * @see #setContentIncludeMp3PlayerParameter(Boolean)
+	 * @see org.onceforall.dms.desktop.logic.LogicPackage#getMPublishMp3sStep_ContentIncludeMp3PlayerParameter()
+	 * @model default="true" dataType="org.onceforall.dms.desktop.logic.MBoolean"
+	 * @generated
+	 */
+	public Boolean getContentIncludeMp3PlayerParameter() {
+		return contentIncludeMp3PlayerParameter;
+	}
+
+	/**
+	 * Sets the value of the '{@link org.onceforall.dms.desktop.logic.MPublishMp3sStep#getContentIncludeMp3PlayerParameter <em>Content Include Mp3 Player Parameter</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	   
+	 * @param newContentIncludeMp3PlayerParameter the new value of the '<em>Content Include Mp3 Player Parameter</em>' attribute.
+	 * @see #getContentIncludeMp3PlayerParameter()
+	 * @generated
+	 */
+	public void setContentIncludeMp3PlayerParameter(Boolean newContentIncludeMp3PlayerParameter) {
+		Boolean oldContentIncludeMp3PlayerParameter = contentIncludeMp3PlayerParameter;
+		contentIncludeMp3PlayerParameter = newContentIncludeMp3PlayerParameter;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, LogicPackage.MPUBLISH_MP3S_STEP__CONTENT_INCLUDE_MP3_PLAYER_PARAMETER, oldContentIncludeMp3PlayerParameter, contentIncludeMp3PlayerParameter));
+	}
+
+	/**
+	 * Returns the value of the '<em><b>MContent Group Recordings Parameter</b></em>' containment reference.
+	 * The default value is <code>""</code>.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>MContent Group Recordings Parameter</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>MContent Group Recordings Parameter</em>' containment reference.
+	 * @see #setMContentGroupRecordingsParameter(MParameter)
+	 * @see org.onceforall.dms.desktop.logic.LogicPackage#getMPublishMp3sStep_MContentGroupRecordingsParameter()
+	 * @model containment="true" required="true"
+	 *        annotation="http://www.onceforall.org/mcore name='Group recordinds by month on content page' description='Specifies whether the recordings on the content page should be grouped by month.' readOnly='false'"
+	 * @generated
+	 */
+	public MParameter getMContentGroupRecordingsParameter() {
+		return mContentGroupRecordingsParameter;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetMContentGroupRecordingsParameter(MParameter newMContentGroupRecordingsParameter, NotificationChain msgs) {
+		MParameter oldMContentGroupRecordingsParameter = mContentGroupRecordingsParameter;
+		mContentGroupRecordingsParameter = newMContentGroupRecordingsParameter;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, LogicPackage.MPUBLISH_MP3S_STEP__MCONTENT_GROUP_RECORDINGS_PARAMETER, oldMContentGroupRecordingsParameter, newMContentGroupRecordingsParameter);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * Sets the value of the '{@link org.onceforall.dms.desktop.logic.MPublishMp3sStep#getMContentGroupRecordingsParameter <em>MContent Group Recordings Parameter</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	   
+	 * @param newMContentGroupRecordingsParameter the new value of the '<em>MContent Group Recordings Parameter</em>' containment reference.
+	 * @see #getMContentGroupRecordingsParameter()
+	 * @generated
+	 */
+	public void setMContentGroupRecordingsParameter(MParameter newMContentGroupRecordingsParameter) {
+		if (newMContentGroupRecordingsParameter != mContentGroupRecordingsParameter) {
+			NotificationChain msgs = null;
+			if (mContentGroupRecordingsParameter != null)
+				msgs = ((InternalEObject)mContentGroupRecordingsParameter).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - LogicPackage.MPUBLISH_MP3S_STEP__MCONTENT_GROUP_RECORDINGS_PARAMETER, null, msgs);
+			if (newMContentGroupRecordingsParameter != null) {				
+				newMContentGroupRecordingsParameter.setDefaultName("Group recordinds by month on content page");
+				newMContentGroupRecordingsParameter.setDefaultDescription("Specifies whether the recordings on the content page should be grouped by month.");
+				newMContentGroupRecordingsParameter.setValueType(Type.getTypeForName("Yes/No"));
+				newMContentGroupRecordingsParameter.setValueEFeature((EStructuralFeature) eClass().getEStructuralFeature(LogicPackage.MPUBLISH_MP3S_STEP__CONTENT_GROUP_RECORDINGS_PARAMETER));
+				newMContentGroupRecordingsParameter.setHistoricValuesEFeature(null);
+				msgs = ((InternalEObject)newMContentGroupRecordingsParameter).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - LogicPackage.MPUBLISH_MP3S_STEP__MCONTENT_GROUP_RECORDINGS_PARAMETER, null, msgs);
+			}
+			
+			// Transfers the adpaters from the old managed value to the new one.
+			if(mContentGroupRecordingsParameter != null) {
+				if(newMContentGroupRecordingsParameter != null)
+					newMContentGroupRecordingsParameter.eAdapters().addAll(mContentGroupRecordingsParameter.eAdapters());			
+			
+				mContentGroupRecordingsParameter.eAdapters().clear();
+			}
+			msgs = basicSetMContentGroupRecordingsParameter(newMContentGroupRecordingsParameter, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, LogicPackage.MPUBLISH_MP3S_STEP__MCONTENT_GROUP_RECORDINGS_PARAMETER, newMContentGroupRecordingsParameter, newMContentGroupRecordingsParameter));
+	}
+
+	/**
+	 * Returns the value of the '<em><b>Content Group Recordings Parameter</b></em>' attribute.
+	 * The default value is <code>"true"</code>.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Content Group Recordings Parameter</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Content Group Recordings Parameter</em>' attribute.
+	 * @see #setContentGroupRecordingsParameter(Boolean)
+	 * @see org.onceforall.dms.desktop.logic.LogicPackage#getMPublishMp3sStep_ContentGroupRecordingsParameter()
+	 * @model default="true" dataType="org.onceforall.dms.desktop.logic.MBoolean" required="true"
+	 * @generated
+	 */
+	public Boolean getContentGroupRecordingsParameter() {
+		return contentGroupRecordingsParameter;
+	}
+
+	/**
+	 * Sets the value of the '{@link org.onceforall.dms.desktop.logic.MPublishMp3sStep#getContentGroupRecordingsParameter <em>Content Group Recordings Parameter</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	   
+	 * @param newContentGroupRecordingsParameter the new value of the '<em>Content Group Recordings Parameter</em>' attribute.
+	 * @see #getContentGroupRecordingsParameter()
+	 * @generated
+	 */
+	public void setContentGroupRecordingsParameter(Boolean newContentGroupRecordingsParameter) {
+		Boolean oldContentGroupRecordingsParameter = contentGroupRecordingsParameter;
+		contentGroupRecordingsParameter = newContentGroupRecordingsParameter;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, LogicPackage.MPUBLISH_MP3S_STEP__CONTENT_GROUP_RECORDINGS_PARAMETER, oldContentGroupRecordingsParameter, contentGroupRecordingsParameter));
+	}
+
+	/**
+	 * Returns the value of the '<em><b>MContent Page Url Result</b></em>' containment reference.
+	 * The default value is <code>""</code>.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>MContent Page Url Result</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>MContent Page Url Result</em>' containment reference.
+	 * @see #setMContentPageUrlResult(MResult)
+	 * @see org.onceforall.dms.desktop.logic.LogicPackage#getMPublishMp3sStep_MContentPageUrlResult()
+	 * @model containment="true" required="true"
+	 *        annotation="http://www.onceforall.org/mcore name='Content page URL' description='Specifies the URL to content page.'"
+	 * @generated
+	 */
+	public MResult getMContentPageUrlResult() {
+		return mContentPageUrlResult;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetMContentPageUrlResult(MResult newMContentPageUrlResult, NotificationChain msgs) {
+		MResult oldMContentPageUrlResult = mContentPageUrlResult;
+		mContentPageUrlResult = newMContentPageUrlResult;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, LogicPackage.MPUBLISH_MP3S_STEP__MCONTENT_PAGE_URL_RESULT, oldMContentPageUrlResult, newMContentPageUrlResult);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * Sets the value of the '{@link org.onceforall.dms.desktop.logic.MPublishMp3sStep#getMContentPageUrlResult <em>MContent Page Url Result</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	   
+	 * @param newMContentPageUrlResult the new value of the '<em>MContent Page Url Result</em>' containment reference.
+	 * @see #getMContentPageUrlResult()
+	 * @generated
+	 */
+	public void setMContentPageUrlResult(MResult newMContentPageUrlResult) {
+		if (newMContentPageUrlResult != mContentPageUrlResult) {
+			NotificationChain msgs = null;
+			if (mContentPageUrlResult != null)
+				msgs = ((InternalEObject)mContentPageUrlResult).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - LogicPackage.MPUBLISH_MP3S_STEP__MCONTENT_PAGE_URL_RESULT, null, msgs);
+			if (newMContentPageUrlResult != null) {				
+				newMContentPageUrlResult.setDefaultDescription("Specifies the URL to content page.");
+				newMContentPageUrlResult.setDefaultName("Content page URL");
+				newMContentPageUrlResult.setValueType(Type.getTypeForName("URL"));
+				newMContentPageUrlResult.setValueEFeature((EStructuralFeature) eClass().getEStructuralFeature(LogicPackage.MPUBLISH_MP3S_STEP__CONTENT_PAGE_URL_RESULT));
+				newMContentPageUrlResult.setHistoricValuesEFeature(null);
+				msgs = ((InternalEObject)newMContentPageUrlResult).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - LogicPackage.MPUBLISH_MP3S_STEP__MCONTENT_PAGE_URL_RESULT, null, msgs);
+			}
+			
+			// Transfers the adpaters from the old managed value to the new one.
+			if(mContentPageUrlResult != null) {
+				if(newMContentPageUrlResult != null)
+					newMContentPageUrlResult.eAdapters().addAll(mContentPageUrlResult.eAdapters());			
+			
+				mContentPageUrlResult.eAdapters().clear();
+			}
+			msgs = basicSetMContentPageUrlResult(newMContentPageUrlResult, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, LogicPackage.MPUBLISH_MP3S_STEP__MCONTENT_PAGE_URL_RESULT, newMContentPageUrlResult, newMContentPageUrlResult));
+	}
+
+	/**
+	 * Returns the value of the '<em><b>Content Page Url Result</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Content Page Url Result</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Content Page Url Result</em>' attribute.
+	 * @see #setContentPageUrlResult(URL)
+	 * @see org.onceforall.dms.desktop.logic.LogicPackage#getMPublishMp3sStep_ContentPageUrlResult()
+	 * @model dataType="org.onceforall.dms.desktop.logic.MUrl" required="true" transient="true"
+	 * @generated
+	 */
+	public URL getContentPageUrlResult() {
+		return contentPageUrlResult;
+	}
+
+	/**
+	 * Sets the value of the '{@link org.onceforall.dms.desktop.logic.MPublishMp3sStep#getContentPageUrlResult <em>Content Page Url Result</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	   
+	 * @param newContentPageUrlResult the new value of the '<em>Content Page Url Result</em>' attribute.
+	 * @see #getContentPageUrlResult()
+	 * @generated
+	 */
+	public void setContentPageUrlResult(URL newContentPageUrlResult) {
+		URL oldContentPageUrlResult = contentPageUrlResult;
+		contentPageUrlResult = newContentPageUrlResult;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, LogicPackage.MPUBLISH_MP3S_STEP__CONTENT_PAGE_URL_RESULT, oldContentPageUrlResult, contentPageUrlResult));
+	}
+
+	/**
+	 * Returns the value of the '<em><b>MPodcast File Url Result</b></em>' containment reference.
+	 * The default value is <code>""</code>.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>MPodcast File Url Result</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>MPodcast File Url Result</em>' containment reference.
+	 * @see #setMPodcastFileUrlResult(MResult)
+	 * @see org.onceforall.dms.desktop.logic.LogicPackage#getMPublishMp3sStep_MPodcastFileUrlResult()
+	 * @model containment="true" required="true"
+	 *        annotation="http://www.onceforall.org/mcore name='Podcast file URL' description='Specifies the URL to podcast file.'"
+	 * @generated
+	 */
+	public MResult getMPodcastFileUrlResult() {
+		return mPodcastFileUrlResult;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetMPodcastFileUrlResult(MResult newMPodcastFileUrlResult, NotificationChain msgs) {
+		MResult oldMPodcastFileUrlResult = mPodcastFileUrlResult;
+		mPodcastFileUrlResult = newMPodcastFileUrlResult;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, LogicPackage.MPUBLISH_MP3S_STEP__MPODCAST_FILE_URL_RESULT, oldMPodcastFileUrlResult, newMPodcastFileUrlResult);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * Sets the value of the '{@link org.onceforall.dms.desktop.logic.MPublishMp3sStep#getMPodcastFileUrlResult <em>MPodcast File Url Result</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	   
+	 * @param newMPodcastFileUrlResult the new value of the '<em>MPodcast File Url Result</em>' containment reference.
+	 * @see #getMPodcastFileUrlResult()
+	 * @generated
+	 */
+	public void setMPodcastFileUrlResult(MResult newMPodcastFileUrlResult) {
+		if (newMPodcastFileUrlResult != mPodcastFileUrlResult) {
+			NotificationChain msgs = null;
+			if (mPodcastFileUrlResult != null)
+				msgs = ((InternalEObject)mPodcastFileUrlResult).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - LogicPackage.MPUBLISH_MP3S_STEP__MPODCAST_FILE_URL_RESULT, null, msgs);
+			if (newMPodcastFileUrlResult != null) {				
+				newMPodcastFileUrlResult.setDefaultDescription("Specifies the URL to podcast file.");
+				newMPodcastFileUrlResult.setDefaultName("Podcast file URL");
+				newMPodcastFileUrlResult.setValueType(Type.getTypeForName("URL"));
+				newMPodcastFileUrlResult.setValueEFeature((EStructuralFeature) eClass().getEStructuralFeature(LogicPackage.MPUBLISH_MP3S_STEP__PODCAST_FILE_URL_RESULT));
+				newMPodcastFileUrlResult.setHistoricValuesEFeature(null);
+				msgs = ((InternalEObject)newMPodcastFileUrlResult).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - LogicPackage.MPUBLISH_MP3S_STEP__MPODCAST_FILE_URL_RESULT, null, msgs);
+			}
+			
+			// Transfers the adpaters from the old managed value to the new one.
+			if(mPodcastFileUrlResult != null) {
+				if(newMPodcastFileUrlResult != null)
+					newMPodcastFileUrlResult.eAdapters().addAll(mPodcastFileUrlResult.eAdapters());			
+			
+				mPodcastFileUrlResult.eAdapters().clear();
+			}
+			msgs = basicSetMPodcastFileUrlResult(newMPodcastFileUrlResult, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, LogicPackage.MPUBLISH_MP3S_STEP__MPODCAST_FILE_URL_RESULT, newMPodcastFileUrlResult, newMPodcastFileUrlResult));
+	}
+
+	/**
+	 * Returns the value of the '<em><b>Podcast File Url Result</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Podcast File Url Result</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Podcast File Url Result</em>' attribute.
+	 * @see #setPodcastFileUrlResult(URL)
+	 * @see org.onceforall.dms.desktop.logic.LogicPackage#getMPublishMp3sStep_PodcastFileUrlResult()
+	 * @model dataType="org.onceforall.dms.desktop.logic.MUrl" required="true" transient="true"
+	 * @generated
+	 */
+	public URL getPodcastFileUrlResult() {
+		return podcastFileUrlResult;
+	}
+
+	/**
+	 * Sets the value of the '{@link org.onceforall.dms.desktop.logic.MPublishMp3sStep#getPodcastFileUrlResult <em>Podcast File Url Result</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	   
+	 * @param newPodcastFileUrlResult the new value of the '<em>Podcast File Url Result</em>' attribute.
+	 * @see #getPodcastFileUrlResult()
+	 * @generated
+	 */
+	public void setPodcastFileUrlResult(URL newPodcastFileUrlResult) {
+		URL oldPodcastFileUrlResult = podcastFileUrlResult;
+		podcastFileUrlResult = newPodcastFileUrlResult;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, LogicPackage.MPUBLISH_MP3S_STEP__PODCAST_FILE_URL_RESULT, oldPodcastFileUrlResult, podcastFileUrlResult));
+	}
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1782,6 +2458,14 @@ public abstract class MPublishMp3sStep extends MFtpStep {
 				return basicSetMPodcastRelativeFtpPathParameter(null, msgs);
 			case LogicPackage.MPUBLISH_MP3S_STEP__MPODCAST_HEADER_FILE_PATH_PARAMETER:
 				return basicSetMPodcastHeaderFilePathParameter(null, msgs);
+			case LogicPackage.MPUBLISH_MP3S_STEP__MCONTENT_INCLUDE_MP3_PLAYER_PARAMETER:
+				return basicSetMContentIncludeMp3PlayerParameter(null, msgs);
+			case LogicPackage.MPUBLISH_MP3S_STEP__MCONTENT_GROUP_RECORDINGS_PARAMETER:
+				return basicSetMContentGroupRecordingsParameter(null, msgs);
+			case LogicPackage.MPUBLISH_MP3S_STEP__MCONTENT_PAGE_URL_RESULT:
+				return basicSetMContentPageUrlResult(null, msgs);
+			case LogicPackage.MPUBLISH_MP3S_STEP__MPODCAST_FILE_URL_RESULT:
+				return basicSetMPodcastFileUrlResult(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -1833,6 +2517,22 @@ public abstract class MPublishMp3sStep extends MFtpStep {
 				return getMPodcastHeaderFilePathParameter();
 			case LogicPackage.MPUBLISH_MP3S_STEP__PODCAST_HEADER_FILE_PATH_PARAMETER:
 				return getPodcastHeaderFilePathParameter();
+			case LogicPackage.MPUBLISH_MP3S_STEP__MCONTENT_INCLUDE_MP3_PLAYER_PARAMETER:
+				return getMContentIncludeMp3PlayerParameter();
+			case LogicPackage.MPUBLISH_MP3S_STEP__CONTENT_INCLUDE_MP3_PLAYER_PARAMETER:
+				return getContentIncludeMp3PlayerParameter();
+			case LogicPackage.MPUBLISH_MP3S_STEP__MCONTENT_GROUP_RECORDINGS_PARAMETER:
+				return getMContentGroupRecordingsParameter();
+			case LogicPackage.MPUBLISH_MP3S_STEP__CONTENT_GROUP_RECORDINGS_PARAMETER:
+				return getContentGroupRecordingsParameter();
+			case LogicPackage.MPUBLISH_MP3S_STEP__MCONTENT_PAGE_URL_RESULT:
+				return getMContentPageUrlResult();
+			case LogicPackage.MPUBLISH_MP3S_STEP__CONTENT_PAGE_URL_RESULT:
+				return getContentPageUrlResult();
+			case LogicPackage.MPUBLISH_MP3S_STEP__MPODCAST_FILE_URL_RESULT:
+				return getMPodcastFileUrlResult();
+			case LogicPackage.MPUBLISH_MP3S_STEP__PODCAST_FILE_URL_RESULT:
+				return getPodcastFileUrlResult();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -1903,6 +2603,30 @@ public abstract class MPublishMp3sStep extends MFtpStep {
 				return;
 			case LogicPackage.MPUBLISH_MP3S_STEP__PODCAST_HEADER_FILE_PATH_PARAMETER:    
 				setPodcastHeaderFilePathParameter((File)newValue);
+				return;
+			case LogicPackage.MPUBLISH_MP3S_STEP__MCONTENT_INCLUDE_MP3_PLAYER_PARAMETER:    
+				setMContentIncludeMp3PlayerParameter((MParameter)newValue);
+				return;
+			case LogicPackage.MPUBLISH_MP3S_STEP__CONTENT_INCLUDE_MP3_PLAYER_PARAMETER:    
+				setContentIncludeMp3PlayerParameter((Boolean)newValue);
+				return;
+			case LogicPackage.MPUBLISH_MP3S_STEP__MCONTENT_GROUP_RECORDINGS_PARAMETER:    
+				setMContentGroupRecordingsParameter((MParameter)newValue);
+				return;
+			case LogicPackage.MPUBLISH_MP3S_STEP__CONTENT_GROUP_RECORDINGS_PARAMETER:    
+				setContentGroupRecordingsParameter((Boolean)newValue);
+				return;
+			case LogicPackage.MPUBLISH_MP3S_STEP__MCONTENT_PAGE_URL_RESULT:    
+				setMContentPageUrlResult((MResult)newValue);
+				return;
+			case LogicPackage.MPUBLISH_MP3S_STEP__CONTENT_PAGE_URL_RESULT:    
+				setContentPageUrlResult((URL)newValue);
+				return;
+			case LogicPackage.MPUBLISH_MP3S_STEP__MPODCAST_FILE_URL_RESULT:    
+				setMPodcastFileUrlResult((MResult)newValue);
+				return;
+			case LogicPackage.MPUBLISH_MP3S_STEP__PODCAST_FILE_URL_RESULT:    
+				setPodcastFileUrlResult((URL)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -1975,6 +2699,30 @@ public abstract class MPublishMp3sStep extends MFtpStep {
 			case LogicPackage.MPUBLISH_MP3S_STEP__PODCAST_HEADER_FILE_PATH_PARAMETER:
 				setPodcastHeaderFilePathParameter(getDefaultPodcastHeaderFilePathParameter());
 				return;
+			case LogicPackage.MPUBLISH_MP3S_STEP__MCONTENT_INCLUDE_MP3_PLAYER_PARAMETER:
+				setMContentIncludeMp3PlayerParameter((MParameter)null);
+				return;
+			case LogicPackage.MPUBLISH_MP3S_STEP__CONTENT_INCLUDE_MP3_PLAYER_PARAMETER:
+				setContentIncludeMp3PlayerParameter(getDefaultContentIncludeMp3PlayerParameter());
+				return;
+			case LogicPackage.MPUBLISH_MP3S_STEP__MCONTENT_GROUP_RECORDINGS_PARAMETER:
+				setMContentGroupRecordingsParameter((MParameter)null);
+				return;
+			case LogicPackage.MPUBLISH_MP3S_STEP__CONTENT_GROUP_RECORDINGS_PARAMETER:
+				setContentGroupRecordingsParameter(getDefaultContentGroupRecordingsParameter());
+				return;
+			case LogicPackage.MPUBLISH_MP3S_STEP__MCONTENT_PAGE_URL_RESULT:
+				setMContentPageUrlResult((MResult)null);
+				return;
+			case LogicPackage.MPUBLISH_MP3S_STEP__CONTENT_PAGE_URL_RESULT:
+				setContentPageUrlResult(getDefaultContentPageUrlResult());
+				return;
+			case LogicPackage.MPUBLISH_MP3S_STEP__MPODCAST_FILE_URL_RESULT:
+				setMPodcastFileUrlResult((MResult)null);
+				return;
+			case LogicPackage.MPUBLISH_MP3S_STEP__PODCAST_FILE_URL_RESULT:
+				setPodcastFileUrlResult(getDefaultPodcastFileUrlResult());
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -2026,6 +2774,22 @@ public abstract class MPublishMp3sStep extends MFtpStep {
 				return mPodcastHeaderFilePathParameter != null;
 			case LogicPackage.MPUBLISH_MP3S_STEP__PODCAST_HEADER_FILE_PATH_PARAMETER:
 				return getDefaultPodcastHeaderFilePathParameter() == null ? podcastHeaderFilePathParameter != null : !getDefaultPodcastHeaderFilePathParameter().equals(podcastHeaderFilePathParameter);
+			case LogicPackage.MPUBLISH_MP3S_STEP__MCONTENT_INCLUDE_MP3_PLAYER_PARAMETER:
+				return mContentIncludeMp3PlayerParameter != null;
+			case LogicPackage.MPUBLISH_MP3S_STEP__CONTENT_INCLUDE_MP3_PLAYER_PARAMETER:
+				return getDefaultContentIncludeMp3PlayerParameter() == null ? contentIncludeMp3PlayerParameter != null : !getDefaultContentIncludeMp3PlayerParameter().equals(contentIncludeMp3PlayerParameter);
+			case LogicPackage.MPUBLISH_MP3S_STEP__MCONTENT_GROUP_RECORDINGS_PARAMETER:
+				return mContentGroupRecordingsParameter != null;
+			case LogicPackage.MPUBLISH_MP3S_STEP__CONTENT_GROUP_RECORDINGS_PARAMETER:
+				return getDefaultContentGroupRecordingsParameter() == null ? contentGroupRecordingsParameter != null : !getDefaultContentGroupRecordingsParameter().equals(contentGroupRecordingsParameter);
+			case LogicPackage.MPUBLISH_MP3S_STEP__MCONTENT_PAGE_URL_RESULT:
+				return mContentPageUrlResult != null;
+			case LogicPackage.MPUBLISH_MP3S_STEP__CONTENT_PAGE_URL_RESULT:
+				return getDefaultContentPageUrlResult() == null ? contentPageUrlResult != null : !getDefaultContentPageUrlResult().equals(contentPageUrlResult);
+			case LogicPackage.MPUBLISH_MP3S_STEP__MPODCAST_FILE_URL_RESULT:
+				return mPodcastFileUrlResult != null;
+			case LogicPackage.MPUBLISH_MP3S_STEP__PODCAST_FILE_URL_RESULT:
+				return getDefaultPodcastFileUrlResult() == null ? podcastFileUrlResult != null : !getDefaultPodcastFileUrlResult().equals(podcastFileUrlResult);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -2059,6 +2823,14 @@ public abstract class MPublishMp3sStep extends MFtpStep {
 		result.append(podcastRelativeFtpPathParameter);
 		result.append(", podcastHeaderFilePathParameter: ");
 		result.append(podcastHeaderFilePathParameter);
+		result.append(", contentIncludeMp3PlayerParameter: ");
+		result.append(contentIncludeMp3PlayerParameter);
+		result.append(", contentGroupRecordingsParameter: ");
+		result.append(contentGroupRecordingsParameter);
+		result.append(", contentPageUrlResult: ");
+		result.append(contentPageUrlResult);
+		result.append(", podcastFileUrlResult: ");
+		result.append(podcastFileUrlResult);
 		result.append(')');
 		return result.toString();
 	}
@@ -2077,27 +2849,15 @@ public abstract class MPublishMp3sStep extends MFtpStep {
         
         // Puts all file on the server into a map that is index by the file name for efficient lookup.
         FTPFile[] files = ftpClient.listFiles();
-        Map<String, FTPFile> filesMappedByName = new HashMap<String, FTPFile>();
+        Map<String, FTPFile> mp3FilesMappedByName = new HashMap<String, FTPFile>();
         for(int index = 0; index < files.length; ++index)
-            filesMappedByName.put(files[index].getName(), files[index]);
+            mp3FilesMappedByName.put(files[index].getName(), files[index]);
         List<MMp3> mMp3s = new ArrayList(mMp3Folder.getMMp3s());
         
         // Makes sure that entries are ordered in reverse date order.
-        Collections.sort(mMp3s, new Comparator<MMp3>() {
-
-			public int compare(MMp3 o1, MMp3 o2) {
-				if(o1.getPodcastPublishingDateProperty() == null && o2.getPodcastPublishingDateProperty() == null)
-					return 0;
-				else if(o1.getPodcastPublishingDateProperty() == null && o2.getPodcastPublishingDateProperty() != null)
-					return 1;
-				else if(o1.getPodcastPublishingDateProperty() != null && o2.getPodcastPublishingDateProperty() == null)
-					return -1;
-				else
-					return o2.getPodcastPublishingDateProperty().compareTo(o1.getPodcastPublishingDateProperty());				
-			}  
-		});
+        Collections.sort(mMp3s, MP3_DATE_COMPARATOR);
       
-        ensureEnoughDiskSpace(ftpClient, filesMappedByName, mMp3s);
+        ensureEnoughDiskSpace(ftpClient, mp3FilesMappedByName, mMp3s);
         
         setProgressStatusProperty("Generating web page and podcast file ...");
 
@@ -2133,8 +2893,13 @@ public abstract class MPublishMp3sStep extends MFtpStep {
             }
 
             StringBuffer publishedMP3sHTML = new StringBuffer();
-	                    
+            //publishedMP3sHTML.append("<script language=\"JavaScript\" src=\"");
+            //publishedMP3sHTML.append("run-active-content.js");
+            //publishedMP3sHTML.append("\"></script>");
+           
+            
             // Writes a table row for each published MP3.
+            MMp3 perviousMMp3 = null;
             for(MMp3 mMp3: mMp3s) {
                 File publishedMP3File = mMp3.getFileProperty();
                 
@@ -2150,14 +2915,70 @@ public abstract class MPublishMp3sStep extends MFtpStep {
 			            
 			            String mp3WebPath = webServerUrl.toExternalForm()+getMp3RelativeFtpPathParameter()+"/"+publishedMP3Name;
 	                    
+			            // Check whether to insert group separators.
+			            if(getContentGroupRecordingsParameter()) {
+				            Calendar mMp3Calendar = null;
+				            if(mMp3.getPodcastPublishingDateProperty() != null) {
+				            	mMp3Calendar = Calendar.getInstance();
+				            	mMp3Calendar.setTime(mMp3.getPodcastPublishingDateProperty());
+				            }
+		                    
+				            Calendar previousMMp3Calendar = null;
+				            if(perviousMMp3 != null && perviousMMp3.getPodcastPublishingDateProperty() != null) {
+				            	previousMMp3Calendar = Calendar.getInstance();
+				            	previousMMp3Calendar.setTime(perviousMMp3.getPodcastPublishingDateProperty());
+				            }
+				            
+				            // Check whether the month or the year of the publishing date has changed
+				            // compared to the previous recording.
+				            if(mMp3Calendar == null && previousMMp3Calendar != null
+				            		|| mMp3Calendar != null && previousMMp3Calendar == null
+				            		|| !mMp3Calendar.equals(previousMMp3Calendar)
+				            			&& (mMp3Calendar.get(Calendar.MONTH) != previousMMp3Calendar.get(Calendar.MONTH)
+				            			|| mMp3Calendar.get(Calendar.YEAR) != previousMMp3Calendar.get(Calendar.YEAR))) {
+				            	publishedMP3sHTML.append("<tr>\n");
+				            	publishedMP3sHTML.append("<td class=\"groupTableCell\">");
+				            	if(mMp3Calendar != null)
+				            		publishedMP3sHTML.append(GROUP_DATE_FORMATTER.format(mMp3.getPodcastPublishingDateProperty()));
+				            	else
+			            			publishedMP3sHTML.append("Others");
+				            	publishedMP3sHTML.append("</td>");
+				            	publishedMP3sHTML.append("</tr>");
+				            }
+			            }
+			            
 		                publishedMP3sHTML.append("<tr>\n");
 			            publishedMP3sHTML.append("<td class=\"contentTableCell\">");
-			            publishedMP3sHTML.append("<a class=\"highlightedLink\" href=\""+mp3WebPath+"\">"+Utilities.encodeForXml(linkText)+"</a><br/>");
-			            publishedMP3sHTML.append(Utilities.encodeForXml(linkDescription));
+			            publishedMP3sHTML.append("<a class=\"highlightedLink\" href=\""+mp3WebPath+"\">"+Utilities.encodeForHtml(linkText)+"</a><br/>");
+			            publishedMP3sHTML.append(Utilities.encodeForHtml(linkDescription));
 			            
 			            if(comment != null)
-			                publishedMP3sHTML.append("<br/>"+Utilities.encodeForXml(comment));
-			         				                
+			                publishedMP3sHTML.append("<div class=\"contentComment\">"+Utilities.encodeForHtml(comment)+"</div>\n");
+			            
+			            // Adds the flash player.
+			            if(getContentIncludeMp3PlayerParameter() != null && getContentIncludeMp3PlayerParameter()) { 
+			            /*publishedMP3sHTML.append("<div class=\"contentPlayer\"><script type=\"text/javascript\">\n");
+			            publishedMP3sHTML.append("AC_FL_RunContent('codebase','http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0','width','290','height','16','src','compact-player?soundFile=");
+			            publishedMP3sHTML.append(mp3WebPath);
+			            publishedMP3sHTML.append("','quality','high', 'class', 'player', 'allowscriptaccess','sameDomain','pluginspage','http://www.macromedia.com/go/getflashplayer','movie','compact-player?soundFile=");
+			            publishedMP3sHTML.append(mp3WebPath);
+			            publishedMP3sHTML.append("' );");
+			            publishedMP3sHTML.append("</script></div>"); */
+			            
+				            //publishedMP3sHTML.append("<div class=\"contentPlayer\"><object width=\"290\" height=\"16\" classid=\"clsid:d27cdb6e-ae6d-11cf-96b8-444553540000\" class=\"player\" codebase=\"http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0\">\n");
+			            	publishedMP3sHTML.append("<div class=\"contentPlayer\"><object width=\"290\" height=\"16\" type=\"application/x-shockwave-flash\" data=\"compact-player.swf\">\n");
+			            	publishedMP3sHTML.append("<param name=\"movie\" value=\"compact-player.swf\"/>\n");
+			            	publishedMP3sHTML.append("<param name=\"FlashVars\" value=\"soundFile=");
+				            publishedMP3sHTML.append(URLEncoder.encode(mp3WebPath, "UTF-8"));
+				            publishedMP3sHTML.append("\"/>\n");
+				            publishedMP3sHTML.append("<param name=\"quality\" value=\"high\"/>\n");
+				            publishedMP3sHTML.append("<param name=\"allowscriptaccess\" value=\"sameDomain\"/>\n");
+				            /*publishedMP3sHTML.append("<embed width=\"290\" height=\"16\" type=\"application/x-shockwave-flash\" pluginspage=\"http://www.macromedia.com/go/getflashplayer\" allowscriptaccess=\"sameDomain\" class=\"player\" quality=\"high\" src=\"compact-player.swf?soundFile=");
+				            publishedMP3sHTML.append(mp3WebPath);
+				            publishedMP3sHTML.append("\"/>\n");*/
+				            publishedMP3sHTML.append("</object></div>\n");
+			            }
+		            
 			            publishedMP3sHTML.append("</td>\n");
 			            publishedMP3sHTML.append("</tr>\n");
 
@@ -2231,8 +3052,15 @@ public abstract class MPublishMp3sStep extends MFtpStep {
 	                else {
 	                    Logger.getLogger().severe("The application could not publish '"+mMp3.getName()+"' because the corresponding MP3 file is missing.");
 	                }
+                                        
+                    perviousMMp3 = mMp3;
                 }
             }
+            
+            // Adds the script that makes sure that the user does not have to activate the flash components exclicitly by clicking in IE.
+            //publishedMP3sHTML.append("<script language=\"JavaScript\" src=\"");
+            //publishedMP3sHTML.append(webServerUrl.toExternalForm()+getContentPageRelativeFtpPathParameter()+"/ieupdate.js");
+            //publishedMP3sHTML.append("\"/>\n");
             
             pageWriter.write(publishedMP3sHTML.toString());
             
@@ -2258,12 +3086,21 @@ public abstract class MPublishMp3sStep extends MFtpStep {
         long totalBytesToPublish = 0;
         long bytesPublished = 0;        
 
+        String contentPageFTPPath = ftpServerUrl.getPath()+getContentPageRelativeFtpPathParameter();
+        changeFtpWorkingDirectory(ftpClient, contentPageFTPPath);
+        
+        Map<String, FTPFile> contentFilesMappedByName = new HashMap<String, FTPFile>();
+        for(FTPFile file: ftpClient.listFiles())
+        	contentFilesMappedByName.put(file.getName(), file);
+        
         List<File> supportingFiles = new ArrayList<File>();
         File[] webFiles = getContentPageFilePathParameter().getParentFile().listFiles();
         for(File webFile: webFiles) {
         	String webFileName = webFile.getName();
-        	if(webFileName.endsWith(".gif") || webFileName.endsWith(".jpeg") || webFileName.endsWith(".png")) {
-        		FTPFile remoteFile = filesMappedByName.get(webFileName);
+        	if(webFileName.endsWith(".gif") || webFileName.endsWith(".jpeg") 
+        			|| webFileName.endsWith(".png") || webFileName.endsWith(".js") 
+        			|| webFileName.endsWith(".swf")) {
+        		FTPFile remoteFile = contentFilesMappedByName.get(webFileName);
         		if(remoteFile == null || remoteFile.getTimestamp().getTimeInMillis() < webFile.lastModified()) {
         			supportingFiles.add(webFile);
         			totalBytesToPublish += webFile.length();
@@ -2271,12 +3108,16 @@ public abstract class MPublishMp3sStep extends MFtpStep {
         	}
         }
         
+        changeFtpWorkingDirectory(ftpClient, mp3FTPPath);
+        
+        // Determines the total size of the files that have to be uploaded.
         for(MMp3 mMp3: mMp3s) {
             File publishedMP3File = mMp3.getFileProperty();
             
             State currentPublishedMP3Status = mMp3.getStateProperty();
             if((currentPublishedMP3Status.equals(MMp3StateType.PUBLISHED_STATE) || currentPublishedMP3Status.equals(MMp3StateType.TO_BE_PUBLISHED_STATE)) && publishedMP3File != null 
-            	&& (currentPublishedMP3Status.equals(MMp3StateType.TO_BE_PUBLISHED_STATE) || currentPublishedMP3Status.equals(MMp3StateType.PUBLISHED_STATE) && republishMp3Files))
+            	&& (currentPublishedMP3Status.equals(MMp3StateType.TO_BE_PUBLISHED_STATE) 
+            			|| currentPublishedMP3Status.equals(MMp3StateType.PUBLISHED_STATE) && republishMp3Files))
             	totalBytesToPublish += publishedMP3File.length();
         }
         totalBytesToPublish += pageFile.length();
@@ -2293,21 +3134,22 @@ public abstract class MPublishMp3sStep extends MFtpStep {
 	                String publishedMP3Name = mMp3.getPublishedFileNameProperty();
 	        
 			        // Uploads the MP3 file if the file is to be published.
-			        if(currentPublishedMP3Status.equals(MMp3StateType.TO_BE_PUBLISHED_STATE) ||
-			                currentPublishedMP3Status.equals(MMp3StateType.PUBLISHED_STATE) && republishMp3Files) {
+			        if(currentPublishedMP3Status.equals(MMp3StateType.TO_BE_PUBLISHED_STATE)
+			        		|| currentPublishedMP3Status.equals(MMp3StateType.PUBLISHED_STATE) && republishMp3Files) {
 			            setProgressStatusProperty("Publishing '"+mMp3.getNameForUI()+"' ...");
 
 			        	ftpClient.setFileType(FTP.BINARY_FILE_TYPE);
 			            FileInputStream fileInputStream = new FileInputStream(publishedMP3File);
 			            ftpClient.storeFile(publishedMP3Name, new MonitoredInputStream(fileInputStream, bytesPublished, publishedMP3File.length(), totalBytesToPublish));
 			            bytesPublished += publishedMP3File.length();
-			            mMp3.setStateProperty(MMp3StateType.PUBLISHED_STATE);
+			            if(currentPublishedMP3Status.equals(MMp3StateType.TO_BE_PUBLISHED_STATE))
+			            	mMp3.setStateProperty(MMp3StateType.PUBLISHED_STATE);
 			        }
 	            }
 	        }
 	    }
 	            
-        String contentPageFTPPath = ftpServerUrl.getPath()+getContentPageRelativeFtpPathParameter();
+
     	changeFtpWorkingDirectory(ftpClient, contentPageFTPPath);
         if(supportingFiles.size() > 0)
         	setProgressStatusProperty("Uploading supporting files ...");
@@ -2334,6 +3176,12 @@ public abstract class MPublishMp3sStep extends MFtpStep {
         FileInputStream podcastFileInputStream = new FileInputStream(podcastFile);
         ftpClient.storeFile(podcastFile.getName(), new MonitoredInputStream(podcastFileInputStream, bytesPublished, podcastFile.length(), totalBytesToPublish));     	            	            
         bytesPublished += podcastFile.length();
+        
+        // Sets the results.
+        URL podcastFileUrl = new URL(webServerUrl.toExternalForm()+getPodcastRelativeFtpPathParameter()+"/"+getPodcastFilePathParameter().getName()); //$NON-NLS-1$
+        URL contentPageUrl = new URL(webServerUrl.toExternalForm()+getContentPageRelativeFtpPathParameter()+"/"+getContentPageFilePathParameter().getName()); //$NON-NLS-1$
+        setPodcastFileUrlResult(podcastFileUrl);
+        setContentPageUrlResult(contentPageUrl);
     }
         
     /**
@@ -2362,12 +3210,16 @@ public abstract class MPublishMp3sStep extends MFtpStep {
      * @throws DesktopException Thrown if not a single MP3 file can be published due to lack of disk space.
      */
     protected void ensureEnoughDiskSpace(FTPClient ftpClient, Map filesMappedByName, List<MMp3> mMp3s) throws IOException, DesktopException {
-        long totalFileSize = 0;
+        long totalFtpFileSize = 0;
+        long totalToBePublishedFileSize = 0;
         long maxTotalFileSize = getMaxiumumDiskSpaceParameter()*1024*1024;
 
         setProgressStatusProperty("Checking disk space on FTP server ...");
         
-        for(MMp3 mMp3: mMp3s) {
+        SortedSet<MMp3> sortedMMp3s = new TreeSet<MMp3>(MP3_DELETE_COMPARATOR);
+        sortedMMp3s.addAll(mMp3s);
+        
+        for(MMp3 mMp3: sortedMMp3s) {
             State publishedMP3Status = mMp3.getStateProperty();
             
             if(publishedMP3Status.equals(MMp3StateType.TO_BE_PUBLISHED_STATE) || publishedMP3Status.equals(MMp3StateType.PUBLISHED_STATE)) {
@@ -2378,27 +3230,26 @@ public abstract class MPublishMp3sStep extends MFtpStep {
 	            // Determines the size of the MP3 file.
 	            long ftpFileSize = 0;
 	            if(publishedMP3Status.equals(MMp3StateType.TO_BE_PUBLISHED_STATE)) {
-	                if(mp3File.exists()) {
-	                    if(totalFileSize == 0 && ftpFileSize > maxTotalFileSize)
-	                        throw new DesktopException("The server has not enough disk space. The MP3 file needs at least "+NUMBER_FORMATTER.format(mp3File.length())+" bytes of free disk space", "Please make sure that there is enough space on the server.", DesktopException.ERROR_SEVERITY, null);        
+		           if(mp3File.exists()) {
+		               ftpFileSize = mp3File.length();
+		               totalToBePublishedFileSize += mp3File.length();
 	
-	                    ftpFileSize = mp3File.length();
-	                }
-	            }
-	            else {
-	                if(ftpFile != null)
+		               if(totalToBePublishedFileSize > maxTotalFileSize)
+	                        throw new DesktopException("The server has not enough disk space. The MP3 file needs at least "+NUMBER_FORMATTER.format(mp3File.length())+" bytes of free disk space", "Please make sure that there is enough space on the server.", DesktopException.ERROR_SEVERITY, null);        
+		           }
+		        }
+	            else if(ftpFile != null)
 	                    ftpFileSize = ftpFile.getSize();
-	            }
 	        
-	            totalFileSize += ftpFileSize;
+	            totalFtpFileSize += ftpFileSize;
 	            
 	            // Removes old MP3 files from the server if there is not enough space.
-	            if(totalFileSize > maxTotalFileSize) {
+	            if(totalFtpFileSize > maxTotalFileSize) {
 	                if(ftpFile != null)
 	                    ftpClient.deleteFile(ftpFile.getName());
 	                
 	                mMp3.setStateProperty(MMp3StateType.NOT_PUBLISHED_STATE);
-	                Logger.getLogger().warning("'"+mMp3.getName()+"' unpublished to free up server disk space.");                       
+	                Logger.getLogger().warning("Unpublished '"+mMp3.getName()+"' to free up server disk space.");                       
 	            }
             }
         }
