@@ -65,7 +65,7 @@ import org.onceforall.dms.desktop.logic.types.Type;
  *
  * @see org.onceforall.dms.desktop.logic.LogicPackage#getMEnterServiceInformationStep()
  * @model kind="class"
- *        annotation="http://www.onceforall.org/mcore name='Enter service information' description='Please enter the required information about the service and then select \'Mark as completed\'.' iconFilePath='Image Files/Enter information step.gif' interruptable='false' stoppable='false' terminatable='false'"
+ *        annotation="http://www.onceforall.org/mcore name='Enter service information' description='Please enter the required information about the service and then select \'Mark as completed\'.' iconFilePath='Image Files/Enter information step.gif' actionIconFilePath='Image Files/Mark as completed.gif' interruptable='false' stoppable='false' terminatable='false'"
  * @generated
  */
 public class MEnterServiceInformationStep extends MEnterInformationStep {
@@ -82,7 +82,7 @@ public class MEnterServiceInformationStep extends MEnterInformationStep {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final String copyright = "Copyright 2006, Marc Maier";
+	public static final String copyright = "Copyright 2007, Marc Maier";
 
 	/**
      * Adds a value type for this class.
@@ -639,6 +639,19 @@ public class MEnterServiceInformationStep extends MEnterInformationStep {
 	protected String recordingUsersNameResult = RECORDING_USERS_NAME_RESULT_EDEFAULT;
 
 	/**
+	 * Get the default value of the '{@link #getActionIconFilePath() <em>Action Icon File Path</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return Returns the default value of the '{@link #getActionIconFilePath() <em>Action Icon File Path</em>}' attribute.
+	 * @see #getActionIconFilePath()
+	 * @generated
+	 * @ordered
+	 */
+	public File getDefaultActionIconFilePath() {
+		return (File)LogicFactory.eINSTANCE.createFromString(LogicPackage.eINSTANCE.getMFile(), "Image Files/Mark as completed.gif");
+	}
+
+	/**
 	 * Get the default value of the '{@link #isInterruptable() <em>Interruptable</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -663,7 +676,6 @@ public class MEnterServiceInformationStep extends MEnterInformationStep {
 	public boolean getDefaultTerminatable() {
 		return false;
 	}
-
 	/**
 	 * Get the default value of the '{@link #getDescription() <em>Description</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -715,6 +727,7 @@ public class MEnterServiceInformationStep extends MEnterInformationStep {
 	public String getDefaultName() {
 		return "Enter service information";
 	}
+
 	protected static final String NAME_EDEFAULT = "Enter service information";
 		
 	/**
@@ -727,12 +740,13 @@ public class MEnterServiceInformationStep extends MEnterInformationStep {
 		
 		firstMEnterServiceInformationStepConstructorHook();
 				
-		interruptable = false;
-		terminatable = false;
-		description = "Please enter the required information about the service and then select \'Mark as completed\'.";
+		actionIconFilePath = (File)LogicFactory.eINSTANCE.createFromString(LogicPackage.eINSTANCE.getMFile(), "Image Files/Mark as completed.gif");
 		stoppable = false;
 		iconFilePath = (File)LogicFactory.eINSTANCE.createFromString(LogicPackage.eINSTANCE.getMFile(), "Image Files/Enter information step.gif");
+		description = "Please enter the required information about the service and then select \'Mark as completed\'.";
 		name = "Enter service information";
+		interruptable = false;
+		terminatable = false;
 					 
 		setMServiceDateParameter(new MParameter(false, "Service date", "Specifies the date of the service.", null));			 
 		setMServiceTypeParameter(new MParameter(false, "Service type", "Specifies the type of the service, e.g. AM service, PM service, Carol service ...", null));			 
@@ -1190,7 +1204,7 @@ public class MEnterServiceInformationStep extends MEnterInformationStep {
 	 * @return the value of the '<em>Reading Parameter</em>' attribute.
 	 * @see #setReadingParameter(String)
 	 * @see org.onceforall.dms.desktop.logic.LogicPackage#getMEnterServiceInformationStep_ReadingParameter()
-	 * @model dataType="org.onceforall.dms.desktop.logic.MString" required="true" transient="true"
+	 * @model dataType="org.onceforall.dms.desktop.logic.MString" transient="true"
 	 * @generated
 	 */
 	public String getReadingParameter() {
@@ -1858,7 +1872,7 @@ public class MEnterServiceInformationStep extends MEnterInformationStep {
 	 * @return the value of the '<em>Reading Result</em>' attribute.
 	 * @see #setReadingResult(String)
 	 * @see org.onceforall.dms.desktop.logic.LogicPackage#getMEnterServiceInformationStep_ReadingResult()
-	 * @model dataType="org.onceforall.dms.desktop.logic.MString" required="true" transient="true"
+	 * @model dataType="org.onceforall.dms.desktop.logic.MString" transient="true"
 	 * @generated
 	 */
 	public String getReadingResult() {
