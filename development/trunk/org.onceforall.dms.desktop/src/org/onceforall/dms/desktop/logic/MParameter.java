@@ -53,7 +53,7 @@ public class MParameter extends MValue {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final String copyright = "Copyright 2006, Marc Maier";
+	public static final String copyright = "Copyright 2007, Marc Maier";
 
 	/**
      * Adds a value type for this class.
@@ -64,6 +64,68 @@ public class MParameter extends MValue {
 	static {
 		Type.VALUE_TYPES_BY_NAME.put("Reference to "+MParameter.TYPE_NAME, new ReferenceType("Reference to "+MParameter.TYPE_NAME, "Specifies a reference to a "+MParameter.TYPE_NAME_FOR_UI, MParameter.class));
 	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
