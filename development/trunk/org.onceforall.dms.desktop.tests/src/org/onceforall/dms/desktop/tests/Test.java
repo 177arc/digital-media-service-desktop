@@ -158,14 +158,16 @@ public class Test extends org.onceforall.core.tests.Test {
 	protected void executeMStep(MStep mStep, boolean waitForCompletion, boolean ignoreWarnings) {
 		System.out.print("Executing step '"+mStep.getNameForUI()+"' ..."); //$NON-NLS-1$ //$NON-NLS-2$
 		try {
-			try {
-				mStep.validate();		
-			}
-			catch(DesktopException exception) {
-				if(!ignoreWarnings || exception.getSeverity() > DesktopException.WARNING_SEVERITY)
-					throw exception;
-			}
+			mStep.validate();		
+		}
+		catch(DesktopException exception) {
+			if(!ignoreWarnings || exception.getSeverity() > DesktopException.WARNING_SEVERITY)
+				throw exception;
 			
+			assertTrue("Step failed: "+exception.getMessage(), false); //$NON-NLS-1$
+		}
+		
+		try {
 			mStep.run();
 			
 			if(!waitForCompletion)
@@ -182,8 +184,7 @@ public class Test extends org.onceforall.core.tests.Test {
 			assertTrue(mStep.getException() != null ? "Step execution error: ["+mStep.getException().getClass().getName()+"] "+mStep.getException().getMessage() : null, mStep.getException() == null); //$NON-NLS-1$ //$NON-NLS-2$
 		}
 		catch(DesktopException exception) {
-			assertTrue("Step validation failed: "+exception.getMessage(), false); //$NON-NLS-1$
-			throw exception;
+			assertTrue("Step failed: "+exception.getMessage(), false); //$NON-NLS-1$
 		}
 	}
 	
