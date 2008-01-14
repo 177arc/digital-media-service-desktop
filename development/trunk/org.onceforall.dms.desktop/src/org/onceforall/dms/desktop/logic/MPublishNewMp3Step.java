@@ -10,6 +10,7 @@
  */
 package org.onceforall.dms.desktop.logic;
 
+import java.io.File;
 import java.util.Date;
 
 import org.apache.commons.net.ftp.FTPClient;
@@ -56,7 +57,7 @@ import org.onceforall.dms.desktop.logic.types.Type;
  *
  * @see org.onceforall.dms.desktop.logic.LogicPackage#getMPublishNewMp3Step()
  * @model kind="class"
- *        annotation="http://www.onceforall.org/mcore name='Publish MP3' description='Publishes a new MP3 recording to the Christ Chruch Bromley web site and creates/updates the podcast RSS file accordingly.' actionName='Mark as completed' interruptable='false' stoppable='false' terminatable='false'"
+ *        annotation="http://www.onceforall.org/mcore name='Publish MP3' description='Publishes a new MP3 recording to the Christ Chruch Bromley web site and creates/updates the podcast RSS file accordingly.' actionName='Publish' actionIconFilePath='Image Files/Publish.gif' interruptable='false' stoppable='false' terminatable='false'"
  * @generated
  */
 public class MPublishNewMp3Step extends MPublishMp3sStep {
@@ -73,7 +74,7 @@ public class MPublishNewMp3Step extends MPublishMp3sStep {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final String copyright = "Copyright 2006, Marc Maier";
+	public static final String copyright = "Copyright 2007, Marc Maier";
 
 	/**
      * Adds a value type for this class.
@@ -449,7 +450,6 @@ public class MPublishNewMp3Step extends MPublishMp3sStep {
 	public boolean getDefaultTerminatable() {
 		return false;
 	}
-
 	/**
 	 * Get the default value of the '{@link #getDescription() <em>Description</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -486,7 +486,20 @@ public class MPublishNewMp3Step extends MPublishMp3sStep {
 	 * @ordered
 	 */
 	public String getDefaultActionName() {
-		return "Mark as completed";
+		return "Publish";
+	}
+
+	/**
+	 * Get the default value of the '{@link #getActionIconFilePath() <em>Action Icon File Path</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return Returns the default value of the '{@link #getActionIconFilePath() <em>Action Icon File Path</em>}' attribute.
+	 * @see #getActionIconFilePath()
+	 * @generated
+	 * @ordered
+	 */
+	public File getDefaultActionIconFilePath() {
+		return (File)LogicFactory.eINSTANCE.createFromString(LogicPackage.eINSTANCE.getMFile(), "Image Files/Publish.gif");
 	}
 
 	/**
@@ -501,6 +514,7 @@ public class MPublishNewMp3Step extends MPublishMp3sStep {
 	public String getDefaultName() {
 		return "Publish MP3";
 	}
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -511,12 +525,13 @@ public class MPublishNewMp3Step extends MPublishMp3sStep {
 		
 		firstMPublishNewMp3StepConstructorHook();
 				
+		actionName = "Publish";
+		actionIconFilePath = (File)LogicFactory.eINSTANCE.createFromString(LogicPackage.eINSTANCE.getMFile(), "Image Files/Publish.gif");
+		stoppable = false;
+		description = "Publishes a new MP3 recording to the Christ Chruch Bromley web site and creates/updates the podcast RSS file accordingly.";
+		name = "Publish MP3";
 		interruptable = false;
 		terminatable = false;
-		description = "Publishes a new MP3 recording to the Christ Chruch Bromley web site and creates/updates the podcast RSS file accordingly.";
-		stoppable = false;
-		actionName = "Mark as completed";
-		name = "Publish MP3";
 					 
 		setMMp3EntryReferenceParameter(new MParameter(false, "MP3 entry reference", "Speficies a reference to the MP3 entry to be published.", null));			 
 		setMLinkTextParameter(new MParameter(false, "Link text", "Specifies the link text for the published MP3 file.", null));			 
@@ -1292,7 +1307,7 @@ public class MPublishNewMp3Step extends MPublishMp3sStep {
 	 * @return the value of the '<em>Podcast Summary Parameter</em>' attribute.
 	 * @see #setPodcastSummaryParameter(String)
 	 * @see org.onceforall.dms.desktop.logic.LogicPackage#getMPublishNewMp3Step_PodcastSummaryParameter()
-	 * @model dataType="org.onceforall.dms.desktop.logic.MString" required="true"
+	 * @model dataType="org.onceforall.dms.desktop.logic.MString"
 	 * @generated
 	 */
 	public String getPodcastSummaryParameter() {
@@ -1833,8 +1848,8 @@ public class MPublishNewMp3Step extends MPublishMp3sStep {
 	protected Object convertMInputValues(MValue mOwnerValue) {
 		if(getMLinkTextParameter().equals(mOwnerValue) || getMPodcastTitleParameter().equals(mOwnerValue)) {
             String[] texts = new String[2];
-            texts[0] = mOwnerValue.getMInputValueForUI(LogicPackage.MENTER_SERVICE_INFORMATION_STEP__MTITLE_OF_TALK_RESULT, LogicPackage.MENTER_WWX_INFORMATION_STEP__MTITLE_OF_TALK_RESULT);
-            texts[1] = mOwnerValue.getMInputValueForUI(LogicPackage.MENTER_SERVICE_INFORMATION_STEP__MREADING_RESULT);
+            texts[0] = mOwnerValue.getMInputValueForUIOrNull(LogicPackage.MENTER_SERVICE_INFORMATION_STEP__MTITLE_OF_TALK_RESULT, LogicPackage.MENTER_WWX_INFORMATION_STEP__MTITLE_OF_TALK_RESULT);
+            texts[1] = mOwnerValue.getMInputValueForUIOrNull(LogicPackage.MENTER_SERVICE_INFORMATION_STEP__MREADING_RESULT);
             
             String text = Utilities.concatenate(texts, " - ");
             if(text == null)
@@ -1845,9 +1860,9 @@ public class MPublishNewMp3Step extends MPublishMp3sStep {
         }
 		else if(getMLinkDescriptionParameter().equals(mOwnerValue) || getMPodcastSubtitleParameter().equals(mOwnerValue)) {
             String[] texts = new String[3];
-            texts[0] = mOwnerValue.getMInputValueForUI(LogicPackage.MENTER_SERVICE_INFORMATION_STEP__MSERVICE_DATE_RESULT, LogicPackage.MENTER_WWX_INFORMATION_STEP__MWWX_DATE_RESULT);
-            texts[1] = mOwnerValue.getMInputValueForUI(LogicPackage.MENTER_SERVICE_INFORMATION_STEP__MSERVICE_TYPE_RESULT);
-            texts[2] = mOwnerValue.getMInputValueForUI(LogicPackage.MENTER_SERVICE_INFORMATION_STEP__MSPEAKERS_NAME_RESULT, LogicPackage.MENTER_WWX_INFORMATION_STEP__MSPEAKERS_NAME_RESULT);
+            texts[0] = mOwnerValue.getMInputValueForUIOrNull(LogicPackage.MENTER_SERVICE_INFORMATION_STEP__MSERVICE_DATE_RESULT, LogicPackage.MENTER_WWX_INFORMATION_STEP__MWWX_DATE_RESULT);
+            texts[1] = mOwnerValue.getMInputValueForUIOrNull(LogicPackage.MENTER_SERVICE_INFORMATION_STEP__MSERVICE_TYPE_RESULT);
+            texts[2] = mOwnerValue.getMInputValueForUIOrNull(LogicPackage.MENTER_SERVICE_INFORMATION_STEP__MSPEAKERS_NAME_RESULT, LogicPackage.MENTER_WWX_INFORMATION_STEP__MSPEAKERS_NAME_RESULT);
             
             String text = Utilities.concatenate(texts, " - ");
             if(text == null)
