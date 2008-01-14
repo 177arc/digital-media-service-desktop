@@ -17,6 +17,7 @@
  */
 package org.onceforall.dms.desktop.logic.types;
 
+import java.io.File;
 import java.net.MalformedURLException;
 import java.net.URL;
 
@@ -36,7 +37,7 @@ public class UrlType extends Type {
      * Creates a new URL value type object.
      */
 	protected UrlType() {
-        super("URL", "Specifies universal resource location (URL) identifier, e.g. http://localhost:8080/web.", URL.class);   
+        super("URL", "Specifies universal resource location (URL) identifier, e.g. http://localhost:8080/web.", new File("Image Files"+File.separator+"URL.gif"), URL.class);   
     }
     
     /**

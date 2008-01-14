@@ -40,7 +40,7 @@ public class ReferenceType extends Type {
      * @param javaClass Specifies the Java class that this reference type represents.
      */
     public ReferenceType(String name, String description, Class javaClass) {
-        super(name, description, javaClass);
+        super(name, description, null, javaClass);
         
         try {
 			nameForUI = "Reference to "+javaClass.getField("TYPE_NAME_FOR_UI").get(null);

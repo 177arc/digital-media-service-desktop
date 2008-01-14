@@ -28,7 +28,7 @@ public class StateType extends Type {
      * Creates a new state value type object.
      */
     protected StateType() {
-        super("State", "Specifies a sequence of characters that is restricted to a number of options.", State.class);        
+        super("State", "Specifies a sequence of characters that is restricted to a number of options.", null, State.class);        
     }
  
     /**
@@ -39,7 +39,7 @@ public class StateType extends Type {
      * @param validValues Specifies all valid states of this type.
 	 */
 	public StateType(String name, String description, State[] validValues) {
-		super(name, description, State.class, validValues, getValidValuesForUI(validValues));
+		super(name, description, null, State.class, validValues, getValidValuesForUI(validValues));
 	}
 
 	/**

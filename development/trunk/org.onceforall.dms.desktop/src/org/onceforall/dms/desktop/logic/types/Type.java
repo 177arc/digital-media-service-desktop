@@ -31,6 +31,7 @@
  */
 package org.onceforall.dms.desktop.logic.types;
 
+import java.io.File;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -112,6 +113,9 @@ public abstract class Type {
     /** Specifies all valid values of this type in a user-friendly representation. */
     protected String[] validValuesForUI;
     
+    /** Specifies the file path to the icon that represents this type. It may be <code>null</code> if no icon file path is available for this type. */
+    protected File iconFilePath;
+    
     /** Initialises the static class members. */
     static {
     	VALUE_TYPES_BY_CLASS.put(STRING_TYPE.getJavaClass(), STRING_TYPE);
@@ -146,10 +150,11 @@ public abstract class Type {
      *
      * @param name Specifies the name of the type object. (mandatory)
      * @param description Specifies the description of the type object.
+     * @param iconFilePath Specifies the file path to the icon that represents this type. It may be <code>null</code> if no icon file path is available for this type. 
      * @param javaClass Specifies the Java class that this type represents.
      */
-    protected Type(String name, String description, Class javaClass) {
-    	this(name, description, javaClass, null, null);      
+    protected Type(String name, String description, File iconFilePath, Class javaClass) {
+    	this(name, description, iconFilePath, javaClass, null, null);      
     }
     
     /**
@@ -256,11 +261,12 @@ public abstract class Type {
      *
      * @param name Specifies the name of the type object. (mandatory)
      * @param description Specifies the description of the type object.
+     * @param iconFilePath Specifies the file path to the icon that represents this type. It may be <code>null</code> if no icon file path is available for this type. 
      * @param javaClass Specifies the Java class that this type represents.
      * @param validValues Specifies all valid values of this type.
      * @param validValuesForUI Specifies all valid values of this type in a user-friendly representation.
      */
-    protected Type(String name, String description, Class javaClass,
+    protected Type(String name, String description, File iconFilePath, Class javaClass,
             Object[] validValues, String[] validValuesForUI) {
         //?assert validValues != null: "The valid values are not specified.";
         //?assert validValuesForUI != null: "The valid values for user-friendly representation are not specified.";
@@ -268,6 +274,7 @@ public abstract class Type {
 
         this.name = name;
         this.description = description;
+        this.iconFilePath = iconFilePath;
         this.javaClass = javaClass;
         this.validValues = validValues;
         
@@ -369,4 +376,21 @@ public abstract class Type {
     public static Type getTypeForName(String typeName) {
     	return VALUE_TYPES_BY_NAME.get(typeName);
     }
+
+    /**
+     * Gets the file path to the icon that represents this type.
+     * @return Returns the file path to the icon that represents this type.
+     */
+	public File getIconFilePath() {
+		return iconFilePath;
+	}
+
+	/**
+	 * Sets the file path to the icon that represents this type.
+	 * 
+	 * @param iconFilePath Specifies the file path to the icon that represents this type.
+	 */
+	public void setIconFilePath(File iconFilePath) {
+		this.iconFilePath = iconFilePath;
+	}
 }

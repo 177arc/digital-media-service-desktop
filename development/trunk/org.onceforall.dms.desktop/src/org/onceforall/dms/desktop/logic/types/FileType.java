@@ -56,7 +56,7 @@ public class FileType extends Type {
      * @param mustExist Determines whether the file must exist.
      */
     protected FileType(boolean mustExist) {
-        super(mustExist ? "File (must exist)" : "File", "Specifies a file. This can be a directory of a normal file.", File.class);
+        super(mustExist ? "File (must exist)" : "File", "Specifies a file. This can be a directory of a normal file.", new File("Image Files"+File.separator+"File.gif"), File.class);
         
         this.mustExist = mustExist;        
     }

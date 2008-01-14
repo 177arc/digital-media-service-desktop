@@ -34,7 +34,7 @@ public class BooleanType extends Type {
      * Creates a new date time value object.
      */
     protected BooleanType() {
-        super("Yes/No", "Specifies a boolean field.", Boolean.class,
+        super("Yes/No", "Specifies a boolean field.", null, Boolean.class,
                 new Boolean[] { Boolean.TRUE, Boolean.FALSE}, new String[] {"Yes", "No"});        
     }
     

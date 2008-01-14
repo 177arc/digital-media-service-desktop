@@ -57,7 +57,7 @@ public class DurationType extends Type {
      * Creates a new duration value object.
      */
     protected DurationType() {
-        super("Duration", "Specifies a time duration, formatted as hh:mm:ss.", Long.class);        
+        super("Duration", "Specifies a time duration, formatted as hh:mm:ss.", null, Long.class);        
     }
     
     /**

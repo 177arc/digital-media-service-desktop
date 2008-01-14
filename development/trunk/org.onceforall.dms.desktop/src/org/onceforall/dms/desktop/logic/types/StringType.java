@@ -32,6 +32,6 @@ public class StringType extends Type {
      * Creates a new string value object.
      */
 	protected StringType() {
-        super("Text", "Specifies an unlimited sequence of characters.", String.class);        
+        super("Text", "Specifies an unlimited sequence of characters.", null, String.class);        
     }
 }

@@ -63,7 +63,7 @@ public class PasswordType extends Type {
      * Creates a new password value object.
      */
     protected PasswordType() {
-        super("Password", "Specifies a sequence of characters that will be mask so that the user cannot them.", String.class); 
+        super("Password", "Specifies a sequence of characters that will be mask so that the user cannot them.", null, String.class); 
     }
 
     /**

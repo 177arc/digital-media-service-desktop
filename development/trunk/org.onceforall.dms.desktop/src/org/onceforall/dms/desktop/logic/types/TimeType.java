@@ -50,7 +50,7 @@ public class TimeType extends Type {
      * Creates a new time value object.
      */
     protected TimeType() {
-        super("Time", "Specifies time information, formatted according to the system's regional settings.", Date.class);        
+        super("Time", "Specifies time information, formatted according to the system's regional settings.", null, Date.class);        
     }
     
     /**

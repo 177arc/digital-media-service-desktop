@@ -45,7 +45,7 @@ public class DateType extends Type {
      * Creates a new date time value object.
      */
     public DateType() {
-        super("Date", "Specifies date information, formatted according to the system's regional settings.", Date.class);        
+        super("Date", "Specifies date information, formatted according to the system's regional settings.", null, Date.class);        
     }
     
     /**

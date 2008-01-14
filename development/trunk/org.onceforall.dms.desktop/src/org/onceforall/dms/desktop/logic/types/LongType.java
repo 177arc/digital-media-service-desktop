@@ -49,7 +49,7 @@ public class LongType extends Type {
      * Creates a new date time value object.
      */
     protected LongType() {
-        super("Number", "Specifies a number, formatted according to the system's regional settings.", Long.class);        
+        super("Number", "Specifies a number, formatted according to the system's regional settings.", null, Long.class);        
     }
     
     /**
