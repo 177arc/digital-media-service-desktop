@@ -7,6 +7,7 @@
  */
 package org.onceforall.dms.desktop.logic;
 
+import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
@@ -53,7 +54,7 @@ import org.xml.sax.helpers.XMLReaderFactory;
  *
  * @see org.onceforall.dms.desktop.logic.LogicPackage#getMDmsApplicationMGetDataUpgradeInfoStep()
  * @model kind="class"
- *        annotation="http://www.onceforall.org/mcore name='Get application data upgrade info' description='Tries to find the application data upgrade file at the given FTP server location and retrieves the upgrade message if present.' actionName='Get' interruptable='false' stoppable='false' terminatable='false'"
+ *        annotation="http://www.onceforall.org/mcore name='Get application data upgrade info' description='Tries to find the application data upgrade file at the given FTP server location and retrieves the upgrade message if present.' actionName='Get' actionIconFilePath='Image Files\\Mark as completed.gif' interruptable='false' stoppable='false' terminatable='false'"
  * @generated
  */
 public class MDmsApplicationMGetDataUpgradeInfoStep extends MFtpStep {
@@ -116,7 +117,7 @@ public class MDmsApplicationMGetDataUpgradeInfoStep extends MFtpStep {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final String copyright = "Copyright 2006, Marc Maier";
+	public static final String copyright = "Copyright 2007, Marc Maier";
 
 	/**
      * Adds a value type for this class.
@@ -127,6 +128,37 @@ public class MDmsApplicationMGetDataUpgradeInfoStep extends MFtpStep {
 	static {
 		Type.VALUE_TYPES_BY_NAME.put("Reference to "+MDmsApplicationMGetDataUpgradeInfoStep.TYPE_NAME, new ReferenceType("Reference to "+MDmsApplicationMGetDataUpgradeInfoStep.TYPE_NAME, "Specifies a reference to a "+MDmsApplicationMGetDataUpgradeInfoStep.TYPE_NAME_FOR_UI, MDmsApplicationMGetDataUpgradeInfoStep.class));
 	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -346,7 +378,6 @@ public class MDmsApplicationMGetDataUpgradeInfoStep extends MFtpStep {
 	public boolean getDefaultTerminatable() {
 		return false;
 	}
-
 	/**
 	 * Get the default value of the '{@link #getDescription() <em>Description</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -387,6 +418,19 @@ public class MDmsApplicationMGetDataUpgradeInfoStep extends MFtpStep {
 	}
 
 	/**
+	 * Get the default value of the '{@link #getActionIconFilePath() <em>Action Icon File Path</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return Returns the default value of the '{@link #getActionIconFilePath() <em>Action Icon File Path</em>}' attribute.
+	 * @see #getActionIconFilePath()
+	 * @generated
+	 * @ordered
+	 */
+	public File getDefaultActionIconFilePath() {
+		return (File)LogicFactory.eINSTANCE.createFromString(LogicPackage.eINSTANCE.getMFile(), "Image Files\\Mark as completed.gif");
+	}
+
+	/**
 	 * Get the default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -398,6 +442,7 @@ public class MDmsApplicationMGetDataUpgradeInfoStep extends MFtpStep {
 	public String getDefaultName() {
 		return "Get application data upgrade info";
 	}
+
 	/** Specifies the SAX parser for parsing the application data file. */
 	protected XMLReader applicationDataParser;
 	
@@ -422,12 +467,13 @@ public class MDmsApplicationMGetDataUpgradeInfoStep extends MFtpStep {
 		
 		firstMDmsApplicationMGetDataUpgradeInfoStepConstructorHook();
 				
+		actionName = "Get";
+		actionIconFilePath = (File)LogicFactory.eINSTANCE.createFromString(LogicPackage.eINSTANCE.getMFile(), "Image Files\\Mark as completed.gif");
+		stoppable = false;
+		description = "Tries to find the application data upgrade file at the given FTP server location and retrieves the upgrade message if present.";
+		name = "Get application data upgrade info";
 		interruptable = false;
 		terminatable = false;
-		description = "Tries to find the application data upgrade file at the given FTP server location and retrieves the upgrade message if present.";
-		stoppable = false;
-		actionName = "Get";
-		name = "Get application data upgrade info";
 					 
 		setMUpgradeRelativeFtpPathProperty(new MParameter(false, "Application data upgrade relative FTP path", "Specifies the path of the directory on the FTP server to the application data upgrade file, e.g. \'/dms/data.xml\'.", null));			 
 		setMUpgradeAvailableResult(new MResult(false, "Application data upgrade available", "Specifies whether an application data upgrade file could be found on the FTP server at the specified location.", null));			 

@@ -6,6 +6,7 @@
  */
 package org.onceforall.dms.desktop.logic;
 
+import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
@@ -43,7 +44,7 @@ import org.onceforall.dms.desktop.logic.types.Type;
  *
  * @see org.onceforall.dms.desktop.logic.LogicPackage#getMDmsApplicationMUpgradeDataStep()
  * @model kind="class"
- *        annotation="http://www.onceforall.org/mcore name='Upgrade application data' description='Tried to find an upgrade file on the given FTP server location, optionally displays an upgrade message and upgrades the application data.' actionName='Upgrade' interruptable='false' stoppable='false' terminatable='false'"
+ *        annotation="http://www.onceforall.org/mcore name='Upgrade application data' description='Tried to find an upgrade file on the given FTP server location, optionally displays an upgrade message and upgrades the application data.' actionName='Upgrade' actionIconFilePath='Image Files\\Mark as completed.gif' interruptable='false' stoppable='false' terminatable='false'"
  * @generated
  */
 public class MDmsApplicationMUpgradeDataStep extends MFtpStep {
@@ -60,7 +61,7 @@ public class MDmsApplicationMUpgradeDataStep extends MFtpStep {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final String copyright = "Copyright 2006, Marc Maier";
+	public static final String copyright = "Copyright 2007, Marc Maier";
 
 	/**
      * Adds a value type for this class.
@@ -226,7 +227,6 @@ public class MDmsApplicationMUpgradeDataStep extends MFtpStep {
 	public boolean getDefaultTerminatable() {
 		return false;
 	}
-
 	/**
 	 * Get the default value of the '{@link #getDescription() <em>Description</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -267,6 +267,19 @@ public class MDmsApplicationMUpgradeDataStep extends MFtpStep {
 	}
 
 	/**
+	 * Get the default value of the '{@link #getActionIconFilePath() <em>Action Icon File Path</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return Returns the default value of the '{@link #getActionIconFilePath() <em>Action Icon File Path</em>}' attribute.
+	 * @see #getActionIconFilePath()
+	 * @generated
+	 * @ordered
+	 */
+	public File getDefaultActionIconFilePath() {
+		return (File)LogicFactory.eINSTANCE.createFromString(LogicPackage.eINSTANCE.getMFile(), "Image Files\\Mark as completed.gif");
+	}
+
+	/**
 	 * Get the default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -278,6 +291,7 @@ public class MDmsApplicationMUpgradeDataStep extends MFtpStep {
 	public String getDefaultName() {
 		return "Upgrade application data";
 	}
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -288,12 +302,13 @@ public class MDmsApplicationMUpgradeDataStep extends MFtpStep {
 		
 		firstMDmsApplicationMUpgradeDataStepConstructorHook();
 				
+		actionName = "Upgrade";
+		actionIconFilePath = (File)LogicFactory.eINSTANCE.createFromString(LogicPackage.eINSTANCE.getMFile(), "Image Files\\Mark as completed.gif");
+		stoppable = false;
+		description = "Tried to find an upgrade file on the given FTP server location, optionally displays an upgrade message and upgrades the application data.";
+		name = "Upgrade application data";
 		interruptable = false;
 		terminatable = false;
-		description = "Tried to find an upgrade file on the given FTP server location, optionally displays an upgrade message and upgrades the application data.";
-		stoppable = false;
-		actionName = "Upgrade";
-		name = "Upgrade application data";
 					 
 		setMUpgradeRelativeFtpPathProperty(new MParameter(false, "Application data upgrade relative FTP path", "Specifies the path of the directory on the FTP server to the application data upgrade file, e.g. \'/dms/data.xml\'.", null));			 
 		setMUpgradeMessageParameter(new MParameter(false, "Application data upgrade message", "Specifies a message that provides a description of the application data upgrade. If this parameter contains a message, the user has to acknowledge it before he/she can proceed.", null));			 
