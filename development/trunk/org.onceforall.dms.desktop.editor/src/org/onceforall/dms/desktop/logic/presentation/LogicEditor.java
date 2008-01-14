@@ -145,7 +145,7 @@ public class LogicEditor
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final String copyright = "Copyright 2006, Marc Maier";
+	public static final String copyright = "Copyright 2007, Marc Maier";
 
 	/**
 	 * This keeps track of the editing domain that is used to track all changes to the model.
