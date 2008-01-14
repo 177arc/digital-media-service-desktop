@@ -128,7 +128,7 @@ public class LogicLayerMUpdatePublishedMP3StepTest extends LogicLayerTest {
 		mMp33.getMStateProperty().setValueForUI(MMp3StateType.PUBLISHED_STATE.getNameForUI());
 		mMp34.getMStateProperty().setValueForUI(MMp3StateType.ARCHIVED_STATE.getNameForUI());
 		mMp35.getMStateProperty().setValueForUI(MMp3StateType.PUBLISHED_STATE.getNameForUI());
-		
+		mMp35.getMKeepPublishedProperty().setValue(Boolean.TRUE);
 		
 		// Uploads published files.
 		System.out.print("Uploading published files ..."); //$NON-NLS-1$
@@ -160,7 +160,7 @@ public class LogicLayerMUpdatePublishedMP3StepTest extends LogicLayerTest {
 		executeMStep(mStep, true, true);
 		
         URL webServerUrl = mStep.getWebServerUrlParameter();
-        URL podcastUrl = new URL(webServerUrl.toExternalForm()+mStep.getMp3RelativeFtpPathParameter()+"/"+mStep.getPodcastFilePathParameter().getName()); //$NON-NLS-1$
+        URL podcastUrl = new URL(webServerUrl.toExternalForm()+mStep.getPodcastRelativeFtpPathParameter()+"/"+mStep.getPodcastFilePathParameter().getName()); //$NON-NLS-1$
         URL contentPageUrl = new URL(webServerUrl.toExternalForm()+mStep.getContentPageRelativeFtpPathParameter()+"/"+mStep.getContentPageFilePathParameter().getName()); //$NON-NLS-1$
         URL mMp31Url = new URL(webServerUrl.toExternalForm()+mStep.getMp3RelativeFtpPathParameter()+"/"+mMp31.getPublishedFileNameProperty()); //$NON-NLS-1$
         URL mMp32Url = new URL(webServerUrl.toExternalForm()+mStep.getMp3RelativeFtpPathParameter()+"/"+mMp32.getPublishedFileNameProperty()); //$NON-NLS-1$
@@ -169,17 +169,18 @@ public class LogicLayerMUpdatePublishedMP3StepTest extends LogicLayerTest {
         URL mMp35Url = new URL(webServerUrl.toExternalForm()+mStep.getMp3RelativeFtpPathParameter()+"/"+mMp35.getPublishedFileNameProperty()); //$NON-NLS-1$
         // Checks the results.
         //assertTrue(mMp3Folder.getPath().equals(mStep.getMMp3FolderReferenceResult().getValueForUI()));
-
+        assertTrue(contentPageUrl.equals(mStep.getMContentPageUrlResult().getValue()));
+        assertTrue(podcastUrl.equals(mStep.getMPodcastFileUrlResult().getValue()));
         
 		// Checks the managed MP3s.
         assertTrue(verifyMObjectDifferences(mMp31, mMp31Clone, null));
         assertTrue(verifyMObjectDifferences(mMp32, mMp32Clone, new int[] { LogicPackage.MMP3__STATE_PROPERTY, LogicPackage.MMP3__LAST_STATE_CHANGE_PROPERTY }));
-        assertTrue(verifyMObjectDifferences(mMp33, mMp33Clone, new int[] { LogicPackage.MMP3__LAST_STATE_CHANGE_PROPERTY }) || verifyMObjectDifferences(mMp33, mMp33Clone, null));
+        assertTrue(verifyMObjectDifferences(mMp33, mMp33Clone, new int[] { LogicPackage.MMP3__STATE_PROPERTY, LogicPackage.MMP3__LAST_STATE_CHANGE_PROPERTY }) );
         assertTrue(verifyMObjectDifferences(mMp34, mMp34Clone, new int[] { LogicPackage.MMP3__LAST_STATE_CHANGE_PROPERTY }) || verifyMObjectDifferences(mMp34, mMp34Clone, null));
-        assertTrue(verifyMObjectDifferences(mMp35, mMp35Clone, new int[] { LogicPackage.MMP3__STATE_PROPERTY, LogicPackage.MMP3__LAST_STATE_CHANGE_PROPERTY } ));
+        assertTrue(verifyMObjectDifferences(mMp35, mMp35Clone, new int[] { LogicPackage.MMP3__LAST_STATE_CHANGE_PROPERTY } ) || verifyMObjectDifferences(mMp35, mMp35Clone, null));
         
-		assertTrue(mMp33.getMStateProperty().getValueForUI().equals(MMp3StateType.PUBLISHED_STATE.getNameForUI()));
-		assertTrue(mMp35.getMStateProperty().getValueForUI().equals(MMp3StateType.NOT_PUBLISHED_STATE.getNameForUI()));
+		assertTrue(mMp33.getMStateProperty().getValueForUI().equals(MMp3StateType.NOT_PUBLISHED_STATE.getNameForUI()));
+		assertTrue(mMp35.getMStateProperty().getValueForUI().equals(MMp3StateType.PUBLISHED_STATE.getNameForUI()));
 		
     	// Checks the HTML content page on the web server.
 		System.out.print("Checking content page on web server ..."); //$NON-NLS-1$
@@ -194,17 +195,17 @@ public class LogicLayerMUpdatePublishedMP3StepTest extends LogicLayerTest {
 		assertTrue(contentPage.indexOf(mMp32.getCommentProperty()) >= 0);
 		
 		int mMp33Index = contentPage.indexOf("href=\""+mMp33Url.toExternalForm()+"\">"+mMp33.getLinkTextProperty()+"</a>"); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-		assertTrue(mMp33Index >= 0); 
-		assertTrue(contentPage.indexOf(mMp33.getLinkDescriptionProperty()) >= 0);
-		assertTrue(contentPage.indexOf(mMp33.getCommentProperty()) >= 0);
+		assertFalse(mMp33Index >= 0); 
+		assertFalse(contentPage.indexOf(mMp33.getLinkDescriptionProperty()) >= 0);
+		assertFalse(contentPage.indexOf(mMp33.getCommentProperty()) >= 0);
 		
 		assertFalse(contentPage.indexOf("href=\""+mMp34Url.toExternalForm()+"\">"+mMp34.getLinkTextProperty()+"</a>") >= 0); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
 		assertFalse(contentPage.indexOf(mMp34.getLinkDescriptionProperty()) >= 0);
 		assertFalse(contentPage.indexOf(mMp34.getCommentProperty()) >= 0);
 		
-		assertFalse(contentPage.indexOf("href=\""+mMp35Url.toExternalForm()+"\">"+mMp35.getLinkTextProperty()+"</a>") >= 0); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-		assertFalse(contentPage.indexOf(mMp35.getLinkDescriptionProperty()) >= 0);
-		assertFalse(contentPage.indexOf(mMp35.getCommentProperty()) >= 0);
+		assertTrue(contentPage.indexOf("href=\""+mMp35Url.toExternalForm()+"\">"+mMp35.getLinkTextProperty()+"</a>") >= 0); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+		assertTrue(contentPage.indexOf(mMp35.getLinkDescriptionProperty()) >= 0);
+		assertTrue(contentPage.indexOf(mMp35.getCommentProperty()) >= 0);
 		
 		// Checks that MP3s are published in reverse date order.
 		assertTrue(mMp33Index < mMp32Index);
@@ -236,18 +237,18 @@ public class LogicLayerMUpdatePublishedMP3StepTest extends LogicLayerTest {
 		String podcast = getHttpFile(podcastUrl);
 		testPodcastMp3Exists(podcast, mStep, mMp31, false);
 		testPodcastMp3Exists(podcast, mStep, mMp32, true);
-		testPodcastMp3Exists(podcast, mStep, mMp33, true);
+		testPodcastMp3Exists(podcast, mStep, mMp33, false);
 		testPodcastMp3Exists(podcast, mStep, mMp34, false);
-		testPodcastMp3Exists(podcast, mStep, mMp35, false);
+		testPodcastMp3Exists(podcast, mStep, mMp35, true);
 		System.out.println(" completed.");	 //$NON-NLS-1$		
 	
 		// Checks the MP3 files.
 		System.out.print("Checking MP3 files on web server ...");		 //$NON-NLS-1$
 		assertFalse(isUrlContentNotEmpty(mMp31Url));
 		assertTrue(isUrlContentNotEmpty(mMp32Url));
-		assertTrue(isUrlContentNotEmpty(mMp33Url));
+		assertFalse(isUrlContentNotEmpty(mMp33Url));
 		assertFalse(isUrlContentNotEmpty(mMp34Url));
-		assertFalse(isUrlContentNotEmpty(mMp35Url));
+		assertTrue(isUrlContentNotEmpty(mMp35Url));
 		System.out.println(" completed.");	 //$NON-NLS-1$
         
 		System.out.print("Checking MP3 files on FTP server ..."); //$NON-NLS-1$
@@ -262,9 +263,9 @@ public class LogicLayerMUpdatePublishedMP3StepTest extends LogicLayerTest {
 
             	assertFalse(ftpFileNames.contains(mMp31.getPublishedFileNameProperty()));
             	assertTrue(ftpFileNames.contains(mMp32.getPublishedFileNameProperty()));
-            	assertTrue(ftpFileNames.contains(mMp33.getPublishedFileNameProperty()));
+            	assertFalse(ftpFileNames.contains(mMp33.getPublishedFileNameProperty()));
             	assertFalse(ftpFileNames.contains(mMp34.getPublishedFileNameProperty()));
-            	assertFalse(ftpFileNames.contains(mMp35.getPublishedFileNameProperty()));
+            	assertTrue(ftpFileNames.contains(mMp35.getPublishedFileNameProperty()));
             	
             	for(FTPFile ftpFile: ftpFiles) {	            	
             		if(ftpFile.getName().equals(mMp32.getPublishedFileNameProperty()))
