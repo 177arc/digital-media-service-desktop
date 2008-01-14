@@ -36,6 +36,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
+import java.util.zip.ZipEntry;
 import java.util.zip.ZipInputStream;
 
 import javax.mail.BodyPart;
@@ -52,6 +53,7 @@ import javax.xml.parsers.DocumentBuilderFactory;
 import org.apache.commons.net.ftp.FTPClient;
 import org.apache.commons.net.ftp.FTPFile;
 import org.onceforall.dms.desktop.Utilities;
+import org.onceforall.dms.desktop.exception.DesktopException;
 import org.onceforall.dms.desktop.logging.Logger;
 import org.onceforall.dms.desktop.logic.MCheckInputLevelsStep;
 import org.onceforall.dms.desktop.logic.MConvertToMP3Step;
@@ -101,9 +103,17 @@ public class LogicLayerTest extends org.onceforall.dms.desktop.tests.Test {
 	 */
 	@Override
 	protected void executeMStep(MStep mStep, boolean waitForCompletion) {
+		executeMStep(mStep, waitForCompletion, false);
+	}
+
+	/**
+	 * @see org.onceforall.dms.desktop.tests.Test#executeMStep(org.onceforall.dms.desktop.logic.MStep, boolean, boolean)
+	 */
+	@Override
+	protected void executeMStep(MStep mStep, boolean waitForCompletion, boolean ignoreWarnings) {
 		++currentStepIndex;
 		activateMElement(mStep);
-		super.executeMStep(mStep, waitForCompletion);
+		super.executeMStep(mStep, waitForCompletion, ignoreWarnings);
 	}
 
 	/**
@@ -402,7 +412,7 @@ public class LogicLayerTest extends org.onceforall.dms.desktop.tests.Test {
     	// Checks the HTML page on the Web server.
 		System.out.print("Checking content page on Web server ..."); //$NON-NLS-1$
 		String contentPage = getHttpFile(contentPageUrl);
-		assertTrue(contentPage.indexOf("href=\""+mp3Url.toExternalForm()+"\">"+mStep.getLinkTextParameter()+"</a>") >= 0); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+		assertTrue(contentPage.indexOf("href=\""+mp3Url.toExternalForm()+"\">"+Utilities.encodeForHtml(mStep.getLinkTextParameter())+"</a>") >= 0); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
 		assertTrue(contentPage.indexOf(mStep.getLinkDescriptionParameter()) >= 0);
 		assertTrue(contentPage.indexOf(mStep.getCommentParameter()) >= 0);
 		System.out.println(" completed.");	 //$NON-NLS-1$		
@@ -531,8 +541,18 @@ public class LogicLayerTest extends org.onceforall.dms.desktop.tests.Test {
 		assertTrue(mDmsApplication.getSmtpUserNameProperty().equals(mStep.getSmtpUserNameParameter()));
 		assertTrue(mDmsApplication.getSmtpPasswordProperty().equals(mStep.getSmtpPasswordParameter()));
 		
+		// Checks warnings.
+		try {
+			executeMStep(mStep, true, false);
+			assertTrue(false);
+		}
+		catch(DesktopException exception) {
+			assertTrue(exception.getSeverity() == DesktopException.WARNING_SEVERITY);
+			assertTrue(exception.getMessage().indexOf("your own email address") >= 0);
+		}
+		
 		// Starts the step.
-		executeMStep(mStep, true);
+		executeMStep(mStep, true, true);
 		
 		sleep(5000);
 		
@@ -579,15 +599,21 @@ public class LogicLayerTest extends org.onceforall.dms.desktop.tests.Test {
 						assertTrue(logFileStream != null);
 						String localLogFileContent = getStringFromInputStream(new FileInputStream(mStep.getLogFileParameter()));
 						String emailLogFileContent = getStringFromInputStream(logFileStream);
-						assertTrue(localLogFileContent.indexOf(emailLogFileContent) >= 0);
+						assertTrue(emailLogFileContent.indexOf(localLogFileContent) >= 0);
 						
 						// Checks the data file.
-						assertTrue(logFileStream != null);
+						assertTrue(dataFileStream != null);
 						ZipInputStream unzippedStream = new ZipInputStream(dataFileStream);
 						unzippedStream.getNextEntry();
 						String localDataFileContent = getStringFromInputStream(new FileInputStream(mStep.getDataFileParameter()));
-						String emailDataFileContent = getStringFromInputStream(unzippedStream);
+						String emailDataFileContent = getStringFromInputStream(unzippedStream, false);
 						assertTrue(localDataFileContent.equals(emailDataFileContent));	
+
+						// Checks the file system information file.
+						ZipEntry entry = unzippedStream.getNextEntry();
+						assertTrue(entry.getName().equals("File system infromation.txt"));
+						String emailFileInfoContent = getStringFromInputStream(unzippedStream, true);
+						assertTrue(emailFileInfoContent.indexOf(mStep.getMApplication().getPathProperty().getAbsolutePath()) >= 0);	
 					}
 				}
 				
@@ -615,15 +641,15 @@ public class LogicLayerTest extends org.onceforall.dms.desktop.tests.Test {
 		Long duration = (Long) ((TAudioFileFormat) baseFileFormat).properties().get("duration");					            
         String podcastDuration = DurationType.FORMATTER.format(new Date(duration/1000));
 
-        assertTrue(!testExistence ^ podcast.indexOf("<title>"+mMp3.getMPodcastTitleProperty().getValueForUI()+"</title>") >= 0);
+        assertTrue(!testExistence ^ podcast.indexOf("<title>"+Utilities.encodeForXml(mMp3.getMPodcastTitleProperty().getValueForUI())+"</title>") >= 0);
 		if(testExistence) {        
 	        assertTrue(podcast.indexOf("<link>"+webServerUrl.toExternalForm()+mStep.getMContentPageRelativeFtpPathParameter().getValueForUI()+"/"+mStep.getContentPageFilePathParameter().getName()+"</link>") >= 0);
 			assertTrue(podcast.indexOf("<guid>"+mMp3Url.toExternalForm()+"</guid>") >= 0);
 			assertTrue(podcast.indexOf("<enclosure url=\""+mMp3Url.toExternalForm()+"\" length=\""+mMp3.getFileProperty().length()+"\" type=\"audio/mpeg\"/>") >= 0);
 			assertTrue(podcast.indexOf("<pubDate>"+Utilities.encodeForXml(PODCAST_DATE_FORMAT.format(mMp3.getPodcastPublishingDateProperty()))+"</pubDate>") >= 0);
-			assertTrue(podcast.indexOf("<itunes:subtitle>"+mMp3.getMPodcastSubtitleProperty().getValueForUI()+"</itunes:subtitle>") >= 0);
-			assertTrue(podcast.indexOf("<itunes:summary>"+mMp3.getMPodcastSummaryProperty().getValueForUI()+"</itunes:summary>") >= 0);
-			assertTrue(podcast.indexOf("<itunes:duration>"+podcastDuration+"</itunes:duration>") >= 0);		
+			assertTrue(podcast.indexOf("<itunes:subtitle>"+Utilities.encodeForXml(mMp3.getMPodcastSubtitleProperty().getValueForUI())+"</itunes:subtitle>") >= 0);
+			assertTrue(podcast.indexOf("<itunes:summary>"+Utilities.encodeForXml(mMp3.getMPodcastSummaryProperty().getValueForUI())+"</itunes:summary>") >= 0);
+			assertTrue(podcast.indexOf("<itunes:duration>"+Utilities.encodeForXml(podcastDuration)+"</itunes:duration>") >= 0);		
 
 		}
 	}
