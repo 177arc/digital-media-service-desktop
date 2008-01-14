@@ -65,7 +65,7 @@ import org.onceforall.dms.desktop.logic.types.Type;
  *
  * @see org.onceforall.dms.desktop.logic.LogicPackage#getMConvertToMP3Step()
  * @model kind="class"
- *        annotation="http://www.onceforall.org/mcore name='Convert to MP3' description='Converts a WAVE file to MP3 format using the LAME encoder.' iconFilePath='Image Files/Convert to MP3 step.gif' actionName='Convert' interruptable='false' stoppable='false' terminatable='true'"
+ *        annotation="http://www.onceforall.org/mcore name='Convert to MP3' description='Converts a WAVE file to MP3 format using the LAME encoder.' iconFilePath='Image Files/Convert to MP3 step.gif' actionName='Convert' actionIconFilePath='Image Files/Convert.gif' interruptable='false' stoppable='false' terminatable='true'"
  * @generated
  */
 public class MConvertToMP3Step extends MStep {
@@ -82,7 +82,7 @@ public class MConvertToMP3Step extends MStep {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final String copyright = "Copyright 2006, Marc Maier";
+	public static final String copyright = "Copyright 2007, Marc Maier";
 
 	/**
      * Adds a value type for this class.
@@ -575,7 +575,6 @@ public class MConvertToMP3Step extends MStep {
 	public String getDefaultActionName() {
 		return "Convert";
 	}
-
 	/**
 	 * Get the default value of the '{@link #isStoppable() <em>Stoppable</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -587,6 +586,19 @@ public class MConvertToMP3Step extends MStep {
 	 */
 	public boolean getDefaultStoppable() {
 		return false;
+	}
+
+	/**
+	 * Get the default value of the '{@link #getActionIconFilePath() <em>Action Icon File Path</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return Returns the default value of the '{@link #getActionIconFilePath() <em>Action Icon File Path</em>}' attribute.
+	 * @see #getActionIconFilePath()
+	 * @generated
+	 * @ordered
+	 */
+	public File getDefaultActionIconFilePath() {
+		return (File)LogicFactory.eINSTANCE.createFromString(LogicPackage.eINSTANCE.getMFile(), "Image Files/Convert.gif");
 	}
 
 	/**
@@ -653,6 +665,7 @@ public class MConvertToMP3Step extends MStep {
 	public boolean getDefaultTerminatable() {
 		return true;
 	}
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -663,13 +676,14 @@ public class MConvertToMP3Step extends MStep {
 		
 		firstMConvertToMP3StepConstructorHook();
 				
-		actionName = "Convert";
-		stoppable = false;
-		iconFilePath = (File)LogicFactory.eINSTANCE.createFromString(LogicPackage.eINSTANCE.getMFile(), "Image Files/Convert to MP3 step.gif");
 		description = "Converts a WAVE file to MP3 format using the LAME encoder.";
+		stoppable = false;
+		actionIconFilePath = (File)LogicFactory.eINSTANCE.createFromString(LogicPackage.eINSTANCE.getMFile(), "Image Files/Convert.gif");
 		name = "Convert to MP3";
-		interruptable = false;
+		iconFilePath = (File)LogicFactory.eINSTANCE.createFromString(LogicPackage.eINSTANCE.getMFile(), "Image Files/Convert to MP3 step.gif");
 		terminatable = true;
+		interruptable = false;
+		actionName = "Convert";
 					 
 		setMArtistParameter(new MParameter(false, "Artist", "Determines the text that will set as the ID3 artist tag on the MP3 file.", null));			 
 		setMTitleParameter(new MParameter(false, "Title", "Determines the text that will set as the ID3 title tag on the MP3 file.", null));			 
@@ -2433,10 +2447,10 @@ public class MConvertToMP3Step extends MStep {
 		}
 		if(getMMp3FileNameParameter().equals(mOwnerValue)) {
             String[] texts = new String[4];
-            texts[0] = mOwnerValue.getMInputValueForUI(LogicPackage.MENTER_SERVICE_INFORMATION_STEP__MTITLE_OF_TALK_RESULT, LogicPackage.MENTER_WWX_INFORMATION_STEP__MTITLE_OF_TALK_RESULT);
-            texts[1] = mOwnerValue.getMInputValueForUI(LogicPackage.MENTER_SERVICE_INFORMATION_STEP__MREADING_RESULT);
-            texts[2] = mOwnerValue.getMInputValueForUI(LogicPackage.MENTER_WWX_INFORMATION_STEP__MFIRST_PART_RESULT);
-            texts[3] = mOwnerValue.getMInputValueForUI(LogicPackage.MENTER_WWX_INFORMATION_STEP__MSECOND_PART_RESULT);
+            texts[0] = mOwnerValue.getMInputValueForUIOrNull(LogicPackage.MENTER_SERVICE_INFORMATION_STEP__MTITLE_OF_TALK_RESULT, LogicPackage.MENTER_WWX_INFORMATION_STEP__MTITLE_OF_TALK_RESULT);
+            texts[1] = mOwnerValue.getMInputValueForUIOrNull(LogicPackage.MENTER_SERVICE_INFORMATION_STEP__MREADING_RESULT);
+            texts[2] = mOwnerValue.getMInputValueForUIOrNull(LogicPackage.MENTER_WWX_INFORMATION_STEP__MFIRST_PART_RESULT);
+            texts[3] = mOwnerValue.getMInputValueForUIOrNull(LogicPackage.MENTER_WWX_INFORMATION_STEP__MSECOND_PART_RESULT);
             
             String valueText = Utilities.concatenate(texts, " - ");
             if(valueText == null)
@@ -2445,10 +2459,10 @@ public class MConvertToMP3Step extends MStep {
             return new File(Utilities.convertToFileName(valueText)+".mp3");
 		}
 		else if(getMTitleParameter().equals(mOwnerValue)) {
-            String title = mOwnerValue.getMInputValueForUI(LogicPackage.MENTER_SERVICE_INFORMATION_STEP__MTITLE_OF_TALK_RESULT, LogicPackage.MENTER_WWX_INFORMATION_STEP__MTITLE_OF_TALK_RESULT);
-            String reading = mOwnerValue.getMInputValueForUI(LogicPackage.MENTER_SERVICE_INFORMATION_STEP__MREADING_RESULT);
-            String date = mOwnerValue.getMInputValueForUI(LogicPackage.MENTER_SERVICE_INFORMATION_STEP__MSERVICE_DATE_RESULT, LogicPackage.MENTER_WWX_INFORMATION_STEP__MWWX_DATE_RESULT);
-            
+            String title = mOwnerValue.getMInputValueForUIOrNull(LogicPackage.MENTER_SERVICE_INFORMATION_STEP__MTITLE_OF_TALK_RESULT, LogicPackage.MENTER_WWX_INFORMATION_STEP__MTITLE_OF_TALK_RESULT);
+            String reading = mOwnerValue.getMInputValueForUIOrNull(LogicPackage.MENTER_SERVICE_INFORMATION_STEP__MREADING_RESULT);
+            String date = mOwnerValue.getMInputValueForUIOrNull(LogicPackage.MENTER_SERVICE_INFORMATION_STEP__MSERVICE_DATE_RESULT, LogicPackage.MENTER_WWX_INFORMATION_STEP__MWWX_DATE_RESULT);
+
             if(title == null && reading == null && date == null)
                 return(null);
             
@@ -2473,9 +2487,9 @@ public class MConvertToMP3Step extends MStep {
     	    return new Integer(serviceDateCalendar.get(Calendar.YEAR)).toString();
 		}
 		else if(getMMp3EntryNameParameter().equals(mOwnerValue)) {
-            String prefix = mOwnerValue.getMInputValueForUI(LogicPackage.MENTER_SERVICE_INFORMATION_STEP__MSERVICE_TYPE_RESULT, LogicPackage.MENTER_WWX_INFORMATION_STEP__MTITLE_OF_TALK_RESULT);
-            String postfix = mOwnerValue.getMInputValueForUI(LogicPackage.MENTER_WWX_INFORMATION_STEP__MFIRST_PART_RESULT, LogicPackage.MENTER_WWX_INFORMATION_STEP__MSECOND_PART_RESULT);
-            String date = mOwnerValue.getMInputValueForUI(LogicPackage.MENTER_SERVICE_INFORMATION_STEP__MSERVICE_DATE_RESULT, LogicPackage.MENTER_WWX_INFORMATION_STEP__MWWX_DATE_RESULT);
+            String prefix = mOwnerValue.getMInputValueForUIOrNull(LogicPackage.MENTER_SERVICE_INFORMATION_STEP__MSERVICE_TYPE_RESULT, LogicPackage.MENTER_WWX_INFORMATION_STEP__MTITLE_OF_TALK_RESULT);
+            String postfix = mOwnerValue.getMInputValueForUIOrNull(LogicPackage.MENTER_WWX_INFORMATION_STEP__MFIRST_PART_RESULT, LogicPackage.MENTER_WWX_INFORMATION_STEP__MSECOND_PART_RESULT);
+            String date = mOwnerValue.getMInputValueForUIOrNull(LogicPackage.MENTER_SERVICE_INFORMATION_STEP__MSERVICE_DATE_RESULT, LogicPackage.MENTER_WWX_INFORMATION_STEP__MWWX_DATE_RESULT);
             
             if(prefix == null && date == null)
                 return(null);
