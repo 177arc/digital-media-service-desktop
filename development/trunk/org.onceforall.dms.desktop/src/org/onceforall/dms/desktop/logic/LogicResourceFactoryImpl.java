@@ -24,7 +24,7 @@ public class LogicResourceFactoryImpl extends ResourceFactoryImpl {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final String copyright = "Copyright 2006, Marc Maier";
+	public static final String copyright = "Copyright 2007, Marc Maier";
 
 	/**
 	 * Creates an instance of the resource factory.
