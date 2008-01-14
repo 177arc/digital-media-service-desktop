@@ -202,4 +202,19 @@ public class Utilities {
         
         return(text);
     }
+    
+    /**
+     * Replaces reserved HTML characters with the corresponding name character entities.
+     *
+     * @param text Specifies the text to encode.
+     * @return Returns the encoded text.
+     */
+    public static String encodeForHtml(String text) { 
+        text = text.replaceAll("&", "&amp;");
+        text = text.replaceAll("<", "&lt;");
+        text = text.replaceAll(">", "&gt;");
+        text = text.replaceAll("\"", "&quot;");
+        
+        return(text);
+    }
 }
