@@ -16,6 +16,7 @@ package org.onceforall.dms.desktop.logic;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
+import java.net.URL;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.Date;
@@ -24,6 +25,7 @@ import java.util.logging.Level;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EStructuralFeature;
@@ -52,6 +54,8 @@ import org.onceforall.dms.desktop.logic.types.Type;
  * <ul>
  *   <li>{@link org.onceforall.dms.desktop.logic.MApplication#getMDataFileProperty <em>MData File Property</em>}</li>
  *   <li>{@link org.onceforall.dms.desktop.logic.MApplication#getDataFileProperty <em>Data File Property</em>}</li>
+ *   <li>{@link org.onceforall.dms.desktop.logic.MApplication#getInfoWebPageProperty <em>Info Web Page Property</em>}</li>
+ *   <li>{@link org.onceforall.dms.desktop.logic.MApplication#getMInfoWebPageProperty <em>MInfo Web Page Property</em>}</li>
  *   <li>{@link org.onceforall.dms.desktop.logic.MApplication#getDataFilePropertyHistoricValues <em>Data File Property Historic Values</em>}</li>
  *   <li>{@link org.onceforall.dms.desktop.logic.MApplication#getMLogFileProperty <em>MLog File Property</em>}</li>
  *   <li>{@link org.onceforall.dms.desktop.logic.MApplication#getLogFileProperty <em>Log File Property</em>}</li>
@@ -104,19 +108,19 @@ public abstract class MApplication extends MObject {
     
     /** Specifies the state of the application. */
     public static int state = START_UP_STATE;
-   
+    
     /** Specifies the resource that is assoicated with this application. It is used for loading and saving the application data. */
     private static Resource resource;
     
     /** Specifies the resource set that is assoicated with this application. It is used for loading and saving the application data. */
     private static ResourceSet resourceSet;
-    
+   
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final String copyright = "Copyright 2006, Marc Maier";
+	public static final String copyright = "Copyright 2007, Marc Maier";
 
 	/**
      * Adds a value type for this class.
@@ -127,6 +131,37 @@ public abstract class MApplication extends MObject {
 	static {
 		Type.VALUE_TYPES_BY_NAME.put("Reference to "+MApplication.TYPE_NAME, new ReferenceType("Reference to "+MApplication.TYPE_NAME, "Specifies a reference to a "+MApplication.TYPE_NAME_FOR_UI, MApplication.class));
 	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -179,6 +214,49 @@ public abstract class MApplication extends MObject {
 	 */
 	protected File dataFileProperty = DATA_FILE_PROPERTY_EDEFAULT;
 	
+	/**
+	 * The default value of the '{@link #getInfoWebPageProperty() <em>Info Web Page Property</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getInfoWebPageProperty()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final URL INFO_WEB_PAGE_PROPERTY_EDEFAULT = (URL)LogicFactory.eINSTANCE.createFromString(LogicPackage.eINSTANCE.getMUrl(), "http://www.onceforall.org/dms-desktop/info.html");
+
+	/**
+	 * Get the default value of the '{@link #getInfoWebPageProperty() <em>Info Web Page Property</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return Returns the default value of the '{@link #getInfoWebPageProperty() <em>Info Web Page Property</em>}' attribute.
+	 * @see #getInfoWebPageProperty()
+	 * @generated
+	 * @ordered
+	 */
+	public URL getDefaultInfoWebPageProperty() {
+		return INFO_WEB_PAGE_PROPERTY_EDEFAULT;
+	}
+	
+	/**
+	 * The cached value of the '{@link #getInfoWebPageProperty() <em>Info Web Page Property</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getInfoWebPageProperty()
+	 * @generated
+	 * @ordered
+	 */
+	protected URL infoWebPageProperty = INFO_WEB_PAGE_PROPERTY_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getMInfoWebPageProperty() <em>MInfo Web Page Property</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMInfoWebPageProperty()
+	 * @generated
+	 * @ordered
+	 */
+	protected MProperty mInfoWebPageProperty = null;
+
 	/**
 	 * The cached value of the '{@link #getDataFilePropertyHistoricValues() <em>Data File Property Historic Values</em>}' attribute list.
 	 * <!-- begin-user-doc -->
@@ -460,7 +538,7 @@ public abstract class MApplication extends MObject {
 	 * @return Returns the managed application instance.
 	 */
 	public static MApplication loadInstance(File dataFile) {
-		instance = loadFromXML(dataFile);
+		instance = loadFromXML(dataFile);		
 		return instance;
 	}
 	
@@ -494,6 +572,7 @@ public abstract class MApplication extends MObject {
 		iconFilePath = (File)LogicFactory.eINSTANCE.createFromString(LogicPackage.eINSTANCE.getMFile(), "Image Files\\Application.gif");
 					 
 		setMDataFileProperty(new MProperty(true, "Data file", "Specifies the file that contains the application data.", null));			 
+		setMInfoWebPageProperty(new MProperty(true, "Information web page URL", "Specifies the URL of a web page that provides up-to-date information that is relevant to the users of this application.", null));			 
 		setMLogFileProperty(new MProperty(false, "Log file", "Specifies the file that contains the log data.", null));			 
 		setMPathProperty(new MProperty(false, "Path", "Specifies the path where this application has been started from.", null));			 
 		setMVersionProperty(new MProperty(false, "Version", "Specifies the version of the application.", null));			 
@@ -621,6 +700,113 @@ public abstract class MApplication extends MObject {
 	 */
 	public File getDataFileProperty() {
 		return dataFileProperty;
+	}
+
+	/**
+	 * Returns the value of the '<em><b>Info Web Page Property</b></em>' attribute.
+	 * The default value is <code>"http://www.onceforall.org/dms-desktop/info.html"</code>.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Info Web Page Property</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Info Web Page Property</em>' attribute.
+	 * @see #setInfoWebPageProperty(URL)
+	 * @see org.onceforall.dms.desktop.logic.LogicPackage#getMApplication_InfoWebPageProperty()
+	 * @model default="http://www.onceforall.org/dms-desktop/info.html" dataType="org.onceforall.dms.desktop.logic.MUrl" required="true" transient="true"
+	 * @generated
+	 */
+	public URL getInfoWebPageProperty() {
+		return infoWebPageProperty;
+	}
+
+	/**
+	 * Sets the value of the '{@link org.onceforall.dms.desktop.logic.MApplication#getInfoWebPageProperty <em>Info Web Page Property</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	   
+	 * @param newInfoWebPageProperty the new value of the '<em>Info Web Page Property</em>' attribute.
+	 * @see #getInfoWebPageProperty()
+	 * @generated
+	 */
+	public void setInfoWebPageProperty(URL newInfoWebPageProperty) {
+		URL oldInfoWebPageProperty = infoWebPageProperty;
+		infoWebPageProperty = newInfoWebPageProperty;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, LogicPackage.MAPPLICATION__INFO_WEB_PAGE_PROPERTY, oldInfoWebPageProperty, infoWebPageProperty));
+	}
+
+	/**
+	 * Returns the value of the '<em><b>MInfo Web Page Property</b></em>' containment reference.
+	 * The default value is <code>"new MInfoWebPageProperty()"</code>.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>MInfo Web Page Property</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>MInfo Web Page Property</em>' containment reference.
+	 * @see #setMInfoWebPageProperty(MProperty)
+	 * @see org.onceforall.dms.desktop.logic.LogicPackage#getMApplication_MInfoWebPageProperty()
+	 * @model containment="true" required="true"
+	 *        annotation="http://www.onceforall.org/mcore name='Information web page URL' description='Specifies the URL of a web page that provides up-to-date information that is relevant to the users of this application.' readOnly='true'"
+	 * @generated
+	 */
+	public MProperty getMInfoWebPageProperty() {
+		return mInfoWebPageProperty;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetMInfoWebPageProperty(MProperty newMInfoWebPageProperty, NotificationChain msgs) {
+		MProperty oldMInfoWebPageProperty = mInfoWebPageProperty;
+		mInfoWebPageProperty = newMInfoWebPageProperty;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, LogicPackage.MAPPLICATION__MINFO_WEB_PAGE_PROPERTY, oldMInfoWebPageProperty, newMInfoWebPageProperty);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * Sets the value of the '{@link org.onceforall.dms.desktop.logic.MApplication#getMInfoWebPageProperty <em>MInfo Web Page Property</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	   
+	 * @param newMInfoWebPageProperty the new value of the '<em>MInfo Web Page Property</em>' containment reference.
+	 * @see #getMInfoWebPageProperty()
+	 * @generated
+	 */
+	public void setMInfoWebPageProperty(MProperty newMInfoWebPageProperty) {
+		if (newMInfoWebPageProperty != mInfoWebPageProperty) {
+			NotificationChain msgs = null;
+			if (mInfoWebPageProperty != null)
+				msgs = ((InternalEObject)mInfoWebPageProperty).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - LogicPackage.MAPPLICATION__MINFO_WEB_PAGE_PROPERTY, null, msgs);
+			if (newMInfoWebPageProperty != null) {				
+				newMInfoWebPageProperty.setDefaultName("Information web page URL");
+				newMInfoWebPageProperty.setDefaultDescription("Specifies the URL of a web page that provides up-to-date information that is relevant to the users of this application.");
+				newMInfoWebPageProperty.setValueType(Type.getTypeForName("URL"));
+				newMInfoWebPageProperty.setValueEFeature((EStructuralFeature) eClass().getEStructuralFeature(LogicPackage.MAPPLICATION__INFO_WEB_PAGE_PROPERTY));
+				newMInfoWebPageProperty.setHistoricValuesEFeature(null);
+				msgs = ((InternalEObject)newMInfoWebPageProperty).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - LogicPackage.MAPPLICATION__MINFO_WEB_PAGE_PROPERTY, null, msgs);
+			}
+			
+			// Transfers the adpaters from the old managed value to the new one.
+			if(mInfoWebPageProperty != null) {
+				if(newMInfoWebPageProperty != null)
+					newMInfoWebPageProperty.eAdapters().addAll(mInfoWebPageProperty.eAdapters());			
+			
+				mInfoWebPageProperty.eAdapters().clear();
+			}
+			msgs = basicSetMInfoWebPageProperty(newMInfoWebPageProperty, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, LogicPackage.MAPPLICATION__MINFO_WEB_PAGE_PROPERTY, newMInfoWebPageProperty, newMInfoWebPageProperty));
 	}
 
 	/**
@@ -1039,7 +1225,7 @@ public abstract class MApplication extends MObject {
 	 * @return the value of the '<em>Last Save Property</em>' attribute.
 	 * @see #setLastSaveProperty(Date)
 	 * @see org.onceforall.dms.desktop.logic.LogicPackage#getMApplication_LastSaveProperty()
-	 * @model dataType="org.onceforall.dms.desktop.logic.MDateTime"
+	 * @model dataType="org.onceforall.dms.desktop.logic.MDateTime" transient="true"
 	 * @generated
 	 */
 	public Date getLastSaveProperty() {
@@ -1072,6 +1258,8 @@ public abstract class MApplication extends MObject {
 		switch (featureID) {
 			case LogicPackage.MAPPLICATION__MDATA_FILE_PROPERTY:
 				return basicSetMDataFileProperty(null, msgs);
+			case LogicPackage.MAPPLICATION__MINFO_WEB_PAGE_PROPERTY:
+				return basicSetMInfoWebPageProperty(null, msgs);
 			case LogicPackage.MAPPLICATION__MLOG_FILE_PROPERTY:
 				return basicSetMLogFileProperty(null, msgs);
 			case LogicPackage.MAPPLICATION__MPATH_PROPERTY:
@@ -1096,6 +1284,10 @@ public abstract class MApplication extends MObject {
 				return getMDataFileProperty();
 			case LogicPackage.MAPPLICATION__DATA_FILE_PROPERTY:
 				return getDataFileProperty();
+			case LogicPackage.MAPPLICATION__INFO_WEB_PAGE_PROPERTY:
+				return getInfoWebPageProperty();
+			case LogicPackage.MAPPLICATION__MINFO_WEB_PAGE_PROPERTY:
+				return getMInfoWebPageProperty();
 			case LogicPackage.MAPPLICATION__DATA_FILE_PROPERTY_HISTORIC_VALUES:
 				return getDataFilePropertyHistoricValues();
 			case LogicPackage.MAPPLICATION__MLOG_FILE_PROPERTY:
@@ -1128,6 +1320,12 @@ public abstract class MApplication extends MObject {
 		switch (featureID) {
 			case LogicPackage.MAPPLICATION__MDATA_FILE_PROPERTY:    
 				setMDataFileProperty((MProperty)newValue);
+				return;
+			case LogicPackage.MAPPLICATION__INFO_WEB_PAGE_PROPERTY:    
+				setInfoWebPageProperty((URL)newValue);
+				return;
+			case LogicPackage.MAPPLICATION__MINFO_WEB_PAGE_PROPERTY:    
+				setMInfoWebPageProperty((MProperty)newValue);
 				return;
 			case LogicPackage.MAPPLICATION__DATA_FILE_PROPERTY_HISTORIC_VALUES:
 				getDataFilePropertyHistoricValues().clear();
@@ -1172,6 +1370,12 @@ public abstract class MApplication extends MObject {
 			case LogicPackage.MAPPLICATION__MDATA_FILE_PROPERTY:
 				setMDataFileProperty((MProperty)null);
 				return;
+			case LogicPackage.MAPPLICATION__INFO_WEB_PAGE_PROPERTY:
+				setInfoWebPageProperty(getDefaultInfoWebPageProperty());
+				return;
+			case LogicPackage.MAPPLICATION__MINFO_WEB_PAGE_PROPERTY:
+				setMInfoWebPageProperty((MProperty)null);
+				return;
 			case LogicPackage.MAPPLICATION__DATA_FILE_PROPERTY_HISTORIC_VALUES:
 				getDataFilePropertyHistoricValues().clear();
 				return;
@@ -1215,6 +1419,10 @@ public abstract class MApplication extends MObject {
 				return mDataFileProperty != null;
 			case LogicPackage.MAPPLICATION__DATA_FILE_PROPERTY:
 				return getDefaultDataFileProperty() == null ? dataFileProperty != null : !getDefaultDataFileProperty().equals(dataFileProperty);
+			case LogicPackage.MAPPLICATION__INFO_WEB_PAGE_PROPERTY:
+				return getDefaultInfoWebPageProperty() == null ? infoWebPageProperty != null : !getDefaultInfoWebPageProperty().equals(infoWebPageProperty);
+			case LogicPackage.MAPPLICATION__MINFO_WEB_PAGE_PROPERTY:
+				return mInfoWebPageProperty != null;
 			case LogicPackage.MAPPLICATION__DATA_FILE_PROPERTY_HISTORIC_VALUES:
 				return dataFilePropertyHistoricValues != null && !dataFilePropertyHistoricValues.isEmpty();
 			case LogicPackage.MAPPLICATION__MLOG_FILE_PROPERTY:
@@ -1248,6 +1456,8 @@ public abstract class MApplication extends MObject {
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (dataFileProperty: ");
 		result.append(dataFileProperty);
+		result.append(", infoWebPageProperty: ");
+		result.append(infoWebPageProperty);
 		result.append(", dataFilePropertyHistoricValues: ");
 		result.append(dataFilePropertyHistoricValues);
 		result.append(", logFileProperty: ");
@@ -1298,6 +1508,8 @@ public abstract class MApplication extends MObject {
         	if(!(object instanceof MApplication)) {
                 throw new ReadException("The application data in file '"+dataFileForUi+"' is not valid. The root of the application data must be a managed application object.", "Please correct the application data file or delete it to start with an empty application.", DesktopException.CRITICAL_SEVERITY, null);       		
         	}
+        	
+        	Logger.getLogger().log(Level.INFO, "Loaded application data from '"+dataFileForUi+"'.");
         }
         else
         	resource.getContents().add(new MDmsApplication());
@@ -1306,8 +1518,25 @@ public abstract class MApplication extends MObject {
         isDirty = false;
         
         state = OPERATING_STATE;
-        
-        return (MApplication) resource.getContents().get(0);
+
+		
+		MApplication mApplication = (MApplication) resource.getContents().get(0);		
+		// TODO: Removed this code. 
+        // Makes sure that the sender's email address is not loaded. This is a temporary workaround because
+		// the application loads this property if it is present in the XML file although it is now transient.
+		TreeIterator iteractor = mApplication.eAllContents();
+		while(iteractor.hasNext()) {
+			Object object = iteractor.next();
+			if(object instanceof MEmailEventLogStep)
+				((MEmailEventLogStep) object).setSendersEmailAddressParameter(null);
+		}
+		
+		
+		mApplication.setLastSaveProperty(new Date(DATA_FILE.lastModified()));
+       
+    	Logger.getLogger().log(Level.INFO, "Running DMS Desktop version "+mApplication.getVersionProperty()+".");		
+		
+        return mApplication;
     }
 
     /**
@@ -1328,6 +1557,18 @@ public abstract class MApplication extends MObject {
     	// Doesn't save if nothing has changed.
     	if(!isDirty)
     		return;
+
+    	// TODO: This is a quick fix. We need to make sure that only one instance of the application can
+    	// be started so that this situation will never occur.
+    	Date lastSave = getLastSaveProperty();
+    	if(lastSave != null && DATA_FILE.exists() && DATA_FILE.lastModified() > lastSave.getTime()) {
+			throw new DesktopException("The application has detected a conflict. Please read the following explanation carefully and make sure that you understand it:  Another instance of this application has saved its data to '"
+					+DATA_FILE.getAbsolutePath()+"' at '"+Type.DATE_TIME_TYPE.getValueForUI(new Date(DATA_FILE.lastModified()))+"', "
+					+"after this application last saved its data at "+getMLastSaveProperty().getValueForUI()+". The data of this instance of the application has not been saved because it would override the data changes of the other instance. "
+					+"This problem has occurred because at least two instances of this application are running although only one instance should be running at any one point in time.", 
+					"If you want to keep the data of this application instance, go to '"+getNameForUI()+"' and change the '"+getMLastSaveProperty().getNameForUI()+"' property to the current time. Please note that need to hold down the Ctrl key change it because this property is read-only. "
+					+"If you want to keep the data of the other application instances, just close this instance and acknowledge any further error.", DesktopException.CRITICAL_SEVERITY, null);
+    	}
     	
     	try {
     		getResource().getContents().set(0, instance); // Makes sure that always the last loaded managed application instance is saved.
