@@ -63,12 +63,15 @@ import org.eclipse.swt.events.ControlEvent;
 import org.eclipse.swt.events.FocusAdapter;
 import org.eclipse.swt.events.FocusEvent;
 import org.eclipse.swt.events.MouseEvent;
+import org.eclipse.swt.events.MouseMoveListener;
 import org.eclipse.swt.events.MouseTrackAdapter;
 import org.eclipse.swt.events.SelectionAdapter;
 import org.eclipse.swt.events.SelectionEvent;
 import org.eclipse.swt.graphics.Color;
+import org.eclipse.swt.graphics.GC;
 import org.eclipse.swt.graphics.Image;
 import org.eclipse.swt.graphics.Point;
+import org.eclipse.swt.graphics.Rectangle;
 import org.eclipse.swt.layout.FormAttachment;
 import org.eclipse.swt.layout.FormData;
 import org.eclipse.swt.layout.FormLayout;
@@ -76,6 +79,7 @@ import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Control;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.Label;
+import org.eclipse.swt.widgets.MValueOpenButton;
 import org.eclipse.swt.widgets.MessageBox;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.swt.widgets.Table;
@@ -148,6 +152,15 @@ public class ValuesTableComposite extends MElementComposite {
     
     /** Specifies the assistantDialog that will be displayed when the user hover over a table item. */
     protected AssistantDialog assistantDialog;
+    
+    /** Specifies a button that is displayed when the user moves the mouse over a table item. */
+    protected MValueOpenButton openButton;
+    
+    /** Specifies the table item that the mouse is currently in. */
+    protected TableItem currentTableItem;
+    
+    /** Specifies the current mouse position. */
+    protected Point mousePosition = new Point(0, 0);
     
     /**
      * Creates a new values table composite object.
@@ -224,16 +237,125 @@ public class ValuesTableComposite extends MElementComposite {
 		       }
 		    });
 		
-		assistantDialog = new AssistantDialog(table.getShell());
+		// Adds the table item toolbar.
+		/*tableItemToolBar = new ToolBar (table, SWT.FLAT);
+		ToolItem item = new ToolItem (tableItemToolBar, SWT.FLAT);
+		Image openImage = new Image(getDisplay(), "Image Files"+File.separator+"Open.gif");
+		item.setImage(openImage);
+		*/
+				
+		//tableItemToolBar.pack();
+		//Image croppedOpenImage = new Image(getDisplay(), openImage.getBounds().width, Math.min(openImage.getBounds().height, openImage.getBounds().height-(tableItemToolBar.getBounds().height-table.getItemHeight())));
+	    //GC gc = new GC(croppedOpenImage);
+	    //gc.drawImage(openImage, 0, -(tableItemToolBar.getBounds().height-table.getItemHeight())/2);
+	    //gc.dispose();
 		
+		//item.getImage().getImageData().scaledTo(item.getImage().getBounds().width, 10);
+		//item.setImage(croppedOpenImage);
+		/*
+		item.addSelectionListener( new SelectionAdapter() {
+			@Override
+			public void widgetSelected(SelectionEvent event) {
+				// Checks pre-conditions for opening the value in an external viewer.
+				MValue mValue = null;
+				
+				if(currentTableItem != null) {
+					Object data = currentTableItem.getData();
+					if(data instanceof MValue)
+						mValue = (MValue) data;
+				}			
+
+				if(!showOpenExternalViewer(mValue))
+					return;
+				
+				// Opens value in an external viewer.
+				try {
+					if(mValue.getValueType() == Type.URL_TYPE)
+							desktop.browse(((URL) mValue.getValue()).toURI());
+		
+					else if(mValue.getValueType() == Type.FILE_TYPE || mValue.getValueType() == Type.EXISTING_FILE_TYPE) {
+						File file = (File) mValue.getValue();
+						String fileName = file.getName().toLowerCase();
+						if(!fileName.endsWith(".mp3") && !fileName.endsWith(".wav"))
+							desktop.open(file);
+						else
+							CommandLineInterface.execute(new String[] {"rundll32 url.dll,FileProtocolHandler", "\""+file.toURI().toURL()+"\""}, null);
+					}
+					
+				} catch (IOException exception) {
+					Logger.getLogger().log(Level.SEVERE, "The application could not open '"+mValue.getValueForUI()+"' in an external viewer. ", exception);					
+				} catch (URISyntaxException exception) {
+					Logger.getLogger().log(Level.SEVERE, "The application could not open '"+mValue.getValueForUI()+"' in an external viewer. ", exception);
+				}
+			}
+			
+		});
+
+		tableItemToolBar.pack();
+		tableItemToolBar.setVisible(false);
+		*/
+
+		openButton = new MValueOpenButton(table, SWT.NONE);
+		openButton.pack();
+		Rectangle iconBounds = openButton.getImage().getBounds();
+		openButton.setSize(iconBounds.width+4, iconBounds.height+4);
+
+		assistantDialog = new AssistantDialog(table.getShell());
+		table.addMouseMoveListener(new MouseMoveListener() {
+			public void mouseMove(MouseEvent event) {
+				mousePosition.x = event.x;
+				mousePosition.y = event.y;
+				
+				// Gets the table item under the mouse.
+				TableItem tableItem = table.getItem(mousePosition);
+				MValue mValue = null;
+				
+				if(tableItem != null) {
+					Object data = tableItem.getData();
+					if(data instanceof MValue)
+						mValue = (MValue) data;
+				}			
+
+				if(!showOpenExternalViewer(mValue)) {
+					currentTableItem = tableItem;
+					openButton.setMElement(null);
+					return;
+				}
+				
+				if(tableItem == currentTableItem)
+					return;
+				
+				currentTableItem = tableItem;
+				
+				// Calculates the absolute position of the mouse and the table item.
+				int valueWidth = new GC(table).stringExtent(tableItem.getText(1)).x+5;
+				int toolBarX = Math.min(tableItem.getBounds().x+table.getColumn(0).getWidth()+table.getGridLineWidth()*1+valueWidth, 
+						tableItem.getBounds().x+table.getColumn(0).getWidth()+table.getColumn(1).getWidth()+table.getGridLineWidth()*2-openButton.getBounds().width-5);
+				int toolBarY = tableItem.getBounds().y-(openButton.getBounds().height-tableItem.getBounds().height)/2;
+				openButton.setLocation(toolBarX, toolBarY);
+				openButton.setMElement(mValue);
+			
+			}});
+		table.addSelectionListener(new SelectionAdapter() {
+			public void widgetSelected(SelectionEvent event) {
+				//openButton.setBackground(Display.getCurrent().getSystemColor(SWT.COLOR_LIST_SELECTION));	
+			}
+			
+		});
 		table.addMouseTrackListener(new MouseTrackAdapter() {
+
+			@Override
+			public void mouseEnter(MouseEvent event) {
+			}
 
 			/**
 			 * @see org.eclipse.swt.events.MouseTrackAdapter#mouseExit(org.eclipse.swt.events.MouseEvent)
 			 */
 			@Override
-			public void mouseExit(MouseEvent e) {
+			public void mouseExit(MouseEvent event) {
 				//assistantDialog.close();
+				if(!table.getBounds().contains(event.x, event.y))
+					openButton.setVisible(false);
 			}
 
 			/**
@@ -241,17 +363,25 @@ public class ValuesTableComposite extends MElementComposite {
 			 */
 			@Override
 			public void mouseHover(MouseEvent event) {
-				/*// Gets the table item under the mouse.
+				/*Point pt = new Point(event.x, event.y);
+				TableItem item = table.getItem(pt);
+				if(table.getFont() != null && table.getFont().getFontData() != null && table.getFont().getFontData().length > 0) { 
+					FontData fontData = table.getFont().getFontData()[0];
+					FontData newFontData = new FontData(fontData.getName(), fontData.getHeight(), fontData.getStyle());
+					newFontData.data.lfUnderline = 1;
+					item.setFont(new Font(table.getFont().getDevice(), newFontData));
+				}*/
+				// Gets the table item under the mouse.
 				TableItem tableItem = table.getItem(new Point(event.x, event.y));
 				if(tableItem == null)
 					return;
 				
 				// Calculates the absolute position of the mouse and the table item.
-				Point tableItemPosition = table.toDisplay(tableItem.getBounds().x, tableItem.getBounds().y);
-				Point mousePosition = table.toDisplay(event.x, event.y);
+				//Point tableItemPosition = table.toDisplay(tableItem.getBounds().x, tableItem.getBounds().y);
+				//Point mousePosition = table.toDisplay(event.x, event.y);
 				
 				// Displays the assistant dialog.
-				assistantDialog.close();
+				/*assistantDialog.close();
 				assistantDialog.create((MValue) tableItem.getData(), new Point(mousePosition.x-50, tableItemPosition.y+tableItem.getBounds().height));
 				assistantDialog.open();*/
 			}});
@@ -259,7 +389,6 @@ public class ValuesTableComposite extends MElementComposite {
 		tableViewer = new TableViewer(table);    
 	    tableViewer.setUseHashlookup(true);
 	    tableViewer.setColumnProperties((String[]) columnNames.toArray());
-
 	    textCellEditor = new TextCellEditor(table);
 	    
 	    // Creates the cell editor for valid values.
@@ -298,6 +427,19 @@ public class ValuesTableComposite extends MElementComposite {
         tableViewer.setContentProvider(new ValueContentProvider(this));
         tableViewer.setLabelProvider(new ValueLabelProvider(this));
 	}
+    
+    /**
+     * Determines whether pre-conditions for opening the given managed value in an external viewer are met.
+     * 
+     * @param mValue Specifies the managed value to open.
+     * @return Returns whether pre-conditions for opening the given managed value in an external viewer are met.
+     */
+    protected boolean showOpenExternalViewer(MValue mValue) {
+    	if(mValue == null || tableViewer.isCellEditorActive())
+    		return false;
+    	
+    	return true;
+    }
 
     /**
      * Handles table selection events. It updates the value description according to the
@@ -317,8 +459,10 @@ public class ValuesTableComposite extends MElementComposite {
                 for(MValue mValue: (List<MValue>) selectedValue.getMInputValues())
                 	description.append("\n- '"+mValue.getNameForUI()+ "' "+mValue.getTypeNameForUI().toLowerCase()+" of the "+((MObject) mValue.eContainer()).getTypeNameForUI().toLowerCase()+ " '"+((MObject) mValue.eContainer()).getNameForUI()+"'");
             }
+            
+            if(selectedValue.isReadOnly())
+            	description.append("\n\nNote: Read-only values can be changed by pressing and holding down the Ctrl key and before attempting to change the value.");
         }
-        
         table.setToolTipText(description.toString());
     }
     
@@ -576,6 +720,12 @@ public class ValuesTableComposite extends MElementComposite {
    	    	    }
    	    	    
    	    	    tableViewer.setCellEditors(editors);
+   	    	}
+   	    	
+   	    	// Makes sure that the toolbar disappears when entering into edit mode.
+   	    	if(result) {
+   	    		openButton.setVisible(false);
+   	    		currentTableItem = null;
    	    	}
    	    	
             return result;
