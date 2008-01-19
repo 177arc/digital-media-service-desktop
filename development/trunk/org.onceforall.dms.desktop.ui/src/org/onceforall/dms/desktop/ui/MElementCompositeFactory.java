@@ -11,10 +11,9 @@ import java.lang.reflect.Constructor;
 import java.util.HashMap;
 import java.util.Map;
 
-
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.widgets.Composite;
-import org.onceforall.dms.desktop.logic.MObject;
+import org.onceforall.dms.desktop.logic.MElement;
 
 /**
  * Defines an composite factory that makes sure that no duplicate instance are returned by the
@@ -46,7 +45,7 @@ public class MElementCompositeFactory {
 		Map compositesByClass = compositesMapsByOwner.get(owner);
 		if(compositesByClass == null) {
 			compositesByClass = new HashMap<Class, MElementComposite>();
-			compositesByClass.put(owner, compositesByClass);
+			compositesMapsByOwner.put(owner, compositesByClass);
 		}
 		
 		Class compositeClass = Class.forName(compositeClassName);
@@ -54,23 +53,24 @@ public class MElementCompositeFactory {
 		if(composite == null) {
 			Constructor constructor = compositeClass.getConstructor(new Class[] {Composite.class, Integer.TYPE});
 			composite = (MElementComposite) constructor.newInstance(new Object[] {owner, new Integer(SWT.NONE)});
+			compositesByClass.put(compositeClass, composite);
 		}
 		
 		return composite;
 	}
 
 	/**
-	 * Gets an abstract managed object composite with the given owner. The composite will be an instance of the class
-	 * that the managed object recommends. If a composite with given owner and recommended class already exists, it 
+	 * Gets an abstract managed element composite with the given owner. The composite will be an instance of the class
+	 * that the managed element recommends. If a composite with given owner and recommended class already exists, it 
 	 * returns this instance.
 	 * 
 	 * @param owner Specifies the owner of the composite to be created.
-	 * @param mObject Specifies the managed object that should be used to get the fully-qualified name of the composite class.
+	 * @param mElement Specifies the managed element that should be used to get the fully-qualified name of the composite class.
 	 * 
-	 * @return Returns an abstract managed object composite with the given owner.
+	 * @return Returns an abstract managed element composite with the given owner.
 	 * @throws Exception Thrown if the composite could not be created, e.g. because the class with given class name could not be loaded.
 	 */
-	MElementComposite createComposite(Composite owner, MObject mObject) throws Exception  {
-		return createComposite(owner, mObject.getCompositeClassName());
+	MElementComposite createComposite(Composite owner, MElement mElement) throws Exception  {
+		return createComposite(owner, mElement.getCompositeClassName());
 	}
 }
