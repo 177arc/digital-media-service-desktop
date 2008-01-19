@@ -38,17 +38,22 @@ import java.util.List;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.swt.SWT;
-import org.eclipse.swt.events.SelectionAdapter;
-import org.eclipse.swt.events.SelectionEvent;
 import org.eclipse.swt.graphics.Color;
+import org.eclipse.swt.graphics.Point;
 import org.eclipse.swt.layout.FormAttachment;
 import org.eclipse.swt.layout.FormData;
 import org.eclipse.swt.layout.FormLayout;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
+import org.eclipse.swt.layout.RowData;
+import org.eclipse.swt.layout.RowLayout;
 import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Label;
+import org.eclipse.swt.widgets.MStepSkipButton;
+import org.eclipse.swt.widgets.MStepStartButton;
+import org.eclipse.swt.widgets.MStepStopButton;
+import org.eclipse.swt.widgets.MStepTerminateButton;
 import org.eclipse.swt.widgets.MessageBox;
 import org.eclipse.swt.widgets.ProgressBar;
 import org.onceforall.dms.desktop.exception.DesktopException;
@@ -68,6 +73,9 @@ import org.onceforall.dms.desktop.logic.types.State;
  */
 
 public class MStepComposite extends DetailsComposite {
+	/** Speficies the minimum width of the action buttons in pixels. */
+	protected static final int MIN_BUTTON_WIDTH = 100;
+	
 	/** Specifies the values table composite that displays the mStep parameters. */
 	protected ValuesTableComposite parametersTableComposite;
 
@@ -78,16 +86,16 @@ public class MStepComposite extends DetailsComposite {
 	protected ValuesTableComposite propertiesTableComposite;
 
 	/** Specifies the start button. */
-	protected Button startButton;
+	protected MStepStartButton startButton;
 
 	/** Specifies the stop button. */
-	protected Button stopButton;
+	protected MStepStopButton stopButton;
 
 	/** Specifies the terminate button. */
-	protected Button terminateButton;
+	protected MStepTerminateButton terminateButton;
 
 	/** Specifies the skip button. */
-	protected Button skipButton;
+	protected MStepSkipButton skipButton;
 
 	/** Specifies the progress bar. */
 	protected ProgressBar progressBar;
@@ -110,24 +118,28 @@ public class MStepComposite extends DetailsComposite {
 	/** Specifies the maximum number of buttons. */
 	protected static final int MAX_NUMBER_OF_BUTTONS = 4;
 
-	/** Specifies the layout data for the button positions. */
-	protected FormData[] positionLayoutData = new FormData[MAX_NUMBER_OF_BUTTONS];
-
 	/** Specifies all the buttons from left to right. */
-	protected Button[] buttons = new Button[MAX_NUMBER_OF_BUTTONS];
-
-	/** Specifes area where the values (properties, parameters and results) will be displayed. */
-	protected Composite valuesComposite;
+	protected MStepButton[] buttons = new MStepButton[MAX_NUMBER_OF_BUTTONS];
 	
 	/** Specifies a sidebar that can contain additional information, e.g. the MAudioStepComposite uses the sidebar to display the level indicators.
 	 *  The side bar is invisible and excluded from the layout by default. */
 	protected Composite sideBarComposite;
 	
 	/**
-	 * Specifies a bar that contains the dynmically displayed buttons and the
-	 * progress bar.
+	 * Specifies the bar that contain the progress bar and the button composites.
+	 */
+	protected Composite progressAndButtonBarComposite;
+	
+	/**
+	 * Specifies the bar that contain the progress bar.
+	 */
+	protected Composite progressBarComposite;
+	
+	/**
+	 * Specifies a bar that contains the dynmically displayed buttons.
 	 */
 	protected Composite buttonBarComposite;
+	
 	/**
 	 * Creates a new mStep composite object.
 	 * 
@@ -142,25 +154,19 @@ public class MStepComposite extends DetailsComposite {
 		
 		GridData layoutData;
 
-		// Adds the values composite.
-		valuesComposite = getDefaultFormToolkit().createComposite(this);
-		layoutData = new GridData(GridData.FILL, GridData.FILL, true, true);
-		valuesComposite.setLayoutData(layoutData);
-		valuesComposite.setLayout(new GridLayout());
-
 		// Adds the parameters table composite.
-		parametersTableComposite = new ValuesTableComposite(valuesComposite, MParameter.class);
+		parametersTableComposite = new ValuesTableComposite(contentForm.getBody(), MParameter.class);
 		parametersTableComposite.setExpanded(true);
 		layoutData = new GridData(GridData.FILL, GridData.FILL, true, false);
 		parametersTableComposite.setLayoutData(layoutData);
 
 		// Adds the result table composite.
-		resultsTableComposite = new ValuesTableComposite(valuesComposite, MResult.class);
+		resultsTableComposite = new ValuesTableComposite(contentForm.getBody(), MResult.class);
 		layoutData = new GridData(GridData.FILL, GridData.FILL, true, false);
 		resultsTableComposite.setLayoutData(layoutData);
 
 		// Adds the properties table composite.
-		propertiesTableComposite = new ValuesTableComposite(valuesComposite, MProperty.class);
+		propertiesTableComposite = new ValuesTableComposite(contentForm.getBody(), MProperty.class);
 		layoutData = new GridData(GridData.FILL, GridData.FILL, true, true);
 		propertiesTableComposite.setLayoutData(layoutData);
 		
@@ -171,90 +177,111 @@ public class MStepComposite extends DetailsComposite {
 		layoutData.exclude = true;
 		sideBarComposite.setLayoutData(layoutData);
 		
-		// Adds the button bar.
-		buttonBarComposite = getDefaultFormToolkit().createComposite(this);
+		// Adds the progress and button bar composites
+		progressAndButtonBarComposite = getDefaultFormToolkit().createComposite(this);
 		layoutData = new GridData(GridData.FILL, GridData.END, true, false);
-		buttonBarComposite.setLayoutData(layoutData);
-		buttonBarComposite.setLayout(new FormLayout());
+		progressAndButtonBarComposite.setLayoutData(layoutData);
+		progressAndButtonBarComposite.setLayout(new GridLayout(2, false));
+
+		GridData gridData;
+		progressBarComposite = getDefaultFormToolkit().createComposite(progressAndButtonBarComposite);
+		progressBarComposite.setLayout(new FormLayout());
+		gridData = new GridData();
+		gridData.grabExcessHorizontalSpace = true;
+		gridData.horizontalAlignment = GridData.FILL;
+		progressBarComposite.setLayoutData(gridData);
+		
+		buttonBarComposite = getDefaultFormToolkit().createComposite(progressAndButtonBarComposite);
+		RowLayout rowLayout = new RowLayout();
+		rowLayout.marginLeft = 5;
+		rowLayout.marginRight = 5;
+		rowLayout.marginTop = 5;
+		rowLayout.marginBottom = 5;
+		rowLayout.pack = true;
+		buttonBarComposite.setLayout(rowLayout);
+		gridData = new GridData();
+		gridData.horizontalAlignment = GridData.FILL;
+		buttonBarComposite.setLayoutData(gridData);
 
 		FormData formData;
 		
-		// Adds the progress indicators to the button bar.
-		progressStatusLabel = getDefaultFormToolkit().createLabel(buttonBarComposite, null);
+		// Adds the progress indicators to the progress and button bar.
+		progressStatusLabel = getDefaultFormToolkit().createLabel(progressBarComposite, null);
 		progressStatusLabel.setBackground(getBackground());	
 		formData = new FormData(); 
 		formData.top = new FormAttachment(100,-25);
 		formData.bottom = new FormAttachment(100, -10);
-		formData.left = new FormAttachment(0, 0); formData.right = new FormAttachment(100,-MAX_NUMBER_OF_BUTTONS*100+(1-MAX_NUMBER_OF_BUTTONS)*5-10);
+		formData.left = new FormAttachment(0, 0);
+		formData.right = new FormAttachment(100,-10);
 		progressStatusLabel.setLayoutData(formData);
 
-		progressBar = new ProgressBar(buttonBarComposite, SWT.HORIZONTAL | SWT.SMOOTH);
+		progressBar = new ProgressBar(progressBarComposite, SWT.HORIZONTAL | SWT.SMOOTH);
 		progressBar.setBackground(backgroundColour);
 	
 		// TODO: Move to toolkit.
 		formData = new FormData(); 
 		formData.top = new FormAttachment(100,-10);
 		formData.bottom = new FormAttachment(100, 0);
-		formData.left = new FormAttachment(0, 0); formData.right = new FormAttachment(100,-MAX_NUMBER_OF_BUTTONS*100+(1-MAX_NUMBER_OF_BUTTONS)*5-10);
+		formData.left = new FormAttachment(0, 0); 
+		formData.right = new FormAttachment(100,-10);
 		progressBar.setLayoutData(formData);
 
-		indeterminateProgressBar = new ProgressBar(buttonBarComposite, SWT.HORIZONTAL | SWT.INDETERMINATE | SWT.SMOOTH);
+		indeterminateProgressBar = new ProgressBar(progressBarComposite, SWT.HORIZONTAL | SWT.INDETERMINATE | SWT.SMOOTH);
 		indeterminateProgressBar.setBackground(backgroundColour);
 		indeterminateProgressBar.setLayoutData(formData);
 		
 		// Adds the start button to the button bar.
-		startButton = new Button(buttonBarComposite, SWT.NONE);
-		startButton.setText("Start");
+		startButton = new MStepStartButton(buttonBarComposite, SWT.NONE);
+		/*startButton.setText("Mark as complted");
 		startButton.addSelectionListener(new SelectionAdapter() {
 			@Override
 			public void widgetSelected(SelectionEvent event) {
 				start();
 			}
-		});
+		});*/
 
 		// Adds the stop button to the button bar.
-		stopButton = new Button(buttonBarComposite, SWT.NONE);
-		stopButton.setText("Stop");
+		stopButton = new MStepStopButton(buttonBarComposite, SWT.NONE);
+		/*stopButton.setText("Stop");
 		stopButton.addSelectionListener(new SelectionAdapter() {
 			@Override
 			public void widgetSelected(SelectionEvent event) {
 				stop();
 			}
-		});
+		});*/
 
 		// Adds the terminate button to the button bar.
-		terminateButton = new Button(buttonBarComposite, SWT.NONE);
-		terminateButton.setText("Terminate");
+		terminateButton = new MStepTerminateButton(buttonBarComposite, SWT.NONE);
+		/*terminateButton.setText("Terminate");
 		terminateButton.addSelectionListener(new SelectionAdapter() {
 			@Override
 			public void widgetSelected(SelectionEvent event) {
 				terminate();
 			}
-		});
+		});*/
 
 		// Adds the skip button to the button bar.
-		skipButton = new Button(buttonBarComposite, SWT.NONE);
-		skipButton.setText("Skip");
+		skipButton = new MStepSkipButton(buttonBarComposite, SWT.NONE);
+		/*skipButton.setText("Skip");
 		skipButton.addSelectionListener(new SelectionAdapter() {
 			@Override
 			public void widgetSelected(SelectionEvent event) {
 				skip();
 			}
-		});
-    	
-      for(int index = 0; index < MAX_NUMBER_OF_BUTTONS; ++index) {
-        positionLayoutData[index] = new FormData();
-        positionLayoutData[index].top = new FormAttachment(100, -25);
-        positionLayoutData[index].bottom = new FormAttachment(100, 0);
-        positionLayoutData[index].left = new FormAttachment(100, (index-MAX_NUMBER_OF_BUTTONS)*100+(index+1-MAX_NUMBER_OF_BUTTONS)*5);
-        positionLayoutData[index].right = new FormAttachment(100, (index+1-MAX_NUMBER_OF_BUTTONS)*100+(index+1-MAX_NUMBER_OF_BUTTONS)*5);
-      }
+		});*/
 
 		buttons[0] = startButton;
 		buttons[1] = stopButton;
 		buttons[2] = terminateButton;
 		buttons[3] = skipButton;
 
+		RowData rowData;
+		for(Button button: buttons) {
+			rowData = new RowData();
+			rowData.width = MIN_BUTTON_WIDTH;
+			button.setLayoutData(rowData);
+		}
+		
 		setMElement(null);
 	}
 
@@ -340,29 +367,14 @@ public class MStepComposite extends DetailsComposite {
 	 * Updates the start and stop buttons according to the mStep state.
 	 */
 	protected void updateState() {
-		MStep step = (MStep) getMElement();
-		if (step != null) {
-			State state = step.getStateProperty();
-
-			if (state.equals(MStepStateType.PENDING_STATE) || state.equals(MStepStateType.COMPLETED_STATE) || state.equals(MStepStateType.ERROR_STATE) || state.equals(MStepStateType.TERMINATED_STATE) || !step.isInterruptable())
-				startButton.setText(step.getActionName() != null ? step.getActionName() : "Start");
-			else if (state.equals(MStepStateType.PAUSED_STATE))
-				startButton.setText("Resume");
-			else
-				startButton.setText("Pause");
-
-			startButton.setEnabled(state.equals(MStepStateType.COMPLETED_STATE) || state.equals(MStepStateType.TERMINATED_STATE) || state.equals(MStepStateType.ERROR_STATE) || state.equals(MStepStateType.PENDING_STATE)
-					|| state.equals(MStepStateType.SKIPPED_STATE) || (step.isInterruptable() && !state.equals(MStepStateType.STOPPING_STATE) && !state.equals(MStepStateType.TERMINATING_STATE)));
-			stopButton.setEnabled(!state.equals(MStepStateType.PENDING_STATE) && !state.equals(MStepStateType.COMPLETED_STATE) && !state.equals(MStepStateType.ERROR_STATE) && !state.equals(MStepStateType.TERMINATED_STATE));
-			terminateButton.setEnabled(!startButton.getEnabled());
-			skipButton.setEnabled(state.equals(MStepStateType.ERROR_STATE) || state.equals(MStepStateType.PENDING_STATE));
-			
+		MStep mStep = (MStep) getMElement();
+		
+		//*Utilities.updateMElementButtons(mStep, startButton, stopButton, terminateButton, skipButton, iconCache);
+		
+		if (mStep != null) {
+			State state = mStep.getStateProperty();			
 			resultsTableComposite.setExpanded(state.equals(MStepStateType.COMPLETED_STATE));
-		} else {
-			startButton.setEnabled(false);
-			stopButton.setEnabled(false);
-			terminateButton.setEnabled(false);
-			skipButton.setEnabled(false);
+			parametersTableComposite.setExpanded(!state.equals(MStepStateType.COMPLETED_STATE));
 		}
 	}
 
@@ -451,24 +463,25 @@ public class MStepComposite extends DetailsComposite {
 		if (isDisposed())
 			return;
 
+		// Associates the new managed element with the managed step buttons.
+		for(MStepButton button: buttons)
+			button.setMElement(mElement);
+			
 		// Adds itself as observer to the new managed step if it is not null.
-		if (mElement != null) {
-			MStep mStep = (MStep) this.mElement;
+		MStep mStep = (MStep) mElement;
+		if (mStep != null) {
 			mStep.getMStateProperty().eAdapters().add(this);
 			mStep.getMProgressProperty().eAdapters().add(this);
 			mStep.getMProgressStatusProperty().eAdapters().add(this);
-		}
 
-		MStep step = (MStep) mElement;
-		if (step != null) {
-			displayValuesTableComposite(parametersTableComposite, step, step.getFixedMParameters());
-			displayValuesTableComposite(resultsTableComposite, step, step.getFixedMResults());
-			displayValuesTableComposite(propertiesTableComposite, step, step.getFixedMProperties());
+			displayValuesTableComposite(parametersTableComposite, mStep, mStep.getFixedMParameters());
+			displayValuesTableComposite(resultsTableComposite, mStep, mStep.getFixedMResults());
+			displayValuesTableComposite(propertiesTableComposite, mStep, mStep.getFixedMProperties());
 			
-			stopButton.setVisible(step.isStoppable());
-			terminateButton.setVisible(step.isTerminatable());
+			//*stopButton.setVisible(step.isStoppable());
+			//*terminateButton.setVisible(step.isTerminatable());
 			
-			layout();
+			//*layout();
 		} else {
 			displayValuesTableComposite(parametersTableComposite, null, null);
 			displayValuesTableComposite(resultsTableComposite, null, null);
@@ -479,18 +492,29 @@ public class MStepComposite extends DetailsComposite {
 			((GridData) valuesTableComposite.getLayoutData()).exclude =
 				!valuesTableComposite.isVisible();*/
 		
-		int visibleButtonsCount = 0;
+		/*int visibleButtonsCount = 0;
 		for (Button button : buttons)
 			if(button.getVisible())
-				visibleButtonsCount++;
+				visibleButtonsCount++;*/
 
-		int index = MAX_NUMBER_OF_BUTTONS-visibleButtonsCount;
+		/*int index = MAX_NUMBER_OF_BUTTONS-visibleButtonsCount;
 		for (Button button : buttons)
 			if (button.getVisible())
-				button.setLayoutData(positionLayoutData[index++]);
+				button.setLayoutData(positionLayoutData[index++]);*/
 
 		updateState();
 		updateProgress();
+		
+		if(mStep != null)
+			parametersTableComposite.setExpanded(true);
+		
+		for(Button button : buttons)
+			((RowData) button.getLayoutData()).exclude = !button.getVisible();
+		
+		Point preferredSize = startButton.computeSize(SWT.DEFAULT, SWT.DEFAULT);
+		((RowData) startButton.getLayoutData()).width = Math.max(preferredSize.x, MIN_BUTTON_WIDTH);
+		
+		progressAndButtonBarComposite.pack();
 	}
 	
 	/**
