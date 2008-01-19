@@ -175,9 +175,10 @@ $
   		<fileset refid="core.eclipseLibraries"/>
 		</copy>  	
   		  	
-  	<!-- Copies the data file to the test environment. -->
+  	<!-- Copies the application files to the test environment. -->
   	<copy todir="${testEnv.dataFiles}" overwrite="yes" file="dev/Application Data Files/Data.xml" />
-	
+  	<copy todir="${testEnv.dataFiles}" overwrite="yes" file="dev/Application Data Files/message-template.html" />
+  	
   	<!-- Copies the libraries to the test environment. -->  	
 		<copy todir="${testEnv.libraryFiles}" flatten="true" overwrite="no" failonerror="true">
   		<fileset refid="libraries"/>
