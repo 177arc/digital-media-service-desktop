@@ -1,6 +1,6 @@
-#labels Phase-Deploy
-=Release Prodedure=
 #summary Describes all necessary steps for testing and producing a software release of the DMS Desktop and the DMS Editor
+#labels Phase-Deploy
+=Release Procedure=
 
 The release procedure consists of three parts:
   # _Prepare_: Update documentation and deploy to the testing environment
