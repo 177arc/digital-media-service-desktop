@@ -14,10 +14,10 @@ package org.onceforall.dms.desktop.ui;
 import java.util.LinkedList;
 import java.util.Queue;
 
-
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.Notifier;
 import org.eclipse.swt.SWT;
+import org.eclipse.swt.graphics.Cursor;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.ui.forms.widgets.FormToolkit;
@@ -31,9 +31,9 @@ import org.onceforall.dms.desktop.notify.ThreadAdapter;
  * It defines a event handling that allows notification across threads.
  */
 
-public abstract class MElementComposite extends Composite implements ThreadAdapter {
+public abstract class MElementComposite extends Composite implements ThreadAdapter, MElementControl {
     /** Specifies an icon factory that makes sure that that icons are reused.*/
-    protected static IconFactory iconCache = new IconFactory();
+    protected static IconFactory iconCache = IconFactory.getInstance();
 
     /** Specifies a managed element composite factory that makes sure that that icons are reused.*/
     protected static MElementCompositeFactory compositeFactory = new MElementCompositeFactory();
@@ -58,7 +58,10 @@ public abstract class MElementComposite extends Composite implements ThreadAdapt
     
     /** Specifies the default form toolkit for the composite. It can be used make sure
 	 * that the widgets have a uniform look and process navigation events correctly. */
-    protected static FormToolkit defaultFormToolkit;
+    protected static FormToolkit defaultFormToolkit;  
+	
+	/** Specifies an hourglass cursor. */
+	protected Cursor waitCursor;
     
     /**
      * Creates a new managed element composite object.
@@ -69,7 +72,8 @@ public abstract class MElementComposite extends Composite implements ThreadAdapt
     public MElementComposite(Composite parent, int style) {
         super(parent, style);
         
-	    setLayout(parent.getLayout());
+        // Creates the hourglass cursor.
+        waitCursor = new Cursor(getDisplay(), SWT.CURSOR_WAIT);
     }
     
     /**
