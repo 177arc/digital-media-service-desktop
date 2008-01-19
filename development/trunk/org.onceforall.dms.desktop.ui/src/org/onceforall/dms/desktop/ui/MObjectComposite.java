@@ -32,7 +32,7 @@ import org.onceforall.dms.desktop.logic.MProperty;
  * Defines a SWT composite that is responsible for displaying a managed class object and its sub-objects.
  */
 
-public class MObjectComposite extends DetailsComposite {
+public class MObjectComposite extends DetailsComposite {	
     /** Specifies the values table composite that displays the properties. */
     protected ValuesTableComposite propertiesTableComposite;    
     
@@ -46,7 +46,7 @@ public class MObjectComposite extends DetailsComposite {
         super(parent, style);
         
         // Adds the properties table composite.
-        propertiesTableComposite = new ValuesTableComposite(this, MProperty.class);
+        propertiesTableComposite = new ValuesTableComposite(contentForm.getBody(), MProperty.class);
         propertiesTableComposite.setExpanded(true);
         GridData layoutData = new GridData(GridData.FILL, GridData.FILL, true, false);
 		propertiesTableComposite.setLayoutData(layoutData);
