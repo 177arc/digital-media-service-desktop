@@ -104,7 +104,7 @@ public class MAudioStepComposite extends MStepComposite {
 		((GridLayout) getLayout()).numColumns =2;
 		((GridData) nameLabel.getLayoutData()).horizontalSpan = 2;
 		((GridData) descriptionText.getLayoutData()).horizontalSpan = 2;
-		((GridData) buttonBarComposite.getLayoutData()).horizontalSpan = 2;
+		((GridData) progressAndButtonBarComposite.getLayoutData()).horizontalSpan = 2;
 		
 		((GridData) sideBarComposite.getLayoutData()).exclude = false;
 		sideBarComposite.setVisible(true);		
