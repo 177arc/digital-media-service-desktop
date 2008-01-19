@@ -3,7 +3,7 @@
 The release procedure consists of three parts:
   # _Prepare_: Update documentation and deploy to the testing environment
   # _Test_: Test the software
-  # _Release_: Label and package the release
+  # _Release_: Check in, label and package the release
 
 The result of the release procedure is a up-to-date and tested zip file that contains all the necessary files for running the DMS Desktop and DMS Desktop Editor.
 
@@ -11,7 +11,7 @@ The result of the release procedure is a up-to-date and tested zip file that con
 To prepare the release, please follow these steps:
   # _Update documentation_: Update all the documentation in the `C:\Projects\Digital Media Service\Desktop\Documents` folder to reflect the changes that you have made.
   # _Deploy to test environment_: Run the `clean-test` and `deploy-test` targets of the `org.onceforall.dms.desktop.ui\build.xml` ant file. This creates a test environment in the  `org.onceforall.dms.desktop.ui\test` directory.
-  # _Deploy DMS Desktop Editor manually_: Although the `deploy-test` target should also deploy the DMS Desktop Editor, this step is not fully automated. To deploy the DMS Editor to the test environment manually:
+  # _Deploy DMS Desktop Editor manually_: Although the `deploy-test` target should also deploy the DMS Desktop Editor, this step is not fully automated. To deploy the DMS Editor  to the test environment manually:
     # Delete all files in the `C:\Projects\Digital Media Service\Desktop\Development\org.onceforall.dms.desktop.editor\test` directory, *except* the ´.svn´ version control directory. 
     # In DMS Development Environment goto `Package Explorer->org.onceforall.dms.desktop.editor->DMS Desktop Editor.product`.
     # On the `Overview` tab of `DMS Desktop Editor.product`, select `Eclipse Product export wizard`.
@@ -28,5 +28,6 @@ Once the DMS Desktop and DMS Desktop Editor have been deployed to the test envir
 
 ==Release==
 To package the DMS Desktop and the DMS Desktop Editor into a software release, follow these steps:
-  # _Check in all changed files (if you haven't already):_ *All commit comments have to link the check in to an issue* using the following pattern `Implemented `(Issue number)`.` followed by an additional description of the changes. The only time you don't have to link the check in to an issues is when you made change that have either no or a minimal impact on the functionality, e.g. refactoring. All significant changes that the user may notice have to have an issue entry and have to linked to the check in.  
+  # _Check in all changed files (if you haven't already):_ *All commit comments have to link the check in to an issue* using the following pattern `Implemented `(Issue number)`.`, e.g. `Implemented Issue 20`, followed by an additional description of the changes. The only time you don't have to link the check in to an issues is when you made change that have either no or a minimal impact on the functionality, e.g. refactoring. All significant changes that the user may notice have to have an issue entry and have to linked to the check in.  
+  # _Label all projects_: Multi-select all projects -> right-click -> `Team` -> `Tag ...` and enter `Release `(Version number), e.g. `Release 1.1`, in the `Tag` field.
   # _Create the zip files:_ Run the `deploy` target of `org.onceforall.dms.desktop.ui\build.xml`. This should create two zip files in the `C:\Projects\Digital Media Service\Desktop\Development\Release` directory.
