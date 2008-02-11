@@ -2408,7 +2408,8 @@ public class MConvertToMP3Step extends MStep {
 	            "--ta \""+artist+"\"",
 	            "--tl \""+album+"\"",
 	            "--ty \""+year+"\"",
-	            "--tg \"Speech\"", // Genre 101: Speech.	            
+	            "--tg \"Speech\"", // Genre 101: Speech.	
+	            "--resample 22.050",
 	            "\""+inputFile.getAbsolutePath()+"\"", "\""+outputFile.getAbsolutePath()+"\""},
 	            this,
 	            null);
