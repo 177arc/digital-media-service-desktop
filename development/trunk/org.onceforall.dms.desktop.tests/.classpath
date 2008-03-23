@@ -11,5 +11,6 @@
 	<classpathentry path="org.eclipse.jdt.launching.JRE_CONTAINER" kind="con"/>
 	<classpathentry path="org.eclipse.pde.core.requiredPlugins" kind="con"/>
 	<classpathentry path="org.testng.TESTNG_CONTAINER" kind="con"/>
+	<classpathentry path="/org.onceforall.dms.desktop/lib/jid3lib-0.5.4.jar" kind="lib"/>
 	<classpathentry path="bin" kind="output"/>
 </classpath>
