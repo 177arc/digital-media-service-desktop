@@ -417,6 +417,28 @@ public class LogicItemProviderAdapterFactory extends LogicAdapterFactory impleme
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link org.onceforall.dms.desktop.logic.MNameTagMp3Step} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected MNameTagMp3StepItemProvider mNameTagMp3StepItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.onceforall.dms.desktop.logic.MNameTagMp3Step}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Adapter createMNameTagMp3StepAdapter() {
+		if (mNameTagMp3StepItemProvider == null) {
+			mNameTagMp3StepItemProvider = new MNameTagMp3StepItemProvider(this);
+		}
+
+		return mNameTagMp3StepItemProvider;
+	}
+
+	/**
 	 * This keeps track of the one adapter used for all {@link org.onceforall.dms.desktop.logic.MDmsApplicationMGetDataUpgradeInfoStep} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -686,6 +708,7 @@ public class LogicItemProviderAdapterFactory extends LogicAdapterFactory impleme
 		if (mMp3ItemProvider != null) mMp3ItemProvider.dispose();
 		if (mBurnCdStepItemProvider != null) mBurnCdStepItemProvider.dispose();
 		if (mTestStepItemProvider != null) mTestStepItemProvider.dispose();
+		if (mNameTagMp3StepItemProvider != null) mNameTagMp3StepItemProvider.dispose();
 		if (mDmsApplicationMGetDataUpgradeInfoStepItemProvider != null) mDmsApplicationMGetDataUpgradeInfoStepItemProvider.dispose();
 		if (mDmsApplicationMUpgradeDataStepItemProvider != null) mDmsApplicationMUpgradeDataStepItemProvider.dispose();
 	}

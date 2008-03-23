@@ -505,6 +505,11 @@ public class MStepItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(LogicPackage.Literals.MSTEP__MINPUT_STEPS,
+				 LogicFactory.eINSTANCE.createMNameTagMp3Step()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(LogicPackage.Literals.MSTEP__MINPUT_STEPS,
 				 LogicFactory.eINSTANCE.createMDmsApplicationMGetDataUpgradeInfoStep()));
 
 		newChildDescriptors.add

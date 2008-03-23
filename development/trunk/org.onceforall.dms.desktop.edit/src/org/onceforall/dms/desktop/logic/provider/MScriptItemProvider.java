@@ -299,6 +299,11 @@ public class MScriptItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(LogicPackage.Literals.MSCRIPT__MSTEPS,
+				 LogicFactory.eINSTANCE.createMNameTagMp3Step()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(LogicPackage.Literals.MSCRIPT__MSTEPS,
 				 LogicFactory.eINSTANCE.createMDmsApplicationMGetDataUpgradeInfoStep()));
 
 		newChildDescriptors.add

@@ -1,16 +1,14 @@
-/*
- * Revision History
- * $Log: MConvertToMP3StepItemProvider.java,v $
- * Revision 1.2  2006/09/19 12:52:48  marc
- * Updated to checkpoint progress.
+/**
+ * <copyright>
+ * </copyright>
  *
+ * $Id$
  */
 package org.onceforall.dms.desktop.logic.provider;
 
 
 import java.util.Collection;
 import java.util.List;
-
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
@@ -27,17 +25,18 @@ import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
+
 import org.onceforall.dms.desktop.logic.LogicFactory;
 import org.onceforall.dms.desktop.logic.LogicPackage;
-import org.onceforall.dms.desktop.logic.MConvertToMP3Step;
+import org.onceforall.dms.desktop.logic.MNameTagMp3Step;
 
 /**
- * This is the item provider adapter for a {@link org.onceforall.dms.desktop.logic.MConvertToMP3Step} object.
+ * This is the item provider adapter for a {@link org.onceforall.dms.desktop.logic.MNameTagMp3Step} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class MConvertToMP3StepItemProvider
+public class MNameTagMp3StepItemProvider
 	extends MTagStepItemProvider
 	implements	
 		IEditingDomainItemProvider,	
@@ -58,7 +57,7 @@ public class MConvertToMP3StepItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public MConvertToMP3StepItemProvider(AdapterFactory adapterFactory) {
+	public MNameTagMp3StepItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -73,10 +72,8 @@ public class MConvertToMP3StepItemProvider
 			super.getPropertyDescriptors(object);
 
 			addDirectoryParameterPropertyDescriptor(object);
-			addMp3FileNameParameterPropertyDescriptor(object);
-			addRecordingFileParameterPropertyDescriptor(object);
-			addMp3EncoderPathParameterPropertyDescriptor(object);
-			addAverageBitRateParameterPropertyDescriptor(object);
+			addTaggedMp3FileNameParameterPropertyDescriptor(object);
+			addRecordingMp3FileParameterPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -92,9 +89,9 @@ public class MConvertToMP3StepItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_MConvertToMP3Step_directoryParameter_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_MConvertToMP3Step_directoryParameter_feature", "_UI_MConvertToMP3Step_type"),
-				 LogicPackage.Literals.MCONVERT_TO_MP3_STEP__DIRECTORY_PARAMETER,
+				 getString("_UI_MNameTagMp3Step_directoryParameter_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_MNameTagMp3Step_directoryParameter_feature", "_UI_MNameTagMp3Step_type"),
+				 LogicPackage.Literals.MNAME_TAG_MP3_STEP__DIRECTORY_PARAMETER,
 				 false,
 				 false,
 				 false,
@@ -104,19 +101,19 @@ public class MConvertToMP3StepItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Mp3 File Name Parameter feature.
+	 * This adds a property descriptor for the Tagged Mp3 File Name Parameter feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addMp3FileNameParameterPropertyDescriptor(Object object) {
+	protected void addTaggedMp3FileNameParameterPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_MConvertToMP3Step_mp3FileNameParameter_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_MConvertToMP3Step_mp3FileNameParameter_feature", "_UI_MConvertToMP3Step_type"),
-				 LogicPackage.Literals.MCONVERT_TO_MP3_STEP__MP3_FILE_NAME_PARAMETER,
+				 getString("_UI_MNameTagMp3Step_taggedMp3FileNameParameter_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_MNameTagMp3Step_taggedMp3FileNameParameter_feature", "_UI_MNameTagMp3Step_type"),
+				 LogicPackage.Literals.MNAME_TAG_MP3_STEP__TAGGED_MP3_FILE_NAME_PARAMETER,
 				 false,
 				 false,
 				 false,
@@ -126,63 +123,19 @@ public class MConvertToMP3StepItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Recording File Parameter feature.
+	 * This adds a property descriptor for the Recording Mp3 File Parameter feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addRecordingFileParameterPropertyDescriptor(Object object) {
+	protected void addRecordingMp3FileParameterPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_MConvertToMP3Step_recordingFileParameter_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_MConvertToMP3Step_recordingFileParameter_feature", "_UI_MConvertToMP3Step_type"),
-				 LogicPackage.Literals.MCONVERT_TO_MP3_STEP__RECORDING_FILE_PARAMETER,
-				 false,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Mp3 Encoder Path Parameter feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addMp3EncoderPathParameterPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_MConvertToMP3Step_mp3EncoderPathParameter_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_MConvertToMP3Step_mp3EncoderPathParameter_feature", "_UI_MConvertToMP3Step_type"),
-				 LogicPackage.Literals.MCONVERT_TO_MP3_STEP__MP3_ENCODER_PATH_PARAMETER,
-				 false,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Average Bit Rate Parameter feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addAverageBitRateParameterPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_MConvertToMP3Step_averageBitRateParameter_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_MConvertToMP3Step_averageBitRateParameter_feature", "_UI_MConvertToMP3Step_type"),
-				 LogicPackage.Literals.MCONVERT_TO_MP3_STEP__AVERAGE_BIT_RATE_PARAMETER,
+				 getString("_UI_MNameTagMp3Step_recordingMp3FileParameter_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_MNameTagMp3Step_recordingMp3FileParameter_feature", "_UI_MNameTagMp3Step_type"),
+				 LogicPackage.Literals.MNAME_TAG_MP3_STEP__RECORDING_MP3_FILE_PARAMETER,
 				 false,
 				 false,
 				 false,
@@ -202,11 +155,9 @@ public class MConvertToMP3StepItemProvider
 	public Collection getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(LogicPackage.Literals.MCONVERT_TO_MP3_STEP__MDIRECTORY_PARAMETER);
-			childrenFeatures.add(LogicPackage.Literals.MCONVERT_TO_MP3_STEP__MMP3_FILE_NAME_PARAMETER);
-			childrenFeatures.add(LogicPackage.Literals.MCONVERT_TO_MP3_STEP__MRECORDING_FILE_PARAMETER);
-			childrenFeatures.add(LogicPackage.Literals.MCONVERT_TO_MP3_STEP__MMP3_ENCODER_PATH_PARAMETER);
-			childrenFeatures.add(LogicPackage.Literals.MCONVERT_TO_MP3_STEP__MAVERAGE_BIT_RATE_PARAMETER);
+			childrenFeatures.add(LogicPackage.Literals.MNAME_TAG_MP3_STEP__MDIRECTORY_PARAMETER);
+			childrenFeatures.add(LogicPackage.Literals.MNAME_TAG_MP3_STEP__MTAGGED_MP3_FILE_NAME_PARAMETER);
+			childrenFeatures.add(LogicPackage.Literals.MNAME_TAG_MP3_STEP__MRECORDING_MP3_FILE_PARAMETER);
 		}
 		return childrenFeatures;
 	}
@@ -224,13 +175,13 @@ public class MConvertToMP3StepItemProvider
 	}
 
 	/**
-	 * This returns MConvertToMP3Step.gif.
+	 * This returns MNameTagMp3Step.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/MConvertToMP3Step"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/MNameTagMp3Step"));
 	}
 
 	/**
@@ -240,10 +191,10 @@ public class MConvertToMP3StepItemProvider
 	 * @generated
 	 */
 	public String getText(Object object) {
-		String label = ((MConvertToMP3Step)object).getName();
+		String label = ((MNameTagMp3Step)object).getName();
 		return label == null || label.length() == 0 ?
-			getString("_UI_MConvertToMP3Step_type") :
-			getString("_UI_MConvertToMP3Step_type") + " " + label;
+			getString("_UI_MNameTagMp3Step_type") :
+			getString("_UI_MNameTagMp3Step_type") + " " + label;
 	}
 
 	/**
@@ -256,19 +207,15 @@ public class MConvertToMP3StepItemProvider
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(MConvertToMP3Step.class)) {
-			case LogicPackage.MCONVERT_TO_MP3_STEP__DIRECTORY_PARAMETER:
-			case LogicPackage.MCONVERT_TO_MP3_STEP__MP3_FILE_NAME_PARAMETER:
-			case LogicPackage.MCONVERT_TO_MP3_STEP__RECORDING_FILE_PARAMETER:
-			case LogicPackage.MCONVERT_TO_MP3_STEP__MP3_ENCODER_PATH_PARAMETER:
-			case LogicPackage.MCONVERT_TO_MP3_STEP__AVERAGE_BIT_RATE_PARAMETER:
+		switch (notification.getFeatureID(MNameTagMp3Step.class)) {
+			case LogicPackage.MNAME_TAG_MP3_STEP__DIRECTORY_PARAMETER:
+			case LogicPackage.MNAME_TAG_MP3_STEP__TAGGED_MP3_FILE_NAME_PARAMETER:
+			case LogicPackage.MNAME_TAG_MP3_STEP__RECORDING_MP3_FILE_PARAMETER:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
-			case LogicPackage.MCONVERT_TO_MP3_STEP__MDIRECTORY_PARAMETER:
-			case LogicPackage.MCONVERT_TO_MP3_STEP__MMP3_FILE_NAME_PARAMETER:
-			case LogicPackage.MCONVERT_TO_MP3_STEP__MRECORDING_FILE_PARAMETER:
-			case LogicPackage.MCONVERT_TO_MP3_STEP__MMP3_ENCODER_PATH_PARAMETER:
-			case LogicPackage.MCONVERT_TO_MP3_STEP__MAVERAGE_BIT_RATE_PARAMETER:
+			case LogicPackage.MNAME_TAG_MP3_STEP__MDIRECTORY_PARAMETER:
+			case LogicPackage.MNAME_TAG_MP3_STEP__MTAGGED_MP3_FILE_NAME_PARAMETER:
+			case LogicPackage.MNAME_TAG_MP3_STEP__MRECORDING_MP3_FILE_PARAMETER:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
