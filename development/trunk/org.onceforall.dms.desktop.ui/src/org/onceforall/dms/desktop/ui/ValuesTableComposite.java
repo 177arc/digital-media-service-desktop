@@ -40,6 +40,7 @@
  */
 package org.onceforall.dms.desktop.ui;
 
+import java.io.File;
 import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
@@ -142,14 +143,22 @@ public class ValuesTableComposite extends MElementComposite {
     protected CComboWrapper historicValuesComboBoxWrapper;
     
     /** Specifies the combo box cell editor that the table uses to allow the user to choose the null value. */
-    protected ComboBoxCellEditor nullableCellEditor;
+    //protected ComboBoxCellEditor nullableCellEditor;
     
     /** Specifies a wrapper for the CCombo control of the combo box cell editor that provides access to methods with default access. */
-    protected CComboWrapper nullableComboBoxWrapper;
+    //protected CComboWrapper nullableComboBoxWrapper;
     
     /** Specifies the text cell editor that the table uses to allow the user input text. */
     protected TextCellEditor textCellEditor;
     
+    /** Specifies the cell editor that the table uses to allow the user select files and directories.
+     * It also allows the user to enter the path. */
+    protected FileDialogCellEditor fileDialogTextCellEditor;
+    
+    /** Specifies the cell editor that the table uses to allow the user select files and directories. 
+     * It also allows the user to enter the path and gives the user a drop down list of values to choose from. */
+    protected FileDialogCellEditor fileDialogComboCellEditor;
+  
     /** Specifies the assistantDialog that will be displayed when the user hover over a table item. */
     protected AssistantDialog assistantDialog;
     
@@ -161,7 +170,7 @@ public class ValuesTableComposite extends MElementComposite {
     
     /** Specifies the current mouse position. */
     protected Point mousePosition = new Point(0, 0);
-    
+	
     /**
      * Creates a new values table composite object.
      *
@@ -410,20 +419,24 @@ public class ValuesTableComposite extends MElementComposite {
             }});
 	    
 	    // Creates the cell editor for the null value.
-	    nullableCellEditor = new ComboBoxCellEditor(table, new String[0]);
+	    /*?nullableCellEditor = new ComboBoxCellEditor(table, new String[0]);
 	    nullableComboBoxWrapper = new CComboWrapper(((CCombo) nullableCellEditor.getControl()));
 	    nullableCellEditor.getControl().addFocusListener(new FocusAdapter() {
             @Override
 			public void focusGained(FocusEvent e) {
             	nullableComboBoxWrapper.dropDown(true);
             }});
-	    nullableCellEditor.setItems(new String[] { Type.NULL_FOR_UI });
+	    nullableCellEditor.setItems(new String[] { Type.NULL_FOR_UI });*/
 	    
+	    fileDialogTextCellEditor = new FileDialogCellEditor(table, SWT.SIMPLE);
+	    fileDialogComboCellEditor = new FileDialogCellEditor(table, SWT.NONE);
+	    
+	    //?fileDialogCellEditor = new FileDialogCellEditor(table);
 	    CellEditor[] cellEditors = new CellEditor[5];
 	    cellEditors[1] = textCellEditor;
 	    tableViewer.setCellEditors(cellEditors);
 	    tableViewer.setCellModifier(new ValueModifier(this));
-
+	    
         tableViewer.setContentProvider(new ValueContentProvider(this));
         tableViewer.setLabelProvider(new ValueLabelProvider(this));
 	}
@@ -635,95 +648,13 @@ public class ValuesTableComposite extends MElementComposite {
                     return false;
            	}
            
-           	MValue value = (MValue) element;
-           	String valueForUI = value.getValueForUI();
+           	MValue mValue = (MValue) element;
    	    	boolean ctrlPressed = owner.getMainComposite().getCtrlPressed();
-   	    	boolean result = ctrlPressed || !value.isReadOnly();
+   	    	boolean result = ctrlPressed || !mValue.isReadOnly();
 
    	    	if(result) {
-   	    		boolean isValueNullable = value instanceof MParameter ? true : !value.isRequired();
-   		    	CellEditor[] editors = new CellEditor[5];
-   		    	
-   		    	String[] validValuesForUI = value.getValidObjectValuesForUI();
-	    	    List<String> historyValuesForUI = value.getHistoricValuesForUI();
-   	    	    if(validValuesForUI != null) {
-   	    	    	if(!isValueNullable)
-   	    	    		validValuesCellEditor.setItems(validValuesForUI);
-   	    	    	else {
-   	    		    	String[] listValues = new String[validValuesForUI.length+1];
-   	    		    	listValues[0] = Type.NULL_FOR_UI;
-   	    		    	for(int index = 0; index < validValuesForUI.length; ++index)
-   	    		    		listValues[index+1] = validValuesForUI[index];
-   	    		    	
-   	    	    		validValuesCellEditor.setItems(listValues);	    	    		
-   	    	    	}
-   	    	    		
-   	    	        editors[1] = validValuesCellEditor;
-   	    	    }
-   	    	    else if(historyValuesForUI != null && historyValuesForUI.size() > 0) {
-   	    	    	String[] historicValuesArray;
-   	    	        if(!historyValuesForUI.contains(valueForUI)) {
-   	    	            // Adds the current value if it is not already part of the historic values. This is a workaround for SWT limitations.
-   	    	            int index = 1;
-	    	            if(isValueNullable && value.getValue() != null)
-	    	            	index = 2;
-	    	            
-   	    	        	historicValuesArray = new String[historyValuesForUI.size()+index];
-   	    	            historicValuesArray[0] = valueForUI;
-   	    	            
-	    	            if(isValueNullable && value.getValue() != null)
-	    	            	historicValuesArray[1] = Type.NULL_FOR_UI;
-   	    	            
-   	    	            Iterator iterator = historyValuesForUI.iterator();
-   	    	            while(iterator.hasNext())
-   	    	            	historicValuesArray[index++] = (String) iterator.next();
-   	    	            
-   	    	            historicValuesCellEditor.setItems(historicValuesArray);
-   	    	        }
-   	    	        else {
-   	    	            int index = 0;
-	    	            if(isValueNullable)
-	    	            	index = 1;
-
-	    	            historicValuesArray = new String[historyValuesForUI.size() + index];
-   	    	            
-	    	            if(isValueNullable)
-	    	            	historicValuesArray[0] = Type.NULL_FOR_UI;
-	    	            
-   	    	            Iterator iterator = historyValuesForUI.iterator();
-   	    	            while(iterator.hasNext())
-   	    	            	historicValuesArray[index++] = (String) iterator.next();
-
-   	    	            historicValuesCellEditor.setItems(historicValuesArray);
-   	    	        }
-   	    	        editors[1] = historicValuesCellEditor;   	    	        
-   	    	    	
-   	    	    }
-   	    	    else {
-   	    	    	if(isValueNullable) {
-   	    	            int index = 0;
-	    	            if(value.getValue() != null)
-	    	            	index = 1;
-
-	   	    	    	String[] valuesArray = new String[index+1];
-	   	    	    	
-	   	    	    	if(value.getValue() != null)
-	   	    	    		valuesArray[0] = Type.NULL_FOR_UI;
-	   	    	    	
-	   	    	    	valuesArray[index] = value.getValueForUI();
-	   	    	    	
-	   	    	    	nullableCellEditor.setItems(valuesArray);
-   	    	    		editors[1] = nullableCellEditor;
-   	    	    	}
-   	    	    	else
-   	    	    		editors[1] = textCellEditor;
-   	    	    }
-   	    	    
-   	    	    tableViewer.setCellEditors(editors);
-   	    	}
-   	    	
-   	    	// Makes sure that the toolbar disappears when entering into edit mode.
-   	    	if(result) {
+   	    	    tableViewer.setCellEditors(getCellEditors(mValue));
+   	   	    	// Makes sure that the toolbar disappears when entering into edit mode.
    	    		openButton.setVisible(false);
    	    		currentTableItem = null;
    	    	}
@@ -731,6 +662,149 @@ public class ValuesTableComposite extends MElementComposite {
             return result;
         }
 
+        /**
+         * Gets the cell editors for the given managed value.
+         * 
+         * @param mValue Specifies the managed value for which to get the cell editors.
+         * @return Returns the cell editors for the given managed value.
+         */
+        private CellEditor[] getCellEditors(MValue mValue) {
+       		String valueForUI = mValue.getValueForUI();
+    		boolean isValueNullable = mValue instanceof MParameter ? true : !mValue.isRequired();
+	    	CellEditor[] editors = new CellEditor[5];
+	    	
+	    	String[] validValuesForUI = mValue.getValidObjectValuesForUI();
+    	    List<String> historyValuesForUI = mValue.getHistoricValuesForUI();
+    	    if(validValuesForUI != null) {
+    	    	String[] validValuesArray;
+    	    	if(!isValueNullable)
+    	    		validValuesArray = validValuesForUI;
+    	    	else {
+    	    		validValuesArray = new String[validValuesForUI.length+1];
+    	    		validValuesArray[0] = Type.NULL_FOR_UI;
+    		    	for(int index = 0; index < validValuesForUI.length; ++index)
+    		    		validValuesArray[index+1] = validValuesForUI[index];  	    		
+    	    	}
+    	    		
+	    		editors[1] = getCellEditor(mValue, validValuesForUI);
+    	    }
+    	    else if(historyValuesForUI != null && historyValuesForUI.size() > 0) {
+    	    	String[] historicValuesArray;
+    	        if(!historyValuesForUI.contains(valueForUI)) {
+    	            // Adds the current value if it is not already part of the historic values. This is a workaround for SWT limitations.
+    	            int index = 1;
+    	            if(isValueNullable && mValue.getValue() != null)
+    	            	index = 2;
+    	            
+    	        	historicValuesArray = new String[historyValuesForUI.size()+index];
+    	            historicValuesArray[0] = valueForUI;
+    	            
+    	            if(isValueNullable && mValue.getValue() != null)
+    	            	historicValuesArray[1] = Type.NULL_FOR_UI;
+    	            
+    	            Iterator iterator = historyValuesForUI.iterator();
+    	            while(iterator.hasNext())
+    	            	historicValuesArray[index++] = (String) iterator.next();
+    	        }
+    	        else {
+    	            int index = 0;
+    	            if(isValueNullable)
+    	            	index = 1;
+
+    	            historicValuesArray = new String[historyValuesForUI.size() + index];
+    	            
+    	            if(isValueNullable)
+    	            	historicValuesArray[0] = Type.NULL_FOR_UI;
+    	            
+    	            Iterator iterator = historyValuesForUI.iterator();
+    	            while(iterator.hasNext())
+    	            	historicValuesArray[index++] = (String) iterator.next();
+
+    	        }
+    	        	        
+    	        editors[1] = getCellEditor(mValue, historicValuesArray);
+    	    }
+    	    else {
+    	    	if(isValueNullable) {
+    	            int index = 0;
+    	            if(mValue.getValue() != null)
+    	            	index = 1;
+
+   	    	    	String[] valuesArray = new String[index+1];
+   	    	    	
+   	    	    	if(mValue.getValue() != null)
+   	    	    		valuesArray[0] = Type.NULL_FOR_UI;
+   	    	    	
+   	    	    	valuesArray[index] = mValue.getValueForUI();
+   	    	    	
+   	    	        editors[1] = getCellEditor(mValue, valuesArray);
+    	    	}
+    	    	else
+    	    		editors[1] = getCellEditor(mValue, null);    	    	
+    	    }
+    	    
+    	    return editors;
+        }
+        
+        /**
+         * Gets the cell editor for the given managed value. This method derives the
+         * the type of the editor from the managed value and the presence of a value array.
+         * 
+         * @param mValue Specifies the managed value for which to get the cell editor.
+         * @param valuesArray Specifies the values that the cell editor can display for the user to select from.
+         * @return Returns the cell editor for the given managed value. 
+         */
+        protected CellEditor getCellEditor(MValue mValue, String[] valuesArray) {
+        	if(mValue == null)
+        		return null;
+
+        	CellEditor cellEditor = null;	
+        	Type valueType = mValue.getValueType();
+        	if(mValue.getValidObjectValuesForUI() != null) {
+        		validValuesCellEditor.setItems(valuesArray);
+        		cellEditor = validValuesCellEditor;
+        	}
+        	if(valueType == Type.FILE_TYPE 
+	    	    || valueType == Type.EXISTING_FILE_TYPE
+	    	    || valueType == Type.DIRECTORY_TYPE 
+	    	    || valueType == Type.EXISTING_DIRECTORY_TYPE) {
+    	    	cellEditor = valuesArray != null ? fileDialogComboCellEditor : fileDialogTextCellEditor;
+    	    	if(valuesArray != null)
+    	    		((FileDialogCellEditor) cellEditor).setItems(valuesArray);
+   	    	
+    	    	((FileDialogCellEditor) cellEditor).setFolder(valueType == Type.DIRECTORY_TYPE || valueType == Type.EXISTING_DIRECTORY_TYPE);
+    	    	((FileDialogCellEditor) cellEditor).setMultiple(mValue.getUpperBound() != 1);
+    	    	
+    	    	// Attempts to derive the initial path from the current value of the managed value.
+    	    	if(!mValue.isEmpty()) {
+    	    		File file;
+    	    		if(mValue.getUpperBound() == 1)
+    	    			file = (File) mValue.getValue();
+    	    		else
+    	    			file = (File) ((List) mValue.getValue()).get(0);
+    	    		
+    	    		if(file != null) {
+    	    			if(file.isFile())
+    	    				file = file.getParentFile();
+    	    			
+    	    			if(file != null && file.exists())
+    	    				((FileDialogCellEditor) cellEditor).setFilterPath(file.getAbsolutePath());
+    	    		}
+    	    	}
+    	    }
+    	    else {
+    	    	if(valuesArray != null) {
+    	    		historicValuesCellEditor.setItems(valuesArray);
+    	    		cellEditor = historicValuesCellEditor;
+    	    	}
+    	    	else
+    	    		cellEditor = textCellEditor;
+    	    }
+        	
+        	return cellEditor;
+   
+        }
+        
         /**
          * @see org.eclipse.jface.viewers.ICellModifier#getValue(java.lang.Object, java.lang.String)
          */
