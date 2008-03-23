@@ -6,10 +6,4 @@ Bundle-Version: 0.1.0
 Bundle-Vendor: www.onceforall.org
 Bundle-Localization: plugin
 Export-Package: org.onceforall.dms.desktop.ui
-Require-Bundle: org.eclipse.swt,
- org.eclipse.jface,
- org.eclipse.ui.forms,
- org.onceforall.dms.desktop,
- com.ibm.icu,
- org.eclipse.jface.text,
- org.eclipse.ui
+Require-Bundle: org.onceforall.dms.desktop
