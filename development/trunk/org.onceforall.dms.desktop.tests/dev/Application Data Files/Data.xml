@@ -265,7 +265,7 @@
       <mMp3EntryReferenceParameter mInputValues="//@mScripts.0/@mSteps.8/@mMp3EntryReferenceResult"/>
       <mLinkTextParameter mInputValues="//@mScripts.0/@mSteps.0/@mTitleOfTalkResult //@mScripts.0/@mSteps.0/@mReadingResult"/>
       <mLinkDescriptionParameter mInputValues="//@mScripts.0/@mSteps.0/@mServiceTypeResult //@mScripts.0/@mSteps.0/@mSpeakersNameResult //@mScripts.0/@mSteps.0/@mServiceDateResult"/>
-      <mCommentParameter mInputValues="//@mScripts.0/@mSteps.0/@mReadingResult"/>
+      <mCommentParameter mInputValues="//@mScripts.0/@mSteps.8/@mCommentParameter"/>
       <mPodcastTitleParameter mInputValues="//@mScripts.0/@mSteps.0/@mTitleOfTalkResult //@mScripts.0/@mSteps.0/@mReadingResult"/>
       <mPodcastSubtitleParameter mInputValues="//@mScripts.0/@mSteps.0/@mServiceTypeResult //@mScripts.0/@mSteps.0/@mSpeakersNameResult //@mScripts.0/@mSteps.0/@mServiceDateResult"/>
       <mPodcastSummaryParameter mInputValues="//@mScripts.0/@mSteps.0/@mReadingResult"/>
