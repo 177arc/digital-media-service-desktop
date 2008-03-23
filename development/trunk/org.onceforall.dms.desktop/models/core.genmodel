@@ -88,6 +88,8 @@
     <genClasses ecoreClass="core.ecore#//MScript">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference core.ecore#//MScript/mSteps"/>
     </genClasses>
+    <genDataTypes ecoreDataType="core.ecore#//MDirectory"/>
+    <genDataTypes ecoreDataType="core.ecore#//MExistingDirectory"/>
     <genDataTypes ecoreDataType="core.ecore#//MFile"/>
     <genDataTypes ecoreDataType="core.ecore#//MExistingFile"/>
     <genDataTypes ecoreDataType="core.ecore#//MState"/>
@@ -268,14 +270,6 @@
        <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MRecordStep/recordingLengthResult"/>
     </genClasses>
     <genClasses ecoreClass="core.ecore#//MConvertToMP3Step">
-       <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference core.ecore#//MConvertToMP3Step/mArtistParameter"/>
-       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MConvertToMP3Step/artistParameter"/>
-       <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference core.ecore#//MConvertToMP3Step/mTitleParameter"/>
-       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MConvertToMP3Step/titleParameter"/>
-       <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference core.ecore#//MConvertToMP3Step/mAlbumParameter"/>
-       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MConvertToMP3Step/albumParameter"/>
-       <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference core.ecore#//MConvertToMP3Step/mYearParameter"/>
-       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MConvertToMP3Step/yearParameter"/>
        <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference core.ecore#//MConvertToMP3Step/mDirectoryParameter"/>
        <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MConvertToMP3Step/directoryParameter"/>
        <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference core.ecore#//MConvertToMP3Step/mMp3FileNameParameter"/>
@@ -286,12 +280,6 @@
        <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MConvertToMP3Step/mp3EncoderPathParameter"/>
        <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference core.ecore#//MConvertToMP3Step/mAverageBitRateParameter"/>
        <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MConvertToMP3Step/averageBitRateParameter"/>
-       <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference core.ecore#//MConvertToMP3Step/mMp3FolderReferenceParameter"/>
-       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EReference core.ecore#//MConvertToMP3Step/mp3FolderReferenceParameter"/>
-       <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference core.ecore#//MConvertToMP3Step/MMp3EntryNameParameter"/>
-       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MConvertToMP3Step/mp3EntryNameParameter"/>
-       <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference core.ecore#//MConvertToMP3Step/mMp3EntryReferenceResult"/>
-       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EReference core.ecore#//MConvertToMP3Step/mp3EntryReferenceResult"/>
     </genClasses>
     <genClasses ecoreClass="core.ecore#//MPublishMp3sStep">
        <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference core.ecore#//MPublishMp3sStep/MMaxiumumDiskSpaceParameter"/>
@@ -426,6 +414,38 @@
        <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MTestStep/persistentStringParameter"/>
        <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference core.ecore#//MTestStep/MStringParameter"/>
        <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MTestStep/stringParameter"/>
+    </genClasses>
+    <genClasses ecoreClass="core.ecore#//MNameTagMp3Step">
+       <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference core.ecore#//MNameTagMp3Step/mDirectoryParameter"/>
+       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MNameTagMp3Step/directoryParameter"/>
+       <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference core.ecore#//MNameTagMp3Step/mTaggedMp3FileNameParameter"/>
+       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MNameTagMp3Step/taggedMp3FileNameParameter"/>
+       <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference core.ecore#//MNameTagMp3Step/mRecordingMp3FileParameter"/>
+       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MNameTagMp3Step/recordingMp3FileParameter"/>
+    </genClasses>
+    <genClasses ecoreClass="core.ecore#//MTagStep">
+       <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference core.ecore#//MTagStep/mArtistParameter"/>
+       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MTagStep/artistParameter"/>
+       <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference core.ecore#//MTagStep/mTitleParameter"/>
+       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MTagStep/titleParameter"/>
+       <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference core.ecore#//MTagStep/mAlbumParameter"/>
+       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MTagStep/albumParameter"/>
+       <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference core.ecore#//MTagStep/mGenreParameter"/>
+       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MTagStep/genreParameter"/>
+       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MTagStep/genreParameterHistoricValues"/>
+       <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference core.ecore#//MTagStep/mYearParameter"/>
+       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MTagStep/yearParameter"/>
+       <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference core.ecore#//MTagStep/mCommentParameter"/>
+       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MTagStep/commentParameter"/>
+       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MTagStep/commentParameterHistoricValues"/>
+       <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference core.ecore#//MTagStep/mMp3FolderReferenceParameter"/>
+       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EReference core.ecore#//MTagStep/mp3FolderReferenceParameter"/>
+       <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference core.ecore#//MTagStep/MMp3EntryNameParameter"/>
+       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MTagStep/mp3EntryNameParameter"/>
+       <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference core.ecore#//MTagStep/mMp3EntryReferenceResult"/>
+       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EReference core.ecore#//MTagStep/mp3EntryReferenceResult"/>
+       <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference core.ecore#//MTagStep/mMp3FilePathResult"/>
+       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MTagStep/mp3FilePathResult"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

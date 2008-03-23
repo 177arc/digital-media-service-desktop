@@ -201,7 +201,7 @@
       </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="dataFileProperty" lowerBound="1"
-        eType="#//MFile" changeable="false" transient="true" defaultValueLiteral="Application Data Files\Data.xml"/>
+        eType="#//MExistingFile" changeable="false" transient="true" defaultValueLiteral="Application Data Files\Data.xml"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="infoWebPageProperty" lowerBound="1"
         eType="#//MUrl" changeable="true" transient="true" defaultValueLiteral="http://www.onceforall.org/dms-desktop/info.html"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="mInfoWebPageProperty" lowerBound="1"
@@ -232,7 +232,7 @@
       </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="pathProperty" lowerBound="1"
-        eType="#//MFile"/>
+        eType="#//MExistingDirectory"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="mVersionProperty" lowerBound="1"
         eType="#//MProperty" defaultValueLiteral="" containment="true" resolveProxies="false">
       <eAnnotations source="http://www.onceforall.org/mcore">
@@ -285,6 +285,16 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="progressStatusProperty"
         eType="#//MString" transient="true"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EDataType" name="MDirectory" instanceClassName="java.io.File">
+    <eAnnotations source="http://www.onceforall.org/mcore">
+      <details key="name" value="Directory"/>
+    </eAnnotations>	
+  </eClassifiers>		
+  <eClassifiers xsi:type="ecore:EDataType" name="MExistingDirectory" instanceClassName="java.io.File">
+    <eAnnotations source="http://www.onceforall.org/mcore">
+      <details key="name" value="Directory (must exist)"/>
+    </eAnnotations>	
+  </eClassifiers>		
   <eClassifiers xsi:type="ecore:EDataType" name="MFile" instanceClassName="java.io.File">
     <eAnnotations source="http://www.onceforall.org/mcore">
       <details key="name" value="File"/>
@@ -368,7 +378,7 @@
 	       <details key="description" value="Specifies the relative or absolute file path to the directory where the service recording files are stored."/>
 	     </eAnnotations>
 	   </eStructuralFeatures>  		
-       <eStructuralFeatures xsi:type="ecore:EAttribute" name="serviceFilePathProperty" lowerBound="1" upperBound="1" defaultValueLiteral="Service Files" transient="false" eType="//MExistingFile" derived="false" volatile="false"/>
+       <eStructuralFeatures xsi:type="ecore:EAttribute" name="serviceFilePathProperty" lowerBound="1" upperBound="1" defaultValueLiteral="Service Files" transient="false" eType="//MExistingDirectory" derived="false" volatile="false"/>
 	   	<eStructuralFeatures xsi:type="ecore:EReference" name="mWwxFilesPathProperty"
 	      lowerBound="1" eType="#//MProperty" defaultValueLiteral=""
 	      containment="true" resolveProxies="false">
@@ -377,7 +387,7 @@
 	       <details key="description" value="Specifies the relative or absolute file path to the directory where the WordWiseXtra recording files are stored."/>
 	     </eAnnotations>
 	   </eStructuralFeatures>  		
-       <eStructuralFeatures xsi:type="ecore:EAttribute" name="wwxFilesPathProperty" lowerBound="1" upperBound="1" defaultValueLiteral="WWX Files" transient="false" eType="//MExistingFile" derived="false" volatile="false"/>
+       <eStructuralFeatures xsi:type="ecore:EAttribute" name="wwxFilesPathProperty" lowerBound="1" upperBound="1" defaultValueLiteral="WWX Files" transient="false" eType="//MExistingDirectory" derived="false" volatile="false"/>
 	   	<eStructuralFeatures xsi:type="ecore:EReference" name="mMp3EncoderPathProperty"
 	      lowerBound="1" eType="#//MProperty" defaultValueLiteral=""
 	      containment="true" resolveProxies="false">
@@ -386,7 +396,7 @@
 	       <details key="description" value="Specifies the path to the directory that contains the &apos;lame.exe&apos;."/>
 	     </eAnnotations>
 	   </eStructuralFeatures>  		
-       <eStructuralFeatures xsi:type="ecore:EAttribute" name="mp3EncoderPathProperty" lowerBound="0" upperBound="1" defaultValueLiteral="Program Files\LAME 3.96.1" transient="false" eType="//MExistingFile" derived="false" volatile="false"/>
+       <eStructuralFeatures xsi:type="ecore:EAttribute" name="mp3EncoderPathProperty" lowerBound="0" upperBound="1" defaultValueLiteral="Program Files\LAME 3.96.1" transient="false" eType="//MExistingDirectory" derived="false" volatile="false"/>
 	   	<eStructuralFeatures xsi:type="ecore:EReference" name="mFtpServerUrlProperty"
 	      lowerBound="1" eType="#//MProperty" defaultValueLiteral=""
 	      containment="true" resolveProxies="false">
@@ -465,7 +475,7 @@
 	       <details key="description" value="Specifies the path to the directory that contains the &apos;nerocmd.exe&apos;."/>
 	     </eAnnotations>
 	   </eStructuralFeatures>  		
-       <eStructuralFeatures xsi:type="ecore:EAttribute" name="burningSoftwareDirectoryPathProperty" lowerBound="1" upperBound="1" transient="false" eType="//MExistingFile" derived="false" volatile="false"/>
+       <eStructuralFeatures xsi:type="ecore:EAttribute" name="burningSoftwareDirectoryPathProperty" lowerBound="1" upperBound="1" transient="false" eType="//MExistingDirectory" derived="false" volatile="false"/>
 	   	<eStructuralFeatures xsi:type="ecore:EReference" name="mDriveProperty"
 	      lowerBound="1" eType="#//MProperty" defaultValueLiteral=""
 	      containment="true" resolveProxies="false">
@@ -883,8 +893,8 @@
 	       <details key="description" value="Specifies the path to the directory in which the new directory is to be created."/>
 	     </eAnnotations>
 	   </eStructuralFeatures>  		
-       <eStructuralFeatures xsi:type="ecore:EAttribute" name="parentDirectoryParameter" lowerBound="1" upperBound="1" transient="false" eType="//MExistingFile" derived="false" volatile="false"/>
-     	<eStructuralFeatures xsi:type="ecore:EAttribute" name="parentDirectoryParameterHistoricValues" upperBound="3" transient="false" eType="//MExistingFile"/>
+       <eStructuralFeatures xsi:type="ecore:EAttribute" name="parentDirectoryParameter" lowerBound="1" upperBound="1" transient="false" eType="//MExistingDirectory" derived="false" volatile="false"/>
+     	<eStructuralFeatures xsi:type="ecore:EAttribute" name="parentDirectoryParameterHistoricValues" upperBound="3" transient="false" eType="//MExistingDirectory"/>
 	   	<eStructuralFeatures xsi:type="ecore:EReference" name="mDirectoryNameParameter"
 	      lowerBound="1" eType="#//MParameter" defaultValueLiteral=""
 	      containment="true" resolveProxies="false">
@@ -893,7 +903,7 @@
 	       <details key="description" value="Specifies the name of the directory to be created."/>
 	     </eAnnotations>
 	   </eStructuralFeatures>  		
-       <eStructuralFeatures xsi:type="ecore:EAttribute" name="directoryNameParameter" lowerBound="1" upperBound="1" transient="false" eType="//MFile" derived="false" volatile="false"/>
+       <eStructuralFeatures xsi:type="ecore:EAttribute" name="directoryNameParameter" lowerBound="1" upperBound="1" transient="false" eType="//MDirectory" derived="false" volatile="false"/>
 	   	<eStructuralFeatures xsi:type="ecore:EReference" name="mDirectoryResult"
 	      lowerBound="1" eType="#//MResult" defaultValueLiteral=""
 	      containment="true" resolveProxies="false">
@@ -902,7 +912,7 @@
 	       <details key="description" value="Specifies the path of the created service directory."/>
 	     </eAnnotations>
 	   </eStructuralFeatures>  		
-       <eStructuralFeatures xsi:type="ecore:EAttribute" name="directoryResult" lowerBound="1" upperBound="1" transient="true" eType="//MExistingFile" derived="false" volatile="false"/>
+       <eStructuralFeatures xsi:type="ecore:EAttribute" name="directoryResult" lowerBound="1" upperBound="1" transient="true" eType="//MExistingDirectory" derived="false" volatile="false"/>
 	</eClassifiers>
 	<eClassifiers xsi:type="ecore:EClass" name="MCheckFreeDiskSpaceStep" eSuperTypes="#//MStep" abstract="false">
  		<eAnnotations source="http://www.onceforall.org/mcore">
@@ -932,7 +942,7 @@
 	       <details key="description" value="Specifies the path of the created directory where the recordings will be stored."/>
 	     </eAnnotations>
 	   </eStructuralFeatures>  		
-       <eStructuralFeatures xsi:type="ecore:EAttribute" name="directoryParameter" lowerBound="1" upperBound="1" transient="false" eType="//MExistingFile" derived="false" volatile="false"/>
+       <eStructuralFeatures xsi:type="ecore:EAttribute" name="directoryParameter" lowerBound="1" upperBound="1" transient="false" eType="//MExistingDirectory" derived="false" volatile="false"/>
 	   	<eStructuralFeatures xsi:type="ecore:EReference" name="mFreeDiskSpaceResult"
 	      lowerBound="1" eType="#//MResult" defaultValueLiteral=""
 	      containment="true" resolveProxies="false">
@@ -1051,7 +1061,7 @@ For an explanation of dBFS, please refer to http://en.wikipedia.org/wiki/DBFS.
 	       <details key="description" value="Specifies the path of the created directory where the recordings will be stored."/>
 	     </eAnnotations>
 	   </eStructuralFeatures>  		
-       <eStructuralFeatures xsi:type="ecore:EAttribute" name="directoryParameter" lowerBound="1" upperBound="1" transient="false" eType="//MExistingFile" derived="false" volatile="false"/>
+       <eStructuralFeatures xsi:type="ecore:EAttribute" name="directoryParameter" lowerBound="1" upperBound="1" transient="false" eType="//MExistingDirectory" derived="false" volatile="false"/>
 	   	<eStructuralFeatures xsi:type="ecore:EReference" name="mRecordingFileParameter"
 	      lowerBound="1" eType="#//MParameter" defaultValueLiteral=""
 	      containment="true" resolveProxies="false">
@@ -1089,7 +1099,7 @@ For an explanation of dBFS, please refer to http://en.wikipedia.org/wiki/DBFS.
 	   </eStructuralFeatures>  		
        <eStructuralFeatures xsi:type="ecore:EAttribute" name="recordingLengthResult" lowerBound="1" upperBound="1" transient="true" eType="//MDuration" derived="false" volatile="false"/>
 	</eClassifiers>
-	<eClassifiers xsi:type="ecore:EClass" name="MConvertToMP3Step" eSuperTypes="#//MStep" abstract="false">
+	<eClassifiers xsi:type="ecore:EClass" name="MConvertToMP3Step" eSuperTypes="#//MTagStep" abstract="false">
  		<eAnnotations source="http://www.onceforall.org/mcore">
    		<details key="name" value="Convert to MP3"/>
    		<details key="description" value="Converts a WAVE file to MP3 format using the LAME encoder."/>
@@ -1100,44 +1110,6 @@ For an explanation of dBFS, please refer to http://en.wikipedia.org/wiki/DBFS.
 	   	<details key="stoppable" value="false"/>
 	   	<details key="terminatable" value="true"/>
  		</eAnnotations>
-	   	<eStructuralFeatures xsi:type="ecore:EReference" name="mArtistParameter"
-	      lowerBound="1" eType="#//MParameter" defaultValueLiteral=""
-	      containment="true" resolveProxies="false">
-	     <eAnnotations source="http://www.onceforall.org/mcore">
-	       <details key="name" value="Artist"/>
-	       <details key="description" value="Determines the text that will set as the ID3 artist tag on the MP3 file."/>
-	       <details key="readOnly" value="false"/>
-	     </eAnnotations>
-	   </eStructuralFeatures>  		
-       <eStructuralFeatures xsi:type="ecore:EAttribute" name="artistParameter" lowerBound="1" upperBound="1" transient="false" eType="//MString" derived="false" volatile="false"/>
-	   	<eStructuralFeatures xsi:type="ecore:EReference" name="mTitleParameter"
-	      lowerBound="1" eType="#//MParameter" defaultValueLiteral=""
-	      containment="true" resolveProxies="false">
-	     <eAnnotations source="http://www.onceforall.org/mcore">
-	       <details key="name" value="Title"/>
-	       <details key="description" value="Determines the text that will set as the ID3 title tag on the MP3 file."/>
-	       <details key="readOnly" value="false"/>
-	     </eAnnotations>
-	   </eStructuralFeatures>  		
-       <eStructuralFeatures xsi:type="ecore:EAttribute" name="titleParameter" lowerBound="1" upperBound="1" transient="false" eType="//MString" derived="false" volatile="false"/>
-	   	<eStructuralFeatures xsi:type="ecore:EReference" name="mAlbumParameter"
-	      lowerBound="1" eType="#//MParameter" defaultValueLiteral=""
-	      containment="true" resolveProxies="false">
-	     <eAnnotations source="http://www.onceforall.org/mcore">
-	       <details key="name" value="Album"/>
-	       <details key="description" value="Determines the text that will set as the ID3 album tag on the MP3 file."/>
-	     </eAnnotations>
-	   </eStructuralFeatures>  		
-       <eStructuralFeatures xsi:type="ecore:EAttribute" name="albumParameter" lowerBound="1" upperBound="1" transient="false" eType="//MString" derived="false" volatile="false"/>
-	   	<eStructuralFeatures xsi:type="ecore:EReference" name="mYearParameter"
-	      lowerBound="1" eType="#//MParameter" defaultValueLiteral=""
-	      containment="true" resolveProxies="false">
-	     <eAnnotations source="http://www.onceforall.org/mcore">
-	       <details key="name" value="Year"/>
-	       <details key="description" value="Determines the text that will set as the ID3 year tag on the MP3 file."/>
-	     </eAnnotations>
-	   </eStructuralFeatures>  		
-       <eStructuralFeatures xsi:type="ecore:EAttribute" name="yearParameter" lowerBound="1" upperBound="1" transient="false" eType="//MString" derived="false" volatile="false"/>
 	   	<eStructuralFeatures xsi:type="ecore:EReference" name="mDirectoryParameter"
 	      lowerBound="1" eType="#//MParameter" defaultValueLiteral=""
 	      containment="true" resolveProxies="false">
@@ -1146,7 +1118,7 @@ For an explanation of dBFS, please refer to http://en.wikipedia.org/wiki/DBFS.
 	       <details key="description" value="Specifies the directory where the converted MP3 file should be saved."/>
 	     </eAnnotations>
 	   </eStructuralFeatures>  		
-       <eStructuralFeatures xsi:type="ecore:EAttribute" name="directoryParameter" lowerBound="1" upperBound="1" transient="false" eType="//MExistingFile" derived="false" volatile="false"/>
+       <eStructuralFeatures xsi:type="ecore:EAttribute" name="directoryParameter" lowerBound="1" upperBound="1" transient="false" eType="//MExistingDirectory" derived="false" volatile="false"/>
 	   	<eStructuralFeatures xsi:type="ecore:EReference" name="mMp3FileNameParameter"
 	      lowerBound="1" eType="#//MParameter" defaultValueLiteral=""
 	      containment="true" resolveProxies="false">
@@ -1173,7 +1145,7 @@ For an explanation of dBFS, please refer to http://en.wikipedia.org/wiki/DBFS.
 	       <details key="description" value="Specifies the path to the directory that contains the &apos;lame.exe&apos;."/>
 	     </eAnnotations>
 	   </eStructuralFeatures>  		
-       <eStructuralFeatures xsi:type="ecore:EAttribute" name="mp3EncoderPathParameter" lowerBound="1" upperBound="1" transient="false" eType="//MExistingFile" derived="false" volatile="false"/>
+       <eStructuralFeatures xsi:type="ecore:EAttribute" name="mp3EncoderPathParameter" lowerBound="1" upperBound="1" transient="false" eType="//MExistingDirectory" derived="false" volatile="false"/>
 	   	<eStructuralFeatures xsi:type="ecore:EReference" name="mAverageBitRateParameter"
 	      lowerBound="1" eType="#//MParameter" defaultValueLiteral=""
 	      containment="true" resolveProxies="false">
@@ -1183,33 +1155,6 @@ For an explanation of dBFS, please refer to http://en.wikipedia.org/wiki/DBFS.
 	     </eAnnotations>
 	   </eStructuralFeatures>  		
        <eStructuralFeatures xsi:type="ecore:EAttribute" name="averageBitRateParameter" lowerBound="1" upperBound="1" transient="false" eType="//MLong" derived="false" volatile="false"/>
-	   	<eStructuralFeatures xsi:type="ecore:EReference" name="mMp3FolderReferenceParameter"
-	      lowerBound="1" eType="#//MParameter" defaultValueLiteral=""
-	      containment="true" resolveProxies="false">
-	     <eAnnotations source="http://www.onceforall.org/mcore">
-	       <details key="name" value="MP3 folder reference"/>
-	       <details key="description" value="Specifies a reference to the folder where the new MP3 file should be stored."/>
-	     </eAnnotations>
-	   </eStructuralFeatures>  		
-       <eStructuralFeatures xsi:type="ecore:EReference" name="mp3FolderReferenceParameter" lowerBound="1" upperBound="1" transient="false" eType="//MMp3Folder" derived="false" volatile="false"/>
-	   	<eStructuralFeatures xsi:type="ecore:EReference" name="mMp3EntryNameParameter"
-	      lowerBound="1" eType="#//MParameter" defaultValueLiteral=""
-	      containment="true" resolveProxies="false">
-	     <eAnnotations source="http://www.onceforall.org/mcore">
-	       <details key="name" value="MP3 entry name"/>
-	       <details key="description" value="Specifies the name of the new MP3 entry in the MP3 folder."/>
-	     </eAnnotations>
-	   </eStructuralFeatures>  		
-       <eStructuralFeatures xsi:type="ecore:EAttribute" name="mp3EntryNameParameter" lowerBound="1" upperBound="1" transient="false" eType="//MString" derived="false" volatile="false"/>
-	   	<eStructuralFeatures xsi:type="ecore:EReference" name="mMp3EntryReferenceResult"
-	      lowerBound="1" eType="#//MResult" defaultValueLiteral=""
-	      containment="true" resolveProxies="false">
-	     <eAnnotations source="http://www.onceforall.org/mcore">
-	       <details key="name" value="MP3 entry reference"/>
-	       <details key="description" value="Contains a reference to the MP3 enty that has been created."/>
-	     </eAnnotations>
-	   </eStructuralFeatures>  		
-       <eStructuralFeatures xsi:type="ecore:EReference" name="mp3EntryReferenceResult" lowerBound="1" upperBound="1" transient="true" eType="//MMp3" derived="false" volatile="false"/>
 	</eClassifiers>
 	<eClassifiers xsi:type="ecore:EClass" name="MPublishMp3sStep" eSuperTypes="#//MFtpStep" abstract="true">
  		<eAnnotations source="http://www.onceforall.org/mcore">
@@ -1437,7 +1382,7 @@ For an explanation of dBFS, please refer to http://en.wikipedia.org/wiki/DBFS.
 	       <details key="description" value="Specifies a comment for the published MP3 file. This can be for example problems with the recording."/>
 	     </eAnnotations>
 	   </eStructuralFeatures>  		
-       <eStructuralFeatures xsi:type="ecore:EAttribute" name="commentParameter" lowerBound="0" upperBound="1" transient="false" eType="//MString" derived="false" volatile="false"/>
+       <eStructuralFeatures xsi:type="ecore:EAttribute" name="commentParameter" lowerBound="0" upperBound="1" transient="true" eType="//MString" derived="false" volatile="false"/>
 	   	<eStructuralFeatures xsi:type="ecore:EReference" name="mPodcastTitleParameter"
 	      lowerBound="1" eType="#//MParameter" defaultValueLiteral=""
 	      containment="true" resolveProxies="false">
@@ -1736,7 +1681,7 @@ Please enter your own email address here so that we can contact you if we have a
 	       <details key="readOnly" value="false"/>
 	     </eAnnotations>
 	   </eStructuralFeatures>  		
-       <eStructuralFeatures xsi:type="ecore:EAttribute" name="burningSoftwareDirectoryPathParameter" lowerBound="1" upperBound="1" transient="false" eType="//MExistingFile" derived="false" volatile="false"/>
+       <eStructuralFeatures xsi:type="ecore:EAttribute" name="burningSoftwareDirectoryPathParameter" lowerBound="1" upperBound="1" transient="false" eType="//MExistingDirectory" derived="false" volatile="false"/>
 	   	<eStructuralFeatures xsi:type="ecore:EReference" name="mDriveParameter"
 	      lowerBound="1" eType="#//MParameter" defaultValueLiteral=""
 	      containment="true" resolveProxies="false">
@@ -1830,6 +1775,151 @@ Please enter your own email address here so that we can contact you if we have a
 	     </eAnnotations>
 	   </eStructuralFeatures>  		
        <eStructuralFeatures xsi:type="ecore:EAttribute" name="stringParameter" lowerBound="0" upperBound="1" transient="false" eType="//MString" derived="false" volatile="false"/>
+	</eClassifiers>
+	<eClassifiers xsi:type="ecore:EClass" name="MNameTagMp3Step" eSuperTypes="#//MTagStep" abstract="false">
+ 		<eAnnotations source="http://www.onceforall.org/mcore">
+   		<details key="name" value="Tag MP3"/>
+   		<details key="description" value="Copies the given recording file to the specified directory, gives it the specified name and sets the ID3 tags."/>
+   		<details key="iconFilePath" value="Image Files/Convert to MP3 step.gif"/>
+	   	<details key="actionName" value="Tag"/>
+	   	<details key="actionIconFilePath" value="Image Files/Convert.gif"/>
+	   	<details key="interruptable" value="false"/>
+	   	<details key="stoppable" value="false"/>
+	   	<details key="terminatable" value="false"/>
+ 		</eAnnotations>
+	   	<eStructuralFeatures xsi:type="ecore:EReference" name="mDirectoryParameter"
+	      lowerBound="1" eType="#//MParameter" defaultValueLiteral=""
+	      containment="true" resolveProxies="false">
+	     <eAnnotations source="http://www.onceforall.org/mcore">
+	       <details key="name" value="Directory"/>
+	       <details key="description" value="Specifies the directory where the renamed and tagged MP3 file should be copied to."/>
+	     </eAnnotations>
+	   </eStructuralFeatures>  		
+       <eStructuralFeatures xsi:type="ecore:EAttribute" name="directoryParameter" lowerBound="1" upperBound="1" transient="false" eType="//MExistingDirectory" derived="false" volatile="false"/>
+	   	<eStructuralFeatures xsi:type="ecore:EReference" name="mTaggedMp3FileNameParameter"
+	      lowerBound="1" eType="#//MParameter" defaultValueLiteral=""
+	      containment="true" resolveProxies="false">
+	     <eAnnotations source="http://www.onceforall.org/mcore">
+	       <details key="name" value="Tagged MP3 file name"/>
+	       <details key="description" value="Specifies the name of the MP3 file to be named and tagged."/>
+	     </eAnnotations>
+	   </eStructuralFeatures>  		
+       <eStructuralFeatures xsi:type="ecore:EAttribute" name="taggedMp3FileNameParameter" lowerBound="1" upperBound="1" transient="false" eType="//MFile" derived="false" volatile="false"/>
+	   	<eStructuralFeatures xsi:type="ecore:EReference" name="mRecordingMp3FileParameter"
+	      lowerBound="1" eType="#//MParameter" defaultValueLiteral=""
+	      containment="true" resolveProxies="false">
+	     <eAnnotations source="http://www.onceforall.org/mcore">
+	       <details key="name" value="Recording MP3 file path"/>
+	       <details key="description" value="Specifies the path of the MP3 file to be named and tagged."/>
+	     </eAnnotations>
+	   </eStructuralFeatures>  		
+       <eStructuralFeatures xsi:type="ecore:EAttribute" name="recordingMp3FileParameter" lowerBound="1" upperBound="1" transient="false" eType="//MExistingFile" derived="false" volatile="false"/>
+	</eClassifiers>
+	<eClassifiers xsi:type="ecore:EClass" name="MTagStep" eSuperTypes="#//MStep" abstract="true">
+ 		<eAnnotations source="http://www.onceforall.org/mcore">
+	   	<details key="actionName" value="Mark as completed"/>
+	   	<details key="actionIconFilePath" value="Image Files\Mark as completed.gif"/>
+	   	<details key="interruptable" value="false"/>
+	   	<details key="stoppable" value="false"/>
+	   	<details key="terminatable" value="false"/>
+ 		</eAnnotations>
+	   	<eStructuralFeatures xsi:type="ecore:EReference" name="mArtistParameter"
+	      lowerBound="1" eType="#//MParameter" defaultValueLiteral=""
+	      containment="true" resolveProxies="false">
+	     <eAnnotations source="http://www.onceforall.org/mcore">
+	       <details key="name" value="Artist"/>
+	       <details key="description" value="Determines the text that will set as the ID3 artist tag on the MP3 file."/>
+	       <details key="readOnly" value="false"/>
+	     </eAnnotations>
+	   </eStructuralFeatures>  		
+       <eStructuralFeatures xsi:type="ecore:EAttribute" name="artistParameter" lowerBound="1" upperBound="1" transient="false" eType="//MString" derived="false" volatile="false"/>
+	   	<eStructuralFeatures xsi:type="ecore:EReference" name="mTitleParameter"
+	      lowerBound="1" eType="#//MParameter" defaultValueLiteral=""
+	      containment="true" resolveProxies="false">
+	     <eAnnotations source="http://www.onceforall.org/mcore">
+	       <details key="name" value="Title"/>
+	       <details key="description" value="Determines the text that will set as the ID3 title tag on the MP3 file."/>
+	       <details key="readOnly" value="false"/>
+	     </eAnnotations>
+	   </eStructuralFeatures>  		
+       <eStructuralFeatures xsi:type="ecore:EAttribute" name="titleParameter" lowerBound="1" upperBound="1" transient="false" eType="//MString" derived="false" volatile="false"/>
+	   	<eStructuralFeatures xsi:type="ecore:EReference" name="mAlbumParameter"
+	      lowerBound="1" eType="#//MParameter" defaultValueLiteral=""
+	      containment="true" resolveProxies="false">
+	     <eAnnotations source="http://www.onceforall.org/mcore">
+	       <details key="name" value="Album"/>
+	       <details key="description" value="Determines the text that will set as the ID3 album tag on the MP3 file."/>
+	     </eAnnotations>
+	   </eStructuralFeatures>  		
+       <eStructuralFeatures xsi:type="ecore:EAttribute" name="albumParameter" lowerBound="1" upperBound="1" transient="false" eType="//MString" derived="false" volatile="false"/>
+	   	<eStructuralFeatures xsi:type="ecore:EReference" name="mGenreParameter"
+	      lowerBound="1" eType="#//MParameter" defaultValueLiteral=""
+	      containment="true" resolveProxies="false">
+	     <eAnnotations source="http://www.onceforall.org/mcore">
+	       <details key="name" value="Genre"/>
+	       <details key="description" value="Determines the text that will set as the ID3 year tag on the MP3 file."/>
+	       <details key="readOnly" value="false"/>
+	     </eAnnotations>
+	   </eStructuralFeatures>  		
+       <eStructuralFeatures xsi:type="ecore:EAttribute" name="genreParameter" lowerBound="1" upperBound="1" defaultValueLiteral="Speech" transient="false" eType="//MString" derived="false" volatile="false"/>
+     	<eStructuralFeatures xsi:type="ecore:EAttribute" name="genreParameterHistoricValues" upperBound="3" transient="false" eType="//MString"/>
+	   	<eStructuralFeatures xsi:type="ecore:EReference" name="mYearParameter"
+	      lowerBound="1" eType="#//MParameter" defaultValueLiteral=""
+	      containment="true" resolveProxies="false">
+	     <eAnnotations source="http://www.onceforall.org/mcore">
+	       <details key="name" value="Year"/>
+	       <details key="description" value="Determines the text that will set as the ID3 year tag on the MP3 file."/>
+	     </eAnnotations>
+	   </eStructuralFeatures>  		
+       <eStructuralFeatures xsi:type="ecore:EAttribute" name="yearParameter" lowerBound="1" upperBound="1" transient="false" eType="//MString" derived="false" volatile="false"/>
+	   	<eStructuralFeatures xsi:type="ecore:EReference" name="mCommentParameter"
+	      lowerBound="1" eType="#//MParameter" defaultValueLiteral=""
+	      containment="true" resolveProxies="false">
+	     <eAnnotations source="http://www.onceforall.org/mcore">
+	       <details key="name" value="Comment"/>
+	       <details key="description" value="Determines the text that will set as the ID3 comment tag on the MP3 file."/>
+	     </eAnnotations>
+	   </eStructuralFeatures>  		
+       <eStructuralFeatures xsi:type="ecore:EAttribute" name="commentParameter" lowerBound="0" upperBound="1" transient="true" eType="//MString" derived="false" volatile="false"/>
+     	<eStructuralFeatures xsi:type="ecore:EAttribute" name="commentParameterHistoricValues" upperBound="3" transient="false" eType="//MString"/>
+	   	<eStructuralFeatures xsi:type="ecore:EReference" name="mMp3FolderReferenceParameter"
+	      lowerBound="1" eType="#//MParameter" defaultValueLiteral=""
+	      containment="true" resolveProxies="false">
+	     <eAnnotations source="http://www.onceforall.org/mcore">
+	       <details key="name" value="MP3 folder reference"/>
+	       <details key="description" value="Specifies a reference to the folder where the new MP3 file should be stored."/>
+	     </eAnnotations>
+	   </eStructuralFeatures>  		
+       <eStructuralFeatures xsi:type="ecore:EReference" name="mp3FolderReferenceParameter" lowerBound="1" upperBound="1" transient="false" eType="//MMp3Folder" derived="false" volatile="false"/>
+	   	<eStructuralFeatures xsi:type="ecore:EReference" name="mMp3EntryNameParameter"
+	      lowerBound="1" eType="#//MParameter" defaultValueLiteral=""
+	      containment="true" resolveProxies="false">
+	     <eAnnotations source="http://www.onceforall.org/mcore">
+	       <details key="name" value="MP3 entry name"/>
+	       <details key="description" value="Specifies the name of the new MP3 entry in the MP3 folder."/>
+	     </eAnnotations>
+	   </eStructuralFeatures>  		
+       <eStructuralFeatures xsi:type="ecore:EAttribute" name="mp3EntryNameParameter" lowerBound="1" upperBound="1" transient="false" eType="//MString" derived="false" volatile="false"/>
+	   	<eStructuralFeatures xsi:type="ecore:EReference" name="mMp3EntryReferenceResult"
+	      lowerBound="1" eType="#//MResult" defaultValueLiteral=""
+	      containment="true" resolveProxies="false">
+	     <eAnnotations source="http://www.onceforall.org/mcore">
+	       <details key="name" value="MP3 entry reference"/>
+	       <details key="description" value="Contains a reference to the MP3 enty that has been created."/>
+	       <details key="readOnly" value="true"/>
+	     </eAnnotations>
+	   </eStructuralFeatures>  		
+       <eStructuralFeatures xsi:type="ecore:EReference" name="mp3EntryReferenceResult" lowerBound="1" upperBound="1" transient="true" eType="//MMp3" derived="false" volatile="false"/>
+	   	<eStructuralFeatures xsi:type="ecore:EReference" name="mMp3FilePathResult"
+	      lowerBound="1" eType="#//MResult" defaultValueLiteral=""
+	      containment="true" resolveProxies="false">
+	     <eAnnotations source="http://www.onceforall.org/mcore">
+	       <details key="name" value="MP3 file path"/>
+	       <details key="description" value="Specifies the path of the converted MP3 file."/>
+	       <details key="readOnly" value="true"/>
+	     </eAnnotations>
+	   </eStructuralFeatures>  		
+       <eStructuralFeatures xsi:type="ecore:EAttribute" name="mp3FilePathResult" lowerBound="1" upperBound="1" transient="true" eType="//MExistingFile" derived="false" volatile="false"/>
 	</eClassifiers>
 </ecore:EPackage>
 
