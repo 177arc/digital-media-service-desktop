@@ -35,7 +35,6 @@ import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Locale;
-import java.util.Map;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipInputStream;
 
@@ -52,6 +51,9 @@ import javax.xml.parsers.DocumentBuilderFactory;
 
 import org.apache.commons.net.ftp.FTPClient;
 import org.apache.commons.net.ftp.FTPFile;
+import org.farng.mp3.MP3File;
+import org.farng.mp3.TagException;
+import org.farng.mp3.id3.ID3v1;
 import org.onceforall.dms.desktop.Utilities;
 import org.onceforall.dms.desktop.exception.DesktopException;
 import org.onceforall.dms.desktop.logging.Logger;
@@ -237,6 +239,9 @@ public class LogicLayerTest extends org.onceforall.dms.desktop.tests.Test {
 	 * @param titleParameter Specifies the value of the title parameter of the managed step.
 	 * @param albumParameter Specifies the value of the album parameter of the managed step.
 	 * @param yearParameter Specifies the value of the year parameter of the managed step.
+	 * @param genreParameterNumber Specifies the value of the genre number parameter of the managed step.
+	 * @param genreParameter Specifies the value of the genre parameter of the managed step.
+	 * @param commentParameter Specifies the value of the comment parameter of the managed step.
 	 * @param directoryParameter Specifies the value of the directory parameter of the managed step.
 	 * @param mp3FileName Specifies the value of the MP3 file name parameter of the managed step.
 	 * @param recordingFile Specifies the value of the recording file parameter of the managed step.
@@ -244,12 +249,15 @@ public class LogicLayerTest extends org.onceforall.dms.desktop.tests.Test {
 	 * @throws UnsupportedAudioFileException  Thrown if the recorded file format is not supported.
 	 */
 	protected void testMConvertToMP3Step(MConvertToMP3Step mStep, String artistParameter, String titleParameter, String albumParameter, String yearParameter,
-			File directoryParameter, String mp3FileName, File recordingFile) throws UnsupportedAudioFileException, IOException {		
+			String genreParameterNumber, String genreParameter, String commentParameter,
+			File directoryParameter, String mp3FileName, File recordingFile) throws UnsupportedAudioFileException, IOException, TagException {		
 		// Checks that the parameters are correct.
 		assertTrue(artistParameter.equals(mStep.getArtistParameter()));
 		assertTrue(titleParameter.equals(mStep.getTitleParameter()));
 		assertTrue(albumParameter.equals(mStep.getAlbumParameter()));
 		assertTrue(yearParameter.equals(mStep.getYearParameter()));
+		assertTrue(genreParameter.equals(mStep.getGenreParameter()));
+		assertTrue(commentParameter.equals(mStep.getCommentParameter()));
 		assertTrue(directoryParameter.equals(mStep.getDirectoryParameter()));
 		assertTrue(mp3FileName.equals(mStep.getMp3FileNameParameter().getPath()));
 		assertTrue(recordingFile.equals(mStep.getRecordingFileParameter()));
@@ -284,14 +292,27 @@ public class LogicLayerTest extends org.onceforall.dms.desktop.tests.Test {
 		assertTrue(!isAudioFileSilent(AudioSystem.getAudioInputStream(mp3File)));
 		
 		// Checks MP3 ID3 tags.
-		 AudioFileFormat baseFileFormat = AudioSystem.getAudioFileFormat(mp3File);
+	    MP3File mp3file = new MP3File(mp3File, true);
+	    ID3v1 id3v1Tag = mp3file.getID3v1Tag();
+	    assertTrue(mStep.getAlbumParameter().substring(0, Math.min(mStep.getAlbumParameter().length(), 30)).equals(id3v1Tag.getAlbum()));
+	    assertTrue(mStep.getYearParameter().substring(0, Math.min(mStep.getYearParameter().length(), 4)).equals(id3v1Tag.getYear()));
+	    assertTrue(mStep.getArtistParameter().substring(0, Math.min(mStep.getArtistParameter().length(), 30)).equals(id3v1Tag.getArtist()));
+	    assertTrue(mStep.getTitleParameter().substring(0, Math.min(mStep.getTitleParameter().length(), 30)).equals(id3v1Tag.getTitle()));
+	    assertTrue(genreParameterNumber.equals(id3v1Tag.getSongGenre()));
+	    assertTrue(mStep.getCommentParameter().substring(0, Math.min(mStep.getCommentParameter().length(), 30)).equals(id3v1Tag.getComment()));
+		
+	    /*?AudioFileFormat baseFileFormat = AudioSystem.getAudioFileFormat(mp3File);
+
+		 
 		 if (baseFileFormat instanceof TAudioFileFormat) {
 		     Map<String, Object> properties = ((TAudioFileFormat)baseFileFormat).properties();
 		     assertTrue(mStep.getAlbumParameter().equals(properties.get("album"))); //$NON-NLS-1$
 		     assertTrue(mStep.getYearParameter().equals(properties.get("date"))); //$NON-NLS-1$
 		     assertTrue(mStep.getArtistParameter().equals(properties.get("author"))); //$NON-NLS-1$
 		     assertTrue(mStep.getTitleParameter().equals(properties.get("title"))); //$NON-NLS-1$
-		 }
+		     assertTrue(mStep.getGenreParameter().equals(properties.get("mp3.id3tag.genre"))); //$NON-NLS-1$
+		     assertTrue(mStep.getCommentParameter().equals(properties.get("comment"))); //$NON-NLS-1$
+		 }*/
 		 
 		// Checks the MP3 entry.
 		final MMp3 mp3Entry = mStep.getMp3EntryReferenceResult();
@@ -316,7 +337,7 @@ public class LogicLayerTest extends org.onceforall.dms.desktop.tests.Test {
 	protected void testMPublishMP3Step(final MPublishNewMp3Step mStep, String contentPageRelativeFtpPathParameter, String contentHeaderFilePathParameter, 
 		String contentFooterFilePathParameter, String contentFilePathParameter, String podcastRelativeFtpPathParameter, String podcastHeaderFilePathParameter, 
 		String podcastFilePathParameter,
-		String mp3RelativeFtpPathParameter, String maximumDiskSpaceParameter, String mp3EntryParameter, String linkTextParameter, String linkDescriptionParameter, String commentParameter,
+		String mp3RelativeFtpPathParameter, String maximumDiskSpaceParameter, String mp3EntryParameter, String linkTextParameter, String linkDescriptionParameter,
 		String podcastTitleParameter, String podcastSubtitleParameter, String podcastSummaryParameter, 
 		String podcastPublicationDateParameter) throws Exception {
 		
@@ -329,7 +350,7 @@ public class LogicLayerTest extends org.onceforall.dms.desktop.tests.Test {
 		mStep.getMPodcastHeaderFilePathParameter().setValueForUI(podcastHeaderFilePathParameter);
 		mStep.getMPodcastFilePathParameter().setValueForUI(podcastFilePathParameter);
 		mStep.getMMp3RelativeFtpPathParameter().setValueForUI(mp3RelativeFtpPathParameter);
-		mStep.getMCommentParameter().setValueForUI(commentParameter);
+		//mStep.getMCommentParameter().setValueForUI(commentParameter);
 		mStep.getMMaxiumumDiskSpaceParameter().setValueForUI(maximumDiskSpaceParameter);
 		
 		// Checks that the parameters are correct.
@@ -611,7 +632,7 @@ public class LogicLayerTest extends org.onceforall.dms.desktop.tests.Test {
 
 						// Checks the file system information file.
 						ZipEntry entry = unzippedStream.getNextEntry();
-						assertTrue(entry.getName().equals("File system infromation.txt"));
+						assertTrue(entry.getName().equals("File system information.txt"));
 						String emailFileInfoContent = getStringFromInputStream(unzippedStream, true);
 						assertTrue(emailFileInfoContent.indexOf(mStep.getMApplication().getPathProperty().getAbsolutePath()) >= 0);	
 					}

@@ -30,6 +30,7 @@ import java.util.List;
 
 import javax.sound.sampled.UnsupportedAudioFileException;
 
+import org.farng.mp3.TagException;
 import org.onceforall.dms.desktop.Utilities;
 import org.onceforall.dms.desktop.logic.MBurnCdStep;
 import org.onceforall.dms.desktop.logic.MCheckFreeDiskSpaceStep;
@@ -182,8 +183,9 @@ public class LogicLayerNormalServiceTest extends LogicLayerTest {
 	 * @throws UnsupportedAudioFileException  Thrown if the recorded file format is not supported.
 	 */
 	@Test(dependsOnMethods = { "testMBurnCdStep" }, alwaysRun=true) //$NON-NLS-1$
-	public void testMConvertToMP3Step() throws UnsupportedAudioFileException, IOException {
+	public void testMConvertToMP3Step() throws UnsupportedAudioFileException, IOException, TagException {
 		MConvertToMP3Step mStep = (MConvertToMP3Step) mScript.getMSteps().get(8);
+		mStep.setCommentParameter(TestData.LogicLayerNormalServiceTest_CommentParameter);
 		MEnterServiceInformationStep mEnterServiceInformationStep = (MEnterServiceInformationStep) mScript.getMSteps().get(0);
 		MCreateDirectoryStep mCreateDirectoryStep = (MCreateDirectoryStep) mScript.getMSteps().get(2);
 		MRecordStep mRecordSermonStep = (MRecordStep) mScript.getMSteps().get(5);
@@ -193,7 +195,11 @@ public class LogicLayerNormalServiceTest extends LogicLayerTest {
 		testMConvertToMP3Step(mStep, mEnterServiceInformationStep.getSpeakersNameResult(),
 				mEnterServiceInformationStep.getMTitleOfTalkResult().getValueForUI()+" - "+mEnterServiceInformationStep.getMReadingResult().getValueForUI()+" on "+mEnterServiceInformationStep.getMServiceDateResult().getValueForUI(),  //$NON-NLS-1$ //$NON-NLS-2$
 				mEnterServiceInformationStep.getServiceTypeResult(),
-				""+serviceDateCalendar.get(Calendar.YEAR), mCreateDirectoryStep.getDirectoryResult(), Utilities.convertToFileName(mEnterServiceInformationStep.getTitleOfTalkResult()+" - "+mEnterServiceInformationStep.getReadingResult())+".mp3", //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+				""+serviceDateCalendar.get(Calendar.YEAR), //$NON-NLS-1$
+				TestData.LogicLayerNormalServiceTest_GenreParameterNumber,
+				mStep.getGenreParameter(),
+				mStep.getCommentParameter(),
+				mCreateDirectoryStep.getDirectoryResult(), Utilities.convertToFileName(mEnterServiceInformationStep.getTitleOfTalkResult()+" - "+mEnterServiceInformationStep.getReadingResult())+".mp3", //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
 				mRecordSermonStep.getRecordingFileResult());
 	}
 	
@@ -222,7 +228,6 @@ public class LogicLayerNormalServiceTest extends LogicLayerTest {
 				mConvertToMP3Step.getMp3EntryReferenceResult().getPathForUI(), 
 				mEnterServiceInformationStep.getMTitleOfTalkResult().getValueForUI()+" - "+mEnterServiceInformationStep.getMReadingResult().getValueForUI(),  //$NON-NLS-1$
 				mEnterServiceInformationStep.getMServiceDateResult().getValueForUI()+" - "+mEnterServiceInformationStep.getMServiceTypeResult().getValueForUI()+" - "+mEnterServiceInformationStep.getMSpeakersNameResult().getValueForUI(),  //$NON-NLS-1$ //$NON-NLS-2$
-				TestData.LogicLayerNormalServiceTest_CommentParameter, 
 				mEnterServiceInformationStep.getMTitleOfTalkResult().getValueForUI()+" - "+mEnterServiceInformationStep.getMReadingResult().getValueForUI(),  //$NON-NLS-1$
 				mEnterServiceInformationStep.getMServiceDateResult().getValueForUI()+" - "+mEnterServiceInformationStep.getMServiceTypeResult().getValueForUI()+" - "+mEnterServiceInformationStep.getMSpeakersNameResult().getValueForUI(), //$NON-NLS-1$ //$NON-NLS-2$
 				mEnterServiceInformationStep.getReadingResult(),

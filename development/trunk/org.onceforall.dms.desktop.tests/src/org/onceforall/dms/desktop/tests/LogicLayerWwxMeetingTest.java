@@ -18,6 +18,7 @@ import java.util.Date;
 
 import javax.sound.sampled.UnsupportedAudioFileException;
 
+import org.farng.mp3.TagException;
 import org.onceforall.dms.desktop.Utilities;
 import org.onceforall.dms.desktop.logic.MCheckFreeDiskSpaceStep;
 import org.onceforall.dms.desktop.logic.MCheckInputLevelsStep;
@@ -139,7 +140,7 @@ public class LogicLayerWwxMeetingTest extends LogicLayerTest {
 	 * @throws UnsupportedAudioFileException  Thrown if the recorded file format is not supported.
 	 */
 	@Test(dependsOnMethods = { "testMRecordPart2Step" }, alwaysRun=true) //$NON-NLS-1$
-	public void testMConvertFirstPartToMP3Step() throws UnsupportedAudioFileException, IOException {
+	public void testMConvertFirstPartToMP3Step() throws UnsupportedAudioFileException, IOException, TagException {
 		MConvertToMP3Step mStep = (MConvertToMP3Step) mScript.getMSteps().get(currentStepIndex);
 		MEnterWwxInformationStep mEnterWwxInformationStep = (MEnterWwxInformationStep) mScript.getMSteps().get(0);
 		MCreateDirectoryStep mCreateDirectoryStep = (MCreateDirectoryStep) mScript.getMSteps().get(2);
@@ -150,7 +151,11 @@ public class LogicLayerWwxMeetingTest extends LogicLayerTest {
 		testMConvertToMP3Step(mStep, mEnterWwxInformationStep.getSpeakersNameResult(),
 				mEnterWwxInformationStep.getMTitleOfTalkResult().getValueForUI()+" on "+mEnterWwxInformationStep.getMWwxDateResult().getValueForUI(),  //$NON-NLS-1$
 				"WWX "+mEnterWwxInformationStep.getFirstPartResult(), //$NON-NLS-1$
-				""+serviceDateCalendar.get(Calendar.YEAR), mCreateDirectoryStep.getDirectoryResult(),  //$NON-NLS-1$
+				""+serviceDateCalendar.get(Calendar.YEAR), //$NON-NLS-1$
+				TestData.LogicLayerWwxMeetingTest_GenreParameterNumber,
+				mStep.getGenreParameter(),
+				mStep.getCommentParameter(),
+				mCreateDirectoryStep.getDirectoryResult(),  //$NON-NLS-1$
 				Utilities.convertToFileName(mEnterWwxInformationStep.getTitleOfTalkResult()+" - "+mEnterWwxInformationStep.getFirstPartResult())+".mp3", //$NON-NLS-1$ //$NON-NLS-2$
 				mRecordFristPartStep.getRecordingFileResult());
 	}
@@ -162,8 +167,9 @@ public class LogicLayerWwxMeetingTest extends LogicLayerTest {
 	 * @throws UnsupportedAudioFileException  Thrown if the recorded file format is not supported.
 	 */
 	@Test(dependsOnMethods = { "testMConvertFirstPartToMP3Step" }, alwaysRun=true) //$NON-NLS-1$
-	public void testMConvertSecondPartToMP3Step() throws UnsupportedAudioFileException, IOException {
+	public void testMConvertSecondPartToMP3Step() throws UnsupportedAudioFileException, IOException, TagException {
 		MConvertToMP3Step mStep = (MConvertToMP3Step) mScript.getMSteps().get(currentStepIndex);
+		mStep.setCommentParameter(TestData.LogicLayerWwxMeetingTest_CommentParameter);
 		MEnterWwxInformationStep mEnterWwxInformationStep = (MEnterWwxInformationStep) mScript.getMSteps().get(0);
 		MCreateDirectoryStep mCreateDirectoryStep = (MCreateDirectoryStep) mScript.getMSteps().get(2);
 		MRecordStep mRecordSecondPartStep = (MRecordStep) mScript.getMSteps().get(currentStepIndex-2);
@@ -173,7 +179,11 @@ public class LogicLayerWwxMeetingTest extends LogicLayerTest {
 		testMConvertToMP3Step(mStep, mEnterWwxInformationStep.getSpeakersNameResult(),
 				mEnterWwxInformationStep.getMTitleOfTalkResult().getValueForUI()+" on "+mEnterWwxInformationStep.getMWwxDateResult().getValueForUI(),  //$NON-NLS-1$
 				"WWX "+mEnterWwxInformationStep.getSecondPartResult(), //$NON-NLS-1$
-				""+serviceDateCalendar.get(Calendar.YEAR), mCreateDirectoryStep.getDirectoryResult(),  //$NON-NLS-1$
+				""+serviceDateCalendar.get(Calendar.YEAR),  //$NON-NLS-1$
+				TestData.LogicLayerWwxMeetingTest_GenreParameterNumber,
+				mStep.getGenreParameter(),
+				mStep.getCommentParameter(),
+				mCreateDirectoryStep.getDirectoryResult(),  //$NON-NLS-1$
 				Utilities.convertToFileName(mEnterWwxInformationStep.getTitleOfTalkResult()+" - "+mEnterWwxInformationStep.getSecondPartResult())+".mp3", //$NON-NLS-1$ //$NON-NLS-2$
 				mRecordSecondPartStep.getRecordingFileResult());
 	}
@@ -203,7 +213,6 @@ public class LogicLayerWwxMeetingTest extends LogicLayerTest {
 				mConvertToMP3Step.getMp3EntryReferenceResult().getPathForUI(), 
 				mEnterWwxInformationStep.getMTitleOfTalkResult().getValueForUI(), 
 				mEnterWwxInformationStep.getMWwxDateResult().getValueForUI()+" - "+mEnterWwxInformationStep.getMSpeakersNameResult().getValueForUI(),  //$NON-NLS-1$
-				TestData.LogicLayerWwxMeetingTest_CommentParameter, 
 				mEnterWwxInformationStep.getMTitleOfTalkResult().getValueForUI(), 
 				mEnterWwxInformationStep.getMWwxDateResult().getValueForUI()+" - "+mEnterWwxInformationStep.getMSpeakersNameResult().getValueForUI(), //$NON-NLS-1$
 				mEnterWwxInformationStep.getMTitleOfTalkResult().getValueForUI(),

@@ -62,6 +62,8 @@ public class TestData extends NLS {
 
 	public static String LogicLayerNormalServiceTest_DateParameter;
 
+	public static String LogicLayerNormalServiceTest_GenreParameterNumber;
+
 	public static String LogicLayerNormalServiceTest_PostSermonAudioFile;
 
 	public static String LogicLayerNormalServiceTest_PostSermonRecordingFileParameter;
@@ -145,6 +147,8 @@ public class TestData extends NLS {
 	public static String LogicLayerWwxMeetingTest_FirstPartAudioFile;
 
 	public static String LogicLayerWwxMeetingTest_FirstPartParameter;
+
+	public static String LogicLayerWwxMeetingTest_GenreParameterNumber;
 
 	public static String LogicLayerWwxMeetingTest_Mp3RelativeFtpPathParameter;
 
