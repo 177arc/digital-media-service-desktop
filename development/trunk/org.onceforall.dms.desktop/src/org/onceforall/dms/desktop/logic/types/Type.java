@@ -92,6 +92,12 @@ public abstract class Type {
 	/** Specifies the file value type for files that have to exist. */
 	public static final FileType EXISTING_FILE_TYPE = new FileType(true);
     
+	/** Specifies the file value type for directories that do not have to exist. */
+	public static final DirectoryType DIRECTORY_TYPE = new DirectoryType();
+    
+	/** Specifies the file value type for directories that have to exist. */
+	public static final DirectoryType EXISTING_DIRECTORY_TYPE = new DirectoryType(true);
+   
 	/** Specifies the state value type for steps. */
 	public static final MStepStateType STEP_STATE_TYPE = new MStepStateType();
     
@@ -126,21 +132,7 @@ public abstract class Type {
     	VALUE_TYPES_BY_CLASS.put(DATE_TIME_TYPE.getJavaClass(), DATE_TIME_TYPE);
     	VALUE_TYPES_BY_CLASS.put(DURATION_TYPE.getJavaClass(), DURATION_TYPE);
     	VALUE_TYPES_BY_CLASS.put(FILE_TYPE.getJavaClass(), FILE_TYPE);
-  
-    	/*?VALUE_TYPES_BY_NAME.put(STRING_TYPE.getName(), STRING_TYPE);
-    	VALUE_TYPES_BY_NAME.put(BOOLEAN_TYPE.getName(), BOOLEAN_TYPE);
-    	VALUE_TYPES_BY_NAME.put(LONG_TYPE.getName(), LONG_TYPE);
-    	VALUE_TYPES_BY_NAME.put(STATE_TYPE.getName(), STATE_TYPE);
-    	VALUE_TYPES_BY_NAME.put(URL_TYPE.getName(), URL_TYPE);
-    	VALUE_TYPES_BY_NAME.put(DATE_TIME_TYPE.getName(), DATE_TIME_TYPE);
-    	VALUE_TYPES_BY_NAME.put(DATE_TYPE.getName(), DATE_TYPE);
-    	VALUE_TYPES_BY_NAME.put(DURATION_TYPE.getName(), DURATION_TYPE);
-    	VALUE_TYPES_BY_NAME.put(FILE_TYPE.getName(), FILE_TYPE);
-    	VALUE_TYPES_BY_NAME.put(EXISTING_FILE_TYPE.getName(), EXISTING_FILE_TYPE);
-    	VALUE_TYPES_BY_NAME.put(PASSWORD_TYPE.getName(), PASSWORD_TYPE);
-    	VALUE_TYPES_BY_NAME.put(TIME_TYPE.getName(), TIME_TYPE);
-    	VALUE_TYPES_BY_NAME.put(STEP_STATE_TYPE.getName(), STEP_STATE_TYPE);
-    	VALUE_TYPES_BY_NAME.put(MP3_STATE_TYPE.getName(), MP3_STATE_TYPE);*/
+    	VALUE_TYPES_BY_CLASS.put(DIRECTORY_TYPE.getJavaClass(), DIRECTORY_TYPE);
     }
     
     
