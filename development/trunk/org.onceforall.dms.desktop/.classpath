@@ -14,6 +14,7 @@
 	<classpathentry path="lib/org.eclipse.emf.ecore_2.2.0.v200606271057.jar" kind="lib"/>
 	<classpathentry path="lib/org.eclipse.emf.ecore.xmi_2.2.0.v200606271057.jar" kind="lib"/>
 	<classpathentry path="lib/org.eclipse.emf.common_2.2.0.v200606271057.jar" kind="lib"/>
+	<classpathentry path="lib/jid3lib-0.5.4.jar" kind="lib"/>
 	<classpathentry path="org.eclipse.jdt.launching.JRE_CONTAINER" kind="con"/>
 	<classpathentry path="org.eclipse.pde.core.requiredPlugins" kind="con"/>
 	<classpathentry path="lib/commons-net-1.4.1.jar" kind="lib"/>
