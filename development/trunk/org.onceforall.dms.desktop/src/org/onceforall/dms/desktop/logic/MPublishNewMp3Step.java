@@ -989,7 +989,7 @@ public class MPublishNewMp3Step extends MPublishMp3sStep {
 	 * @return the value of the '<em>Comment Parameter</em>' attribute.
 	 * @see #setCommentParameter(String)
 	 * @see org.onceforall.dms.desktop.logic.LogicPackage#getMPublishNewMp3Step_CommentParameter()
-	 * @model dataType="org.onceforall.dms.desktop.logic.MString"
+	 * @model dataType="org.onceforall.dms.desktop.logic.MString" transient="true"
 	 * @generated
 	 */
 	public String getCommentParameter() {

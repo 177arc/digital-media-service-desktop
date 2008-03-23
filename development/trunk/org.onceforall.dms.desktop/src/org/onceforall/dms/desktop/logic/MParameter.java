@@ -194,6 +194,26 @@ public class MParameter extends MValue {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 	/**
 	 * Get the default value of the '{@link #getTypeNameForUI() <em>Type Name For UI</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -257,7 +277,7 @@ public class MParameter extends MValue {
 		this.description = description;
 		this.iconFilePath = iconFilePath;
 	}
-
+	
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

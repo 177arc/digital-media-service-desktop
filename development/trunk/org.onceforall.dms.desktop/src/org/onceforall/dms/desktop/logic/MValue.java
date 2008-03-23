@@ -918,17 +918,36 @@ public abstract class MValue extends MElement {
 	 * @see org.onceforall.dms.desktop.logic.MElement#processNotification(org.eclipse.emf.common.notify.Notification)
 	 */
 	@Override
-	public synchronized void processNotification(Notification notification) {				
+	public synchronized void processNotification(Notification notification) {
+		processInputValuesNotification(notification);
+		propagateNotification(notification);
+	}
+	
+	/**
+	 * Processes notifications from input values.
+	 * 
+	 * @param notification Specifies the notification to process.
+	 */
+	protected void processInputValuesNotification(Notification notification) {
 		if(notification.getEventType() == Notification.SET && notification.getNotifier() instanceof MValue 
 				&& mInputValues != null && mInputValues.contains(notification.getNotifier()) 
 				&& ((EStructuralFeature) notification.getFeature()).getName().equals("value"))
 			setValueFromMValue((MValue) notification.getNotifier());
-
+	}
+	
+	/**
+	 * Propagates changes to the actual value or the historical values to observers of this
+	 * managed value.
+	 * 
+	 * @param notification Specifies the notification to propagate.
+	 */
+	protected void propagateNotification(Notification notification) {
 		if(notification.getFeature() != null && notification.getFeature().equals(valueEFeature))
 			eNotify(new ENotificationImpl(this, notification.getEventType(), LogicPackage.MVALUE__VALUE, notification.getOldValue(), notification.getNewValue()));
 		
 		if(notification.getFeature() != null && notification.getFeature().equals(historicValuesEFeature))
 			eNotify(new ENotificationImpl(this, notification.getEventType(), LogicPackage.MVALUE__HISTORIC_VALUES, notification.getOldValue(), notification.getNewValue()));
+	
 	}
 	
 	/**
@@ -1170,5 +1189,13 @@ public abstract class MValue extends MElement {
 		return result;
 	}
     
+	/**
+	 * Determines whether the actual value is either <code>null</code> or an empty list.
+	 * 
+	 * @return Returns whether the actual value is either <code>null</code> or an empty list.
+	 */
+	public boolean isEmpty() {
+		return getValue() == null || getUpperBound() != 1 && ((List) getValue()).size() == 0;
+	}
 	
 } // MValue

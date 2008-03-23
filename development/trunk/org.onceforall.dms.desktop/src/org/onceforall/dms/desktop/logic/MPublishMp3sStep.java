@@ -913,7 +913,7 @@ public abstract class MPublishMp3sStep extends MFtpStep {
 		setMPodcastRelativeFtpPathParameter(new MParameter(false, "Podcast relative FTP path", "Specifies the path relative to the FTP path where the podcast RSS feed should be created or updated.", null));			 
 		setMPodcastHeaderFilePathParameter(new MParameter(false, "Podcast header file path", "Specifies the file path to the header for the podcast file.", null));			 
 		setMContentIncludeMp3PlayerParameter(new MParameter(false, "Include MP3 player on content page", "Specifies whether an MP3 player should included on the content page or not.", null));			 
-		setMContentGroupRecordingsParameter(new MParameter(false, "Group recordinds by month on content page", "Specifies whether the recordings on the content page should be grouped by month.", null));			 
+		setMContentGroupRecordingsParameter(new MParameter(false, "Group recordings by month on content page", "Specifies whether the recordings on the content page should be grouped by month.", null));			 
 		setMContentPageUrlResult(new MResult(false, "Content page URL", "Specifies the URL to content page.", null));			 
 		setMPodcastFileUrlResult(new MResult(false, "Podcast file URL", "Specifies the URL to podcast file.", null));
 
@@ -2125,7 +2125,7 @@ public abstract class MPublishMp3sStep extends MFtpStep {
 	 * @see #setMContentGroupRecordingsParameter(MParameter)
 	 * @see org.onceforall.dms.desktop.logic.LogicPackage#getMPublishMp3sStep_MContentGroupRecordingsParameter()
 	 * @model containment="true" required="true"
-	 *        annotation="http://www.onceforall.org/mcore name='Group recordinds by month on content page' description='Specifies whether the recordings on the content page should be grouped by month.' readOnly='false'"
+	 *        annotation="http://www.onceforall.org/mcore name='Group recordings by month on content page' description='Specifies whether the recordings on the content page should be grouped by month.' readOnly='false'"
 	 * @generated
 	 */
 	public MParameter getMContentGroupRecordingsParameter() {
@@ -2162,7 +2162,7 @@ public abstract class MPublishMp3sStep extends MFtpStep {
 			if (mContentGroupRecordingsParameter != null)
 				msgs = ((InternalEObject)mContentGroupRecordingsParameter).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - LogicPackage.MPUBLISH_MP3S_STEP__MCONTENT_GROUP_RECORDINGS_PARAMETER, null, msgs);
 			if (newMContentGroupRecordingsParameter != null) {				
-				newMContentGroupRecordingsParameter.setDefaultName("Group recordinds by month on content page");
+				newMContentGroupRecordingsParameter.setDefaultName("Group recordings by month on content page");
 				newMContentGroupRecordingsParameter.setDefaultDescription("Specifies whether the recordings on the content page should be grouped by month.");
 				newMContentGroupRecordingsParameter.setValueType(Type.getTypeForName("Yes/No"));
 				newMContentGroupRecordingsParameter.setValueEFeature((EStructuralFeature) eClass().getEStructuralFeature(LogicPackage.MPUBLISH_MP3S_STEP__CONTENT_GROUP_RECORDINGS_PARAMETER));

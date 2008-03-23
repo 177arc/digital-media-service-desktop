@@ -416,7 +416,7 @@ public class MCreateDirectoryStep extends MStep {
 			if (newMParentDirectoryParameter != null) {				
 				newMParentDirectoryParameter.setDefaultDescription("Specifies the path to the directory in which the new directory is to be created.");
 				newMParentDirectoryParameter.setDefaultName("Parent directory");
-				newMParentDirectoryParameter.setValueType(Type.getTypeForName("File (must exist)"));
+				newMParentDirectoryParameter.setValueType(Type.getTypeForName("Directory (must exist)"));
 				newMParentDirectoryParameter.setValueEFeature((EStructuralFeature) eClass().getEStructuralFeature(LogicPackage.MCREATE_DIRECTORY_STEP__PARENT_DIRECTORY_PARAMETER));
 				newMParentDirectoryParameter.setHistoricValuesEFeature((EStructuralFeature) eClass().getEStructuralFeature(LogicPackage.MCREATE_DIRECTORY_STEP__PARENT_DIRECTORY_PARAMETER_HISTORIC_VALUES));
 				msgs = ((InternalEObject)newMParentDirectoryParameter).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - LogicPackage.MCREATE_DIRECTORY_STEP__MPARENT_DIRECTORY_PARAMETER, null, msgs);
@@ -447,7 +447,7 @@ public class MCreateDirectoryStep extends MStep {
 	 * @return the value of the '<em>Parent Directory Parameter</em>' attribute.
 	 * @see #setParentDirectoryParameter(File)
 	 * @see org.onceforall.dms.desktop.logic.LogicPackage#getMCreateDirectoryStep_ParentDirectoryParameter()
-	 * @model dataType="org.onceforall.dms.desktop.logic.MExistingFile" required="true"
+	 * @model dataType="org.onceforall.dms.desktop.logic.MExistingDirectory" required="true"
 	 * @generated
 	 */
 	public File getParentDirectoryParameter() {
@@ -480,7 +480,7 @@ public class MCreateDirectoryStep extends MStep {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Parent Directory Parameter Historic Values</em>' attribute list.
 	 * @see org.onceforall.dms.desktop.logic.LogicPackage#getMCreateDirectoryStep_ParentDirectoryParameterHistoricValues()
-	 * @model type="java.io.File" dataType="org.onceforall.dms.desktop.logic.MExistingFile" upper="3"
+	 * @model type="java.io.File" dataType="org.onceforall.dms.desktop.logic.MExistingDirectory" upper="3"
 	 * @generated
 	 */
 	public EList getParentDirectoryParameterHistoricValues() {
@@ -541,7 +541,7 @@ public class MCreateDirectoryStep extends MStep {
 			if (newMDirectoryNameParameter != null) {				
 				newMDirectoryNameParameter.setDefaultDescription("Specifies the name of the directory to be created.");
 				newMDirectoryNameParameter.setDefaultName("Directory name");
-				newMDirectoryNameParameter.setValueType(Type.getTypeForName("File"));
+				newMDirectoryNameParameter.setValueType(Type.getTypeForName("Directory"));
 				newMDirectoryNameParameter.setValueEFeature((EStructuralFeature) eClass().getEStructuralFeature(LogicPackage.MCREATE_DIRECTORY_STEP__DIRECTORY_NAME_PARAMETER));
 				newMDirectoryNameParameter.setHistoricValuesEFeature(null);
 				msgs = ((InternalEObject)newMDirectoryNameParameter).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - LogicPackage.MCREATE_DIRECTORY_STEP__MDIRECTORY_NAME_PARAMETER, null, msgs);
@@ -572,7 +572,7 @@ public class MCreateDirectoryStep extends MStep {
 	 * @return the value of the '<em>Directory Name Parameter</em>' attribute.
 	 * @see #setDirectoryNameParameter(File)
 	 * @see org.onceforall.dms.desktop.logic.LogicPackage#getMCreateDirectoryStep_DirectoryNameParameter()
-	 * @model dataType="org.onceforall.dms.desktop.logic.MFile" required="true"
+	 * @model dataType="org.onceforall.dms.desktop.logic.MDirectory" required="true"
 	 * @generated
 	 */
 	public File getDirectoryNameParameter() {
@@ -645,7 +645,7 @@ public class MCreateDirectoryStep extends MStep {
 			if (newMDirectoryResult != null) {				
 				newMDirectoryResult.setDefaultDescription("Specifies the path of the created service directory.");
 				newMDirectoryResult.setDefaultName("Directory");
-				newMDirectoryResult.setValueType(Type.getTypeForName("File (must exist)"));
+				newMDirectoryResult.setValueType(Type.getTypeForName("Directory (must exist)"));
 				newMDirectoryResult.setValueEFeature((EStructuralFeature) eClass().getEStructuralFeature(LogicPackage.MCREATE_DIRECTORY_STEP__DIRECTORY_RESULT));
 				newMDirectoryResult.setHistoricValuesEFeature(null);
 				msgs = ((InternalEObject)newMDirectoryResult).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - LogicPackage.MCREATE_DIRECTORY_STEP__MDIRECTORY_RESULT, null, msgs);
@@ -676,7 +676,7 @@ public class MCreateDirectoryStep extends MStep {
 	 * @return the value of the '<em>Directory Result</em>' attribute.
 	 * @see #setDirectoryResult(File)
 	 * @see org.onceforall.dms.desktop.logic.LogicPackage#getMCreateDirectoryStep_DirectoryResult()
-	 * @model dataType="org.onceforall.dms.desktop.logic.MExistingFile" required="true" transient="true"
+	 * @model dataType="org.onceforall.dms.desktop.logic.MExistingDirectory" required="true" transient="true"
 	 * @generated
 	 */
 	public File getDirectoryResult() {

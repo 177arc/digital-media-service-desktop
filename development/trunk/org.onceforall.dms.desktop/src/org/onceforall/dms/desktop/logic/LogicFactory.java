@@ -105,6 +105,7 @@ public class LogicFactory extends EFactoryImpl {
 			case LogicPackage.MMP3: return (EObject)createMMp3();
 			case LogicPackage.MBURN_CD_STEP: return (EObject)createMBurnCdStep();
 			case LogicPackage.MTEST_STEP: return (EObject)createMTestStep();
+			case LogicPackage.MNAME_TAG_MP3_STEP: return (EObject)createMNameTagMp3Step();
 			case LogicPackage.MDMS_APPLICATION_MGET_DATA_UPGRADE_INFO_STEP: return (EObject)createMDmsApplicationMGetDataUpgradeInfoStep();
 			case LogicPackage.MDMS_APPLICATION_MUPGRADE_DATA_STEP: return (EObject)createMDmsApplicationMUpgradeDataStep();
 			default:
@@ -119,6 +120,10 @@ public class LogicFactory extends EFactoryImpl {
 	 */
 	public Object createFromString(EDataType eDataType, String initialValue) {
 		switch (eDataType.getClassifierID()) {
+			case LogicPackage.MDIRECTORY:
+				return createMDirectoryFromString(eDataType, initialValue);
+			case LogicPackage.MEXISTING_DIRECTORY:
+				return createMExistingDirectoryFromString(eDataType, initialValue);
 			case LogicPackage.MFILE:
 				return createMFileFromString(eDataType, initialValue);
 			case LogicPackage.MEXISTING_FILE:
@@ -161,6 +166,10 @@ public class LogicFactory extends EFactoryImpl {
 	 */
 	public String convertToString(EDataType eDataType, Object instanceValue) {
 		switch (eDataType.getClassifierID()) {
+			case LogicPackage.MDIRECTORY:
+				return convertMDirectoryToString(eDataType, instanceValue);
+			case LogicPackage.MEXISTING_DIRECTORY:
+				return convertMExistingDirectoryToString(eDataType, instanceValue);
 			case LogicPackage.MFILE:
 				return convertMFileToString(eDataType, instanceValue);
 			case LogicPackage.MEXISTING_FILE:
@@ -351,6 +360,16 @@ public class LogicFactory extends EFactoryImpl {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public MNameTagMp3Step createMNameTagMp3Step() {
+		MNameTagMp3Step mNameTagMp3Step = new MNameTagMp3Step();
+		return mNameTagMp3Step;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public MDmsApplicationMGetDataUpgradeInfoStep createMDmsApplicationMGetDataUpgradeInfoStep() {
 		MDmsApplicationMGetDataUpgradeInfoStep mDmsApplicationMGetDataUpgradeInfoStep = new MDmsApplicationMGetDataUpgradeInfoStep();
 		return mDmsApplicationMGetDataUpgradeInfoStep;
@@ -364,6 +383,42 @@ public class LogicFactory extends EFactoryImpl {
 	public MDmsApplicationMUpgradeDataStep createMDmsApplicationMUpgradeDataStep() {
 		MDmsApplicationMUpgradeDataStep mDmsApplicationMUpgradeDataStep = new MDmsApplicationMUpgradeDataStep();
 		return mDmsApplicationMUpgradeDataStep;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public File createMDirectoryFromString(EDataType eDataType, String initialValue) {
+		return (File)super.createFromString(eDataType, initialValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertMDirectoryToString(EDataType eDataType, Object instanceValue) {
+		return super.convertToString(eDataType, instanceValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public File createMExistingDirectoryFromString(EDataType eDataType, String initialValue) {
+		return (File)super.createFromString(eDataType, initialValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertMExistingDirectoryToString(EDataType eDataType, Object instanceValue) {
+		return super.convertToString(eDataType, instanceValue);
 	}
 
 	/**

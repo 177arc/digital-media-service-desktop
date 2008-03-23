@@ -171,6 +171,16 @@ public abstract class MApplication extends MObject {
 
 
 
+
+
+
+
+
+
+
+
+
+
 	/**
 	 * The cached value of the '{@link #getMDataFileProperty() <em>MData File Property</em>}' containment reference.
 	 * <!-- begin-user-doc -->
@@ -189,7 +199,7 @@ public abstract class MApplication extends MObject {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final File DATA_FILE_PROPERTY_EDEFAULT = (File)LogicFactory.eINSTANCE.createFromString(LogicPackage.eINSTANCE.getMFile(), "Application Data Files\\Data.xml");
+	protected static final File DATA_FILE_PROPERTY_EDEFAULT = (File)LogicFactory.eINSTANCE.createFromString(LogicPackage.eINSTANCE.getMExistingFile(), "Application Data Files\\Data.xml");
 	
 	/**
 	 * Get the default value of the '{@link #getDataFileProperty() <em>Data File Property</em>}' attribute.
@@ -664,7 +674,7 @@ public abstract class MApplication extends MObject {
 			if (newMDataFileProperty != null) {				
 				newMDataFileProperty.setDefaultName("Data file");
 				newMDataFileProperty.setDefaultDescription("Specifies the file that contains the application data.");
-				newMDataFileProperty.setValueType(Type.getTypeForName("File"));
+				newMDataFileProperty.setValueType(Type.getTypeForName("File (must exist)"));
 				newMDataFileProperty.setValueEFeature((EStructuralFeature) eClass().getEStructuralFeature(LogicPackage.MAPPLICATION__DATA_FILE_PROPERTY));
 				newMDataFileProperty.setHistoricValuesEFeature((EStructuralFeature) eClass().getEStructuralFeature(LogicPackage.MAPPLICATION__DATA_FILE_PROPERTY_HISTORIC_VALUES));
 				msgs = ((InternalEObject)newMDataFileProperty).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - LogicPackage.MAPPLICATION__MDATA_FILE_PROPERTY, null, msgs);
@@ -695,7 +705,7 @@ public abstract class MApplication extends MObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Data File Property</em>' attribute.
 	 * @see org.onceforall.dms.desktop.logic.LogicPackage#getMApplication_DataFileProperty()
-	 * @model default="Application Data Files\\Data.xml" dataType="org.onceforall.dms.desktop.logic.MFile" required="true" transient="true" changeable="false"
+	 * @model default="Application Data Files\\Data.xml" dataType="org.onceforall.dms.desktop.logic.MExistingFile" required="true" transient="true" changeable="false"
 	 * @generated
 	 */
 	public File getDataFileProperty() {
@@ -984,7 +994,7 @@ public abstract class MApplication extends MObject {
 			if (newMPathProperty != null) {				
 				newMPathProperty.setDefaultDescription("Specifies the path where this application has been started from.");
 				newMPathProperty.setDefaultName("Path");
-				newMPathProperty.setValueType(Type.getTypeForName("File"));
+				newMPathProperty.setValueType(Type.getTypeForName("Directory (must exist)"));
 				newMPathProperty.setValueEFeature((EStructuralFeature) eClass().getEStructuralFeature(LogicPackage.MAPPLICATION__PATH_PROPERTY));
 				newMPathProperty.setHistoricValuesEFeature(null);
 				msgs = ((InternalEObject)newMPathProperty).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - LogicPackage.MAPPLICATION__MPATH_PROPERTY, null, msgs);
@@ -1015,7 +1025,7 @@ public abstract class MApplication extends MObject {
 	 * @return the value of the '<em>Path Property</em>' attribute.
 	 * @see #setPathProperty(File)
 	 * @see org.onceforall.dms.desktop.logic.LogicPackage#getMApplication_PathProperty()
-	 * @model dataType="org.onceforall.dms.desktop.logic.MFile" required="true"
+	 * @model dataType="org.onceforall.dms.desktop.logic.MExistingDirectory" required="true"
 	 * @generated
 	 */
 	public File getPathProperty() {

@@ -153,6 +153,16 @@ public class MCheckFreeDiskSpaceStep extends MStep {
 
 
 
+
+
+
+
+
+
+
+
+
+
 	/**
 	 * The cached value of the '{@link #getMRequiredFreeDiskSpaceParameter() <em>MRequired Free Disk Space Parameter</em>}' containment reference.
 	 * <!-- begin-user-doc -->
@@ -595,7 +605,7 @@ public class MCheckFreeDiskSpaceStep extends MStep {
 			if (newMDirectoryParameter != null) {				
 				newMDirectoryParameter.setDefaultDescription("Specifies the path of the created directory where the recordings will be stored.");
 				newMDirectoryParameter.setDefaultName("Directory");
-				newMDirectoryParameter.setValueType(Type.getTypeForName("File (must exist)"));
+				newMDirectoryParameter.setValueType(Type.getTypeForName("Directory (must exist)"));
 				newMDirectoryParameter.setValueEFeature((EStructuralFeature) eClass().getEStructuralFeature(LogicPackage.MCHECK_FREE_DISK_SPACE_STEP__DIRECTORY_PARAMETER));
 				newMDirectoryParameter.setHistoricValuesEFeature(null);
 				msgs = ((InternalEObject)newMDirectoryParameter).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - LogicPackage.MCHECK_FREE_DISK_SPACE_STEP__MDIRECTORY_PARAMETER, null, msgs);
@@ -626,7 +636,7 @@ public class MCheckFreeDiskSpaceStep extends MStep {
 	 * @return the value of the '<em>Directory Parameter</em>' attribute.
 	 * @see #setDirectoryParameter(File)
 	 * @see org.onceforall.dms.desktop.logic.LogicPackage#getMCheckFreeDiskSpaceStep_DirectoryParameter()
-	 * @model dataType="org.onceforall.dms.desktop.logic.MExistingFile" required="true"
+	 * @model dataType="org.onceforall.dms.desktop.logic.MExistingDirectory" required="true"
 	 * @generated
 	 */
 	public File getDirectoryParameter() {

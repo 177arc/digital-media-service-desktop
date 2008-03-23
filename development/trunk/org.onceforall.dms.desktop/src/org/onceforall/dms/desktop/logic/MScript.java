@@ -257,6 +257,16 @@ public class MScript extends MStatefulObject implements EObject {
 
 
 
+
+
+
+
+
+
+
+
+
+
 	
 	/**
 	 * The cached value of the '{@link #getMSteps() <em>MSteps</em>}' containment reference list.

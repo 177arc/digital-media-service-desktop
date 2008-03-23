@@ -184,10 +184,18 @@ public class LogicValidator extends EObjectValidator {
 				return validateMFtpStep((MFtpStep)value, diagnostics, context);
 			case LogicPackage.MTEST_STEP:
 				return validateMTestStep((MTestStep)value, diagnostics, context);
+			case LogicPackage.MNAME_TAG_MP3_STEP:
+				return validateMNameTagMp3Step((MNameTagMp3Step)value, diagnostics, context);
+			case LogicPackage.MTAG_STEP:
+				return validateMTagStep((MTagStep)value, diagnostics, context);
 			case LogicPackage.MDMS_APPLICATION_MGET_DATA_UPGRADE_INFO_STEP:
 				return validateMDmsApplicationMGetDataUpgradeInfoStep((MDmsApplicationMGetDataUpgradeInfoStep)value, diagnostics, context);
 			case LogicPackage.MDMS_APPLICATION_MUPGRADE_DATA_STEP:
 				return validateMDmsApplicationMUpgradeDataStep((MDmsApplicationMUpgradeDataStep)value, diagnostics, context);
+			case LogicPackage.MDIRECTORY:
+				return validateMDirectory((File)value, diagnostics, context);
+			case LogicPackage.MEXISTING_DIRECTORY:
+				return validateMExistingDirectory((File)value, diagnostics, context);
 			case LogicPackage.MFILE:
 				return validateMFile((File)value, diagnostics, context);
 			case LogicPackage.MEXISTING_FILE:
@@ -643,6 +651,34 @@ public class LogicValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean validateMNameTagMp3Step(MNameTagMp3Step mNameTagMp3Step, DiagnosticChain diagnostics, Map context) {
+		boolean result = validate_EveryMultiplicityConforms((EObject)mNameTagMp3Step, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms((EObject)mNameTagMp3Step, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained((EObject)mNameTagMp3Step, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves((EObject)mNameTagMp3Step, diagnostics, context);
+		if (result || diagnostics != null) result &= validateMElement_validate(mNameTagMp3Step, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateMTagStep(MTagStep mTagStep, DiagnosticChain diagnostics, Map context) {
+		boolean result = validate_EveryMultiplicityConforms((EObject)mTagStep, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms((EObject)mTagStep, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained((EObject)mTagStep, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves((EObject)mTagStep, diagnostics, context);
+		if (result || diagnostics != null) result &= validateMElement_validate(mTagStep, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public boolean validateMDmsApplicationMGetDataUpgradeInfoStep(MDmsApplicationMGetDataUpgradeInfoStep mDmsApplicationMGetDataUpgradeInfoStep, DiagnosticChain diagnostics, Map context) {
 		boolean result = validate_EveryMultiplicityConforms((EObject)mDmsApplicationMGetDataUpgradeInfoStep, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryDataValueConforms((EObject)mDmsApplicationMGetDataUpgradeInfoStep, diagnostics, context);
@@ -664,6 +700,24 @@ public class LogicValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_EveryProxyResolves((EObject)mDmsApplicationMUpgradeDataStep, diagnostics, context);
 		if (result || diagnostics != null) result &= validateMElement_validate(mDmsApplicationMUpgradeDataStep, diagnostics, context);
 		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateMDirectory(File mDirectory, DiagnosticChain diagnostics, Map context) {
+		return true;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateMExistingDirectory(File mExistingDirectory, DiagnosticChain diagnostics, Map context) {
+		return true;
 	}
 
 	/**

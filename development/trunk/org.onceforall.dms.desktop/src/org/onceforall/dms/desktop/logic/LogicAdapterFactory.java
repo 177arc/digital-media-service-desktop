@@ -164,6 +164,12 @@ public class LogicAdapterFactory extends AdapterFactoryImpl {
 			public Object caseMTestStep(MTestStep object) {
 				return createMTestStepAdapter();
 			}
+			public Object caseMNameTagMp3Step(MNameTagMp3Step object) {
+				return createMNameTagMp3StepAdapter();
+			}
+			public Object caseMTagStep(MTagStep object) {
+				return createMTagStepAdapter();
+			}
 			public Object caseMDmsApplicationMGetDataUpgradeInfoStep(MDmsApplicationMGetDataUpgradeInfoStep object) {
 				return createMDmsApplicationMGetDataUpgradeInfoStepAdapter();
 			}
@@ -591,6 +597,34 @@ public class LogicAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createMTestStepAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.onceforall.dms.desktop.logic.MNameTagMp3Step <em>MName Tag Mp3 Step</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.onceforall.dms.desktop.logic.MNameTagMp3Step
+	 * @generated
+	 */
+	public Adapter createMNameTagMp3StepAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.onceforall.dms.desktop.logic.MTagStep <em>MTag Step</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.onceforall.dms.desktop.logic.MTagStep
+	 * @generated
+	 */
+	public Adapter createMTagStepAdapter() {
 		return null;
 	}
 

@@ -270,6 +270,7 @@ public class LogicSwitch {
 			case LogicPackage.MCONVERT_TO_MP3_STEP: {
 				MConvertToMP3Step mConvertToMP3Step = (MConvertToMP3Step)theEObject;
 				Object result = caseMConvertToMP3Step(mConvertToMP3Step);
+				if (result == null) result = caseMTagStep(mConvertToMP3Step);
 				if (result == null) result = caseMStep(mConvertToMP3Step);
 				if (result == null) result = caseMStatefulObject(mConvertToMP3Step);
 				if (result == null) result = caseMObject(mConvertToMP3Step);
@@ -366,6 +367,27 @@ public class LogicSwitch {
 				if (result == null) result = caseMStatefulObject(mTestStep);
 				if (result == null) result = caseMObject(mTestStep);
 				if (result == null) result = caseMElement(mTestStep);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case LogicPackage.MNAME_TAG_MP3_STEP: {
+				MNameTagMp3Step mNameTagMp3Step = (MNameTagMp3Step)theEObject;
+				Object result = caseMNameTagMp3Step(mNameTagMp3Step);
+				if (result == null) result = caseMTagStep(mNameTagMp3Step);
+				if (result == null) result = caseMStep(mNameTagMp3Step);
+				if (result == null) result = caseMStatefulObject(mNameTagMp3Step);
+				if (result == null) result = caseMObject(mNameTagMp3Step);
+				if (result == null) result = caseMElement(mNameTagMp3Step);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case LogicPackage.MTAG_STEP: {
+				MTagStep mTagStep = (MTagStep)theEObject;
+				Object result = caseMTagStep(mTagStep);
+				if (result == null) result = caseMStep(mTagStep);
+				if (result == null) result = caseMStatefulObject(mTagStep);
+				if (result == null) result = caseMObject(mTagStep);
+				if (result == null) result = caseMElement(mTagStep);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -827,6 +849,36 @@ public class LogicSwitch {
 	 * @generated
 	 */
 	public Object caseMTestStep(MTestStep object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpretting the object as an instance of '<em>MName Tag Mp3 Step</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpretting the object as an instance of '<em>MName Tag Mp3 Step</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public Object caseMNameTagMp3Step(MNameTagMp3Step object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpretting the object as an instance of '<em>MTag Step</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpretting the object as an instance of '<em>MTag Step</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public Object caseMTagStep(MTagStep object) {
 		return null;
 	}
 

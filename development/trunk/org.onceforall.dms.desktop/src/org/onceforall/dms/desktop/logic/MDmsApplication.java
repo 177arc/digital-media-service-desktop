@@ -127,7 +127,7 @@ public class MDmsApplication extends MApplication {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final File SERVICE_FILE_PATH_PROPERTY_EDEFAULT = (File)LogicFactory.eINSTANCE.createFromString(LogicPackage.eINSTANCE.getMExistingFile(), "Service Files");
+	protected static final File SERVICE_FILE_PATH_PROPERTY_EDEFAULT = (File)LogicFactory.eINSTANCE.createFromString(LogicPackage.eINSTANCE.getMExistingDirectory(), "Service Files");
 
 	/**
 	 * Get the default value of the '{@link #getServiceFilePathProperty() <em>Service File Path Property</em>}' attribute.
@@ -170,7 +170,7 @@ public class MDmsApplication extends MApplication {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final File WWX_FILES_PATH_PROPERTY_EDEFAULT = (File)LogicFactory.eINSTANCE.createFromString(LogicPackage.eINSTANCE.getMExistingFile(), "WWX Files");
+	protected static final File WWX_FILES_PATH_PROPERTY_EDEFAULT = (File)LogicFactory.eINSTANCE.createFromString(LogicPackage.eINSTANCE.getMExistingDirectory(), "WWX Files");
 	
 	/**
 	 * Get the default value of the '{@link #getWwxFilesPathProperty() <em>Wwx Files Path Property</em>}' attribute.
@@ -213,7 +213,7 @@ public class MDmsApplication extends MApplication {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final File MP3_ENCODER_PATH_PROPERTY_EDEFAULT = (File)LogicFactory.eINSTANCE.createFromString(LogicPackage.eINSTANCE.getMExistingFile(), "Program Files\\LAME 3.96.1");
+	protected static final File MP3_ENCODER_PATH_PROPERTY_EDEFAULT = (File)LogicFactory.eINSTANCE.createFromString(LogicPackage.eINSTANCE.getMExistingDirectory(), "Program Files\\LAME 3.96.1");
 
 	/**
 	 * Get the default value of the '{@link #getMp3EncoderPathProperty() <em>Mp3 Encoder Path Property</em>}' attribute.
@@ -977,7 +977,7 @@ public class MDmsApplication extends MApplication {
 			if (newMServiceFilePathProperty != null) {				
 				newMServiceFilePathProperty.setDefaultDescription("Specifies the relative or absolute file path to the directory where the service recording files are stored.");
 				newMServiceFilePathProperty.setDefaultName("Service files path");
-				newMServiceFilePathProperty.setValueType(Type.getTypeForName("File (must exist)"));
+				newMServiceFilePathProperty.setValueType(Type.getTypeForName("Directory (must exist)"));
 				newMServiceFilePathProperty.setValueEFeature((EStructuralFeature) eClass().getEStructuralFeature(LogicPackage.MDMS_APPLICATION__SERVICE_FILE_PATH_PROPERTY));
 				newMServiceFilePathProperty.setHistoricValuesEFeature(null);
 				msgs = ((InternalEObject)newMServiceFilePathProperty).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - LogicPackage.MDMS_APPLICATION__MSERVICE_FILE_PATH_PROPERTY, null, msgs);
@@ -1009,7 +1009,7 @@ public class MDmsApplication extends MApplication {
 	 * @return the value of the '<em>Service File Path Property</em>' attribute.
 	 * @see #setServiceFilePathProperty(File)
 	 * @see org.onceforall.dms.desktop.logic.LogicPackage#getMDmsApplication_ServiceFilePathProperty()
-	 * @model default="Service Files" dataType="org.onceforall.dms.desktop.logic.MExistingFile" required="true"
+	 * @model default="Service Files" dataType="org.onceforall.dms.desktop.logic.MExistingDirectory" required="true"
 	 * @generated
 	 */
 	public File getServiceFilePathProperty() {
@@ -1084,7 +1084,7 @@ public class MDmsApplication extends MApplication {
 			if (newMWwxFilesPathProperty != null) {				
 				newMWwxFilesPathProperty.setDefaultDescription("Specifies the relative or absolute file path to the directory where the WordWiseXtra recording files are stored.");
 				newMWwxFilesPathProperty.setDefaultName("WWX files path");
-				newMWwxFilesPathProperty.setValueType(Type.getTypeForName("File (must exist)"));
+				newMWwxFilesPathProperty.setValueType(Type.getTypeForName("Directory (must exist)"));
 				newMWwxFilesPathProperty.setValueEFeature((EStructuralFeature) eClass().getEStructuralFeature(LogicPackage.MDMS_APPLICATION__WWX_FILES_PATH_PROPERTY));
 				newMWwxFilesPathProperty.setHistoricValuesEFeature(null);
 				msgs = ((InternalEObject)newMWwxFilesPathProperty).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - LogicPackage.MDMS_APPLICATION__MWWX_FILES_PATH_PROPERTY, null, msgs);
@@ -1116,7 +1116,7 @@ public class MDmsApplication extends MApplication {
 	 * @return the value of the '<em>Wwx Files Path Property</em>' attribute.
 	 * @see #setWwxFilesPathProperty(File)
 	 * @see org.onceforall.dms.desktop.logic.LogicPackage#getMDmsApplication_WwxFilesPathProperty()
-	 * @model default="WWX Files" dataType="org.onceforall.dms.desktop.logic.MExistingFile" required="true"
+	 * @model default="WWX Files" dataType="org.onceforall.dms.desktop.logic.MExistingDirectory" required="true"
 	 * @generated
 	 */
 	public File getWwxFilesPathProperty() {
@@ -1191,7 +1191,7 @@ public class MDmsApplication extends MApplication {
 			if (newMMp3EncoderPathProperty != null) {				
 				newMMp3EncoderPathProperty.setDefaultDescription("Specifies the path to the directory that contains the \'lame.exe\'.");
 				newMMp3EncoderPathProperty.setDefaultName("MP3 encoder path");
-				newMMp3EncoderPathProperty.setValueType(Type.getTypeForName("File (must exist)"));
+				newMMp3EncoderPathProperty.setValueType(Type.getTypeForName("Directory (must exist)"));
 				newMMp3EncoderPathProperty.setValueEFeature((EStructuralFeature) eClass().getEStructuralFeature(LogicPackage.MDMS_APPLICATION__MP3_ENCODER_PATH_PROPERTY));
 				newMMp3EncoderPathProperty.setHistoricValuesEFeature(null);
 				msgs = ((InternalEObject)newMMp3EncoderPathProperty).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - LogicPackage.MDMS_APPLICATION__MMP3_ENCODER_PATH_PROPERTY, null, msgs);
@@ -1223,7 +1223,7 @@ public class MDmsApplication extends MApplication {
 	 * @return the value of the '<em>Mp3 Encoder Path Property</em>' attribute.
 	 * @see #setMp3EncoderPathProperty(File)
 	 * @see org.onceforall.dms.desktop.logic.LogicPackage#getMDmsApplication_Mp3EncoderPathProperty()
-	 * @model default="Program Files\\LAME 3.96.1" dataType="org.onceforall.dms.desktop.logic.MExistingFile"
+	 * @model default="Program Files\\LAME 3.96.1" dataType="org.onceforall.dms.desktop.logic.MExistingDirectory"
 	 * @generated
 	 */
 	public File getMp3EncoderPathProperty() {
@@ -2145,7 +2145,7 @@ public class MDmsApplication extends MApplication {
 			if (newMBurningSoftwareDirectoryPathProperty != null) {				
 				newMBurningSoftwareDirectoryPathProperty.setDefaultDescription("Specifies the path to the directory that contains the \'nerocmd.exe\'.");
 				newMBurningSoftwareDirectoryPathProperty.setDefaultName("CD-ROM burning software directory path");
-				newMBurningSoftwareDirectoryPathProperty.setValueType(Type.getTypeForName("File (must exist)"));
+				newMBurningSoftwareDirectoryPathProperty.setValueType(Type.getTypeForName("Directory (must exist)"));
 				newMBurningSoftwareDirectoryPathProperty.setValueEFeature((EStructuralFeature) eClass().getEStructuralFeature(LogicPackage.MDMS_APPLICATION__BURNING_SOFTWARE_DIRECTORY_PATH_PROPERTY));
 				newMBurningSoftwareDirectoryPathProperty.setHistoricValuesEFeature(null);
 				msgs = ((InternalEObject)newMBurningSoftwareDirectoryPathProperty).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - LogicPackage.MDMS_APPLICATION__MBURNING_SOFTWARE_DIRECTORY_PATH_PROPERTY, null, msgs);
@@ -2176,7 +2176,7 @@ public class MDmsApplication extends MApplication {
 	 * @return the value of the '<em>Burning Software Directory Path Property</em>' attribute.
 	 * @see #setBurningSoftwareDirectoryPathProperty(File)
 	 * @see org.onceforall.dms.desktop.logic.LogicPackage#getMDmsApplication_BurningSoftwareDirectoryPathProperty()
-	 * @model dataType="org.onceforall.dms.desktop.logic.MExistingFile" required="true"
+	 * @model dataType="org.onceforall.dms.desktop.logic.MExistingDirectory" required="true"
 	 * @generated
 	 */
 	public File getBurningSoftwareDirectoryPathProperty() {

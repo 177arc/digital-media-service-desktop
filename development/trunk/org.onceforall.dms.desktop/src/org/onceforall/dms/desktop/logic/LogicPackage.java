@@ -6350,6 +6350,538 @@ public class LogicPackage extends EPackageImpl {
 	public static final int MRECORD_STEP_FEATURE_COUNT = MAUDIO_STEP_FEATURE_COUNT + 10;
 
 	/**
+	 * The meta object id for the '{@link org.onceforall.dms.desktop.logic.MTagStep <em>MTag Step</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.onceforall.dms.desktop.logic.MTagStep
+	 * @see org.onceforall.dms.desktop.logic.LogicPackage#getMTagStep()
+	 * @generated
+	 */
+	public static final int MTAG_STEP = 30;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MTAG_STEP__NAME = MSTEP__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Type Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MTAG_STEP__TYPE_NAME = MSTEP__TYPE_NAME;
+
+	/**
+	 * The feature id for the '<em><b>Type Name For UI</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MTAG_STEP__TYPE_NAME_FOR_UI = MSTEP__TYPE_NAME_FOR_UI;
+
+	/**
+	 * The feature id for the '<em><b>Name For UI</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MTAG_STEP__NAME_FOR_UI = MSTEP__NAME_FOR_UI;
+
+	/**
+	 * The feature id for the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MTAG_STEP__DESCRIPTION = MSTEP__DESCRIPTION;
+
+	/**
+	 * The feature id for the '<em><b>Description For UI</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MTAG_STEP__DESCRIPTION_FOR_UI = MSTEP__DESCRIPTION_FOR_UI;
+
+	/**
+	 * The feature id for the '<em><b>Icon File Path</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MTAG_STEP__ICON_FILE_PATH = MSTEP__ICON_FILE_PATH;
+
+	/**
+	 * The feature id for the '<em><b>Overlay Icon File Path</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MTAG_STEP__OVERLAY_ICON_FILE_PATH = MSTEP__OVERLAY_ICON_FILE_PATH;
+
+	/**
+	 * The feature id for the '<em><b>Composite Class Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MTAG_STEP__COMPOSITE_CLASS_NAME = MSTEP__COMPOSITE_CLASS_NAME;
+
+	/**
+	 * The feature id for the '<em><b>Simulated</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MTAG_STEP__SIMULATED = MSTEP__SIMULATED;
+
+	/**
+	 * The feature id for the '<em><b>MName Property</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MTAG_STEP__MNAME_PROPERTY = MSTEP__MNAME_PROPERTY;
+
+	/**
+	 * The feature id for the '<em><b>MDescription Property</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MTAG_STEP__MDESCRIPTION_PROPERTY = MSTEP__MDESCRIPTION_PROPERTY;
+
+	/**
+	 * The feature id for the '<em><b>MIcon File Path Property</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MTAG_STEP__MICON_FILE_PATH_PROPERTY = MSTEP__MICON_FILE_PATH_PROPERTY;
+
+	/**
+	 * The feature id for the '<em><b>Fixed MProperties</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MTAG_STEP__FIXED_MPROPERTIES = MSTEP__FIXED_MPROPERTIES;
+
+	/**
+	 * The feature id for the '<em><b>Fixed MSteps</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MTAG_STEP__FIXED_MSTEPS = MSTEP__FIXED_MSTEPS;
+
+	/**
+	 * The feature id for the '<em><b>MState Property</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MTAG_STEP__MSTATE_PROPERTY = MSTEP__MSTATE_PROPERTY;
+
+	/**
+	 * The feature id for the '<em><b>MLast State Change Property</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MTAG_STEP__MLAST_STATE_CHANGE_PROPERTY = MSTEP__MLAST_STATE_CHANGE_PROPERTY;
+
+	/**
+	 * The feature id for the '<em><b>Last State Change Property</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MTAG_STEP__LAST_STATE_CHANGE_PROPERTY = MSTEP__LAST_STATE_CHANGE_PROPERTY;
+
+	/**
+	 * The feature id for the '<em><b>MInput Steps</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MTAG_STEP__MINPUT_STEPS = MSTEP__MINPUT_STEPS;
+
+	/**
+	 * The feature id for the '<em><b>Fixed MParameters</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MTAG_STEP__FIXED_MPARAMETERS = MSTEP__FIXED_MPARAMETERS;
+
+	/**
+	 * The feature id for the '<em><b>Fixed MResults</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MTAG_STEP__FIXED_MRESULTS = MSTEP__FIXED_MRESULTS;
+
+	/**
+	 * The feature id for the '<em><b>Exclusive Property</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MTAG_STEP__EXCLUSIVE_PROPERTY = MSTEP__EXCLUSIVE_PROPERTY;
+
+	/**
+	 * The feature id for the '<em><b>State Property</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MTAG_STEP__STATE_PROPERTY = MSTEP__STATE_PROPERTY;
+
+	/**
+	 * The feature id for the '<em><b>MProgress Property</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MTAG_STEP__MPROGRESS_PROPERTY = MSTEP__MPROGRESS_PROPERTY;
+
+	/**
+	 * The feature id for the '<em><b>Progress Property</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MTAG_STEP__PROGRESS_PROPERTY = MSTEP__PROGRESS_PROPERTY;
+
+	/**
+	 * The feature id for the '<em><b>MProgress Status Property</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MTAG_STEP__MPROGRESS_STATUS_PROPERTY = MSTEP__MPROGRESS_STATUS_PROPERTY;
+
+	/**
+	 * The feature id for the '<em><b>Progress Status Property</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MTAG_STEP__PROGRESS_STATUS_PROPERTY = MSTEP__PROGRESS_STATUS_PROPERTY;
+
+	/**
+	 * The feature id for the '<em><b>MStart Trigger Property</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MTAG_STEP__MSTART_TRIGGER_PROPERTY = MSTEP__MSTART_TRIGGER_PROPERTY;
+
+	/**
+	 * The feature id for the '<em><b>Start Trigger Property</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MTAG_STEP__START_TRIGGER_PROPERTY = MSTEP__START_TRIGGER_PROPERTY;
+
+	/**
+	 * The feature id for the '<em><b>Interruptable</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MTAG_STEP__INTERRUPTABLE = MSTEP__INTERRUPTABLE;
+
+	/**
+	 * The feature id for the '<em><b>Stoppable</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MTAG_STEP__STOPPABLE = MSTEP__STOPPABLE;
+
+	/**
+	 * The feature id for the '<em><b>Terminatable</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MTAG_STEP__TERMINATABLE = MSTEP__TERMINATABLE;
+
+	/**
+	 * The feature id for the '<em><b>Action Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MTAG_STEP__ACTION_NAME = MSTEP__ACTION_NAME;
+
+	/**
+	 * The feature id for the '<em><b>Action Icon File Path</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MTAG_STEP__ACTION_ICON_FILE_PATH = MSTEP__ACTION_ICON_FILE_PATH;
+
+	/**
+	 * The feature id for the '<em><b>Exception</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MTAG_STEP__EXCEPTION = MSTEP__EXCEPTION;
+
+	/**
+	 * The feature id for the '<em><b>MArtist Parameter</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MTAG_STEP__MARTIST_PARAMETER = MSTEP_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Artist Parameter</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MTAG_STEP__ARTIST_PARAMETER = MSTEP_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>MTitle Parameter</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MTAG_STEP__MTITLE_PARAMETER = MSTEP_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Title Parameter</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MTAG_STEP__TITLE_PARAMETER = MSTEP_FEATURE_COUNT + 3;
+
+	/**
+	 * The feature id for the '<em><b>MAlbum Parameter</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MTAG_STEP__MALBUM_PARAMETER = MSTEP_FEATURE_COUNT + 4;
+
+	/**
+	 * The feature id for the '<em><b>Album Parameter</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MTAG_STEP__ALBUM_PARAMETER = MSTEP_FEATURE_COUNT + 5;
+
+	/**
+	 * The feature id for the '<em><b>MGenre Parameter</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MTAG_STEP__MGENRE_PARAMETER = MSTEP_FEATURE_COUNT + 6;
+
+	/**
+	 * The feature id for the '<em><b>Genre Parameter</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MTAG_STEP__GENRE_PARAMETER = MSTEP_FEATURE_COUNT + 7;
+
+	/**
+	 * The feature id for the '<em><b>Genre Parameter Historic Values</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MTAG_STEP__GENRE_PARAMETER_HISTORIC_VALUES = MSTEP_FEATURE_COUNT + 8;
+
+	/**
+	 * The feature id for the '<em><b>MYear Parameter</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MTAG_STEP__MYEAR_PARAMETER = MSTEP_FEATURE_COUNT + 9;
+
+	/**
+	 * The feature id for the '<em><b>Year Parameter</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MTAG_STEP__YEAR_PARAMETER = MSTEP_FEATURE_COUNT + 10;
+
+	/**
+	 * The feature id for the '<em><b>MComment Parameter</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MTAG_STEP__MCOMMENT_PARAMETER = MSTEP_FEATURE_COUNT + 11;
+
+	/**
+	 * The feature id for the '<em><b>Comment Parameter</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MTAG_STEP__COMMENT_PARAMETER = MSTEP_FEATURE_COUNT + 12;
+
+	/**
+	 * The feature id for the '<em><b>Comment Parameter Historic Values</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MTAG_STEP__COMMENT_PARAMETER_HISTORIC_VALUES = MSTEP_FEATURE_COUNT + 13;
+
+	/**
+	 * The feature id for the '<em><b>MMp3 Folder Reference Parameter</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MTAG_STEP__MMP3_FOLDER_REFERENCE_PARAMETER = MSTEP_FEATURE_COUNT + 14;
+
+	/**
+	 * The feature id for the '<em><b>Mp3 Folder Reference Parameter</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MTAG_STEP__MP3_FOLDER_REFERENCE_PARAMETER = MSTEP_FEATURE_COUNT + 15;
+
+	/**
+	 * The feature id for the '<em><b>MMp3 Entry Name Parameter</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MTAG_STEP__MMP3_ENTRY_NAME_PARAMETER = MSTEP_FEATURE_COUNT + 16;
+
+	/**
+	 * The feature id for the '<em><b>Mp3 Entry Name Parameter</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MTAG_STEP__MP3_ENTRY_NAME_PARAMETER = MSTEP_FEATURE_COUNT + 17;
+
+	/**
+	 * The feature id for the '<em><b>MMp3 Entry Reference Result</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MTAG_STEP__MMP3_ENTRY_REFERENCE_RESULT = MSTEP_FEATURE_COUNT + 18;
+
+	/**
+	 * The feature id for the '<em><b>Mp3 Entry Reference Result</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MTAG_STEP__MP3_ENTRY_REFERENCE_RESULT = MSTEP_FEATURE_COUNT + 19;
+
+	/**
+	 * The feature id for the '<em><b>MMp3 File Path Result</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MTAG_STEP__MMP3_FILE_PATH_RESULT = MSTEP_FEATURE_COUNT + 20;
+
+	/**
+	 * The feature id for the '<em><b>Mp3 File Path Result</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MTAG_STEP__MP3_FILE_PATH_RESULT = MSTEP_FEATURE_COUNT + 21;
+
+	/**
+	 * The number of structural features of the '<em>MTag Step</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MTAG_STEP_FEATURE_COUNT = MSTEP_FEATURE_COUNT + 22;
+
+	/**
 	 * The meta object id for the '{@link org.onceforall.dms.desktop.logic.MConvertToMP3Step <em>MConvert To MP3 Step</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -6366,7 +6898,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int MCONVERT_TO_MP3_STEP__NAME = MSTEP__NAME;
+	public static final int MCONVERT_TO_MP3_STEP__NAME = MTAG_STEP__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Type Name</b></em>' attribute.
@@ -6375,7 +6907,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int MCONVERT_TO_MP3_STEP__TYPE_NAME = MSTEP__TYPE_NAME;
+	public static final int MCONVERT_TO_MP3_STEP__TYPE_NAME = MTAG_STEP__TYPE_NAME;
 
 	/**
 	 * The feature id for the '<em><b>Type Name For UI</b></em>' attribute.
@@ -6384,7 +6916,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int MCONVERT_TO_MP3_STEP__TYPE_NAME_FOR_UI = MSTEP__TYPE_NAME_FOR_UI;
+	public static final int MCONVERT_TO_MP3_STEP__TYPE_NAME_FOR_UI = MTAG_STEP__TYPE_NAME_FOR_UI;
 
 	/**
 	 * The feature id for the '<em><b>Name For UI</b></em>' attribute.
@@ -6393,7 +6925,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int MCONVERT_TO_MP3_STEP__NAME_FOR_UI = MSTEP__NAME_FOR_UI;
+	public static final int MCONVERT_TO_MP3_STEP__NAME_FOR_UI = MTAG_STEP__NAME_FOR_UI;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -6402,7 +6934,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int MCONVERT_TO_MP3_STEP__DESCRIPTION = MSTEP__DESCRIPTION;
+	public static final int MCONVERT_TO_MP3_STEP__DESCRIPTION = MTAG_STEP__DESCRIPTION;
 
 	/**
 	 * The feature id for the '<em><b>Description For UI</b></em>' attribute.
@@ -6411,7 +6943,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int MCONVERT_TO_MP3_STEP__DESCRIPTION_FOR_UI = MSTEP__DESCRIPTION_FOR_UI;
+	public static final int MCONVERT_TO_MP3_STEP__DESCRIPTION_FOR_UI = MTAG_STEP__DESCRIPTION_FOR_UI;
 
 	/**
 	 * The feature id for the '<em><b>Icon File Path</b></em>' attribute.
@@ -6420,7 +6952,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int MCONVERT_TO_MP3_STEP__ICON_FILE_PATH = MSTEP__ICON_FILE_PATH;
+	public static final int MCONVERT_TO_MP3_STEP__ICON_FILE_PATH = MTAG_STEP__ICON_FILE_PATH;
 
 	/**
 	 * The feature id for the '<em><b>Overlay Icon File Path</b></em>' attribute.
@@ -6429,7 +6961,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int MCONVERT_TO_MP3_STEP__OVERLAY_ICON_FILE_PATH = MSTEP__OVERLAY_ICON_FILE_PATH;
+	public static final int MCONVERT_TO_MP3_STEP__OVERLAY_ICON_FILE_PATH = MTAG_STEP__OVERLAY_ICON_FILE_PATH;
 
 	/**
 	 * The feature id for the '<em><b>Composite Class Name</b></em>' attribute.
@@ -6438,7 +6970,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int MCONVERT_TO_MP3_STEP__COMPOSITE_CLASS_NAME = MSTEP__COMPOSITE_CLASS_NAME;
+	public static final int MCONVERT_TO_MP3_STEP__COMPOSITE_CLASS_NAME = MTAG_STEP__COMPOSITE_CLASS_NAME;
 
 	/**
 	 * The feature id for the '<em><b>Simulated</b></em>' attribute.
@@ -6447,7 +6979,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int MCONVERT_TO_MP3_STEP__SIMULATED = MSTEP__SIMULATED;
+	public static final int MCONVERT_TO_MP3_STEP__SIMULATED = MTAG_STEP__SIMULATED;
 
 	/**
 	 * The feature id for the '<em><b>MName Property</b></em>' containment reference.
@@ -6456,7 +6988,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int MCONVERT_TO_MP3_STEP__MNAME_PROPERTY = MSTEP__MNAME_PROPERTY;
+	public static final int MCONVERT_TO_MP3_STEP__MNAME_PROPERTY = MTAG_STEP__MNAME_PROPERTY;
 
 	/**
 	 * The feature id for the '<em><b>MDescription Property</b></em>' containment reference.
@@ -6465,7 +6997,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int MCONVERT_TO_MP3_STEP__MDESCRIPTION_PROPERTY = MSTEP__MDESCRIPTION_PROPERTY;
+	public static final int MCONVERT_TO_MP3_STEP__MDESCRIPTION_PROPERTY = MTAG_STEP__MDESCRIPTION_PROPERTY;
 
 	/**
 	 * The feature id for the '<em><b>MIcon File Path Property</b></em>' containment reference.
@@ -6474,7 +7006,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int MCONVERT_TO_MP3_STEP__MICON_FILE_PATH_PROPERTY = MSTEP__MICON_FILE_PATH_PROPERTY;
+	public static final int MCONVERT_TO_MP3_STEP__MICON_FILE_PATH_PROPERTY = MTAG_STEP__MICON_FILE_PATH_PROPERTY;
 
 	/**
 	 * The feature id for the '<em><b>Fixed MProperties</b></em>' reference list.
@@ -6483,7 +7015,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int MCONVERT_TO_MP3_STEP__FIXED_MPROPERTIES = MSTEP__FIXED_MPROPERTIES;
+	public static final int MCONVERT_TO_MP3_STEP__FIXED_MPROPERTIES = MTAG_STEP__FIXED_MPROPERTIES;
 
 	/**
 	 * The feature id for the '<em><b>Fixed MSteps</b></em>' reference list.
@@ -6492,7 +7024,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int MCONVERT_TO_MP3_STEP__FIXED_MSTEPS = MSTEP__FIXED_MSTEPS;
+	public static final int MCONVERT_TO_MP3_STEP__FIXED_MSTEPS = MTAG_STEP__FIXED_MSTEPS;
 
 	/**
 	 * The feature id for the '<em><b>MState Property</b></em>' containment reference.
@@ -6501,7 +7033,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int MCONVERT_TO_MP3_STEP__MSTATE_PROPERTY = MSTEP__MSTATE_PROPERTY;
+	public static final int MCONVERT_TO_MP3_STEP__MSTATE_PROPERTY = MTAG_STEP__MSTATE_PROPERTY;
 
 	/**
 	 * The feature id for the '<em><b>MLast State Change Property</b></em>' containment reference.
@@ -6510,7 +7042,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int MCONVERT_TO_MP3_STEP__MLAST_STATE_CHANGE_PROPERTY = MSTEP__MLAST_STATE_CHANGE_PROPERTY;
+	public static final int MCONVERT_TO_MP3_STEP__MLAST_STATE_CHANGE_PROPERTY = MTAG_STEP__MLAST_STATE_CHANGE_PROPERTY;
 
 	/**
 	 * The feature id for the '<em><b>Last State Change Property</b></em>' attribute.
@@ -6519,7 +7051,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int MCONVERT_TO_MP3_STEP__LAST_STATE_CHANGE_PROPERTY = MSTEP__LAST_STATE_CHANGE_PROPERTY;
+	public static final int MCONVERT_TO_MP3_STEP__LAST_STATE_CHANGE_PROPERTY = MTAG_STEP__LAST_STATE_CHANGE_PROPERTY;
 
 	/**
 	 * The feature id for the '<em><b>MInput Steps</b></em>' reference list.
@@ -6528,7 +7060,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int MCONVERT_TO_MP3_STEP__MINPUT_STEPS = MSTEP__MINPUT_STEPS;
+	public static final int MCONVERT_TO_MP3_STEP__MINPUT_STEPS = MTAG_STEP__MINPUT_STEPS;
 
 	/**
 	 * The feature id for the '<em><b>Fixed MParameters</b></em>' reference list.
@@ -6537,7 +7069,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int MCONVERT_TO_MP3_STEP__FIXED_MPARAMETERS = MSTEP__FIXED_MPARAMETERS;
+	public static final int MCONVERT_TO_MP3_STEP__FIXED_MPARAMETERS = MTAG_STEP__FIXED_MPARAMETERS;
 
 	/**
 	 * The feature id for the '<em><b>Fixed MResults</b></em>' reference list.
@@ -6546,7 +7078,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int MCONVERT_TO_MP3_STEP__FIXED_MRESULTS = MSTEP__FIXED_MRESULTS;
+	public static final int MCONVERT_TO_MP3_STEP__FIXED_MRESULTS = MTAG_STEP__FIXED_MRESULTS;
 
 	/**
 	 * The feature id for the '<em><b>Exclusive Property</b></em>' attribute.
@@ -6555,7 +7087,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int MCONVERT_TO_MP3_STEP__EXCLUSIVE_PROPERTY = MSTEP__EXCLUSIVE_PROPERTY;
+	public static final int MCONVERT_TO_MP3_STEP__EXCLUSIVE_PROPERTY = MTAG_STEP__EXCLUSIVE_PROPERTY;
 
 	/**
 	 * The feature id for the '<em><b>State Property</b></em>' attribute.
@@ -6564,7 +7096,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int MCONVERT_TO_MP3_STEP__STATE_PROPERTY = MSTEP__STATE_PROPERTY;
+	public static final int MCONVERT_TO_MP3_STEP__STATE_PROPERTY = MTAG_STEP__STATE_PROPERTY;
 
 	/**
 	 * The feature id for the '<em><b>MProgress Property</b></em>' containment reference.
@@ -6573,7 +7105,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int MCONVERT_TO_MP3_STEP__MPROGRESS_PROPERTY = MSTEP__MPROGRESS_PROPERTY;
+	public static final int MCONVERT_TO_MP3_STEP__MPROGRESS_PROPERTY = MTAG_STEP__MPROGRESS_PROPERTY;
 
 	/**
 	 * The feature id for the '<em><b>Progress Property</b></em>' attribute.
@@ -6582,7 +7114,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int MCONVERT_TO_MP3_STEP__PROGRESS_PROPERTY = MSTEP__PROGRESS_PROPERTY;
+	public static final int MCONVERT_TO_MP3_STEP__PROGRESS_PROPERTY = MTAG_STEP__PROGRESS_PROPERTY;
 
 	/**
 	 * The feature id for the '<em><b>MProgress Status Property</b></em>' containment reference.
@@ -6591,7 +7123,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int MCONVERT_TO_MP3_STEP__MPROGRESS_STATUS_PROPERTY = MSTEP__MPROGRESS_STATUS_PROPERTY;
+	public static final int MCONVERT_TO_MP3_STEP__MPROGRESS_STATUS_PROPERTY = MTAG_STEP__MPROGRESS_STATUS_PROPERTY;
 
 	/**
 	 * The feature id for the '<em><b>Progress Status Property</b></em>' attribute.
@@ -6600,7 +7132,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int MCONVERT_TO_MP3_STEP__PROGRESS_STATUS_PROPERTY = MSTEP__PROGRESS_STATUS_PROPERTY;
+	public static final int MCONVERT_TO_MP3_STEP__PROGRESS_STATUS_PROPERTY = MTAG_STEP__PROGRESS_STATUS_PROPERTY;
 
 	/**
 	 * The feature id for the '<em><b>MStart Trigger Property</b></em>' containment reference.
@@ -6609,7 +7141,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int MCONVERT_TO_MP3_STEP__MSTART_TRIGGER_PROPERTY = MSTEP__MSTART_TRIGGER_PROPERTY;
+	public static final int MCONVERT_TO_MP3_STEP__MSTART_TRIGGER_PROPERTY = MTAG_STEP__MSTART_TRIGGER_PROPERTY;
 
 	/**
 	 * The feature id for the '<em><b>Start Trigger Property</b></em>' attribute.
@@ -6618,7 +7150,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int MCONVERT_TO_MP3_STEP__START_TRIGGER_PROPERTY = MSTEP__START_TRIGGER_PROPERTY;
+	public static final int MCONVERT_TO_MP3_STEP__START_TRIGGER_PROPERTY = MTAG_STEP__START_TRIGGER_PROPERTY;
 
 	/**
 	 * The feature id for the '<em><b>Interruptable</b></em>' attribute.
@@ -6627,7 +7159,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int MCONVERT_TO_MP3_STEP__INTERRUPTABLE = MSTEP__INTERRUPTABLE;
+	public static final int MCONVERT_TO_MP3_STEP__INTERRUPTABLE = MTAG_STEP__INTERRUPTABLE;
 
 	/**
 	 * The feature id for the '<em><b>Stoppable</b></em>' attribute.
@@ -6636,7 +7168,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int MCONVERT_TO_MP3_STEP__STOPPABLE = MSTEP__STOPPABLE;
+	public static final int MCONVERT_TO_MP3_STEP__STOPPABLE = MTAG_STEP__STOPPABLE;
 
 	/**
 	 * The feature id for the '<em><b>Terminatable</b></em>' attribute.
@@ -6645,7 +7177,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int MCONVERT_TO_MP3_STEP__TERMINATABLE = MSTEP__TERMINATABLE;
+	public static final int MCONVERT_TO_MP3_STEP__TERMINATABLE = MTAG_STEP__TERMINATABLE;
 
 	/**
 	 * The feature id for the '<em><b>Action Name</b></em>' attribute.
@@ -6654,7 +7186,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int MCONVERT_TO_MP3_STEP__ACTION_NAME = MSTEP__ACTION_NAME;
+	public static final int MCONVERT_TO_MP3_STEP__ACTION_NAME = MTAG_STEP__ACTION_NAME;
 
 	/**
 	 * The feature id for the '<em><b>Action Icon File Path</b></em>' attribute.
@@ -6663,7 +7195,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int MCONVERT_TO_MP3_STEP__ACTION_ICON_FILE_PATH = MSTEP__ACTION_ICON_FILE_PATH;
+	public static final int MCONVERT_TO_MP3_STEP__ACTION_ICON_FILE_PATH = MTAG_STEP__ACTION_ICON_FILE_PATH;
 
 	/**
 	 * The feature id for the '<em><b>Exception</b></em>' attribute.
@@ -6672,7 +7204,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int MCONVERT_TO_MP3_STEP__EXCEPTION = MSTEP__EXCEPTION;
+	public static final int MCONVERT_TO_MP3_STEP__EXCEPTION = MTAG_STEP__EXCEPTION;
 
 	/**
 	 * The feature id for the '<em><b>MArtist Parameter</b></em>' containment reference.
@@ -6681,7 +7213,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int MCONVERT_TO_MP3_STEP__MARTIST_PARAMETER = MSTEP_FEATURE_COUNT + 0;
+	public static final int MCONVERT_TO_MP3_STEP__MARTIST_PARAMETER = MTAG_STEP__MARTIST_PARAMETER;
 
 	/**
 	 * The feature id for the '<em><b>Artist Parameter</b></em>' attribute.
@@ -6690,7 +7222,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int MCONVERT_TO_MP3_STEP__ARTIST_PARAMETER = MSTEP_FEATURE_COUNT + 1;
+	public static final int MCONVERT_TO_MP3_STEP__ARTIST_PARAMETER = MTAG_STEP__ARTIST_PARAMETER;
 
 	/**
 	 * The feature id for the '<em><b>MTitle Parameter</b></em>' containment reference.
@@ -6699,7 +7231,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int MCONVERT_TO_MP3_STEP__MTITLE_PARAMETER = MSTEP_FEATURE_COUNT + 2;
+	public static final int MCONVERT_TO_MP3_STEP__MTITLE_PARAMETER = MTAG_STEP__MTITLE_PARAMETER;
 
 	/**
 	 * The feature id for the '<em><b>Title Parameter</b></em>' attribute.
@@ -6708,7 +7240,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int MCONVERT_TO_MP3_STEP__TITLE_PARAMETER = MSTEP_FEATURE_COUNT + 3;
+	public static final int MCONVERT_TO_MP3_STEP__TITLE_PARAMETER = MTAG_STEP__TITLE_PARAMETER;
 
 	/**
 	 * The feature id for the '<em><b>MAlbum Parameter</b></em>' containment reference.
@@ -6717,7 +7249,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int MCONVERT_TO_MP3_STEP__MALBUM_PARAMETER = MSTEP_FEATURE_COUNT + 4;
+	public static final int MCONVERT_TO_MP3_STEP__MALBUM_PARAMETER = MTAG_STEP__MALBUM_PARAMETER;
 
 	/**
 	 * The feature id for the '<em><b>Album Parameter</b></em>' attribute.
@@ -6726,7 +7258,34 @@ public class LogicPackage extends EPackageImpl {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int MCONVERT_TO_MP3_STEP__ALBUM_PARAMETER = MSTEP_FEATURE_COUNT + 5;
+	public static final int MCONVERT_TO_MP3_STEP__ALBUM_PARAMETER = MTAG_STEP__ALBUM_PARAMETER;
+
+	/**
+	 * The feature id for the '<em><b>MGenre Parameter</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MCONVERT_TO_MP3_STEP__MGENRE_PARAMETER = MTAG_STEP__MGENRE_PARAMETER;
+
+	/**
+	 * The feature id for the '<em><b>Genre Parameter</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MCONVERT_TO_MP3_STEP__GENRE_PARAMETER = MTAG_STEP__GENRE_PARAMETER;
+
+	/**
+	 * The feature id for the '<em><b>Genre Parameter Historic Values</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MCONVERT_TO_MP3_STEP__GENRE_PARAMETER_HISTORIC_VALUES = MTAG_STEP__GENRE_PARAMETER_HISTORIC_VALUES;
 
 	/**
 	 * The feature id for the '<em><b>MYear Parameter</b></em>' containment reference.
@@ -6735,7 +7294,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int MCONVERT_TO_MP3_STEP__MYEAR_PARAMETER = MSTEP_FEATURE_COUNT + 6;
+	public static final int MCONVERT_TO_MP3_STEP__MYEAR_PARAMETER = MTAG_STEP__MYEAR_PARAMETER;
 
 	/**
 	 * The feature id for the '<em><b>Year Parameter</b></em>' attribute.
@@ -6744,97 +7303,34 @@ public class LogicPackage extends EPackageImpl {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int MCONVERT_TO_MP3_STEP__YEAR_PARAMETER = MSTEP_FEATURE_COUNT + 7;
+	public static final int MCONVERT_TO_MP3_STEP__YEAR_PARAMETER = MTAG_STEP__YEAR_PARAMETER;
 
 	/**
-	 * The feature id for the '<em><b>MDirectory Parameter</b></em>' containment reference.
+	 * The feature id for the '<em><b>MComment Parameter</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	public static final int MCONVERT_TO_MP3_STEP__MDIRECTORY_PARAMETER = MSTEP_FEATURE_COUNT + 8;
+	public static final int MCONVERT_TO_MP3_STEP__MCOMMENT_PARAMETER = MTAG_STEP__MCOMMENT_PARAMETER;
 
 	/**
-	 * The feature id for the '<em><b>Directory Parameter</b></em>' attribute.
+	 * The feature id for the '<em><b>Comment Parameter</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	public static final int MCONVERT_TO_MP3_STEP__DIRECTORY_PARAMETER = MSTEP_FEATURE_COUNT + 9;
+	public static final int MCONVERT_TO_MP3_STEP__COMMENT_PARAMETER = MTAG_STEP__COMMENT_PARAMETER;
 
 	/**
-	 * The feature id for the '<em><b>MMp3 File Name Parameter</b></em>' containment reference.
+	 * The feature id for the '<em><b>Comment Parameter Historic Values</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	public static final int MCONVERT_TO_MP3_STEP__MMP3_FILE_NAME_PARAMETER = MSTEP_FEATURE_COUNT + 10;
-
-	/**
-	 * The feature id for the '<em><b>Mp3 File Name Parameter</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	public static final int MCONVERT_TO_MP3_STEP__MP3_FILE_NAME_PARAMETER = MSTEP_FEATURE_COUNT + 11;
-
-	/**
-	 * The feature id for the '<em><b>MRecording File Parameter</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	public static final int MCONVERT_TO_MP3_STEP__MRECORDING_FILE_PARAMETER = MSTEP_FEATURE_COUNT + 12;
-
-	/**
-	 * The feature id for the '<em><b>Recording File Parameter</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	public static final int MCONVERT_TO_MP3_STEP__RECORDING_FILE_PARAMETER = MSTEP_FEATURE_COUNT + 13;
-
-	/**
-	 * The feature id for the '<em><b>MMp3 Encoder Path Parameter</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	public static final int MCONVERT_TO_MP3_STEP__MMP3_ENCODER_PATH_PARAMETER = MSTEP_FEATURE_COUNT + 14;
-
-	/**
-	 * The feature id for the '<em><b>Mp3 Encoder Path Parameter</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	public static final int MCONVERT_TO_MP3_STEP__MP3_ENCODER_PATH_PARAMETER = MSTEP_FEATURE_COUNT + 15;
-
-	/**
-	 * The feature id for the '<em><b>MAverage Bit Rate Parameter</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	public static final int MCONVERT_TO_MP3_STEP__MAVERAGE_BIT_RATE_PARAMETER = MSTEP_FEATURE_COUNT + 16;
-
-	/**
-	 * The feature id for the '<em><b>Average Bit Rate Parameter</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	public static final int MCONVERT_TO_MP3_STEP__AVERAGE_BIT_RATE_PARAMETER = MSTEP_FEATURE_COUNT + 17;
+	public static final int MCONVERT_TO_MP3_STEP__COMMENT_PARAMETER_HISTORIC_VALUES = MTAG_STEP__COMMENT_PARAMETER_HISTORIC_VALUES;
 
 	/**
 	 * The feature id for the '<em><b>MMp3 Folder Reference Parameter</b></em>' containment reference.
@@ -6843,7 +7339,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int MCONVERT_TO_MP3_STEP__MMP3_FOLDER_REFERENCE_PARAMETER = MSTEP_FEATURE_COUNT + 18;
+	public static final int MCONVERT_TO_MP3_STEP__MMP3_FOLDER_REFERENCE_PARAMETER = MTAG_STEP__MMP3_FOLDER_REFERENCE_PARAMETER;
 
 	/**
 	 * The feature id for the '<em><b>Mp3 Folder Reference Parameter</b></em>' reference.
@@ -6852,7 +7348,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int MCONVERT_TO_MP3_STEP__MP3_FOLDER_REFERENCE_PARAMETER = MSTEP_FEATURE_COUNT + 19;
+	public static final int MCONVERT_TO_MP3_STEP__MP3_FOLDER_REFERENCE_PARAMETER = MTAG_STEP__MP3_FOLDER_REFERENCE_PARAMETER;
 
 	/**
 	 * The feature id for the '<em><b>MMp3 Entry Name Parameter</b></em>' containment reference.
@@ -6861,7 +7357,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int MCONVERT_TO_MP3_STEP__MMP3_ENTRY_NAME_PARAMETER = MSTEP_FEATURE_COUNT + 20;
+	public static final int MCONVERT_TO_MP3_STEP__MMP3_ENTRY_NAME_PARAMETER = MTAG_STEP__MMP3_ENTRY_NAME_PARAMETER;
 
 	/**
 	 * The feature id for the '<em><b>Mp3 Entry Name Parameter</b></em>' attribute.
@@ -6870,7 +7366,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int MCONVERT_TO_MP3_STEP__MP3_ENTRY_NAME_PARAMETER = MSTEP_FEATURE_COUNT + 21;
+	public static final int MCONVERT_TO_MP3_STEP__MP3_ENTRY_NAME_PARAMETER = MTAG_STEP__MP3_ENTRY_NAME_PARAMETER;
 
 	/**
 	 * The feature id for the '<em><b>MMp3 Entry Reference Result</b></em>' containment reference.
@@ -6879,7 +7375,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int MCONVERT_TO_MP3_STEP__MMP3_ENTRY_REFERENCE_RESULT = MSTEP_FEATURE_COUNT + 22;
+	public static final int MCONVERT_TO_MP3_STEP__MMP3_ENTRY_REFERENCE_RESULT = MTAG_STEP__MMP3_ENTRY_REFERENCE_RESULT;
 
 	/**
 	 * The feature id for the '<em><b>Mp3 Entry Reference Result</b></em>' reference.
@@ -6888,7 +7384,115 @@ public class LogicPackage extends EPackageImpl {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int MCONVERT_TO_MP3_STEP__MP3_ENTRY_REFERENCE_RESULT = MSTEP_FEATURE_COUNT + 23;
+	public static final int MCONVERT_TO_MP3_STEP__MP3_ENTRY_REFERENCE_RESULT = MTAG_STEP__MP3_ENTRY_REFERENCE_RESULT;
+
+	/**
+	 * The feature id for the '<em><b>MMp3 File Path Result</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MCONVERT_TO_MP3_STEP__MMP3_FILE_PATH_RESULT = MTAG_STEP__MMP3_FILE_PATH_RESULT;
+
+	/**
+	 * The feature id for the '<em><b>Mp3 File Path Result</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MCONVERT_TO_MP3_STEP__MP3_FILE_PATH_RESULT = MTAG_STEP__MP3_FILE_PATH_RESULT;
+
+	/**
+	 * The feature id for the '<em><b>MDirectory Parameter</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MCONVERT_TO_MP3_STEP__MDIRECTORY_PARAMETER = MTAG_STEP_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Directory Parameter</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MCONVERT_TO_MP3_STEP__DIRECTORY_PARAMETER = MTAG_STEP_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>MMp3 File Name Parameter</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MCONVERT_TO_MP3_STEP__MMP3_FILE_NAME_PARAMETER = MTAG_STEP_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Mp3 File Name Parameter</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MCONVERT_TO_MP3_STEP__MP3_FILE_NAME_PARAMETER = MTAG_STEP_FEATURE_COUNT + 3;
+
+	/**
+	 * The feature id for the '<em><b>MRecording File Parameter</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MCONVERT_TO_MP3_STEP__MRECORDING_FILE_PARAMETER = MTAG_STEP_FEATURE_COUNT + 4;
+
+	/**
+	 * The feature id for the '<em><b>Recording File Parameter</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MCONVERT_TO_MP3_STEP__RECORDING_FILE_PARAMETER = MTAG_STEP_FEATURE_COUNT + 5;
+
+	/**
+	 * The feature id for the '<em><b>MMp3 Encoder Path Parameter</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MCONVERT_TO_MP3_STEP__MMP3_ENCODER_PATH_PARAMETER = MTAG_STEP_FEATURE_COUNT + 6;
+
+	/**
+	 * The feature id for the '<em><b>Mp3 Encoder Path Parameter</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MCONVERT_TO_MP3_STEP__MP3_ENCODER_PATH_PARAMETER = MTAG_STEP_FEATURE_COUNT + 7;
+
+	/**
+	 * The feature id for the '<em><b>MAverage Bit Rate Parameter</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MCONVERT_TO_MP3_STEP__MAVERAGE_BIT_RATE_PARAMETER = MTAG_STEP_FEATURE_COUNT + 8;
+
+	/**
+	 * The feature id for the '<em><b>Average Bit Rate Parameter</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MCONVERT_TO_MP3_STEP__AVERAGE_BIT_RATE_PARAMETER = MTAG_STEP_FEATURE_COUNT + 9;
 
 	/**
 	 * The number of structural features of the '<em>MConvert To MP3 Step</em>' class.
@@ -6897,7 +7501,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int MCONVERT_TO_MP3_STEP_FEATURE_COUNT = MSTEP_FEATURE_COUNT + 24;
+	public static final int MCONVERT_TO_MP3_STEP_FEATURE_COUNT = MTAG_STEP_FEATURE_COUNT + 10;
 
 	/**
 	 * The meta object id for the '{@link org.onceforall.dms.desktop.logic.MPublishMp3sStep <em>MPublish Mp3s Step</em>}' class.
@@ -11283,6 +11887,592 @@ public class LogicPackage extends EPackageImpl {
 	public static final int MTEST_STEP_FEATURE_COUNT = MSTEP_FEATURE_COUNT + 4;
 
 	/**
+	 * The meta object id for the '{@link org.onceforall.dms.desktop.logic.MNameTagMp3Step <em>MName Tag Mp3 Step</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.onceforall.dms.desktop.logic.MNameTagMp3Step
+	 * @see org.onceforall.dms.desktop.logic.LogicPackage#getMNameTagMp3Step()
+	 * @generated
+	 */
+	public static final int MNAME_TAG_MP3_STEP = 29;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MNAME_TAG_MP3_STEP__NAME = MTAG_STEP__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Type Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MNAME_TAG_MP3_STEP__TYPE_NAME = MTAG_STEP__TYPE_NAME;
+
+	/**
+	 * The feature id for the '<em><b>Type Name For UI</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MNAME_TAG_MP3_STEP__TYPE_NAME_FOR_UI = MTAG_STEP__TYPE_NAME_FOR_UI;
+
+	/**
+	 * The feature id for the '<em><b>Name For UI</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MNAME_TAG_MP3_STEP__NAME_FOR_UI = MTAG_STEP__NAME_FOR_UI;
+
+	/**
+	 * The feature id for the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MNAME_TAG_MP3_STEP__DESCRIPTION = MTAG_STEP__DESCRIPTION;
+
+	/**
+	 * The feature id for the '<em><b>Description For UI</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MNAME_TAG_MP3_STEP__DESCRIPTION_FOR_UI = MTAG_STEP__DESCRIPTION_FOR_UI;
+
+	/**
+	 * The feature id for the '<em><b>Icon File Path</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MNAME_TAG_MP3_STEP__ICON_FILE_PATH = MTAG_STEP__ICON_FILE_PATH;
+
+	/**
+	 * The feature id for the '<em><b>Overlay Icon File Path</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MNAME_TAG_MP3_STEP__OVERLAY_ICON_FILE_PATH = MTAG_STEP__OVERLAY_ICON_FILE_PATH;
+
+	/**
+	 * The feature id for the '<em><b>Composite Class Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MNAME_TAG_MP3_STEP__COMPOSITE_CLASS_NAME = MTAG_STEP__COMPOSITE_CLASS_NAME;
+
+	/**
+	 * The feature id for the '<em><b>Simulated</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MNAME_TAG_MP3_STEP__SIMULATED = MTAG_STEP__SIMULATED;
+
+	/**
+	 * The feature id for the '<em><b>MName Property</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MNAME_TAG_MP3_STEP__MNAME_PROPERTY = MTAG_STEP__MNAME_PROPERTY;
+
+	/**
+	 * The feature id for the '<em><b>MDescription Property</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MNAME_TAG_MP3_STEP__MDESCRIPTION_PROPERTY = MTAG_STEP__MDESCRIPTION_PROPERTY;
+
+	/**
+	 * The feature id for the '<em><b>MIcon File Path Property</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MNAME_TAG_MP3_STEP__MICON_FILE_PATH_PROPERTY = MTAG_STEP__MICON_FILE_PATH_PROPERTY;
+
+	/**
+	 * The feature id for the '<em><b>Fixed MProperties</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MNAME_TAG_MP3_STEP__FIXED_MPROPERTIES = MTAG_STEP__FIXED_MPROPERTIES;
+
+	/**
+	 * The feature id for the '<em><b>Fixed MSteps</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MNAME_TAG_MP3_STEP__FIXED_MSTEPS = MTAG_STEP__FIXED_MSTEPS;
+
+	/**
+	 * The feature id for the '<em><b>MState Property</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MNAME_TAG_MP3_STEP__MSTATE_PROPERTY = MTAG_STEP__MSTATE_PROPERTY;
+
+	/**
+	 * The feature id for the '<em><b>MLast State Change Property</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MNAME_TAG_MP3_STEP__MLAST_STATE_CHANGE_PROPERTY = MTAG_STEP__MLAST_STATE_CHANGE_PROPERTY;
+
+	/**
+	 * The feature id for the '<em><b>Last State Change Property</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MNAME_TAG_MP3_STEP__LAST_STATE_CHANGE_PROPERTY = MTAG_STEP__LAST_STATE_CHANGE_PROPERTY;
+
+	/**
+	 * The feature id for the '<em><b>MInput Steps</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MNAME_TAG_MP3_STEP__MINPUT_STEPS = MTAG_STEP__MINPUT_STEPS;
+
+	/**
+	 * The feature id for the '<em><b>Fixed MParameters</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MNAME_TAG_MP3_STEP__FIXED_MPARAMETERS = MTAG_STEP__FIXED_MPARAMETERS;
+
+	/**
+	 * The feature id for the '<em><b>Fixed MResults</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MNAME_TAG_MP3_STEP__FIXED_MRESULTS = MTAG_STEP__FIXED_MRESULTS;
+
+	/**
+	 * The feature id for the '<em><b>Exclusive Property</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MNAME_TAG_MP3_STEP__EXCLUSIVE_PROPERTY = MTAG_STEP__EXCLUSIVE_PROPERTY;
+
+	/**
+	 * The feature id for the '<em><b>State Property</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MNAME_TAG_MP3_STEP__STATE_PROPERTY = MTAG_STEP__STATE_PROPERTY;
+
+	/**
+	 * The feature id for the '<em><b>MProgress Property</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MNAME_TAG_MP3_STEP__MPROGRESS_PROPERTY = MTAG_STEP__MPROGRESS_PROPERTY;
+
+	/**
+	 * The feature id for the '<em><b>Progress Property</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MNAME_TAG_MP3_STEP__PROGRESS_PROPERTY = MTAG_STEP__PROGRESS_PROPERTY;
+
+	/**
+	 * The feature id for the '<em><b>MProgress Status Property</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MNAME_TAG_MP3_STEP__MPROGRESS_STATUS_PROPERTY = MTAG_STEP__MPROGRESS_STATUS_PROPERTY;
+
+	/**
+	 * The feature id for the '<em><b>Progress Status Property</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MNAME_TAG_MP3_STEP__PROGRESS_STATUS_PROPERTY = MTAG_STEP__PROGRESS_STATUS_PROPERTY;
+
+	/**
+	 * The feature id for the '<em><b>MStart Trigger Property</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MNAME_TAG_MP3_STEP__MSTART_TRIGGER_PROPERTY = MTAG_STEP__MSTART_TRIGGER_PROPERTY;
+
+	/**
+	 * The feature id for the '<em><b>Start Trigger Property</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MNAME_TAG_MP3_STEP__START_TRIGGER_PROPERTY = MTAG_STEP__START_TRIGGER_PROPERTY;
+
+	/**
+	 * The feature id for the '<em><b>Interruptable</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MNAME_TAG_MP3_STEP__INTERRUPTABLE = MTAG_STEP__INTERRUPTABLE;
+
+	/**
+	 * The feature id for the '<em><b>Stoppable</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MNAME_TAG_MP3_STEP__STOPPABLE = MTAG_STEP__STOPPABLE;
+
+	/**
+	 * The feature id for the '<em><b>Terminatable</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MNAME_TAG_MP3_STEP__TERMINATABLE = MTAG_STEP__TERMINATABLE;
+
+	/**
+	 * The feature id for the '<em><b>Action Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MNAME_TAG_MP3_STEP__ACTION_NAME = MTAG_STEP__ACTION_NAME;
+
+	/**
+	 * The feature id for the '<em><b>Action Icon File Path</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MNAME_TAG_MP3_STEP__ACTION_ICON_FILE_PATH = MTAG_STEP__ACTION_ICON_FILE_PATH;
+
+	/**
+	 * The feature id for the '<em><b>Exception</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MNAME_TAG_MP3_STEP__EXCEPTION = MTAG_STEP__EXCEPTION;
+
+	/**
+	 * The feature id for the '<em><b>MArtist Parameter</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MNAME_TAG_MP3_STEP__MARTIST_PARAMETER = MTAG_STEP__MARTIST_PARAMETER;
+
+	/**
+	 * The feature id for the '<em><b>Artist Parameter</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MNAME_TAG_MP3_STEP__ARTIST_PARAMETER = MTAG_STEP__ARTIST_PARAMETER;
+
+	/**
+	 * The feature id for the '<em><b>MTitle Parameter</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MNAME_TAG_MP3_STEP__MTITLE_PARAMETER = MTAG_STEP__MTITLE_PARAMETER;
+
+	/**
+	 * The feature id for the '<em><b>Title Parameter</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MNAME_TAG_MP3_STEP__TITLE_PARAMETER = MTAG_STEP__TITLE_PARAMETER;
+
+	/**
+	 * The feature id for the '<em><b>MAlbum Parameter</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MNAME_TAG_MP3_STEP__MALBUM_PARAMETER = MTAG_STEP__MALBUM_PARAMETER;
+
+	/**
+	 * The feature id for the '<em><b>Album Parameter</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MNAME_TAG_MP3_STEP__ALBUM_PARAMETER = MTAG_STEP__ALBUM_PARAMETER;
+
+	/**
+	 * The feature id for the '<em><b>MGenre Parameter</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MNAME_TAG_MP3_STEP__MGENRE_PARAMETER = MTAG_STEP__MGENRE_PARAMETER;
+
+	/**
+	 * The feature id for the '<em><b>Genre Parameter</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MNAME_TAG_MP3_STEP__GENRE_PARAMETER = MTAG_STEP__GENRE_PARAMETER;
+
+	/**
+	 * The feature id for the '<em><b>Genre Parameter Historic Values</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MNAME_TAG_MP3_STEP__GENRE_PARAMETER_HISTORIC_VALUES = MTAG_STEP__GENRE_PARAMETER_HISTORIC_VALUES;
+
+	/**
+	 * The feature id for the '<em><b>MYear Parameter</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MNAME_TAG_MP3_STEP__MYEAR_PARAMETER = MTAG_STEP__MYEAR_PARAMETER;
+
+	/**
+	 * The feature id for the '<em><b>Year Parameter</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MNAME_TAG_MP3_STEP__YEAR_PARAMETER = MTAG_STEP__YEAR_PARAMETER;
+
+	/**
+	 * The feature id for the '<em><b>MComment Parameter</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MNAME_TAG_MP3_STEP__MCOMMENT_PARAMETER = MTAG_STEP__MCOMMENT_PARAMETER;
+
+	/**
+	 * The feature id for the '<em><b>Comment Parameter</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MNAME_TAG_MP3_STEP__COMMENT_PARAMETER = MTAG_STEP__COMMENT_PARAMETER;
+
+	/**
+	 * The feature id for the '<em><b>Comment Parameter Historic Values</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MNAME_TAG_MP3_STEP__COMMENT_PARAMETER_HISTORIC_VALUES = MTAG_STEP__COMMENT_PARAMETER_HISTORIC_VALUES;
+
+	/**
+	 * The feature id for the '<em><b>MMp3 Folder Reference Parameter</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MNAME_TAG_MP3_STEP__MMP3_FOLDER_REFERENCE_PARAMETER = MTAG_STEP__MMP3_FOLDER_REFERENCE_PARAMETER;
+
+	/**
+	 * The feature id for the '<em><b>Mp3 Folder Reference Parameter</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MNAME_TAG_MP3_STEP__MP3_FOLDER_REFERENCE_PARAMETER = MTAG_STEP__MP3_FOLDER_REFERENCE_PARAMETER;
+
+	/**
+	 * The feature id for the '<em><b>MMp3 Entry Name Parameter</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MNAME_TAG_MP3_STEP__MMP3_ENTRY_NAME_PARAMETER = MTAG_STEP__MMP3_ENTRY_NAME_PARAMETER;
+
+	/**
+	 * The feature id for the '<em><b>Mp3 Entry Name Parameter</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MNAME_TAG_MP3_STEP__MP3_ENTRY_NAME_PARAMETER = MTAG_STEP__MP3_ENTRY_NAME_PARAMETER;
+
+	/**
+	 * The feature id for the '<em><b>MMp3 Entry Reference Result</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MNAME_TAG_MP3_STEP__MMP3_ENTRY_REFERENCE_RESULT = MTAG_STEP__MMP3_ENTRY_REFERENCE_RESULT;
+
+	/**
+	 * The feature id for the '<em><b>Mp3 Entry Reference Result</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MNAME_TAG_MP3_STEP__MP3_ENTRY_REFERENCE_RESULT = MTAG_STEP__MP3_ENTRY_REFERENCE_RESULT;
+
+	/**
+	 * The feature id for the '<em><b>MMp3 File Path Result</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MNAME_TAG_MP3_STEP__MMP3_FILE_PATH_RESULT = MTAG_STEP__MMP3_FILE_PATH_RESULT;
+
+	/**
+	 * The feature id for the '<em><b>Mp3 File Path Result</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MNAME_TAG_MP3_STEP__MP3_FILE_PATH_RESULT = MTAG_STEP__MP3_FILE_PATH_RESULT;
+
+	/**
+	 * The feature id for the '<em><b>MDirectory Parameter</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MNAME_TAG_MP3_STEP__MDIRECTORY_PARAMETER = MTAG_STEP_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Directory Parameter</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MNAME_TAG_MP3_STEP__DIRECTORY_PARAMETER = MTAG_STEP_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>MTagged Mp3 File Name Parameter</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MNAME_TAG_MP3_STEP__MTAGGED_MP3_FILE_NAME_PARAMETER = MTAG_STEP_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Tagged Mp3 File Name Parameter</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MNAME_TAG_MP3_STEP__TAGGED_MP3_FILE_NAME_PARAMETER = MTAG_STEP_FEATURE_COUNT + 3;
+
+	/**
+	 * The feature id for the '<em><b>MRecording Mp3 File Parameter</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MNAME_TAG_MP3_STEP__MRECORDING_MP3_FILE_PARAMETER = MTAG_STEP_FEATURE_COUNT + 4;
+
+	/**
+	 * The feature id for the '<em><b>Recording Mp3 File Parameter</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MNAME_TAG_MP3_STEP__RECORDING_MP3_FILE_PARAMETER = MTAG_STEP_FEATURE_COUNT + 5;
+
+	/**
+	 * The number of structural features of the '<em>MName Tag Mp3 Step</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MNAME_TAG_MP3_STEP_FEATURE_COUNT = MTAG_STEP_FEATURE_COUNT + 6;
+
+	/**
 	 * The meta object id for the '{@link org.onceforall.dms.desktop.logic.MDmsApplicationMGetDataUpgradeInfoStep <em>MDms Application MGet Data Upgrade Info Step</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -11290,7 +12480,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @see org.onceforall.dms.desktop.logic.LogicPackage#getMDmsApplicationMGetDataUpgradeInfoStep()
 	 * @generated
 	 */
-	public static final int MDMS_APPLICATION_MGET_DATA_UPGRADE_INFO_STEP = 29;
+	public static final int MDMS_APPLICATION_MGET_DATA_UPGRADE_INFO_STEP = 31;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -11750,7 +12940,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @see org.onceforall.dms.desktop.logic.LogicPackage#getMDmsApplicationMUpgradeDataStep()
 	 * @generated
 	 */
-	public static final int MDMS_APPLICATION_MUPGRADE_DATA_STEP = 30;
+	public static final int MDMS_APPLICATION_MUPGRADE_DATA_STEP = 32;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -12185,6 +13375,26 @@ public class LogicPackage extends EPackageImpl {
 	public static final int MDMS_APPLICATION_MUPGRADE_DATA_STEP_FEATURE_COUNT = MFTP_STEP_FEATURE_COUNT + 6;
 
 	/**
+	 * The meta object id for the '<em>MDirectory</em>' data type.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see java.io.File
+	 * @see org.onceforall.dms.desktop.logic.LogicPackage#getMDirectory()
+	 * @generated
+	 */
+	public static final int MDIRECTORY = 33;
+
+	/**
+	 * The meta object id for the '<em>MExisting Directory</em>' data type.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see java.io.File
+	 * @see org.onceforall.dms.desktop.logic.LogicPackage#getMExistingDirectory()
+	 * @generated
+	 */
+	public static final int MEXISTING_DIRECTORY = 34;
+
+	/**
 	 * The meta object id for the '<em>MFile</em>' data type.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -12192,7 +13402,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @see org.onceforall.dms.desktop.logic.LogicPackage#getMFile()
 	 * @generated
 	 */
-	public static final int MFILE = 31;
+	public static final int MFILE = 35;
 
 	/**
 	 * The meta object id for the '<em>MExisting File</em>' data type.
@@ -12202,7 +13412,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @see org.onceforall.dms.desktop.logic.LogicPackage#getMExistingFile()
 	 * @generated
 	 */
-	public static final int MEXISTING_FILE = 32;
+	public static final int MEXISTING_FILE = 36;
 
 	/**
 	 * The meta object id for the '<em>MState</em>' data type.
@@ -12212,7 +13422,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @see org.onceforall.dms.desktop.logic.LogicPackage#getMState()
 	 * @generated
 	 */
-	public static final int MSTATE = 33;
+	public static final int MSTATE = 37;
 
 	/**
 	 * The meta object id for the '<em>MStep State</em>' data type.
@@ -12222,7 +13432,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @see org.onceforall.dms.desktop.logic.LogicPackage#getMStepState()
 	 * @generated
 	 */
-	public static final int MSTEP_STATE = 34;
+	public static final int MSTEP_STATE = 38;
 
 	/**
 	 * The meta object id for the '<em>MBoolean</em>' data type.
@@ -12232,7 +13442,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @see org.onceforall.dms.desktop.logic.LogicPackage#getMBoolean()
 	 * @generated
 	 */
-	public static final int MBOOLEAN = 35;
+	public static final int MBOOLEAN = 39;
 
 	/**
 	 * The meta object id for the '<em>MDate Time</em>' data type.
@@ -12242,7 +13452,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @see org.onceforall.dms.desktop.logic.LogicPackage#getMDateTime()
 	 * @generated
 	 */
-	public static final int MDATE_TIME = 36;
+	public static final int MDATE_TIME = 40;
 
 	/**
 	 * The meta object id for the '<em>MDate</em>' data type.
@@ -12252,7 +13462,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @see org.onceforall.dms.desktop.logic.LogicPackage#getMDate()
 	 * @generated
 	 */
-	public static final int MDATE = 37;
+	public static final int MDATE = 41;
 
 	/**
 	 * The meta object id for the '<em>MTime</em>' data type.
@@ -12262,7 +13472,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @see org.onceforall.dms.desktop.logic.LogicPackage#getMTime()
 	 * @generated
 	 */
-	public static final int MTIME = 38;
+	public static final int MTIME = 42;
 
 	/**
 	 * The meta object id for the '<em>MDuration</em>' data type.
@@ -12272,7 +13482,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @see org.onceforall.dms.desktop.logic.LogicPackage#getMDuration()
 	 * @generated
 	 */
-	public static final int MDURATION = 39;
+	public static final int MDURATION = 43;
 
 	/**
 	 * The meta object id for the '<em>MLong</em>' data type.
@@ -12282,7 +13492,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @see org.onceforall.dms.desktop.logic.LogicPackage#getMLong()
 	 * @generated
 	 */
-	public static final int MLONG = 40;
+	public static final int MLONG = 44;
 
 	/**
 	 * The meta object id for the '<em>MPassword</em>' data type.
@@ -12292,7 +13502,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @see org.onceforall.dms.desktop.logic.LogicPackage#getMPassword()
 	 * @generated
 	 */
-	public static final int MPASSWORD = 41;
+	public static final int MPASSWORD = 45;
 
 	/**
 	 * The meta object id for the '<em>MString</em>' data type.
@@ -12302,7 +13512,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @see org.onceforall.dms.desktop.logic.LogicPackage#getMString()
 	 * @generated
 	 */
-	public static final int MSTRING = 42;
+	public static final int MSTRING = 46;
 
 	/**
 	 * The meta object id for the '<em>MUrl</em>' data type.
@@ -12312,7 +13522,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @see org.onceforall.dms.desktop.logic.LogicPackage#getMUrl()
 	 * @generated
 	 */
-	public static final int MURL = 43;
+	public static final int MURL = 47;
 
 	/**
 	 * The meta object id for the '<em>EThrowable</em>' data type.
@@ -12322,7 +13532,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @see org.onceforall.dms.desktop.logic.LogicPackage#getEThrowable()
 	 * @generated
 	 */
-	public static final int ETHROWABLE = 44;
+	public static final int ETHROWABLE = 48;
 
 	/**
 	 * The meta object id for the '<em>MMp3 State</em>' data type.
@@ -12332,7 +13542,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @see org.onceforall.dms.desktop.logic.LogicPackage#getMMp3State()
 	 * @generated
 	 */
-	public static final int MMP3_STATE = 45;
+	public static final int MMP3_STATE = 49;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -12542,6 +13752,20 @@ public class LogicPackage extends EPackageImpl {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	private EClass mNameTagMp3StepEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass mTagStepEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	private EClass mDmsApplicationMGetDataUpgradeInfoStepEClass = null;
 
 	/**
@@ -12550,6 +13774,20 @@ public class LogicPackage extends EPackageImpl {
 	 * @generated
 	 */
 	private EClass mDmsApplicationMUpgradeDataStepEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EDataType mDirectoryEDataType = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EDataType mExistingDirectoryEDataType = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -15432,110 +16670,6 @@ public class LogicPackage extends EPackageImpl {
 	}
 
 	/**
-	 * Returns the meta object for the containment reference '{@link org.onceforall.dms.desktop.logic.MConvertToMP3Step#getMArtistParameter <em>MArtist Parameter</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>MArtist Parameter</em>'.
-	 * @see org.onceforall.dms.desktop.logic.MConvertToMP3Step#getMArtistParameter()
-	 * @see #getMConvertToMP3Step()
-	 * @generated
-	 */
-	public EReference getMConvertToMP3Step_MArtistParameter() {
-		return (EReference)mConvertToMP3StepEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * Returns the meta object for the attribute '{@link org.onceforall.dms.desktop.logic.MConvertToMP3Step#getArtistParameter <em>Artist Parameter</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Artist Parameter</em>'.
-	 * @see org.onceforall.dms.desktop.logic.MConvertToMP3Step#getArtistParameter()
-	 * @see #getMConvertToMP3Step()
-	 * @generated
-	 */
-	public EAttribute getMConvertToMP3Step_ArtistParameter() {
-		return (EAttribute)mConvertToMP3StepEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * Returns the meta object for the containment reference '{@link org.onceforall.dms.desktop.logic.MConvertToMP3Step#getMTitleParameter <em>MTitle Parameter</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>MTitle Parameter</em>'.
-	 * @see org.onceforall.dms.desktop.logic.MConvertToMP3Step#getMTitleParameter()
-	 * @see #getMConvertToMP3Step()
-	 * @generated
-	 */
-	public EReference getMConvertToMP3Step_MTitleParameter() {
-		return (EReference)mConvertToMP3StepEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * Returns the meta object for the attribute '{@link org.onceforall.dms.desktop.logic.MConvertToMP3Step#getTitleParameter <em>Title Parameter</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Title Parameter</em>'.
-	 * @see org.onceforall.dms.desktop.logic.MConvertToMP3Step#getTitleParameter()
-	 * @see #getMConvertToMP3Step()
-	 * @generated
-	 */
-	public EAttribute getMConvertToMP3Step_TitleParameter() {
-		return (EAttribute)mConvertToMP3StepEClass.getEStructuralFeatures().get(3);
-	}
-
-	/**
-	 * Returns the meta object for the containment reference '{@link org.onceforall.dms.desktop.logic.MConvertToMP3Step#getMAlbumParameter <em>MAlbum Parameter</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>MAlbum Parameter</em>'.
-	 * @see org.onceforall.dms.desktop.logic.MConvertToMP3Step#getMAlbumParameter()
-	 * @see #getMConvertToMP3Step()
-	 * @generated
-	 */
-	public EReference getMConvertToMP3Step_MAlbumParameter() {
-		return (EReference)mConvertToMP3StepEClass.getEStructuralFeatures().get(4);
-	}
-
-	/**
-	 * Returns the meta object for the attribute '{@link org.onceforall.dms.desktop.logic.MConvertToMP3Step#getAlbumParameter <em>Album Parameter</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Album Parameter</em>'.
-	 * @see org.onceforall.dms.desktop.logic.MConvertToMP3Step#getAlbumParameter()
-	 * @see #getMConvertToMP3Step()
-	 * @generated
-	 */
-	public EAttribute getMConvertToMP3Step_AlbumParameter() {
-		return (EAttribute)mConvertToMP3StepEClass.getEStructuralFeatures().get(5);
-	}
-
-	/**
-	 * Returns the meta object for the containment reference '{@link org.onceforall.dms.desktop.logic.MConvertToMP3Step#getMYearParameter <em>MYear Parameter</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>MYear Parameter</em>'.
-	 * @see org.onceforall.dms.desktop.logic.MConvertToMP3Step#getMYearParameter()
-	 * @see #getMConvertToMP3Step()
-	 * @generated
-	 */
-	public EReference getMConvertToMP3Step_MYearParameter() {
-		return (EReference)mConvertToMP3StepEClass.getEStructuralFeatures().get(6);
-	}
-
-	/**
-	 * Returns the meta object for the attribute '{@link org.onceforall.dms.desktop.logic.MConvertToMP3Step#getYearParameter <em>Year Parameter</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Year Parameter</em>'.
-	 * @see org.onceforall.dms.desktop.logic.MConvertToMP3Step#getYearParameter()
-	 * @see #getMConvertToMP3Step()
-	 * @generated
-	 */
-	public EAttribute getMConvertToMP3Step_YearParameter() {
-		return (EAttribute)mConvertToMP3StepEClass.getEStructuralFeatures().get(7);
-	}
-
-	/**
 	 * Returns the meta object for the containment reference '{@link org.onceforall.dms.desktop.logic.MConvertToMP3Step#getMDirectoryParameter <em>MDirectory Parameter</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -15545,7 +16679,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @generated
 	 */
 	public EReference getMConvertToMP3Step_MDirectoryParameter() {
-		return (EReference)mConvertToMP3StepEClass.getEStructuralFeatures().get(8);
+		return (EReference)mConvertToMP3StepEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -15558,7 +16692,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @generated
 	 */
 	public EAttribute getMConvertToMP3Step_DirectoryParameter() {
-		return (EAttribute)mConvertToMP3StepEClass.getEStructuralFeatures().get(9);
+		return (EAttribute)mConvertToMP3StepEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -15571,7 +16705,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @generated
 	 */
 	public EReference getMConvertToMP3Step_MMp3FileNameParameter() {
-		return (EReference)mConvertToMP3StepEClass.getEStructuralFeatures().get(10);
+		return (EReference)mConvertToMP3StepEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -15584,7 +16718,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @generated
 	 */
 	public EAttribute getMConvertToMP3Step_Mp3FileNameParameter() {
-		return (EAttribute)mConvertToMP3StepEClass.getEStructuralFeatures().get(11);
+		return (EAttribute)mConvertToMP3StepEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -15597,7 +16731,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @generated
 	 */
 	public EReference getMConvertToMP3Step_MRecordingFileParameter() {
-		return (EReference)mConvertToMP3StepEClass.getEStructuralFeatures().get(12);
+		return (EReference)mConvertToMP3StepEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -15610,7 +16744,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @generated
 	 */
 	public EAttribute getMConvertToMP3Step_RecordingFileParameter() {
-		return (EAttribute)mConvertToMP3StepEClass.getEStructuralFeatures().get(13);
+		return (EAttribute)mConvertToMP3StepEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -15623,7 +16757,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @generated
 	 */
 	public EReference getMConvertToMP3Step_MMp3EncoderPathParameter() {
-		return (EReference)mConvertToMP3StepEClass.getEStructuralFeatures().get(14);
+		return (EReference)mConvertToMP3StepEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -15636,7 +16770,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @generated
 	 */
 	public EAttribute getMConvertToMP3Step_Mp3EncoderPathParameter() {
-		return (EAttribute)mConvertToMP3StepEClass.getEStructuralFeatures().get(15);
+		return (EAttribute)mConvertToMP3StepEClass.getEStructuralFeatures().get(7);
 	}
 
 	/**
@@ -15649,7 +16783,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @generated
 	 */
 	public EReference getMConvertToMP3Step_MAverageBitRateParameter() {
-		return (EReference)mConvertToMP3StepEClass.getEStructuralFeatures().get(16);
+		return (EReference)mConvertToMP3StepEClass.getEStructuralFeatures().get(8);
 	}
 
 	/**
@@ -15662,85 +16796,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @generated
 	 */
 	public EAttribute getMConvertToMP3Step_AverageBitRateParameter() {
-		return (EAttribute)mConvertToMP3StepEClass.getEStructuralFeatures().get(17);
-	}
-
-	/**
-	 * Returns the meta object for the containment reference '{@link org.onceforall.dms.desktop.logic.MConvertToMP3Step#getMMp3FolderReferenceParameter <em>MMp3 Folder Reference Parameter</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>MMp3 Folder Reference Parameter</em>'.
-	 * @see org.onceforall.dms.desktop.logic.MConvertToMP3Step#getMMp3FolderReferenceParameter()
-	 * @see #getMConvertToMP3Step()
-	 * @generated
-	 */
-	public EReference getMConvertToMP3Step_MMp3FolderReferenceParameter() {
-		return (EReference)mConvertToMP3StepEClass.getEStructuralFeatures().get(18);
-	}
-
-	/**
-	 * Returns the meta object for the reference '{@link org.onceforall.dms.desktop.logic.MConvertToMP3Step#getMp3FolderReferenceParameter <em>Mp3 Folder Reference Parameter</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Mp3 Folder Reference Parameter</em>'.
-	 * @see org.onceforall.dms.desktop.logic.MConvertToMP3Step#getMp3FolderReferenceParameter()
-	 * @see #getMConvertToMP3Step()
-	 * @generated
-	 */
-	public EReference getMConvertToMP3Step_Mp3FolderReferenceParameter() {
-		return (EReference)mConvertToMP3StepEClass.getEStructuralFeatures().get(19);
-	}
-
-	/**
-	 * Returns the meta object for the containment reference '{@link org.onceforall.dms.desktop.logic.MConvertToMP3Step#getMMp3EntryNameParameter <em>MMp3 Entry Name Parameter</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>MMp3 Entry Name Parameter</em>'.
-	 * @see org.onceforall.dms.desktop.logic.MConvertToMP3Step#getMMp3EntryNameParameter()
-	 * @see #getMConvertToMP3Step()
-	 * @generated
-	 */
-	public EReference getMConvertToMP3Step_MMp3EntryNameParameter() {
-		return (EReference)mConvertToMP3StepEClass.getEStructuralFeatures().get(20);
-	}
-
-	/**
-	 * Returns the meta object for the attribute '{@link org.onceforall.dms.desktop.logic.MConvertToMP3Step#getMp3EntryNameParameter <em>Mp3 Entry Name Parameter</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Mp3 Entry Name Parameter</em>'.
-	 * @see org.onceforall.dms.desktop.logic.MConvertToMP3Step#getMp3EntryNameParameter()
-	 * @see #getMConvertToMP3Step()
-	 * @generated
-	 */
-	public EAttribute getMConvertToMP3Step_Mp3EntryNameParameter() {
-		return (EAttribute)mConvertToMP3StepEClass.getEStructuralFeatures().get(21);
-	}
-
-	/**
-	 * Returns the meta object for the containment reference '{@link org.onceforall.dms.desktop.logic.MConvertToMP3Step#getMMp3EntryReferenceResult <em>MMp3 Entry Reference Result</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>MMp3 Entry Reference Result</em>'.
-	 * @see org.onceforall.dms.desktop.logic.MConvertToMP3Step#getMMp3EntryReferenceResult()
-	 * @see #getMConvertToMP3Step()
-	 * @generated
-	 */
-	public EReference getMConvertToMP3Step_MMp3EntryReferenceResult() {
-		return (EReference)mConvertToMP3StepEClass.getEStructuralFeatures().get(22);
-	}
-
-	/**
-	 * Returns the meta object for the reference '{@link org.onceforall.dms.desktop.logic.MConvertToMP3Step#getMp3EntryReferenceResult <em>Mp3 Entry Reference Result</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Mp3 Entry Reference Result</em>'.
-	 * @see org.onceforall.dms.desktop.logic.MConvertToMP3Step#getMp3EntryReferenceResult()
-	 * @see #getMConvertToMP3Step()
-	 * @generated
-	 */
-	public EReference getMConvertToMP3Step_Mp3EntryReferenceResult() {
-		return (EReference)mConvertToMP3StepEClass.getEStructuralFeatures().get(23);
+		return (EAttribute)mConvertToMP3StepEClass.getEStructuralFeatures().get(9);
 	}
 
 	/**
@@ -17360,6 +18416,394 @@ public class LogicPackage extends EPackageImpl {
 	}
 
 	/**
+	 * Returns the meta object for class '{@link org.onceforall.dms.desktop.logic.MNameTagMp3Step <em>MName Tag Mp3 Step</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>MName Tag Mp3 Step</em>'.
+	 * @see org.onceforall.dms.desktop.logic.MNameTagMp3Step
+	 * @generated
+	 */
+	public EClass getMNameTagMp3Step() {
+		return mNameTagMp3StepEClass;
+	}
+
+	/**
+	 * Returns the meta object for the containment reference '{@link org.onceforall.dms.desktop.logic.MNameTagMp3Step#getMDirectoryParameter <em>MDirectory Parameter</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>MDirectory Parameter</em>'.
+	 * @see org.onceforall.dms.desktop.logic.MNameTagMp3Step#getMDirectoryParameter()
+	 * @see #getMNameTagMp3Step()
+	 * @generated
+	 */
+	public EReference getMNameTagMp3Step_MDirectoryParameter() {
+		return (EReference)mNameTagMp3StepEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.onceforall.dms.desktop.logic.MNameTagMp3Step#getDirectoryParameter <em>Directory Parameter</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Directory Parameter</em>'.
+	 * @see org.onceforall.dms.desktop.logic.MNameTagMp3Step#getDirectoryParameter()
+	 * @see #getMNameTagMp3Step()
+	 * @generated
+	 */
+	public EAttribute getMNameTagMp3Step_DirectoryParameter() {
+		return (EAttribute)mNameTagMp3StepEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * Returns the meta object for the containment reference '{@link org.onceforall.dms.desktop.logic.MNameTagMp3Step#getMTaggedMp3FileNameParameter <em>MTagged Mp3 File Name Parameter</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>MTagged Mp3 File Name Parameter</em>'.
+	 * @see org.onceforall.dms.desktop.logic.MNameTagMp3Step#getMTaggedMp3FileNameParameter()
+	 * @see #getMNameTagMp3Step()
+	 * @generated
+	 */
+	public EReference getMNameTagMp3Step_MTaggedMp3FileNameParameter() {
+		return (EReference)mNameTagMp3StepEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.onceforall.dms.desktop.logic.MNameTagMp3Step#getTaggedMp3FileNameParameter <em>Tagged Mp3 File Name Parameter</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Tagged Mp3 File Name Parameter</em>'.
+	 * @see org.onceforall.dms.desktop.logic.MNameTagMp3Step#getTaggedMp3FileNameParameter()
+	 * @see #getMNameTagMp3Step()
+	 * @generated
+	 */
+	public EAttribute getMNameTagMp3Step_TaggedMp3FileNameParameter() {
+		return (EAttribute)mNameTagMp3StepEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * Returns the meta object for the containment reference '{@link org.onceforall.dms.desktop.logic.MNameTagMp3Step#getMRecordingMp3FileParameter <em>MRecording Mp3 File Parameter</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>MRecording Mp3 File Parameter</em>'.
+	 * @see org.onceforall.dms.desktop.logic.MNameTagMp3Step#getMRecordingMp3FileParameter()
+	 * @see #getMNameTagMp3Step()
+	 * @generated
+	 */
+	public EReference getMNameTagMp3Step_MRecordingMp3FileParameter() {
+		return (EReference)mNameTagMp3StepEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.onceforall.dms.desktop.logic.MNameTagMp3Step#getRecordingMp3FileParameter <em>Recording Mp3 File Parameter</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Recording Mp3 File Parameter</em>'.
+	 * @see org.onceforall.dms.desktop.logic.MNameTagMp3Step#getRecordingMp3FileParameter()
+	 * @see #getMNameTagMp3Step()
+	 * @generated
+	 */
+	public EAttribute getMNameTagMp3Step_RecordingMp3FileParameter() {
+		return (EAttribute)mNameTagMp3StepEClass.getEStructuralFeatures().get(5);
+	}
+
+	/**
+	 * Returns the meta object for class '{@link org.onceforall.dms.desktop.logic.MTagStep <em>MTag Step</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>MTag Step</em>'.
+	 * @see org.onceforall.dms.desktop.logic.MTagStep
+	 * @generated
+	 */
+	public EClass getMTagStep() {
+		return mTagStepEClass;
+	}
+
+	/**
+	 * Returns the meta object for the containment reference '{@link org.onceforall.dms.desktop.logic.MTagStep#getMArtistParameter <em>MArtist Parameter</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>MArtist Parameter</em>'.
+	 * @see org.onceforall.dms.desktop.logic.MTagStep#getMArtistParameter()
+	 * @see #getMTagStep()
+	 * @generated
+	 */
+	public EReference getMTagStep_MArtistParameter() {
+		return (EReference)mTagStepEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.onceforall.dms.desktop.logic.MTagStep#getArtistParameter <em>Artist Parameter</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Artist Parameter</em>'.
+	 * @see org.onceforall.dms.desktop.logic.MTagStep#getArtistParameter()
+	 * @see #getMTagStep()
+	 * @generated
+	 */
+	public EAttribute getMTagStep_ArtistParameter() {
+		return (EAttribute)mTagStepEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * Returns the meta object for the containment reference '{@link org.onceforall.dms.desktop.logic.MTagStep#getMTitleParameter <em>MTitle Parameter</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>MTitle Parameter</em>'.
+	 * @see org.onceforall.dms.desktop.logic.MTagStep#getMTitleParameter()
+	 * @see #getMTagStep()
+	 * @generated
+	 */
+	public EReference getMTagStep_MTitleParameter() {
+		return (EReference)mTagStepEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.onceforall.dms.desktop.logic.MTagStep#getTitleParameter <em>Title Parameter</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Title Parameter</em>'.
+	 * @see org.onceforall.dms.desktop.logic.MTagStep#getTitleParameter()
+	 * @see #getMTagStep()
+	 * @generated
+	 */
+	public EAttribute getMTagStep_TitleParameter() {
+		return (EAttribute)mTagStepEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * Returns the meta object for the containment reference '{@link org.onceforall.dms.desktop.logic.MTagStep#getMAlbumParameter <em>MAlbum Parameter</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>MAlbum Parameter</em>'.
+	 * @see org.onceforall.dms.desktop.logic.MTagStep#getMAlbumParameter()
+	 * @see #getMTagStep()
+	 * @generated
+	 */
+	public EReference getMTagStep_MAlbumParameter() {
+		return (EReference)mTagStepEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.onceforall.dms.desktop.logic.MTagStep#getAlbumParameter <em>Album Parameter</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Album Parameter</em>'.
+	 * @see org.onceforall.dms.desktop.logic.MTagStep#getAlbumParameter()
+	 * @see #getMTagStep()
+	 * @generated
+	 */
+	public EAttribute getMTagStep_AlbumParameter() {
+		return (EAttribute)mTagStepEClass.getEStructuralFeatures().get(5);
+	}
+
+	/**
+	 * Returns the meta object for the containment reference '{@link org.onceforall.dms.desktop.logic.MTagStep#getMGenreParameter <em>MGenre Parameter</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>MGenre Parameter</em>'.
+	 * @see org.onceforall.dms.desktop.logic.MTagStep#getMGenreParameter()
+	 * @see #getMTagStep()
+	 * @generated
+	 */
+	public EReference getMTagStep_MGenreParameter() {
+		return (EReference)mTagStepEClass.getEStructuralFeatures().get(6);
+	}
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.onceforall.dms.desktop.logic.MTagStep#getGenreParameter <em>Genre Parameter</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Genre Parameter</em>'.
+	 * @see org.onceforall.dms.desktop.logic.MTagStep#getGenreParameter()
+	 * @see #getMTagStep()
+	 * @generated
+	 */
+	public EAttribute getMTagStep_GenreParameter() {
+		return (EAttribute)mTagStepEClass.getEStructuralFeatures().get(7);
+	}
+
+	/**
+	 * Returns the meta object for the attribute list '{@link org.onceforall.dms.desktop.logic.MTagStep#getGenreParameterHistoricValues <em>Genre Parameter Historic Values</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute list '<em>Genre Parameter Historic Values</em>'.
+	 * @see org.onceforall.dms.desktop.logic.MTagStep#getGenreParameterHistoricValues()
+	 * @see #getMTagStep()
+	 * @generated
+	 */
+	public EAttribute getMTagStep_GenreParameterHistoricValues() {
+		return (EAttribute)mTagStepEClass.getEStructuralFeatures().get(8);
+	}
+
+	/**
+	 * Returns the meta object for the containment reference '{@link org.onceforall.dms.desktop.logic.MTagStep#getMYearParameter <em>MYear Parameter</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>MYear Parameter</em>'.
+	 * @see org.onceforall.dms.desktop.logic.MTagStep#getMYearParameter()
+	 * @see #getMTagStep()
+	 * @generated
+	 */
+	public EReference getMTagStep_MYearParameter() {
+		return (EReference)mTagStepEClass.getEStructuralFeatures().get(9);
+	}
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.onceforall.dms.desktop.logic.MTagStep#getYearParameter <em>Year Parameter</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Year Parameter</em>'.
+	 * @see org.onceforall.dms.desktop.logic.MTagStep#getYearParameter()
+	 * @see #getMTagStep()
+	 * @generated
+	 */
+	public EAttribute getMTagStep_YearParameter() {
+		return (EAttribute)mTagStepEClass.getEStructuralFeatures().get(10);
+	}
+
+	/**
+	 * Returns the meta object for the containment reference '{@link org.onceforall.dms.desktop.logic.MTagStep#getMCommentParameter <em>MComment Parameter</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>MComment Parameter</em>'.
+	 * @see org.onceforall.dms.desktop.logic.MTagStep#getMCommentParameter()
+	 * @see #getMTagStep()
+	 * @generated
+	 */
+	public EReference getMTagStep_MCommentParameter() {
+		return (EReference)mTagStepEClass.getEStructuralFeatures().get(11);
+	}
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.onceforall.dms.desktop.logic.MTagStep#getCommentParameter <em>Comment Parameter</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Comment Parameter</em>'.
+	 * @see org.onceforall.dms.desktop.logic.MTagStep#getCommentParameter()
+	 * @see #getMTagStep()
+	 * @generated
+	 */
+	public EAttribute getMTagStep_CommentParameter() {
+		return (EAttribute)mTagStepEClass.getEStructuralFeatures().get(12);
+	}
+
+	/**
+	 * Returns the meta object for the attribute list '{@link org.onceforall.dms.desktop.logic.MTagStep#getCommentParameterHistoricValues <em>Comment Parameter Historic Values</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute list '<em>Comment Parameter Historic Values</em>'.
+	 * @see org.onceforall.dms.desktop.logic.MTagStep#getCommentParameterHistoricValues()
+	 * @see #getMTagStep()
+	 * @generated
+	 */
+	public EAttribute getMTagStep_CommentParameterHistoricValues() {
+		return (EAttribute)mTagStepEClass.getEStructuralFeatures().get(13);
+	}
+
+	/**
+	 * Returns the meta object for the containment reference '{@link org.onceforall.dms.desktop.logic.MTagStep#getMMp3FolderReferenceParameter <em>MMp3 Folder Reference Parameter</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>MMp3 Folder Reference Parameter</em>'.
+	 * @see org.onceforall.dms.desktop.logic.MTagStep#getMMp3FolderReferenceParameter()
+	 * @see #getMTagStep()
+	 * @generated
+	 */
+	public EReference getMTagStep_MMp3FolderReferenceParameter() {
+		return (EReference)mTagStepEClass.getEStructuralFeatures().get(14);
+	}
+
+	/**
+	 * Returns the meta object for the reference '{@link org.onceforall.dms.desktop.logic.MTagStep#getMp3FolderReferenceParameter <em>Mp3 Folder Reference Parameter</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Mp3 Folder Reference Parameter</em>'.
+	 * @see org.onceforall.dms.desktop.logic.MTagStep#getMp3FolderReferenceParameter()
+	 * @see #getMTagStep()
+	 * @generated
+	 */
+	public EReference getMTagStep_Mp3FolderReferenceParameter() {
+		return (EReference)mTagStepEClass.getEStructuralFeatures().get(15);
+	}
+
+	/**
+	 * Returns the meta object for the containment reference '{@link org.onceforall.dms.desktop.logic.MTagStep#getMMp3EntryNameParameter <em>MMp3 Entry Name Parameter</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>MMp3 Entry Name Parameter</em>'.
+	 * @see org.onceforall.dms.desktop.logic.MTagStep#getMMp3EntryNameParameter()
+	 * @see #getMTagStep()
+	 * @generated
+	 */
+	public EReference getMTagStep_MMp3EntryNameParameter() {
+		return (EReference)mTagStepEClass.getEStructuralFeatures().get(16);
+	}
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.onceforall.dms.desktop.logic.MTagStep#getMp3EntryNameParameter <em>Mp3 Entry Name Parameter</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Mp3 Entry Name Parameter</em>'.
+	 * @see org.onceforall.dms.desktop.logic.MTagStep#getMp3EntryNameParameter()
+	 * @see #getMTagStep()
+	 * @generated
+	 */
+	public EAttribute getMTagStep_Mp3EntryNameParameter() {
+		return (EAttribute)mTagStepEClass.getEStructuralFeatures().get(17);
+	}
+
+	/**
+	 * Returns the meta object for the containment reference '{@link org.onceforall.dms.desktop.logic.MTagStep#getMMp3EntryReferenceResult <em>MMp3 Entry Reference Result</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>MMp3 Entry Reference Result</em>'.
+	 * @see org.onceforall.dms.desktop.logic.MTagStep#getMMp3EntryReferenceResult()
+	 * @see #getMTagStep()
+	 * @generated
+	 */
+	public EReference getMTagStep_MMp3EntryReferenceResult() {
+		return (EReference)mTagStepEClass.getEStructuralFeatures().get(18);
+	}
+
+	/**
+	 * Returns the meta object for the reference '{@link org.onceforall.dms.desktop.logic.MTagStep#getMp3EntryReferenceResult <em>Mp3 Entry Reference Result</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Mp3 Entry Reference Result</em>'.
+	 * @see org.onceforall.dms.desktop.logic.MTagStep#getMp3EntryReferenceResult()
+	 * @see #getMTagStep()
+	 * @generated
+	 */
+	public EReference getMTagStep_Mp3EntryReferenceResult() {
+		return (EReference)mTagStepEClass.getEStructuralFeatures().get(19);
+	}
+
+	/**
+	 * Returns the meta object for the containment reference '{@link org.onceforall.dms.desktop.logic.MTagStep#getMMp3FilePathResult <em>MMp3 File Path Result</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>MMp3 File Path Result</em>'.
+	 * @see org.onceforall.dms.desktop.logic.MTagStep#getMMp3FilePathResult()
+	 * @see #getMTagStep()
+	 * @generated
+	 */
+	public EReference getMTagStep_MMp3FilePathResult() {
+		return (EReference)mTagStepEClass.getEStructuralFeatures().get(20);
+	}
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.onceforall.dms.desktop.logic.MTagStep#getMp3FilePathResult <em>Mp3 File Path Result</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Mp3 File Path Result</em>'.
+	 * @see org.onceforall.dms.desktop.logic.MTagStep#getMp3FilePathResult()
+	 * @see #getMTagStep()
+	 * @generated
+	 */
+	public EAttribute getMTagStep_Mp3FilePathResult() {
+		return (EAttribute)mTagStepEClass.getEStructuralFeatures().get(21);
+	}
+
+	/**
 	 * Returns the meta object for class '{@link org.onceforall.dms.desktop.logic.MDmsApplicationMGetDataUpgradeInfoStep <em>MDms Application MGet Data Upgrade Info Step</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -17563,6 +19007,34 @@ public class LogicPackage extends EPackageImpl {
 	 */
 	public EAttribute getMDmsApplicationMUpgradeDataStep_UpgradeDateParameter() {
 		return (EAttribute)mDmsApplicationMUpgradeDataStepEClass.getEStructuralFeatures().get(5);
+	}
+
+	/**
+	 * Returns the meta object for data type '{@link java.io.File <em>MDirectory</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for data type '<em>MDirectory</em>'.
+	 * @see java.io.File
+	 * @model instanceClass="java.io.File"
+	 *        annotation="http://www.onceforall.org/mcore name='Directory'" 
+	 * @generated
+	 */
+	public EDataType getMDirectory() {
+		return mDirectoryEDataType;
+	}
+
+	/**
+	 * Returns the meta object for data type '{@link java.io.File <em>MExisting Directory</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for data type '<em>MExisting Directory</em>'.
+	 * @see java.io.File
+	 * @model instanceClass="java.io.File"
+	 *        annotation="http://www.onceforall.org/mcore name='Directory (must exist)'" 
+	 * @generated
+	 */
+	public EDataType getMExistingDirectory() {
+		return mExistingDirectoryEDataType;
 	}
 
 	/**
@@ -18046,14 +19518,6 @@ public class LogicPackage extends EPackageImpl {
 		createEAttribute(mRecordStepEClass, MRECORD_STEP__RECORDING_LENGTH_RESULT);
 
 		mConvertToMP3StepEClass = createEClass(MCONVERT_TO_MP3_STEP);
-		createEReference(mConvertToMP3StepEClass, MCONVERT_TO_MP3_STEP__MARTIST_PARAMETER);
-		createEAttribute(mConvertToMP3StepEClass, MCONVERT_TO_MP3_STEP__ARTIST_PARAMETER);
-		createEReference(mConvertToMP3StepEClass, MCONVERT_TO_MP3_STEP__MTITLE_PARAMETER);
-		createEAttribute(mConvertToMP3StepEClass, MCONVERT_TO_MP3_STEP__TITLE_PARAMETER);
-		createEReference(mConvertToMP3StepEClass, MCONVERT_TO_MP3_STEP__MALBUM_PARAMETER);
-		createEAttribute(mConvertToMP3StepEClass, MCONVERT_TO_MP3_STEP__ALBUM_PARAMETER);
-		createEReference(mConvertToMP3StepEClass, MCONVERT_TO_MP3_STEP__MYEAR_PARAMETER);
-		createEAttribute(mConvertToMP3StepEClass, MCONVERT_TO_MP3_STEP__YEAR_PARAMETER);
 		createEReference(mConvertToMP3StepEClass, MCONVERT_TO_MP3_STEP__MDIRECTORY_PARAMETER);
 		createEAttribute(mConvertToMP3StepEClass, MCONVERT_TO_MP3_STEP__DIRECTORY_PARAMETER);
 		createEReference(mConvertToMP3StepEClass, MCONVERT_TO_MP3_STEP__MMP3_FILE_NAME_PARAMETER);
@@ -18064,12 +19528,6 @@ public class LogicPackage extends EPackageImpl {
 		createEAttribute(mConvertToMP3StepEClass, MCONVERT_TO_MP3_STEP__MP3_ENCODER_PATH_PARAMETER);
 		createEReference(mConvertToMP3StepEClass, MCONVERT_TO_MP3_STEP__MAVERAGE_BIT_RATE_PARAMETER);
 		createEAttribute(mConvertToMP3StepEClass, MCONVERT_TO_MP3_STEP__AVERAGE_BIT_RATE_PARAMETER);
-		createEReference(mConvertToMP3StepEClass, MCONVERT_TO_MP3_STEP__MMP3_FOLDER_REFERENCE_PARAMETER);
-		createEReference(mConvertToMP3StepEClass, MCONVERT_TO_MP3_STEP__MP3_FOLDER_REFERENCE_PARAMETER);
-		createEReference(mConvertToMP3StepEClass, MCONVERT_TO_MP3_STEP__MMP3_ENTRY_NAME_PARAMETER);
-		createEAttribute(mConvertToMP3StepEClass, MCONVERT_TO_MP3_STEP__MP3_ENTRY_NAME_PARAMETER);
-		createEReference(mConvertToMP3StepEClass, MCONVERT_TO_MP3_STEP__MMP3_ENTRY_REFERENCE_RESULT);
-		createEReference(mConvertToMP3StepEClass, MCONVERT_TO_MP3_STEP__MP3_ENTRY_REFERENCE_RESULT);
 
 		mPublishMp3sStepEClass = createEClass(MPUBLISH_MP3S_STEP);
 		createEReference(mPublishMp3sStepEClass, MPUBLISH_MP3S_STEP__MMAXIUMUM_DISK_SPACE_PARAMETER);
@@ -18205,6 +19663,38 @@ public class LogicPackage extends EPackageImpl {
 		createEReference(mTestStepEClass, MTEST_STEP__MSTRING_PARAMETER);
 		createEAttribute(mTestStepEClass, MTEST_STEP__STRING_PARAMETER);
 
+		mNameTagMp3StepEClass = createEClass(MNAME_TAG_MP3_STEP);
+		createEReference(mNameTagMp3StepEClass, MNAME_TAG_MP3_STEP__MDIRECTORY_PARAMETER);
+		createEAttribute(mNameTagMp3StepEClass, MNAME_TAG_MP3_STEP__DIRECTORY_PARAMETER);
+		createEReference(mNameTagMp3StepEClass, MNAME_TAG_MP3_STEP__MTAGGED_MP3_FILE_NAME_PARAMETER);
+		createEAttribute(mNameTagMp3StepEClass, MNAME_TAG_MP3_STEP__TAGGED_MP3_FILE_NAME_PARAMETER);
+		createEReference(mNameTagMp3StepEClass, MNAME_TAG_MP3_STEP__MRECORDING_MP3_FILE_PARAMETER);
+		createEAttribute(mNameTagMp3StepEClass, MNAME_TAG_MP3_STEP__RECORDING_MP3_FILE_PARAMETER);
+
+		mTagStepEClass = createEClass(MTAG_STEP);
+		createEReference(mTagStepEClass, MTAG_STEP__MARTIST_PARAMETER);
+		createEAttribute(mTagStepEClass, MTAG_STEP__ARTIST_PARAMETER);
+		createEReference(mTagStepEClass, MTAG_STEP__MTITLE_PARAMETER);
+		createEAttribute(mTagStepEClass, MTAG_STEP__TITLE_PARAMETER);
+		createEReference(mTagStepEClass, MTAG_STEP__MALBUM_PARAMETER);
+		createEAttribute(mTagStepEClass, MTAG_STEP__ALBUM_PARAMETER);
+		createEReference(mTagStepEClass, MTAG_STEP__MGENRE_PARAMETER);
+		createEAttribute(mTagStepEClass, MTAG_STEP__GENRE_PARAMETER);
+		createEAttribute(mTagStepEClass, MTAG_STEP__GENRE_PARAMETER_HISTORIC_VALUES);
+		createEReference(mTagStepEClass, MTAG_STEP__MYEAR_PARAMETER);
+		createEAttribute(mTagStepEClass, MTAG_STEP__YEAR_PARAMETER);
+		createEReference(mTagStepEClass, MTAG_STEP__MCOMMENT_PARAMETER);
+		createEAttribute(mTagStepEClass, MTAG_STEP__COMMENT_PARAMETER);
+		createEAttribute(mTagStepEClass, MTAG_STEP__COMMENT_PARAMETER_HISTORIC_VALUES);
+		createEReference(mTagStepEClass, MTAG_STEP__MMP3_FOLDER_REFERENCE_PARAMETER);
+		createEReference(mTagStepEClass, MTAG_STEP__MP3_FOLDER_REFERENCE_PARAMETER);
+		createEReference(mTagStepEClass, MTAG_STEP__MMP3_ENTRY_NAME_PARAMETER);
+		createEAttribute(mTagStepEClass, MTAG_STEP__MP3_ENTRY_NAME_PARAMETER);
+		createEReference(mTagStepEClass, MTAG_STEP__MMP3_ENTRY_REFERENCE_RESULT);
+		createEReference(mTagStepEClass, MTAG_STEP__MP3_ENTRY_REFERENCE_RESULT);
+		createEReference(mTagStepEClass, MTAG_STEP__MMP3_FILE_PATH_RESULT);
+		createEAttribute(mTagStepEClass, MTAG_STEP__MP3_FILE_PATH_RESULT);
+
 		mDmsApplicationMGetDataUpgradeInfoStepEClass = createEClass(MDMS_APPLICATION_MGET_DATA_UPGRADE_INFO_STEP);
 		createEReference(mDmsApplicationMGetDataUpgradeInfoStepEClass, MDMS_APPLICATION_MGET_DATA_UPGRADE_INFO_STEP__MUPGRADE_RELATIVE_FTP_PATH_PROPERTY);
 		createEAttribute(mDmsApplicationMGetDataUpgradeInfoStepEClass, MDMS_APPLICATION_MGET_DATA_UPGRADE_INFO_STEP__UPGRADE_RELATIVE_FTP_PATH_PROPERTY);
@@ -18224,6 +19714,8 @@ public class LogicPackage extends EPackageImpl {
 		createEAttribute(mDmsApplicationMUpgradeDataStepEClass, MDMS_APPLICATION_MUPGRADE_DATA_STEP__UPGRADE_DATE_PARAMETER);
 
 		// Create data types
+		mDirectoryEDataType = createEDataType(MDIRECTORY);
+		mExistingDirectoryEDataType = createEDataType(MEXISTING_DIRECTORY);
 		mFileEDataType = createEDataType(MFILE);
 		mExistingFileEDataType = createEDataType(MEXISTING_FILE);
 		mStateEDataType = createEDataType(MSTATE);
@@ -18283,7 +19775,7 @@ public class LogicPackage extends EPackageImpl {
 		mAudioStepEClass.getESuperTypes().add(this.getMStep());
 		mCheckInputLevelsStepEClass.getESuperTypes().add(this.getMAudioStep());
 		mRecordStepEClass.getESuperTypes().add(this.getMAudioStep());
-		mConvertToMP3StepEClass.getESuperTypes().add(this.getMStep());
+		mConvertToMP3StepEClass.getESuperTypes().add(this.getMTagStep());
 		mPublishMp3sStepEClass.getESuperTypes().add(this.getMFtpStep());
 		mUpdatePublishedMp3sStepEClass.getESuperTypes().add(this.getMPublishMp3sStep());
 		mPublishNewMp3StepEClass.getESuperTypes().add(this.getMPublishMp3sStep());
@@ -18293,6 +19785,8 @@ public class LogicPackage extends EPackageImpl {
 		mBurnCdStepEClass.getESuperTypes().add(this.getMStep());
 		mFtpStepEClass.getESuperTypes().add(this.getMStep());
 		mTestStepEClass.getESuperTypes().add(this.getMStep());
+		mNameTagMp3StepEClass.getESuperTypes().add(this.getMTagStep());
+		mTagStepEClass.getESuperTypes().add(this.getMStep());
 		mDmsApplicationMGetDataUpgradeInfoStepEClass.getESuperTypes().add(this.getMFtpStep());
 		mDmsApplicationMUpgradeDataStepEClass.getESuperTypes().add(this.getMFtpStep());
 
@@ -18368,14 +19862,14 @@ public class LogicPackage extends EPackageImpl {
 
 		initEClass(mApplicationEClass, MApplication.class, "MApplication", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getMApplication_MDataFileProperty(), this.getMProperty(), null, "mDataFileProperty", "new MDataFileProperty()", 1, 1, MApplication.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getMApplication_DataFileProperty(), this.getMFile(), "dataFileProperty", "Application Data Files\\Data.xml", 1, 1, MApplication.class, IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getMApplication_DataFileProperty(), this.getMExistingFile(), "dataFileProperty", "Application Data Files\\Data.xml", 1, 1, MApplication.class, IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMApplication_InfoWebPageProperty(), this.getMUrl(), "infoWebPageProperty", "http://www.onceforall.org/dms-desktop/info.html", 1, 1, MApplication.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getMApplication_MInfoWebPageProperty(), this.getMProperty(), null, "mInfoWebPageProperty", "new MInfoWebPageProperty()", 1, 1, MApplication.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMApplication_DataFilePropertyHistoricValues(), this.getMFile(), "dataFilePropertyHistoricValues", null, 0, 5, MApplication.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getMApplication_MLogFileProperty(), this.getMProperty(), null, "mLogFileProperty", "", 1, 1, MApplication.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMApplication_LogFileProperty(), this.getMFile(), "logFileProperty", null, 1, 1, MApplication.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getMApplication_MPathProperty(), this.getMProperty(), null, "mPathProperty", null, 1, 1, MApplication.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getMApplication_PathProperty(), this.getMFile(), "pathProperty", null, 1, 1, MApplication.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getMApplication_PathProperty(), this.getMExistingDirectory(), "pathProperty", null, 1, 1, MApplication.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getMApplication_MVersionProperty(), this.getMProperty(), null, "mVersionProperty", "", 1, 1, MApplication.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMApplication_VersionProperty(), this.getMString(), "versionProperty", "0.9.0", 1, 1, MApplication.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getMApplication_MLastSaveProperty(), this.getMProperty(), null, "mLastSaveProperty", "", 1, 1, MApplication.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -18393,11 +19887,11 @@ public class LogicPackage extends EPackageImpl {
 
 		initEClass(mDmsApplicationEClass, MDmsApplication.class, "MDmsApplication", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getMDmsApplication_MServiceFilePathProperty(), this.getMProperty(), null, "mServiceFilePathProperty", "", 1, 1, MDmsApplication.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getMDmsApplication_ServiceFilePathProperty(), this.getMExistingFile(), "serviceFilePathProperty", "Service Files", 1, 1, MDmsApplication.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getMDmsApplication_ServiceFilePathProperty(), this.getMExistingDirectory(), "serviceFilePathProperty", "Service Files", 1, 1, MDmsApplication.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getMDmsApplication_MWwxFilesPathProperty(), this.getMProperty(), null, "mWwxFilesPathProperty", "", 1, 1, MDmsApplication.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getMDmsApplication_WwxFilesPathProperty(), this.getMExistingFile(), "wwxFilesPathProperty", "WWX Files", 1, 1, MDmsApplication.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getMDmsApplication_WwxFilesPathProperty(), this.getMExistingDirectory(), "wwxFilesPathProperty", "WWX Files", 1, 1, MDmsApplication.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getMDmsApplication_MMp3EncoderPathProperty(), this.getMProperty(), null, "mMp3EncoderPathProperty", "", 1, 1, MDmsApplication.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getMDmsApplication_Mp3EncoderPathProperty(), this.getMExistingFile(), "mp3EncoderPathProperty", "Program Files\\LAME 3.96.1", 0, 1, MDmsApplication.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getMDmsApplication_Mp3EncoderPathProperty(), this.getMExistingDirectory(), "mp3EncoderPathProperty", "Program Files\\LAME 3.96.1", 0, 1, MDmsApplication.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getMDmsApplication_MFtpServerUrlProperty(), this.getMProperty(), null, "mFtpServerUrlProperty", "", 1, 1, MDmsApplication.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMDmsApplication_FtpServerUrlProperty(), this.getMUrl(), "ftpServerUrlProperty", null, 0, 1, MDmsApplication.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMDmsApplication_FtpServerUrlPropertyHistoricValues(), this.getMUrl(), "ftpServerUrlPropertyHistoricValues", null, 0, 3, MDmsApplication.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -18418,7 +19912,7 @@ public class LogicPackage extends EPackageImpl {
 		initEReference(getMDmsApplication_MSmtpPasswordProperty(), this.getMProperty(), null, "mSmtpPasswordProperty", "", 1, 1, MDmsApplication.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMDmsApplication_SmtpPasswordProperty(), this.getMPassword(), "smtpPasswordProperty", null, 0, 1, MDmsApplication.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getMDmsApplication_MBurningSoftwareDirectoryPathProperty(), this.getMProperty(), null, "mBurningSoftwareDirectoryPathProperty", "", 1, 1, MDmsApplication.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getMDmsApplication_BurningSoftwareDirectoryPathProperty(), this.getMExistingFile(), "burningSoftwareDirectoryPathProperty", null, 1, 1, MDmsApplication.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getMDmsApplication_BurningSoftwareDirectoryPathProperty(), this.getMExistingDirectory(), "burningSoftwareDirectoryPathProperty", null, 1, 1, MDmsApplication.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getMDmsApplication_MDriveProperty(), this.getMProperty(), null, "mDriveProperty", "", 1, 1, MDmsApplication.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMDmsApplication_DriveProperty(), this.getMString(), "driveProperty", null, 0, 1, MDmsApplication.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMDmsApplication_DrivePropertyHistoricValues(), this.getMString(), "drivePropertyHistoricValues", null, 0, 3, MDmsApplication.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -18500,19 +19994,19 @@ public class LogicPackage extends EPackageImpl {
 
 		initEClass(mCreateDirectoryStepEClass, MCreateDirectoryStep.class, "MCreateDirectoryStep", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getMCreateDirectoryStep_MParentDirectoryParameter(), this.getMParameter(), null, "mParentDirectoryParameter", "", 1, 1, MCreateDirectoryStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getMCreateDirectoryStep_ParentDirectoryParameter(), this.getMExistingFile(), "parentDirectoryParameter", null, 1, 1, MCreateDirectoryStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getMCreateDirectoryStep_ParentDirectoryParameterHistoricValues(), this.getMExistingFile(), "parentDirectoryParameterHistoricValues", null, 0, 3, MCreateDirectoryStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getMCreateDirectoryStep_ParentDirectoryParameter(), this.getMExistingDirectory(), "parentDirectoryParameter", null, 1, 1, MCreateDirectoryStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getMCreateDirectoryStep_ParentDirectoryParameterHistoricValues(), this.getMExistingDirectory(), "parentDirectoryParameterHistoricValues", null, 0, 3, MCreateDirectoryStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getMCreateDirectoryStep_MDirectoryNameParameter(), this.getMParameter(), null, "mDirectoryNameParameter", "", 1, 1, MCreateDirectoryStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getMCreateDirectoryStep_DirectoryNameParameter(), this.getMFile(), "directoryNameParameter", null, 1, 1, MCreateDirectoryStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getMCreateDirectoryStep_DirectoryNameParameter(), this.getMDirectory(), "directoryNameParameter", null, 1, 1, MCreateDirectoryStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getMCreateDirectoryStep_MDirectoryResult(), this.getMResult(), null, "mDirectoryResult", "", 1, 1, MCreateDirectoryStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getMCreateDirectoryStep_DirectoryResult(), this.getMExistingFile(), "directoryResult", null, 1, 1, MCreateDirectoryStep.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getMCreateDirectoryStep_DirectoryResult(), this.getMExistingDirectory(), "directoryResult", null, 1, 1, MCreateDirectoryStep.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		
 
 		initEClass(mCheckFreeDiskSpaceStepEClass, MCheckFreeDiskSpaceStep.class, "MCheckFreeDiskSpaceStep", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getMCheckFreeDiskSpaceStep_MRequiredFreeDiskSpaceParameter(), this.getMParameter(), null, "mRequiredFreeDiskSpaceParameter", "", 1, 1, MCheckFreeDiskSpaceStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMCheckFreeDiskSpaceStep_RequiredFreeDiskSpaceParameter(), this.getMLong(), "requiredFreeDiskSpaceParameter", null, 1, 1, MCheckFreeDiskSpaceStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getMCheckFreeDiskSpaceStep_MDirectoryParameter(), this.getMParameter(), null, "mDirectoryParameter", "", 1, 1, MCheckFreeDiskSpaceStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getMCheckFreeDiskSpaceStep_DirectoryParameter(), this.getMExistingFile(), "directoryParameter", null, 1, 1, MCheckFreeDiskSpaceStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getMCheckFreeDiskSpaceStep_DirectoryParameter(), this.getMExistingDirectory(), "directoryParameter", null, 1, 1, MCheckFreeDiskSpaceStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getMCheckFreeDiskSpaceStep_MFreeDiskSpaceResult(), this.getMResult(), null, "mFreeDiskSpaceResult", "", 1, 1, MCheckFreeDiskSpaceStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMCheckFreeDiskSpaceStep_FreeDiskSpaceResult(), this.getMLong(), "freeDiskSpaceResult", null, 0, 1, MCheckFreeDiskSpaceStep.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		
@@ -18537,7 +20031,7 @@ public class LogicPackage extends EPackageImpl {
 
 		initEClass(mRecordStepEClass, MRecordStep.class, "MRecordStep", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getMRecordStep_MDirectoryParameter(), this.getMParameter(), null, "mDirectoryParameter", "", 1, 1, MRecordStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getMRecordStep_DirectoryParameter(), this.getMExistingFile(), "directoryParameter", null, 1, 1, MRecordStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getMRecordStep_DirectoryParameter(), this.getMExistingDirectory(), "directoryParameter", null, 1, 1, MRecordStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getMRecordStep_MRecordingFileParameter(), this.getMParameter(), null, "mRecordingFileParameter", "", 1, 1, MRecordStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMRecordStep_RecordingFileParameter(), this.getMFile(), "recordingFileParameter", "Recording.wav", 1, 1, MRecordStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getMRecordStep_MRecordingFileResult(), this.getMResult(), null, "mRecordingFileResult", "", 1, 1, MRecordStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -18549,30 +20043,16 @@ public class LogicPackage extends EPackageImpl {
 		
 
 		initEClass(mConvertToMP3StepEClass, MConvertToMP3Step.class, "MConvertToMP3Step", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getMConvertToMP3Step_MArtistParameter(), this.getMParameter(), null, "mArtistParameter", "", 1, 1, MConvertToMP3Step.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getMConvertToMP3Step_ArtistParameter(), this.getMString(), "artistParameter", null, 1, 1, MConvertToMP3Step.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getMConvertToMP3Step_MTitleParameter(), this.getMParameter(), null, "mTitleParameter", "", 1, 1, MConvertToMP3Step.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getMConvertToMP3Step_TitleParameter(), this.getMString(), "titleParameter", null, 1, 1, MConvertToMP3Step.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getMConvertToMP3Step_MAlbumParameter(), this.getMParameter(), null, "mAlbumParameter", "", 1, 1, MConvertToMP3Step.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getMConvertToMP3Step_AlbumParameter(), this.getMString(), "albumParameter", null, 1, 1, MConvertToMP3Step.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getMConvertToMP3Step_MYearParameter(), this.getMParameter(), null, "mYearParameter", "", 1, 1, MConvertToMP3Step.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getMConvertToMP3Step_YearParameter(), this.getMString(), "yearParameter", null, 1, 1, MConvertToMP3Step.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getMConvertToMP3Step_MDirectoryParameter(), this.getMParameter(), null, "mDirectoryParameter", "", 1, 1, MConvertToMP3Step.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getMConvertToMP3Step_DirectoryParameter(), this.getMExistingFile(), "directoryParameter", null, 1, 1, MConvertToMP3Step.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getMConvertToMP3Step_DirectoryParameter(), this.getMExistingDirectory(), "directoryParameter", null, 1, 1, MConvertToMP3Step.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getMConvertToMP3Step_MMp3FileNameParameter(), this.getMParameter(), null, "mMp3FileNameParameter", "", 1, 1, MConvertToMP3Step.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMConvertToMP3Step_Mp3FileNameParameter(), this.getMFile(), "mp3FileNameParameter", null, 1, 1, MConvertToMP3Step.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getMConvertToMP3Step_MRecordingFileParameter(), this.getMParameter(), null, "mRecordingFileParameter", "", 1, 1, MConvertToMP3Step.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMConvertToMP3Step_RecordingFileParameter(), this.getMExistingFile(), "recordingFileParameter", null, 1, 1, MConvertToMP3Step.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getMConvertToMP3Step_MMp3EncoderPathParameter(), this.getMParameter(), null, "mMp3EncoderPathParameter", "", 1, 1, MConvertToMP3Step.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getMConvertToMP3Step_Mp3EncoderPathParameter(), this.getMExistingFile(), "mp3EncoderPathParameter", null, 1, 1, MConvertToMP3Step.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getMConvertToMP3Step_Mp3EncoderPathParameter(), this.getMExistingDirectory(), "mp3EncoderPathParameter", null, 1, 1, MConvertToMP3Step.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getMConvertToMP3Step_MAverageBitRateParameter(), this.getMParameter(), null, "mAverageBitRateParameter", "", 1, 1, MConvertToMP3Step.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMConvertToMP3Step_AverageBitRateParameter(), this.getMLong(), "averageBitRateParameter", null, 1, 1, MConvertToMP3Step.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getMConvertToMP3Step_MMp3FolderReferenceParameter(), this.getMParameter(), null, "mMp3FolderReferenceParameter", "", 1, 1, MConvertToMP3Step.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getMConvertToMP3Step_Mp3FolderReferenceParameter(), this.getMMp3Folder(), null, "mp3FolderReferenceParameter", null, 1, 1, MConvertToMP3Step.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getMConvertToMP3Step_MMp3EntryNameParameter(), this.getMParameter(), null, "mMp3EntryNameParameter", "", 1, 1, MConvertToMP3Step.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getMConvertToMP3Step_Mp3EntryNameParameter(), this.getMString(), "mp3EntryNameParameter", null, 1, 1, MConvertToMP3Step.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getMConvertToMP3Step_MMp3EntryReferenceResult(), this.getMResult(), null, "mMp3EntryReferenceResult", "", 1, 1, MConvertToMP3Step.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getMConvertToMP3Step_Mp3EntryReferenceResult(), this.getMMp3(), null, "mp3EntryReferenceResult", null, 1, 1, MConvertToMP3Step.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		
 
 		initEClass(mPublishMp3sStepEClass, MPublishMp3sStep.class, "MPublishMp3sStep", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -18623,7 +20103,7 @@ public class LogicPackage extends EPackageImpl {
 		initEReference(getMPublishNewMp3Step_MLinkDescriptionParameter(), this.getMParameter(), null, "mLinkDescriptionParameter", "", 1, 1, MPublishNewMp3Step.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMPublishNewMp3Step_LinkDescriptionParameter(), this.getMString(), "linkDescriptionParameter", null, 1, 1, MPublishNewMp3Step.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getMPublishNewMp3Step_MCommentParameter(), this.getMParameter(), null, "mCommentParameter", "", 1, 1, MPublishNewMp3Step.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getMPublishNewMp3Step_CommentParameter(), this.getMString(), "commentParameter", null, 0, 1, MPublishNewMp3Step.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getMPublishNewMp3Step_CommentParameter(), this.getMString(), "commentParameter", null, 0, 1, MPublishNewMp3Step.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getMPublishNewMp3Step_MPodcastTitleParameter(), this.getMParameter(), null, "mPodcastTitleParameter", "", 1, 1, MPublishNewMp3Step.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMPublishNewMp3Step_PodcastTitleParameter(), this.getMString(), "podcastTitleParameter", null, 1, 1, MPublishNewMp3Step.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getMPublishNewMp3Step_MPodcastSubtitleParameter(), this.getMParameter(), null, "mPodcastSubtitleParameter", "", 1, 1, MPublishNewMp3Step.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -18693,7 +20173,7 @@ public class LogicPackage extends EPackageImpl {
 		initEReference(getMBurnCdStep_MRecordingFilesParameter(), this.getMParameter(), null, "mRecordingFilesParameter", "", 1, 1, MBurnCdStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMBurnCdStep_RecordingFilesParameter(), this.getMExistingFile(), "recordingFilesParameter", null, 1, -1, MBurnCdStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getMBurnCdStep_MBurningSoftwareDirectoryPathParameter(), this.getMParameter(), null, "mBurningSoftwareDirectoryPathParameter", "", 1, 1, MBurnCdStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getMBurnCdStep_BurningSoftwareDirectoryPathParameter(), this.getMExistingFile(), "burningSoftwareDirectoryPathParameter", null, 1, 1, MBurnCdStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getMBurnCdStep_BurningSoftwareDirectoryPathParameter(), this.getMExistingDirectory(), "burningSoftwareDirectoryPathParameter", null, 1, 1, MBurnCdStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getMBurnCdStep_MDriveParameter(), this.getMParameter(), null, "mDriveParameter", "", 1, 1, MBurnCdStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMBurnCdStep_DriveParameter(), this.getMString(), "driveParameter", null, 1, 1, MBurnCdStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getMBurnCdStep_MTotalRecordingLengthParameter(), this.getMParameter(), null, "mTotalRecordingLengthParameter", "", 1, 1, MBurnCdStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -18718,6 +20198,40 @@ public class LogicPackage extends EPackageImpl {
 		initEAttribute(getMTestStep_StringParameter(), this.getMString(), "stringParameter", null, 0, 1, MTestStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		
 
+		initEClass(mNameTagMp3StepEClass, MNameTagMp3Step.class, "MNameTagMp3Step", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getMNameTagMp3Step_MDirectoryParameter(), this.getMParameter(), null, "mDirectoryParameter", "", 1, 1, MNameTagMp3Step.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getMNameTagMp3Step_DirectoryParameter(), this.getMExistingDirectory(), "directoryParameter", null, 1, 1, MNameTagMp3Step.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMNameTagMp3Step_MTaggedMp3FileNameParameter(), this.getMParameter(), null, "mTaggedMp3FileNameParameter", "", 1, 1, MNameTagMp3Step.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getMNameTagMp3Step_TaggedMp3FileNameParameter(), this.getMFile(), "taggedMp3FileNameParameter", null, 1, 1, MNameTagMp3Step.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMNameTagMp3Step_MRecordingMp3FileParameter(), this.getMParameter(), null, "mRecordingMp3FileParameter", "", 1, 1, MNameTagMp3Step.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getMNameTagMp3Step_RecordingMp3FileParameter(), this.getMExistingFile(), "recordingMp3FileParameter", null, 1, 1, MNameTagMp3Step.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		
+
+		initEClass(mTagStepEClass, MTagStep.class, "MTagStep", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getMTagStep_MArtistParameter(), this.getMParameter(), null, "mArtistParameter", "", 1, 1, MTagStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getMTagStep_ArtistParameter(), this.getMString(), "artistParameter", null, 1, 1, MTagStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMTagStep_MTitleParameter(), this.getMParameter(), null, "mTitleParameter", "", 1, 1, MTagStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getMTagStep_TitleParameter(), this.getMString(), "titleParameter", null, 1, 1, MTagStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMTagStep_MAlbumParameter(), this.getMParameter(), null, "mAlbumParameter", "", 1, 1, MTagStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getMTagStep_AlbumParameter(), this.getMString(), "albumParameter", null, 1, 1, MTagStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMTagStep_MGenreParameter(), this.getMParameter(), null, "mGenreParameter", "", 1, 1, MTagStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getMTagStep_GenreParameter(), this.getMString(), "genreParameter", "Speech", 1, 1, MTagStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getMTagStep_GenreParameterHistoricValues(), this.getMString(), "genreParameterHistoricValues", null, 0, 3, MTagStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMTagStep_MYearParameter(), this.getMParameter(), null, "mYearParameter", "", 1, 1, MTagStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getMTagStep_YearParameter(), this.getMString(), "yearParameter", null, 1, 1, MTagStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMTagStep_MCommentParameter(), this.getMParameter(), null, "mCommentParameter", "", 1, 1, MTagStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getMTagStep_CommentParameter(), this.getMString(), "commentParameter", null, 0, 1, MTagStep.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getMTagStep_CommentParameterHistoricValues(), this.getMString(), "commentParameterHistoricValues", null, 0, 3, MTagStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMTagStep_MMp3FolderReferenceParameter(), this.getMParameter(), null, "mMp3FolderReferenceParameter", "", 1, 1, MTagStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMTagStep_Mp3FolderReferenceParameter(), this.getMMp3Folder(), null, "mp3FolderReferenceParameter", null, 1, 1, MTagStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMTagStep_MMp3EntryNameParameter(), this.getMParameter(), null, "mMp3EntryNameParameter", "", 1, 1, MTagStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getMTagStep_Mp3EntryNameParameter(), this.getMString(), "mp3EntryNameParameter", null, 1, 1, MTagStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMTagStep_MMp3EntryReferenceResult(), this.getMResult(), null, "mMp3EntryReferenceResult", "", 1, 1, MTagStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMTagStep_Mp3EntryReferenceResult(), this.getMMp3(), null, "mp3EntryReferenceResult", null, 1, 1, MTagStep.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMTagStep_MMp3FilePathResult(), this.getMResult(), null, "mMp3FilePathResult", "", 1, 1, MTagStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getMTagStep_Mp3FilePathResult(), this.getMExistingFile(), "mp3FilePathResult", null, 1, 1, MTagStep.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		
+
 		initEClass(mDmsApplicationMGetDataUpgradeInfoStepEClass, MDmsApplicationMGetDataUpgradeInfoStep.class, "MDmsApplicationMGetDataUpgradeInfoStep", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getMDmsApplicationMGetDataUpgradeInfoStep_MUpgradeRelativeFtpPathProperty(), this.getMParameter(), null, "mUpgradeRelativeFtpPathProperty", "", 1, 1, MDmsApplicationMGetDataUpgradeInfoStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMDmsApplicationMGetDataUpgradeInfoStep_UpgradeRelativeFtpPathProperty(), this.getMString(), "upgradeRelativeFtpPathProperty", null, 1, 1, MDmsApplicationMGetDataUpgradeInfoStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -18739,6 +20253,8 @@ public class LogicPackage extends EPackageImpl {
 		
 
 		// Initialize data types
+		initEDataType(mDirectoryEDataType, File.class, "MDirectory", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
+		initEDataType(mExistingDirectoryEDataType, File.class, "MExistingDirectory", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 		initEDataType(mFileEDataType, File.class, "MFile", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 		initEDataType(mExistingFileEDataType, File.class, "MExistingFile", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 		initEDataType(mStateEDataType, State.class, "MState", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
@@ -18945,6 +20461,18 @@ public class LogicPackage extends EPackageImpl {
 			 "name", "Progress status",
 			 "description", "Specifies a textual representation of the progress.",
 			 "readOnly", "true"
+		   });		
+		addAnnotation
+		  (mDirectoryEDataType, 
+		   source, 
+		   new String[] {
+			 "name", "Directory"
+		   });		
+		addAnnotation
+		  (mExistingDirectoryEDataType, 
+		   source, 
+		   new String[] {
+			 "name", "Directory (must exist)"
 		   });		
 		addAnnotation
 		  (mFileEDataType, 
@@ -19624,36 +21152,6 @@ public class LogicPackage extends EPackageImpl {
 			 "terminatable", "true"
 		   });		
 		addAnnotation
-		  (getMConvertToMP3Step_MArtistParameter(), 
-		   source, 
-		   new String[] {
-			 "name", "Artist",
-			 "description", "Determines the text that will set as the ID3 artist tag on the MP3 file.",
-			 "readOnly", "false"
-		   });		
-		addAnnotation
-		  (getMConvertToMP3Step_MTitleParameter(), 
-		   source, 
-		   new String[] {
-			 "name", "Title",
-			 "description", "Determines the text that will set as the ID3 title tag on the MP3 file.",
-			 "readOnly", "false"
-		   });		
-		addAnnotation
-		  (getMConvertToMP3Step_MAlbumParameter(), 
-		   source, 
-		   new String[] {
-			 "name", "Album",
-			 "description", "Determines the text that will set as the ID3 album tag on the MP3 file."
-		   });		
-		addAnnotation
-		  (getMConvertToMP3Step_MYearParameter(), 
-		   source, 
-		   new String[] {
-			 "name", "Year",
-			 "description", "Determines the text that will set as the ID3 year tag on the MP3 file."
-		   });		
-		addAnnotation
 		  (getMConvertToMP3Step_MDirectoryParameter(), 
 		   source, 
 		   new String[] {
@@ -19687,27 +21185,6 @@ public class LogicPackage extends EPackageImpl {
 		   new String[] {
 			 "name", "Average bit rate",
 			 "description", "Specifies the average bit rate of the MP3 file in bits per second. Valid values are 8-310."
-		   });		
-		addAnnotation
-		  (getMConvertToMP3Step_MMp3FolderReferenceParameter(), 
-		   source, 
-		   new String[] {
-			 "name", "MP3 folder reference",
-			 "description", "Specifies a reference to the folder where the new MP3 file should be stored."
-		   });		
-		addAnnotation
-		  (getMConvertToMP3Step_MMp3EntryNameParameter(), 
-		   source, 
-		   new String[] {
-			 "name", "MP3 entry name",
-			 "description", "Specifies the name of the new MP3 entry in the MP3 folder."
-		   });		
-		addAnnotation
-		  (getMConvertToMP3Step_MMp3EntryReferenceResult(), 
-		   source, 
-		   new String[] {
-			 "name", "MP3 entry reference",
-			 "description", "Contains a reference to the MP3 enty that has been created."
 		   });		
 		addAnnotation
 		  (mPublishMp3sStepEClass, 
@@ -20214,6 +21691,125 @@ public class LogicPackage extends EPackageImpl {
 		   new String[] {
 			 "name", "String",
 			 "description", "Specifies a string that is not saved with the application data."
+		   });		
+		addAnnotation
+		  (mNameTagMp3StepEClass, 
+		   source, 
+		   new String[] {
+			 "name", "Tag MP3",
+			 "description", "Copies the given recording file to the specified directory, gives it the specified name and sets the ID3 tags.",
+			 "iconFilePath", "Image Files/Convert to MP3 step.gif",
+			 "actionName", "Tag",
+			 "actionIconFilePath", "Image Files/Convert.gif",
+			 "interruptable", "false",
+			 "stoppable", "false",
+			 "terminatable", "false"
+		   });		
+		addAnnotation
+		  (getMNameTagMp3Step_MDirectoryParameter(), 
+		   source, 
+		   new String[] {
+			 "name", "Directory",
+			 "description", "Specifies the directory where the renamed and tagged MP3 file should be copied to."
+		   });		
+		addAnnotation
+		  (getMNameTagMp3Step_MTaggedMp3FileNameParameter(), 
+		   source, 
+		   new String[] {
+			 "name", "Tagged MP3 file name",
+			 "description", "Specifies the name of the MP3 file to be named and tagged."
+		   });		
+		addAnnotation
+		  (getMNameTagMp3Step_MRecordingMp3FileParameter(), 
+		   source, 
+		   new String[] {
+			 "name", "Recording MP3 file path",
+			 "description", "Specifies the path of the MP3 file to be named and tagged."
+		   });		
+		addAnnotation
+		  (mTagStepEClass, 
+		   source, 
+		   new String[] {
+			 "actionName", "Mark as completed",
+			 "actionIconFilePath", "Image Files\\Mark as completed.gif",
+			 "interruptable", "false",
+			 "stoppable", "false",
+			 "terminatable", "false"
+		   });		
+		addAnnotation
+		  (getMTagStep_MArtistParameter(), 
+		   source, 
+		   new String[] {
+			 "name", "Artist",
+			 "description", "Determines the text that will set as the ID3 artist tag on the MP3 file.",
+			 "readOnly", "false"
+		   });		
+		addAnnotation
+		  (getMTagStep_MTitleParameter(), 
+		   source, 
+		   new String[] {
+			 "name", "Title",
+			 "description", "Determines the text that will set as the ID3 title tag on the MP3 file.",
+			 "readOnly", "false"
+		   });		
+		addAnnotation
+		  (getMTagStep_MAlbumParameter(), 
+		   source, 
+		   new String[] {
+			 "name", "Album",
+			 "description", "Determines the text that will set as the ID3 album tag on the MP3 file."
+		   });		
+		addAnnotation
+		  (getMTagStep_MGenreParameter(), 
+		   source, 
+		   new String[] {
+			 "name", "Genre",
+			 "description", "Determines the text that will set as the ID3 year tag on the MP3 file.",
+			 "readOnly", "false"
+		   });		
+		addAnnotation
+		  (getMTagStep_MYearParameter(), 
+		   source, 
+		   new String[] {
+			 "name", "Year",
+			 "description", "Determines the text that will set as the ID3 year tag on the MP3 file."
+		   });		
+		addAnnotation
+		  (getMTagStep_MCommentParameter(), 
+		   source, 
+		   new String[] {
+			 "name", "Comment",
+			 "description", "Determines the text that will set as the ID3 comment tag on the MP3 file."
+		   });		
+		addAnnotation
+		  (getMTagStep_MMp3FolderReferenceParameter(), 
+		   source, 
+		   new String[] {
+			 "name", "MP3 folder reference",
+			 "description", "Specifies a reference to the folder where the new MP3 file should be stored."
+		   });		
+		addAnnotation
+		  (getMTagStep_MMp3EntryNameParameter(), 
+		   source, 
+		   new String[] {
+			 "name", "MP3 entry name",
+			 "description", "Specifies the name of the new MP3 entry in the MP3 folder."
+		   });		
+		addAnnotation
+		  (getMTagStep_MMp3EntryReferenceResult(), 
+		   source, 
+		   new String[] {
+			 "name", "MP3 entry reference",
+			 "description", "Contains a reference to the MP3 enty that has been created.",
+			 "readOnly", "true"
+		   });		
+		addAnnotation
+		  (getMTagStep_MMp3FilePathResult(), 
+		   source, 
+		   new String[] {
+			 "name", "MP3 file path",
+			 "description", "Specifies the path of the converted MP3 file.",
+			 "readOnly", "true"
 		   });
 	}
 
@@ -21951,70 +23547,6 @@ public class LogicPackage extends EPackageImpl {
 		public static final EClass MCONVERT_TO_MP3_STEP = eINSTANCE.getMConvertToMP3Step();
 
 		/**
-		 * The meta object literal for the '<em><b>MArtist Parameter</b></em>' containment reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		public static final EReference MCONVERT_TO_MP3_STEP__MARTIST_PARAMETER = eINSTANCE.getMConvertToMP3Step_MArtistParameter();
-
-		/**
-		 * The meta object literal for the '<em><b>Artist Parameter</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		public static final EAttribute MCONVERT_TO_MP3_STEP__ARTIST_PARAMETER = eINSTANCE.getMConvertToMP3Step_ArtistParameter();
-
-		/**
-		 * The meta object literal for the '<em><b>MTitle Parameter</b></em>' containment reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		public static final EReference MCONVERT_TO_MP3_STEP__MTITLE_PARAMETER = eINSTANCE.getMConvertToMP3Step_MTitleParameter();
-
-		/**
-		 * The meta object literal for the '<em><b>Title Parameter</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		public static final EAttribute MCONVERT_TO_MP3_STEP__TITLE_PARAMETER = eINSTANCE.getMConvertToMP3Step_TitleParameter();
-
-		/**
-		 * The meta object literal for the '<em><b>MAlbum Parameter</b></em>' containment reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		public static final EReference MCONVERT_TO_MP3_STEP__MALBUM_PARAMETER = eINSTANCE.getMConvertToMP3Step_MAlbumParameter();
-
-		/**
-		 * The meta object literal for the '<em><b>Album Parameter</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		public static final EAttribute MCONVERT_TO_MP3_STEP__ALBUM_PARAMETER = eINSTANCE.getMConvertToMP3Step_AlbumParameter();
-
-		/**
-		 * The meta object literal for the '<em><b>MYear Parameter</b></em>' containment reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		public static final EReference MCONVERT_TO_MP3_STEP__MYEAR_PARAMETER = eINSTANCE.getMConvertToMP3Step_MYearParameter();
-
-		/**
-		 * The meta object literal for the '<em><b>Year Parameter</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		public static final EAttribute MCONVERT_TO_MP3_STEP__YEAR_PARAMETER = eINSTANCE.getMConvertToMP3Step_YearParameter();
-
-		/**
 		 * The meta object literal for the '<em><b>MDirectory Parameter</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -22093,54 +23625,6 @@ public class LogicPackage extends EPackageImpl {
 		 * @generated
 		 */
 		public static final EAttribute MCONVERT_TO_MP3_STEP__AVERAGE_BIT_RATE_PARAMETER = eINSTANCE.getMConvertToMP3Step_AverageBitRateParameter();
-
-		/**
-		 * The meta object literal for the '<em><b>MMp3 Folder Reference Parameter</b></em>' containment reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		public static final EReference MCONVERT_TO_MP3_STEP__MMP3_FOLDER_REFERENCE_PARAMETER = eINSTANCE.getMConvertToMP3Step_MMp3FolderReferenceParameter();
-
-		/**
-		 * The meta object literal for the '<em><b>Mp3 Folder Reference Parameter</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		public static final EReference MCONVERT_TO_MP3_STEP__MP3_FOLDER_REFERENCE_PARAMETER = eINSTANCE.getMConvertToMP3Step_Mp3FolderReferenceParameter();
-
-		/**
-		 * The meta object literal for the '<em><b>MMp3 Entry Name Parameter</b></em>' containment reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		public static final EReference MCONVERT_TO_MP3_STEP__MMP3_ENTRY_NAME_PARAMETER = eINSTANCE.getMConvertToMP3Step_MMp3EntryNameParameter();
-
-		/**
-		 * The meta object literal for the '<em><b>Mp3 Entry Name Parameter</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		public static final EAttribute MCONVERT_TO_MP3_STEP__MP3_ENTRY_NAME_PARAMETER = eINSTANCE.getMConvertToMP3Step_Mp3EntryNameParameter();
-
-		/**
-		 * The meta object literal for the '<em><b>MMp3 Entry Reference Result</b></em>' containment reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		public static final EReference MCONVERT_TO_MP3_STEP__MMP3_ENTRY_REFERENCE_RESULT = eINSTANCE.getMConvertToMP3Step_MMp3EntryReferenceResult();
-
-		/**
-		 * The meta object literal for the '<em><b>Mp3 Entry Reference Result</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		public static final EReference MCONVERT_TO_MP3_STEP__MP3_ENTRY_REFERENCE_RESULT = eINSTANCE.getMConvertToMP3Step_Mp3EntryReferenceResult();
 
 		/**
 		 * The meta object literal for the '{@link org.onceforall.dms.desktop.logic.MPublishMp3sStep <em>MPublish Mp3s Step</em>}' class.
@@ -23161,6 +24645,250 @@ public class LogicPackage extends EPackageImpl {
 		public static final EAttribute MTEST_STEP__STRING_PARAMETER = eINSTANCE.getMTestStep_StringParameter();
 
 		/**
+		 * The meta object literal for the '{@link org.onceforall.dms.desktop.logic.MNameTagMp3Step <em>MName Tag Mp3 Step</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.onceforall.dms.desktop.logic.MNameTagMp3Step
+		 * @see org.onceforall.dms.desktop.logic.LogicPackage#getMNameTagMp3Step()
+		 * @generated
+		 */
+		public static final EClass MNAME_TAG_MP3_STEP = eINSTANCE.getMNameTagMp3Step();
+
+		/**
+		 * The meta object literal for the '<em><b>MDirectory Parameter</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		public static final EReference MNAME_TAG_MP3_STEP__MDIRECTORY_PARAMETER = eINSTANCE.getMNameTagMp3Step_MDirectoryParameter();
+
+		/**
+		 * The meta object literal for the '<em><b>Directory Parameter</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		public static final EAttribute MNAME_TAG_MP3_STEP__DIRECTORY_PARAMETER = eINSTANCE.getMNameTagMp3Step_DirectoryParameter();
+
+		/**
+		 * The meta object literal for the '<em><b>MTagged Mp3 File Name Parameter</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		public static final EReference MNAME_TAG_MP3_STEP__MTAGGED_MP3_FILE_NAME_PARAMETER = eINSTANCE.getMNameTagMp3Step_MTaggedMp3FileNameParameter();
+
+		/**
+		 * The meta object literal for the '<em><b>Tagged Mp3 File Name Parameter</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		public static final EAttribute MNAME_TAG_MP3_STEP__TAGGED_MP3_FILE_NAME_PARAMETER = eINSTANCE.getMNameTagMp3Step_TaggedMp3FileNameParameter();
+
+		/**
+		 * The meta object literal for the '<em><b>MRecording Mp3 File Parameter</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		public static final EReference MNAME_TAG_MP3_STEP__MRECORDING_MP3_FILE_PARAMETER = eINSTANCE.getMNameTagMp3Step_MRecordingMp3FileParameter();
+
+		/**
+		 * The meta object literal for the '<em><b>Recording Mp3 File Parameter</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		public static final EAttribute MNAME_TAG_MP3_STEP__RECORDING_MP3_FILE_PARAMETER = eINSTANCE.getMNameTagMp3Step_RecordingMp3FileParameter();
+
+		/**
+		 * The meta object literal for the '{@link org.onceforall.dms.desktop.logic.MTagStep <em>MTag Step</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.onceforall.dms.desktop.logic.MTagStep
+		 * @see org.onceforall.dms.desktop.logic.LogicPackage#getMTagStep()
+		 * @generated
+		 */
+		public static final EClass MTAG_STEP = eINSTANCE.getMTagStep();
+
+		/**
+		 * The meta object literal for the '<em><b>MArtist Parameter</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		public static final EReference MTAG_STEP__MARTIST_PARAMETER = eINSTANCE.getMTagStep_MArtistParameter();
+
+		/**
+		 * The meta object literal for the '<em><b>Artist Parameter</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		public static final EAttribute MTAG_STEP__ARTIST_PARAMETER = eINSTANCE.getMTagStep_ArtistParameter();
+
+		/**
+		 * The meta object literal for the '<em><b>MTitle Parameter</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		public static final EReference MTAG_STEP__MTITLE_PARAMETER = eINSTANCE.getMTagStep_MTitleParameter();
+
+		/**
+		 * The meta object literal for the '<em><b>Title Parameter</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		public static final EAttribute MTAG_STEP__TITLE_PARAMETER = eINSTANCE.getMTagStep_TitleParameter();
+
+		/**
+		 * The meta object literal for the '<em><b>MAlbum Parameter</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		public static final EReference MTAG_STEP__MALBUM_PARAMETER = eINSTANCE.getMTagStep_MAlbumParameter();
+
+		/**
+		 * The meta object literal for the '<em><b>Album Parameter</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		public static final EAttribute MTAG_STEP__ALBUM_PARAMETER = eINSTANCE.getMTagStep_AlbumParameter();
+
+		/**
+		 * The meta object literal for the '<em><b>MGenre Parameter</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		public static final EReference MTAG_STEP__MGENRE_PARAMETER = eINSTANCE.getMTagStep_MGenreParameter();
+
+		/**
+		 * The meta object literal for the '<em><b>Genre Parameter</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		public static final EAttribute MTAG_STEP__GENRE_PARAMETER = eINSTANCE.getMTagStep_GenreParameter();
+
+		/**
+		 * The meta object literal for the '<em><b>Genre Parameter Historic Values</b></em>' attribute list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		public static final EAttribute MTAG_STEP__GENRE_PARAMETER_HISTORIC_VALUES = eINSTANCE.getMTagStep_GenreParameterHistoricValues();
+
+		/**
+		 * The meta object literal for the '<em><b>MYear Parameter</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		public static final EReference MTAG_STEP__MYEAR_PARAMETER = eINSTANCE.getMTagStep_MYearParameter();
+
+		/**
+		 * The meta object literal for the '<em><b>Year Parameter</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		public static final EAttribute MTAG_STEP__YEAR_PARAMETER = eINSTANCE.getMTagStep_YearParameter();
+
+		/**
+		 * The meta object literal for the '<em><b>MComment Parameter</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		public static final EReference MTAG_STEP__MCOMMENT_PARAMETER = eINSTANCE.getMTagStep_MCommentParameter();
+
+		/**
+		 * The meta object literal for the '<em><b>Comment Parameter</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		public static final EAttribute MTAG_STEP__COMMENT_PARAMETER = eINSTANCE.getMTagStep_CommentParameter();
+
+		/**
+		 * The meta object literal for the '<em><b>Comment Parameter Historic Values</b></em>' attribute list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		public static final EAttribute MTAG_STEP__COMMENT_PARAMETER_HISTORIC_VALUES = eINSTANCE.getMTagStep_CommentParameterHistoricValues();
+
+		/**
+		 * The meta object literal for the '<em><b>MMp3 Folder Reference Parameter</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		public static final EReference MTAG_STEP__MMP3_FOLDER_REFERENCE_PARAMETER = eINSTANCE.getMTagStep_MMp3FolderReferenceParameter();
+
+		/**
+		 * The meta object literal for the '<em><b>Mp3 Folder Reference Parameter</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		public static final EReference MTAG_STEP__MP3_FOLDER_REFERENCE_PARAMETER = eINSTANCE.getMTagStep_Mp3FolderReferenceParameter();
+
+		/**
+		 * The meta object literal for the '<em><b>MMp3 Entry Name Parameter</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		public static final EReference MTAG_STEP__MMP3_ENTRY_NAME_PARAMETER = eINSTANCE.getMTagStep_MMp3EntryNameParameter();
+
+		/**
+		 * The meta object literal for the '<em><b>Mp3 Entry Name Parameter</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		public static final EAttribute MTAG_STEP__MP3_ENTRY_NAME_PARAMETER = eINSTANCE.getMTagStep_Mp3EntryNameParameter();
+
+		/**
+		 * The meta object literal for the '<em><b>MMp3 Entry Reference Result</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		public static final EReference MTAG_STEP__MMP3_ENTRY_REFERENCE_RESULT = eINSTANCE.getMTagStep_MMp3EntryReferenceResult();
+
+		/**
+		 * The meta object literal for the '<em><b>Mp3 Entry Reference Result</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		public static final EReference MTAG_STEP__MP3_ENTRY_REFERENCE_RESULT = eINSTANCE.getMTagStep_Mp3EntryReferenceResult();
+
+		/**
+		 * The meta object literal for the '<em><b>MMp3 File Path Result</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		public static final EReference MTAG_STEP__MMP3_FILE_PATH_RESULT = eINSTANCE.getMTagStep_MMp3FilePathResult();
+
+		/**
+		 * The meta object literal for the '<em><b>Mp3 File Path Result</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		public static final EAttribute MTAG_STEP__MP3_FILE_PATH_RESULT = eINSTANCE.getMTagStep_Mp3FilePathResult();
+
+		/**
 		 * The meta object literal for the '{@link org.onceforall.dms.desktop.logic.MDmsApplicationMGetDataUpgradeInfoStep <em>MDms Application MGet Data Upgrade Info Step</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -23291,6 +25019,26 @@ public class LogicPackage extends EPackageImpl {
 		 * @generated
 		 */
 		public static final EAttribute MDMS_APPLICATION_MUPGRADE_DATA_STEP__UPGRADE_DATE_PARAMETER = eINSTANCE.getMDmsApplicationMUpgradeDataStep_UpgradeDateParameter();
+
+		/**
+		 * The meta object literal for the '<em>MDirectory</em>' data type.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see java.io.File
+		 * @see org.onceforall.dms.desktop.logic.LogicPackage#getMDirectory()
+		 * @generated
+		 */
+		public static final EDataType MDIRECTORY = eINSTANCE.getMDirectory();
+
+		/**
+		 * The meta object literal for the '<em>MExisting Directory</em>' data type.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see java.io.File
+		 * @see org.onceforall.dms.desktop.logic.LogicPackage#getMExistingDirectory()
+		 * @generated
+		 */
+		public static final EDataType MEXISTING_DIRECTORY = eINSTANCE.getMExistingDirectory();
 
 		/**
 		 * The meta object literal for the '<em>MFile</em>' data type.

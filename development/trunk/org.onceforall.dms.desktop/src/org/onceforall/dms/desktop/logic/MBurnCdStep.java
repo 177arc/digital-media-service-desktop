@@ -589,7 +589,7 @@ public class MBurnCdStep extends MStep {
 			if (newMBurningSoftwareDirectoryPathParameter != null) {				
 				newMBurningSoftwareDirectoryPathParameter.setDefaultName("CD-ROM burning software directory path");
 				newMBurningSoftwareDirectoryPathParameter.setDefaultDescription("Specifies the path to the directory that contains the \'nerocmd.exe\'.");
-				newMBurningSoftwareDirectoryPathParameter.setValueType(Type.getTypeForName("File (must exist)"));
+				newMBurningSoftwareDirectoryPathParameter.setValueType(Type.getTypeForName("Directory (must exist)"));
 				newMBurningSoftwareDirectoryPathParameter.setValueEFeature((EStructuralFeature) eClass().getEStructuralFeature(LogicPackage.MBURN_CD_STEP__BURNING_SOFTWARE_DIRECTORY_PATH_PARAMETER));
 				newMBurningSoftwareDirectoryPathParameter.setHistoricValuesEFeature(null);
 				msgs = ((InternalEObject)newMBurningSoftwareDirectoryPathParameter).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - LogicPackage.MBURN_CD_STEP__MBURNING_SOFTWARE_DIRECTORY_PATH_PARAMETER, null, msgs);
@@ -620,7 +620,7 @@ public class MBurnCdStep extends MStep {
 	 * @return the value of the '<em>Burning Software Directory Path Parameter</em>' attribute.
 	 * @see #setBurningSoftwareDirectoryPathParameter(File)
 	 * @see org.onceforall.dms.desktop.logic.LogicPackage#getMBurnCdStep_BurningSoftwareDirectoryPathParameter()
-	 * @model dataType="org.onceforall.dms.desktop.logic.MExistingFile" required="true"
+	 * @model dataType="org.onceforall.dms.desktop.logic.MExistingDirectory" required="true"
 	 * @generated
 	 */
 	public File getBurningSoftwareDirectoryPathParameter() {
