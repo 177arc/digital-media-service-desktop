@@ -10,11 +10,17 @@ Bundle-ClassPath: .,
  lib/commons-net-1.4.1.jar,
  lib/jakarta-oro-2.0.8.jar,
  lib/jlayer-1.0.jar,
- lib/mp3-spi-1.9.4.jar
+ lib/mp3-spi-1.9.4.jar,
+ lib/jid3lib-0.5.4.jar
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Export-Package: javax.mail,
  javax.mail.internet,
+ org.farng.mp3,
+ org.farng.mp3.filename,
+ org.farng.mp3.id3,
+ org.farng.mp3.lyrics3,
+ org.farng.mp3.object,
  org.onceforall.dms.desktop,
  org.onceforall.dms.desktop.exception,
  org.onceforall.dms.desktop.interfaces,
