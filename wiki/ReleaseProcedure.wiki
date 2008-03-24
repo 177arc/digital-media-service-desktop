@@ -3,9 +3,10 @@
 =Release Procedure=
 
 The release procedure consists of three parts:
-  # _Prepare_: Update documentation and deploy to the testing environment
-  # _Test_: Test the software
-  # _Release_: Check in, label and package the release
+  # _Prepare_: Update documentation and deploy to the testing environment.
+  # _Test_: Test the software.
+  # _Release_: Check in, label and package the release.
+  # _Publish_: Publish the release.
 
 The result of the release procedure is a up-to-date and tested zip file that contains all the necessary files for running the DMS Desktop and DMS Desktop Editor.
 
@@ -30,8 +31,14 @@ Once the DMS Desktop and DMS Desktop Editor have been deployed to the test envir
 
 ==Release==
 To package the DMS Desktop and the DMS Desktop Editor into a software release, follow these steps:
-  # _Update build properties_: Update the `version` and `info` properties of the `org.onceforall.dms.desktop.ui\src\build-info.properties`.
+  # _Update build properties_: Update the `version` and `info` properties of the `org.onceforall.dms.desktop.ui\src\build-info.properties`. The `info` property should point to the release notes page to created as part of the publishing (see below).
   # _Check in all changed files (if you haven't already):_ *All commit comments have to link the checked in file to an issue* using the following pattern `Implemented issue `(Issue number)`.`, e.g. `Implemented issue 20 and issue 25.`, followed by an additional description of the changes. The only time you don't have to link the check in to an issues is when you made change that have either no or a minimal impact on the functionality, e.g. refactoring. All significant changes that the user may notice have to have an issue entry and have to linked to the check in.
   # _Update issues_: Make sure that you change the status of all issues that are included in the release to `Verified` and label it with `Implemented-`(Version number).
   # _Label all projects_: Multi-select all projects -> right-click -> `Team` -> `Tag ...` and enter `Release `(Version number), e.g. `Release 1.1`, in the `Tag` field.
   # _Create the zip files:_ Run the `deploy` target of `org.onceforall.dms.desktop.ui\build.xml`. This should create two zip files in the `C:\Projects\Digital Media Service\Desktop\Development\Release` directory.
+
+==Publish==
+After creating the release, to publish the release, follow these steps:
+  # _Create release notes_: Create a web page that contains a detailed description of all changes since the last minor release (e.g. when moving from 1.1 to 1.2). Each change should be linked to its corresponding entry in the issue tracker (click [http://www.onceforall.org/dms-desktop/1.2/info.html here] for an example). If the `info` property in the build properties points to this page, the application user will see the page when the DMS desktop starts up.
+  # _Upload release and notes_: Upload the release packages and the release notes to the FTP site. Email dms@onceforall.org for details.
+  # _Update project page_: Update the Google Code project page to make sure that the links point to the latest release packages and release notes.
