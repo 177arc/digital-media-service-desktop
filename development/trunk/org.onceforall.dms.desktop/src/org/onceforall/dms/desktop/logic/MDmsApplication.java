@@ -72,6 +72,8 @@ import org.onceforall.dms.desktop.logic.types.Type;
  *   <li>{@link org.onceforall.dms.desktop.logic.MDmsApplication#getUpgradeRelativeFtpPathProperty <em>Upgrade Relative Ftp Path Property</em>}</li>
  *   <li>{@link org.onceforall.dms.desktop.logic.MDmsApplication#getMLastUpgradeProperty <em>MLast Upgrade Property</em>}</li>
  *   <li>{@link org.onceforall.dms.desktop.logic.MDmsApplication#getLastUpgradeProperty <em>Last Upgrade Property</em>}</li>
+ *   <li>{@link org.onceforall.dms.desktop.logic.MDmsApplication#getMOrganisationProperty <em>MOrganisation Property</em>}</li>
+ *   <li>{@link org.onceforall.dms.desktop.logic.MDmsApplication#getOrganisationProperty <em>Organisation Property</em>}</li>
  *   <li>{@link org.onceforall.dms.desktop.logic.MDmsApplication#getMGetDataUpgradeInfoStep <em>MGet Data Upgrade Info Step</em>}</li>
  *   <li>{@link org.onceforall.dms.desktop.logic.MDmsApplication#getMUpgradeDataStep <em>MUpgrade Data Step</em>}</li>
  *   <li>{@link org.onceforall.dms.desktop.logic.MDmsApplication#getMScripts <em>MScripts</em>}</li>
@@ -816,6 +818,49 @@ public class MDmsApplication extends MApplication {
 	protected Date lastUpgradeProperty = LAST_UPGRADE_PROPERTY_EDEFAULT;
 	
 	/**
+	 * The cached value of the '{@link #getMOrganisationProperty() <em>MOrganisation Property</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMOrganisationProperty()
+	 * @generated
+	 * @ordered
+	 */
+	protected MProperty mOrganisationProperty = null;
+
+	/**
+	 * The default value of the '{@link #getOrganisationProperty() <em>Organisation Property</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getOrganisationProperty()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String ORGANISATION_PROPERTY_EDEFAULT = "Christ Church Bromley";
+
+	/**
+	 * Get the default value of the '{@link #getOrganisationProperty() <em>Organisation Property</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return Returns the default value of the '{@link #getOrganisationProperty() <em>Organisation Property</em>}' attribute.
+	 * @see #getOrganisationProperty()
+	 * @generated
+	 * @ordered
+	 */
+	public String getDefaultOrganisationProperty() {
+		return ORGANISATION_PROPERTY_EDEFAULT;
+	}
+	
+	/**
+	 * The cached value of the '{@link #getOrganisationProperty() <em>Organisation Property</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getOrganisationProperty()
+	 * @generated
+	 * @ordered
+	 */
+	protected String organisationProperty = ORGANISATION_PROPERTY_EDEFAULT;
+
+	/**
 	 * The cached value of the '{@link #getMGetDataUpgradeInfoStep() <em>MGet Data Upgrade Info Step</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -894,6 +939,7 @@ public class MDmsApplication extends MApplication {
 		setMUpgradeMessageProperty(new MProperty(true, "Application data upgrade message", "Specifies important information about the last application data upgrade.", null));			 
 		setMUpgradeRelativeFtpPathProperty(new MProperty(false, "Application data upgrade relative FTP path", "Specifies the relative path on the FTP server to the application data upgrade file, e.g. \'/dms/data.xml\'.", null));			 
 		setMLastUpgradeProperty(new MProperty(true, "Last application data upgrade", "Specifies the date and time when the application data was last upgraded.", null));			 
+		setMOrganisationProperty(new MProperty(false, "Organisation", "Specifies the organisation that is using this application. Please do not change this property as some customisations may depend on its value.", null));			 
 		setMGetDataUpgradeInfoStep(new MDmsApplicationMGetDataUpgradeInfoStep());			 
 		setMUpgradeDataStep(new MDmsApplicationMUpgradeDataStep());
 
@@ -2645,6 +2691,113 @@ public class MDmsApplication extends MApplication {
 	}
 
 	/**
+	 * Returns the value of the '<em><b>MOrganisation Property</b></em>' containment reference.
+	 * The default value is <code>""</code>.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>MOrganisation Property</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>MOrganisation Property</em>' containment reference.
+	 * @see #setMOrganisationProperty(MProperty)
+	 * @see org.onceforall.dms.desktop.logic.LogicPackage#getMDmsApplication_MOrganisationProperty()
+	 * @model containment="true" required="true"
+	 *        annotation="http://www.onceforall.org/mcore name='Organisation' description='Specifies the organisation that is using this application. Please do not change this property as some customisations may depend on its value.' readOnly='false'"
+	 * @generated
+	 */
+	public MProperty getMOrganisationProperty() {
+		return mOrganisationProperty;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetMOrganisationProperty(MProperty newMOrganisationProperty, NotificationChain msgs) {
+		MProperty oldMOrganisationProperty = mOrganisationProperty;
+		mOrganisationProperty = newMOrganisationProperty;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, LogicPackage.MDMS_APPLICATION__MORGANISATION_PROPERTY, oldMOrganisationProperty, newMOrganisationProperty);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * Sets the value of the '{@link org.onceforall.dms.desktop.logic.MDmsApplication#getMOrganisationProperty <em>MOrganisation Property</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	   
+	 * @param newMOrganisationProperty the new value of the '<em>MOrganisation Property</em>' containment reference.
+	 * @see #getMOrganisationProperty()
+	 * @generated
+	 */
+	public void setMOrganisationProperty(MProperty newMOrganisationProperty) {
+		if (newMOrganisationProperty != mOrganisationProperty) {
+			NotificationChain msgs = null;
+			if (mOrganisationProperty != null)
+				msgs = ((InternalEObject)mOrganisationProperty).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - LogicPackage.MDMS_APPLICATION__MORGANISATION_PROPERTY, null, msgs);
+			if (newMOrganisationProperty != null) {				
+				newMOrganisationProperty.setDefaultName("Organisation");
+				newMOrganisationProperty.setDefaultDescription("Specifies the organisation that is using this application. Please do not change this property as some customisations may depend on its value.");
+				newMOrganisationProperty.setValueType(Type.getTypeForName("Text"));
+				newMOrganisationProperty.setValueEFeature((EStructuralFeature) eClass().getEStructuralFeature(LogicPackage.MDMS_APPLICATION__ORGANISATION_PROPERTY));
+				newMOrganisationProperty.setHistoricValuesEFeature(null);
+				msgs = ((InternalEObject)newMOrganisationProperty).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - LogicPackage.MDMS_APPLICATION__MORGANISATION_PROPERTY, null, msgs);
+			}
+			
+			// Transfers the adpaters from the old managed value to the new one.
+			if(mOrganisationProperty != null) {
+				if(newMOrganisationProperty != null)
+					newMOrganisationProperty.eAdapters().addAll(mOrganisationProperty.eAdapters());			
+			
+				mOrganisationProperty.eAdapters().clear();
+			}
+			msgs = basicSetMOrganisationProperty(newMOrganisationProperty, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, LogicPackage.MDMS_APPLICATION__MORGANISATION_PROPERTY, newMOrganisationProperty, newMOrganisationProperty));
+	}
+
+	/**
+	 * Returns the value of the '<em><b>Organisation Property</b></em>' attribute.
+	 * The default value is <code>"Christ Church Bromley"</code>.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Organisation Property</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Organisation Property</em>' attribute.
+	 * @see #setOrganisationProperty(String)
+	 * @see org.onceforall.dms.desktop.logic.LogicPackage#getMDmsApplication_OrganisationProperty()
+	 * @model default="Christ Church Bromley" dataType="org.onceforall.dms.desktop.logic.MString" required="true"
+	 * @generated
+	 */
+	public String getOrganisationProperty() {
+		return organisationProperty;
+	}
+
+	/**
+	 * Sets the value of the '{@link org.onceforall.dms.desktop.logic.MDmsApplication#getOrganisationProperty <em>Organisation Property</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	   
+	 * @param newOrganisationProperty the new value of the '<em>Organisation Property</em>' attribute.
+	 * @see #getOrganisationProperty()
+	 * @generated
+	 */
+	public void setOrganisationProperty(String newOrganisationProperty) {
+		String oldOrganisationProperty = organisationProperty;
+		organisationProperty = newOrganisationProperty;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, LogicPackage.MDMS_APPLICATION__ORGANISATION_PROPERTY, oldOrganisationProperty, organisationProperty));
+	}
+
+	/**
 	 * Returns the value of the '<em><b>MGet Data Upgrade Info Step</b></em>' containment reference.
 	 * The default value is <code>""</code>.
 	 * <!-- begin-user-doc -->
@@ -2855,6 +3008,8 @@ public class MDmsApplication extends MApplication {
 				return basicSetMUpgradeRelativeFtpPathProperty(null, msgs);
 			case LogicPackage.MDMS_APPLICATION__MLAST_UPGRADE_PROPERTY:
 				return basicSetMLastUpgradeProperty(null, msgs);
+			case LogicPackage.MDMS_APPLICATION__MORGANISATION_PROPERTY:
+				return basicSetMOrganisationProperty(null, msgs);
 			case LogicPackage.MDMS_APPLICATION__MGET_DATA_UPGRADE_INFO_STEP:
 				return basicSetMGetDataUpgradeInfoStep(null, msgs);
 			case LogicPackage.MDMS_APPLICATION__MUPGRADE_DATA_STEP:
@@ -2946,6 +3101,10 @@ public class MDmsApplication extends MApplication {
 				return getMLastUpgradeProperty();
 			case LogicPackage.MDMS_APPLICATION__LAST_UPGRADE_PROPERTY:
 				return getLastUpgradeProperty();
+			case LogicPackage.MDMS_APPLICATION__MORGANISATION_PROPERTY:
+				return getMOrganisationProperty();
+			case LogicPackage.MDMS_APPLICATION__ORGANISATION_PROPERTY:
+				return getOrganisationProperty();
 			case LogicPackage.MDMS_APPLICATION__MGET_DATA_UPGRADE_INFO_STEP:
 				return getMGetDataUpgradeInfoStep();
 			case LogicPackage.MDMS_APPLICATION__MUPGRADE_DATA_STEP:
@@ -3087,6 +3246,12 @@ public class MDmsApplication extends MApplication {
 			case LogicPackage.MDMS_APPLICATION__LAST_UPGRADE_PROPERTY:    
 				setLastUpgradeProperty((Date)newValue);
 				return;
+			case LogicPackage.MDMS_APPLICATION__MORGANISATION_PROPERTY:    
+				setMOrganisationProperty((MProperty)newValue);
+				return;
+			case LogicPackage.MDMS_APPLICATION__ORGANISATION_PROPERTY:    
+				setOrganisationProperty((String)newValue);
+				return;
 			case LogicPackage.MDMS_APPLICATION__MGET_DATA_UPGRADE_INFO_STEP:    
 				setMGetDataUpgradeInfoStep((MDmsApplicationMGetDataUpgradeInfoStep)newValue);
 				return;
@@ -3220,6 +3385,12 @@ public class MDmsApplication extends MApplication {
 			case LogicPackage.MDMS_APPLICATION__LAST_UPGRADE_PROPERTY:
 				setLastUpgradeProperty(getDefaultLastUpgradeProperty());
 				return;
+			case LogicPackage.MDMS_APPLICATION__MORGANISATION_PROPERTY:
+				setMOrganisationProperty((MProperty)null);
+				return;
+			case LogicPackage.MDMS_APPLICATION__ORGANISATION_PROPERTY:
+				setOrganisationProperty(getDefaultOrganisationProperty());
+				return;
 			case LogicPackage.MDMS_APPLICATION__MGET_DATA_UPGRADE_INFO_STEP:
 				setMGetDataUpgradeInfoStep((MDmsApplicationMGetDataUpgradeInfoStep)null);
 				return;
@@ -3315,6 +3486,10 @@ public class MDmsApplication extends MApplication {
 				return mLastUpgradeProperty != null;
 			case LogicPackage.MDMS_APPLICATION__LAST_UPGRADE_PROPERTY:
 				return getDefaultLastUpgradeProperty() == null ? lastUpgradeProperty != null : !getDefaultLastUpgradeProperty().equals(lastUpgradeProperty);
+			case LogicPackage.MDMS_APPLICATION__MORGANISATION_PROPERTY:
+				return mOrganisationProperty != null;
+			case LogicPackage.MDMS_APPLICATION__ORGANISATION_PROPERTY:
+				return getDefaultOrganisationProperty() == null ? organisationProperty != null : !getDefaultOrganisationProperty().equals(organisationProperty);
 			case LogicPackage.MDMS_APPLICATION__MGET_DATA_UPGRADE_INFO_STEP:
 				return mGetDataUpgradeInfoStep != null;
 			case LogicPackage.MDMS_APPLICATION__MUPGRADE_DATA_STEP:
@@ -3378,6 +3553,8 @@ public class MDmsApplication extends MApplication {
 		result.append(upgradeRelativeFtpPathProperty);
 		result.append(", lastUpgradeProperty: ");
 		result.append(lastUpgradeProperty);
+		result.append(", organisationProperty: ");
+		result.append(organisationProperty);
 		result.append(')');
 		return result.toString();
 	}

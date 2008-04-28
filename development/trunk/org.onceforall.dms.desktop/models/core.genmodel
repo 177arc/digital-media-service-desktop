@@ -142,6 +142,8 @@
        <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MDmsApplication/upgradeRelativeFtpPathProperty"/>
        <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference core.ecore#//MDmsApplication/MLastUpgradeProperty"/>
        <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MDmsApplication/lastUpgradeProperty"/>
+       <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference core.ecore#//MDmsApplication/MOrganisationProperty"/>
+       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MDmsApplication/organisationProperty"/>
        <genFeatures property="None" createChild="true" children="true" ecoreFeature="ecore:EReference core.ecore#//MDmsApplication/mScripts"/>
        <genFeatures property="None" createChild="true" children="true" ecoreFeature="ecore:EReference core.ecore#//MDmsApplication/mMp3Folders"/>
     </genClasses>

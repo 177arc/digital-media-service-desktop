@@ -2607,13 +2607,31 @@ public class LogicPackage extends EPackageImpl {
 	public static final int MDMS_APPLICATION__LAST_UPGRADE_PROPERTY = MAPPLICATION_FEATURE_COUNT + 35;
 
 	/**
+	 * The feature id for the '<em><b>MOrganisation Property</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MDMS_APPLICATION__MORGANISATION_PROPERTY = MAPPLICATION_FEATURE_COUNT + 36;
+
+	/**
+	 * The feature id for the '<em><b>Organisation Property</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MDMS_APPLICATION__ORGANISATION_PROPERTY = MAPPLICATION_FEATURE_COUNT + 37;
+
+	/**
 	 * The feature id for the '<em><b>MGet Data Upgrade Info Step</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	public static final int MDMS_APPLICATION__MGET_DATA_UPGRADE_INFO_STEP = MAPPLICATION_FEATURE_COUNT + 36;
+	public static final int MDMS_APPLICATION__MGET_DATA_UPGRADE_INFO_STEP = MAPPLICATION_FEATURE_COUNT + 38;
 
 	/**
 	 * The feature id for the '<em><b>MUpgrade Data Step</b></em>' containment reference.
@@ -2622,7 +2640,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int MDMS_APPLICATION__MUPGRADE_DATA_STEP = MAPPLICATION_FEATURE_COUNT + 37;
+	public static final int MDMS_APPLICATION__MUPGRADE_DATA_STEP = MAPPLICATION_FEATURE_COUNT + 39;
 
 	/**
 	 * The feature id for the '<em><b>MScripts</b></em>' containment reference list.
@@ -2631,7 +2649,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int MDMS_APPLICATION__MSCRIPTS = MAPPLICATION_FEATURE_COUNT + 38;
+	public static final int MDMS_APPLICATION__MSCRIPTS = MAPPLICATION_FEATURE_COUNT + 40;
 
 	/**
 	 * The feature id for the '<em><b>MMp3 Folders</b></em>' containment reference list.
@@ -2640,7 +2658,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int MDMS_APPLICATION__MMP3_FOLDERS = MAPPLICATION_FEATURE_COUNT + 39;
+	public static final int MDMS_APPLICATION__MMP3_FOLDERS = MAPPLICATION_FEATURE_COUNT + 41;
 
 	/**
 	 * The number of structural features of the '<em>MDms Application</em>' class.
@@ -2649,7 +2667,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int MDMS_APPLICATION_FEATURE_COUNT = MAPPLICATION_FEATURE_COUNT + 40;
+	public static final int MDMS_APPLICATION_FEATURE_COUNT = MAPPLICATION_FEATURE_COUNT + 42;
 
 	/**
 	 * The meta object id for the '{@link org.onceforall.dms.desktop.logic.MEnterInformationStep <em>MEnter Information Step</em>}' class.
@@ -15353,6 +15371,32 @@ public class LogicPackage extends EPackageImpl {
 	}
 
 	/**
+	 * Returns the meta object for the containment reference '{@link org.onceforall.dms.desktop.logic.MDmsApplication#getMOrganisationProperty <em>MOrganisation Property</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>MOrganisation Property</em>'.
+	 * @see org.onceforall.dms.desktop.logic.MDmsApplication#getMOrganisationProperty()
+	 * @see #getMDmsApplication()
+	 * @generated
+	 */
+	public EReference getMDmsApplication_MOrganisationProperty() {
+		return (EReference)mDmsApplicationEClass.getEStructuralFeatures().get(36);
+	}
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.onceforall.dms.desktop.logic.MDmsApplication#getOrganisationProperty <em>Organisation Property</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Organisation Property</em>'.
+	 * @see org.onceforall.dms.desktop.logic.MDmsApplication#getOrganisationProperty()
+	 * @see #getMDmsApplication()
+	 * @generated
+	 */
+	public EAttribute getMDmsApplication_OrganisationProperty() {
+		return (EAttribute)mDmsApplicationEClass.getEStructuralFeatures().get(37);
+	}
+
+	/**
 	 * Returns the meta object for the containment reference '{@link org.onceforall.dms.desktop.logic.MDmsApplication#getMGetDataUpgradeInfoStep <em>MGet Data Upgrade Info Step</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -15362,7 +15406,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @generated
 	 */
 	public EReference getMDmsApplication_MGetDataUpgradeInfoStep() {
-		return (EReference)mDmsApplicationEClass.getEStructuralFeatures().get(36);
+		return (EReference)mDmsApplicationEClass.getEStructuralFeatures().get(38);
 	}
 
 	/**
@@ -15375,7 +15419,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @generated
 	 */
 	public EReference getMDmsApplication_MScripts() {
-		return (EReference)mDmsApplicationEClass.getEStructuralFeatures().get(38);
+		return (EReference)mDmsApplicationEClass.getEStructuralFeatures().get(40);
 	}
 
 	/**
@@ -15388,7 +15432,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @generated
 	 */
 	public EReference getMDmsApplication_MMp3Folders() {
-		return (EReference)mDmsApplicationEClass.getEStructuralFeatures().get(39);
+		return (EReference)mDmsApplicationEClass.getEStructuralFeatures().get(41);
 	}
 
 	/**
@@ -19047,7 +19091,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @generated
 	 */
 	public EReference getMDmsApplication_MUpgradeDataStep() {
-		return (EReference)mDmsApplicationEClass.getEStructuralFeatures().get(37);
+		return (EReference)mDmsApplicationEClass.getEStructuralFeatures().get(39);
 	}
 
 	/**
@@ -19406,6 +19450,8 @@ public class LogicPackage extends EPackageImpl {
 		createEAttribute(mDmsApplicationEClass, MDMS_APPLICATION__UPGRADE_RELATIVE_FTP_PATH_PROPERTY);
 		createEReference(mDmsApplicationEClass, MDMS_APPLICATION__MLAST_UPGRADE_PROPERTY);
 		createEAttribute(mDmsApplicationEClass, MDMS_APPLICATION__LAST_UPGRADE_PROPERTY);
+		createEReference(mDmsApplicationEClass, MDMS_APPLICATION__MORGANISATION_PROPERTY);
+		createEAttribute(mDmsApplicationEClass, MDMS_APPLICATION__ORGANISATION_PROPERTY);
 		createEReference(mDmsApplicationEClass, MDMS_APPLICATION__MGET_DATA_UPGRADE_INFO_STEP);
 		createEReference(mDmsApplicationEClass, MDMS_APPLICATION__MUPGRADE_DATA_STEP);
 		createEReference(mDmsApplicationEClass, MDMS_APPLICATION__MSCRIPTS);
@@ -19922,6 +19968,8 @@ public class LogicPackage extends EPackageImpl {
 		initEAttribute(getMDmsApplication_UpgradeRelativeFtpPathProperty(), this.getMString(), "upgradeRelativeFtpPathProperty", null, 0, 1, MDmsApplication.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getMDmsApplication_MLastUpgradeProperty(), this.getMProperty(), null, "mLastUpgradeProperty", "", 1, 1, MDmsApplication.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMDmsApplication_LastUpgradeProperty(), this.getMDateTime(), "lastUpgradeProperty", null, 0, 1, MDmsApplication.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMDmsApplication_MOrganisationProperty(), this.getMProperty(), null, "mOrganisationProperty", "", 1, 1, MDmsApplication.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getMDmsApplication_OrganisationProperty(), this.getMString(), "organisationProperty", "Christ Church Bromley", 1, 1, MDmsApplication.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getMDmsApplication_MGetDataUpgradeInfoStep(), this.getMDmsApplicationMGetDataUpgradeInfoStep(), null, "mGetDataUpgradeInfoStep", "", 1, 1, MDmsApplication.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getMDmsApplication_MUpgradeDataStep(), this.getMDmsApplicationMUpgradeDataStep(), null, "mUpgradeDataStep", "", 1, 1, MDmsApplication.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getMDmsApplication_MScripts(), this.getMScript(), null, "mScripts", null, 1, -1, MDmsApplication.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -20672,6 +20720,14 @@ public class LogicPackage extends EPackageImpl {
 			 "name", "Last application data upgrade",
 			 "description", "Specifies the date and time when the application data was last upgraded.",
 			 "readOnly", "true"
+		   });		
+		addAnnotation
+		  (getMDmsApplication_MOrganisationProperty(), 
+		   source, 
+		   new String[] {
+			 "name", "Organisation",
+			 "description", "Specifies the organisation that is using this application. Please do not change this property as some customisations may depend on its value.",
+			 "readOnly", "false"
 		   });		
 		addAnnotation
 		  (mDmsApplicationMGetDataUpgradeInfoStepEClass, 
@@ -22703,6 +22759,22 @@ public class LogicPackage extends EPackageImpl {
 		 * @generated
 		 */
 		public static final EAttribute MDMS_APPLICATION__LAST_UPGRADE_PROPERTY = eINSTANCE.getMDmsApplication_LastUpgradeProperty();
+
+		/**
+		 * The meta object literal for the '<em><b>MOrganisation Property</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		public static final EReference MDMS_APPLICATION__MORGANISATION_PROPERTY = eINSTANCE.getMDmsApplication_MOrganisationProperty();
+
+		/**
+		 * The meta object literal for the '<em><b>Organisation Property</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		public static final EAttribute MDMS_APPLICATION__ORGANISATION_PROPERTY = eINSTANCE.getMDmsApplication_OrganisationProperty();
 
 		/**
 		 * The meta object literal for the '<em><b>MGet Data Upgrade Info Step</b></em>' containment reference feature.

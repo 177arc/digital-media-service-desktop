@@ -515,6 +515,16 @@
 	     </eAnnotations>
 	   </eStructuralFeatures>  		
        <eStructuralFeatures xsi:type="ecore:EAttribute" name="lastUpgradeProperty" lowerBound="0" upperBound="1" transient="false" eType="//MDateTime" derived="false" volatile="false"/>
+	   	<eStructuralFeatures xsi:type="ecore:EReference" name="mOrganisationProperty"
+	      lowerBound="1" eType="#//MProperty" defaultValueLiteral=""
+	      containment="true" resolveProxies="false">
+	     <eAnnotations source="http://www.onceforall.org/mcore">
+	       <details key="name" value="Organisation"/>
+	       <details key="description" value="Specifies the organisation that is using this application. Please do not change this property as some customisations may depend on its value."/>
+	       <details key="readOnly" value="false"/>
+	     </eAnnotations>
+	   </eStructuralFeatures>  		
+       <eStructuralFeatures xsi:type="ecore:EAttribute" name="organisationProperty" lowerBound="1" upperBound="1" defaultValueLiteral="Christ Church Bromley" transient="false" eType="//MString" derived="false" volatile="false"/>
 	   	<eStructuralFeatures xsi:type="ecore:EReference" name="mGetDataUpgradeInfoStep"
 	      lowerBound="1" eType="#//MDmsApplicationMGetDataUpgradeInfoStep" defaultValueLiteral=""
 	      containment="true" resolveProxies="false">

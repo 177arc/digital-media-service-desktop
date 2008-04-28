@@ -240,6 +240,8 @@ public abstract class MElement extends EObjectImpl implements ThreadAdapter {
 
 
 
+
+
 	/**
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->

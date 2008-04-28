@@ -11,7 +11,10 @@
 package org.onceforall.dms.desktop.logic;
 
 import java.io.File;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.Collection;
+import java.util.Date;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -48,6 +51,11 @@ import org.onceforall.dms.desktop.logic.types.Type;
  * @generated
  */
 public class MCreateDirectoryStep extends MStep {
+	/**
+	 * Specifies the date formatter for the directory name.
+	 */
+	public static final DateFormat DIRECTORY_DATE_FORMAT = new SimpleDateFormat("yyyy-MM-dd");
+
 	/**
 	 * Specifies the type name of this managed element.
 	 * <!-- begin-user-doc -->
@@ -869,13 +877,25 @@ public class MCreateDirectoryStep extends MStep {
 	@Override
 	public Object convertMInputValues(MValue mOwnerValue) {
 		if(getMDirectoryNameParameter().equals(mOwnerValue)) {
-	        String serviceType = mOwnerValue.getMInputValueForUI(LogicPackage.MENTER_SERVICE_INFORMATION_STEP__MSERVICE_TYPE_RESULT);
-	        String serviceDate = mOwnerValue.getMInputValueForUI(LogicPackage.MENTER_SERVICE_INFORMATION_STEP__MSERVICE_DATE_RESULT, LogicPackage.MENTER_WWX_INFORMATION_STEP__MWWX_DATE_RESULT);
-            
-            serviceDate = serviceDate != null ? (serviceType != null ? serviceDate : "WWX on "+serviceDate) : "";
-	        serviceType = serviceType != null ? serviceType+" on " : "";
-            
-            return new File(serviceType+serviceDate);
+			MDmsApplication mApplication = (MDmsApplication) MDmsApplication.getInstance();
+			if(!"Christ Church Bromley".equals(mApplication.getOrganisationProperty())) {
+		        String serviceType = mOwnerValue.getMInputValueForUI(LogicPackage.MENTER_SERVICE_INFORMATION_STEP__MSERVICE_TYPE_RESULT);
+		        String serviceDate = mOwnerValue.getMInputValueForUI(LogicPackage.MENTER_SERVICE_INFORMATION_STEP__MSERVICE_DATE_RESULT, LogicPackage.MENTER_WWX_INFORMATION_STEP__MWWX_DATE_RESULT);
+	            
+	            serviceDate = serviceDate != null ? (serviceType != null ? serviceDate : "WWX on "+serviceDate) : "";
+		        serviceType = serviceType != null ? serviceType+" on " : "";
+	            
+	            return new File(serviceType+serviceDate);
+			}
+			else {
+		        String serviceType = mOwnerValue.getMInputValueForUI(LogicPackage.MENTER_SERVICE_INFORMATION_STEP__MSERVICE_TYPE_RESULT);
+		        Date serviceDate = (Date) mOwnerValue.getMInputValue(LogicPackage.MENTER_SERVICE_INFORMATION_STEP__MSERVICE_DATE_RESULT, LogicPackage.MENTER_WWX_INFORMATION_STEP__MWWX_DATE_RESULT).getValue();
+	            String serviceDateText = serviceDate != null ? DIRECTORY_DATE_FORMAT.format(serviceDate) : null;
+	            serviceDateText = serviceDateText != null ? (serviceType != null ? serviceDateText : serviceDateText+" WWX") : "";
+		        serviceType = serviceType != null ? " "+serviceType : "";
+	            
+	            return new File(serviceDateText+serviceType);				
+			}
 		}
 		else
 			return super.convertMInputValues(mOwnerValue);

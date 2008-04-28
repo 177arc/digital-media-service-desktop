@@ -251,6 +251,8 @@ public abstract class MStatefulObject extends MObject {
 
 
 
+
+
 	
 	/**
 	 * The cached value of the '{@link #getMStateProperty() <em>MState Property</em>}' containment reference.

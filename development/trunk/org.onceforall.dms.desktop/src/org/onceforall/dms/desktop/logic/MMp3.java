@@ -260,6 +260,8 @@ public class MMp3 extends MStatefulObject {
 
 
 
+
+
 	/**
 	 * The default value of the '{@link #getStateProperty() <em>State Property</em>}' attribute.
 	 * <!-- begin-user-doc -->

@@ -204,6 +204,10 @@ public abstract class MEnterInformationStep extends MStep {
 
 
 
+
+
+
+
 	/**
 	 * Get the default value of the '{@link #getActionName() <em>Action Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
