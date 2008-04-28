@@ -96,6 +96,7 @@ public class MDmsApplicationItemProvider
 			addUpgradeMessagePropertyPropertyDescriptor(object);
 			addUpgradeRelativeFtpPathPropertyPropertyDescriptor(object);
 			addLastUpgradePropertyPropertyDescriptor(object);
+			addOrganisationPropertyPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -563,6 +564,28 @@ public class MDmsApplicationItemProvider
 	}
 
 	/**
+	 * This adds a property descriptor for the Organisation Property feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addOrganisationPropertyPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_MDmsApplication_organisationProperty_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_MDmsApplication_organisationProperty_feature", "_UI_MDmsApplication_type"),
+				 LogicPackage.Literals.MDMS_APPLICATION__ORGANISATION_PROPERTY,
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
 	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
@@ -588,6 +611,7 @@ public class MDmsApplicationItemProvider
 			childrenFeatures.add(LogicPackage.Literals.MDMS_APPLICATION__MUPGRADE_MESSAGE_PROPERTY);
 			childrenFeatures.add(LogicPackage.Literals.MDMS_APPLICATION__MUPGRADE_RELATIVE_FTP_PATH_PROPERTY);
 			childrenFeatures.add(LogicPackage.Literals.MDMS_APPLICATION__MLAST_UPGRADE_PROPERTY);
+			childrenFeatures.add(LogicPackage.Literals.MDMS_APPLICATION__MORGANISATION_PROPERTY);
 			childrenFeatures.add(LogicPackage.Literals.MDMS_APPLICATION__MGET_DATA_UPGRADE_INFO_STEP);
 			childrenFeatures.add(LogicPackage.Literals.MDMS_APPLICATION__MUPGRADE_DATA_STEP);
 			childrenFeatures.add(LogicPackage.Literals.MDMS_APPLICATION__MSCRIPTS);
@@ -663,6 +687,7 @@ public class MDmsApplicationItemProvider
 			case LogicPackage.MDMS_APPLICATION__UPGRADE_MESSAGE_PROPERTY:
 			case LogicPackage.MDMS_APPLICATION__UPGRADE_RELATIVE_FTP_PATH_PROPERTY:
 			case LogicPackage.MDMS_APPLICATION__LAST_UPGRADE_PROPERTY:
+			case LogicPackage.MDMS_APPLICATION__ORGANISATION_PROPERTY:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case LogicPackage.MDMS_APPLICATION__MSERVICE_FILE_PATH_PROPERTY:
@@ -680,6 +705,7 @@ public class MDmsApplicationItemProvider
 			case LogicPackage.MDMS_APPLICATION__MUPGRADE_MESSAGE_PROPERTY:
 			case LogicPackage.MDMS_APPLICATION__MUPGRADE_RELATIVE_FTP_PATH_PROPERTY:
 			case LogicPackage.MDMS_APPLICATION__MLAST_UPGRADE_PROPERTY:
+			case LogicPackage.MDMS_APPLICATION__MORGANISATION_PROPERTY:
 			case LogicPackage.MDMS_APPLICATION__MGET_DATA_UPGRADE_INFO_STEP:
 			case LogicPackage.MDMS_APPLICATION__MUPGRADE_DATA_STEP:
 			case LogicPackage.MDMS_APPLICATION__MSCRIPTS:
@@ -777,6 +803,11 @@ public class MDmsApplicationItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
+				(LogicPackage.Literals.MDMS_APPLICATION__MORGANISATION_PROPERTY,
+				 LogicFactory.eINSTANCE.createMProperty()));
+
+		newChildDescriptors.add
+			(createChildParameter
 				(LogicPackage.Literals.MDMS_APPLICATION__MGET_DATA_UPGRADE_INFO_STEP,
 				 LogicFactory.eINSTANCE.createMDmsApplicationMGetDataUpgradeInfoStep()));
 
@@ -823,7 +854,8 @@ public class MDmsApplicationItemProvider
 			childFeature == LogicPackage.Literals.MDMS_APPLICATION__MDRIVE_PROPERTY ||
 			childFeature == LogicPackage.Literals.MDMS_APPLICATION__MUPGRADE_MESSAGE_PROPERTY ||
 			childFeature == LogicPackage.Literals.MDMS_APPLICATION__MUPGRADE_RELATIVE_FTP_PATH_PROPERTY ||
-			childFeature == LogicPackage.Literals.MDMS_APPLICATION__MLAST_UPGRADE_PROPERTY;
+			childFeature == LogicPackage.Literals.MDMS_APPLICATION__MLAST_UPGRADE_PROPERTY ||
+			childFeature == LogicPackage.Literals.MDMS_APPLICATION__MORGANISATION_PROPERTY;
 
 		if (qualify) {
 			return getString
