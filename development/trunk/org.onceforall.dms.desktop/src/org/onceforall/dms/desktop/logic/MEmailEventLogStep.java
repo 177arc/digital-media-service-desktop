@@ -2130,6 +2130,7 @@ public class MEmailEventLogStep extends MStep {
 
         // Sets mail server.
         props.put("mail.smtp.host", host);
+        props.put("mail.smtp.auth", "true");
 
         // Gets the session.
         Session session = Session.getDefaultInstance(props, new MailAccountAuthenticator());
