@@ -54,9 +54,7 @@ import org.eclipse.swt.widgets.MStepSkipButton;
 import org.eclipse.swt.widgets.MStepStartButton;
 import org.eclipse.swt.widgets.MStepStopButton;
 import org.eclipse.swt.widgets.MStepTerminateButton;
-import org.eclipse.swt.widgets.MessageBox;
 import org.eclipse.swt.widgets.ProgressBar;
-import org.onceforall.dms.desktop.exception.DesktopException;
 import org.onceforall.dms.desktop.logic.LogicPackage;
 import org.onceforall.dms.desktop.logic.MElement;
 import org.onceforall.dms.desktop.logic.MObject;
@@ -290,62 +288,21 @@ public class MStepComposite extends DetailsComposite {
 	 * responsible for.
 	 */
 	public void start() {
-		if (mElement == null)
-			return;
-
-		MStep mStep = (MStep) getMElement();
-		State state = mStep.getStateProperty();
-
-		if (state.equals(MStepStateType.PROCESSING_STATE))
-			mStep.pause();
-		else if (state.equals(MStepStateType.PAUSED_STATE))
-			mStep.resume();
-		else
-			try {
-				mStep.validate();
-				getDisplay().asyncExec((MStep) mElement);
-			} catch (DesktopException exception) {
-				if (exception.getSeverity() >= DesktopException.ERROR_SEVERITY) {
-					MessageBox messageBox = new MessageBox(this.getShell(), SWT.OK | SWT.ICON_ERROR);
-					messageBox.setMessage(exception.getMessageWithAdvice());
-					messageBox.setText("Digital Media Service Desktop Error");
-					messageBox.open();
-				}
-				else if (exception.getSeverity() == DesktopException.WARNING_SEVERITY) {
-					MessageBox messageBox = new MessageBox(this.getShell(), SWT.YES | SWT.NO | SWT.ICON_WARNING);
-					messageBox.setMessage(exception.getMessageWithAdvice() + "\n\nWould you like to continue anyway?");
-					messageBox.setText("Digital Media Service Desktop Warning");
-					if (messageBox.open() == SWT.YES)
-						getDisplay().asyncExec((MStep) mElement);
-				}
-				else  {
-					MessageBox messageBox = new MessageBox(this.getShell(), SWT.YES | SWT.NO | SWT.ICON_QUESTION);
-					messageBox.setMessage(exception.getMessageWithAdvice() + "\n\nWould you like to continue anyway?");
-					messageBox.setText("Digital Media Service Desktop Information");
-					if (messageBox.open() == SWT.YES)
-						getDisplay().asyncExec((MStep) mElement);
-				}
-			}
+		((MStepButton) startButton).performAction();
 	}
 
 	/**
 	 * Requests the stop of the mStep that this composite is responsible for.
 	 */
 	public void stop() {
-		if (mElement == null)
-			return;
-
-		((MStep) mElement).stop();
+		((MStepButton) stopButton).performAction();
 	}
 
 	/**
 	 * Requests the skipping of the mStep that this composite is responsible for.
 	 */
 	public void skip() {
-		if (mElement == null)
-			return;
-
-		((MStep) mElement).skip();
+		((MStepButton) skipButton).performAction();
 	}
 
 	/**
@@ -353,14 +310,7 @@ public class MStepComposite extends DetailsComposite {
 	 * for.
 	 */
 	public void terminate() {
-		if (mElement == null)
-			return;
-
-		MessageBox messageBox = new MessageBox(this.getShell(), SWT.YES | SWT.NO | SWT.ICON_WARNING);
-		messageBox.setMessage("You are about to terminate '" + mElement.getNameForUI() + "' forcefully.\n\nWould you like to continue anyway?");
-		messageBox.setText("Digital Media Service Desktop Warning");
-		if (messageBox.open() == SWT.YES)
-			((MStep) mElement).terminate();
+		((MStepButton) terminateButton).performAction();
 	}
 
 	/**
