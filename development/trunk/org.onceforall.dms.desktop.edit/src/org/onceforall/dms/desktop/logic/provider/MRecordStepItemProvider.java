@@ -72,6 +72,7 @@ public class MRecordStepItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addRecordingLengthPropertyPropertyDescriptor(object);
 			addDirectoryParameterPropertyDescriptor(object);
 			addRecordingFileParameterPropertyDescriptor(object);
 			addRecordingFileResultPropertyDescriptor(object);
@@ -79,6 +80,28 @@ public class MRecordStepItemProvider
 			addRecordingLengthResultPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Recording Length Property feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addRecordingLengthPropertyPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_MRecordStep_recordingLengthProperty_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_MRecordStep_recordingLengthProperty_feature", "_UI_MRecordStep_type"),
+				 LogicPackage.Literals.MRECORD_STEP__RECORDING_LENGTH_PROPERTY,
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
 	}
 
 	/**
@@ -202,6 +225,7 @@ public class MRecordStepItemProvider
 	public Collection getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
+			childrenFeatures.add(LogicPackage.Literals.MRECORD_STEP__MRECORDING_LENGTH_PROPERTY);
 			childrenFeatures.add(LogicPackage.Literals.MRECORD_STEP__MDIRECTORY_PARAMETER);
 			childrenFeatures.add(LogicPackage.Literals.MRECORD_STEP__MRECORDING_FILE_PARAMETER);
 			childrenFeatures.add(LogicPackage.Literals.MRECORD_STEP__MRECORDING_FILE_RESULT);
@@ -257,6 +281,7 @@ public class MRecordStepItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(MRecordStep.class)) {
+			case LogicPackage.MRECORD_STEP__RECORDING_LENGTH_PROPERTY:
 			case LogicPackage.MRECORD_STEP__DIRECTORY_PARAMETER:
 			case LogicPackage.MRECORD_STEP__RECORDING_FILE_PARAMETER:
 			case LogicPackage.MRECORD_STEP__RECORDING_FILE_RESULT:
@@ -264,6 +289,7 @@ public class MRecordStepItemProvider
 			case LogicPackage.MRECORD_STEP__RECORDING_LENGTH_RESULT:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
+			case LogicPackage.MRECORD_STEP__MRECORDING_LENGTH_PROPERTY:
 			case LogicPackage.MRECORD_STEP__MDIRECTORY_PARAMETER:
 			case LogicPackage.MRECORD_STEP__MRECORDING_FILE_PARAMETER:
 			case LogicPackage.MRECORD_STEP__MRECORDING_FILE_RESULT:
