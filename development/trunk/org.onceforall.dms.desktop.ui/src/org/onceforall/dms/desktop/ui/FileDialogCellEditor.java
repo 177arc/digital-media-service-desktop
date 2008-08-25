@@ -9,6 +9,7 @@ import org.eclipse.swt.custom.CCombo;
 import org.eclipse.swt.custom.CComboWrapper;
 import org.eclipse.swt.events.FocusAdapter;
 import org.eclipse.swt.events.FocusEvent;
+import org.eclipse.swt.events.FocusListener;
 import org.eclipse.swt.events.KeyAdapter;
 import org.eclipse.swt.events.KeyEvent;
 import org.eclipse.swt.events.SelectionAdapter;
@@ -42,6 +43,12 @@ public class FileDialogCellEditor extends DialogCellEditor {
 	/** Specifies the button that the user can press to open the file dialog. */
 	protected Button button;
 	
+	/** Specifies the button focus listener that determines whether the button is loosing its focus. */
+	protected FocusListener buttonFocusListener;
+	
+	/** Specifies whether the button is loosing the focus. */
+	protected boolean buttonLoosingFocus;
+	
 	/** Specifies whether the multiple files can be selected in the file dialog. */
 	protected boolean multiple;
 	
@@ -62,7 +69,6 @@ public class FileDialogCellEditor extends DialogCellEditor {
 	
 	/** Specifies the parent composite of the cell editor. */
 	protected Composite parent;
-	
 	
 	/**
 	 * Creates a new file dialog cell editor.
@@ -93,6 +99,8 @@ public class FileDialogCellEditor extends DialogCellEditor {
 		String applicationPath = new File("").getAbsolutePath();
 		parent.setCursor(waitCursor);
 		try {
+			// Removes the focus listener because the button is guaranteed to loose its focus when the dialog is opened.
+			button.removeFocusListener(buttonFocusListener);
 			if(!folder) {
 				FileDialog fileDialog = new FileDialog(parentControl.getShell(), style);
 				if(filterPath != null)
@@ -134,6 +142,8 @@ public class FileDialogCellEditor extends DialogCellEditor {
 			}
 		}
 		finally {
+			// Adds the focus listener again.
+			button.addFocusListener(buttonFocusListener);
 			parent.setCursor(null);
 		}
 		return value;
@@ -210,15 +220,6 @@ public class FileDialogCellEditor extends DialogCellEditor {
 		contents.addFocusListener(new FocusAdapter() {
 			
             /**
-			 * @see org.eclipse.swt.events.FocusAdapter#focusGained(org.eclipse.swt.events.FocusEvent)
-			 */
-			@Override
-			public void focusGained(FocusEvent event) {
-				/*if(contents instanceof CCombo)
-					wrapper.dropDown(true);*/
-			}
-			
-            /**
 			 * @see org.eclipse.swt.events.FocusAdapter#focusLost(org.eclipse.swt.events.FocusEvent)
 			 */
 			@Override
@@ -250,6 +251,19 @@ public class FileDialogCellEditor extends DialogCellEditor {
 	protected Button createButton(Composite parent) {
 		button =  super.createButton(parent);
 		button.setToolTipText("Opens a dialog for selecting a file or folder.");
+		
+		buttonFocusListener = new FocusAdapter() {
+			/**
+			 * @see org.eclipse.swt.events.FocusAdapter#focusLost(org.eclipse.swt.events.FocusEvent)
+			 */
+			@Override
+			public void focusLost(FocusEvent event) {
+				buttonLoosingFocus = true;
+			}
+		};
+		
+		button.addFocusListener(buttonFocusListener);
+		
 		return button;
 	}
 
@@ -258,9 +272,12 @@ public class FileDialogCellEditor extends DialogCellEditor {
 	 */
 	@Override
 	protected void fireApplyEditorValue() {
-		if(contents.isFocusControl() || button.isFocusControl())
+		if(contents.isFocusControl() || button.isFocusControl() && !buttonLoosingFocus) {
+			buttonLoosingFocus = false;
 			return;
+		}
 		
+		buttonLoosingFocus = false;
 		super.fireApplyEditorValue();
 	}
 
