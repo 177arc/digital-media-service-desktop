@@ -3182,6 +3182,8 @@ public abstract class MPublishMp3sStep extends MFtpStep {
         URL contentPageUrl = new URL(webServerUrl.toExternalForm()+getContentPageRelativeFtpPathParameter()+"/"+getContentPageFilePathParameter().getName()); //$NON-NLS-1$
         setPodcastFileUrlResult(podcastFileUrl);
         setContentPageUrlResult(contentPageUrl);
+        
+        setProgressStatusProperty(null);
     }
         
     /**
