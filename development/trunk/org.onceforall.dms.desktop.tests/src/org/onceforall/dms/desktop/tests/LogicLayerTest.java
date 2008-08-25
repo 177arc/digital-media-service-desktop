@@ -30,6 +30,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.StringReader;
 import java.net.URL;
+import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Iterator;
@@ -56,6 +57,7 @@ import org.farng.mp3.TagException;
 import org.farng.mp3.id3.ID3v1;
 import org.onceforall.dms.desktop.Utilities;
 import org.onceforall.dms.desktop.exception.DesktopException;
+import org.onceforall.dms.desktop.exception.DesktopExceptionList;
 import org.onceforall.dms.desktop.logging.Logger;
 import org.onceforall.dms.desktop.logic.MCheckInputLevelsStep;
 import org.onceforall.dms.desktop.logic.MConvertToMP3Step;
@@ -83,7 +85,10 @@ import org.xml.sax.SAXException;
 public class LogicLayerTest extends org.onceforall.dms.desktop.tests.Test {
 	/** Specifies the podcast date format. */
 	protected static final SimpleDateFormat PODCAST_DATE_FORMAT = new SimpleDateFormat("EEE, d MMM yyyy HH:mm:ss Z");
-
+	
+	/** Specifies the date formatter for the directory name. */
+	public static final DateFormat DIRECTORY_DATE_FORMAT = new SimpleDateFormat("yyyy-MM-dd");
+	
 	/** Specifies the managed script to be tested. */
 	protected MScript mScript;
 
@@ -104,20 +109,27 @@ public class LogicLayerTest extends org.onceforall.dms.desktop.tests.Test {
 	 *      boolean)
 	 */
 	@Override
-	protected void executeMStep(MStep mStep, boolean waitForCompletion) {
-		executeMStep(mStep, waitForCompletion, false);
+	protected DesktopExceptionList executeMStep(MStep mStep, boolean waitForCompletion) {
+		return executeMStep(mStep, waitForCompletion, false);
 	}
 
 	/**
 	 * @see org.onceforall.dms.desktop.tests.Test#executeMStep(org.onceforall.dms.desktop.logic.MStep, boolean, boolean)
 	 */
 	@Override
-	protected void executeMStep(MStep mStep, boolean waitForCompletion, boolean ignoreWarnings) {
-		++currentStepIndex;
-		activateMElement(mStep);
-		super.executeMStep(mStep, waitForCompletion, ignoreWarnings);
+	protected DesktopExceptionList executeMStep(MStep mStep, boolean waitForCompletion, boolean ignoreWarnings) {
+		return executeMStep(mStep, waitForCompletion, ignoreWarnings, true);
 	}
 
+	/**
+	 * @see org.onceforall.dms.desktop.tests.Test#executeMStep(org.onceforall.dms.desktop.logic.MStep, boolean, boolean, boolean)
+	 */
+	@Override
+	protected DesktopExceptionList executeMStep(MStep mStep, boolean waitForCompletion, boolean ignoreWarnings, boolean throwOnValidationError) {
+		++currentStepIndex;
+		activateMElement(mStep);
+		return super.executeMStep(mStep, waitForCompletion, ignoreWarnings, throwOnValidationError);
+	}
 	/**
 	 * Sets the managed properties of the managed application.
 	 */
@@ -189,6 +201,8 @@ public class LogicLayerTest extends org.onceforall.dms.desktop.tests.Test {
 	 * @throws UnsupportedAudioFileException  Thrown if the recorded file format is not supported.
 	 */
 	protected void testMRecordStep(MRecordStep mStep, File recordingFileParameter, File playbackFile) throws UnsupportedAudioFileException, IOException {		
+		Logger.getLogger().info("For this test to succeed, an active recording line with a signal has to be available. For example, plug in a microphone.");
+		
 		MCreateDirectoryStep mCreateDirectoryStep = (MCreateDirectoryStep) mScript.getMSteps().get(2);
 
 		long expectedLength = Long.parseLong(TestData.LogicLayerTest_ExpectedRecordingLength);	// Specifies the expected recording length in millisonds.
@@ -563,14 +577,8 @@ public class LogicLayerTest extends org.onceforall.dms.desktop.tests.Test {
 		assertTrue(mDmsApplication.getSmtpPasswordProperty().equals(mStep.getSmtpPasswordParameter()));
 		
 		// Checks warnings.
-		try {
-			executeMStep(mStep, true, false);
-			assertTrue(false);
-		}
-		catch(DesktopException exception) {
-			assertTrue(exception.getSeverity() == DesktopException.WARNING_SEVERITY);
-			assertTrue(exception.getMessage().indexOf("your own email address") >= 0);
-		}
+		DesktopExceptionList exceptions = executeMStep(mStep, true, false);
+		assertValidation(exceptions, DesktopException.WARNING_SEVERITY, "your own email address");
 		
 		// Starts the step.
 		executeMStep(mStep, true, true);
