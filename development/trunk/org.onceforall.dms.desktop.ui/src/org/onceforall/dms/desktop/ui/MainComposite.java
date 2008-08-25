@@ -80,7 +80,9 @@ import org.eclipse.ui.forms.widgets.ExpandableComposite;
 import org.eclipse.ui.forms.widgets.ScrolledForm;
 import org.eclipse.ui.forms.widgets.Section;
 import org.onceforall.dms.desktop.Main;
+import org.onceforall.dms.desktop.Utilities;
 import org.onceforall.dms.desktop.exception.DesktopException;
+import org.onceforall.dms.desktop.exception.DesktopExceptionList;
 import org.onceforall.dms.desktop.logging.Logger;
 import org.onceforall.dms.desktop.logging.MemoryHandler;
 import org.onceforall.dms.desktop.logic.LogicPackage;
@@ -281,7 +283,7 @@ public class MainComposite extends MElementComposite {
 	        else if(event.keyCode == SWT.F3)
 	            // Stops the current mStep.
 	            stepComposite.stop();
-	        
+	         
 	        else if(event.keyCode == SWT.F4)
 	            // Terminates the current mStep.
 	            stepComposite.terminate();
@@ -423,8 +425,9 @@ public class MainComposite extends MElementComposite {
 	 	        }
 	 	    }
 	 	   
- 	    // Saves the application data after the application has been shut down.
-	 	MApplication.getInstance().saveToXML();	    
+ 	    // Saves and backs up the application data after the application has been shut down.
+	 	MApplication.getInstance().saveToXML();
+	 	MApplication.getInstance().backUpXML();
 	}
 	
 	/**
@@ -495,59 +498,37 @@ public class MainComposite extends MElementComposite {
 	    
 	    try {
 	    	// Checks for application upgrade data.
-	    	mStep.validate();
-	    	Logger.getLogger().info("Checking for application data upgrade ...");
-	    	mStep.run(true);
-	    	
-	    	// Checks whether the application data upgrade is available.
-	    	if(!((MDmsApplicationMGetDataUpgradeInfoStep) mStep).getUpgradeAvailableResult()) {
-		    	Logger.getLogger().info("Application data is up-to-date.");
-	    		return;
-	    	}
-	    	
-	    	// Checks whether the application data upgrade is not out-of-date.
-	    	Date mLastSaveResult = ((MDmsApplicationMGetDataUpgradeInfoStep) mStep).getUpgradeDateResult();
-	    	if(mLastSaveResult != null && mLastSaveResult.before(mApplication.getLastSaveProperty()))
-	    		return;
-	    	
-		    Logger.getLogger().info("An application data upgrade is available.");
-
-	    	// Upgrades the application data.
-	    	mStep = mApplication.getMUpgradeDataStep();
-	    	try {
-	    		mStep.validate();
-			    mStep.run(true);
-	    	}
-		    catch(DesktopException exception) {
-		    	if(exception.getSeverity() > DesktopException.WARNING_SEVERITY)
-		    		throw exception;
-		    	else
-		    		if (exception.getSeverity() == DesktopException.WARNING_SEVERITY) {
-						MessageBox messageBox = new MessageBox(shell, SWT.YES | SWT.NO | SWT.ICON_WARNING);
-						messageBox.setMessage(exception.getMessageWithAdvice() + "\n\nWould you like to continue anyway?");
-						messageBox.setText("Digital Media Service Desktop Warning");
-						if (messageBox.open() == SWT.YES)
-							mStep.run(true);
-						else
-							return;
-							
-					}
-					else  {
-						MessageBox messageBox = new MessageBox(shell, SWT.YES | SWT.NO | SWT.ICON_QUESTION);
-						messageBox.setMessage(exception.getMessageWithAdvice() + "\n\nWould you like to continue anyway?");
-						messageBox.setText("Digital Media Service Desktop Information");
-						if (messageBox.open() == SWT.YES)
-							mStep.run(true);
-						else
-							return;
-					}
-		    		
+	    	DesktopExceptionList exceptions = mStep.validate();
+	    	if(exceptions.size() == 0) {
+		    	Logger.getLogger().info("Checking for application data upgrade ...");
+		    	mStep.run(true);
+		    	
+		    	// Checks whether the application data upgrade is available.
+		    	if(!((MDmsApplicationMGetDataUpgradeInfoStep) mStep).getUpgradeAvailableResult()) {
+			    	Logger.getLogger().info("Application data is up-to-date.");
+		    		return;
+		    	}
+		    	
+		    	// Checks whether the application data upgrade is not out-of-date.
+		    	Date mLastSaveResult = ((MDmsApplicationMGetDataUpgradeInfoStep) mStep).getUpgradeDateResult();
+		    	if(mLastSaveResult != null && mLastSaveResult.before(mApplication.getLastSaveProperty()))
+		    		return;
+		    	
+			    Logger.getLogger().info("An application data upgrade is available.");
+	
+		    	// Upgrades the application data.
+		    	mStep = mApplication.getMUpgradeDataStep();
+		    	exceptions = mStep.validate();
+		    	if(org.onceforall.dms.desktop.ui.Utilities.showValidationExceptionsDialog(shell, exceptions)) {	
+				    mStep.run(true);
+			    	Logger.getLogger().log(Level.INFO, "The application data was upgraded successfully.");
+		    	}
 		    }
-		    Logger.getLogger().log(Level.INFO, "The application data was upgraded successfully.");
-	    }
-	    catch(DesktopException exception) {
-		    Logger.getLogger().warning("The application data upgrade (check) has failed. You may want to make sure that the computer is connected to the internet and then restart the application.");
-	    	// Does nothing.
+	    	else {
+			    Logger.getLogger().warning("The application data upgrade (check) has failed. You may want to make sure that the computer is connected to the internet and then restart the application.");	    		
+			    for(DesktopException exception: exceptions)
+			    	Logger.getLogger().log(Utilities.getLevelForSeverity(exception.getSeverity()), exception.getMessage());
+	    	}
 	    }
 	    catch(Throwable exception) {
 	    	Logger.getLogger().log(Level.SEVERE, exception.getMessage(), exception);
