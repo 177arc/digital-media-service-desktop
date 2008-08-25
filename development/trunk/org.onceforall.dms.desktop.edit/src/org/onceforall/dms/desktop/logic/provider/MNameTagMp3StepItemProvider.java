@@ -74,6 +74,7 @@ public class MNameTagMp3StepItemProvider
 			addDirectoryParameterPropertyDescriptor(object);
 			addTaggedMp3FileNameParameterPropertyDescriptor(object);
 			addRecordingMp3FileParameterPropertyDescriptor(object);
+			addTagAndRenameOriginalParameterPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -145,6 +146,28 @@ public class MNameTagMp3StepItemProvider
 	}
 
 	/**
+	 * This adds a property descriptor for the Tag And Rename Original Parameter feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addTagAndRenameOriginalParameterPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_MNameTagMp3Step_tagAndRenameOriginalParameter_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_MNameTagMp3Step_tagAndRenameOriginalParameter_feature", "_UI_MNameTagMp3Step_type"),
+				 LogicPackage.Literals.MNAME_TAG_MP3_STEP__TAG_AND_RENAME_ORIGINAL_PARAMETER,
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
 	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
@@ -158,6 +181,7 @@ public class MNameTagMp3StepItemProvider
 			childrenFeatures.add(LogicPackage.Literals.MNAME_TAG_MP3_STEP__MDIRECTORY_PARAMETER);
 			childrenFeatures.add(LogicPackage.Literals.MNAME_TAG_MP3_STEP__MTAGGED_MP3_FILE_NAME_PARAMETER);
 			childrenFeatures.add(LogicPackage.Literals.MNAME_TAG_MP3_STEP__MRECORDING_MP3_FILE_PARAMETER);
+			childrenFeatures.add(LogicPackage.Literals.MNAME_TAG_MP3_STEP__MTAG_AND_RENAME_ORIGINAL_PARAMETER);
 		}
 		return childrenFeatures;
 	}
@@ -211,11 +235,13 @@ public class MNameTagMp3StepItemProvider
 			case LogicPackage.MNAME_TAG_MP3_STEP__DIRECTORY_PARAMETER:
 			case LogicPackage.MNAME_TAG_MP3_STEP__TAGGED_MP3_FILE_NAME_PARAMETER:
 			case LogicPackage.MNAME_TAG_MP3_STEP__RECORDING_MP3_FILE_PARAMETER:
+			case LogicPackage.MNAME_TAG_MP3_STEP__TAG_AND_RENAME_ORIGINAL_PARAMETER:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case LogicPackage.MNAME_TAG_MP3_STEP__MDIRECTORY_PARAMETER:
 			case LogicPackage.MNAME_TAG_MP3_STEP__MTAGGED_MP3_FILE_NAME_PARAMETER:
 			case LogicPackage.MNAME_TAG_MP3_STEP__MRECORDING_MP3_FILE_PARAMETER:
+			case LogicPackage.MNAME_TAG_MP3_STEP__MTAG_AND_RENAME_ORIGINAL_PARAMETER:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
