@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<org.onceforall.dms.desktop.logic:MDmsApplication xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:org.onceforall.dms.desktop.logic="http://www.onceforall.org/dms/desktop/model.ecore" versionProperty="1.1.1.60 (built on 23 Mar 2008 by Marc and Rach)" serviceFilePathProperty="Recording Files" wwxFilesPathProperty="Recording Files" ftpServerUrlProperty="ftp://www.onceforall.org" ftpUserNameProperty="www.onceforall.org" ftpUserPasswordProperty="M3vPeg+oRr9k8xtkFmFbfg==" webServerUrlProperty="http://www.onceforall.org" smtpServerProperty="post.strato.de" smtpUserNameProperty="dms-testing%onceforall.org" smtpPasswordProperty="M3vPeg+oRr9k8xtkFmFbfg==" burningSoftwareDirectoryPathProperty="Program Files\Nero 6.0\Nero" driveProperty="D" upgradeMessageProperty="" upgradeRelativeFtpPathProperty="/dms-desktop/testing/Data.zip" lastUpgradeProperty="2007-02-04T22:31:31.484+0000">
+<org.onceforall.dms.desktop.logic:MDmsApplication xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:org.onceforall.dms.desktop.logic="http://www.onceforall.org/dms/desktop/model.ecore" versionProperty="1.2.2.74 (built on 16 Jun 2008 by Marc and Rach)" serviceFilePathProperty="Recording Files" wwxFilesPathProperty="Recording Files" ftpServerUrlProperty="ftp://www.onceforall.org" ftpUserNameProperty="www.onceforall.org" ftpUserPasswordProperty="M3vPeg+oRr9k8xtkFmFbfg==" webServerUrlProperty="http://www.onceforall.org" smtpServerProperty="post.strato.de" smtpUserNameProperty="dms-testing%onceforall.org" smtpPasswordProperty="M3vPeg+oRr9k8xtkFmFbfg==" burningSoftwareDirectoryPathProperty="Program Files\Nero 6.0\Nero" driveProperty="D" upgradeMessageProperty="" upgradeRelativeFtpPathProperty="/dms-desktop/testing/Data.zip" lastUpgradeProperty="2007-02-04T22:31:31.484+0000">
   <mNameProperty/>
   <mDescriptionProperty/>
   <mIconFilePathProperty/>
@@ -25,7 +25,8 @@
   <mUpgradeMessageProperty readOnly="true"/>
   <mUpgradeRelativeFtpPathProperty/>
   <mLastUpgradeProperty readOnly="true"/>
-  <mGetDataUpgradeInfoStep lastStateChangeProperty="2008-03-23T19:00:34.820+0000" ftpServerUrlParameter="ftp://www.onceforall.org" ftpUserNameParameter="www.onceforall.org" ftpUserPasswordParameter="M3vPeg+oRr9k8xtkFmFbfg==" upgradeRelativeFtpPathProperty="/dms-desktop/testing/Data.zip">
+  <mOrganisationProperty/>
+  <mGetDataUpgradeInfoStep lastStateChangeProperty="2008-08-25T17:23:41.322+0100" ftpServerUrlParameter="ftp://www.onceforall.org" ftpUserNameParameter="www.onceforall.org" ftpUserPasswordParameter="M3vPeg+oRr9k8xtkFmFbfg==" upgradeRelativeFtpPathProperty="/dms-desktop/testing/Data.zip">
     <mNameProperty/>
     <mDescriptionProperty/>
     <mIconFilePathProperty/>
@@ -64,7 +65,7 @@
     <mIconFilePathProperty/>
     <mStateProperty readOnly="true"/>
     <mLastStateChangeProperty readOnly="true"/>
-    <mSteps xsi:type="org.onceforall.dms.desktop.logic:MEnterServiceInformationStep" name="Enter event information" description="Please enter the required information about the event and then select 'Mark as completed'. Data entered here will appear on the content web page, the RSS/podcast title and the MP3 file name and tags." lastStateChangeProperty="2008-02-09T14:50:49.188+0000">
+    <mSteps xsi:type="org.onceforall.dms.desktop.logic:MEnterServiceInformationStep" name="Enter event information" description="Please enter the required information about the event and then select 'Mark as completed'. Data entered here will appear on the content web page, the RSS/podcast title and the MP3 file name and tags." lastStateChangeProperty="2008-08-25T17:24:00.297+0100">
       <mNameProperty/>
       <mDescriptionProperty/>
       <mIconFilePathProperty/>
@@ -89,7 +90,7 @@
       <mSpeakersNameResult/>
       <mRecordingUsersNameResult/>
     </mSteps>
-    <mSteps xsi:type="org.onceforall.dms.desktop.logic:MCheckFreeDiskSpaceStep" lastStateChangeProperty="2007-08-25T13:47:57.125+0100" requiredFreeDiskSpaceParameter="800000000" directoryParameter="Recording Files">
+    <mSteps xsi:type="org.onceforall.dms.desktop.logic:MCheckFreeDiskSpaceStep" lastStateChangeProperty="2008-08-25T17:24:02.702+0100" requiredFreeDiskSpaceParameter="800000000" directoryParameter="Recording Files">
       <mNameProperty/>
       <mDescriptionProperty/>
       <mIconFilePathProperty/>
@@ -102,7 +103,7 @@
       <mDirectoryParameter mInputValues="//@mServiceFilePathProperty"/>
       <mFreeDiskSpaceResult/>
     </mSteps>
-    <mSteps xsi:type="org.onceforall.dms.desktop.logic:MCreateDirectoryStep" lastStateChangeProperty="2008-02-09T14:50:55.360+0000" mInputSteps="//@mScripts.0/@mSteps.0" parentDirectoryParameter="Recording Files">
+    <mSteps xsi:type="org.onceforall.dms.desktop.logic:MCreateDirectoryStep" lastStateChangeProperty="2008-08-25T17:24:04.711+0100" mInputSteps="//@mScripts.0/@mSteps.0" parentDirectoryParameter="Recording Files" directoryNameParameter="2008-08-25 Test event type">
       <mNameProperty/>
       <mDescriptionProperty/>
       <mIconFilePathProperty/>
@@ -116,7 +117,7 @@
       <mDirectoryNameParameter mInputValues="//@mScripts.0/@mSteps.0/@mServiceTypeResult //@mScripts.0/@mSteps.0/@mServiceDateResult"/>
       <mDirectoryResult/>
     </mSteps>
-    <mSteps xsi:type="org.onceforall.dms.desktop.logic:MCheckInputLevelsStep" lastStateChangeProperty="2007-08-25T15:25:14.078+0100">
+    <mSteps xsi:type="org.onceforall.dms.desktop.logic:MCheckInputLevelsStep" lastStateChangeProperty="2008-08-25T17:24:09.932+0100">
       <mNameProperty/>
       <mDescriptionProperty/>
       <mIconFilePathProperty/>
@@ -132,14 +133,14 @@
       <mUseDbProperty description="Specifies whether the meters should show the signal readings in dBFS (logarithmic) or raw (linear).  For an explanation of dBFS, please refer to http://en.wikipedia.org/wiki/DBFS."/>
       <mHeadroomProperty description="Specifies the headroom in dBFS. This must be a number between 0 and 18.  For an explanation of the headroom please refer to http://en.wikipedia.org/wiki/Headroom. For an explanation of dBFS, please refer to http://en.wikipedia.org/wiki/DBFS.  "/>
     </mSteps>
-    <mSteps xsi:type="org.onceforall.dms.desktop.logic:MRecordStep" name="Record pre-talk" description="Records the first part of the event. This part will not be published but be burned to CD. It records from the main audio input line to an uncompressed WAV file. Please make sure that the input level will not exceed the maximum." lastStateChangeProperty="2007-08-25T16:08:24.468+0100" mInputSteps="//@mScripts.0/@mSteps.3 //@mScripts.0/@mSteps.1 //@mScripts.0/@mSteps.2" recordingFileParameter="Pre-talk.wav">
+    <mSteps xsi:type="org.onceforall.dms.desktop.logic:MRecordStep" name="Record pre-talk" description="Records the first part of the event. This part will not be published but be burned to CD. It records from the main audio input line to an uncompressed WAV file. Please make sure that the input level will not exceed the maximum." lastStateChangeProperty="2008-08-25T17:24:19.205+0100" mInputSteps="//@mScripts.0/@mSteps.3 //@mScripts.0/@mSteps.1 //@mScripts.0/@mSteps.2" directoryParameter="Recording Files\2008-08-25 Test event type" recordingFileParameter="Pre-talk.wav">
       <mNameProperty/>
       <mDescriptionProperty/>
       <mIconFilePathProperty/>
       <mStateProperty readOnly="true"/>
       <mLastStateChangeProperty readOnly="true"/>
       <mProgressProperty readOnly="true"/>
-      <mProgressStatusProperty readOnly="true"/>
+      <mProgressStatusProperty mInputValues="//@mScripts.0/@mSteps.5/@mRecordingLengthProperty //@mScripts.0/@mSteps.6/@mRecordingLengthProperty" readOnly="true"/>
       <mStartTriggerProperty/>
       <mLeftInputLevelProperty readOnly="true"/>
       <mRightInputLevelProperty readOnly="true"/>
@@ -147,20 +148,21 @@
       <mRightInputDistortionProperty readOnly="true"/>
       <mUseDbProperty description="Specifies whether the meters should show the signal readings in dBFS (logarithmic) or raw (linear).  For an explanation of dBFS, please refer to http://en.wikipedia.org/wiki/DBFS."/>
       <mHeadroomProperty description="Specifies the headroom in dBFS. This must be a number between 0 and 18.  For an explanation of the headroom please refer to http://en.wikipedia.org/wiki/Headroom. For an explanation of dBFS, please refer to http://en.wikipedia.org/wiki/DBFS.  "/>
+      <mRecordingLengthProperty readOnly="true"/>
       <mDirectoryParameter mInputValues="//@mScripts.0/@mSteps.2/@mDirectoryResult"/>
       <mRecordingFileParameter/>
       <mRecordingFileResult/>
       <mRecordingFileSizeResult/>
       <mRecordingLengthResult/>
     </mSteps>
-    <mSteps xsi:type="org.onceforall.dms.desktop.logic:MRecordStep" name="Record talk" lastStateChangeProperty="2008-02-09T14:51:13.310+0000" mInputSteps="//@mScripts.0/@mSteps.3 //@mScripts.0/@mSteps.1 //@mScripts.0/@mSteps.2" recordingFileParameter="Talk.wav">
+    <mSteps xsi:type="org.onceforall.dms.desktop.logic:MRecordStep" name="Record talk" lastStateChangeProperty="2008-08-25T17:24:24.954+0100" mInputSteps="//@mScripts.0/@mSteps.3 //@mScripts.0/@mSteps.1 //@mScripts.0/@mSteps.2" directoryParameter="Recording Files\2008-08-25 Test event type" recordingFileParameter="Talk.wav">
       <mNameProperty/>
       <mDescriptionProperty/>
       <mIconFilePathProperty/>
       <mStateProperty readOnly="true"/>
       <mLastStateChangeProperty readOnly="true"/>
       <mProgressProperty readOnly="true"/>
-      <mProgressStatusProperty readOnly="true"/>
+      <mProgressStatusProperty mInputValues="//@mScripts.0/@mSteps.4/@mRecordingLengthProperty //@mScripts.0/@mSteps.6/@mRecordingLengthProperty" readOnly="true"/>
       <mStartTriggerProperty/>
       <mLeftInputLevelProperty readOnly="true"/>
       <mRightInputLevelProperty readOnly="true"/>
@@ -168,20 +170,21 @@
       <mRightInputDistortionProperty readOnly="true"/>
       <mUseDbProperty description="Specifies whether the meters should show the signal readings in dBFS (logarithmic) or raw (linear).  For an explanation of dBFS, please refer to http://en.wikipedia.org/wiki/DBFS."/>
       <mHeadroomProperty description="Specifies the headroom in dBFS. This must be a number between 0 and 18.  For an explanation of the headroom please refer to http://en.wikipedia.org/wiki/Headroom. For an explanation of dBFS, please refer to http://en.wikipedia.org/wiki/DBFS.  "/>
+      <mRecordingLengthProperty readOnly="true"/>
       <mDirectoryParameter mInputValues="//@mScripts.0/@mSteps.2/@mDirectoryResult"/>
       <mRecordingFileParameter/>
       <mRecordingFileResult/>
       <mRecordingFileSizeResult/>
       <mRecordingLengthResult/>
     </mSteps>
-    <mSteps xsi:type="org.onceforall.dms.desktop.logic:MRecordStep" name="Record post-talk" description="Records the second part of the event. It records from the main audio input line to an uncompressed WAV file. Please make sure that the input level will not exceed the maximum." lastStateChangeProperty="2007-08-25T16:08:34.765+0100" mInputSteps="//@mScripts.0/@mSteps.3 //@mScripts.0/@mSteps.1 //@mScripts.0/@mSteps.2" recordingFileParameter="Post-talk.wav">
+    <mSteps xsi:type="org.onceforall.dms.desktop.logic:MRecordStep" name="Record post-talk" description="Records the second part of the event. It records from the main audio input line to an uncompressed WAV file. Please make sure that the input level will not exceed the maximum." lastStateChangeProperty="2008-08-25T17:23:17.200+0100" mInputSteps="//@mScripts.0/@mSteps.3 //@mScripts.0/@mSteps.1 //@mScripts.0/@mSteps.2" directoryParameter="Recording Files\2008-08-25 Test event type" recordingFileParameter="Post-talk.wav">
       <mNameProperty/>
       <mDescriptionProperty/>
       <mIconFilePathProperty/>
       <mStateProperty readOnly="true"/>
       <mLastStateChangeProperty readOnly="true"/>
       <mProgressProperty readOnly="true"/>
-      <mProgressStatusProperty readOnly="true"/>
+      <mProgressStatusProperty mInputValues="//@mScripts.0/@mSteps.4/@mRecordingLengthProperty //@mScripts.0/@mSteps.5/@mRecordingLengthProperty" readOnly="true"/>
       <mStartTriggerProperty/>
       <mLeftInputLevelProperty readOnly="true"/>
       <mRightInputLevelProperty readOnly="true"/>
@@ -189,13 +192,14 @@
       <mRightInputDistortionProperty readOnly="true"/>
       <mUseDbProperty description="Specifies whether the meters should show the signal readings in dBFS (logarithmic) or raw (linear).  For an explanation of dBFS, please refer to http://en.wikipedia.org/wiki/DBFS."/>
       <mHeadroomProperty description="Specifies the headroom in dBFS. This must be a number between 0 and 18.  For an explanation of the headroom please refer to http://en.wikipedia.org/wiki/Headroom. For an explanation of dBFS, please refer to http://en.wikipedia.org/wiki/DBFS.  "/>
+      <mRecordingLengthProperty readOnly="true"/>
       <mDirectoryParameter mInputValues="//@mScripts.0/@mSteps.2/@mDirectoryResult"/>
       <mRecordingFileParameter/>
       <mRecordingFileResult/>
       <mRecordingFileSizeResult/>
       <mRecordingLengthResult/>
     </mSteps>
-    <mSteps xsi:type="org.onceforall.dms.desktop.logic:MBurnCdStep" simulated="true" lastStateChangeProperty="2007-07-15T19:37:13.562+0100" mInputSteps="//@mScripts.0/@mSteps.6 //@mScripts.0/@mSteps.4 //@mScripts.0/@mSteps.5" burningSoftwareDirectoryPathParameter="Program Files\Nero 6.0\Nero" driveParameter="D" totalRecordingLengthParameter="2717" totalRecordingFileSizeParameter="479276">
+    <mSteps xsi:type="org.onceforall.dms.desktop.logic:MBurnCdStep" simulated="true" lastStateChangeProperty="2007-07-15T19:37:13.562+0100" mInputSteps="//@mScripts.0/@mSteps.6 //@mScripts.0/@mSteps.4 //@mScripts.0/@mSteps.5" burningSoftwareDirectoryPathParameter="Program Files\Nero 6.0\Nero" driveParameter="D" totalRecordingLengthParameter="7176" totalRecordingFileSizeParameter="1265752">
       <mNameProperty/>
       <mDescriptionProperty/>
       <mIconFilePathProperty/>
@@ -205,13 +209,14 @@
       <mProgressStatusProperty readOnly="true"/>
       <mStartTriggerProperty/>
       <mRecordingFilesParameter mInputValues="//@mScripts.0/@mSteps.4/@mRecordingFileResult //@mScripts.0/@mSteps.5/@mRecordingFileResult //@mScripts.0/@mSteps.6/@mRecordingFileResult"/>
-      <recordingFilesParameter>Recording Files\Test event type on 09 Feb 2008\Talk.wav</recordingFilesParameter>
+      <recordingFilesParameter>Recording Files\2008-08-25 Test event type\Pre-talk.wav</recordingFilesParameter>
+      <recordingFilesParameter>Recording Files\2008-08-25 Test event type\Talk.wav</recordingFilesParameter>
       <mBurningSoftwareDirectoryPathParameter mInputValues="//@mBurningSoftwareDirectoryPathProperty"/>
       <mDriveParameter mInputValues="//@mDriveProperty"/>
       <mTotalRecordingLengthParameter/>
       <mTotalRecordingFileSizeParameter/>
     </mSteps>
-    <mSteps xsi:type="org.onceforall.dms.desktop.logic:MConvertToMP3Step" name="Convert WAV recording to MP3" description="Converts a WAV file to MP3 format using the MP3 encoder." lastStateChangeProperty="2008-02-09T14:55:03.744+0000" mInputSteps="//@mScripts.0/@mSteps.5 //@mScripts.0/@mSteps.0" mp3FolderReferenceParameter="//@mMp3Folders.0" mp3EncoderPathParameter="Program Files\LAME 3.96.1" averageBitRateParameter="64">
+    <mSteps xsi:type="org.onceforall.dms.desktop.logic:MConvertToMP3Step" name="Convert WAV recording to MP3" description="Converts a WAV file to MP3 format using the MP3 encoder." lastStateChangeProperty="2008-02-09T14:55:03.744+0000" mInputSteps="//@mScripts.0/@mSteps.5 //@mScripts.0/@mSteps.0" artistParameter="Test speaker's name" titleParameter="Title - Test on 25 Aug 2008" albumParameter="Test event type" yearParameter="2008" mp3FolderReferenceParameter="//@mMp3Folders.0" mp3EntryNameParameter="Test event type on 25 Aug 2008" directoryParameter="Recording Files\2008-08-25 Test event type" mp3FileNameParameter="Title_-_Test.mp3" recordingFileParameter="Recording Files\2008-08-25 Test event type\Talk.wav" mp3EncoderPathParameter="Program Files\LAME 3.96.1" averageBitRateParameter="64">
       <mNameProperty/>
       <mDescriptionProperty/>
       <mIconFilePathProperty/>
@@ -236,7 +241,7 @@
       <mMp3EncoderPathParameter mInputValues="//@mMp3EncoderPathProperty"/>
       <mAverageBitRateParameter/>
     </mSteps>
-    <mSteps xsi:type="org.onceforall.dms.desktop.logic:MPublishNewMp3Step" name="Publish talk as MP3" description="Publishes a new MP3 recording to the web site and creates/updates the podcast RSS file accordingly. In order to achieve this, first uploads the MP3 file and than it generates the content web page from the content page header and footer locally. It does the same for the podcast file and then uploads both files replacing the older versions." lastStateChangeProperty="2007-08-25T16:08:48.406+0100" mInputSteps="//@mScripts.0/@mSteps.0 //@mScripts.0/@mSteps.8" ftpServerUrlParameter="ftp://www.onceforall.org" ftpUserNameParameter="www.onceforall.org" ftpUserPasswordParameter="M3vPeg+oRr9k8xtkFmFbfg==" maxiumumDiskSpaceParameter="200" mp3RelativeFtpPathParameter="/dms-desktop/testing" webServerUrlParameter="http://www.onceforall.org" contentPageRelativeFtpPathParameter="/dms-desktop/testing" contentHeaderFilePathParameter="Web Files\recordings-header.html" contentFooterFilePathParameter="Web Files\recordings-footer.html" contentPageFilePathParameter="Web Files\recordings.html" podcastFilePathParameter="Web Files\recordings.xml" podcastRelativeFtpPathParameter="/dms-desktop/testing" podcastHeaderFilePathParameter="Web Files\recordings-header.xml" mp3EntryReferenceParameter="//@mMp3Folders.0/@mMp3s.2">
+    <mSteps xsi:type="org.onceforall.dms.desktop.logic:MPublishNewMp3Step" name="Publish talk as MP3" description="Publishes a new MP3 recording to the web site and creates/updates the podcast RSS file accordingly. In order to achieve this, first uploads the MP3 file and than it generates the content web page from the content page header and footer locally. It does the same for the podcast file and then uploads both files replacing the older versions." lastStateChangeProperty="2007-08-25T16:08:48.406+0100" mInputSteps="//@mScripts.0/@mSteps.0 //@mScripts.0/@mSteps.8" ftpServerUrlParameter="ftp://www.onceforall.org" ftpUserNameParameter="www.onceforall.org" ftpUserPasswordParameter="M3vPeg+oRr9k8xtkFmFbfg==" maxiumumDiskSpaceParameter="200" mp3RelativeFtpPathParameter="/dms-desktop/testing" webServerUrlParameter="http://www.onceforall.org" contentPageRelativeFtpPathParameter="/dms-desktop/testing" contentHeaderFilePathParameter="Web Files\recordings-header.html" contentFooterFilePathParameter="Web Files\recordings-footer.html" contentPageFilePathParameter="Web Files\recordings.html" podcastFilePathParameter="Web Files\recordings.xml" podcastRelativeFtpPathParameter="/dms-desktop/testing" podcastHeaderFilePathParameter="Web Files\recordings-header.xml" mp3EntryReferenceParameter="//@mMp3Folders.0/@mMp3s.2" linkTextParameter="Title - Test" linkDescriptionParameter="25 Aug 2008 - Test event type - Test speaker's name" podcastTitleParameter="Title - Test" podcastSubtitleParameter="25 Aug 2008 - Test event type - Test speaker's name" podcastSummaryParameter="Test">
       <mNameProperty/>
       <mDescriptionProperty/>
       <mIconFilePathProperty/>
@@ -272,7 +277,7 @@
       <mPodcastPublishingDateParameter/>
       <mPublishedMp3EntryReferenceResult/>
     </mSteps>
-    <mSteps xsi:type="org.onceforall.dms.desktop.logic:MEmailEventLogStep" lastStateChangeProperty="2007-08-29T22:32:00.046+0100" mInputSteps="//@mScripts.0/@mSteps.0" logFileParameter="Log Files\Logged events (from 23-Mar-2008 19-00-31 onwards).txt" dataFileParameter="Application Data Files\Data.xml" smtpServerParameter="post.strato.de" smtpUserNameParameter="dms-testing%onceforall.org" smtpPasswordParameter="M3vPeg+oRr9k8xtkFmFbfg==">
+    <mSteps xsi:type="org.onceforall.dms.desktop.logic:MEmailEventLogStep" lastStateChangeProperty="2007-08-29T22:32:00.046+0100" mInputSteps="//@mScripts.0/@mSteps.0" recordingUsersNameParameter="Test recording user" logFileParameter="Log Files\Logged events (from 25-Aug-2008 17-23-39 onwards).txt" dataFileParameter="Application Data Files\Data.xml" subjectParameter="DMS log of Test event type on 25 Aug 2008" smtpServerParameter="post.strato.de" smtpUserNameParameter="dms-testing%onceforall.org" smtpPasswordParameter="M3vPeg+oRr9k8xtkFmFbfg==">
       <mNameProperty/>
       <mDescriptionProperty/>
       <mIconFilePathProperty/>
