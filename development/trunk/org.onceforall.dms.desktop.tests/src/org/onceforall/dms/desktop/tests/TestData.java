@@ -18,6 +18,30 @@ import org.eclipse.osgi.util.NLS;
 public class TestData extends NLS {
 	private static final String BUNDLE_NAME = "org.onceforall.dms.desktop.tests.TestData"; //$NON-NLS-1$
 
+	public static String LogicLayerMNameTagStepTest_Album;
+
+	public static String LogicLayerMNameTagStepTest_Arist;
+
+	public static String LogicLayerMNameTagStepTest_Artist;
+
+	public static String LogicLayerMNameTagStepTest_Comment;
+
+	public static String LogicLayerMNameTagStepTest_Directory;
+
+	public static String LogicLayerMNameTagStepTest_Genre;
+
+	public static String LogicLayerMNameTagStepTest_Mp3Entry;
+
+	public static String LogicLayerMNameTagStepTest_RecordingMp3File;
+
+	public static String LogicLayerMNameTagStepTest_Speech;
+
+	public static String LogicLayerMNameTagStepTest_TaggedMp3FileName;
+
+	public static String LogicLayerMNameTagStepTest_Title;
+
+	public static String LogicLayerMNameTagStepTest_Year;
+
 	public static String LogicLayerMUpdatePublishedMP3StepTest_17;
 
 	public static String LogicLayerMUpdatePublishedMP3StepTest_27;

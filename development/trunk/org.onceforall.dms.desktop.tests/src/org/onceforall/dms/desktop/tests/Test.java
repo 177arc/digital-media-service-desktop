@@ -63,6 +63,7 @@ import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.util.FeatureMap;
 import org.eclipse.emf.ecore.util.FeatureMapUtil;
 import org.onceforall.dms.desktop.exception.DesktopException;
+import org.onceforall.dms.desktop.exception.DesktopExceptionList;
 import org.onceforall.dms.desktop.logic.MDmsApplication;
 import org.onceforall.dms.desktop.logic.MElement;
 import org.onceforall.dms.desktop.logic.MObject;
@@ -140,13 +141,25 @@ public class Test extends org.onceforall.core.tests.Test {
 			mElement.activate();
 	}
 	/**
-	 * Executes the given managed step and waits till it has finished. It will not ignore warnings.
+	 * Executes the given managed step and can wait till it has finished. It will not ignore warnings and throw an exception on validation errors.
 	 * 
 	 * @param mStep Specifies the managed step to execute.
 	 * @param waitForCompletion Specifies whether to wait for the step to finish or to return immediately.
+	 * @return Returns the validation messages that the managed step reported before the execution.
 	 */
-	protected void executeMStep(MStep mStep, boolean waitForCompletion) {
-		executeMStep(mStep, waitForCompletion, false);
+	protected DesktopExceptionList executeMStep(MStep mStep, boolean waitForCompletion) {
+		return executeMStep(mStep, waitForCompletion, false, true);
+	}
+	
+	/**
+	 * Executes the given managed step and can wait till it has finished. It will throw an exception on validation errors.
+	 * 
+	 * @param mStep Specifies the managed step to execute.
+	 * @param waitForCompletion Specifies whether to wait for the step to finish or to return immediately.
+	 * @return Returns the validation messages that the managed step reported before the execution.
+	 */
+	protected DesktopExceptionList executeMStep(MStep mStep, boolean waitForCompletion, boolean ignoreWarnings) {
+		return executeMStep(mStep, waitForCompletion, false, true);
 	}
 	
 	/**
@@ -154,11 +167,30 @@ public class Test extends org.onceforall.core.tests.Test {
 	 * 
 	 * @param mStep Specifies the managed step to execute.
 	 * @param waitForCompletion Specifies whether to wait for the step to finish or to return immediately.
+	 * @param throwOnValidationError Specifies whether a {@link org.onceforall.dms.desktop.exception.DesktopException} is thrown if an error is reported during validation.
+	 * @return Returns the validation messages that the managed step reported before the execution.
 	 */
-	protected void executeMStep(MStep mStep, boolean waitForCompletion, boolean ignoreWarnings) {
+	protected DesktopExceptionList executeMStep(MStep mStep, boolean waitForCompletion, boolean ignoreWarnings, boolean throwOnValidationError) {
 		System.out.print("Executing step '"+mStep.getNameForUI()+"' ..."); //$NON-NLS-1$ //$NON-NLS-2$
+		
+		DesktopExceptionList exceptions = null;
 		try {
-			mStep.validate();		
+			exceptions = mStep.validate();
+			
+			// Throws an exception if the validation messages contain at least one error and throwing exceptions has been requested.
+			if(exceptions.getMaxSeverity() >= DesktopException.ERROR_SEVERITY && throwOnValidationError) {
+				DesktopException exception;
+				if(exceptions.getCriticalCount() > 0)
+					exception = exceptions.getExceptionsForSeverity(DesktopException.CRITICAL_SEVERITY).get(0);
+				else
+					exception = exceptions.getExceptionsForSeverity(DesktopException.ERROR_SEVERITY).get(0);
+				
+				throw new DesktopException(exception.getMessage(), exception.getAdvice(), exception.getSeverity(), exception.getCause());
+			}
+			
+			// Returns immediately if the validation messages contain errors or warnings (if warning are not be ignored).
+			if(!ignoreWarnings && exceptions.getWarningCount() > 0 || exceptions.getMaxSeverity() > DesktopException.WARNING_SEVERITY)
+				return exceptions;
 		}
 		catch(DesktopException exception) {
 			if(!ignoreWarnings || exception.getSeverity() > DesktopException.WARNING_SEVERITY)
@@ -171,7 +203,7 @@ public class Test extends org.onceforall.core.tests.Test {
 			mStep.run();
 			
 			if(!waitForCompletion)
-				return;
+				return exceptions;
 			
 			while(mStep.isInProcessingState())
 				try {
@@ -186,6 +218,8 @@ public class Test extends org.onceforall.core.tests.Test {
 		catch(DesktopException exception) {
 			assertTrue("Step failed: "+exception.getMessage(), false); //$NON-NLS-1$
 		}
+		
+		return exceptions;
 	}
 	
 	/**
@@ -747,6 +781,22 @@ public class Test extends org.onceforall.core.tests.Test {
 			this.element1 = element1;
 			this.element2 = element2;
 		}
+	}
+
+	/**
+	 * Asserts that a given list of validation messages contains an exception with the given severity and the 
+	 * the message contains the given finger print.
+	 * 
+	 * @param exceptions Specifies the validation messages.
+	 * @param severity Specifies the severity of the exception to assert.
+	 * @param messageFingerPrint Specifies the text that the message should contain.
+	 */
+	protected void assertValidation(DesktopExceptionList exceptions, int severity, String messageFingerPrint) {
+		for(DesktopException exception: exceptions)
+			if(exception.getSeverity() == severity && exception.getMessage().indexOf(messageFingerPrint) >= 0)
+				return;
+		
+		assertTrue("The validation messages did not contain an exception with severity "+severity+" and message finger print '"+messageFingerPrint+"'.", false);
 	}
 	
 }
