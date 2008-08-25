@@ -30,12 +30,18 @@ import org.onceforall.dms.desktop.exception.ConversionException;
  */
 
 public class BooleanType extends Type {
+	/** Specifies the user-friendly representation of <code>true</code>. */
+	public static String TRUE_FOR_UI = "Yes";
+	
+	/** Specifies the user-friendly representation of <code>false</code>. */
+	public static String FALSE_FOR_UI = "No";
+	
     /**
      * Creates a new date time value object.
      */
     protected BooleanType() {
         super("Yes/No", "Specifies a boolean field.", null, Boolean.class,
-                new Boolean[] { Boolean.TRUE, Boolean.FALSE}, new String[] {"Yes", "No"});        
+                new Boolean[] { Boolean.TRUE, Boolean.FALSE}, new String[] {TRUE_FOR_UI, FALSE_FOR_UI});        
     }
     
     /**
@@ -46,7 +52,7 @@ public class BooleanType extends Type {
         validate(value);
         
         if(value != null)
-            return ((Boolean) value).booleanValue() ? "Yes" : "No";
+            return ((Boolean) value).booleanValue() ? TRUE_FOR_UI : FALSE_FOR_UI;
         else
             return NULL_FOR_UI;
     }
@@ -59,9 +65,9 @@ public class BooleanType extends Type {
         if(valueFromUI == null || valueFromUI.equals(NULL_FOR_UI))
             return null;
         else {
-            if(valueFromUI.toLowerCase().equals("yes"))
+            if(valueFromUI.toLowerCase().equals(TRUE_FOR_UI.toLowerCase()))
                 return Boolean.TRUE;
-            else if(valueFromUI.toLowerCase().equals("no"))
+            else if(valueFromUI.toLowerCase().equals(FALSE_FOR_UI.toLowerCase()))
                 return Boolean.FALSE;
             else
 	            throw new ConversionException(valueFromUI, this, null);                
