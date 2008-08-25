@@ -2,12 +2,12 @@ package org.eclipse.swt.widgets;
 
 import java.io.File;
 
-import org.eclipse.swt.SWT;
-import org.onceforall.dms.desktop.exception.DesktopException;
+import org.onceforall.dms.desktop.exception.DesktopExceptionList;
 import org.onceforall.dms.desktop.logic.MStep;
 import org.onceforall.dms.desktop.logic.types.MStepStateType;
 import org.onceforall.dms.desktop.logic.types.State;
 import org.onceforall.dms.desktop.ui.MStepButton;
+import org.onceforall.dms.desktop.ui.Utilities;
 
 /**
  * Defines a button that starts the action that is associated
@@ -76,33 +76,12 @@ public class MStepStartButton extends MStepButton {
 			mStep.pause();
 		else if (state.equals(MStepStateType.PAUSED_STATE))
 			mStep.resume();
-		else
-			try {
-				mStep.validate();
-				getDisplay().asyncExec((MStep) mElement);
-			} catch (DesktopException exception) {
-				
-				if (exception.getSeverity() >= DesktopException.ERROR_SEVERITY) {
-					MessageBox messageBox = new MessageBox(this.getShell(), SWT.OK | SWT.ICON_ERROR);
-					messageBox.setMessage(exception.getMessageWithAdvice());
-					messageBox.setText("Digital Media Service Desktop Error");
-					messageBox.open();
-				}
-				else if (exception.getSeverity() == DesktopException.WARNING_SEVERITY) {
-					MessageBox messageBox = new MessageBox(this.getShell(), SWT.YES | SWT.NO | SWT.ICON_WARNING);
-					messageBox.setMessage(exception.getMessageWithAdvice() + "\n\nWould you like to continue anyway?");
-					messageBox.setText("Digital Media Service Desktop Warning");
-					if (messageBox.open() == SWT.YES)
-						getDisplay().asyncExec((MStep) mElement);
-				}
-				else  {
-					MessageBox messageBox = new MessageBox(this.getShell(), SWT.YES | SWT.NO | SWT.ICON_QUESTION);
-					messageBox.setMessage(exception.getMessageWithAdvice() + "\n\nWould you like to continue anyway?");
-					messageBox.setText("Digital Media Service Desktop Information");
-					if (messageBox.open() == SWT.YES)
-						getDisplay().asyncExec((MStep) mElement);
-				}
-			}
+		else {
+			DesktopExceptionList exceptions = mStep.validate();
+	    	if(Utilities.showValidationExceptionsDialog(getShell(), exceptions))	
+	    		getDisplay().asyncExec((MStep) mElement);			
+		}
 	}
+
 
 }
