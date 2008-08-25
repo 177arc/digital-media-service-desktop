@@ -32,6 +32,7 @@ import javax.sound.sampled.UnsupportedAudioFileException;
 
 import org.farng.mp3.TagException;
 import org.onceforall.dms.desktop.Utilities;
+import org.onceforall.dms.desktop.logging.Logger;
 import org.onceforall.dms.desktop.logic.MBurnCdStep;
 import org.onceforall.dms.desktop.logic.MCheckFreeDiskSpaceStep;
 import org.onceforall.dms.desktop.logic.MCheckInputLevelsStep;
@@ -104,7 +105,7 @@ public class LogicLayerNormalServiceTest extends LogicLayerTest {
 	public void testMCreateServiceDirectoryStep() {
 		MCreateDirectoryStep mStep = (MCreateDirectoryStep) mScript.getMSteps().get(2);
 		MEnterServiceInformationStep mEnterServiceInformationStep = (MEnterServiceInformationStep) mScript.getMSteps().get(0);
-		testMCreateDirectoryStep(mStep, mEnterServiceInformationStep.getMServiceTypeResult().getValueForUI()+" on "+mEnterServiceInformationStep.getMServiceDateResult().getValueForUI()); //$NON-NLS-1$
+		testMCreateDirectoryStep(mStep, DIRECTORY_DATE_FORMAT.format(mEnterServiceInformationStep.getServiceDateResult())+" "+mEnterServiceInformationStep.getMServiceTypeResult().getValueForUI()); //$NON-NLS-1$
 	}
 	
 	/**
@@ -158,7 +159,9 @@ public class LogicLayerNormalServiceTest extends LogicLayerTest {
 	@Test(dependsOnMethods = { "testMRecordPostSermonStep" }, alwaysRun=true) //$NON-NLS-1$
 	public void testMBurnCdStep() {
 		MBurnCdStep mStep = (MBurnCdStep) mScript.getMSteps().get(7);
-		MRecordStep mRecordPreSermonStep = (MRecordStep) mScript.getMSteps().get(4);
+		Logger.getLogger().info("For this test to succeed, the burning softare Nero 6 has be installed at '"+mStep.getBurningSoftwareDirectoryPathParameter()+"'. Nero is not included because it is a commercial product.");
+
+	    MRecordStep mRecordPreSermonStep = (MRecordStep) mScript.getMSteps().get(4);
 		MRecordStep mRecordSermonStep = (MRecordStep) mScript.getMSteps().get(5);
 		MRecordStep mRecordPostSermonStep = (MRecordStep) mScript.getMSteps().get(6);
 		
