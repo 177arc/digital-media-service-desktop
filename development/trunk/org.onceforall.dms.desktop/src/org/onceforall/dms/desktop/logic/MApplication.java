@@ -14,6 +14,8 @@
 package org.onceforall.dms.desktop.logic;
 
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
@@ -21,6 +23,8 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.Date;
 import java.util.logging.Level;
+import java.util.zip.ZipEntry;
+import java.util.zip.ZipOutputStream;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -131,6 +135,10 @@ public abstract class MApplication extends MObject {
 	static {
 		Type.VALUE_TYPES_BY_NAME.put("Reference to "+MApplication.TYPE_NAME, new ReferenceType("Reference to "+MApplication.TYPE_NAME, "Specifies a reference to a "+MApplication.TYPE_NAME_FOR_UI, MApplication.class));
 	}
+
+
+
+
 
 
 
@@ -1591,6 +1599,32 @@ public abstract class MApplication extends MObject {
 			throw new DesktopException("The application could not write the application data to the file '"+DATA_FILE.getAbsolutePath()+"'.", "Please make sure that application data file is writeable, has the appropriate rights and is not used by a different application.", DesktopException.CRITICAL_SEVERITY, exception);
 		}
     }
+  
+    /** 
+     * Zips the current data XML file and stores it the application data directory. 
+     */
+    public synchronized void backUpXML() {
+    	try {
+	    	File zipFile = new File(DATA_FILE.getParent()+"/"+"Data Backup.zip");
+	        FileOutputStream fileOutputStream = new FileOutputStream(zipFile);
+	        ZipOutputStream zipFileOutputStream = new ZipOutputStream(fileOutputStream);
+	        FileInputStream dataFileInputStream = new FileInputStream(DATA_FILE);
+	        zipFileOutputStream.putNextEntry(new ZipEntry(DATA_FILE.getCanonicalPath())); 
+	        
+	        // Writes the entry.
+	        int length;
+	        byte[] buffer = new byte[1024*16];
+	        while ((length = dataFileInputStream.read(buffer)) > 0) {
+	            zipFileOutputStream.write(buffer, 0, length);
+	        }
+	
+	        // Completes the entry.
+	        zipFileOutputStream.closeEntry();
+	        dataFileInputStream.close();
+    	} catch (IOException exception) {
+    		throw new DesktopException("The application could not back up the application data file '"+DATA_FILE.getAbsolutePath()+"'.", "Please make sure that application data file is writeable, has the appropriate rights and is not used by a different application.", DesktopException.CRITICAL_SEVERITY, exception);
+    	}
+	}	
     
     /**
      * Gets the resource that contains the data of the managed application. For this 
