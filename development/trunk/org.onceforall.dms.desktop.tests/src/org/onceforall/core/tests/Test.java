@@ -20,9 +20,12 @@
 package org.onceforall.core.tests;
 
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
+import java.nio.channels.FileChannel;
 
 /**
  * Defines the base class for all tests. It provides useful method that sub classes 
@@ -56,13 +59,42 @@ public class Test {
     }
     
     /**
-     * Converts the given input stream into a string by reading the input stream completely.
-     * It also closes the input stream.
+     * Copies the given input file to the given output file.
      * 
-     * @param inputStream Specifies the input stream to converted.
-     * @return Returns the converted input stream.
-     * @throws IOException Thrown if an error occurs while trying to read from the input stream.
+     * @param inputFile Specified the file to be copied.
+     * @param outputFile Specifies the file to copy to.
+     * @throws IOException Thrown if an error occurs during the copy operation.
      */
+    protected void copyFile(File inputFile, File outputFile) throws IOException {
+		FileChannel inChannel = new FileInputStream(inputFile).getChannel();
+		FileChannel outChannel = new FileOutputStream(outputFile).getChannel();
+		
+		try {
+			// Limits the number of bytes copied to 64M-32K for Windows.
+			int length = (64 * 1024 * 1024) - (32 * 1024);
+			long size = inChannel.size();
+			long position = 0;
+			while (position < size)
+				position += inChannel.transferTo(position, length, outChannel);
+		} finally {
+			if (inChannel != null)
+				inChannel.close();
+			if (outChannel != null)
+				outChannel.close();
+		}
+	}
+
+    /**
+	 * Converts the given input stream into a string by reading the input stream
+	 * completely. It also closes the input stream.
+	 * 
+	 * @param inputStream
+	 *            Specifies the input stream to converted.
+	 * @return Returns the converted input stream.
+	 * @throws IOException
+	 *             Thrown if an error occurs while trying to read from the input
+	 *             stream.
+	 */
     protected String getStringFromInputStream(InputStream inputStream) throws IOException {
     	return getStringFromInputStream(inputStream, true);
     }
