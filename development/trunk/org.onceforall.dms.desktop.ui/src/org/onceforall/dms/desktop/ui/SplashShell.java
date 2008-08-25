@@ -1,13 +1,15 @@
 package org.onceforall.dms.desktop.ui;
 
+import java.util.ResourceBundle;
 import java.util.logging.Level;
 
 import org.eclipse.swt.SWT;
+import org.eclipse.swt.graphics.Color;
 import org.eclipse.swt.graphics.Image;
 import org.eclipse.swt.graphics.ImageData;
 import org.eclipse.swt.graphics.Rectangle;
-import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Display;
+import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Shell;
 import org.onceforall.dms.desktop.logging.Logger;
 
@@ -25,19 +27,33 @@ public class SplashShell {
 	
     /** Specifies the SWT display of the application. */ 
     protected Display display;
+    
+    /** Specifies the label that displays the version information. */
+    protected Label versionLabel;
 	
     /**
      * Creates a new splash shell object.
      */
     protected SplashShell() {	
 		shell = new Shell(SWT.NO_TRIM);
-		Image image = new Image(shell.getDisplay(), "Image Files\\Splash.bmp");
+		shell.setBackgroundMode(SWT.INHERIT_DEFAULT);
+		Image image = new Image(shell.getDisplay(), "Image Files\\Splash.png");
 		ImageData imageData = image.getImageData();
-		GridLayout gridLayout = new GridLayout();
 		Rectangle screen = shell.getDisplay().getBounds();
+	    
+	    ResourceBundle bundle = ResourceBundle.getBundle("build-info");
+	    String version = bundle.getString("version");
+	    String date = bundle.getString("date");
+	    String build = bundle.getString("build");	
+		versionLabel = new Label(shell, SWT.CENTER);
+		versionLabel.setText("Version "+version+"."+build+" (built on "+date+")");
+		versionLabel.setForeground(new Color(shell.getDisplay(), 55, 96, 146));
+		versionLabel.pack();
+		versionLabel.setBounds(5, imageData.height-35-versionLabel.getBounds().height, 
+				imageData.width-10, versionLabel.getBounds().height);
 		
 		shell.setText("Digital Media Service Desktop");
-		shell.setLayout(gridLayout);
+		//shell.setLayout(gridLayout);
 		shell.setSize(imageData.width, imageData.height);
 		shell.setLocation(screen.width/2-imageData.width/2, screen.height/2-imageData.height/2);
 		shell.setBackgroundImage(image);
