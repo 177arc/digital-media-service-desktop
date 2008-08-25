@@ -47,6 +47,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 import org.onceforall.dms.desktop.exception.DesktopException;
+import org.onceforall.dms.desktop.exception.DesktopExceptionList;
 import org.onceforall.dms.desktop.logging.Logger;
 import org.onceforall.dms.desktop.logging.MemoryHandler;
 import org.onceforall.dms.desktop.logic.types.ReferenceType;
@@ -2099,13 +2100,15 @@ public class MEmailEventLogStep extends MStep {
 	 * @see org.onceforall.dms.desktop.logic.MStep#validate()
 	 */
 	@Override
-	public void validate() throws DesktopException {
-		super.validate();
+	public DesktopExceptionList validate() {
+		DesktopExceptionList validationExceptions = super.validate();
 		
 		if(emailAddressWarningCount == 0) {
 			++emailAddressWarningCount;
-			throw new DesktopException("Please make sure that you have entered your own email address as the sender's address so that we can contact you if we have any questions.", null, DesktopException.WARNING_SEVERITY, null);		
+			validationExceptions.add(new DesktopException("Please make sure that you have entered your own email address as the sender's address so that we can contact you if we have any questions.", null, DesktopException.WARNING_SEVERITY, null));		
 		}
+		
+		return validationExceptions;
 	}
 	
 	/**
@@ -2239,6 +2242,8 @@ public class MEmailEventLogStep extends MStep {
         catch(MessagingException exception) {
             throw new DesktopException("The application could not connect to the mail server.", "Please make sure that the computer is connected to the internet and that the mail server is running.", DesktopException.ERROR_SEVERITY, exception);
         }
+        
+        setProgressStatusProperty(null);
 	}
 	
 	/**

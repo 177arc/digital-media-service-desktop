@@ -10,8 +10,6 @@
  */
 package org.onceforall.dms.desktop.logic;
 
-
-
 import java.io.File;
 
 import org.apache.commons.net.ftp.FTPClient;
@@ -23,6 +21,7 @@ import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.onceforall.dms.desktop.exception.DesktopException;
+import org.onceforall.dms.desktop.exception.DesktopExceptionList;
 import org.onceforall.dms.desktop.logic.types.ReferenceType;
 import org.onceforall.dms.desktop.logic.types.Type;
 
@@ -791,11 +790,13 @@ public class MUpdatePublishedMp3sStep extends MPublishMp3sStep {
      * @see org.onceforall.dms.desktop.logic.MStep#validate()
      */
 	@Override
-    public void validate() throws DesktopException {
-        super.validate();
+    public DesktopExceptionList validate() {
+		DesktopExceptionList validationExceptions = super.validate();
         
         if(getRepublishMp3Files())
-            throw new DesktopException("Republishing all currently published MP3 files could take a few hours.", null, DesktopException.WARNING_SEVERITY, null);
+        	validationExceptions.add(new DesktopException("Republishing all currently published MP3 files could take a few hours.", null, DesktopException.WARNING_SEVERITY, null));
+        
+        return validationExceptions;
     }
 
 	/**

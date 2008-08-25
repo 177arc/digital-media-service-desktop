@@ -25,6 +25,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 import org.onceforall.dms.desktop.exception.DesktopException;
+import org.onceforall.dms.desktop.exception.DesktopExceptionList;
 import org.onceforall.dms.desktop.interfaces.AudioInterface;
 import org.onceforall.dms.desktop.interfaces.CommandLineInterface;
 import org.onceforall.dms.desktop.logging.Logger;
@@ -1217,15 +1218,19 @@ public class MBurnCdStep extends MStep {
 	 * @see org.onceforall.dms.desktop.logic.MStep#validate()
 	 */
 	@Override
-	public void validate() throws DesktopException {
-        super.validate();
+	public DesktopExceptionList validate() {
+		DesktopExceptionList validationExceptions = super.validate();
         
         updateTotalSizeAndLength();
         
-        if(getTotalRecordingFileSizeParameter() > MAX_RECORDING_SIZE
-                || getTotalRecordingLengthParameter() > MAX_RECORDING_LENGTH)
-            throw new DesktopException("The total length of the recordings must not exceed "+Type.DURATION_TYPE.getValueForUI(new Long(MAX_RECORDING_LENGTH))+" and the total recording file(s) length "
-                    +Type.LONG_TYPE+" bytes.", "Please use a wave file editor to reduce the size of the recording files or burn less files to CD.", DesktopException.ERROR_SEVERITY, null);
+        if(getTotalRecordingFileSizeParameter() != null && getTotalRecordingLengthParameter() != null)
+	        if(getTotalRecordingFileSizeParameter() > MAX_RECORDING_SIZE
+	                || getTotalRecordingLengthParameter() > MAX_RECORDING_LENGTH)
+	        	validationExceptions.add(new DesktopException("The total length of the recordings must not exceed "+Type.DURATION_TYPE.getValueForUI(new Long(MAX_RECORDING_LENGTH))+" and the total recording file(s) length "
+	                    +Type.LONG_TYPE+" bytes.", "Please use a wave file editor to reduce the size of the recording files or burn less files to CD.", DesktopException.ERROR_SEVERITY, null));
+	
+	
+        return validationExceptions;
 	}
 
 	/**

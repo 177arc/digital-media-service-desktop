@@ -22,6 +22,7 @@ import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.onceforall.dms.desktop.exception.DesktopException;
+import org.onceforall.dms.desktop.exception.DesktopExceptionList;
 import org.onceforall.dms.desktop.logic.types.ReferenceType;
 import org.onceforall.dms.desktop.logic.types.Type;
 
@@ -833,8 +834,8 @@ public class MDmsApplicationMUpgradeDataStep extends MFtpStep {
 	 * @see org.onceforall.dms.desktop.logic.MStep#validate()
 	 */
 	@Override
-	public void validate() throws DesktopException {
-		super.validate();
+	public DesktopExceptionList validate() {
+		DesktopExceptionList validationExceptions = super.validate();
 		
 		String message = "";
 		int severity = DesktopException.INFORMATION_SEVERITY;
@@ -858,7 +859,9 @@ public class MDmsApplicationMUpgradeDataStep extends MFtpStep {
 			message += "\n\n";
 		
 		message += "The upgrade, if successful, will overwrite all application data.";
-		throw new DesktopException(message, null, severity, null);
+		validationExceptions.add(new DesktopException(message, null, severity, null));
+		
+		return validationExceptions;
 	}
 	
 	

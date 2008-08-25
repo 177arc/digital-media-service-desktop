@@ -29,6 +29,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectEList;
 import org.onceforall.dms.desktop.exception.DesktopException;
+import org.onceforall.dms.desktop.exception.DesktopExceptionList;
 import org.onceforall.dms.desktop.logging.Logger;
 import org.onceforall.dms.desktop.logic.types.MStepStateType;
 import org.onceforall.dms.desktop.logic.types.ReferenceType;
@@ -72,7 +73,7 @@ public abstract class MStep extends MStatefulObject implements Runnable {
     
     /** Specifies the progress that indicates that a managed step has been completed. */
     public static final Long COMPLETED_PROGRESS = new Long(100);
-
+    
 	/** 
 	 * Specifies a user-friendly representation of this managed element.
 	 * <!-- begin-user-doc -->
@@ -1649,15 +1650,18 @@ public abstract class MStep extends MStatefulObject implements Runnable {
     
     /**
      * Tests whether all execution conditions are fulfilled. These tests include parameter validation
-     * and checking steps that this steps depends on. 
-     *
-     * @throws DesktopException Thrown if the execution conditions are not fulfilled.
+     * and checking steps that this steps depends on.
+     * 
+     * @return Returns a list of validation errors/warnings.
      */
-    public void validate() throws DesktopException {
+    public DesktopExceptionList validate() {
+    	// Create a list that will contain validation errors/warnings.
+    	DesktopExceptionList validationExceptions = new DesktopExceptionList();
+    	
     	// Makes sure that the step is not currently processing.
         State state = getStateProperty();
         if(state.equals(MStepStateType.PROCESSING_STATE) || state.equals(MStepStateType.TERMINATING_STATE) || state.equals(MStepStateType.STOPPING_STATE))
-            throw new DesktopException("The step '"+getNameForUI()+"' is still processing.", "Please wait till the step has completed or stop the step first.", DesktopException.ERROR_SEVERITY, null);
+        	validationExceptions.add(new DesktopException("The step '"+getNameForUI()+"' is still processing.", "Please wait till the step has completed or stop the step first.", DesktopException.ERROR_SEVERITY, null));
 
         // Makes sure that all non-optional parameters have been entered.
         try {
@@ -1665,27 +1669,29 @@ public abstract class MStep extends MStatefulObject implements Runnable {
 	        	mParameter.validate();
         }
         catch(IllegalArgumentException exception) {
-            throw new DesktopException(exception.getMessage(), "Please correct your input.", DesktopException.ERROR_SEVERITY, exception);            
+        	validationExceptions.add(new DesktopException(exception.getMessage(), "Please correct your input.", DesktopException.ERROR_SEVERITY, exception));            
         }
         
         // Check whether all input steps have completed.
         for(MStep mStep: (List<MStep>) getMInputSteps()) {
             state = mStep.getStateProperty();
             if(state.equals(MStepStateType.PENDING_STATE))
-                throw new DesktopException("The step '"+getNameForUI()+"' depends on step '"+mStep.getName()+"', which has not been completed yet. It is still pending.", "Please complete '"+mStep.getName()+"' first.", DesktopException.WARNING_SEVERITY, null);
+            	validationExceptions.add(new DesktopException("The step '"+getNameForUI()+"' depends on step '"+mStep.getName()+"', which has not been completed yet. It is still pending.", "Please complete '"+mStep.getName()+"' first.", DesktopException.WARNING_SEVERITY, null));
             
             if(state.equals(MStepStateType.ERROR_STATE))
-                throw new DesktopException("The step '"+getNameForUI()+"' depends on step '"+mStep.getName()+"' which did not completed successfully. It caused an error.", "Please correct the problem before proceeding with '"+mStep.getName()+"',", DesktopException.WARNING_SEVERITY, null);
+            	validationExceptions.add(new DesktopException("The step '"+getNameForUI()+"' depends on step '"+mStep.getName()+"' which did not completed successfully. It caused an error.", "Please correct the problem before proceeding with '"+mStep.getName()+"',", DesktopException.WARNING_SEVERITY, null));
             
             if(state.equals(MStepStateType.TERMINATED_STATE))
-                throw new DesktopException("The step '"+getNameForUI()+"' depends on step '"+mStep.getName()+"' which did not completed successfully. It was forcefully terminated.", "Please make sure the step processes completely before proceeding with '"+mStep.getName()+"',", DesktopException.WARNING_SEVERITY, null);
+            	validationExceptions.add(new DesktopException("The step '"+getNameForUI()+"' depends on step '"+mStep.getName()+"' which did not completed successfully. It was forcefully terminated.", "Please make sure the step processes completely before proceeding with '"+mStep.getName()+"',", DesktopException.WARNING_SEVERITY, null));
             
             if(state.equals(MStepStateType.STOPPING_STATE) || state.equals(MStepStateType.PAUSING_STATE) || state.equals(MStepStateType.TERMINATING_STATE))
-                throw new DesktopException("The step '"+getNameForUI()+"' depends on step '"+mStep.getName()+"' which is still running.", "Please wait for '"+mStep.getName()+"' to complete.", DesktopException.ERROR_SEVERITY, null);
+            	validationExceptions.add(new DesktopException("The step '"+getNameForUI()+"' depends on step '"+mStep.getName()+"' which is still running.", "Please wait for '"+mStep.getName()+"' to complete.", DesktopException.ERROR_SEVERITY, null));
             
             if(state.equals(MStepStateType.SKIPPED_STATE))
-                throw new DesktopException("The step '"+getNameForUI()+"' depends on step '"+mStep.getName()+"' which has been skipped.", null, DesktopException.WARNING_SEVERITY, null);
+            	validationExceptions.add(new DesktopException("The step '"+getNameForUI()+"' depends on step '"+mStep.getName()+"' which has been skipped.", null, DesktopException.WARNING_SEVERITY, null));        
         }
+        
+        return validationExceptions;
     }
 
 	/**
@@ -1728,7 +1734,6 @@ public abstract class MStep extends MStatefulObject implements Runnable {
             execute();
             if(!getStateProperty().equals(MStepStateType.TERMINATING_STATE)) {
             	setProgressProperty(100l);
-            	setProgressStatusProperty(null);
                 setStateProperty(MStepStateType.COMPLETED_STATE);
             }
             else {
