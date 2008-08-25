@@ -5,7 +5,7 @@
 <fastViewData fastViewLocation="1024"/>
 <perspectiveBar/>
 <coolbarLayout locked="0">
-<coolItem id="org.eclipse.ui.WorkingSetActionSet" itemType="typeToolBarContribution" x="52" y="22"/>
+<coolItem id="org.eclipse.ui.WorkingSetActionSet" itemType="typeToolBarContribution" x="53" y="22"/>
 <coolItem id="group.editor" itemType="typeGroupMarker"/>
 <coolItem id="org.onceforall.dms.desktop.logic.presentation.LogicEditorID" itemType="typeToolBarContribution" x="-1" y="-1"/>
 </coolbarLayout>
@@ -14,9 +14,7 @@
 <editorArea activeWorkbook="DefaultEditorWorkbook">
 <info part="DefaultEditorWorkbook">
 <folder appearance="1" expanded="2">
-<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
-<part id="0"/>
-</presentation>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory"/>
 </folder>
 </info>
 </editorArea>
@@ -26,7 +24,7 @@
 <viewState/>
 </view>
 </views>
-<perspectives activePart="org.onceforall.dms.desktop.logic.presentation.LogicEditorID" activePerspective="org.onceforall.dms.desktop.logic.presentation.DMSDesktopEditorAdvisorPerspective">
+<perspectives activePart="org.eclipse.ui.views.PropertySheet" activePerspective="org.onceforall.dms.desktop.logic.presentation.DMSDesktopEditorAdvisorPerspective">
 <perspective editorAreaVisible="1" fixed="0" version="0.016">
 <descriptor class="org.onceforall.dms.desktop.logic.presentation.DMSDesktopEditorAdvisor$Perspective" id="org.onceforall.dms.desktop.logic.presentation.DMSDesktopEditorAdvisorPerspective" label="DMSDesktop"/>
 <alwaysOnActionSet id="org.eclipse.ui.actionSet.keyBindings"/>
