@@ -86,11 +86,141 @@ public abstract class MTagStep extends MStep {
      * Adds a value type for this class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
 	 */	
 	static {
 		Type.VALUE_TYPES_BY_NAME.put("Reference to "+MTagStep.TYPE_NAME, new ReferenceType("Reference to "+MTagStep.TYPE_NAME, "Specifies a reference to a "+MTagStep.TYPE_NAME_FOR_UI, MTagStep.class));
+		
+		GENRES_BY_NAME.put("Blues", "0");
+		GENRES_BY_NAME.put("Classic Rock", "1");
+		GENRES_BY_NAME.put("Country", "2");
+		GENRES_BY_NAME.put("Dance", "3");
+		GENRES_BY_NAME.put("Disco", "4");
+		GENRES_BY_NAME.put("Funk", "5");
+		GENRES_BY_NAME.put("Grunge", "6");
+		GENRES_BY_NAME.put("Hip-Hop", "7");
+		GENRES_BY_NAME.put("Jazz", "8");
+		GENRES_BY_NAME.put("Metal", "9");
+		GENRES_BY_NAME.put("New Age", "10");
+		GENRES_BY_NAME.put("Oldies", "11");
+		GENRES_BY_NAME.put("Other", "12");
+		GENRES_BY_NAME.put("Pop", "13");
+		GENRES_BY_NAME.put("R&B", "14");
+		GENRES_BY_NAME.put("Rap", "15");
+		GENRES_BY_NAME.put("Reggae", "16");
+		GENRES_BY_NAME.put("Rock", "17");
+		GENRES_BY_NAME.put("Techno", "18");
+		GENRES_BY_NAME.put("Industrial", "19");
+		GENRES_BY_NAME.put("Alternative", "20");
+		GENRES_BY_NAME.put("Ska", "21");
+		GENRES_BY_NAME.put("Death Metal", "22");
+		GENRES_BY_NAME.put("Pranks", "23");
+		GENRES_BY_NAME.put("Soundtrack", "24");
+		GENRES_BY_NAME.put("Euro-Techno", "25");
+		GENRES_BY_NAME.put("Ambient", "26");
+		GENRES_BY_NAME.put("Trip-Hop", "27");
+		GENRES_BY_NAME.put("Vocal", "28");
+		GENRES_BY_NAME.put("Jazz+Funk", "29");
+		GENRES_BY_NAME.put("Fusion", "30");
+		GENRES_BY_NAME.put("Trance", "31");
+		GENRES_BY_NAME.put("Classical", "32");
+		GENRES_BY_NAME.put("Instrumental", "33");
+		GENRES_BY_NAME.put("Acid", "34");
+		GENRES_BY_NAME.put("House", "35");
+		GENRES_BY_NAME.put("Game", "36");
+		GENRES_BY_NAME.put("Sound Clip", "37");
+		GENRES_BY_NAME.put("Gospel", "38");
+		GENRES_BY_NAME.put("Noise", "39");
+		GENRES_BY_NAME.put("AlternRock", "40");
+		GENRES_BY_NAME.put("Bass", "41");
+		GENRES_BY_NAME.put("Soul", "42");
+		GENRES_BY_NAME.put("Punk", "43");
+		GENRES_BY_NAME.put("Space", "44");
+		GENRES_BY_NAME.put("Meditative", "45");
+		GENRES_BY_NAME.put("Instrumental Pop", "46");
+		GENRES_BY_NAME.put("Instrumental Rock", "47");
+		GENRES_BY_NAME.put("Ethnic", "48");
+		GENRES_BY_NAME.put("Gothic", "49");
+		GENRES_BY_NAME.put("Darkwave", "50");
+		GENRES_BY_NAME.put("Techno-Industrial", "51");
+		GENRES_BY_NAME.put("Electronic", "52");
+		GENRES_BY_NAME.put("Pop-Folk", "53");
+		GENRES_BY_NAME.put("Eurodance", "54");
+		GENRES_BY_NAME.put("Dream", "55");
+		GENRES_BY_NAME.put("Southern Rock", "56");
+		GENRES_BY_NAME.put("Comedy", "57");
+		GENRES_BY_NAME.put("Cult", "58");
+		GENRES_BY_NAME.put("Gangsta", "59");
+		GENRES_BY_NAME.put("Top 40", "60");
+		GENRES_BY_NAME.put("Christian Rap", "61");
+		GENRES_BY_NAME.put("Pop/Funk", "62");
+		GENRES_BY_NAME.put("Jungle", "63");
+		GENRES_BY_NAME.put("Native American", "64");
+		GENRES_BY_NAME.put("Cabaret", "65");
+		GENRES_BY_NAME.put("New Wave", "66");
+		GENRES_BY_NAME.put("Psychadelic", "67");
+		GENRES_BY_NAME.put("Rave", "68");
+		GENRES_BY_NAME.put("Showtunes", "69");
+		GENRES_BY_NAME.put("Trailer", "70");
+		GENRES_BY_NAME.put("Lo-Fi", "71");
+		GENRES_BY_NAME.put("Tribal", "72");
+		GENRES_BY_NAME.put("Acid Punk", "73");
+		GENRES_BY_NAME.put("Acid Jazz", "74");
+		GENRES_BY_NAME.put("Polka", "75");
+		GENRES_BY_NAME.put("Retro", "76");
+		GENRES_BY_NAME.put("Musical", "77");
+		GENRES_BY_NAME.put("Rock & Roll", "78");
+		GENRES_BY_NAME.put("Hard Rock", "79");
+		GENRES_BY_NAME.put("Folk", "80");
+		GENRES_BY_NAME.put("Folk-Rock", "81");
+		GENRES_BY_NAME.put("National Folk", "82");
+		GENRES_BY_NAME.put("Swing", "83");
+		GENRES_BY_NAME.put("Fast Fusion", "84");
+		GENRES_BY_NAME.put("Bebob", "85");
+		GENRES_BY_NAME.put("Latin", "86");
+		GENRES_BY_NAME.put("Revival", "87");
+		GENRES_BY_NAME.put("Celtic", "88");
+		GENRES_BY_NAME.put("Bluegrass", "89");
+		GENRES_BY_NAME.put("Avantgarde", "90");
+		GENRES_BY_NAME.put("Gothic Rock", "91");
+		GENRES_BY_NAME.put("Progressive Rock", "92");
+		GENRES_BY_NAME.put("Psychedelic Rock", "93");
+		GENRES_BY_NAME.put("Symphonic Rock", "94");
+		GENRES_BY_NAME.put("Slow Rock", "95");
+		GENRES_BY_NAME.put("Big Band", "96");
+		GENRES_BY_NAME.put("Chorus", "97");
+		GENRES_BY_NAME.put("Easy Listening", "98");
+		GENRES_BY_NAME.put("Acoustic", "99");
+		GENRES_BY_NAME.put("Humour", "100");
+		GENRES_BY_NAME.put("Speech", "101");
+		GENRES_BY_NAME.put("Chanson", "102");
+		GENRES_BY_NAME.put("Opera", "103");
+		GENRES_BY_NAME.put("Chamber Music", "104");
+		GENRES_BY_NAME.put("Sonata", "105");
+		GENRES_BY_NAME.put("Symphony", "106");
+		GENRES_BY_NAME.put("Booty Bass", "107");
+		GENRES_BY_NAME.put("Primus", "108");
+		GENRES_BY_NAME.put("Porn Groove", "109");
+		GENRES_BY_NAME.put("Satire", "110");
+		GENRES_BY_NAME.put("Slow Jam", "111");
+		GENRES_BY_NAME.put("Club", "112");
+		GENRES_BY_NAME.put("Tango", "113");
+		GENRES_BY_NAME.put("Samba", "114");
+		GENRES_BY_NAME.put("Folklore", "115");
+		GENRES_BY_NAME.put("Ballad", "116");
+		GENRES_BY_NAME.put("Power Ballad", "117");
+		GENRES_BY_NAME.put("Rhythmic Soul", "118");
+		GENRES_BY_NAME.put("Freestyle", "119");
+		GENRES_BY_NAME.put("Duet", "120");
+		GENRES_BY_NAME.put("Punk Rock", "121");
+		GENRES_BY_NAME.put("Drum Solo", "122");
+		GENRES_BY_NAME.put("Acapella", "123");
+		GENRES_BY_NAME.put("Euro-House", "124");
+		GENRES_BY_NAME.put("Dance Hall", "125");
+
 	}
+
+
+
 
 
 	/**
