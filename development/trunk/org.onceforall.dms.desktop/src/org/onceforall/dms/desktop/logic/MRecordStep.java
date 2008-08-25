@@ -12,17 +12,22 @@ package org.onceforall.dms.desktop.logic;
 
 import java.io.File;
 import java.util.Date;
+import java.util.List;
 
 import javax.sound.sampled.AudioFileFormat;
 import javax.sound.sampled.AudioSystem;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.onceforall.dms.desktop.Utilities;
+import org.onceforall.dms.desktop.exception.DesktopException;
+import org.onceforall.dms.desktop.exception.DesktopExceptionList;
 import org.onceforall.dms.desktop.interfaces.AudioInterface;
 import org.onceforall.dms.desktop.logic.types.DurationType;
 import org.onceforall.dms.desktop.logic.types.ReferenceType;
@@ -36,6 +41,8 @@ import org.onceforall.dms.desktop.logic.types.Type;
  * <p>
  * The following features are supported:
  * <ul>
+ *   <li>{@link org.onceforall.dms.desktop.logic.MRecordStep#getMRecordingLengthProperty <em>MRecording Length Property</em>}</li>
+ *   <li>{@link org.onceforall.dms.desktop.logic.MRecordStep#getRecordingLengthProperty <em>Recording Length Property</em>}</li>
  *   <li>{@link org.onceforall.dms.desktop.logic.MRecordStep#getMDirectoryParameter <em>MDirectory Parameter</em>}</li>
  *   <li>{@link org.onceforall.dms.desktop.logic.MRecordStep#getDirectoryParameter <em>Directory Parameter</em>}</li>
  *   <li>{@link org.onceforall.dms.desktop.logic.MRecordStep#getMRecordingFileParameter <em>MRecording File Parameter</em>}</li>
@@ -54,7 +61,17 @@ import org.onceforall.dms.desktop.logic.types.Type;
  *        annotation="http://www.onceforall.org/mcore name='Record' description='Records from the main audio input line to an uncompressed WAV file. Please make sure that the input level will not exceed the maximum.' iconFilePath='Image Files/Record step.gif' actionName='Record' actionIconFilePath='Image Files/Record.gif' interruptable='true' stoppable='true' terminatable='false'"
  * @generated
  */
-public class MRecordStep extends MAudioStep {
+public class MRecordStep extends MAudioStep {   
+	/**
+	 * Specifies the length of the current recording. Access to and manipulation of this field must be synchronised.
+	 */
+	private Date recordingTime = new Date();
+	
+	/**
+	 * Specifies the length of the all related recordings. Access to and manipulation of this field must be synchronised.
+	 */
+	private Date totalRecordingTime = new Date();
+	
 	/**
 	 * Specifies the type name of this managed element.
 	 * <!-- begin-user-doc -->
@@ -79,6 +96,49 @@ public class MRecordStep extends MAudioStep {
 	static {
 		Type.VALUE_TYPES_BY_NAME.put("Reference to "+MRecordStep.TYPE_NAME, new ReferenceType("Reference to "+MRecordStep.TYPE_NAME, "Specifies a reference to a "+MRecordStep.TYPE_NAME_FOR_UI, MRecordStep.class));
 	}
+	/**
+	 * The cached value of the '{@link #getMRecordingLengthProperty() <em>MRecording Length Property</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMRecordingLengthProperty()
+	 * @generated
+	 * @ordered
+	 */
+	protected MProperty mRecordingLengthProperty = null;
+
+	/**
+	 * The default value of the '{@link #getRecordingLengthProperty() <em>Recording Length Property</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRecordingLengthProperty()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final Long RECORDING_LENGTH_PROPERTY_EDEFAULT = null;
+
+	/**
+	 * Get the default value of the '{@link #getRecordingLengthProperty() <em>Recording Length Property</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return Returns the default value of the '{@link #getRecordingLengthProperty() <em>Recording Length Property</em>}' attribute.
+	 * @see #getRecordingLengthProperty()
+	 * @generated
+	 * @ordered
+	 */
+	public Long getDefaultRecordingLengthProperty() {
+		return RECORDING_LENGTH_PROPERTY_EDEFAULT;
+	}
+	
+	/**
+	 * The cached value of the '{@link #getRecordingLengthProperty() <em>Recording Length Property</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRecordingLengthProperty()
+	 * @generated
+	 * @ordered
+	 */
+	protected Long recordingLengthProperty = RECORDING_LENGTH_PROPERTY_EDEFAULT;
+
 	/**
 	 * The cached value of the '{@link #getMDirectoryParameter() <em>MDirectory Parameter</em>}' containment reference.
 	 * <!-- begin-user-doc -->
@@ -416,6 +476,7 @@ public class MRecordStep extends MAudioStep {
 		interruptable = true;
 		actionName = "Record";
 					 
+		setMRecordingLengthProperty(new MProperty(true, "Recording length", "Indicates the length of this recording.", null));			 
 		setMDirectoryParameter(new MParameter(false, "Directory", "Specifies the path of the created directory where the recordings will be stored.", null));			 
 		setMRecordingFileParameter(new MParameter(false, "Recording file", "Specifies the name of the WAVE file to be recorded.", null));			 
 		setMRecordingFileResult(new MResult(false, "Recording file", "Specifies the path of the recorded WAVE file.", null));			 
@@ -435,7 +496,6 @@ public class MRecordStep extends MAudioStep {
 	
 	/**
 	 * Executes after all generated constructor code.
-	 * @generated
 	 */
 	private void lastMRecordStepConstructorHook() {
 		// Does nothing by default. Remove the @generated tag to provide an implementation for this method.
@@ -448,6 +508,112 @@ public class MRecordStep extends MAudioStep {
 	 */
 	protected EClass eStaticClass() {
 		return LogicPackage.Literals.MRECORD_STEP;
+	}
+
+	/**
+	 * Returns the value of the '<em><b>MRecording Length Property</b></em>' containment reference.
+	 * The default value is <code>""</code>.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>MRecording Length Property</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>MRecording Length Property</em>' containment reference.
+	 * @see #setMRecordingLengthProperty(MProperty)
+	 * @see org.onceforall.dms.desktop.logic.LogicPackage#getMRecordStep_MRecordingLengthProperty()
+	 * @model containment="true" required="true"
+	 *        annotation="http://www.onceforall.org/mcore name='Recording length' description='Indicates the length of this recording.' readOnly='true'"
+	 * @generated
+	 */
+	public MProperty getMRecordingLengthProperty() {
+		return mRecordingLengthProperty;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetMRecordingLengthProperty(MProperty newMRecordingLengthProperty, NotificationChain msgs) {
+		MProperty oldMRecordingLengthProperty = mRecordingLengthProperty;
+		mRecordingLengthProperty = newMRecordingLengthProperty;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, LogicPackage.MRECORD_STEP__MRECORDING_LENGTH_PROPERTY, oldMRecordingLengthProperty, newMRecordingLengthProperty);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * Sets the value of the '{@link org.onceforall.dms.desktop.logic.MRecordStep#getMRecordingLengthProperty <em>MRecording Length Property</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	   
+	 * @param newMRecordingLengthProperty the new value of the '<em>MRecording Length Property</em>' containment reference.
+	 * @see #getMRecordingLengthProperty()
+	 * @generated
+	 */
+	public void setMRecordingLengthProperty(MProperty newMRecordingLengthProperty) {
+		if (newMRecordingLengthProperty != mRecordingLengthProperty) {
+			NotificationChain msgs = null;
+			if (mRecordingLengthProperty != null)
+				msgs = ((InternalEObject)mRecordingLengthProperty).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - LogicPackage.MRECORD_STEP__MRECORDING_LENGTH_PROPERTY, null, msgs);
+			if (newMRecordingLengthProperty != null) {				
+				newMRecordingLengthProperty.setDefaultName("Recording length");
+				newMRecordingLengthProperty.setDefaultDescription("Indicates the length of this recording.");
+				newMRecordingLengthProperty.setValueType(Type.getTypeForName("Duration"));
+				newMRecordingLengthProperty.setValueEFeature((EStructuralFeature) eClass().getEStructuralFeature(LogicPackage.MRECORD_STEP__RECORDING_LENGTH_PROPERTY));
+				newMRecordingLengthProperty.setHistoricValuesEFeature(null);
+				msgs = ((InternalEObject)newMRecordingLengthProperty).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - LogicPackage.MRECORD_STEP__MRECORDING_LENGTH_PROPERTY, null, msgs);
+			}
+			
+			// Transfers the adpaters from the old managed value to the new one.
+			if(mRecordingLengthProperty != null) {
+				if(newMRecordingLengthProperty != null)
+					newMRecordingLengthProperty.eAdapters().addAll(mRecordingLengthProperty.eAdapters());			
+			
+				mRecordingLengthProperty.eAdapters().clear();
+			}
+			msgs = basicSetMRecordingLengthProperty(newMRecordingLengthProperty, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, LogicPackage.MRECORD_STEP__MRECORDING_LENGTH_PROPERTY, newMRecordingLengthProperty, newMRecordingLengthProperty));
+	}
+
+	/**
+	 * Returns the value of the '<em><b>Recording Length Property</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Recording Length Property</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Recording Length Property</em>' attribute.
+	 * @see #setRecordingLengthProperty(Long)
+	 * @see org.onceforall.dms.desktop.logic.LogicPackage#getMRecordStep_RecordingLengthProperty()
+	 * @model dataType="org.onceforall.dms.desktop.logic.MDuration" transient="true"
+	 * @generated
+	 */
+	public Long getRecordingLengthProperty() {
+		return recordingLengthProperty;
+	}
+
+	/**
+	 * Sets the value of the '{@link org.onceforall.dms.desktop.logic.MRecordStep#getRecordingLengthProperty <em>Recording Length Property</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	   
+	 * @param newRecordingLengthProperty the new value of the '<em>Recording Length Property</em>' attribute.
+	 * @see #getRecordingLengthProperty()
+	 * @generated
+	 */
+	public void setRecordingLengthProperty(Long newRecordingLengthProperty) {
+		Long oldRecordingLengthProperty = recordingLengthProperty;
+		recordingLengthProperty = newRecordingLengthProperty;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, LogicPackage.MRECORD_STEP__RECORDING_LENGTH_PROPERTY, oldRecordingLengthProperty, recordingLengthProperty));
 	}
 
 	/**
@@ -978,6 +1144,8 @@ public class MRecordStep extends MAudioStep {
 	 */
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
+			case LogicPackage.MRECORD_STEP__MRECORDING_LENGTH_PROPERTY:
+				return basicSetMRecordingLengthProperty(null, msgs);
 			case LogicPackage.MRECORD_STEP__MDIRECTORY_PARAMETER:
 				return basicSetMDirectoryParameter(null, msgs);
 			case LogicPackage.MRECORD_STEP__MRECORDING_FILE_PARAMETER:
@@ -999,6 +1167,10 @@ public class MRecordStep extends MAudioStep {
 	 */
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
+			case LogicPackage.MRECORD_STEP__MRECORDING_LENGTH_PROPERTY:
+				return getMRecordingLengthProperty();
+			case LogicPackage.MRECORD_STEP__RECORDING_LENGTH_PROPERTY:
+				return getRecordingLengthProperty();
 			case LogicPackage.MRECORD_STEP__MDIRECTORY_PARAMETER:
 				return getMDirectoryParameter();
 			case LogicPackage.MRECORD_STEP__DIRECTORY_PARAMETER:
@@ -1030,6 +1202,12 @@ public class MRecordStep extends MAudioStep {
 	 */
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
+			case LogicPackage.MRECORD_STEP__MRECORDING_LENGTH_PROPERTY:    
+				setMRecordingLengthProperty((MProperty)newValue);
+				return;
+			case LogicPackage.MRECORD_STEP__RECORDING_LENGTH_PROPERTY:    
+				setRecordingLengthProperty((Long)newValue);
+				return;
 			case LogicPackage.MRECORD_STEP__MDIRECTORY_PARAMETER:    
 				setMDirectoryParameter((MParameter)newValue);
 				return;
@@ -1071,6 +1249,12 @@ public class MRecordStep extends MAudioStep {
 	 */
 	public void eUnset(int featureID) {
 		switch (featureID) {
+			case LogicPackage.MRECORD_STEP__MRECORDING_LENGTH_PROPERTY:
+				setMRecordingLengthProperty((MProperty)null);
+				return;
+			case LogicPackage.MRECORD_STEP__RECORDING_LENGTH_PROPERTY:
+				setRecordingLengthProperty(getDefaultRecordingLengthProperty());
+				return;
 			case LogicPackage.MRECORD_STEP__MDIRECTORY_PARAMETER:
 				setMDirectoryParameter((MParameter)null);
 				return;
@@ -1112,6 +1296,10 @@ public class MRecordStep extends MAudioStep {
 	 */
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
+			case LogicPackage.MRECORD_STEP__MRECORDING_LENGTH_PROPERTY:
+				return mRecordingLengthProperty != null;
+			case LogicPackage.MRECORD_STEP__RECORDING_LENGTH_PROPERTY:
+				return getDefaultRecordingLengthProperty() == null ? recordingLengthProperty != null : !getDefaultRecordingLengthProperty().equals(recordingLengthProperty);
 			case LogicPackage.MRECORD_STEP__MDIRECTORY_PARAMETER:
 				return mDirectoryParameter != null;
 			case LogicPackage.MRECORD_STEP__DIRECTORY_PARAMETER:
@@ -1145,7 +1333,9 @@ public class MRecordStep extends MAudioStep {
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (directoryParameter: ");
+		result.append(" (recordingLengthProperty: ");
+		result.append(recordingLengthProperty);
+		result.append(", directoryParameter: ");
 		result.append(directoryParameter);
 		result.append(", recordingFileParameter: ");
 		result.append(recordingFileParameter);
@@ -1164,6 +1354,37 @@ public class MRecordStep extends MAudioStep {
 	 */
 	@Override
 	protected void execute() throws Throwable {
+		// TODO: Remove. The code is only included here to allow for a smooth upgrade.
+		// It tries to find all managed record steps that have the same owner and then
+		// adds all managed recording length results as input values to the managed progress property
+		// if they have not been added yet. In future releases, this relationship should be 
+		// established by the Data.xml file.
+		EObject eContainer = eContainer();
+		if(eContainer != null && eContainer instanceof MObject) {
+			MObject mObject = (MObject) eContainer;
+			EList mRecordSteps = mObject.getReferencedMElements(MRecordStep.class);
+
+			for(Object object: mRecordSteps) {
+				if(object instanceof MRecordStep && object != this) {
+					MRecordStep mRecordStep = (MRecordStep) object;
+					
+					boolean mAddLengthResult = true;					
+			    	for(MValue mValue: (List<MValue>) getMProgressProperty().getMInputValues())
+			    		if(mValue.eContainingFeatureID() == LogicPackage.MRECORD_STEP__MRECORDING_LENGTH_PROPERTY
+			    				&& mValue == getMRecordingLengthProperty()) {
+			    			mAddLengthResult = false;
+			    			break;
+			    		}
+
+			    	if(mAddLengthResult)
+			    		getMProgressStatusProperty().getMInputValues().add(mRecordStep.getMRecordingLengthProperty());
+			    }
+
+			}
+				
+		}
+		// TODO: Remove code above.
+		
         File recordingFile = null;
 
         getDirectoryParameter().mkdirs();
@@ -1187,6 +1408,21 @@ public class MRecordStep extends MAudioStep {
         }                
 	}
 	
+    /**
+	 * @see org.onceforall.dms.desktop.logic.MStep#validate()
+	 */
+	@Override
+	public DesktopExceptionList validate() {
+		DesktopExceptionList validationExceptions = super.validate();
+		
+		if(getDirectoryParameter() != null) {
+	        File recordingFile = new File(getDirectoryParameter().getPath()+File.separator+getRecordingFileParameter().getName());
+			if(recordingFile.exists())
+				validationExceptions.add(new DesktopException("A file with the same name as the recording file '"+recordingFile.getName()+"' already exists in the recording directory '"+getDirectoryParameter().getPath()+"'. If you choose to proceed, you will overwrite it.", null, DesktopException.WARNING_SEVERITY, null));
+		}
+		
+		return validationExceptions;
+	}
 	
     /**
 	 * @see org.onceforall.dms.desktop.logic.MObject#convertMInputValues(org.onceforall.dms.desktop.logic.MValue)
@@ -1201,8 +1437,43 @@ public class MRecordStep extends MAudioStep {
 		    
 		    return new File(Utilities.convertToFileName(part)+".wav");
 		}
+		else if(getMProgressStatusProperty().equals(mOwnerValue)) {
+			synchronized(this) {
+				if(getRecordingLengthProperty() == null)
+					return null;
+				
+				long recordingLength = getRecordingLengthProperty();
+				long totalTime = 0;
+				
+				for(Object object: getMProgressStatusProperty().getMInputValues())
+					if(object instanceof MValue) {
+						MValue mValue = (MValue) object;
+				    		if(mValue.eContainingFeatureID() == LogicPackage.MRECORD_STEP__MRECORDING_LENGTH_PROPERTY
+				    				&& mValue != getMRecordingLengthResult()
+				    				&& mValue.getValue() != null) {
+				    			totalTime += (Long) mValue.getValue();
+				    		}
+						
+					}
+				
+				recordingTime.setTime(recordingLength-recordingLength%1000);
+				
+				// TODO: Implement a proper solution to the 1 sec. quick fix so that the total time show on the panels but not on the tree items.
+				if(totalTime == 0 || !isInProcessingState() && getLastStateChangeProperty() != null 
+						&& getLastStateChangeProperty().getTime()+1000 < System.currentTimeMillis())
+					return DurationType.FORMATTER.format(recordingTime);
+				
+				// Makes sure that the total time and recording time have same milliseconds part so that both get updated at the same time in the UI.
+				totalTime += -totalTime%1000+recordingLength-recordingLength%1000;
+				totalRecordingTime.setTime(totalTime);	
+				
+				return DurationType.FORMATTER.format(recordingTime)+ " - Total: "+DurationType.FORMATTER.format(totalRecordingTime);
+			}
+		}
 		else
 			return super.convertMInputValues(mOwnerValue);
+		
+		
 	}
 
 
@@ -1221,50 +1492,51 @@ public class MRecordStep extends MAudioStep {
          * @see java.lang.Runnable#run()
          */
         public void run() {
-            while(audioInputStream.getClosed())
-                // Waits till the steps starts reading from the audio input stream.
-                try {
-                    Thread.sleep(200);
-                } catch (InterruptedException exception) {}
-            
-            Date recordingTime = new Date();
-            recordingTime.setTime(0);
-            
-            long startTime = System.currentTimeMillis();
-            long pausedTime = 0;
-            boolean pausedTimingStarted = false;
-            
-            String reordingTimeForUI = null;
-            while(!audioInputStream.getClosed()) {
-                if(!audioInputStream.getPaused()) {
-                    if(pausedTimingStarted) {
-                        startTime += System.currentTimeMillis()- pausedTime;
-                        pausedTimingStarted = false;
-                    }
-                        
-	                recordingTime.setTime(System.currentTimeMillis() - startTime);
-	                
-	                // Updates the progress property if the formatted recording time has changed.
-	                String newReordingTimeForUI = DurationType.FORMATTER.format(recordingTime);
-	                if(!newReordingTimeForUI.equals(reordingTimeForUI)) {
-	                    reordingTimeForUI = newReordingTimeForUI;
-	                    setProgressStatusProperty(reordingTimeForUI);
-	                }
-                }
-                else if(!pausedTimingStarted) {
-                        pausedTime = System.currentTimeMillis();
-                        pausedTimingStarted = true;
-                    }
-  
-                
-                try {
-                    sleep(100);
-                } catch (InterruptedException exception) {
-                }
-            }
+			while (audioInputStream.getClosed())
+				// Waits till the steps starts reading from the audio input stream.
+				try {
+					Thread.sleep(200);
+				} catch (InterruptedException exception) {
+				}
 
-            setProgressStatusProperty(DurationType.FORMATTER.format(recordingTime));
-        }
-    }
+			setRecordingLengthProperty(0l);
+			
+			long startTime = System.currentTimeMillis();
+			long pausedTime = 0;
+			boolean pausedTimingStarted = false;
+
+			String progressStatusForUI = null;
+			while (!audioInputStream.getClosed()) {
+				if (!audioInputStream.getPaused()) {
+					if (pausedTimingStarted) {
+						startTime += System.currentTimeMillis() - pausedTime;
+						pausedTimingStarted = false;
+					}
+
+					synchronized(MRecordStep.this) {
+						setRecordingLengthProperty(System.currentTimeMillis()
+							- startTime);
+					
+						// Updates the progress property if the formatted recording time has changed.
+						String newProgressStatusForUI = (String) convertMInputValues(getMProgressStatusProperty());
+						if (newProgressStatusForUI != null && !newProgressStatusForUI.equals(progressStatusForUI)) {
+							progressStatusForUI = newProgressStatusForUI;
+							setProgressStatusProperty(progressStatusForUI);
+						}
+					}
+				} else if (!pausedTimingStarted) {
+					pausedTime = System.currentTimeMillis();
+					pausedTimingStarted = true;
+				}
+
+				try {
+					sleep(100);
+				} catch (InterruptedException exception) {
+				}
+			}
+
+			setProgressStatusProperty((String) convertMInputValues(getMProgressStatusProperty()));
+		}
+	}
 
 } // MRecordStep
