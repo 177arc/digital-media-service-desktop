@@ -1063,6 +1063,16 @@ For an explanation of dBFS, please refer to http://en.wikipedia.org/wiki/DBFS.
 	   	<details key="stoppable" value="true"/>
 	   	<details key="terminatable" value="false"/>
  		</eAnnotations>
+	   	<eStructuralFeatures xsi:type="ecore:EReference" name="mRecordingLengthProperty"
+	      lowerBound="1" eType="#//MProperty" defaultValueLiteral=""
+	      containment="true" resolveProxies="false">
+	     <eAnnotations source="http://www.onceforall.org/mcore">
+	       <details key="name" value="Recording length"/>
+	       <details key="description" value="Indicates the length of this recording."/>
+	       <details key="readOnly" value="true"/>
+	     </eAnnotations>
+	   </eStructuralFeatures>  		
+       <eStructuralFeatures xsi:type="ecore:EAttribute" name="recordingLengthProperty" lowerBound="0" upperBound="1" transient="true" eType="//MDuration" derived="false" volatile="false"/>
 	   	<eStructuralFeatures xsi:type="ecore:EReference" name="mDirectoryParameter"
 	      lowerBound="1" eType="#//MParameter" defaultValueLiteral=""
 	      containment="true" resolveProxies="false">
@@ -1824,6 +1834,16 @@ Please enter your own email address here so that we can contact you if we have a
 	     </eAnnotations>
 	   </eStructuralFeatures>  		
        <eStructuralFeatures xsi:type="ecore:EAttribute" name="recordingMp3FileParameter" lowerBound="1" upperBound="1" transient="false" eType="//MExistingFile" derived="false" volatile="false"/>
+	   	<eStructuralFeatures xsi:type="ecore:EReference" name="mTagAndRenameOriginalParameter"
+	      lowerBound="1" eType="#//MParameter" defaultValueLiteral=""
+	      containment="true" resolveProxies="false">
+	     <eAnnotations source="http://www.onceforall.org/mcore">
+	       <details key="name" value="Tag and rename original"/>
+	       <details key="description" value="Specifies whether the original file should be tagged and renamed as well."/>
+	       <details key="readOnly" value="false"/>
+	     </eAnnotations>
+	   </eStructuralFeatures>  		
+       <eStructuralFeatures xsi:type="ecore:EAttribute" name="tagAndRenameOriginalParameter" lowerBound="1" upperBound="1" defaultValueLiteral="false" transient="false" eType="//MBoolean" derived="false" volatile="false"/>
 	</eClassifiers>
 	<eClassifiers xsi:type="ecore:EClass" name="MTagStep" eSuperTypes="#//MStep" abstract="true">
  		<eAnnotations source="http://www.onceforall.org/mcore">

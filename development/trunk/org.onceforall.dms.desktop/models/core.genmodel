@@ -260,6 +260,8 @@
     <genClasses ecoreClass="core.ecore#//MCheckInputLevelsStep">
     </genClasses>
     <genClasses ecoreClass="core.ecore#//MRecordStep">
+       <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference core.ecore#//MRecordStep/mRecordingLengthProperty"/>
+       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MRecordStep/recordingLengthProperty"/>
        <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference core.ecore#//MRecordStep/mDirectoryParameter"/>
        <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MRecordStep/directoryParameter"/>
        <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference core.ecore#//MRecordStep/mRecordingFileParameter"/>
@@ -424,6 +426,8 @@
        <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MNameTagMp3Step/taggedMp3FileNameParameter"/>
        <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference core.ecore#//MNameTagMp3Step/mRecordingMp3FileParameter"/>
        <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MNameTagMp3Step/recordingMp3FileParameter"/>
+       <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference core.ecore#//MNameTagMp3Step/mTagAndRenameOriginalParameter"/>
+       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MNameTagMp3Step/tagAndRenameOriginalParameter"/>
     </genClasses>
     <genClasses ecoreClass="core.ecore#//MTagStep">
        <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference core.ecore#//MTagStep/mArtistParameter"/>
