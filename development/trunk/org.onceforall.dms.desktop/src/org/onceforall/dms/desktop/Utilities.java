@@ -29,6 +29,9 @@
 package org.onceforall.dms.desktop;
 
 import java.io.File;
+import java.util.logging.Level;
+
+import org.onceforall.dms.desktop.exception.DesktopException;
 
 /**
  * Defines a class with general helper methods.
@@ -216,5 +219,28 @@ public class Utilities {
         text = text.replaceAll("\"", "&quot;");
         
         return(text);
+    }
+    
+    
+    /**
+     * Gets the logging level that corresponds to the severity.
+     * 
+     * @return Returns the logging level that corresponds to the severity.
+     */
+    public static Level getLevelForSeverity(int severity) {
+		assert severity == DesktopException.INFORMATION_SEVERITY
+		|| severity == DesktopException.WARNING_SEVERITY
+		|| severity == DesktopException.ERROR_SEVERITY
+		|| severity == DesktopException.CRITICAL_SEVERITY;
+		
+		switch(severity) {
+		case DesktopException.CRITICAL_SEVERITY:
+		case DesktopException.ERROR_SEVERITY:
+			return Level.SEVERE;
+		case DesktopException.WARNING_SEVERITY:
+			return Level.WARNING;
+		default:
+			return Level.INFO;
+		}
     }
 }
