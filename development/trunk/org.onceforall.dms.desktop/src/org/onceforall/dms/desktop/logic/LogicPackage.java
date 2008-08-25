@@ -6269,13 +6269,31 @@ public class LogicPackage extends EPackageImpl {
 	public static final int MRECORD_STEP__HEADROOM_PROPERTY = MAUDIO_STEP__HEADROOM_PROPERTY;
 
 	/**
+	 * The feature id for the '<em><b>MRecording Length Property</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MRECORD_STEP__MRECORDING_LENGTH_PROPERTY = MAUDIO_STEP_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Recording Length Property</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MRECORD_STEP__RECORDING_LENGTH_PROPERTY = MAUDIO_STEP_FEATURE_COUNT + 1;
+
+	/**
 	 * The feature id for the '<em><b>MDirectory Parameter</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	public static final int MRECORD_STEP__MDIRECTORY_PARAMETER = MAUDIO_STEP_FEATURE_COUNT + 0;
+	public static final int MRECORD_STEP__MDIRECTORY_PARAMETER = MAUDIO_STEP_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Directory Parameter</b></em>' attribute.
@@ -6284,7 +6302,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int MRECORD_STEP__DIRECTORY_PARAMETER = MAUDIO_STEP_FEATURE_COUNT + 1;
+	public static final int MRECORD_STEP__DIRECTORY_PARAMETER = MAUDIO_STEP_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>MRecording File Parameter</b></em>' containment reference.
@@ -6293,7 +6311,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int MRECORD_STEP__MRECORDING_FILE_PARAMETER = MAUDIO_STEP_FEATURE_COUNT + 2;
+	public static final int MRECORD_STEP__MRECORDING_FILE_PARAMETER = MAUDIO_STEP_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Recording File Parameter</b></em>' attribute.
@@ -6302,7 +6320,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int MRECORD_STEP__RECORDING_FILE_PARAMETER = MAUDIO_STEP_FEATURE_COUNT + 3;
+	public static final int MRECORD_STEP__RECORDING_FILE_PARAMETER = MAUDIO_STEP_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>MRecording File Result</b></em>' containment reference.
@@ -6311,7 +6329,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int MRECORD_STEP__MRECORDING_FILE_RESULT = MAUDIO_STEP_FEATURE_COUNT + 4;
+	public static final int MRECORD_STEP__MRECORDING_FILE_RESULT = MAUDIO_STEP_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Recording File Result</b></em>' attribute.
@@ -6320,7 +6338,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int MRECORD_STEP__RECORDING_FILE_RESULT = MAUDIO_STEP_FEATURE_COUNT + 5;
+	public static final int MRECORD_STEP__RECORDING_FILE_RESULT = MAUDIO_STEP_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>MRecording File Size Result</b></em>' containment reference.
@@ -6329,7 +6347,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int MRECORD_STEP__MRECORDING_FILE_SIZE_RESULT = MAUDIO_STEP_FEATURE_COUNT + 6;
+	public static final int MRECORD_STEP__MRECORDING_FILE_SIZE_RESULT = MAUDIO_STEP_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Recording File Size Result</b></em>' attribute.
@@ -6338,7 +6356,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int MRECORD_STEP__RECORDING_FILE_SIZE_RESULT = MAUDIO_STEP_FEATURE_COUNT + 7;
+	public static final int MRECORD_STEP__RECORDING_FILE_SIZE_RESULT = MAUDIO_STEP_FEATURE_COUNT + 9;
 
 	/**
 	 * The feature id for the '<em><b>MRecording Length Result</b></em>' containment reference.
@@ -6347,7 +6365,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int MRECORD_STEP__MRECORDING_LENGTH_RESULT = MAUDIO_STEP_FEATURE_COUNT + 8;
+	public static final int MRECORD_STEP__MRECORDING_LENGTH_RESULT = MAUDIO_STEP_FEATURE_COUNT + 10;
 
 	/**
 	 * The feature id for the '<em><b>Recording Length Result</b></em>' attribute.
@@ -6356,7 +6374,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int MRECORD_STEP__RECORDING_LENGTH_RESULT = MAUDIO_STEP_FEATURE_COUNT + 9;
+	public static final int MRECORD_STEP__RECORDING_LENGTH_RESULT = MAUDIO_STEP_FEATURE_COUNT + 11;
 
 	/**
 	 * The number of structural features of the '<em>MRecord Step</em>' class.
@@ -6365,7 +6383,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int MRECORD_STEP_FEATURE_COUNT = MAUDIO_STEP_FEATURE_COUNT + 10;
+	public static final int MRECORD_STEP_FEATURE_COUNT = MAUDIO_STEP_FEATURE_COUNT + 12;
 
 	/**
 	 * The meta object id for the '{@link org.onceforall.dms.desktop.logic.MTagStep <em>MTag Step</em>}' class.
@@ -12482,13 +12500,31 @@ public class LogicPackage extends EPackageImpl {
 	public static final int MNAME_TAG_MP3_STEP__RECORDING_MP3_FILE_PARAMETER = MTAG_STEP_FEATURE_COUNT + 5;
 
 	/**
+	 * The feature id for the '<em><b>MTag And Rename Original Parameter</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MNAME_TAG_MP3_STEP__MTAG_AND_RENAME_ORIGINAL_PARAMETER = MTAG_STEP_FEATURE_COUNT + 6;
+
+	/**
+	 * The feature id for the '<em><b>Tag And Rename Original Parameter</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MNAME_TAG_MP3_STEP__TAG_AND_RENAME_ORIGINAL_PARAMETER = MTAG_STEP_FEATURE_COUNT + 7;
+
+	/**
 	 * The number of structural features of the '<em>MName Tag Mp3 Step</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	public static final int MNAME_TAG_MP3_STEP_FEATURE_COUNT = MTAG_STEP_FEATURE_COUNT + 6;
+	public static final int MNAME_TAG_MP3_STEP_FEATURE_COUNT = MTAG_STEP_FEATURE_COUNT + 8;
 
 	/**
 	 * The meta object id for the '{@link org.onceforall.dms.desktop.logic.MDmsApplicationMGetDataUpgradeInfoStep <em>MDms Application MGet Data Upgrade Info Step</em>}' class.
@@ -16572,6 +16608,32 @@ public class LogicPackage extends EPackageImpl {
 	}
 
 	/**
+	 * Returns the meta object for the containment reference '{@link org.onceforall.dms.desktop.logic.MRecordStep#getMRecordingLengthProperty <em>MRecording Length Property</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>MRecording Length Property</em>'.
+	 * @see org.onceforall.dms.desktop.logic.MRecordStep#getMRecordingLengthProperty()
+	 * @see #getMRecordStep()
+	 * @generated
+	 */
+	public EReference getMRecordStep_MRecordingLengthProperty() {
+		return (EReference)mRecordStepEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.onceforall.dms.desktop.logic.MRecordStep#getRecordingLengthProperty <em>Recording Length Property</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Recording Length Property</em>'.
+	 * @see org.onceforall.dms.desktop.logic.MRecordStep#getRecordingLengthProperty()
+	 * @see #getMRecordStep()
+	 * @generated
+	 */
+	public EAttribute getMRecordStep_RecordingLengthProperty() {
+		return (EAttribute)mRecordStepEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
 	 * Returns the meta object for the containment reference '{@link org.onceforall.dms.desktop.logic.MRecordStep#getMDirectoryParameter <em>MDirectory Parameter</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -16581,7 +16643,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @generated
 	 */
 	public EReference getMRecordStep_MDirectoryParameter() {
-		return (EReference)mRecordStepEClass.getEStructuralFeatures().get(0);
+		return (EReference)mRecordStepEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -16594,7 +16656,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @generated
 	 */
 	public EAttribute getMRecordStep_DirectoryParameter() {
-		return (EAttribute)mRecordStepEClass.getEStructuralFeatures().get(1);
+		return (EAttribute)mRecordStepEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -16607,7 +16669,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @generated
 	 */
 	public EReference getMRecordStep_MRecordingFileParameter() {
-		return (EReference)mRecordStepEClass.getEStructuralFeatures().get(2);
+		return (EReference)mRecordStepEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -16620,7 +16682,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @generated
 	 */
 	public EAttribute getMRecordStep_RecordingFileParameter() {
-		return (EAttribute)mRecordStepEClass.getEStructuralFeatures().get(3);
+		return (EAttribute)mRecordStepEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -16633,7 +16695,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @generated
 	 */
 	public EReference getMRecordStep_MRecordingFileResult() {
-		return (EReference)mRecordStepEClass.getEStructuralFeatures().get(4);
+		return (EReference)mRecordStepEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -16646,7 +16708,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @generated
 	 */
 	public EAttribute getMRecordStep_RecordingFileResult() {
-		return (EAttribute)mRecordStepEClass.getEStructuralFeatures().get(5);
+		return (EAttribute)mRecordStepEClass.getEStructuralFeatures().get(7);
 	}
 
 	/**
@@ -16659,7 +16721,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @generated
 	 */
 	public EReference getMRecordStep_MRecordingFileSizeResult() {
-		return (EReference)mRecordStepEClass.getEStructuralFeatures().get(6);
+		return (EReference)mRecordStepEClass.getEStructuralFeatures().get(8);
 	}
 
 	/**
@@ -16672,7 +16734,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @generated
 	 */
 	public EAttribute getMRecordStep_RecordingFileSizeResult() {
-		return (EAttribute)mRecordStepEClass.getEStructuralFeatures().get(7);
+		return (EAttribute)mRecordStepEClass.getEStructuralFeatures().get(9);
 	}
 
 	/**
@@ -16685,7 +16747,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @generated
 	 */
 	public EReference getMRecordStep_MRecordingLengthResult() {
-		return (EReference)mRecordStepEClass.getEStructuralFeatures().get(8);
+		return (EReference)mRecordStepEClass.getEStructuralFeatures().get(10);
 	}
 
 	/**
@@ -16698,7 +16760,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @generated
 	 */
 	public EAttribute getMRecordStep_RecordingLengthResult() {
-		return (EAttribute)mRecordStepEClass.getEStructuralFeatures().get(9);
+		return (EAttribute)mRecordStepEClass.getEStructuralFeatures().get(11);
 	}
 
 	/**
@@ -18550,6 +18612,32 @@ public class LogicPackage extends EPackageImpl {
 	}
 
 	/**
+	 * Returns the meta object for the containment reference '{@link org.onceforall.dms.desktop.logic.MNameTagMp3Step#getMTagAndRenameOriginalParameter <em>MTag And Rename Original Parameter</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>MTag And Rename Original Parameter</em>'.
+	 * @see org.onceforall.dms.desktop.logic.MNameTagMp3Step#getMTagAndRenameOriginalParameter()
+	 * @see #getMNameTagMp3Step()
+	 * @generated
+	 */
+	public EReference getMNameTagMp3Step_MTagAndRenameOriginalParameter() {
+		return (EReference)mNameTagMp3StepEClass.getEStructuralFeatures().get(6);
+	}
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.onceforall.dms.desktop.logic.MNameTagMp3Step#getTagAndRenameOriginalParameter <em>Tag And Rename Original Parameter</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Tag And Rename Original Parameter</em>'.
+	 * @see org.onceforall.dms.desktop.logic.MNameTagMp3Step#getTagAndRenameOriginalParameter()
+	 * @see #getMNameTagMp3Step()
+	 * @generated
+	 */
+	public EAttribute getMNameTagMp3Step_TagAndRenameOriginalParameter() {
+		return (EAttribute)mNameTagMp3StepEClass.getEStructuralFeatures().get(7);
+	}
+
+	/**
 	 * Returns the meta object for class '{@link org.onceforall.dms.desktop.logic.MTagStep <em>MTag Step</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -19552,6 +19640,8 @@ public class LogicPackage extends EPackageImpl {
 		mCheckInputLevelsStepEClass = createEClass(MCHECK_INPUT_LEVELS_STEP);
 
 		mRecordStepEClass = createEClass(MRECORD_STEP);
+		createEReference(mRecordStepEClass, MRECORD_STEP__MRECORDING_LENGTH_PROPERTY);
+		createEAttribute(mRecordStepEClass, MRECORD_STEP__RECORDING_LENGTH_PROPERTY);
 		createEReference(mRecordStepEClass, MRECORD_STEP__MDIRECTORY_PARAMETER);
 		createEAttribute(mRecordStepEClass, MRECORD_STEP__DIRECTORY_PARAMETER);
 		createEReference(mRecordStepEClass, MRECORD_STEP__MRECORDING_FILE_PARAMETER);
@@ -19716,6 +19806,8 @@ public class LogicPackage extends EPackageImpl {
 		createEAttribute(mNameTagMp3StepEClass, MNAME_TAG_MP3_STEP__TAGGED_MP3_FILE_NAME_PARAMETER);
 		createEReference(mNameTagMp3StepEClass, MNAME_TAG_MP3_STEP__MRECORDING_MP3_FILE_PARAMETER);
 		createEAttribute(mNameTagMp3StepEClass, MNAME_TAG_MP3_STEP__RECORDING_MP3_FILE_PARAMETER);
+		createEReference(mNameTagMp3StepEClass, MNAME_TAG_MP3_STEP__MTAG_AND_RENAME_ORIGINAL_PARAMETER);
+		createEAttribute(mNameTagMp3StepEClass, MNAME_TAG_MP3_STEP__TAG_AND_RENAME_ORIGINAL_PARAMETER);
 
 		mTagStepEClass = createEClass(MTAG_STEP);
 		createEReference(mTagStepEClass, MTAG_STEP__MARTIST_PARAMETER);
@@ -20078,6 +20170,8 @@ public class LogicPackage extends EPackageImpl {
 		
 
 		initEClass(mRecordStepEClass, MRecordStep.class, "MRecordStep", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getMRecordStep_MRecordingLengthProperty(), this.getMProperty(), null, "mRecordingLengthProperty", "", 1, 1, MRecordStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getMRecordStep_RecordingLengthProperty(), this.getMDuration(), "recordingLengthProperty", null, 0, 1, MRecordStep.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getMRecordStep_MDirectoryParameter(), this.getMParameter(), null, "mDirectoryParameter", "", 1, 1, MRecordStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMRecordStep_DirectoryParameter(), this.getMExistingDirectory(), "directoryParameter", null, 1, 1, MRecordStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getMRecordStep_MRecordingFileParameter(), this.getMParameter(), null, "mRecordingFileParameter", "", 1, 1, MRecordStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -20253,6 +20347,8 @@ public class LogicPackage extends EPackageImpl {
 		initEAttribute(getMNameTagMp3Step_TaggedMp3FileNameParameter(), this.getMFile(), "taggedMp3FileNameParameter", null, 1, 1, MNameTagMp3Step.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getMNameTagMp3Step_MRecordingMp3FileParameter(), this.getMParameter(), null, "mRecordingMp3FileParameter", "", 1, 1, MNameTagMp3Step.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMNameTagMp3Step_RecordingMp3FileParameter(), this.getMExistingFile(), "recordingMp3FileParameter", null, 1, 1, MNameTagMp3Step.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMNameTagMp3Step_MTagAndRenameOriginalParameter(), this.getMParameter(), null, "mTagAndRenameOriginalParameter", "", 1, 1, MNameTagMp3Step.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getMNameTagMp3Step_TagAndRenameOriginalParameter(), this.getMBoolean(), "tagAndRenameOriginalParameter", "false", 1, 1, MNameTagMp3Step.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		
 
 		initEClass(mTagStepEClass, MTagStep.class, "MTagStep", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -21160,6 +21256,14 @@ public class LogicPackage extends EPackageImpl {
 			 "terminatable", "false"
 		   });		
 		addAnnotation
+		  (getMRecordStep_MRecordingLengthProperty(), 
+		   source, 
+		   new String[] {
+			 "name", "Recording length",
+			 "description", "Indicates the length of this recording.",
+			 "readOnly", "true"
+		   });		
+		addAnnotation
 		  (getMRecordStep_MDirectoryParameter(), 
 		   source, 
 		   new String[] {
@@ -21781,6 +21885,14 @@ public class LogicPackage extends EPackageImpl {
 		   new String[] {
 			 "name", "Recording MP3 file path",
 			 "description", "Specifies the path of the MP3 file to be named and tagged."
+		   });		
+		addAnnotation
+		  (getMNameTagMp3Step_MTagAndRenameOriginalParameter(), 
+		   source, 
+		   new String[] {
+			 "name", "Tag and rename original",
+			 "description", "Specifies whether the original file should be tagged and renamed as well.",
+			 "readOnly", "false"
 		   });		
 		addAnnotation
 		  (mTagStepEClass, 
@@ -23529,6 +23641,22 @@ public class LogicPackage extends EPackageImpl {
 		public static final EClass MRECORD_STEP = eINSTANCE.getMRecordStep();
 
 		/**
+		 * The meta object literal for the '<em><b>MRecording Length Property</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		public static final EReference MRECORD_STEP__MRECORDING_LENGTH_PROPERTY = eINSTANCE.getMRecordStep_MRecordingLengthProperty();
+
+		/**
+		 * The meta object literal for the '<em><b>Recording Length Property</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		public static final EAttribute MRECORD_STEP__RECORDING_LENGTH_PROPERTY = eINSTANCE.getMRecordStep_RecordingLengthProperty();
+
+		/**
 		 * The meta object literal for the '<em><b>MDirectory Parameter</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -24773,6 +24901,22 @@ public class LogicPackage extends EPackageImpl {
 		 * @generated
 		 */
 		public static final EAttribute MNAME_TAG_MP3_STEP__RECORDING_MP3_FILE_PARAMETER = eINSTANCE.getMNameTagMp3Step_RecordingMp3FileParameter();
+
+		/**
+		 * The meta object literal for the '<em><b>MTag And Rename Original Parameter</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		public static final EReference MNAME_TAG_MP3_STEP__MTAG_AND_RENAME_ORIGINAL_PARAMETER = eINSTANCE.getMNameTagMp3Step_MTagAndRenameOriginalParameter();
+
+		/**
+		 * The meta object literal for the '<em><b>Tag And Rename Original Parameter</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		public static final EAttribute MNAME_TAG_MP3_STEP__TAG_AND_RENAME_ORIGINAL_PARAMETER = eINSTANCE.getMNameTagMp3Step_TagAndRenameOriginalParameter();
 
 		/**
 		 * The meta object literal for the '{@link org.onceforall.dms.desktop.logic.MTagStep <em>MTag Step</em>}' class.
