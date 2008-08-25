@@ -1419,6 +1419,8 @@ public abstract class MAudioStep extends MStep {
             audioInputStream.eAdapters().add(this);
         } catch (LineUnavailableException exception) {
             Logger.getLogger().log(Level.SEVERE, "The audio input line cannot be read.", exception);
+        } catch (IllegalArgumentException exception) {
+        	Logger.getLogger().log(Level.SEVERE, "The audio input line cannot be read.", exception);
         }
 	}
 
@@ -1427,7 +1429,8 @@ public abstract class MAudioStep extends MStep {
 	 */
 	@Override
 	public void deactivate() {
-		audioInputStream.eAdapters().remove(this);
+		if(audioInputStream != null)
+			audioInputStream.eAdapters().remove(this);
 		
 		super.deactivate();
 	}
