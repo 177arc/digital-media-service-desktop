@@ -1475,9 +1475,11 @@ For an explanation of dBFS, please refer to http://en.wikipedia.org/wiki/DBFS.
 	     <eAnnotations source="http://www.onceforall.org/mcore">
 	       <details key="name" value="Comment"/>
 	       <details key="description" value="Specifies a comment for the receipient of the email."/>
+	       <details key="readOnly" value="false"/>
 	     </eAnnotations>
 	   </eStructuralFeatures>  		
        <eStructuralFeatures xsi:type="ecore:EAttribute" name="commentParameter" lowerBound="1" upperBound="1" transient="true" eType="//MString" derived="false" volatile="false"/>
+     	<eStructuralFeatures xsi:type="ecore:EAttribute" name="commentParameterHistoricValues" upperBound="5" transient="false" eType="//MString"/>
 	   	<eStructuralFeatures xsi:type="ecore:EReference" name="mLogFileParameter"
 	      lowerBound="1" eType="#//MParameter" defaultValueLiteral=""
 	      containment="true" resolveProxies="false">
