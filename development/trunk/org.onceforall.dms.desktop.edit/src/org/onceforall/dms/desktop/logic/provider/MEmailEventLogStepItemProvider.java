@@ -74,6 +74,7 @@ public class MEmailEventLogStepItemProvider
 
 			addRecordingUsersNameParameterPropertyDescriptor(object);
 			addCommentParameterPropertyDescriptor(object);
+			addCommentParameterHistoricValuesPropertyDescriptor(object);
 			addLogFileParameterPropertyDescriptor(object);
 			addDataFileParameterPropertyDescriptor(object);
 			addSubjectParameterPropertyDescriptor(object);
@@ -123,6 +124,28 @@ public class MEmailEventLogStepItemProvider
 				 getString("_UI_MEmailEventLogStep_commentParameter_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_MEmailEventLogStep_commentParameter_feature", "_UI_MEmailEventLogStep_type"),
 				 LogicPackage.Literals.MEMAIL_EVENT_LOG_STEP__COMMENT_PARAMETER,
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Comment Parameter Historic Values feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addCommentParameterHistoricValuesPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_MEmailEventLogStep_commentParameterHistoricValues_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_MEmailEventLogStep_commentParameterHistoricValues_feature", "_UI_MEmailEventLogStep_type"),
+				 LogicPackage.Literals.MEMAIL_EVENT_LOG_STEP__COMMENT_PARAMETER_HISTORIC_VALUES,
 				 false,
 				 false,
 				 false,
@@ -402,6 +425,7 @@ public class MEmailEventLogStepItemProvider
 		switch (notification.getFeatureID(MEmailEventLogStep.class)) {
 			case LogicPackage.MEMAIL_EVENT_LOG_STEP__RECORDING_USERS_NAME_PARAMETER:
 			case LogicPackage.MEMAIL_EVENT_LOG_STEP__COMMENT_PARAMETER:
+			case LogicPackage.MEMAIL_EVENT_LOG_STEP__COMMENT_PARAMETER_HISTORIC_VALUES:
 			case LogicPackage.MEMAIL_EVENT_LOG_STEP__LOG_FILE_PARAMETER:
 			case LogicPackage.MEMAIL_EVENT_LOG_STEP__DATA_FILE_PARAMETER:
 			case LogicPackage.MEMAIL_EVENT_LOG_STEP__SUBJECT_PARAMETER:
