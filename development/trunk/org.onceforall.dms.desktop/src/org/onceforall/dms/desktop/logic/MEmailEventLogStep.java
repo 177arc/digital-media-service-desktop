@@ -65,6 +65,7 @@ import org.onceforall.dms.desktop.logic.types.Type;
  *   <li>{@link org.onceforall.dms.desktop.logic.MEmailEventLogStep#getRecordingUsersNameParameter <em>Recording Users Name Parameter</em>}</li>
  *   <li>{@link org.onceforall.dms.desktop.logic.MEmailEventLogStep#getMCommentParameter <em>MComment Parameter</em>}</li>
  *   <li>{@link org.onceforall.dms.desktop.logic.MEmailEventLogStep#getCommentParameter <em>Comment Parameter</em>}</li>
+ *   <li>{@link org.onceforall.dms.desktop.logic.MEmailEventLogStep#getCommentParameterHistoricValues <em>Comment Parameter Historic Values</em>}</li>
  *   <li>{@link org.onceforall.dms.desktop.logic.MEmailEventLogStep#getMLogFileParameter <em>MLog File Parameter</em>}</li>
  *   <li>{@link org.onceforall.dms.desktop.logic.MEmailEventLogStep#getLogFileParameter <em>Log File Parameter</em>}</li>
  *   <li>{@link org.onceforall.dms.desktop.logic.MEmailEventLogStep#getMDataFileParameter <em>MData File Parameter</em>}</li>
@@ -209,6 +210,16 @@ public class MEmailEventLogStep extends MStep {
 	 * @ordered
 	 */
 	protected String commentParameter = COMMENT_PARAMETER_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getCommentParameterHistoricValues() <em>Comment Parameter Historic Values</em>}' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCommentParameterHistoricValues()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList commentParameterHistoricValues = null;
 
 	/**
 	 * The cached value of the '{@link #getMLogFileParameter() <em>MLog File Parameter</em>}' containment reference.
@@ -821,7 +832,7 @@ public class MEmailEventLogStep extends MStep {
 	 * @see #setMCommentParameter(MParameter)
 	 * @see org.onceforall.dms.desktop.logic.LogicPackage#getMEmailEventLogStep_MCommentParameter()
 	 * @model containment="true" required="true"
-	 *        annotation="http://www.onceforall.org/mcore name='Comment' description='Specifies a comment for the receipient of the email.'"
+	 *        annotation="http://www.onceforall.org/mcore name='Comment' description='Specifies a comment for the receipient of the email.' readOnly='false'"
 	 * @generated
 	 */
 	public MParameter getMCommentParameter() {
@@ -858,11 +869,11 @@ public class MEmailEventLogStep extends MStep {
 			if (mCommentParameter != null)
 				msgs = ((InternalEObject)mCommentParameter).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - LogicPackage.MEMAIL_EVENT_LOG_STEP__MCOMMENT_PARAMETER, null, msgs);
 			if (newMCommentParameter != null) {				
-				newMCommentParameter.setDefaultDescription("Specifies a comment for the receipient of the email.");
 				newMCommentParameter.setDefaultName("Comment");
+				newMCommentParameter.setDefaultDescription("Specifies a comment for the receipient of the email.");
 				newMCommentParameter.setValueType(Type.getTypeForName("Text"));
 				newMCommentParameter.setValueEFeature((EStructuralFeature) eClass().getEStructuralFeature(LogicPackage.MEMAIL_EVENT_LOG_STEP__COMMENT_PARAMETER));
-				newMCommentParameter.setHistoricValuesEFeature(null);
+				newMCommentParameter.setHistoricValuesEFeature((EStructuralFeature) eClass().getEStructuralFeature(LogicPackage.MEMAIL_EVENT_LOG_STEP__COMMENT_PARAMETER_HISTORIC_VALUES));
 				msgs = ((InternalEObject)newMCommentParameter).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - LogicPackage.MEMAIL_EVENT_LOG_STEP__MCOMMENT_PARAMETER, null, msgs);
 			}
 			
@@ -912,6 +923,27 @@ public class MEmailEventLogStep extends MStep {
 		commentParameter = newCommentParameter;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, LogicPackage.MEMAIL_EVENT_LOG_STEP__COMMENT_PARAMETER, oldCommentParameter, commentParameter));
+	}
+
+	/**
+	 * Returns the value of the '<em><b>Comment Parameter Historic Values</b></em>' attribute list.
+	 * The list contents are of type {@link java.lang.String}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Comment Parameter Historic Values</em>' attribute list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Comment Parameter Historic Values</em>' attribute list.
+	 * @see org.onceforall.dms.desktop.logic.LogicPackage#getMEmailEventLogStep_CommentParameterHistoricValues()
+	 * @model type="java.lang.String" dataType="org.onceforall.dms.desktop.logic.MString" upper="5"
+	 * @generated
+	 */
+	public EList getCommentParameterHistoricValues() {
+		if (commentParameterHistoricValues == null) {
+			commentParameterHistoricValues = new EDataTypeUniqueEList(String.class, this, LogicPackage.MEMAIL_EVENT_LOG_STEP__COMMENT_PARAMETER_HISTORIC_VALUES);
+		}
+		return commentParameterHistoricValues;
 	}
 
 	/**
@@ -1816,6 +1848,8 @@ public class MEmailEventLogStep extends MStep {
 				return getMCommentParameter();
 			case LogicPackage.MEMAIL_EVENT_LOG_STEP__COMMENT_PARAMETER:
 				return getCommentParameter();
+			case LogicPackage.MEMAIL_EVENT_LOG_STEP__COMMENT_PARAMETER_HISTORIC_VALUES:
+				return getCommentParameterHistoricValues();
 			case LogicPackage.MEMAIL_EVENT_LOG_STEP__MLOG_FILE_PARAMETER:
 				return getMLogFileParameter();
 			case LogicPackage.MEMAIL_EVENT_LOG_STEP__LOG_FILE_PARAMETER:
@@ -1872,6 +1906,10 @@ public class MEmailEventLogStep extends MStep {
 				return;
 			case LogicPackage.MEMAIL_EVENT_LOG_STEP__COMMENT_PARAMETER:    
 				setCommentParameter((String)newValue);
+				return;
+			case LogicPackage.MEMAIL_EVENT_LOG_STEP__COMMENT_PARAMETER_HISTORIC_VALUES:
+				getCommentParameterHistoricValues().clear();
+				getCommentParameterHistoricValues().addAll((Collection)newValue);
 				return;
 			case LogicPackage.MEMAIL_EVENT_LOG_STEP__MLOG_FILE_PARAMETER:    
 				setMLogFileParameter((MParameter)newValue);
@@ -1953,6 +1991,9 @@ public class MEmailEventLogStep extends MStep {
 			case LogicPackage.MEMAIL_EVENT_LOG_STEP__COMMENT_PARAMETER:
 				setCommentParameter(getDefaultCommentParameter());
 				return;
+			case LogicPackage.MEMAIL_EVENT_LOG_STEP__COMMENT_PARAMETER_HISTORIC_VALUES:
+				getCommentParameterHistoricValues().clear();
+				return;
 			case LogicPackage.MEMAIL_EVENT_LOG_STEP__MLOG_FILE_PARAMETER:
 				setMLogFileParameter((MParameter)null);
 				return;
@@ -2023,6 +2064,8 @@ public class MEmailEventLogStep extends MStep {
 				return mCommentParameter != null;
 			case LogicPackage.MEMAIL_EVENT_LOG_STEP__COMMENT_PARAMETER:
 				return getDefaultCommentParameter() == null ? commentParameter != null : !getDefaultCommentParameter().equals(commentParameter);
+			case LogicPackage.MEMAIL_EVENT_LOG_STEP__COMMENT_PARAMETER_HISTORIC_VALUES:
+				return commentParameterHistoricValues != null && !commentParameterHistoricValues.isEmpty();
 			case LogicPackage.MEMAIL_EVENT_LOG_STEP__MLOG_FILE_PARAMETER:
 				return mLogFileParameter != null;
 			case LogicPackage.MEMAIL_EVENT_LOG_STEP__LOG_FILE_PARAMETER:
@@ -2074,6 +2117,8 @@ public class MEmailEventLogStep extends MStep {
 		result.append(recordingUsersNameParameter);
 		result.append(", commentParameter: ");
 		result.append(commentParameter);
+		result.append(", commentParameterHistoricValues: ");
+		result.append(commentParameterHistoricValues);
 		result.append(", logFileParameter: ");
 		result.append(logFileParameter);
 		result.append(", dataFileParameter: ");

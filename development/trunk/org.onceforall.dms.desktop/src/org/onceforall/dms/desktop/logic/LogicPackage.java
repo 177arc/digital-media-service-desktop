@@ -10455,13 +10455,22 @@ public class LogicPackage extends EPackageImpl {
 	public static final int MEMAIL_EVENT_LOG_STEP__COMMENT_PARAMETER = MSTEP_FEATURE_COUNT + 3;
 
 	/**
+	 * The feature id for the '<em><b>Comment Parameter Historic Values</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MEMAIL_EVENT_LOG_STEP__COMMENT_PARAMETER_HISTORIC_VALUES = MSTEP_FEATURE_COUNT + 4;
+
+	/**
 	 * The feature id for the '<em><b>MLog File Parameter</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	public static final int MEMAIL_EVENT_LOG_STEP__MLOG_FILE_PARAMETER = MSTEP_FEATURE_COUNT + 4;
+	public static final int MEMAIL_EVENT_LOG_STEP__MLOG_FILE_PARAMETER = MSTEP_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Log File Parameter</b></em>' attribute.
@@ -10470,7 +10479,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int MEMAIL_EVENT_LOG_STEP__LOG_FILE_PARAMETER = MSTEP_FEATURE_COUNT + 5;
+	public static final int MEMAIL_EVENT_LOG_STEP__LOG_FILE_PARAMETER = MSTEP_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>MData File Parameter</b></em>' containment reference.
@@ -10479,7 +10488,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int MEMAIL_EVENT_LOG_STEP__MDATA_FILE_PARAMETER = MSTEP_FEATURE_COUNT + 6;
+	public static final int MEMAIL_EVENT_LOG_STEP__MDATA_FILE_PARAMETER = MSTEP_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Data File Parameter</b></em>' attribute.
@@ -10488,7 +10497,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int MEMAIL_EVENT_LOG_STEP__DATA_FILE_PARAMETER = MSTEP_FEATURE_COUNT + 7;
+	public static final int MEMAIL_EVENT_LOG_STEP__DATA_FILE_PARAMETER = MSTEP_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>MSubject Parameter</b></em>' containment reference.
@@ -10497,7 +10506,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int MEMAIL_EVENT_LOG_STEP__MSUBJECT_PARAMETER = MSTEP_FEATURE_COUNT + 8;
+	public static final int MEMAIL_EVENT_LOG_STEP__MSUBJECT_PARAMETER = MSTEP_FEATURE_COUNT + 9;
 
 	/**
 	 * The feature id for the '<em><b>Subject Parameter</b></em>' attribute.
@@ -10506,7 +10515,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int MEMAIL_EVENT_LOG_STEP__SUBJECT_PARAMETER = MSTEP_FEATURE_COUNT + 9;
+	public static final int MEMAIL_EVENT_LOG_STEP__SUBJECT_PARAMETER = MSTEP_FEATURE_COUNT + 10;
 
 	/**
 	 * The feature id for the '<em><b>MSenders Email Address Parameter</b></em>' containment reference.
@@ -10515,7 +10524,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int MEMAIL_EVENT_LOG_STEP__MSENDERS_EMAIL_ADDRESS_PARAMETER = MSTEP_FEATURE_COUNT + 10;
+	public static final int MEMAIL_EVENT_LOG_STEP__MSENDERS_EMAIL_ADDRESS_PARAMETER = MSTEP_FEATURE_COUNT + 11;
 
 	/**
 	 * The feature id for the '<em><b>Senders Email Address Parameter</b></em>' attribute.
@@ -10524,7 +10533,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int MEMAIL_EVENT_LOG_STEP__SENDERS_EMAIL_ADDRESS_PARAMETER = MSTEP_FEATURE_COUNT + 11;
+	public static final int MEMAIL_EVENT_LOG_STEP__SENDERS_EMAIL_ADDRESS_PARAMETER = MSTEP_FEATURE_COUNT + 12;
 
 	/**
 	 * The feature id for the '<em><b>Senders Email Address Parameter Historic Values</b></em>' attribute list.
@@ -10533,7 +10542,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int MEMAIL_EVENT_LOG_STEP__SENDERS_EMAIL_ADDRESS_PARAMETER_HISTORIC_VALUES = MSTEP_FEATURE_COUNT + 12;
+	public static final int MEMAIL_EVENT_LOG_STEP__SENDERS_EMAIL_ADDRESS_PARAMETER_HISTORIC_VALUES = MSTEP_FEATURE_COUNT + 13;
 
 	/**
 	 * The feature id for the '<em><b>MReceipients Email Address Parameter</b></em>' containment reference.
@@ -10542,7 +10551,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int MEMAIL_EVENT_LOG_STEP__MRECEIPIENTS_EMAIL_ADDRESS_PARAMETER = MSTEP_FEATURE_COUNT + 13;
+	public static final int MEMAIL_EVENT_LOG_STEP__MRECEIPIENTS_EMAIL_ADDRESS_PARAMETER = MSTEP_FEATURE_COUNT + 14;
 
 	/**
 	 * The feature id for the '<em><b>Receipients Email Address Parameter</b></em>' attribute list.
@@ -10551,7 +10560,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int MEMAIL_EVENT_LOG_STEP__RECEIPIENTS_EMAIL_ADDRESS_PARAMETER = MSTEP_FEATURE_COUNT + 14;
+	public static final int MEMAIL_EVENT_LOG_STEP__RECEIPIENTS_EMAIL_ADDRESS_PARAMETER = MSTEP_FEATURE_COUNT + 15;
 
 	/**
 	 * The feature id for the '<em><b>MSmtp Server Parameter</b></em>' containment reference.
@@ -10560,7 +10569,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int MEMAIL_EVENT_LOG_STEP__MSMTP_SERVER_PARAMETER = MSTEP_FEATURE_COUNT + 15;
+	public static final int MEMAIL_EVENT_LOG_STEP__MSMTP_SERVER_PARAMETER = MSTEP_FEATURE_COUNT + 16;
 
 	/**
 	 * The feature id for the '<em><b>Smtp Server Parameter</b></em>' attribute.
@@ -10569,7 +10578,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int MEMAIL_EVENT_LOG_STEP__SMTP_SERVER_PARAMETER = MSTEP_FEATURE_COUNT + 16;
+	public static final int MEMAIL_EVENT_LOG_STEP__SMTP_SERVER_PARAMETER = MSTEP_FEATURE_COUNT + 17;
 
 	/**
 	 * The feature id for the '<em><b>MSmtp User Name Parameter</b></em>' containment reference.
@@ -10578,7 +10587,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int MEMAIL_EVENT_LOG_STEP__MSMTP_USER_NAME_PARAMETER = MSTEP_FEATURE_COUNT + 17;
+	public static final int MEMAIL_EVENT_LOG_STEP__MSMTP_USER_NAME_PARAMETER = MSTEP_FEATURE_COUNT + 18;
 
 	/**
 	 * The feature id for the '<em><b>Smtp User Name Parameter</b></em>' attribute.
@@ -10587,7 +10596,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int MEMAIL_EVENT_LOG_STEP__SMTP_USER_NAME_PARAMETER = MSTEP_FEATURE_COUNT + 18;
+	public static final int MEMAIL_EVENT_LOG_STEP__SMTP_USER_NAME_PARAMETER = MSTEP_FEATURE_COUNT + 19;
 
 	/**
 	 * The feature id for the '<em><b>MSmtp Password Parameter</b></em>' containment reference.
@@ -10596,7 +10605,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int MEMAIL_EVENT_LOG_STEP__MSMTP_PASSWORD_PARAMETER = MSTEP_FEATURE_COUNT + 19;
+	public static final int MEMAIL_EVENT_LOG_STEP__MSMTP_PASSWORD_PARAMETER = MSTEP_FEATURE_COUNT + 20;
 
 	/**
 	 * The feature id for the '<em><b>Smtp Password Parameter</b></em>' attribute.
@@ -10605,7 +10614,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int MEMAIL_EVENT_LOG_STEP__SMTP_PASSWORD_PARAMETER = MSTEP_FEATURE_COUNT + 20;
+	public static final int MEMAIL_EVENT_LOG_STEP__SMTP_PASSWORD_PARAMETER = MSTEP_FEATURE_COUNT + 21;
 
 	/**
 	 * The number of structural features of the '<em>MEmail Event Log Step</em>' class.
@@ -10614,7 +10623,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int MEMAIL_EVENT_LOG_STEP_FEATURE_COUNT = MSTEP_FEATURE_COUNT + 21;
+	public static final int MEMAIL_EVENT_LOG_STEP_FEATURE_COUNT = MSTEP_FEATURE_COUNT + 22;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -17682,6 +17691,19 @@ public class LogicPackage extends EPackageImpl {
 	}
 
 	/**
+	 * Returns the meta object for the attribute list '{@link org.onceforall.dms.desktop.logic.MEmailEventLogStep#getCommentParameterHistoricValues <em>Comment Parameter Historic Values</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute list '<em>Comment Parameter Historic Values</em>'.
+	 * @see org.onceforall.dms.desktop.logic.MEmailEventLogStep#getCommentParameterHistoricValues()
+	 * @see #getMEmailEventLogStep()
+	 * @generated
+	 */
+	public EAttribute getMEmailEventLogStep_CommentParameterHistoricValues() {
+		return (EAttribute)mEmailEventLogStepEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
 	 * Returns the meta object for the containment reference '{@link org.onceforall.dms.desktop.logic.MEmailEventLogStep#getMLogFileParameter <em>MLog File Parameter</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -17691,7 +17713,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @generated
 	 */
 	public EReference getMEmailEventLogStep_MLogFileParameter() {
-		return (EReference)mEmailEventLogStepEClass.getEStructuralFeatures().get(4);
+		return (EReference)mEmailEventLogStepEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -17704,7 +17726,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @generated
 	 */
 	public EAttribute getMEmailEventLogStep_LogFileParameter() {
-		return (EAttribute)mEmailEventLogStepEClass.getEStructuralFeatures().get(5);
+		return (EAttribute)mEmailEventLogStepEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -17717,7 +17739,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @generated
 	 */
 	public EReference getMEmailEventLogStep_MDataFileParameter() {
-		return (EReference)mEmailEventLogStepEClass.getEStructuralFeatures().get(6);
+		return (EReference)mEmailEventLogStepEClass.getEStructuralFeatures().get(7);
 	}
 
 	/**
@@ -17730,7 +17752,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @generated
 	 */
 	public EAttribute getMEmailEventLogStep_DataFileParameter() {
-		return (EAttribute)mEmailEventLogStepEClass.getEStructuralFeatures().get(7);
+		return (EAttribute)mEmailEventLogStepEClass.getEStructuralFeatures().get(8);
 	}
 
 	/**
@@ -17743,7 +17765,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @generated
 	 */
 	public EReference getMEmailEventLogStep_MSubjectParameter() {
-		return (EReference)mEmailEventLogStepEClass.getEStructuralFeatures().get(8);
+		return (EReference)mEmailEventLogStepEClass.getEStructuralFeatures().get(9);
 	}
 
 	/**
@@ -17756,7 +17778,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @generated
 	 */
 	public EAttribute getMEmailEventLogStep_SubjectParameter() {
-		return (EAttribute)mEmailEventLogStepEClass.getEStructuralFeatures().get(9);
+		return (EAttribute)mEmailEventLogStepEClass.getEStructuralFeatures().get(10);
 	}
 
 	/**
@@ -17769,7 +17791,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @generated
 	 */
 	public EReference getMEmailEventLogStep_MSendersEmailAddressParameter() {
-		return (EReference)mEmailEventLogStepEClass.getEStructuralFeatures().get(10);
+		return (EReference)mEmailEventLogStepEClass.getEStructuralFeatures().get(11);
 	}
 
 	/**
@@ -17782,7 +17804,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @generated
 	 */
 	public EAttribute getMEmailEventLogStep_SendersEmailAddressParameter() {
-		return (EAttribute)mEmailEventLogStepEClass.getEStructuralFeatures().get(11);
+		return (EAttribute)mEmailEventLogStepEClass.getEStructuralFeatures().get(12);
 	}
 
 	/**
@@ -17795,7 +17817,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @generated
 	 */
 	public EAttribute getMEmailEventLogStep_SendersEmailAddressParameterHistoricValues() {
-		return (EAttribute)mEmailEventLogStepEClass.getEStructuralFeatures().get(12);
+		return (EAttribute)mEmailEventLogStepEClass.getEStructuralFeatures().get(13);
 	}
 
 	/**
@@ -17808,7 +17830,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @generated
 	 */
 	public EReference getMEmailEventLogStep_MReceipientsEmailAddressParameter() {
-		return (EReference)mEmailEventLogStepEClass.getEStructuralFeatures().get(13);
+		return (EReference)mEmailEventLogStepEClass.getEStructuralFeatures().get(14);
 	}
 
 	/**
@@ -17821,7 +17843,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @generated
 	 */
 	public EAttribute getMEmailEventLogStep_ReceipientsEmailAddressParameter() {
-		return (EAttribute)mEmailEventLogStepEClass.getEStructuralFeatures().get(14);
+		return (EAttribute)mEmailEventLogStepEClass.getEStructuralFeatures().get(15);
 	}
 
 	/**
@@ -17834,7 +17856,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @generated
 	 */
 	public EReference getMEmailEventLogStep_MSmtpServerParameter() {
-		return (EReference)mEmailEventLogStepEClass.getEStructuralFeatures().get(15);
+		return (EReference)mEmailEventLogStepEClass.getEStructuralFeatures().get(16);
 	}
 
 	/**
@@ -17847,7 +17869,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @generated
 	 */
 	public EAttribute getMEmailEventLogStep_SmtpServerParameter() {
-		return (EAttribute)mEmailEventLogStepEClass.getEStructuralFeatures().get(16);
+		return (EAttribute)mEmailEventLogStepEClass.getEStructuralFeatures().get(17);
 	}
 
 	/**
@@ -17860,7 +17882,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @generated
 	 */
 	public EReference getMEmailEventLogStep_MSmtpUserNameParameter() {
-		return (EReference)mEmailEventLogStepEClass.getEStructuralFeatures().get(17);
+		return (EReference)mEmailEventLogStepEClass.getEStructuralFeatures().get(18);
 	}
 
 	/**
@@ -17873,7 +17895,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @generated
 	 */
 	public EAttribute getMEmailEventLogStep_SmtpUserNameParameter() {
-		return (EAttribute)mEmailEventLogStepEClass.getEStructuralFeatures().get(18);
+		return (EAttribute)mEmailEventLogStepEClass.getEStructuralFeatures().get(19);
 	}
 
 	/**
@@ -17886,7 +17908,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @generated
 	 */
 	public EReference getMEmailEventLogStep_MSmtpPasswordParameter() {
-		return (EReference)mEmailEventLogStepEClass.getEStructuralFeatures().get(19);
+		return (EReference)mEmailEventLogStepEClass.getEStructuralFeatures().get(20);
 	}
 
 	/**
@@ -17899,7 +17921,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @generated
 	 */
 	public EAttribute getMEmailEventLogStep_SmtpPasswordParameter() {
-		return (EAttribute)mEmailEventLogStepEClass.getEStructuralFeatures().get(20);
+		return (EAttribute)mEmailEventLogStepEClass.getEStructuralFeatures().get(21);
 	}
 
 	/**
@@ -19728,6 +19750,7 @@ public class LogicPackage extends EPackageImpl {
 		createEAttribute(mEmailEventLogStepEClass, MEMAIL_EVENT_LOG_STEP__RECORDING_USERS_NAME_PARAMETER);
 		createEReference(mEmailEventLogStepEClass, MEMAIL_EVENT_LOG_STEP__MCOMMENT_PARAMETER);
 		createEAttribute(mEmailEventLogStepEClass, MEMAIL_EVENT_LOG_STEP__COMMENT_PARAMETER);
+		createEAttribute(mEmailEventLogStepEClass, MEMAIL_EVENT_LOG_STEP__COMMENT_PARAMETER_HISTORIC_VALUES);
 		createEReference(mEmailEventLogStepEClass, MEMAIL_EVENT_LOG_STEP__MLOG_FILE_PARAMETER);
 		createEAttribute(mEmailEventLogStepEClass, MEMAIL_EVENT_LOG_STEP__LOG_FILE_PARAMETER);
 		createEReference(mEmailEventLogStepEClass, MEMAIL_EVENT_LOG_STEP__MDATA_FILE_PARAMETER);
@@ -20263,6 +20286,7 @@ public class LogicPackage extends EPackageImpl {
 		initEAttribute(getMEmailEventLogStep_RecordingUsersNameParameter(), this.getMString(), "recordingUsersNameParameter", null, 1, 1, MEmailEventLogStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getMEmailEventLogStep_MCommentParameter(), this.getMParameter(), null, "mCommentParameter", "", 1, 1, MEmailEventLogStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMEmailEventLogStep_CommentParameter(), this.getMString(), "commentParameter", null, 1, 1, MEmailEventLogStep.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getMEmailEventLogStep_CommentParameterHistoricValues(), this.getMString(), "commentParameterHistoricValues", null, 0, 5, MEmailEventLogStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getMEmailEventLogStep_MLogFileParameter(), this.getMParameter(), null, "mLogFileParameter", "", 1, 1, MEmailEventLogStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMEmailEventLogStep_LogFileParameter(), this.getMExistingFile(), "logFileParameter", null, 1, 1, MEmailEventLogStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getMEmailEventLogStep_MDataFileParameter(), this.getMParameter(), null, "mDataFileParameter", "", 1, 1, MEmailEventLogStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -21595,7 +21619,8 @@ public class LogicPackage extends EPackageImpl {
 		   source, 
 		   new String[] {
 			 "name", "Comment",
-			 "description", "Specifies a comment for the receipient of the email."
+			 "description", "Specifies a comment for the receipient of the email.",
+			 "readOnly", "false"
 		   });		
 		addAnnotation
 		  (getMEmailEventLogStep_MLogFileParameter(), 
@@ -24313,6 +24338,14 @@ public class LogicPackage extends EPackageImpl {
 		 * @generated
 		 */
 		public static final EAttribute MEMAIL_EVENT_LOG_STEP__COMMENT_PARAMETER = eINSTANCE.getMEmailEventLogStep_CommentParameter();
+
+		/**
+		 * The meta object literal for the '<em><b>Comment Parameter Historic Values</b></em>' attribute list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		public static final EAttribute MEMAIL_EVENT_LOG_STEP__COMMENT_PARAMETER_HISTORIC_VALUES = eINSTANCE.getMEmailEventLogStep_CommentParameterHistoricValues();
 
 		/**
 		 * The meta object literal for the '<em><b>MLog File Parameter</b></em>' containment reference feature.
