@@ -9,6 +9,7 @@ package org.onceforall.dms.desktop.logic.presentation;
 
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
@@ -87,6 +88,24 @@ public class LogicModelWizard extends Wizard implements INewWizard {
 	 * @generated
 	 */
 	public static final String copyright = "Copyright 2007, Marc Maier";
+
+	/**
+	 * The supported extensions for created files.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final List FILE_EXTENSIONS =
+		Collections.unmodifiableList(Arrays.asList(DMSDesktopEditorPlugin.INSTANCE.getString("_UI_LogicEditorFilenameExtensions").split("\\s*,\\s*")));
+
+	/**
+	 * A formatted list of supported file extensions, suitable for display.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final String FORMATTED_FILE_EXTENSIONS =
+		DMSDesktopEditorPlugin.INSTANCE.getString("_UI_LogicEditorFilenameExtensions").replaceAll("\\s*,\\s*", ", ");
 
 	/**
 	 * This caches an instance of the model package.
@@ -301,8 +320,7 @@ public class LogicModelWizard extends Wizard implements INewWizard {
 		 * @generated
 		 */
 		public void createControl(Composite parent) {
-			Composite composite = new Composite(parent, SWT.NONE);
-			{
+			Composite composite = new Composite(parent, SWT.NONE); {
 				GridLayout layout = new GridLayout();
 				layout.numColumns = 1;
 				layout.verticalSpacing = 12;
@@ -355,13 +373,10 @@ public class LogicModelWizard extends Wizard implements INewWizard {
 			resourceURIBrowseFileSystemButton.addSelectionListener
 				(new SelectionAdapter() {
 					 public void widgetSelected(SelectionEvent event) {
-						 String fileExtension = DMSDesktopEditorPlugin.INSTANCE.getString("_UI_LogicEditorFilenameExtension");
-						 String filePath = DMSDesktopEditorAdvisor.openFilePathDialog(getShell(), "*." + fileExtension, SWT.OPEN);
-						 if (filePath != null) {
-							 if (!filePath.endsWith("." + fileExtension)) {
-								 filePath = filePath + "." + fileExtension;
-							 }
-							 fileField.setText(filePath);
+						 String[] filters = (String[])LogicEditor.FILE_EXTENSION_FILTERS.toArray(new String[LogicEditor.FILE_EXTENSION_FILTERS.size()]);
+						 String[] files = DMSDesktopEditorAdvisor.openFilePathDialog(getShell(), SWT.SAVE, filters);
+						 if (files.length > 0) {
+							 fileField.setText(files[0]);
 						 }
 					 }
 				 });
@@ -442,10 +457,10 @@ public class LogicModelWizard extends Wizard implements INewWizard {
 				return false;
 			}
 
-			String requiredExt = DMSDesktopEditorPlugin.INSTANCE.getString("_UI_LogicEditorFilenameExtension");
-			String enteredExt = fileURI.fileExtension();
-			if (enteredExt == null || !enteredExt.equals(requiredExt)) {
-				setErrorMessage(DMSDesktopEditorPlugin.INSTANCE.getString("_WARN_FilenameExtension", new Object [] { requiredExt }));
+			String extension = fileURI.fileExtension();
+			if (extension == null || !FILE_EXTENSIONS.contains(extension)) {
+				String key = FILE_EXTENSIONS.size() > 1 ? "_WARN_FilenameExtensions" : "_WARN_FilenameExtension";
+				setErrorMessage(DMSDesktopEditorPlugin.INSTANCE.getString(key, new Object [] { FORMATTED_FILE_EXTENSIONS }));
 				return false;
 			}
 
@@ -503,6 +518,7 @@ public class LogicModelWizard extends Wizard implements INewWizard {
 				return URI.createFileURI(fileField.getText());
 			}
 			catch (Exception exception) {
+				// Ignore
 			}
 			return null;
 		}

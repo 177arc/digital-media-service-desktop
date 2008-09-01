@@ -8,8 +8,11 @@
 package org.onceforall.dms.desktop.logic.presentation;
 
 import java.io.File;
+import java.util.Arrays;
 import java.util.Iterator;
 
+import org.eclipse.equinox.app.IApplication;
+import org.eclipse.equinox.app.IApplicationContext;
 import org.eclipse.core.runtime.IPlatformRunnable;
 
 import org.eclipse.jface.action.GroupMarker;
@@ -19,6 +22,7 @@ import org.eclipse.jface.action.MenuManager;
 import org.eclipse.jface.action.Separator;
 import org.eclipse.jface.dialogs.Dialog;
 import org.eclipse.jface.dialogs.MessageDialog;
+import org.eclipse.jface.window.Window;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.graphics.Point;
 import org.eclipse.swt.widgets.Display;
@@ -47,6 +51,7 @@ import org.eclipse.emf.common.ui.URIEditorInput;
 import org.eclipse.emf.common.ui.action.WorkbenchWindowActionDelegate;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.edit.ui.action.LoadResourceAction;
+import org.eclipse.emf.edit.ui.util.EditUIUtil;
 import org.onceforall.dms.desktop.logic.presentation.DMSDesktopEditorPlugin;
 
 
@@ -64,6 +69,14 @@ public final class DMSDesktopEditorAdvisor extends WorkbenchAdvisor {
 	 * @generated
 	 */
 	public static final String copyright = "Copyright 2007, Marc Maier";
+
+	/**
+	 * The default file extension filters for use in dialogs.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private static final String[] FILE_EXTENSION_FILTERS = (String[])LogicEditor.FILE_EXTENSION_FILTERS.toArray(new String[0]);
 
 	/**
 	 * This looks up a string in the plugin's plugin.properties file.
@@ -91,28 +104,38 @@ public final class DMSDesktopEditorAdvisor extends WorkbenchAdvisor {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static class Application implements IPlatformRunnable {
+	public static class Application implements IApplication {
 		/**
-		 * @see org.eclipse.core.runtime.IPlatformRunnable#run(java.lang.Object)
+		 * @see org.eclipse.equinox.app.IApplication#start(org.eclipse.equinox.app.IApplicationContext)
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		public Object run(Object args) {
+		public Object start(IApplicationContext context) throws Exception {
 			WorkbenchAdvisor workbenchAdvisor = new DMSDesktopEditorAdvisor();
 			Display display = PlatformUI.createDisplay();
 			try {
 				int returnCode = PlatformUI.createAndRunWorkbench(display, workbenchAdvisor);
 				if (returnCode == PlatformUI.RETURN_RESTART) {
-					return IPlatformRunnable.EXIT_RESTART;
+					return IApplication.EXIT_RESTART;
 				}
 				else {
-					return IPlatformRunnable.EXIT_OK;
+					return IApplication.EXIT_OK;
 				}
 			}
 			finally {
 				display.dispose();
 			}
+		}
+
+		/**
+		 * @see org.eclipse.equinox.app.IApplication#stop()
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		public void stop() {
+			// Do nothing.
 		}
 	}
 
@@ -234,7 +257,7 @@ public final class DMSDesktopEditorAdvisor extends WorkbenchAdvisor {
 			IWorkbenchActionConstants.M_FILE);    
 			menu.add(new GroupMarker(IWorkbenchActionConstants.FILE_START));
 	
-			IMenuManager newMenu = new MenuManager(getString("_UI_Menu_New_label"), "new"); 
+			IMenuManager newMenu = new MenuManager(getString("_UI_Menu_New_label"), "new");
 			newMenu.add(new GroupMarker(IWorkbenchActionConstants.MB_ADDITIONS));
 	
 			menu.add(newMenu);
@@ -329,7 +352,7 @@ public final class DMSDesktopEditorAdvisor extends WorkbenchAdvisor {
 		 */
 		protected void addToMenuAndRegister(IMenuManager menuManager, IAction action) {
 			menuManager.add(action);
-			getActionBarConfigurer().registerGlobalAction(action);			
+			getActionBarConfigurer().registerGlobalAction(action);
 		}		
 	}
 
@@ -366,9 +389,9 @@ public final class DMSDesktopEditorAdvisor extends WorkbenchAdvisor {
 		 * @generated
 		 */
 		public void run(IAction action) {
-			String filePath = openFilePathDialog(getWindow().getShell(), null, SWT.OPEN);
-			if (filePath != null) {
-				openEditor(getWindow().getWorkbench(), URI.createFileURI(filePath));
+			String[] filePaths = openFilePathDialog(getWindow().getShell(), SWT.OPEN, null);
+			if (filePaths.length > 0) {
+				openEditor(getWindow().getWorkbench(), URI.createFileURI(filePaths[0]));
 			}
 		}
 	}
@@ -388,7 +411,7 @@ public final class DMSDesktopEditorAdvisor extends WorkbenchAdvisor {
 		 */
 		public void run(IAction action) {
 			LoadResourceAction.LoadResourceDialog loadResourceDialog = new LoadResourceAction.LoadResourceDialog(getWindow().getShell());
-			if (Dialog.OK == loadResourceDialog.open()) {
+			if (Window.OK == loadResourceDialog.open()) {
 				for (Iterator i = loadResourceDialog.getURIs().iterator(); i.hasNext();) {
 					openEditor(getWindow().getWorkbench(), (URI)i.next());
 				}
@@ -401,21 +424,8 @@ public final class DMSDesktopEditorAdvisor extends WorkbenchAdvisor {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static String openFilePathDialog(Shell shell, String fileExtensionFilter, int style) {
-		FileDialog fileDialog = new FileDialog(shell, style);
-		if (fileExtensionFilter == null) {
-			fileExtensionFilter =
-  				"*." + getString("_UI_LogicEditorFilenameExtension");
-		}
-		fileDialog.setFilterExtensions(new String[]{fileExtensionFilter});
-
-		fileDialog.open();
-		if (fileDialog.getFileName() != null && fileDialog.getFileName().length() > 0) {
-			return fileDialog.getFilterPath() + File.separator + fileDialog.getFileName();
-		}
-		else {
-			return null;
-		}
+	public static String[] openFilePathDialog(Shell shell, int style, String[] fileExtensionFilters) {
+		return openFilePathDialog(shell, style, fileExtensionFilters, (style & SWT.OPEN) != 0, (style & SWT.OPEN) != 0, (style & SWT.SAVE) != 0);
 	}
 
 	/**
@@ -423,31 +433,110 @@ public final class DMSDesktopEditorAdvisor extends WorkbenchAdvisor {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static boolean openEditor(IWorkbench workbench, URI fileURI) {
+	public static String[] openFilePathDialog(Shell shell, int style, String[] fileExtensionFilters, boolean includeGroupFilter, boolean includeAllFilter, boolean addExtension) {
+		FileDialog fileDialog = new FileDialog(shell, style);
+		if (fileExtensionFilters == null) {
+			fileExtensionFilters = FILE_EXTENSION_FILTERS;
+		}
+		
+		// If requested, augment the file extension filters by adding a group of all the other filters (*.ext1;*.ext2;...)
+		// at the beginning and/or an all files wildcard (*.*) at the end.
+		//
+		includeGroupFilter &= fileExtensionFilters.length > 1;
+		int offset = includeGroupFilter ? 1 : 0;
+		
+		if (includeGroupFilter || includeAllFilter) {
+			int size = fileExtensionFilters.length + offset + (includeAllFilter ? 1 : 0);
+			String[] allFilters = new String[size];
+			StringBuffer group = includeGroupFilter ? new StringBuffer() : null;
+			
+			for (int i = 0; i < fileExtensionFilters.length; i++) {
+				if (includeGroupFilter) {
+					if (i != 0) {
+						group.append(';');
+					}
+					group.append(fileExtensionFilters[i]);
+				}
+				allFilters[i + offset] = fileExtensionFilters[i];
+			}
+			
+			if (includeGroupFilter) {
+				allFilters[0] = group.toString();
+			}
+			if (includeAllFilter) {
+				allFilters[allFilters.length - 1] = "*.*";
+			}
+			
+			fileDialog.setFilterExtensions(allFilters);
+		}
+		else {
+			fileDialog.setFilterExtensions(fileExtensionFilters);
+		}
+		fileDialog.open();
+		
+		String[] filenames = fileDialog.getFileNames();
+		String[] result = new String[filenames.length];
+		String path = fileDialog.getFilterPath() + File.separator;
+		String extension = null;
+		
+		// If extension adding requested, get the dotted extension corresponding to the selected filter.
+		//
+		if (addExtension) {
+			int i = fileDialog.getFilterIndex();
+			if (i != -1 && (!includeAllFilter || i != fileExtensionFilters.length)) {
+				i = includeGroupFilter && i == 0 ? 0 : i - offset;
+				String filter = fileExtensionFilters[i];
+				int dot = filter.lastIndexOf('.');
+				if (dot == 1 && filter.charAt(0) == '*') {
+					extension = filter.substring(dot);
+				}
+			}
+		}
+		
+		// Build the result by adding the selected path and, if needed, auto-appending the extension.
+		//
+		for (int i = 0; i < filenames.length; i++) {
+			String filename = path + filenames[i];
+			if (extension != null) {
+				int dot = filename.lastIndexOf('.');
+				if (dot == -1 || !Arrays.asList(fileExtensionFilters).contains("*" + filename.substring(dot))) {
+					filename += extension;
+				}
+			}
+			result[i] = filename;
+		}
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static boolean openEditor(IWorkbench workbench, URI uri) {
 		IWorkbenchWindow workbenchWindow = workbench.getActiveWorkbenchWindow();
 		IWorkbenchPage page = workbenchWindow.getActivePage();
-
-		IEditorDescriptor editorDescriptor = workbench.getEditorRegistry().getDefaultEditor(fileURI.toFileString());
+		
+		IEditorDescriptor editorDescriptor = EditUIUtil.getDefaultEditor(uri, null);
 		if (editorDescriptor == null) {
 			MessageDialog.openError(
-			workbenchWindow.getShell(),
-			getString("_UI_Error_title"), 
-			getString("_WARN_No_Editor", fileURI.toFileString())); 
+				workbenchWindow.getShell(),
+				getString("_UI_Error_title"),
+				getString("_WARN_No_Editor", uri.lastSegment()));
 			return false;
 		}
 		else {
 			try {
-				page.openEditor(new URIEditorInput(fileURI), editorDescriptor.getId());
+				page.openEditor(new URIEditorInput(uri), editorDescriptor.getId());
 			}
 			catch (PartInitException exception) {
 				MessageDialog.openError(
-				workbenchWindow.getShell(),
-				getString("_UI_OpenEditorError_label"), 
-				exception.getMessage());
+					workbenchWindow.getShell(),
+					getString("_UI_OpenEditorError_label"),
+					exception.getMessage());
 				return false;
 			}
 		}
-
 		return true;
 	}
 
