@@ -453,8 +453,8 @@ public class MTagStepItemProvider
 	}
 
 	/**
-	 * This adds to the collection of {@link org.eclipse.emf.edit.command.CommandParameter}s
-	 * describing all of the children that can be created under this object.
+	 * This adds {@link org.eclipse.emf.edit.command.CommandParameter}s describing the children
+	 * that can be created under this object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -466,16 +466,6 @@ public class MTagStepItemProvider
 			(createChildParameter
 				(LogicPackage.Literals.MTAG_STEP__MMP3_ENTRY_NAME_PARAMETER,
 				 LogicFactory.eINSTANCE.createMParameter()));
-	}
-
-	/**
-	 * Return the resource locator for this item provider's resources.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public ResourceLocator getResourceLocator() {
-		return DMSDesktopEditPlugin.INSTANCE;
 	}
 
 }

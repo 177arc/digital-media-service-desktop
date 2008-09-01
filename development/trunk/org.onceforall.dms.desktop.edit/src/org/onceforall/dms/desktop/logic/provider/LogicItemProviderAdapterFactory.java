@@ -83,7 +83,7 @@ public class LogicItemProviderAdapterFactory extends LogicAdapterFactory impleme
 		supportedTypes.add(IStructuredItemContentProvider.class);
 		supportedTypes.add(ITreeItemContentProvider.class);
 		supportedTypes.add(IItemLabelProvider.class);
-		supportedTypes.add(IItemPropertySource.class);		
+		supportedTypes.add(IItemPropertySource.class);
 	}
 
 	/**
@@ -694,6 +694,8 @@ public class LogicItemProviderAdapterFactory extends LogicAdapterFactory impleme
 		if (mResultItemProvider != null) mResultItemProvider.dispose();
 		if (mScriptItemProvider != null) mScriptItemProvider.dispose();
 		if (mDmsApplicationItemProvider != null) mDmsApplicationItemProvider.dispose();
+		if (mDmsApplicationMGetDataUpgradeInfoStepItemProvider != null) mDmsApplicationMGetDataUpgradeInfoStepItemProvider.dispose();
+		if (mDmsApplicationMUpgradeDataStepItemProvider != null) mDmsApplicationMUpgradeDataStepItemProvider.dispose();
 		if (mEnterWwxInformationStepItemProvider != null) mEnterWwxInformationStepItemProvider.dispose();
 		if (mEnterServiceInformationStepItemProvider != null) mEnterServiceInformationStepItemProvider.dispose();
 		if (mCreateDirectoryStepItemProvider != null) mCreateDirectoryStepItemProvider.dispose();
@@ -709,8 +711,6 @@ public class LogicItemProviderAdapterFactory extends LogicAdapterFactory impleme
 		if (mBurnCdStepItemProvider != null) mBurnCdStepItemProvider.dispose();
 		if (mTestStepItemProvider != null) mTestStepItemProvider.dispose();
 		if (mNameTagMp3StepItemProvider != null) mNameTagMp3StepItemProvider.dispose();
-		if (mDmsApplicationMGetDataUpgradeInfoStepItemProvider != null) mDmsApplicationMGetDataUpgradeInfoStepItemProvider.dispose();
-		if (mDmsApplicationMUpgradeDataStepItemProvider != null) mDmsApplicationMUpgradeDataStepItemProvider.dispose();
 	}
 
 }
