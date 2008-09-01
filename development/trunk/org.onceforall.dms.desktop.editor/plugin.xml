@@ -133,6 +133,14 @@ Updated to checkpoint progress.
         <property
               name="startupMessageRect"
               value="7,220,441,20"/>
+        <property
+              name="appName"
+              value="DMS Desktop Editor">
+        </property>
+        <property
+              name="preferenceCustomization"
+              value="plugin_customization.ini">
+        </property>
      </product>
   </extension>
 </plugin>
