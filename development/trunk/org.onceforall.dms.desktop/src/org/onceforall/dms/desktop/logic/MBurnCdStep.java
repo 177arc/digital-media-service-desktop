@@ -99,7 +99,7 @@ public class MBurnCdStep extends MStep {
 	 * @generated
 	 * @ordered
 	 */
-	protected MParameter mRecordingFilesParameter = null;
+	protected MParameter mRecordingFilesParameter;
 
 	/**
 	 * The cached value of the '{@link #getRecordingFilesParameter() <em>Recording Files Parameter</em>}' attribute list.
@@ -109,7 +109,7 @@ public class MBurnCdStep extends MStep {
 	 * @generated
 	 * @ordered
 	 */
-	protected EList recordingFilesParameter = null;
+	protected EList recordingFilesParameter;
 
 	/**
 	 * The cached value of the '{@link #getMBurningSoftwareDirectoryPathParameter() <em>MBurning Software Directory Path Parameter</em>}' containment reference.
@@ -119,7 +119,7 @@ public class MBurnCdStep extends MStep {
 	 * @generated
 	 * @ordered
 	 */
-	protected MParameter mBurningSoftwareDirectoryPathParameter = null;
+	protected MParameter mBurningSoftwareDirectoryPathParameter;
 
 	/**
 	 * The default value of the '{@link #getBurningSoftwareDirectoryPathParameter() <em>Burning Software Directory Path Parameter</em>}' attribute.
@@ -162,7 +162,7 @@ public class MBurnCdStep extends MStep {
 	 * @generated
 	 * @ordered
 	 */
-	protected MParameter mDriveParameter = null;
+	protected MParameter mDriveParameter;
 
 	/**
 	 * The default value of the '{@link #getDriveParameter() <em>Drive Parameter</em>}' attribute.
@@ -205,7 +205,7 @@ public class MBurnCdStep extends MStep {
 	 * @generated
 	 * @ordered
 	 */
-	protected MParameter mTotalRecordingLengthParameter = null;
+	protected MParameter mTotalRecordingLengthParameter;
 
 	/**
 	 * The default value of the '{@link #getTotalRecordingLengthParameter() <em>Total Recording Length Parameter</em>}' attribute.
@@ -248,7 +248,7 @@ public class MBurnCdStep extends MStep {
 	 * @generated
 	 * @ordered
 	 */
-	protected MParameter mTotalRecordingFileSizeParameter = null;
+	protected MParameter mTotalRecordingFileSizeParameter;
 
 	/**
 	 * The default value of the '{@link #getTotalRecordingFileSizeParameter() <em>Total Recording File Size Parameter</em>}' attribute.
@@ -410,7 +410,7 @@ public class MBurnCdStep extends MStep {
 		terminatable = false;
 		interruptable = false;
 		actionName = "Burn";
-					 
+			 
 		setMRecordingFilesParameter(new MParameter(false, "Recording files", "Specifies the file paths (relative or absolute) of the recorded WAV files.", null));			 
 		setMBurningSoftwareDirectoryPathParameter(new MParameter(false, "CD-ROM burning software directory path", "Specifies the path to the directory that contains the \'nerocmd.exe\'.", null));			 
 		setMDriveParameter(new MParameter(false, "Drive", "Specifies either the full name of the CD-ROM drive or the drive letter.", null));			 
@@ -447,7 +447,6 @@ public class MBurnCdStep extends MStep {
 
 	/**
 	 * Returns the value of the '<em><b>MRecording Files Parameter</b></em>' containment reference.
-	 * The default value is <code>""</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>MRecording Files Parameter</em>' containment reference isn't clear,
@@ -528,7 +527,7 @@ public class MBurnCdStep extends MStep {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Recording Files Parameter</em>' attribute list.
 	 * @see org.onceforall.dms.desktop.logic.LogicPackage#getMBurnCdStep_RecordingFilesParameter()
-	 * @model type="java.io.File" dataType="org.onceforall.dms.desktop.logic.MExistingFile" required="true"
+	 * @model dataType="org.onceforall.dms.desktop.logic.MExistingFile" required="true"
 	 * @generated
 	 */
 	public EList getRecordingFilesParameter() {
@@ -540,7 +539,6 @@ public class MBurnCdStep extends MStep {
 
 	/**
 	 * Returns the value of the '<em><b>MBurning Software Directory Path Parameter</b></em>' containment reference.
-	 * The default value is <code>""</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>MBurning Software Directory Path Parameter</em>' containment reference isn't clear,
@@ -646,7 +644,6 @@ public class MBurnCdStep extends MStep {
 
 	/**
 	 * Returns the value of the '<em><b>MDrive Parameter</b></em>' containment reference.
-	 * The default value is <code>""</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>MDrive Parameter</em>' containment reference isn't clear,
@@ -752,7 +749,6 @@ public class MBurnCdStep extends MStep {
 
 	/**
 	 * Returns the value of the '<em><b>MTotal Recording Length Parameter</b></em>' containment reference.
-	 * The default value is <code>""</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>MTotal Recording Length Parameter</em>' containment reference isn't clear,
@@ -858,7 +854,6 @@ public class MBurnCdStep extends MStep {
 
 	/**
 	 * Returns the value of the '<em><b>MTotal Recording File Size Parameter</b></em>' containment reference.
-	 * The default value is <code>""</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>MTotal Recording File Size Parameter</em>' containment reference isn't clear,
@@ -1021,35 +1016,35 @@ public class MBurnCdStep extends MStep {
 	 */
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case LogicPackage.MBURN_CD_STEP__MRECORDING_FILES_PARAMETER:    
+			case LogicPackage.MBURN_CD_STEP__MRECORDING_FILES_PARAMETER:
 				setMRecordingFilesParameter((MParameter)newValue);
 				return;
 			case LogicPackage.MBURN_CD_STEP__RECORDING_FILES_PARAMETER:
 				getRecordingFilesParameter().clear();
 				getRecordingFilesParameter().addAll((Collection)newValue);
 				return;
-			case LogicPackage.MBURN_CD_STEP__MBURNING_SOFTWARE_DIRECTORY_PATH_PARAMETER:    
+			case LogicPackage.MBURN_CD_STEP__MBURNING_SOFTWARE_DIRECTORY_PATH_PARAMETER:
 				setMBurningSoftwareDirectoryPathParameter((MParameter)newValue);
 				return;
-			case LogicPackage.MBURN_CD_STEP__BURNING_SOFTWARE_DIRECTORY_PATH_PARAMETER:    
+			case LogicPackage.MBURN_CD_STEP__BURNING_SOFTWARE_DIRECTORY_PATH_PARAMETER:
 				setBurningSoftwareDirectoryPathParameter((File)newValue);
 				return;
-			case LogicPackage.MBURN_CD_STEP__MDRIVE_PARAMETER:    
+			case LogicPackage.MBURN_CD_STEP__MDRIVE_PARAMETER:
 				setMDriveParameter((MParameter)newValue);
 				return;
-			case LogicPackage.MBURN_CD_STEP__DRIVE_PARAMETER:    
+			case LogicPackage.MBURN_CD_STEP__DRIVE_PARAMETER:
 				setDriveParameter((String)newValue);
 				return;
-			case LogicPackage.MBURN_CD_STEP__MTOTAL_RECORDING_LENGTH_PARAMETER:    
+			case LogicPackage.MBURN_CD_STEP__MTOTAL_RECORDING_LENGTH_PARAMETER:
 				setMTotalRecordingLengthParameter((MParameter)newValue);
 				return;
-			case LogicPackage.MBURN_CD_STEP__TOTAL_RECORDING_LENGTH_PARAMETER:    
+			case LogicPackage.MBURN_CD_STEP__TOTAL_RECORDING_LENGTH_PARAMETER:
 				setTotalRecordingLengthParameter((Long)newValue);
 				return;
-			case LogicPackage.MBURN_CD_STEP__MTOTAL_RECORDING_FILE_SIZE_PARAMETER:    
+			case LogicPackage.MBURN_CD_STEP__MTOTAL_RECORDING_FILE_SIZE_PARAMETER:
 				setMTotalRecordingFileSizeParameter((MParameter)newValue);
 				return;
-			case LogicPackage.MBURN_CD_STEP__TOTAL_RECORDING_FILE_SIZE_PARAMETER:    
+			case LogicPackage.MBURN_CD_STEP__TOTAL_RECORDING_FILE_SIZE_PARAMETER:
 				setTotalRecordingFileSizeParameter((Long)newValue);
 				return;
 		}

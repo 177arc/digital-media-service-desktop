@@ -125,7 +125,7 @@ public abstract class MAudioStep extends MStep {
 	 * @generated
 	 * @ordered
 	 */
-	protected MProperty mLeftInputLevelProperty = null;
+	protected MProperty mLeftInputLevelProperty;
 
 	/**
 	 * The default value of the '{@link #getLeftInputLevelProperty() <em>Left Input Level Property</em>}' attribute.
@@ -168,7 +168,7 @@ public abstract class MAudioStep extends MStep {
 	 * @generated
 	 * @ordered
 	 */
-	protected MProperty mRightInputLevelProperty = null;
+	protected MProperty mRightInputLevelProperty;
 
 	/**
 	 * The default value of the '{@link #getRightInputLevelProperty() <em>Right Input Level Property</em>}' attribute.
@@ -211,7 +211,7 @@ public abstract class MAudioStep extends MStep {
 	 * @generated
 	 * @ordered
 	 */
-	protected MProperty mLeftInputDistortionProperty = null;
+	protected MProperty mLeftInputDistortionProperty;
 
 	/**
 	 * The default value of the '{@link #getLeftInputDistortionProperty() <em>Left Input Distortion Property</em>}' attribute.
@@ -254,7 +254,7 @@ public abstract class MAudioStep extends MStep {
 	 * @generated
 	 * @ordered
 	 */
-	protected MProperty mRightInputDistortionProperty = null;
+	protected MProperty mRightInputDistortionProperty;
 
 	/**
 	 * The default value of the '{@link #getRightInputDistortionProperty() <em>Right Input Distortion Property</em>}' attribute.
@@ -297,7 +297,7 @@ public abstract class MAudioStep extends MStep {
 	 * @generated
 	 * @ordered
 	 */
-	protected MProperty mUseDbProperty = null;
+	protected MProperty mUseDbProperty;
 
 	/**
 	 * The default value of the '{@link #getUseDbProperty() <em>Use Db Property</em>}' attribute.
@@ -340,7 +340,7 @@ public abstract class MAudioStep extends MStep {
 	 * @generated
 	 * @ordered
 	 */
-	protected MProperty mHeadroomProperty = null;
+	protected MProperty mHeadroomProperty;
 
 	/**
 	 * The default value of the '{@link #getHeadroomProperty() <em>Headroom Property</em>}' attribute.
@@ -468,7 +468,7 @@ public abstract class MAudioStep extends MStep {
 		iconFilePath = (File)LogicFactory.eINSTANCE.createFromString(LogicPackage.eINSTANCE.getMFile(), "Image Files/Audio step.gif");
 		actionIconFilePath = (File)LogicFactory.eINSTANCE.createFromString(LogicPackage.eINSTANCE.getMFile(), "Image Files/Mark as completed.gif");
 		compositeClassName = "org.onceforall.dms.desktop.ui.MAudioStepComposite";
-					 
+			 
 		setMLeftInputLevelProperty(new MProperty(true, "Left input level", "Displays the current left input level as a value between 0 and 100. If the dBFS scale is used, the 100 represents 0dBFS and 0 represents -50dBFS. Otherwise it represents the (scaled) raw readings.", null));			 
 		setMRightInputLevelProperty(new MProperty(true, "Right input level", "Displays the current right input level as a value between 0 and 100. If the dBFS scale is used, the 100 represents 0dBFS and 0 represents -50dBFS. Otherwise it represents the (scaled) raw readings.", null));			 
 		setMLeftInputDistortionProperty(new MProperty(true, "Left input distortion alert", "Indicates whether the audio signal on left channel is likely to be distorted.", null));			 
@@ -506,7 +506,6 @@ public abstract class MAudioStep extends MStep {
 
 	/**
 	 * Returns the value of the '<em><b>MLeft Input Level Property</b></em>' containment reference.
-	 * The default value is <code>""</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>MLeft Input Level Property</em>' containment reference isn't clear,
@@ -611,7 +610,6 @@ public abstract class MAudioStep extends MStep {
 
 	/**
 	 * Returns the value of the '<em><b>MRight Input Level Property</b></em>' containment reference.
-	 * The default value is <code>""</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>MRight Input Level Property</em>' containment reference isn't clear,
@@ -716,7 +714,6 @@ public abstract class MAudioStep extends MStep {
 
 	/**
 	 * Returns the value of the '<em><b>MLeft Input Distortion Property</b></em>' containment reference.
-	 * The default value is <code>""</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>MLeft Input Distortion Property</em>' containment reference isn't clear,
@@ -821,7 +818,6 @@ public abstract class MAudioStep extends MStep {
 
 	/**
 	 * Returns the value of the '<em><b>MRight Input Distortion Property</b></em>' containment reference.
-	 * The default value is <code>""</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>MRight Input Distortion Property</em>' containment reference isn't clear,
@@ -926,7 +922,6 @@ public abstract class MAudioStep extends MStep {
 
 	/**
 	 * Returns the value of the '<em><b>MUse Db Property</b></em>' containment reference.
-	 * The default value is <code>""</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>MUse Db Property</em>' containment reference isn't clear,
@@ -1033,7 +1028,6 @@ public abstract class MAudioStep extends MStep {
 
 	/**
 	 * Returns the value of the '<em><b>MHeadroom Property</b></em>' containment reference.
-	 * The default value is <code>""</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>MHeadroom Property</em>' containment reference isn't clear,
@@ -1203,40 +1197,40 @@ public abstract class MAudioStep extends MStep {
 	 */
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case LogicPackage.MAUDIO_STEP__MLEFT_INPUT_LEVEL_PROPERTY:    
+			case LogicPackage.MAUDIO_STEP__MLEFT_INPUT_LEVEL_PROPERTY:
 				setMLeftInputLevelProperty((MProperty)newValue);
 				return;
-			case LogicPackage.MAUDIO_STEP__LEFT_INPUT_LEVEL_PROPERTY:    
+			case LogicPackage.MAUDIO_STEP__LEFT_INPUT_LEVEL_PROPERTY:
 				setLeftInputLevelProperty((Long)newValue);
 				return;
-			case LogicPackage.MAUDIO_STEP__MRIGHT_INPUT_LEVEL_PROPERTY:    
+			case LogicPackage.MAUDIO_STEP__MRIGHT_INPUT_LEVEL_PROPERTY:
 				setMRightInputLevelProperty((MProperty)newValue);
 				return;
-			case LogicPackage.MAUDIO_STEP__RIGHT_INPUT_LEVEL_PROPERTY:    
+			case LogicPackage.MAUDIO_STEP__RIGHT_INPUT_LEVEL_PROPERTY:
 				setRightInputLevelProperty((Long)newValue);
 				return;
-			case LogicPackage.MAUDIO_STEP__MLEFT_INPUT_DISTORTION_PROPERTY:    
+			case LogicPackage.MAUDIO_STEP__MLEFT_INPUT_DISTORTION_PROPERTY:
 				setMLeftInputDistortionProperty((MProperty)newValue);
 				return;
-			case LogicPackage.MAUDIO_STEP__LEFT_INPUT_DISTORTION_PROPERTY:    
+			case LogicPackage.MAUDIO_STEP__LEFT_INPUT_DISTORTION_PROPERTY:
 				setLeftInputDistortionProperty((Boolean)newValue);
 				return;
-			case LogicPackage.MAUDIO_STEP__MRIGHT_INPUT_DISTORTION_PROPERTY:    
+			case LogicPackage.MAUDIO_STEP__MRIGHT_INPUT_DISTORTION_PROPERTY:
 				setMRightInputDistortionProperty((MProperty)newValue);
 				return;
-			case LogicPackage.MAUDIO_STEP__RIGHT_INPUT_DISTORTION_PROPERTY:    
+			case LogicPackage.MAUDIO_STEP__RIGHT_INPUT_DISTORTION_PROPERTY:
 				setRightInputDistortionProperty((Boolean)newValue);
 				return;
-			case LogicPackage.MAUDIO_STEP__MUSE_DB_PROPERTY:    
+			case LogicPackage.MAUDIO_STEP__MUSE_DB_PROPERTY:
 				setMUseDbProperty((MProperty)newValue);
 				return;
-			case LogicPackage.MAUDIO_STEP__USE_DB_PROPERTY:    
+			case LogicPackage.MAUDIO_STEP__USE_DB_PROPERTY:
 				setUseDbProperty((Boolean)newValue);
 				return;
-			case LogicPackage.MAUDIO_STEP__MHEADROOM_PROPERTY:    
+			case LogicPackage.MAUDIO_STEP__MHEADROOM_PROPERTY:
 				setMHeadroomProperty((MProperty)newValue);
 				return;
-			case LogicPackage.MAUDIO_STEP__HEADROOM_PROPERTY:    
+			case LogicPackage.MAUDIO_STEP__HEADROOM_PROPERTY:
 				setHeadroomProperty((Long)newValue);
 				return;
 		}

@@ -101,7 +101,7 @@ public class MEnterServiceInformationStep extends MEnterInformationStep {
 	 * @generated
 	 * @ordered
 	 */
-	protected MParameter mServiceDateParameter = null;
+	protected MParameter mServiceDateParameter;
 
 	/**
 	 * The default value of the '{@link #getServiceDateParameter() <em>Service Date Parameter</em>}' attribute.
@@ -143,7 +143,7 @@ public class MEnterServiceInformationStep extends MEnterInformationStep {
 	 * @generated
 	 * @ordered
 	 */
-	protected MParameter mServiceTypeParameter = null;
+	protected MParameter mServiceTypeParameter;
 
 	/**
 	 * The default value of the '{@link #getServiceTypeParameter() <em>Service Type Parameter</em>}' attribute.
@@ -186,7 +186,7 @@ public class MEnterServiceInformationStep extends MEnterInformationStep {
 	 * @generated
 	 * @ordered
 	 */
-	protected EList serviceTypeParameterHistoricValues = null;
+	protected EList serviceTypeParameterHistoricValues;
 
 	/**
 	 * The cached value of the '{@link #getMTitleOfTalkParameter() <em>MTitle Of Talk Parameter</em>}' containment reference.
@@ -196,7 +196,7 @@ public class MEnterServiceInformationStep extends MEnterInformationStep {
 	 * @generated
 	 * @ordered
 	 */
-	protected MParameter mTitleOfTalkParameter = null;
+	protected MParameter mTitleOfTalkParameter;
 
 	/**
 	 * The default value of the '{@link #getTitleOfTalkParameter() <em>Title Of Talk Parameter</em>}' attribute.
@@ -239,7 +239,7 @@ public class MEnterServiceInformationStep extends MEnterInformationStep {
 	 * @generated
 	 * @ordered
 	 */
-	protected MParameter mReadingParameter = null;
+	protected MParameter mReadingParameter;
 
 	/**
 	 * The default value of the '{@link #getReadingParameter() <em>Reading Parameter</em>}' attribute.
@@ -282,7 +282,7 @@ public class MEnterServiceInformationStep extends MEnterInformationStep {
 	 * @generated
 	 * @ordered
 	 */
-	protected MParameter mSpeakersNameParameter = null;
+	protected MParameter mSpeakersNameParameter;
 
 	/**
 	 * The default value of the '{@link #getSpeakersNameParameter() <em>Speakers Name Parameter</em>}' attribute.
@@ -325,7 +325,7 @@ public class MEnterServiceInformationStep extends MEnterInformationStep {
 	 * @generated
 	 * @ordered
 	 */
-	protected EList speakersNameParameterHistoricValues = null;
+	protected EList speakersNameParameterHistoricValues;
 
 	/**
 	 * The cached value of the '{@link #getMRecordingUsersNameParameter() <em>MRecording Users Name Parameter</em>}' containment reference.
@@ -335,7 +335,7 @@ public class MEnterServiceInformationStep extends MEnterInformationStep {
 	 * @generated
 	 * @ordered
 	 */
-	protected MParameter mRecordingUsersNameParameter = null;
+	protected MParameter mRecordingUsersNameParameter;
 
 	/**
 	 * The default value of the '{@link #getRecordingUsersNameParameter() <em>Recording Users Name Parameter</em>}' attribute.
@@ -378,7 +378,7 @@ public class MEnterServiceInformationStep extends MEnterInformationStep {
 	 * @generated
 	 * @ordered
 	 */
-	protected EList recordingUsersNameParameterHistoricValues = null;
+	protected EList recordingUsersNameParameterHistoricValues;
 
 	/**
 	 * The cached value of the '{@link #getMServiceDateResult() <em>MService Date Result</em>}' containment reference.
@@ -388,7 +388,7 @@ public class MEnterServiceInformationStep extends MEnterInformationStep {
 	 * @generated
 	 * @ordered
 	 */
-	protected MResult mServiceDateResult = null;
+	protected MResult mServiceDateResult;
 
 	/**
 	 * The default value of the '{@link #getServiceDateResult() <em>Service Date Result</em>}' attribute.
@@ -431,7 +431,7 @@ public class MEnterServiceInformationStep extends MEnterInformationStep {
 	 * @generated
 	 * @ordered
 	 */
-	protected MResult mServiceTypeResult = null;
+	protected MResult mServiceTypeResult;
 
 	/**
 	 * The default value of the '{@link #getServiceTypeResult() <em>Service Type Result</em>}' attribute.
@@ -474,7 +474,7 @@ public class MEnterServiceInformationStep extends MEnterInformationStep {
 	 * @generated
 	 * @ordered
 	 */
-	protected MResult mTitleOfTalkResult = null;
+	protected MResult mTitleOfTalkResult;
 
 	/**
 	 * The default value of the '{@link #getTitleOfTalkResult() <em>Title Of Talk Result</em>}' attribute.
@@ -517,7 +517,7 @@ public class MEnterServiceInformationStep extends MEnterInformationStep {
 	 * @generated
 	 * @ordered
 	 */
-	protected MResult mReadingResult = null;
+	protected MResult mReadingResult;
 
 	/**
 	 * The default value of the '{@link #getReadingResult() <em>Reading Result</em>}' attribute.
@@ -560,7 +560,7 @@ public class MEnterServiceInformationStep extends MEnterInformationStep {
 	 * @generated
 	 * @ordered
 	 */
-	protected MResult mSpeakersNameResult = null;
+	protected MResult mSpeakersNameResult;
 
 	/**
 	 * The default value of the '{@link #getSpeakersNameResult() <em>Speakers Name Result</em>}' attribute.
@@ -603,7 +603,7 @@ public class MEnterServiceInformationStep extends MEnterInformationStep {
 	 * @generated
 	 * @ordered
 	 */
-	protected MResult mRecordingUsersNameResult = null;
+	protected MResult mRecordingUsersNameResult;
 
 	/**
 	 * The default value of the '{@link #getRecordingUsersNameResult() <em>Recording Users Name Result</em>}' attribute.
@@ -747,7 +747,7 @@ public class MEnterServiceInformationStep extends MEnterInformationStep {
 		name = "Enter service information";
 		interruptable = false;
 		terminatable = false;
-					 
+			 
 		setMServiceDateParameter(new MParameter(false, "Service date", "Specifies the date of the service.", null));			 
 		setMServiceTypeParameter(new MParameter(false, "Service type", "Specifies the type of the service, e.g. AM service, PM service, Carol service ...", null));			 
 		setMTitleOfTalkParameter(new MParameter(false, "Title of talk", "Specifies the title of the talk.", null));			 
@@ -791,7 +791,6 @@ public class MEnterServiceInformationStep extends MEnterInformationStep {
 
 	/**
 	 * Returns the value of the '<em><b>MService Date Parameter</b></em>' containment reference.
-	 * The default value is <code>""</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>MService Date Parameter</em>' containment reference isn't clear,
@@ -895,7 +894,6 @@ public class MEnterServiceInformationStep extends MEnterInformationStep {
 
 	/**
 	 * Returns the value of the '<em><b>MService Type Parameter</b></em>' containment reference.
-	 * The default value is <code>""</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>MService Type Parameter</em>' containment reference isn't clear,
@@ -1008,7 +1006,7 @@ public class MEnterServiceInformationStep extends MEnterInformationStep {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Service Type Parameter Historic Values</em>' attribute list.
 	 * @see org.onceforall.dms.desktop.logic.LogicPackage#getMEnterServiceInformationStep_ServiceTypeParameterHistoricValues()
-	 * @model type="java.lang.String" dataType="org.onceforall.dms.desktop.logic.MString" upper="5"
+	 * @model dataType="org.onceforall.dms.desktop.logic.MString" upper="5"
 	 * @generated
 	 */
 	public EList getServiceTypeParameterHistoricValues() {
@@ -1020,7 +1018,6 @@ public class MEnterServiceInformationStep extends MEnterInformationStep {
 
 	/**
 	 * Returns the value of the '<em><b>MTitle Of Talk Parameter</b></em>' containment reference.
-	 * The default value is <code>""</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>MTitle Of Talk Parameter</em>' containment reference isn't clear,
@@ -1124,7 +1121,6 @@ public class MEnterServiceInformationStep extends MEnterInformationStep {
 
 	/**
 	 * Returns the value of the '<em><b>MReading Parameter</b></em>' containment reference.
-	 * The default value is <code>""</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>MReading Parameter</em>' containment reference isn't clear,
@@ -1228,7 +1224,6 @@ public class MEnterServiceInformationStep extends MEnterInformationStep {
 
 	/**
 	 * Returns the value of the '<em><b>MSpeakers Name Parameter</b></em>' containment reference.
-	 * The default value is <code>""</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>MSpeakers Name Parameter</em>' containment reference isn't clear,
@@ -1341,7 +1336,7 @@ public class MEnterServiceInformationStep extends MEnterInformationStep {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Speakers Name Parameter Historic Values</em>' attribute list.
 	 * @see org.onceforall.dms.desktop.logic.LogicPackage#getMEnterServiceInformationStep_SpeakersNameParameterHistoricValues()
-	 * @model type="java.lang.String" dataType="org.onceforall.dms.desktop.logic.MString" upper="5"
+	 * @model dataType="org.onceforall.dms.desktop.logic.MString" upper="5"
 	 * @generated
 	 */
 	public EList getSpeakersNameParameterHistoricValues() {
@@ -1353,7 +1348,6 @@ public class MEnterServiceInformationStep extends MEnterInformationStep {
 
 	/**
 	 * Returns the value of the '<em><b>MRecording Users Name Parameter</b></em>' containment reference.
-	 * The default value is <code>""</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>MRecording Users Name Parameter</em>' containment reference isn't clear,
@@ -1466,7 +1460,7 @@ public class MEnterServiceInformationStep extends MEnterInformationStep {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Recording Users Name Parameter Historic Values</em>' attribute list.
 	 * @see org.onceforall.dms.desktop.logic.LogicPackage#getMEnterServiceInformationStep_RecordingUsersNameParameterHistoricValues()
-	 * @model type="java.lang.String" dataType="org.onceforall.dms.desktop.logic.MString" upper="5"
+	 * @model dataType="org.onceforall.dms.desktop.logic.MString" upper="5"
 	 * @generated
 	 */
 	public EList getRecordingUsersNameParameterHistoricValues() {
@@ -1478,7 +1472,6 @@ public class MEnterServiceInformationStep extends MEnterInformationStep {
 
 	/**
 	 * Returns the value of the '<em><b>MService Date Result</b></em>' containment reference.
-	 * The default value is <code>""</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>MService Date Result</em>' containment reference isn't clear,
@@ -1582,7 +1575,6 @@ public class MEnterServiceInformationStep extends MEnterInformationStep {
 
 	/**
 	 * Returns the value of the '<em><b>MService Type Result</b></em>' containment reference.
-	 * The default value is <code>""</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>MService Type Result</em>' containment reference isn't clear,
@@ -1686,7 +1678,6 @@ public class MEnterServiceInformationStep extends MEnterInformationStep {
 
 	/**
 	 * Returns the value of the '<em><b>MTitle Of Talk Result</b></em>' containment reference.
-	 * The default value is <code>""</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>MTitle Of Talk Result</em>' containment reference isn't clear,
@@ -1792,7 +1783,6 @@ public class MEnterServiceInformationStep extends MEnterInformationStep {
 
 	/**
 	 * Returns the value of the '<em><b>MReading Result</b></em>' containment reference.
-	 * The default value is <code>""</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>MReading Result</em>' containment reference isn't clear,
@@ -1896,7 +1886,6 @@ public class MEnterServiceInformationStep extends MEnterInformationStep {
 
 	/**
 	 * Returns the value of the '<em><b>MSpeakers Name Result</b></em>' containment reference.
-	 * The default value is <code>""</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>MSpeakers Name Result</em>' containment reference isn't clear,
@@ -2002,7 +1991,6 @@ public class MEnterServiceInformationStep extends MEnterInformationStep {
 
 	/**
 	 * Returns the value of the '<em><b>MRecording Users Name Result</b></em>' containment reference.
-	 * The default value is <code>""</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>MRecording Users Name Result</em>' containment reference isn't clear,
@@ -2211,88 +2199,88 @@ public class MEnterServiceInformationStep extends MEnterInformationStep {
 	 */
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case LogicPackage.MENTER_SERVICE_INFORMATION_STEP__MSERVICE_DATE_PARAMETER:    
+			case LogicPackage.MENTER_SERVICE_INFORMATION_STEP__MSERVICE_DATE_PARAMETER:
 				setMServiceDateParameter((MParameter)newValue);
 				return;
-			case LogicPackage.MENTER_SERVICE_INFORMATION_STEP__SERVICE_DATE_PARAMETER:    
+			case LogicPackage.MENTER_SERVICE_INFORMATION_STEP__SERVICE_DATE_PARAMETER:
 				setServiceDateParameter((Date)newValue);
 				return;
-			case LogicPackage.MENTER_SERVICE_INFORMATION_STEP__MSERVICE_TYPE_PARAMETER:    
+			case LogicPackage.MENTER_SERVICE_INFORMATION_STEP__MSERVICE_TYPE_PARAMETER:
 				setMServiceTypeParameter((MParameter)newValue);
 				return;
-			case LogicPackage.MENTER_SERVICE_INFORMATION_STEP__SERVICE_TYPE_PARAMETER:    
+			case LogicPackage.MENTER_SERVICE_INFORMATION_STEP__SERVICE_TYPE_PARAMETER:
 				setServiceTypeParameter((String)newValue);
 				return;
 			case LogicPackage.MENTER_SERVICE_INFORMATION_STEP__SERVICE_TYPE_PARAMETER_HISTORIC_VALUES:
 				getServiceTypeParameterHistoricValues().clear();
 				getServiceTypeParameterHistoricValues().addAll((Collection)newValue);
 				return;
-			case LogicPackage.MENTER_SERVICE_INFORMATION_STEP__MTITLE_OF_TALK_PARAMETER:    
+			case LogicPackage.MENTER_SERVICE_INFORMATION_STEP__MTITLE_OF_TALK_PARAMETER:
 				setMTitleOfTalkParameter((MParameter)newValue);
 				return;
-			case LogicPackage.MENTER_SERVICE_INFORMATION_STEP__TITLE_OF_TALK_PARAMETER:    
+			case LogicPackage.MENTER_SERVICE_INFORMATION_STEP__TITLE_OF_TALK_PARAMETER:
 				setTitleOfTalkParameter((String)newValue);
 				return;
-			case LogicPackage.MENTER_SERVICE_INFORMATION_STEP__MREADING_PARAMETER:    
+			case LogicPackage.MENTER_SERVICE_INFORMATION_STEP__MREADING_PARAMETER:
 				setMReadingParameter((MParameter)newValue);
 				return;
-			case LogicPackage.MENTER_SERVICE_INFORMATION_STEP__READING_PARAMETER:    
+			case LogicPackage.MENTER_SERVICE_INFORMATION_STEP__READING_PARAMETER:
 				setReadingParameter((String)newValue);
 				return;
-			case LogicPackage.MENTER_SERVICE_INFORMATION_STEP__MSPEAKERS_NAME_PARAMETER:    
+			case LogicPackage.MENTER_SERVICE_INFORMATION_STEP__MSPEAKERS_NAME_PARAMETER:
 				setMSpeakersNameParameter((MParameter)newValue);
 				return;
-			case LogicPackage.MENTER_SERVICE_INFORMATION_STEP__SPEAKERS_NAME_PARAMETER:    
+			case LogicPackage.MENTER_SERVICE_INFORMATION_STEP__SPEAKERS_NAME_PARAMETER:
 				setSpeakersNameParameter((String)newValue);
 				return;
 			case LogicPackage.MENTER_SERVICE_INFORMATION_STEP__SPEAKERS_NAME_PARAMETER_HISTORIC_VALUES:
 				getSpeakersNameParameterHistoricValues().clear();
 				getSpeakersNameParameterHistoricValues().addAll((Collection)newValue);
 				return;
-			case LogicPackage.MENTER_SERVICE_INFORMATION_STEP__MRECORDING_USERS_NAME_PARAMETER:    
+			case LogicPackage.MENTER_SERVICE_INFORMATION_STEP__MRECORDING_USERS_NAME_PARAMETER:
 				setMRecordingUsersNameParameter((MParameter)newValue);
 				return;
-			case LogicPackage.MENTER_SERVICE_INFORMATION_STEP__RECORDING_USERS_NAME_PARAMETER:    
+			case LogicPackage.MENTER_SERVICE_INFORMATION_STEP__RECORDING_USERS_NAME_PARAMETER:
 				setRecordingUsersNameParameter((String)newValue);
 				return;
 			case LogicPackage.MENTER_SERVICE_INFORMATION_STEP__RECORDING_USERS_NAME_PARAMETER_HISTORIC_VALUES:
 				getRecordingUsersNameParameterHistoricValues().clear();
 				getRecordingUsersNameParameterHistoricValues().addAll((Collection)newValue);
 				return;
-			case LogicPackage.MENTER_SERVICE_INFORMATION_STEP__MSERVICE_DATE_RESULT:    
+			case LogicPackage.MENTER_SERVICE_INFORMATION_STEP__MSERVICE_DATE_RESULT:
 				setMServiceDateResult((MResult)newValue);
 				return;
-			case LogicPackage.MENTER_SERVICE_INFORMATION_STEP__SERVICE_DATE_RESULT:    
+			case LogicPackage.MENTER_SERVICE_INFORMATION_STEP__SERVICE_DATE_RESULT:
 				setServiceDateResult((Date)newValue);
 				return;
-			case LogicPackage.MENTER_SERVICE_INFORMATION_STEP__MSERVICE_TYPE_RESULT:    
+			case LogicPackage.MENTER_SERVICE_INFORMATION_STEP__MSERVICE_TYPE_RESULT:
 				setMServiceTypeResult((MResult)newValue);
 				return;
-			case LogicPackage.MENTER_SERVICE_INFORMATION_STEP__SERVICE_TYPE_RESULT:    
+			case LogicPackage.MENTER_SERVICE_INFORMATION_STEP__SERVICE_TYPE_RESULT:
 				setServiceTypeResult((String)newValue);
 				return;
-			case LogicPackage.MENTER_SERVICE_INFORMATION_STEP__MTITLE_OF_TALK_RESULT:    
+			case LogicPackage.MENTER_SERVICE_INFORMATION_STEP__MTITLE_OF_TALK_RESULT:
 				setMTitleOfTalkResult((MResult)newValue);
 				return;
-			case LogicPackage.MENTER_SERVICE_INFORMATION_STEP__TITLE_OF_TALK_RESULT:    
+			case LogicPackage.MENTER_SERVICE_INFORMATION_STEP__TITLE_OF_TALK_RESULT:
 				setTitleOfTalkResult((String)newValue);
 				return;
-			case LogicPackage.MENTER_SERVICE_INFORMATION_STEP__MREADING_RESULT:    
+			case LogicPackage.MENTER_SERVICE_INFORMATION_STEP__MREADING_RESULT:
 				setMReadingResult((MResult)newValue);
 				return;
-			case LogicPackage.MENTER_SERVICE_INFORMATION_STEP__READING_RESULT:    
+			case LogicPackage.MENTER_SERVICE_INFORMATION_STEP__READING_RESULT:
 				setReadingResult((String)newValue);
 				return;
-			case LogicPackage.MENTER_SERVICE_INFORMATION_STEP__MSPEAKERS_NAME_RESULT:    
+			case LogicPackage.MENTER_SERVICE_INFORMATION_STEP__MSPEAKERS_NAME_RESULT:
 				setMSpeakersNameResult((MResult)newValue);
 				return;
-			case LogicPackage.MENTER_SERVICE_INFORMATION_STEP__SPEAKERS_NAME_RESULT:    
+			case LogicPackage.MENTER_SERVICE_INFORMATION_STEP__SPEAKERS_NAME_RESULT:
 				setSpeakersNameResult((String)newValue);
 				return;
-			case LogicPackage.MENTER_SERVICE_INFORMATION_STEP__MRECORDING_USERS_NAME_RESULT:    
+			case LogicPackage.MENTER_SERVICE_INFORMATION_STEP__MRECORDING_USERS_NAME_RESULT:
 				setMRecordingUsersNameResult((MResult)newValue);
 				return;
-			case LogicPackage.MENTER_SERVICE_INFORMATION_STEP__RECORDING_USERS_NAME_RESULT:    
+			case LogicPackage.MENTER_SERVICE_INFORMATION_STEP__RECORDING_USERS_NAME_RESULT:
 				setRecordingUsersNameResult((String)newValue);
 				return;
 		}

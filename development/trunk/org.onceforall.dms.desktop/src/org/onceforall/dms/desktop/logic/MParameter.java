@@ -242,7 +242,7 @@ public class MParameter extends MValue {
 		firstMParameterConstructorHook();
 				
 		typeNameForUI = "Parameter";
-		
+
 
 		lastMParameterConstructorHook();		
 	}

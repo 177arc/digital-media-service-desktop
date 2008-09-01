@@ -2677,7 +2677,1477 @@ public class LogicPackage extends EPackageImpl {
 	 * @see org.onceforall.dms.desktop.logic.LogicPackage#getMEnterInformationStep()
 	 * @generated
 	 */
-	public static final int MENTER_INFORMATION_STEP = 11;
+	public static final int MENTER_INFORMATION_STEP = 13;
+
+	/**
+	 * The meta object id for the '{@link org.onceforall.dms.desktop.logic.MEnterWwxInformationStep <em>MEnter Wwx Information Step</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.onceforall.dms.desktop.logic.MEnterWwxInformationStep
+	 * @see org.onceforall.dms.desktop.logic.LogicPackage#getMEnterWwxInformationStep()
+	 * @generated
+	 */
+	public static final int MENTER_WWX_INFORMATION_STEP = 14;
+
+	/**
+	 * The meta object id for the '{@link org.onceforall.dms.desktop.logic.MEnterServiceInformationStep <em>MEnter Service Information Step</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.onceforall.dms.desktop.logic.MEnterServiceInformationStep
+	 * @see org.onceforall.dms.desktop.logic.LogicPackage#getMEnterServiceInformationStep()
+	 * @generated
+	 */
+	public static final int MENTER_SERVICE_INFORMATION_STEP = 15;
+
+	/**
+	 * The meta object id for the '{@link org.onceforall.dms.desktop.logic.MCreateDirectoryStep <em>MCreate Directory Step</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.onceforall.dms.desktop.logic.MCreateDirectoryStep
+	 * @see org.onceforall.dms.desktop.logic.LogicPackage#getMCreateDirectoryStep()
+	 * @generated
+	 */
+	public static final int MCREATE_DIRECTORY_STEP = 16;
+
+	/**
+	 * The meta object id for the '{@link org.onceforall.dms.desktop.logic.MCheckFreeDiskSpaceStep <em>MCheck Free Disk Space Step</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.onceforall.dms.desktop.logic.MCheckFreeDiskSpaceStep
+	 * @see org.onceforall.dms.desktop.logic.LogicPackage#getMCheckFreeDiskSpaceStep()
+	 * @generated
+	 */
+	public static final int MCHECK_FREE_DISK_SPACE_STEP = 17;
+
+	/**
+	 * The meta object id for the '{@link org.onceforall.dms.desktop.logic.MAudioStep <em>MAudio Step</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.onceforall.dms.desktop.logic.MAudioStep
+	 * @see org.onceforall.dms.desktop.logic.LogicPackage#getMAudioStep()
+	 * @generated
+	 */
+	public static final int MAUDIO_STEP = 18;
+
+	/**
+	 * The meta object id for the '{@link org.onceforall.dms.desktop.logic.MCheckInputLevelsStep <em>MCheck Input Levels Step</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.onceforall.dms.desktop.logic.MCheckInputLevelsStep
+	 * @see org.onceforall.dms.desktop.logic.LogicPackage#getMCheckInputLevelsStep()
+	 * @generated
+	 */
+	public static final int MCHECK_INPUT_LEVELS_STEP = 19;
+
+	/**
+	 * The meta object id for the '{@link org.onceforall.dms.desktop.logic.MRecordStep <em>MRecord Step</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.onceforall.dms.desktop.logic.MRecordStep
+	 * @see org.onceforall.dms.desktop.logic.LogicPackage#getMRecordStep()
+	 * @generated
+	 */
+	public static final int MRECORD_STEP = 20;
+
+	/**
+	 * The meta object id for the '{@link org.onceforall.dms.desktop.logic.MTagStep <em>MTag Step</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.onceforall.dms.desktop.logic.MTagStep
+	 * @see org.onceforall.dms.desktop.logic.LogicPackage#getMTagStep()
+	 * @generated
+	 */
+	public static final int MTAG_STEP = 32;
+
+	/**
+	 * The meta object id for the '{@link org.onceforall.dms.desktop.logic.MConvertToMP3Step <em>MConvert To MP3 Step</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.onceforall.dms.desktop.logic.MConvertToMP3Step
+	 * @see org.onceforall.dms.desktop.logic.LogicPackage#getMConvertToMP3Step()
+	 * @generated
+	 */
+	public static final int MCONVERT_TO_MP3_STEP = 21;
+
+	/**
+	 * The meta object id for the '{@link org.onceforall.dms.desktop.logic.MPublishMp3sStep <em>MPublish Mp3s Step</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.onceforall.dms.desktop.logic.MPublishMp3sStep
+	 * @see org.onceforall.dms.desktop.logic.LogicPackage#getMPublishMp3sStep()
+	 * @generated
+	 */
+	public static final int MPUBLISH_MP3S_STEP = 22;
+
+	/**
+	 * The meta object id for the '{@link org.onceforall.dms.desktop.logic.MUpdatePublishedMp3sStep <em>MUpdate Published Mp3s Step</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.onceforall.dms.desktop.logic.MUpdatePublishedMp3sStep
+	 * @see org.onceforall.dms.desktop.logic.LogicPackage#getMUpdatePublishedMp3sStep()
+	 * @generated
+	 */
+	public static final int MUPDATE_PUBLISHED_MP3S_STEP = 23;
+
+	/**
+	 * The meta object id for the '{@link org.onceforall.dms.desktop.logic.MPublishNewMp3Step <em>MPublish New Mp3 Step</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.onceforall.dms.desktop.logic.MPublishNewMp3Step
+	 * @see org.onceforall.dms.desktop.logic.LogicPackage#getMPublishNewMp3Step()
+	 * @generated
+	 */
+	public static final int MPUBLISH_NEW_MP3_STEP = 24;
+
+	/**
+	 * The meta object id for the '{@link org.onceforall.dms.desktop.logic.MEmailEventLogStep <em>MEmail Event Log Step</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.onceforall.dms.desktop.logic.MEmailEventLogStep
+	 * @see org.onceforall.dms.desktop.logic.LogicPackage#getMEmailEventLogStep()
+	 * @generated
+	 */
+	public static final int MEMAIL_EVENT_LOG_STEP = 25;
+
+	/**
+	 * The meta object id for the '{@link org.onceforall.dms.desktop.logic.MMp3Folder <em>MMp3 Folder</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.onceforall.dms.desktop.logic.MMp3Folder
+	 * @see org.onceforall.dms.desktop.logic.LogicPackage#getMMp3Folder()
+	 * @generated
+	 */
+	public static final int MMP3_FOLDER = 26;
+
+	/**
+	 * The meta object id for the '{@link org.onceforall.dms.desktop.logic.MMp3 <em>MMp3</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.onceforall.dms.desktop.logic.MMp3
+	 * @see org.onceforall.dms.desktop.logic.LogicPackage#getMMp3()
+	 * @generated
+	 */
+	public static final int MMP3 = 27;
+
+	/**
+	 * The meta object id for the '{@link org.onceforall.dms.desktop.logic.MBurnCdStep <em>MBurn Cd Step</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.onceforall.dms.desktop.logic.MBurnCdStep
+	 * @see org.onceforall.dms.desktop.logic.LogicPackage#getMBurnCdStep()
+	 * @generated
+	 */
+	public static final int MBURN_CD_STEP = 28;
+
+	/**
+	 * The meta object id for the '{@link org.onceforall.dms.desktop.logic.MFtpStep <em>MFtp Step</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.onceforall.dms.desktop.logic.MFtpStep
+	 * @see org.onceforall.dms.desktop.logic.LogicPackage#getMFtpStep()
+	 * @generated
+	 */
+	public static final int MFTP_STEP = 29;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MFTP_STEP__NAME = MSTEP__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Type Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MFTP_STEP__TYPE_NAME = MSTEP__TYPE_NAME;
+
+	/**
+	 * The feature id for the '<em><b>Type Name For UI</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MFTP_STEP__TYPE_NAME_FOR_UI = MSTEP__TYPE_NAME_FOR_UI;
+
+	/**
+	 * The feature id for the '<em><b>Name For UI</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MFTP_STEP__NAME_FOR_UI = MSTEP__NAME_FOR_UI;
+
+	/**
+	 * The feature id for the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MFTP_STEP__DESCRIPTION = MSTEP__DESCRIPTION;
+
+	/**
+	 * The feature id for the '<em><b>Description For UI</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MFTP_STEP__DESCRIPTION_FOR_UI = MSTEP__DESCRIPTION_FOR_UI;
+
+	/**
+	 * The feature id for the '<em><b>Icon File Path</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MFTP_STEP__ICON_FILE_PATH = MSTEP__ICON_FILE_PATH;
+
+	/**
+	 * The feature id for the '<em><b>Overlay Icon File Path</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MFTP_STEP__OVERLAY_ICON_FILE_PATH = MSTEP__OVERLAY_ICON_FILE_PATH;
+
+	/**
+	 * The feature id for the '<em><b>Composite Class Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MFTP_STEP__COMPOSITE_CLASS_NAME = MSTEP__COMPOSITE_CLASS_NAME;
+
+	/**
+	 * The feature id for the '<em><b>Simulated</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MFTP_STEP__SIMULATED = MSTEP__SIMULATED;
+
+	/**
+	 * The feature id for the '<em><b>MName Property</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MFTP_STEP__MNAME_PROPERTY = MSTEP__MNAME_PROPERTY;
+
+	/**
+	 * The feature id for the '<em><b>MDescription Property</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MFTP_STEP__MDESCRIPTION_PROPERTY = MSTEP__MDESCRIPTION_PROPERTY;
+
+	/**
+	 * The feature id for the '<em><b>MIcon File Path Property</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MFTP_STEP__MICON_FILE_PATH_PROPERTY = MSTEP__MICON_FILE_PATH_PROPERTY;
+
+	/**
+	 * The feature id for the '<em><b>Fixed MProperties</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MFTP_STEP__FIXED_MPROPERTIES = MSTEP__FIXED_MPROPERTIES;
+
+	/**
+	 * The feature id for the '<em><b>Fixed MSteps</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MFTP_STEP__FIXED_MSTEPS = MSTEP__FIXED_MSTEPS;
+
+	/**
+	 * The feature id for the '<em><b>MState Property</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MFTP_STEP__MSTATE_PROPERTY = MSTEP__MSTATE_PROPERTY;
+
+	/**
+	 * The feature id for the '<em><b>MLast State Change Property</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MFTP_STEP__MLAST_STATE_CHANGE_PROPERTY = MSTEP__MLAST_STATE_CHANGE_PROPERTY;
+
+	/**
+	 * The feature id for the '<em><b>Last State Change Property</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MFTP_STEP__LAST_STATE_CHANGE_PROPERTY = MSTEP__LAST_STATE_CHANGE_PROPERTY;
+
+	/**
+	 * The feature id for the '<em><b>MInput Steps</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MFTP_STEP__MINPUT_STEPS = MSTEP__MINPUT_STEPS;
+
+	/**
+	 * The feature id for the '<em><b>Fixed MParameters</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MFTP_STEP__FIXED_MPARAMETERS = MSTEP__FIXED_MPARAMETERS;
+
+	/**
+	 * The feature id for the '<em><b>Fixed MResults</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MFTP_STEP__FIXED_MRESULTS = MSTEP__FIXED_MRESULTS;
+
+	/**
+	 * The feature id for the '<em><b>Exclusive Property</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MFTP_STEP__EXCLUSIVE_PROPERTY = MSTEP__EXCLUSIVE_PROPERTY;
+
+	/**
+	 * The feature id for the '<em><b>State Property</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MFTP_STEP__STATE_PROPERTY = MSTEP__STATE_PROPERTY;
+
+	/**
+	 * The feature id for the '<em><b>MProgress Property</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MFTP_STEP__MPROGRESS_PROPERTY = MSTEP__MPROGRESS_PROPERTY;
+
+	/**
+	 * The feature id for the '<em><b>Progress Property</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MFTP_STEP__PROGRESS_PROPERTY = MSTEP__PROGRESS_PROPERTY;
+
+	/**
+	 * The feature id for the '<em><b>MProgress Status Property</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MFTP_STEP__MPROGRESS_STATUS_PROPERTY = MSTEP__MPROGRESS_STATUS_PROPERTY;
+
+	/**
+	 * The feature id for the '<em><b>Progress Status Property</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MFTP_STEP__PROGRESS_STATUS_PROPERTY = MSTEP__PROGRESS_STATUS_PROPERTY;
+
+	/**
+	 * The feature id for the '<em><b>MStart Trigger Property</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MFTP_STEP__MSTART_TRIGGER_PROPERTY = MSTEP__MSTART_TRIGGER_PROPERTY;
+
+	/**
+	 * The feature id for the '<em><b>Start Trigger Property</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MFTP_STEP__START_TRIGGER_PROPERTY = MSTEP__START_TRIGGER_PROPERTY;
+
+	/**
+	 * The feature id for the '<em><b>Interruptable</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MFTP_STEP__INTERRUPTABLE = MSTEP__INTERRUPTABLE;
+
+	/**
+	 * The feature id for the '<em><b>Stoppable</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MFTP_STEP__STOPPABLE = MSTEP__STOPPABLE;
+
+	/**
+	 * The feature id for the '<em><b>Terminatable</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MFTP_STEP__TERMINATABLE = MSTEP__TERMINATABLE;
+
+	/**
+	 * The feature id for the '<em><b>Action Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MFTP_STEP__ACTION_NAME = MSTEP__ACTION_NAME;
+
+	/**
+	 * The feature id for the '<em><b>Action Icon File Path</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MFTP_STEP__ACTION_ICON_FILE_PATH = MSTEP__ACTION_ICON_FILE_PATH;
+
+	/**
+	 * The feature id for the '<em><b>Exception</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MFTP_STEP__EXCEPTION = MSTEP__EXCEPTION;
+
+	/**
+	 * The feature id for the '<em><b>MFtp Server Url Parameter</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MFTP_STEP__MFTP_SERVER_URL_PARAMETER = MSTEP_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Ftp Server Url Parameter</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MFTP_STEP__FTP_SERVER_URL_PARAMETER = MSTEP_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>MFtp User Name Parameter</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MFTP_STEP__MFTP_USER_NAME_PARAMETER = MSTEP_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Ftp User Name Parameter</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MFTP_STEP__FTP_USER_NAME_PARAMETER = MSTEP_FEATURE_COUNT + 3;
+
+	/**
+	 * The feature id for the '<em><b>MFtp User Password Parameter</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MFTP_STEP__MFTP_USER_PASSWORD_PARAMETER = MSTEP_FEATURE_COUNT + 4;
+
+	/**
+	 * The feature id for the '<em><b>Ftp User Password Parameter</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MFTP_STEP__FTP_USER_PASSWORD_PARAMETER = MSTEP_FEATURE_COUNT + 5;
+
+	/**
+	 * The number of structural features of the '<em>MFtp Step</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MFTP_STEP_FEATURE_COUNT = MSTEP_FEATURE_COUNT + 6;
+
+	/**
+	 * The meta object id for the '{@link org.onceforall.dms.desktop.logic.MTestStep <em>MTest Step</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.onceforall.dms.desktop.logic.MTestStep
+	 * @see org.onceforall.dms.desktop.logic.LogicPackage#getMTestStep()
+	 * @generated
+	 */
+	public static final int MTEST_STEP = 30;
+
+	/**
+	 * The meta object id for the '{@link org.onceforall.dms.desktop.logic.MNameTagMp3Step <em>MName Tag Mp3 Step</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.onceforall.dms.desktop.logic.MNameTagMp3Step
+	 * @see org.onceforall.dms.desktop.logic.LogicPackage#getMNameTagMp3Step()
+	 * @generated
+	 */
+	public static final int MNAME_TAG_MP3_STEP = 31;
+
+	/**
+	 * The meta object id for the '{@link org.onceforall.dms.desktop.logic.MDmsApplicationMGetDataUpgradeInfoStep <em>MDms Application MGet Data Upgrade Info Step</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.onceforall.dms.desktop.logic.MDmsApplicationMGetDataUpgradeInfoStep
+	 * @see org.onceforall.dms.desktop.logic.LogicPackage#getMDmsApplicationMGetDataUpgradeInfoStep()
+	 * @generated
+	 */
+	public static final int MDMS_APPLICATION_MGET_DATA_UPGRADE_INFO_STEP = 11;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MDMS_APPLICATION_MGET_DATA_UPGRADE_INFO_STEP__NAME = MFTP_STEP__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Type Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MDMS_APPLICATION_MGET_DATA_UPGRADE_INFO_STEP__TYPE_NAME = MFTP_STEP__TYPE_NAME;
+
+	/**
+	 * The feature id for the '<em><b>Type Name For UI</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MDMS_APPLICATION_MGET_DATA_UPGRADE_INFO_STEP__TYPE_NAME_FOR_UI = MFTP_STEP__TYPE_NAME_FOR_UI;
+
+	/**
+	 * The feature id for the '<em><b>Name For UI</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MDMS_APPLICATION_MGET_DATA_UPGRADE_INFO_STEP__NAME_FOR_UI = MFTP_STEP__NAME_FOR_UI;
+
+	/**
+	 * The feature id for the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MDMS_APPLICATION_MGET_DATA_UPGRADE_INFO_STEP__DESCRIPTION = MFTP_STEP__DESCRIPTION;
+
+	/**
+	 * The feature id for the '<em><b>Description For UI</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MDMS_APPLICATION_MGET_DATA_UPGRADE_INFO_STEP__DESCRIPTION_FOR_UI = MFTP_STEP__DESCRIPTION_FOR_UI;
+
+	/**
+	 * The feature id for the '<em><b>Icon File Path</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MDMS_APPLICATION_MGET_DATA_UPGRADE_INFO_STEP__ICON_FILE_PATH = MFTP_STEP__ICON_FILE_PATH;
+
+	/**
+	 * The feature id for the '<em><b>Overlay Icon File Path</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MDMS_APPLICATION_MGET_DATA_UPGRADE_INFO_STEP__OVERLAY_ICON_FILE_PATH = MFTP_STEP__OVERLAY_ICON_FILE_PATH;
+
+	/**
+	 * The feature id for the '<em><b>Composite Class Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MDMS_APPLICATION_MGET_DATA_UPGRADE_INFO_STEP__COMPOSITE_CLASS_NAME = MFTP_STEP__COMPOSITE_CLASS_NAME;
+
+	/**
+	 * The feature id for the '<em><b>Simulated</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MDMS_APPLICATION_MGET_DATA_UPGRADE_INFO_STEP__SIMULATED = MFTP_STEP__SIMULATED;
+
+	/**
+	 * The feature id for the '<em><b>MName Property</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MDMS_APPLICATION_MGET_DATA_UPGRADE_INFO_STEP__MNAME_PROPERTY = MFTP_STEP__MNAME_PROPERTY;
+
+	/**
+	 * The feature id for the '<em><b>MDescription Property</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MDMS_APPLICATION_MGET_DATA_UPGRADE_INFO_STEP__MDESCRIPTION_PROPERTY = MFTP_STEP__MDESCRIPTION_PROPERTY;
+
+	/**
+	 * The feature id for the '<em><b>MIcon File Path Property</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MDMS_APPLICATION_MGET_DATA_UPGRADE_INFO_STEP__MICON_FILE_PATH_PROPERTY = MFTP_STEP__MICON_FILE_PATH_PROPERTY;
+
+	/**
+	 * The feature id for the '<em><b>Fixed MProperties</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MDMS_APPLICATION_MGET_DATA_UPGRADE_INFO_STEP__FIXED_MPROPERTIES = MFTP_STEP__FIXED_MPROPERTIES;
+
+	/**
+	 * The feature id for the '<em><b>Fixed MSteps</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MDMS_APPLICATION_MGET_DATA_UPGRADE_INFO_STEP__FIXED_MSTEPS = MFTP_STEP__FIXED_MSTEPS;
+
+	/**
+	 * The feature id for the '<em><b>MState Property</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MDMS_APPLICATION_MGET_DATA_UPGRADE_INFO_STEP__MSTATE_PROPERTY = MFTP_STEP__MSTATE_PROPERTY;
+
+	/**
+	 * The feature id for the '<em><b>MLast State Change Property</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MDMS_APPLICATION_MGET_DATA_UPGRADE_INFO_STEP__MLAST_STATE_CHANGE_PROPERTY = MFTP_STEP__MLAST_STATE_CHANGE_PROPERTY;
+
+	/**
+	 * The feature id for the '<em><b>Last State Change Property</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MDMS_APPLICATION_MGET_DATA_UPGRADE_INFO_STEP__LAST_STATE_CHANGE_PROPERTY = MFTP_STEP__LAST_STATE_CHANGE_PROPERTY;
+
+	/**
+	 * The feature id for the '<em><b>MInput Steps</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MDMS_APPLICATION_MGET_DATA_UPGRADE_INFO_STEP__MINPUT_STEPS = MFTP_STEP__MINPUT_STEPS;
+
+	/**
+	 * The feature id for the '<em><b>Fixed MParameters</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MDMS_APPLICATION_MGET_DATA_UPGRADE_INFO_STEP__FIXED_MPARAMETERS = MFTP_STEP__FIXED_MPARAMETERS;
+
+	/**
+	 * The feature id for the '<em><b>Fixed MResults</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MDMS_APPLICATION_MGET_DATA_UPGRADE_INFO_STEP__FIXED_MRESULTS = MFTP_STEP__FIXED_MRESULTS;
+
+	/**
+	 * The feature id for the '<em><b>Exclusive Property</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MDMS_APPLICATION_MGET_DATA_UPGRADE_INFO_STEP__EXCLUSIVE_PROPERTY = MFTP_STEP__EXCLUSIVE_PROPERTY;
+
+	/**
+	 * The feature id for the '<em><b>State Property</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MDMS_APPLICATION_MGET_DATA_UPGRADE_INFO_STEP__STATE_PROPERTY = MFTP_STEP__STATE_PROPERTY;
+
+	/**
+	 * The feature id for the '<em><b>MProgress Property</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MDMS_APPLICATION_MGET_DATA_UPGRADE_INFO_STEP__MPROGRESS_PROPERTY = MFTP_STEP__MPROGRESS_PROPERTY;
+
+	/**
+	 * The feature id for the '<em><b>Progress Property</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MDMS_APPLICATION_MGET_DATA_UPGRADE_INFO_STEP__PROGRESS_PROPERTY = MFTP_STEP__PROGRESS_PROPERTY;
+
+	/**
+	 * The feature id for the '<em><b>MProgress Status Property</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MDMS_APPLICATION_MGET_DATA_UPGRADE_INFO_STEP__MPROGRESS_STATUS_PROPERTY = MFTP_STEP__MPROGRESS_STATUS_PROPERTY;
+
+	/**
+	 * The feature id for the '<em><b>Progress Status Property</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MDMS_APPLICATION_MGET_DATA_UPGRADE_INFO_STEP__PROGRESS_STATUS_PROPERTY = MFTP_STEP__PROGRESS_STATUS_PROPERTY;
+
+	/**
+	 * The feature id for the '<em><b>MStart Trigger Property</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MDMS_APPLICATION_MGET_DATA_UPGRADE_INFO_STEP__MSTART_TRIGGER_PROPERTY = MFTP_STEP__MSTART_TRIGGER_PROPERTY;
+
+	/**
+	 * The feature id for the '<em><b>Start Trigger Property</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MDMS_APPLICATION_MGET_DATA_UPGRADE_INFO_STEP__START_TRIGGER_PROPERTY = MFTP_STEP__START_TRIGGER_PROPERTY;
+
+	/**
+	 * The feature id for the '<em><b>Interruptable</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MDMS_APPLICATION_MGET_DATA_UPGRADE_INFO_STEP__INTERRUPTABLE = MFTP_STEP__INTERRUPTABLE;
+
+	/**
+	 * The feature id for the '<em><b>Stoppable</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MDMS_APPLICATION_MGET_DATA_UPGRADE_INFO_STEP__STOPPABLE = MFTP_STEP__STOPPABLE;
+
+	/**
+	 * The feature id for the '<em><b>Terminatable</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MDMS_APPLICATION_MGET_DATA_UPGRADE_INFO_STEP__TERMINATABLE = MFTP_STEP__TERMINATABLE;
+
+	/**
+	 * The feature id for the '<em><b>Action Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MDMS_APPLICATION_MGET_DATA_UPGRADE_INFO_STEP__ACTION_NAME = MFTP_STEP__ACTION_NAME;
+
+	/**
+	 * The feature id for the '<em><b>Action Icon File Path</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MDMS_APPLICATION_MGET_DATA_UPGRADE_INFO_STEP__ACTION_ICON_FILE_PATH = MFTP_STEP__ACTION_ICON_FILE_PATH;
+
+	/**
+	 * The feature id for the '<em><b>Exception</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MDMS_APPLICATION_MGET_DATA_UPGRADE_INFO_STEP__EXCEPTION = MFTP_STEP__EXCEPTION;
+
+	/**
+	 * The feature id for the '<em><b>MFtp Server Url Parameter</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MDMS_APPLICATION_MGET_DATA_UPGRADE_INFO_STEP__MFTP_SERVER_URL_PARAMETER = MFTP_STEP__MFTP_SERVER_URL_PARAMETER;
+
+	/**
+	 * The feature id for the '<em><b>Ftp Server Url Parameter</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MDMS_APPLICATION_MGET_DATA_UPGRADE_INFO_STEP__FTP_SERVER_URL_PARAMETER = MFTP_STEP__FTP_SERVER_URL_PARAMETER;
+
+	/**
+	 * The feature id for the '<em><b>MFtp User Name Parameter</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MDMS_APPLICATION_MGET_DATA_UPGRADE_INFO_STEP__MFTP_USER_NAME_PARAMETER = MFTP_STEP__MFTP_USER_NAME_PARAMETER;
+
+	/**
+	 * The feature id for the '<em><b>Ftp User Name Parameter</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MDMS_APPLICATION_MGET_DATA_UPGRADE_INFO_STEP__FTP_USER_NAME_PARAMETER = MFTP_STEP__FTP_USER_NAME_PARAMETER;
+
+	/**
+	 * The feature id for the '<em><b>MFtp User Password Parameter</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MDMS_APPLICATION_MGET_DATA_UPGRADE_INFO_STEP__MFTP_USER_PASSWORD_PARAMETER = MFTP_STEP__MFTP_USER_PASSWORD_PARAMETER;
+
+	/**
+	 * The feature id for the '<em><b>Ftp User Password Parameter</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MDMS_APPLICATION_MGET_DATA_UPGRADE_INFO_STEP__FTP_USER_PASSWORD_PARAMETER = MFTP_STEP__FTP_USER_PASSWORD_PARAMETER;
+
+	/**
+	 * The feature id for the '<em><b>MUpgrade Relative Ftp Path Property</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MDMS_APPLICATION_MGET_DATA_UPGRADE_INFO_STEP__MUPGRADE_RELATIVE_FTP_PATH_PROPERTY = MFTP_STEP_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Upgrade Relative Ftp Path Property</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MDMS_APPLICATION_MGET_DATA_UPGRADE_INFO_STEP__UPGRADE_RELATIVE_FTP_PATH_PROPERTY = MFTP_STEP_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>MUpgrade Available Result</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MDMS_APPLICATION_MGET_DATA_UPGRADE_INFO_STEP__MUPGRADE_AVAILABLE_RESULT = MFTP_STEP_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Upgrade Available Result</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MDMS_APPLICATION_MGET_DATA_UPGRADE_INFO_STEP__UPGRADE_AVAILABLE_RESULT = MFTP_STEP_FEATURE_COUNT + 3;
+
+	/**
+	 * The feature id for the '<em><b>MUpgrade Message Result</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MDMS_APPLICATION_MGET_DATA_UPGRADE_INFO_STEP__MUPGRADE_MESSAGE_RESULT = MFTP_STEP_FEATURE_COUNT + 4;
+
+	/**
+	 * The feature id for the '<em><b>Upgrade Message Result</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MDMS_APPLICATION_MGET_DATA_UPGRADE_INFO_STEP__UPGRADE_MESSAGE_RESULT = MFTP_STEP_FEATURE_COUNT + 5;
+
+	/**
+	 * The feature id for the '<em><b>MUpgrade Date Result</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MDMS_APPLICATION_MGET_DATA_UPGRADE_INFO_STEP__MUPGRADE_DATE_RESULT = MFTP_STEP_FEATURE_COUNT + 6;
+
+	/**
+	 * The feature id for the '<em><b>Upgrade Date Result</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MDMS_APPLICATION_MGET_DATA_UPGRADE_INFO_STEP__UPGRADE_DATE_RESULT = MFTP_STEP_FEATURE_COUNT + 7;
+
+	/**
+	 * The number of structural features of the '<em>MDms Application MGet Data Upgrade Info Step</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MDMS_APPLICATION_MGET_DATA_UPGRADE_INFO_STEP_FEATURE_COUNT = MFTP_STEP_FEATURE_COUNT + 8;
+
+	/**
+	 * The meta object id for the '{@link org.onceforall.dms.desktop.logic.MDmsApplicationMUpgradeDataStep <em>MDms Application MUpgrade Data Step</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.onceforall.dms.desktop.logic.MDmsApplicationMUpgradeDataStep
+	 * @see org.onceforall.dms.desktop.logic.LogicPackage#getMDmsApplicationMUpgradeDataStep()
+	 * @generated
+	 */
+	public static final int MDMS_APPLICATION_MUPGRADE_DATA_STEP = 12;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MDMS_APPLICATION_MUPGRADE_DATA_STEP__NAME = MFTP_STEP__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Type Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MDMS_APPLICATION_MUPGRADE_DATA_STEP__TYPE_NAME = MFTP_STEP__TYPE_NAME;
+
+	/**
+	 * The feature id for the '<em><b>Type Name For UI</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MDMS_APPLICATION_MUPGRADE_DATA_STEP__TYPE_NAME_FOR_UI = MFTP_STEP__TYPE_NAME_FOR_UI;
+
+	/**
+	 * The feature id for the '<em><b>Name For UI</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MDMS_APPLICATION_MUPGRADE_DATA_STEP__NAME_FOR_UI = MFTP_STEP__NAME_FOR_UI;
+
+	/**
+	 * The feature id for the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MDMS_APPLICATION_MUPGRADE_DATA_STEP__DESCRIPTION = MFTP_STEP__DESCRIPTION;
+
+	/**
+	 * The feature id for the '<em><b>Description For UI</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MDMS_APPLICATION_MUPGRADE_DATA_STEP__DESCRIPTION_FOR_UI = MFTP_STEP__DESCRIPTION_FOR_UI;
+
+	/**
+	 * The feature id for the '<em><b>Icon File Path</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MDMS_APPLICATION_MUPGRADE_DATA_STEP__ICON_FILE_PATH = MFTP_STEP__ICON_FILE_PATH;
+
+	/**
+	 * The feature id for the '<em><b>Overlay Icon File Path</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MDMS_APPLICATION_MUPGRADE_DATA_STEP__OVERLAY_ICON_FILE_PATH = MFTP_STEP__OVERLAY_ICON_FILE_PATH;
+
+	/**
+	 * The feature id for the '<em><b>Composite Class Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MDMS_APPLICATION_MUPGRADE_DATA_STEP__COMPOSITE_CLASS_NAME = MFTP_STEP__COMPOSITE_CLASS_NAME;
+
+	/**
+	 * The feature id for the '<em><b>Simulated</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MDMS_APPLICATION_MUPGRADE_DATA_STEP__SIMULATED = MFTP_STEP__SIMULATED;
+
+	/**
+	 * The feature id for the '<em><b>MName Property</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MDMS_APPLICATION_MUPGRADE_DATA_STEP__MNAME_PROPERTY = MFTP_STEP__MNAME_PROPERTY;
+
+	/**
+	 * The feature id for the '<em><b>MDescription Property</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MDMS_APPLICATION_MUPGRADE_DATA_STEP__MDESCRIPTION_PROPERTY = MFTP_STEP__MDESCRIPTION_PROPERTY;
+
+	/**
+	 * The feature id for the '<em><b>MIcon File Path Property</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MDMS_APPLICATION_MUPGRADE_DATA_STEP__MICON_FILE_PATH_PROPERTY = MFTP_STEP__MICON_FILE_PATH_PROPERTY;
+
+	/**
+	 * The feature id for the '<em><b>Fixed MProperties</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MDMS_APPLICATION_MUPGRADE_DATA_STEP__FIXED_MPROPERTIES = MFTP_STEP__FIXED_MPROPERTIES;
+
+	/**
+	 * The feature id for the '<em><b>Fixed MSteps</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MDMS_APPLICATION_MUPGRADE_DATA_STEP__FIXED_MSTEPS = MFTP_STEP__FIXED_MSTEPS;
+
+	/**
+	 * The feature id for the '<em><b>MState Property</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MDMS_APPLICATION_MUPGRADE_DATA_STEP__MSTATE_PROPERTY = MFTP_STEP__MSTATE_PROPERTY;
+
+	/**
+	 * The feature id for the '<em><b>MLast State Change Property</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MDMS_APPLICATION_MUPGRADE_DATA_STEP__MLAST_STATE_CHANGE_PROPERTY = MFTP_STEP__MLAST_STATE_CHANGE_PROPERTY;
+
+	/**
+	 * The feature id for the '<em><b>Last State Change Property</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MDMS_APPLICATION_MUPGRADE_DATA_STEP__LAST_STATE_CHANGE_PROPERTY = MFTP_STEP__LAST_STATE_CHANGE_PROPERTY;
+
+	/**
+	 * The feature id for the '<em><b>MInput Steps</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MDMS_APPLICATION_MUPGRADE_DATA_STEP__MINPUT_STEPS = MFTP_STEP__MINPUT_STEPS;
+
+	/**
+	 * The feature id for the '<em><b>Fixed MParameters</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MDMS_APPLICATION_MUPGRADE_DATA_STEP__FIXED_MPARAMETERS = MFTP_STEP__FIXED_MPARAMETERS;
+
+	/**
+	 * The feature id for the '<em><b>Fixed MResults</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MDMS_APPLICATION_MUPGRADE_DATA_STEP__FIXED_MRESULTS = MFTP_STEP__FIXED_MRESULTS;
+
+	/**
+	 * The feature id for the '<em><b>Exclusive Property</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MDMS_APPLICATION_MUPGRADE_DATA_STEP__EXCLUSIVE_PROPERTY = MFTP_STEP__EXCLUSIVE_PROPERTY;
+
+	/**
+	 * The feature id for the '<em><b>State Property</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MDMS_APPLICATION_MUPGRADE_DATA_STEP__STATE_PROPERTY = MFTP_STEP__STATE_PROPERTY;
+
+	/**
+	 * The feature id for the '<em><b>MProgress Property</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MDMS_APPLICATION_MUPGRADE_DATA_STEP__MPROGRESS_PROPERTY = MFTP_STEP__MPROGRESS_PROPERTY;
+
+	/**
+	 * The feature id for the '<em><b>Progress Property</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MDMS_APPLICATION_MUPGRADE_DATA_STEP__PROGRESS_PROPERTY = MFTP_STEP__PROGRESS_PROPERTY;
+
+	/**
+	 * The feature id for the '<em><b>MProgress Status Property</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MDMS_APPLICATION_MUPGRADE_DATA_STEP__MPROGRESS_STATUS_PROPERTY = MFTP_STEP__MPROGRESS_STATUS_PROPERTY;
+
+	/**
+	 * The feature id for the '<em><b>Progress Status Property</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MDMS_APPLICATION_MUPGRADE_DATA_STEP__PROGRESS_STATUS_PROPERTY = MFTP_STEP__PROGRESS_STATUS_PROPERTY;
+
+	/**
+	 * The feature id for the '<em><b>MStart Trigger Property</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MDMS_APPLICATION_MUPGRADE_DATA_STEP__MSTART_TRIGGER_PROPERTY = MFTP_STEP__MSTART_TRIGGER_PROPERTY;
+
+	/**
+	 * The feature id for the '<em><b>Start Trigger Property</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MDMS_APPLICATION_MUPGRADE_DATA_STEP__START_TRIGGER_PROPERTY = MFTP_STEP__START_TRIGGER_PROPERTY;
+
+	/**
+	 * The feature id for the '<em><b>Interruptable</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MDMS_APPLICATION_MUPGRADE_DATA_STEP__INTERRUPTABLE = MFTP_STEP__INTERRUPTABLE;
+
+	/**
+	 * The feature id for the '<em><b>Stoppable</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MDMS_APPLICATION_MUPGRADE_DATA_STEP__STOPPABLE = MFTP_STEP__STOPPABLE;
+
+	/**
+	 * The feature id for the '<em><b>Terminatable</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MDMS_APPLICATION_MUPGRADE_DATA_STEP__TERMINATABLE = MFTP_STEP__TERMINATABLE;
+
+	/**
+	 * The feature id for the '<em><b>Action Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MDMS_APPLICATION_MUPGRADE_DATA_STEP__ACTION_NAME = MFTP_STEP__ACTION_NAME;
+
+	/**
+	 * The feature id for the '<em><b>Action Icon File Path</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MDMS_APPLICATION_MUPGRADE_DATA_STEP__ACTION_ICON_FILE_PATH = MFTP_STEP__ACTION_ICON_FILE_PATH;
+
+	/**
+	 * The feature id for the '<em><b>Exception</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MDMS_APPLICATION_MUPGRADE_DATA_STEP__EXCEPTION = MFTP_STEP__EXCEPTION;
+
+	/**
+	 * The feature id for the '<em><b>MFtp Server Url Parameter</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MDMS_APPLICATION_MUPGRADE_DATA_STEP__MFTP_SERVER_URL_PARAMETER = MFTP_STEP__MFTP_SERVER_URL_PARAMETER;
+
+	/**
+	 * The feature id for the '<em><b>Ftp Server Url Parameter</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MDMS_APPLICATION_MUPGRADE_DATA_STEP__FTP_SERVER_URL_PARAMETER = MFTP_STEP__FTP_SERVER_URL_PARAMETER;
+
+	/**
+	 * The feature id for the '<em><b>MFtp User Name Parameter</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MDMS_APPLICATION_MUPGRADE_DATA_STEP__MFTP_USER_NAME_PARAMETER = MFTP_STEP__MFTP_USER_NAME_PARAMETER;
+
+	/**
+	 * The feature id for the '<em><b>Ftp User Name Parameter</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MDMS_APPLICATION_MUPGRADE_DATA_STEP__FTP_USER_NAME_PARAMETER = MFTP_STEP__FTP_USER_NAME_PARAMETER;
+
+	/**
+	 * The feature id for the '<em><b>MFtp User Password Parameter</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MDMS_APPLICATION_MUPGRADE_DATA_STEP__MFTP_USER_PASSWORD_PARAMETER = MFTP_STEP__MFTP_USER_PASSWORD_PARAMETER;
+
+	/**
+	 * The feature id for the '<em><b>Ftp User Password Parameter</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MDMS_APPLICATION_MUPGRADE_DATA_STEP__FTP_USER_PASSWORD_PARAMETER = MFTP_STEP__FTP_USER_PASSWORD_PARAMETER;
+
+	/**
+	 * The feature id for the '<em><b>MUpgrade Relative Ftp Path Property</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MDMS_APPLICATION_MUPGRADE_DATA_STEP__MUPGRADE_RELATIVE_FTP_PATH_PROPERTY = MFTP_STEP_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Upgrade Relative Ftp Path Property</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MDMS_APPLICATION_MUPGRADE_DATA_STEP__UPGRADE_RELATIVE_FTP_PATH_PROPERTY = MFTP_STEP_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>MUpgrade Message Parameter</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MDMS_APPLICATION_MUPGRADE_DATA_STEP__MUPGRADE_MESSAGE_PARAMETER = MFTP_STEP_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Upgrade Message Parameter</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MDMS_APPLICATION_MUPGRADE_DATA_STEP__UPGRADE_MESSAGE_PARAMETER = MFTP_STEP_FEATURE_COUNT + 3;
+
+	/**
+	 * The feature id for the '<em><b>MUpgrade Date Parameter</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MDMS_APPLICATION_MUPGRADE_DATA_STEP__MUPGRADE_DATE_PARAMETER = MFTP_STEP_FEATURE_COUNT + 4;
+
+	/**
+	 * The feature id for the '<em><b>Upgrade Date Parameter</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MDMS_APPLICATION_MUPGRADE_DATA_STEP__UPGRADE_DATE_PARAMETER = MFTP_STEP_FEATURE_COUNT + 5;
+
+	/**
+	 * The number of structural features of the '<em>MDms Application MUpgrade Data Step</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MDMS_APPLICATION_MUPGRADE_DATA_STEP_FEATURE_COUNT = MFTP_STEP_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -3002,16 +4472,6 @@ public class LogicPackage extends EPackageImpl {
 	 * @ordered
 	 */
 	public static final int MENTER_INFORMATION_STEP_FEATURE_COUNT = MSTEP_FEATURE_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link org.onceforall.dms.desktop.logic.MEnterWwxInformationStep <em>MEnter Wwx Information Step</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.onceforall.dms.desktop.logic.MEnterWwxInformationStep
-	 * @see org.onceforall.dms.desktop.logic.LogicPackage#getMEnterWwxInformationStep()
-	 * @generated
-	 */
-	public static final int MENTER_WWX_INFORMATION_STEP = 12;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -3590,16 +5050,6 @@ public class LogicPackage extends EPackageImpl {
 	public static final int MENTER_WWX_INFORMATION_STEP_FEATURE_COUNT = MENTER_INFORMATION_STEP_FEATURE_COUNT + 28;
 
 	/**
-	 * The meta object id for the '{@link org.onceforall.dms.desktop.logic.MEnterServiceInformationStep <em>MEnter Service Information Step</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.onceforall.dms.desktop.logic.MEnterServiceInformationStep
-	 * @see org.onceforall.dms.desktop.logic.LogicPackage#getMEnterServiceInformationStep()
-	 * @generated
-	 */
-	public static final int MENTER_SERVICE_INFORMATION_STEP = 13;
-
-	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4167,16 +5617,6 @@ public class LogicPackage extends EPackageImpl {
 	public static final int MENTER_SERVICE_INFORMATION_STEP_FEATURE_COUNT = MENTER_INFORMATION_STEP_FEATURE_COUNT + 27;
 
 	/**
-	 * The meta object id for the '{@link org.onceforall.dms.desktop.logic.MCreateDirectoryStep <em>MCreate Directory Step</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.onceforall.dms.desktop.logic.MCreateDirectoryStep
-	 * @see org.onceforall.dms.desktop.logic.LogicPackage#getMCreateDirectoryStep()
-	 * @generated
-	 */
-	public static final int MCREATE_DIRECTORY_STEP = 14;
-
-	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4564,16 +6004,6 @@ public class LogicPackage extends EPackageImpl {
 	public static final int MCREATE_DIRECTORY_STEP_FEATURE_COUNT = MSTEP_FEATURE_COUNT + 7;
 
 	/**
-	 * The meta object id for the '{@link org.onceforall.dms.desktop.logic.MCheckFreeDiskSpaceStep <em>MCheck Free Disk Space Step</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.onceforall.dms.desktop.logic.MCheckFreeDiskSpaceStep
-	 * @see org.onceforall.dms.desktop.logic.LogicPackage#getMCheckFreeDiskSpaceStep()
-	 * @generated
-	 */
-	public static final int MCHECK_FREE_DISK_SPACE_STEP = 15;
-
-	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4950,16 +6380,6 @@ public class LogicPackage extends EPackageImpl {
 	 * @ordered
 	 */
 	public static final int MCHECK_FREE_DISK_SPACE_STEP_FEATURE_COUNT = MSTEP_FEATURE_COUNT + 6;
-
-	/**
-	 * The meta object id for the '{@link org.onceforall.dms.desktop.logic.MAudioStep <em>MAudio Step</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.onceforall.dms.desktop.logic.MAudioStep
-	 * @see org.onceforall.dms.desktop.logic.LogicPackage#getMAudioStep()
-	 * @generated
-	 */
-	public static final int MAUDIO_STEP = 16;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -5394,16 +6814,6 @@ public class LogicPackage extends EPackageImpl {
 	public static final int MAUDIO_STEP_FEATURE_COUNT = MSTEP_FEATURE_COUNT + 12;
 
 	/**
-	 * The meta object id for the '{@link org.onceforall.dms.desktop.logic.MCheckInputLevelsStep <em>MCheck Input Levels Step</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.onceforall.dms.desktop.logic.MCheckInputLevelsStep
-	 * @see org.onceforall.dms.desktop.logic.LogicPackage#getMCheckInputLevelsStep()
-	 * @generated
-	 */
-	public static final int MCHECK_INPUT_LEVELS_STEP = 17;
-
-	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -5834,16 +7244,6 @@ public class LogicPackage extends EPackageImpl {
 	 * @ordered
 	 */
 	public static final int MCHECK_INPUT_LEVELS_STEP_FEATURE_COUNT = MAUDIO_STEP_FEATURE_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link org.onceforall.dms.desktop.logic.MRecordStep <em>MRecord Step</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.onceforall.dms.desktop.logic.MRecordStep
-	 * @see org.onceforall.dms.desktop.logic.LogicPackage#getMRecordStep()
-	 * @generated
-	 */
-	public static final int MRECORD_STEP = 18;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -6386,16 +7786,6 @@ public class LogicPackage extends EPackageImpl {
 	public static final int MRECORD_STEP_FEATURE_COUNT = MAUDIO_STEP_FEATURE_COUNT + 12;
 
 	/**
-	 * The meta object id for the '{@link org.onceforall.dms.desktop.logic.MTagStep <em>MTag Step</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.onceforall.dms.desktop.logic.MTagStep
-	 * @see org.onceforall.dms.desktop.logic.LogicPackage#getMTagStep()
-	 * @generated
-	 */
-	public static final int MTAG_STEP = 30;
-
-	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -6916,16 +8306,6 @@ public class LogicPackage extends EPackageImpl {
 	 * @ordered
 	 */
 	public static final int MTAG_STEP_FEATURE_COUNT = MSTEP_FEATURE_COUNT + 22;
-
-	/**
-	 * The meta object id for the '{@link org.onceforall.dms.desktop.logic.MConvertToMP3Step <em>MConvert To MP3 Step</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.onceforall.dms.desktop.logic.MConvertToMP3Step
-	 * @see org.onceforall.dms.desktop.logic.LogicPackage#getMConvertToMP3Step()
-	 * @generated
-	 */
-	public static final int MCONVERT_TO_MP3_STEP = 19;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -7538,464 +8918,6 @@ public class LogicPackage extends EPackageImpl {
 	 * @ordered
 	 */
 	public static final int MCONVERT_TO_MP3_STEP_FEATURE_COUNT = MTAG_STEP_FEATURE_COUNT + 10;
-
-	/**
-	 * The meta object id for the '{@link org.onceforall.dms.desktop.logic.MPublishMp3sStep <em>MPublish Mp3s Step</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.onceforall.dms.desktop.logic.MPublishMp3sStep
-	 * @see org.onceforall.dms.desktop.logic.LogicPackage#getMPublishMp3sStep()
-	 * @generated
-	 */
-	public static final int MPUBLISH_MP3S_STEP = 20;
-
-	/**
-	 * The meta object id for the '{@link org.onceforall.dms.desktop.logic.MUpdatePublishedMp3sStep <em>MUpdate Published Mp3s Step</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.onceforall.dms.desktop.logic.MUpdatePublishedMp3sStep
-	 * @see org.onceforall.dms.desktop.logic.LogicPackage#getMUpdatePublishedMp3sStep()
-	 * @generated
-	 */
-	public static final int MUPDATE_PUBLISHED_MP3S_STEP = 21;
-
-	/**
-	 * The meta object id for the '{@link org.onceforall.dms.desktop.logic.MPublishNewMp3Step <em>MPublish New Mp3 Step</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.onceforall.dms.desktop.logic.MPublishNewMp3Step
-	 * @see org.onceforall.dms.desktop.logic.LogicPackage#getMPublishNewMp3Step()
-	 * @generated
-	 */
-	public static final int MPUBLISH_NEW_MP3_STEP = 22;
-
-	/**
-	 * The meta object id for the '{@link org.onceforall.dms.desktop.logic.MEmailEventLogStep <em>MEmail Event Log Step</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.onceforall.dms.desktop.logic.MEmailEventLogStep
-	 * @see org.onceforall.dms.desktop.logic.LogicPackage#getMEmailEventLogStep()
-	 * @generated
-	 */
-	public static final int MEMAIL_EVENT_LOG_STEP = 23;
-
-	/**
-	 * The meta object id for the '{@link org.onceforall.dms.desktop.logic.MMp3Folder <em>MMp3 Folder</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.onceforall.dms.desktop.logic.MMp3Folder
-	 * @see org.onceforall.dms.desktop.logic.LogicPackage#getMMp3Folder()
-	 * @generated
-	 */
-	public static final int MMP3_FOLDER = 24;
-
-	/**
-	 * The meta object id for the '{@link org.onceforall.dms.desktop.logic.MMp3 <em>MMp3</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.onceforall.dms.desktop.logic.MMp3
-	 * @see org.onceforall.dms.desktop.logic.LogicPackage#getMMp3()
-	 * @generated
-	 */
-	public static final int MMP3 = 25;
-
-	/**
-	 * The meta object id for the '{@link org.onceforall.dms.desktop.logic.MBurnCdStep <em>MBurn Cd Step</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.onceforall.dms.desktop.logic.MBurnCdStep
-	 * @see org.onceforall.dms.desktop.logic.LogicPackage#getMBurnCdStep()
-	 * @generated
-	 */
-	public static final int MBURN_CD_STEP = 26;
-
-	/**
-	 * The meta object id for the '{@link org.onceforall.dms.desktop.logic.MFtpStep <em>MFtp Step</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.onceforall.dms.desktop.logic.MFtpStep
-	 * @see org.onceforall.dms.desktop.logic.LogicPackage#getMFtpStep()
-	 * @generated
-	 */
-	public static final int MFTP_STEP = 27;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	public static final int MFTP_STEP__NAME = MSTEP__NAME;
-
-	/**
-	 * The feature id for the '<em><b>Type Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	public static final int MFTP_STEP__TYPE_NAME = MSTEP__TYPE_NAME;
-
-	/**
-	 * The feature id for the '<em><b>Type Name For UI</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	public static final int MFTP_STEP__TYPE_NAME_FOR_UI = MSTEP__TYPE_NAME_FOR_UI;
-
-	/**
-	 * The feature id for the '<em><b>Name For UI</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	public static final int MFTP_STEP__NAME_FOR_UI = MSTEP__NAME_FOR_UI;
-
-	/**
-	 * The feature id for the '<em><b>Description</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	public static final int MFTP_STEP__DESCRIPTION = MSTEP__DESCRIPTION;
-
-	/**
-	 * The feature id for the '<em><b>Description For UI</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	public static final int MFTP_STEP__DESCRIPTION_FOR_UI = MSTEP__DESCRIPTION_FOR_UI;
-
-	/**
-	 * The feature id for the '<em><b>Icon File Path</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	public static final int MFTP_STEP__ICON_FILE_PATH = MSTEP__ICON_FILE_PATH;
-
-	/**
-	 * The feature id for the '<em><b>Overlay Icon File Path</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	public static final int MFTP_STEP__OVERLAY_ICON_FILE_PATH = MSTEP__OVERLAY_ICON_FILE_PATH;
-
-	/**
-	 * The feature id for the '<em><b>Composite Class Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	public static final int MFTP_STEP__COMPOSITE_CLASS_NAME = MSTEP__COMPOSITE_CLASS_NAME;
-
-	/**
-	 * The feature id for the '<em><b>Simulated</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	public static final int MFTP_STEP__SIMULATED = MSTEP__SIMULATED;
-
-	/**
-	 * The feature id for the '<em><b>MName Property</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	public static final int MFTP_STEP__MNAME_PROPERTY = MSTEP__MNAME_PROPERTY;
-
-	/**
-	 * The feature id for the '<em><b>MDescription Property</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	public static final int MFTP_STEP__MDESCRIPTION_PROPERTY = MSTEP__MDESCRIPTION_PROPERTY;
-
-	/**
-	 * The feature id for the '<em><b>MIcon File Path Property</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	public static final int MFTP_STEP__MICON_FILE_PATH_PROPERTY = MSTEP__MICON_FILE_PATH_PROPERTY;
-
-	/**
-	 * The feature id for the '<em><b>Fixed MProperties</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	public static final int MFTP_STEP__FIXED_MPROPERTIES = MSTEP__FIXED_MPROPERTIES;
-
-	/**
-	 * The feature id for the '<em><b>Fixed MSteps</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	public static final int MFTP_STEP__FIXED_MSTEPS = MSTEP__FIXED_MSTEPS;
-
-	/**
-	 * The feature id for the '<em><b>MState Property</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	public static final int MFTP_STEP__MSTATE_PROPERTY = MSTEP__MSTATE_PROPERTY;
-
-	/**
-	 * The feature id for the '<em><b>MLast State Change Property</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	public static final int MFTP_STEP__MLAST_STATE_CHANGE_PROPERTY = MSTEP__MLAST_STATE_CHANGE_PROPERTY;
-
-	/**
-	 * The feature id for the '<em><b>Last State Change Property</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	public static final int MFTP_STEP__LAST_STATE_CHANGE_PROPERTY = MSTEP__LAST_STATE_CHANGE_PROPERTY;
-
-	/**
-	 * The feature id for the '<em><b>MInput Steps</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	public static final int MFTP_STEP__MINPUT_STEPS = MSTEP__MINPUT_STEPS;
-
-	/**
-	 * The feature id for the '<em><b>Fixed MParameters</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	public static final int MFTP_STEP__FIXED_MPARAMETERS = MSTEP__FIXED_MPARAMETERS;
-
-	/**
-	 * The feature id for the '<em><b>Fixed MResults</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	public static final int MFTP_STEP__FIXED_MRESULTS = MSTEP__FIXED_MRESULTS;
-
-	/**
-	 * The feature id for the '<em><b>Exclusive Property</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	public static final int MFTP_STEP__EXCLUSIVE_PROPERTY = MSTEP__EXCLUSIVE_PROPERTY;
-
-	/**
-	 * The feature id for the '<em><b>State Property</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	public static final int MFTP_STEP__STATE_PROPERTY = MSTEP__STATE_PROPERTY;
-
-	/**
-	 * The feature id for the '<em><b>MProgress Property</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	public static final int MFTP_STEP__MPROGRESS_PROPERTY = MSTEP__MPROGRESS_PROPERTY;
-
-	/**
-	 * The feature id for the '<em><b>Progress Property</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	public static final int MFTP_STEP__PROGRESS_PROPERTY = MSTEP__PROGRESS_PROPERTY;
-
-	/**
-	 * The feature id for the '<em><b>MProgress Status Property</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	public static final int MFTP_STEP__MPROGRESS_STATUS_PROPERTY = MSTEP__MPROGRESS_STATUS_PROPERTY;
-
-	/**
-	 * The feature id for the '<em><b>Progress Status Property</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	public static final int MFTP_STEP__PROGRESS_STATUS_PROPERTY = MSTEP__PROGRESS_STATUS_PROPERTY;
-
-	/**
-	 * The feature id for the '<em><b>MStart Trigger Property</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	public static final int MFTP_STEP__MSTART_TRIGGER_PROPERTY = MSTEP__MSTART_TRIGGER_PROPERTY;
-
-	/**
-	 * The feature id for the '<em><b>Start Trigger Property</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	public static final int MFTP_STEP__START_TRIGGER_PROPERTY = MSTEP__START_TRIGGER_PROPERTY;
-
-	/**
-	 * The feature id for the '<em><b>Interruptable</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	public static final int MFTP_STEP__INTERRUPTABLE = MSTEP__INTERRUPTABLE;
-
-	/**
-	 * The feature id for the '<em><b>Stoppable</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	public static final int MFTP_STEP__STOPPABLE = MSTEP__STOPPABLE;
-
-	/**
-	 * The feature id for the '<em><b>Terminatable</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	public static final int MFTP_STEP__TERMINATABLE = MSTEP__TERMINATABLE;
-
-	/**
-	 * The feature id for the '<em><b>Action Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	public static final int MFTP_STEP__ACTION_NAME = MSTEP__ACTION_NAME;
-
-	/**
-	 * The feature id for the '<em><b>Action Icon File Path</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	public static final int MFTP_STEP__ACTION_ICON_FILE_PATH = MSTEP__ACTION_ICON_FILE_PATH;
-
-	/**
-	 * The feature id for the '<em><b>Exception</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	public static final int MFTP_STEP__EXCEPTION = MSTEP__EXCEPTION;
-
-	/**
-	 * The feature id for the '<em><b>MFtp Server Url Parameter</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	public static final int MFTP_STEP__MFTP_SERVER_URL_PARAMETER = MSTEP_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Ftp Server Url Parameter</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	public static final int MFTP_STEP__FTP_SERVER_URL_PARAMETER = MSTEP_FEATURE_COUNT + 1;
-
-	/**
-	 * The feature id for the '<em><b>MFtp User Name Parameter</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	public static final int MFTP_STEP__MFTP_USER_NAME_PARAMETER = MSTEP_FEATURE_COUNT + 2;
-
-	/**
-	 * The feature id for the '<em><b>Ftp User Name Parameter</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	public static final int MFTP_STEP__FTP_USER_NAME_PARAMETER = MSTEP_FEATURE_COUNT + 3;
-
-	/**
-	 * The feature id for the '<em><b>MFtp User Password Parameter</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	public static final int MFTP_STEP__MFTP_USER_PASSWORD_PARAMETER = MSTEP_FEATURE_COUNT + 4;
-
-	/**
-	 * The feature id for the '<em><b>Ftp User Password Parameter</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	public static final int MFTP_STEP__FTP_USER_PASSWORD_PARAMETER = MSTEP_FEATURE_COUNT + 5;
-
-	/**
-	 * The number of structural features of the '<em>MFtp Step</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	public static final int MFTP_STEP_FEATURE_COUNT = MSTEP_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -11562,16 +12484,6 @@ public class LogicPackage extends EPackageImpl {
 	public static final int MBURN_CD_STEP_FEATURE_COUNT = MSTEP_FEATURE_COUNT + 10;
 
 	/**
-	 * The meta object id for the '{@link org.onceforall.dms.desktop.logic.MTestStep <em>MTest Step</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.onceforall.dms.desktop.logic.MTestStep
-	 * @see org.onceforall.dms.desktop.logic.LogicPackage#getMTestStep()
-	 * @generated
-	 */
-	public static final int MTEST_STEP = 28;
-
-	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -11930,16 +12842,6 @@ public class LogicPackage extends EPackageImpl {
 	 * @ordered
 	 */
 	public static final int MTEST_STEP_FEATURE_COUNT = MSTEP_FEATURE_COUNT + 4;
-
-	/**
-	 * The meta object id for the '{@link org.onceforall.dms.desktop.logic.MNameTagMp3Step <em>MName Tag Mp3 Step</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.onceforall.dms.desktop.logic.MNameTagMp3Step
-	 * @see org.onceforall.dms.desktop.logic.LogicPackage#getMNameTagMp3Step()
-	 * @generated
-	 */
-	public static final int MNAME_TAG_MP3_STEP = 29;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -12534,908 +13436,6 @@ public class LogicPackage extends EPackageImpl {
 	 * @ordered
 	 */
 	public static final int MNAME_TAG_MP3_STEP_FEATURE_COUNT = MTAG_STEP_FEATURE_COUNT + 8;
-
-	/**
-	 * The meta object id for the '{@link org.onceforall.dms.desktop.logic.MDmsApplicationMGetDataUpgradeInfoStep <em>MDms Application MGet Data Upgrade Info Step</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.onceforall.dms.desktop.logic.MDmsApplicationMGetDataUpgradeInfoStep
-	 * @see org.onceforall.dms.desktop.logic.LogicPackage#getMDmsApplicationMGetDataUpgradeInfoStep()
-	 * @generated
-	 */
-	public static final int MDMS_APPLICATION_MGET_DATA_UPGRADE_INFO_STEP = 31;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	public static final int MDMS_APPLICATION_MGET_DATA_UPGRADE_INFO_STEP__NAME = MFTP_STEP__NAME;
-
-	/**
-	 * The feature id for the '<em><b>Type Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	public static final int MDMS_APPLICATION_MGET_DATA_UPGRADE_INFO_STEP__TYPE_NAME = MFTP_STEP__TYPE_NAME;
-
-	/**
-	 * The feature id for the '<em><b>Type Name For UI</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	public static final int MDMS_APPLICATION_MGET_DATA_UPGRADE_INFO_STEP__TYPE_NAME_FOR_UI = MFTP_STEP__TYPE_NAME_FOR_UI;
-
-	/**
-	 * The feature id for the '<em><b>Name For UI</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	public static final int MDMS_APPLICATION_MGET_DATA_UPGRADE_INFO_STEP__NAME_FOR_UI = MFTP_STEP__NAME_FOR_UI;
-
-	/**
-	 * The feature id for the '<em><b>Description</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	public static final int MDMS_APPLICATION_MGET_DATA_UPGRADE_INFO_STEP__DESCRIPTION = MFTP_STEP__DESCRIPTION;
-
-	/**
-	 * The feature id for the '<em><b>Description For UI</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	public static final int MDMS_APPLICATION_MGET_DATA_UPGRADE_INFO_STEP__DESCRIPTION_FOR_UI = MFTP_STEP__DESCRIPTION_FOR_UI;
-
-	/**
-	 * The feature id for the '<em><b>Icon File Path</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	public static final int MDMS_APPLICATION_MGET_DATA_UPGRADE_INFO_STEP__ICON_FILE_PATH = MFTP_STEP__ICON_FILE_PATH;
-
-	/**
-	 * The feature id for the '<em><b>Overlay Icon File Path</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	public static final int MDMS_APPLICATION_MGET_DATA_UPGRADE_INFO_STEP__OVERLAY_ICON_FILE_PATH = MFTP_STEP__OVERLAY_ICON_FILE_PATH;
-
-	/**
-	 * The feature id for the '<em><b>Composite Class Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	public static final int MDMS_APPLICATION_MGET_DATA_UPGRADE_INFO_STEP__COMPOSITE_CLASS_NAME = MFTP_STEP__COMPOSITE_CLASS_NAME;
-
-	/**
-	 * The feature id for the '<em><b>Simulated</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	public static final int MDMS_APPLICATION_MGET_DATA_UPGRADE_INFO_STEP__SIMULATED = MFTP_STEP__SIMULATED;
-
-	/**
-	 * The feature id for the '<em><b>MName Property</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	public static final int MDMS_APPLICATION_MGET_DATA_UPGRADE_INFO_STEP__MNAME_PROPERTY = MFTP_STEP__MNAME_PROPERTY;
-
-	/**
-	 * The feature id for the '<em><b>MDescription Property</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	public static final int MDMS_APPLICATION_MGET_DATA_UPGRADE_INFO_STEP__MDESCRIPTION_PROPERTY = MFTP_STEP__MDESCRIPTION_PROPERTY;
-
-	/**
-	 * The feature id for the '<em><b>MIcon File Path Property</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	public static final int MDMS_APPLICATION_MGET_DATA_UPGRADE_INFO_STEP__MICON_FILE_PATH_PROPERTY = MFTP_STEP__MICON_FILE_PATH_PROPERTY;
-
-	/**
-	 * The feature id for the '<em><b>Fixed MProperties</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	public static final int MDMS_APPLICATION_MGET_DATA_UPGRADE_INFO_STEP__FIXED_MPROPERTIES = MFTP_STEP__FIXED_MPROPERTIES;
-
-	/**
-	 * The feature id for the '<em><b>Fixed MSteps</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	public static final int MDMS_APPLICATION_MGET_DATA_UPGRADE_INFO_STEP__FIXED_MSTEPS = MFTP_STEP__FIXED_MSTEPS;
-
-	/**
-	 * The feature id for the '<em><b>MState Property</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	public static final int MDMS_APPLICATION_MGET_DATA_UPGRADE_INFO_STEP__MSTATE_PROPERTY = MFTP_STEP__MSTATE_PROPERTY;
-
-	/**
-	 * The feature id for the '<em><b>MLast State Change Property</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	public static final int MDMS_APPLICATION_MGET_DATA_UPGRADE_INFO_STEP__MLAST_STATE_CHANGE_PROPERTY = MFTP_STEP__MLAST_STATE_CHANGE_PROPERTY;
-
-	/**
-	 * The feature id for the '<em><b>Last State Change Property</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	public static final int MDMS_APPLICATION_MGET_DATA_UPGRADE_INFO_STEP__LAST_STATE_CHANGE_PROPERTY = MFTP_STEP__LAST_STATE_CHANGE_PROPERTY;
-
-	/**
-	 * The feature id for the '<em><b>MInput Steps</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	public static final int MDMS_APPLICATION_MGET_DATA_UPGRADE_INFO_STEP__MINPUT_STEPS = MFTP_STEP__MINPUT_STEPS;
-
-	/**
-	 * The feature id for the '<em><b>Fixed MParameters</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	public static final int MDMS_APPLICATION_MGET_DATA_UPGRADE_INFO_STEP__FIXED_MPARAMETERS = MFTP_STEP__FIXED_MPARAMETERS;
-
-	/**
-	 * The feature id for the '<em><b>Fixed MResults</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	public static final int MDMS_APPLICATION_MGET_DATA_UPGRADE_INFO_STEP__FIXED_MRESULTS = MFTP_STEP__FIXED_MRESULTS;
-
-	/**
-	 * The feature id for the '<em><b>Exclusive Property</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	public static final int MDMS_APPLICATION_MGET_DATA_UPGRADE_INFO_STEP__EXCLUSIVE_PROPERTY = MFTP_STEP__EXCLUSIVE_PROPERTY;
-
-	/**
-	 * The feature id for the '<em><b>State Property</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	public static final int MDMS_APPLICATION_MGET_DATA_UPGRADE_INFO_STEP__STATE_PROPERTY = MFTP_STEP__STATE_PROPERTY;
-
-	/**
-	 * The feature id for the '<em><b>MProgress Property</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	public static final int MDMS_APPLICATION_MGET_DATA_UPGRADE_INFO_STEP__MPROGRESS_PROPERTY = MFTP_STEP__MPROGRESS_PROPERTY;
-
-	/**
-	 * The feature id for the '<em><b>Progress Property</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	public static final int MDMS_APPLICATION_MGET_DATA_UPGRADE_INFO_STEP__PROGRESS_PROPERTY = MFTP_STEP__PROGRESS_PROPERTY;
-
-	/**
-	 * The feature id for the '<em><b>MProgress Status Property</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	public static final int MDMS_APPLICATION_MGET_DATA_UPGRADE_INFO_STEP__MPROGRESS_STATUS_PROPERTY = MFTP_STEP__MPROGRESS_STATUS_PROPERTY;
-
-	/**
-	 * The feature id for the '<em><b>Progress Status Property</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	public static final int MDMS_APPLICATION_MGET_DATA_UPGRADE_INFO_STEP__PROGRESS_STATUS_PROPERTY = MFTP_STEP__PROGRESS_STATUS_PROPERTY;
-
-	/**
-	 * The feature id for the '<em><b>MStart Trigger Property</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	public static final int MDMS_APPLICATION_MGET_DATA_UPGRADE_INFO_STEP__MSTART_TRIGGER_PROPERTY = MFTP_STEP__MSTART_TRIGGER_PROPERTY;
-
-	/**
-	 * The feature id for the '<em><b>Start Trigger Property</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	public static final int MDMS_APPLICATION_MGET_DATA_UPGRADE_INFO_STEP__START_TRIGGER_PROPERTY = MFTP_STEP__START_TRIGGER_PROPERTY;
-
-	/**
-	 * The feature id for the '<em><b>Interruptable</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	public static final int MDMS_APPLICATION_MGET_DATA_UPGRADE_INFO_STEP__INTERRUPTABLE = MFTP_STEP__INTERRUPTABLE;
-
-	/**
-	 * The feature id for the '<em><b>Stoppable</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	public static final int MDMS_APPLICATION_MGET_DATA_UPGRADE_INFO_STEP__STOPPABLE = MFTP_STEP__STOPPABLE;
-
-	/**
-	 * The feature id for the '<em><b>Terminatable</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	public static final int MDMS_APPLICATION_MGET_DATA_UPGRADE_INFO_STEP__TERMINATABLE = MFTP_STEP__TERMINATABLE;
-
-	/**
-	 * The feature id for the '<em><b>Action Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	public static final int MDMS_APPLICATION_MGET_DATA_UPGRADE_INFO_STEP__ACTION_NAME = MFTP_STEP__ACTION_NAME;
-
-	/**
-	 * The feature id for the '<em><b>Action Icon File Path</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	public static final int MDMS_APPLICATION_MGET_DATA_UPGRADE_INFO_STEP__ACTION_ICON_FILE_PATH = MFTP_STEP__ACTION_ICON_FILE_PATH;
-
-	/**
-	 * The feature id for the '<em><b>Exception</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	public static final int MDMS_APPLICATION_MGET_DATA_UPGRADE_INFO_STEP__EXCEPTION = MFTP_STEP__EXCEPTION;
-
-	/**
-	 * The feature id for the '<em><b>MFtp Server Url Parameter</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	public static final int MDMS_APPLICATION_MGET_DATA_UPGRADE_INFO_STEP__MFTP_SERVER_URL_PARAMETER = MFTP_STEP__MFTP_SERVER_URL_PARAMETER;
-
-	/**
-	 * The feature id for the '<em><b>Ftp Server Url Parameter</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	public static final int MDMS_APPLICATION_MGET_DATA_UPGRADE_INFO_STEP__FTP_SERVER_URL_PARAMETER = MFTP_STEP__FTP_SERVER_URL_PARAMETER;
-
-	/**
-	 * The feature id for the '<em><b>MFtp User Name Parameter</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	public static final int MDMS_APPLICATION_MGET_DATA_UPGRADE_INFO_STEP__MFTP_USER_NAME_PARAMETER = MFTP_STEP__MFTP_USER_NAME_PARAMETER;
-
-	/**
-	 * The feature id for the '<em><b>Ftp User Name Parameter</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	public static final int MDMS_APPLICATION_MGET_DATA_UPGRADE_INFO_STEP__FTP_USER_NAME_PARAMETER = MFTP_STEP__FTP_USER_NAME_PARAMETER;
-
-	/**
-	 * The feature id for the '<em><b>MFtp User Password Parameter</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	public static final int MDMS_APPLICATION_MGET_DATA_UPGRADE_INFO_STEP__MFTP_USER_PASSWORD_PARAMETER = MFTP_STEP__MFTP_USER_PASSWORD_PARAMETER;
-
-	/**
-	 * The feature id for the '<em><b>Ftp User Password Parameter</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	public static final int MDMS_APPLICATION_MGET_DATA_UPGRADE_INFO_STEP__FTP_USER_PASSWORD_PARAMETER = MFTP_STEP__FTP_USER_PASSWORD_PARAMETER;
-
-	/**
-	 * The feature id for the '<em><b>MUpgrade Relative Ftp Path Property</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	public static final int MDMS_APPLICATION_MGET_DATA_UPGRADE_INFO_STEP__MUPGRADE_RELATIVE_FTP_PATH_PROPERTY = MFTP_STEP_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Upgrade Relative Ftp Path Property</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	public static final int MDMS_APPLICATION_MGET_DATA_UPGRADE_INFO_STEP__UPGRADE_RELATIVE_FTP_PATH_PROPERTY = MFTP_STEP_FEATURE_COUNT + 1;
-
-	/**
-	 * The feature id for the '<em><b>MUpgrade Available Result</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	public static final int MDMS_APPLICATION_MGET_DATA_UPGRADE_INFO_STEP__MUPGRADE_AVAILABLE_RESULT = MFTP_STEP_FEATURE_COUNT + 2;
-
-	/**
-	 * The feature id for the '<em><b>Upgrade Available Result</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	public static final int MDMS_APPLICATION_MGET_DATA_UPGRADE_INFO_STEP__UPGRADE_AVAILABLE_RESULT = MFTP_STEP_FEATURE_COUNT + 3;
-
-	/**
-	 * The feature id for the '<em><b>MUpgrade Message Result</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	public static final int MDMS_APPLICATION_MGET_DATA_UPGRADE_INFO_STEP__MUPGRADE_MESSAGE_RESULT = MFTP_STEP_FEATURE_COUNT + 4;
-
-	/**
-	 * The feature id for the '<em><b>Upgrade Message Result</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	public static final int MDMS_APPLICATION_MGET_DATA_UPGRADE_INFO_STEP__UPGRADE_MESSAGE_RESULT = MFTP_STEP_FEATURE_COUNT + 5;
-
-	/**
-	 * The feature id for the '<em><b>MUpgrade Date Result</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	public static final int MDMS_APPLICATION_MGET_DATA_UPGRADE_INFO_STEP__MUPGRADE_DATE_RESULT = MFTP_STEP_FEATURE_COUNT + 6;
-
-	/**
-	 * The feature id for the '<em><b>Upgrade Date Result</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	public static final int MDMS_APPLICATION_MGET_DATA_UPGRADE_INFO_STEP__UPGRADE_DATE_RESULT = MFTP_STEP_FEATURE_COUNT + 7;
-
-	/**
-	 * The number of structural features of the '<em>MDms Application MGet Data Upgrade Info Step</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	public static final int MDMS_APPLICATION_MGET_DATA_UPGRADE_INFO_STEP_FEATURE_COUNT = MFTP_STEP_FEATURE_COUNT + 8;
-
-	/**
-	 * The meta object id for the '{@link org.onceforall.dms.desktop.logic.MDmsApplicationMUpgradeDataStep <em>MDms Application MUpgrade Data Step</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.onceforall.dms.desktop.logic.MDmsApplicationMUpgradeDataStep
-	 * @see org.onceforall.dms.desktop.logic.LogicPackage#getMDmsApplicationMUpgradeDataStep()
-	 * @generated
-	 */
-	public static final int MDMS_APPLICATION_MUPGRADE_DATA_STEP = 32;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	public static final int MDMS_APPLICATION_MUPGRADE_DATA_STEP__NAME = MFTP_STEP__NAME;
-
-	/**
-	 * The feature id for the '<em><b>Type Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	public static final int MDMS_APPLICATION_MUPGRADE_DATA_STEP__TYPE_NAME = MFTP_STEP__TYPE_NAME;
-
-	/**
-	 * The feature id for the '<em><b>Type Name For UI</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	public static final int MDMS_APPLICATION_MUPGRADE_DATA_STEP__TYPE_NAME_FOR_UI = MFTP_STEP__TYPE_NAME_FOR_UI;
-
-	/**
-	 * The feature id for the '<em><b>Name For UI</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	public static final int MDMS_APPLICATION_MUPGRADE_DATA_STEP__NAME_FOR_UI = MFTP_STEP__NAME_FOR_UI;
-
-	/**
-	 * The feature id for the '<em><b>Description</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	public static final int MDMS_APPLICATION_MUPGRADE_DATA_STEP__DESCRIPTION = MFTP_STEP__DESCRIPTION;
-
-	/**
-	 * The feature id for the '<em><b>Description For UI</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	public static final int MDMS_APPLICATION_MUPGRADE_DATA_STEP__DESCRIPTION_FOR_UI = MFTP_STEP__DESCRIPTION_FOR_UI;
-
-	/**
-	 * The feature id for the '<em><b>Icon File Path</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	public static final int MDMS_APPLICATION_MUPGRADE_DATA_STEP__ICON_FILE_PATH = MFTP_STEP__ICON_FILE_PATH;
-
-	/**
-	 * The feature id for the '<em><b>Overlay Icon File Path</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	public static final int MDMS_APPLICATION_MUPGRADE_DATA_STEP__OVERLAY_ICON_FILE_PATH = MFTP_STEP__OVERLAY_ICON_FILE_PATH;
-
-	/**
-	 * The feature id for the '<em><b>Composite Class Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	public static final int MDMS_APPLICATION_MUPGRADE_DATA_STEP__COMPOSITE_CLASS_NAME = MFTP_STEP__COMPOSITE_CLASS_NAME;
-
-	/**
-	 * The feature id for the '<em><b>Simulated</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	public static final int MDMS_APPLICATION_MUPGRADE_DATA_STEP__SIMULATED = MFTP_STEP__SIMULATED;
-
-	/**
-	 * The feature id for the '<em><b>MName Property</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	public static final int MDMS_APPLICATION_MUPGRADE_DATA_STEP__MNAME_PROPERTY = MFTP_STEP__MNAME_PROPERTY;
-
-	/**
-	 * The feature id for the '<em><b>MDescription Property</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	public static final int MDMS_APPLICATION_MUPGRADE_DATA_STEP__MDESCRIPTION_PROPERTY = MFTP_STEP__MDESCRIPTION_PROPERTY;
-
-	/**
-	 * The feature id for the '<em><b>MIcon File Path Property</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	public static final int MDMS_APPLICATION_MUPGRADE_DATA_STEP__MICON_FILE_PATH_PROPERTY = MFTP_STEP__MICON_FILE_PATH_PROPERTY;
-
-	/**
-	 * The feature id for the '<em><b>Fixed MProperties</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	public static final int MDMS_APPLICATION_MUPGRADE_DATA_STEP__FIXED_MPROPERTIES = MFTP_STEP__FIXED_MPROPERTIES;
-
-	/**
-	 * The feature id for the '<em><b>Fixed MSteps</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	public static final int MDMS_APPLICATION_MUPGRADE_DATA_STEP__FIXED_MSTEPS = MFTP_STEP__FIXED_MSTEPS;
-
-	/**
-	 * The feature id for the '<em><b>MState Property</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	public static final int MDMS_APPLICATION_MUPGRADE_DATA_STEP__MSTATE_PROPERTY = MFTP_STEP__MSTATE_PROPERTY;
-
-	/**
-	 * The feature id for the '<em><b>MLast State Change Property</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	public static final int MDMS_APPLICATION_MUPGRADE_DATA_STEP__MLAST_STATE_CHANGE_PROPERTY = MFTP_STEP__MLAST_STATE_CHANGE_PROPERTY;
-
-	/**
-	 * The feature id for the '<em><b>Last State Change Property</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	public static final int MDMS_APPLICATION_MUPGRADE_DATA_STEP__LAST_STATE_CHANGE_PROPERTY = MFTP_STEP__LAST_STATE_CHANGE_PROPERTY;
-
-	/**
-	 * The feature id for the '<em><b>MInput Steps</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	public static final int MDMS_APPLICATION_MUPGRADE_DATA_STEP__MINPUT_STEPS = MFTP_STEP__MINPUT_STEPS;
-
-	/**
-	 * The feature id for the '<em><b>Fixed MParameters</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	public static final int MDMS_APPLICATION_MUPGRADE_DATA_STEP__FIXED_MPARAMETERS = MFTP_STEP__FIXED_MPARAMETERS;
-
-	/**
-	 * The feature id for the '<em><b>Fixed MResults</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	public static final int MDMS_APPLICATION_MUPGRADE_DATA_STEP__FIXED_MRESULTS = MFTP_STEP__FIXED_MRESULTS;
-
-	/**
-	 * The feature id for the '<em><b>Exclusive Property</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	public static final int MDMS_APPLICATION_MUPGRADE_DATA_STEP__EXCLUSIVE_PROPERTY = MFTP_STEP__EXCLUSIVE_PROPERTY;
-
-	/**
-	 * The feature id for the '<em><b>State Property</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	public static final int MDMS_APPLICATION_MUPGRADE_DATA_STEP__STATE_PROPERTY = MFTP_STEP__STATE_PROPERTY;
-
-	/**
-	 * The feature id for the '<em><b>MProgress Property</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	public static final int MDMS_APPLICATION_MUPGRADE_DATA_STEP__MPROGRESS_PROPERTY = MFTP_STEP__MPROGRESS_PROPERTY;
-
-	/**
-	 * The feature id for the '<em><b>Progress Property</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	public static final int MDMS_APPLICATION_MUPGRADE_DATA_STEP__PROGRESS_PROPERTY = MFTP_STEP__PROGRESS_PROPERTY;
-
-	/**
-	 * The feature id for the '<em><b>MProgress Status Property</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	public static final int MDMS_APPLICATION_MUPGRADE_DATA_STEP__MPROGRESS_STATUS_PROPERTY = MFTP_STEP__MPROGRESS_STATUS_PROPERTY;
-
-	/**
-	 * The feature id for the '<em><b>Progress Status Property</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	public static final int MDMS_APPLICATION_MUPGRADE_DATA_STEP__PROGRESS_STATUS_PROPERTY = MFTP_STEP__PROGRESS_STATUS_PROPERTY;
-
-	/**
-	 * The feature id for the '<em><b>MStart Trigger Property</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	public static final int MDMS_APPLICATION_MUPGRADE_DATA_STEP__MSTART_TRIGGER_PROPERTY = MFTP_STEP__MSTART_TRIGGER_PROPERTY;
-
-	/**
-	 * The feature id for the '<em><b>Start Trigger Property</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	public static final int MDMS_APPLICATION_MUPGRADE_DATA_STEP__START_TRIGGER_PROPERTY = MFTP_STEP__START_TRIGGER_PROPERTY;
-
-	/**
-	 * The feature id for the '<em><b>Interruptable</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	public static final int MDMS_APPLICATION_MUPGRADE_DATA_STEP__INTERRUPTABLE = MFTP_STEP__INTERRUPTABLE;
-
-	/**
-	 * The feature id for the '<em><b>Stoppable</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	public static final int MDMS_APPLICATION_MUPGRADE_DATA_STEP__STOPPABLE = MFTP_STEP__STOPPABLE;
-
-	/**
-	 * The feature id for the '<em><b>Terminatable</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	public static final int MDMS_APPLICATION_MUPGRADE_DATA_STEP__TERMINATABLE = MFTP_STEP__TERMINATABLE;
-
-	/**
-	 * The feature id for the '<em><b>Action Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	public static final int MDMS_APPLICATION_MUPGRADE_DATA_STEP__ACTION_NAME = MFTP_STEP__ACTION_NAME;
-
-	/**
-	 * The feature id for the '<em><b>Action Icon File Path</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	public static final int MDMS_APPLICATION_MUPGRADE_DATA_STEP__ACTION_ICON_FILE_PATH = MFTP_STEP__ACTION_ICON_FILE_PATH;
-
-	/**
-	 * The feature id for the '<em><b>Exception</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	public static final int MDMS_APPLICATION_MUPGRADE_DATA_STEP__EXCEPTION = MFTP_STEP__EXCEPTION;
-
-	/**
-	 * The feature id for the '<em><b>MFtp Server Url Parameter</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	public static final int MDMS_APPLICATION_MUPGRADE_DATA_STEP__MFTP_SERVER_URL_PARAMETER = MFTP_STEP__MFTP_SERVER_URL_PARAMETER;
-
-	/**
-	 * The feature id for the '<em><b>Ftp Server Url Parameter</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	public static final int MDMS_APPLICATION_MUPGRADE_DATA_STEP__FTP_SERVER_URL_PARAMETER = MFTP_STEP__FTP_SERVER_URL_PARAMETER;
-
-	/**
-	 * The feature id for the '<em><b>MFtp User Name Parameter</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	public static final int MDMS_APPLICATION_MUPGRADE_DATA_STEP__MFTP_USER_NAME_PARAMETER = MFTP_STEP__MFTP_USER_NAME_PARAMETER;
-
-	/**
-	 * The feature id for the '<em><b>Ftp User Name Parameter</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	public static final int MDMS_APPLICATION_MUPGRADE_DATA_STEP__FTP_USER_NAME_PARAMETER = MFTP_STEP__FTP_USER_NAME_PARAMETER;
-
-	/**
-	 * The feature id for the '<em><b>MFtp User Password Parameter</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	public static final int MDMS_APPLICATION_MUPGRADE_DATA_STEP__MFTP_USER_PASSWORD_PARAMETER = MFTP_STEP__MFTP_USER_PASSWORD_PARAMETER;
-
-	/**
-	 * The feature id for the '<em><b>Ftp User Password Parameter</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	public static final int MDMS_APPLICATION_MUPGRADE_DATA_STEP__FTP_USER_PASSWORD_PARAMETER = MFTP_STEP__FTP_USER_PASSWORD_PARAMETER;
-
-	/**
-	 * The feature id for the '<em><b>MUpgrade Relative Ftp Path Property</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	public static final int MDMS_APPLICATION_MUPGRADE_DATA_STEP__MUPGRADE_RELATIVE_FTP_PATH_PROPERTY = MFTP_STEP_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Upgrade Relative Ftp Path Property</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	public static final int MDMS_APPLICATION_MUPGRADE_DATA_STEP__UPGRADE_RELATIVE_FTP_PATH_PROPERTY = MFTP_STEP_FEATURE_COUNT + 1;
-
-	/**
-	 * The feature id for the '<em><b>MUpgrade Message Parameter</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	public static final int MDMS_APPLICATION_MUPGRADE_DATA_STEP__MUPGRADE_MESSAGE_PARAMETER = MFTP_STEP_FEATURE_COUNT + 2;
-
-	/**
-	 * The feature id for the '<em><b>Upgrade Message Parameter</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	public static final int MDMS_APPLICATION_MUPGRADE_DATA_STEP__UPGRADE_MESSAGE_PARAMETER = MFTP_STEP_FEATURE_COUNT + 3;
-
-	/**
-	 * The feature id for the '<em><b>MUpgrade Date Parameter</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	public static final int MDMS_APPLICATION_MUPGRADE_DATA_STEP__MUPGRADE_DATE_PARAMETER = MFTP_STEP_FEATURE_COUNT + 4;
-
-	/**
-	 * The feature id for the '<em><b>Upgrade Date Parameter</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	public static final int MDMS_APPLICATION_MUPGRADE_DATA_STEP__UPGRADE_DATE_PARAMETER = MFTP_STEP_FEATURE_COUNT + 5;
-
-	/**
-	 * The number of structural features of the '<em>MDms Application MUpgrade Data Step</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	public static final int MDMS_APPLICATION_MUPGRADE_DATA_STEP_FEATURE_COUNT = MFTP_STEP_FEATURE_COUNT + 6;
 
 	/**
 	 * The meta object id for the '<em>MDirectory</em>' data type.
@@ -19170,7 +19170,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @return the meta object for data type '<em>MDirectory</em>'.
 	 * @see java.io.File
 	 * @model instanceClass="java.io.File"
-	 *        annotation="http://www.onceforall.org/mcore name='Directory'" 
+	 *        annotation="http://www.onceforall.org/mcore name='Directory'"
 	 * @generated
 	 */
 	public EDataType getMDirectory() {
@@ -19184,7 +19184,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @return the meta object for data type '<em>MExisting Directory</em>'.
 	 * @see java.io.File
 	 * @model instanceClass="java.io.File"
-	 *        annotation="http://www.onceforall.org/mcore name='Directory (must exist)'" 
+	 *        annotation="http://www.onceforall.org/mcore name='Directory (must exist)'"
 	 * @generated
 	 */
 	public EDataType getMExistingDirectory() {
@@ -19211,7 +19211,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @return the meta object for data type '<em>MFile</em>'.
 	 * @see java.io.File
 	 * @model instanceClass="java.io.File"
-	 *        annotation="http://www.onceforall.org/mcore name='File'" 
+	 *        annotation="http://www.onceforall.org/mcore name='File'"
 	 * @generated
 	 */
 	public EDataType getMFile() {
@@ -19225,7 +19225,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @return the meta object for data type '<em>MExisting File</em>'.
 	 * @see java.io.File
 	 * @model instanceClass="java.io.File"
-	 *        annotation="http://www.onceforall.org/mcore name='File (must exist)'" 
+	 *        annotation="http://www.onceforall.org/mcore name='File (must exist)'"
 	 * @generated
 	 */
 	public EDataType getMExistingFile() {
@@ -19239,7 +19239,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @return the meta object for data type '<em>MState</em>'.
 	 * @see org.onceforall.dms.desktop.logic.types.State
 	 * @model instanceClass="org.onceforall.dms.desktop.logic.types.State"
-	 *        annotation="http://www.onceforall.org/mcore name='State'" 
+	 *        annotation="http://www.onceforall.org/mcore name='State'"
 	 * @generated
 	 */
 	public EDataType getMState() {
@@ -19253,7 +19253,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @return the meta object for data type '<em>MStep State</em>'.
 	 * @see org.onceforall.dms.desktop.logic.types.State
 	 * @model instanceClass="org.onceforall.dms.desktop.logic.types.State"
-	 *        annotation="http://www.onceforall.org/mcore name='Step state'" 
+	 *        annotation="http://www.onceforall.org/mcore name='Step state'"
 	 * @generated
 	 */
 	public EDataType getMStepState() {
@@ -19267,7 +19267,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @return the meta object for data type '<em>MBoolean</em>'.
 	 * @see java.lang.Boolean
 	 * @model instanceClass="java.lang.Boolean"
-	 *        annotation="http://www.onceforall.org/mcore name='Yes/No'" 
+	 *        annotation="http://www.onceforall.org/mcore name='Yes/No'"
 	 * @generated
 	 */
 	public EDataType getMBoolean() {
@@ -19281,7 +19281,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @return the meta object for data type '<em>MDate Time</em>'.
 	 * @see java.util.Date
 	 * @model instanceClass="java.util.Date"
-	 *        annotation="http://www.onceforall.org/mcore name='Date and time'" 
+	 *        annotation="http://www.onceforall.org/mcore name='Date and time'"
 	 * @generated
 	 */
 	public EDataType getMDateTime() {
@@ -19295,7 +19295,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @return the meta object for data type '<em>MDate</em>'.
 	 * @see java.util.Date
 	 * @model instanceClass="java.util.Date"
-	 *        annotation="http://www.onceforall.org/mcore name='Date'" 
+	 *        annotation="http://www.onceforall.org/mcore name='Date'"
 	 * @generated
 	 */
 	public EDataType getMDate() {
@@ -19309,7 +19309,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @return the meta object for data type '<em>MTime</em>'.
 	 * @see java.util.Date
 	 * @model instanceClass="java.util.Date"
-	 *        annotation="http://www.onceforall.org/mcore name='Time'" 
+	 *        annotation="http://www.onceforall.org/mcore name='Time'"
 	 * @generated
 	 */
 	public EDataType getMTime() {
@@ -19323,7 +19323,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @return the meta object for data type '<em>MDuration</em>'.
 	 * @see java.lang.Long
 	 * @model instanceClass="java.lang.Long"
-	 *        annotation="http://www.onceforall.org/mcore name='Duration'" 
+	 *        annotation="http://www.onceforall.org/mcore name='Duration'"
 	 * @generated
 	 */
 	public EDataType getMDuration() {
@@ -19337,7 +19337,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @return the meta object for data type '<em>MLong</em>'.
 	 * @see java.lang.Long
 	 * @model instanceClass="java.lang.Long"
-	 *        annotation="http://www.onceforall.org/mcore name='Number'" 
+	 *        annotation="http://www.onceforall.org/mcore name='Number'"
 	 * @generated
 	 */
 	public EDataType getMLong() {
@@ -19351,7 +19351,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @return the meta object for data type '<em>MPassword</em>'.
 	 * @see java.lang.String
 	 * @model instanceClass="java.lang.String"
-	 *        annotation="http://www.onceforall.org/mcore name='Password'" 
+	 *        annotation="http://www.onceforall.org/mcore name='Password'"
 	 * @generated
 	 */
 	public EDataType getMPassword() {
@@ -19365,7 +19365,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @return the meta object for data type '<em>MString</em>'.
 	 * @see java.lang.String
 	 * @model instanceClass="java.lang.String"
-	 *        annotation="http://www.onceforall.org/mcore name='Text'" 
+	 *        annotation="http://www.onceforall.org/mcore name='Text'"
 	 * @generated
 	 */
 	public EDataType getMString() {
@@ -19379,7 +19379,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @return the meta object for data type '<em>MUrl</em>'.
 	 * @see java.net.URL
 	 * @model instanceClass="java.net.URL"
-	 *        annotation="http://www.onceforall.org/mcore name='URL'" 
+	 *        annotation="http://www.onceforall.org/mcore name='URL'"
 	 * @generated
 	 */
 	public EDataType getMUrl() {
@@ -19406,7 +19406,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @return the meta object for data type '<em>MMp3 State</em>'.
 	 * @see org.onceforall.dms.desktop.logic.types.State
 	 * @model instanceClass="org.onceforall.dms.desktop.logic.types.State"
-	 *        annotation="http://www.onceforall.org/mcore name='MP3 state'" 
+	 *        annotation="http://www.onceforall.org/mcore name='MP3 state'"
 	 * @generated
 	 */
 	public EDataType getMMp3State() {
@@ -19566,6 +19566,24 @@ public class LogicPackage extends EPackageImpl {
 		createEReference(mDmsApplicationEClass, MDMS_APPLICATION__MUPGRADE_DATA_STEP);
 		createEReference(mDmsApplicationEClass, MDMS_APPLICATION__MSCRIPTS);
 		createEReference(mDmsApplicationEClass, MDMS_APPLICATION__MMP3_FOLDERS);
+
+		mDmsApplicationMGetDataUpgradeInfoStepEClass = createEClass(MDMS_APPLICATION_MGET_DATA_UPGRADE_INFO_STEP);
+		createEReference(mDmsApplicationMGetDataUpgradeInfoStepEClass, MDMS_APPLICATION_MGET_DATA_UPGRADE_INFO_STEP__MUPGRADE_RELATIVE_FTP_PATH_PROPERTY);
+		createEAttribute(mDmsApplicationMGetDataUpgradeInfoStepEClass, MDMS_APPLICATION_MGET_DATA_UPGRADE_INFO_STEP__UPGRADE_RELATIVE_FTP_PATH_PROPERTY);
+		createEReference(mDmsApplicationMGetDataUpgradeInfoStepEClass, MDMS_APPLICATION_MGET_DATA_UPGRADE_INFO_STEP__MUPGRADE_AVAILABLE_RESULT);
+		createEAttribute(mDmsApplicationMGetDataUpgradeInfoStepEClass, MDMS_APPLICATION_MGET_DATA_UPGRADE_INFO_STEP__UPGRADE_AVAILABLE_RESULT);
+		createEReference(mDmsApplicationMGetDataUpgradeInfoStepEClass, MDMS_APPLICATION_MGET_DATA_UPGRADE_INFO_STEP__MUPGRADE_MESSAGE_RESULT);
+		createEAttribute(mDmsApplicationMGetDataUpgradeInfoStepEClass, MDMS_APPLICATION_MGET_DATA_UPGRADE_INFO_STEP__UPGRADE_MESSAGE_RESULT);
+		createEReference(mDmsApplicationMGetDataUpgradeInfoStepEClass, MDMS_APPLICATION_MGET_DATA_UPGRADE_INFO_STEP__MUPGRADE_DATE_RESULT);
+		createEAttribute(mDmsApplicationMGetDataUpgradeInfoStepEClass, MDMS_APPLICATION_MGET_DATA_UPGRADE_INFO_STEP__UPGRADE_DATE_RESULT);
+
+		mDmsApplicationMUpgradeDataStepEClass = createEClass(MDMS_APPLICATION_MUPGRADE_DATA_STEP);
+		createEReference(mDmsApplicationMUpgradeDataStepEClass, MDMS_APPLICATION_MUPGRADE_DATA_STEP__MUPGRADE_RELATIVE_FTP_PATH_PROPERTY);
+		createEAttribute(mDmsApplicationMUpgradeDataStepEClass, MDMS_APPLICATION_MUPGRADE_DATA_STEP__UPGRADE_RELATIVE_FTP_PATH_PROPERTY);
+		createEReference(mDmsApplicationMUpgradeDataStepEClass, MDMS_APPLICATION_MUPGRADE_DATA_STEP__MUPGRADE_MESSAGE_PARAMETER);
+		createEAttribute(mDmsApplicationMUpgradeDataStepEClass, MDMS_APPLICATION_MUPGRADE_DATA_STEP__UPGRADE_MESSAGE_PARAMETER);
+		createEReference(mDmsApplicationMUpgradeDataStepEClass, MDMS_APPLICATION_MUPGRADE_DATA_STEP__MUPGRADE_DATE_PARAMETER);
+		createEAttribute(mDmsApplicationMUpgradeDataStepEClass, MDMS_APPLICATION_MUPGRADE_DATA_STEP__UPGRADE_DATE_PARAMETER);
 
 		mEnterInformationStepEClass = createEClass(MENTER_INFORMATION_STEP);
 
@@ -19856,24 +19874,6 @@ public class LogicPackage extends EPackageImpl {
 		createEReference(mTagStepEClass, MTAG_STEP__MMP3_FILE_PATH_RESULT);
 		createEAttribute(mTagStepEClass, MTAG_STEP__MP3_FILE_PATH_RESULT);
 
-		mDmsApplicationMGetDataUpgradeInfoStepEClass = createEClass(MDMS_APPLICATION_MGET_DATA_UPGRADE_INFO_STEP);
-		createEReference(mDmsApplicationMGetDataUpgradeInfoStepEClass, MDMS_APPLICATION_MGET_DATA_UPGRADE_INFO_STEP__MUPGRADE_RELATIVE_FTP_PATH_PROPERTY);
-		createEAttribute(mDmsApplicationMGetDataUpgradeInfoStepEClass, MDMS_APPLICATION_MGET_DATA_UPGRADE_INFO_STEP__UPGRADE_RELATIVE_FTP_PATH_PROPERTY);
-		createEReference(mDmsApplicationMGetDataUpgradeInfoStepEClass, MDMS_APPLICATION_MGET_DATA_UPGRADE_INFO_STEP__MUPGRADE_AVAILABLE_RESULT);
-		createEAttribute(mDmsApplicationMGetDataUpgradeInfoStepEClass, MDMS_APPLICATION_MGET_DATA_UPGRADE_INFO_STEP__UPGRADE_AVAILABLE_RESULT);
-		createEReference(mDmsApplicationMGetDataUpgradeInfoStepEClass, MDMS_APPLICATION_MGET_DATA_UPGRADE_INFO_STEP__MUPGRADE_MESSAGE_RESULT);
-		createEAttribute(mDmsApplicationMGetDataUpgradeInfoStepEClass, MDMS_APPLICATION_MGET_DATA_UPGRADE_INFO_STEP__UPGRADE_MESSAGE_RESULT);
-		createEReference(mDmsApplicationMGetDataUpgradeInfoStepEClass, MDMS_APPLICATION_MGET_DATA_UPGRADE_INFO_STEP__MUPGRADE_DATE_RESULT);
-		createEAttribute(mDmsApplicationMGetDataUpgradeInfoStepEClass, MDMS_APPLICATION_MGET_DATA_UPGRADE_INFO_STEP__UPGRADE_DATE_RESULT);
-
-		mDmsApplicationMUpgradeDataStepEClass = createEClass(MDMS_APPLICATION_MUPGRADE_DATA_STEP);
-		createEReference(mDmsApplicationMUpgradeDataStepEClass, MDMS_APPLICATION_MUPGRADE_DATA_STEP__MUPGRADE_RELATIVE_FTP_PATH_PROPERTY);
-		createEAttribute(mDmsApplicationMUpgradeDataStepEClass, MDMS_APPLICATION_MUPGRADE_DATA_STEP__UPGRADE_RELATIVE_FTP_PATH_PROPERTY);
-		createEReference(mDmsApplicationMUpgradeDataStepEClass, MDMS_APPLICATION_MUPGRADE_DATA_STEP__MUPGRADE_MESSAGE_PARAMETER);
-		createEAttribute(mDmsApplicationMUpgradeDataStepEClass, MDMS_APPLICATION_MUPGRADE_DATA_STEP__UPGRADE_MESSAGE_PARAMETER);
-		createEReference(mDmsApplicationMUpgradeDataStepEClass, MDMS_APPLICATION_MUPGRADE_DATA_STEP__MUPGRADE_DATE_PARAMETER);
-		createEAttribute(mDmsApplicationMUpgradeDataStepEClass, MDMS_APPLICATION_MUPGRADE_DATA_STEP__UPGRADE_DATE_PARAMETER);
-
 		// Create data types
 		mDirectoryEDataType = createEDataType(MDIRECTORY);
 		mExistingDirectoryEDataType = createEDataType(MEXISTING_DIRECTORY);
@@ -19928,6 +19928,8 @@ public class LogicPackage extends EPackageImpl {
 		mApplicationEClass.getESuperTypes().add(this.getMObject());
 		mScriptEClass.getESuperTypes().add(this.getMStatefulObject());
 		mDmsApplicationEClass.getESuperTypes().add(this.getMApplication());
+		mDmsApplicationMGetDataUpgradeInfoStepEClass.getESuperTypes().add(this.getMFtpStep());
+		mDmsApplicationMUpgradeDataStepEClass.getESuperTypes().add(this.getMFtpStep());
 		mEnterInformationStepEClass.getESuperTypes().add(this.getMStep());
 		mEnterWwxInformationStepEClass.getESuperTypes().add(this.getMEnterInformationStep());
 		mEnterServiceInformationStepEClass.getESuperTypes().add(this.getMEnterInformationStep());
@@ -19948,17 +19950,14 @@ public class LogicPackage extends EPackageImpl {
 		mTestStepEClass.getESuperTypes().add(this.getMStep());
 		mNameTagMp3StepEClass.getESuperTypes().add(this.getMTagStep());
 		mTagStepEClass.getESuperTypes().add(this.getMStep());
-		mDmsApplicationMGetDataUpgradeInfoStepEClass.getESuperTypes().add(this.getMFtpStep());
-		mDmsApplicationMUpgradeDataStepEClass.getESuperTypes().add(this.getMFtpStep());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(mObjectEClass, MObject.class, "MObject", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getMObject_MNameProperty(), this.getMProperty(), null, "mNameProperty", "", 1, 1, MObject.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMObject_MNameProperty(), this.getMProperty(), null, "mNameProperty", null, 1, 1, MObject.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getMObject_MDescriptionProperty(), this.getMProperty(), null, "mDescriptionProperty", null, 1, 1, MObject.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getMObject_MIconFilePathProperty(), this.getMProperty(), null, "mIconFilePathProperty", null, 1, 1, MObject.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getMObject_FixedMProperties(), this.getMProperty(), null, "fixedMProperties", "", 0, -1, MObject.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
-		initEReference(getMObject_FixedMSteps(), this.getMStep(), null, "fixedMSteps", "", 0, -1, MObject.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
-		
+		initEReference(getMObject_FixedMProperties(), this.getMProperty(), null, "fixedMProperties", null, 0, -1, MObject.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getMObject_FixedMSteps(), this.getMStep(), null, "fixedMSteps", null, 0, -1, MObject.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
 		initEClass(mElementEClass, MElement.class, "MElement", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getMElement_Name(), this.getMString(), "name", "", 1, 1, MElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -19971,38 +19970,29 @@ public class LogicPackage extends EPackageImpl {
 		initEAttribute(getMElement_OverlayIconFilePath(), this.getMFile(), "overlayIconFilePath", null, 0, 1, MElement.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMElement_CompositeClassName(), ecorePackage.getEString(), "compositeClassName", "", 0, 1, MElement.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMElement_Simulated(), ecorePackage.getEBoolean(), "simulated", null, 1, 1, MElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		
-
-		EOperation op = addEOperation(mElementEClass, ecorePackage.getEBoolean(), "validate", 1, 1);
-		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnosticsChain", 1, 1);
-		addEParameter(op, ecorePackage.getEMap(), "context", 1, 1);
 
 		initEClass(mParameterEClass, MParameter.class, "MParameter", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		
 
 		initEClass(mPropertyEClass, MProperty.class, "MProperty", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		
 
 		initEClass(mResultEClass, MResult.class, "MResult", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		
 
 		initEClass(mStatefulObjectEClass, MStatefulObject.class, "MStatefulObject", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getMStatefulObject_MStateProperty(), this.getMProperty(), null, "mStateProperty", "Active", 1, 1, MStatefulObject.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMStatefulObject_MStateProperty(), this.getMProperty(), null, "mStateProperty", null, 1, 1, MStatefulObject.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getMStatefulObject_MLastStateChangeProperty(), this.getMProperty(), null, "mLastStateChangeProperty", null, 1, 1, MStatefulObject.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMStatefulObject_LastStateChangeProperty(), this.getMDateTime(), "lastStateChangeProperty", null, 0, 1, MStatefulObject.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		
 
 		initEClass(mStepEClass, MStep.class, "MStep", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getMStep_MInputSteps(), this.getMStep(), null, "mInputSteps", null, 0, -1, MStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getMStep_FixedMParameters(), this.getMParameter(), null, "fixedMParameters", "", 0, -1, MStep.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
-		initEReference(getMStep_FixedMResults(), this.getMResult(), null, "fixedMResults", "", 0, -1, MStep.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getMStep_FixedMParameters(), this.getMParameter(), null, "fixedMParameters", null, 0, -1, MStep.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getMStep_FixedMResults(), this.getMResult(), null, "fixedMResults", null, 0, -1, MStep.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMStep_ExclusiveProperty(), this.getMBoolean(), "exclusiveProperty", "false", 1, 1, MStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMStep_StateProperty(), this.getMStepState(), "stateProperty", "Pending", 1, 1, MStep.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getMStep_MProgressProperty(), this.getMProperty(), null, "mProgressProperty", "", 1, 1, MStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMStep_MProgressProperty(), this.getMProperty(), null, "mProgressProperty", null, 1, 1, MStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMStep_ProgressProperty(), this.getMLong(), "progressProperty", null, 0, 1, MStep.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getMStep_MProgressStatusProperty(), this.getMProperty(), null, "mProgressStatusProperty", "", 1, 1, MStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMStep_MProgressStatusProperty(), this.getMProperty(), null, "mProgressStatusProperty", null, 1, 1, MStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMStep_ProgressStatusProperty(), this.getMString(), "progressStatusProperty", null, 0, 1, MStep.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getMStep_MStartTriggerProperty(), this.getMProperty(), null, "mStartTriggerProperty", "", 1, 1, MStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMStep_MStartTriggerProperty(), this.getMProperty(), null, "mStartTriggerProperty", null, 1, 1, MStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMStep_StartTriggerProperty(), this.getMString(), "startTriggerProperty", null, 1, 1, MStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMStep_Interruptable(), ecorePackage.getEBoolean(), "interruptable", "false", 1, 1, MStep.class, IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMStep_Stoppable(), ecorePackage.getEBoolean(), "stoppable", "false", 1, 1, MStep.class, IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -20010,7 +20000,6 @@ public class LogicPackage extends EPackageImpl {
 		initEAttribute(getMStep_ActionName(), ecorePackage.getEString(), "actionName", "Mark as completed", 1, 1, MStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMStep_ActionIconFilePath(), this.getMFile(), "actionIconFilePath", "Image Files\\Mark as completed.gif", 0, 1, MStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMStep_Exception(), this.getEThrowable(), "exception", null, 1, 1, MStep.class, IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		
 
 		initEClass(mValueEClass, MValue.class, "MValue", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getMValue_MInputValues(), this.getMValue(), null, "mInputValues", null, 0, -1, MValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -20019,406 +20008,384 @@ public class LogicPackage extends EPackageImpl {
 		initEAttribute(getMValue_HistoricValues(), ecorePackage.getEJavaObject(), "historicValues", null, 0, -1, MValue.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getMValue_HistoricValuesForUI(), ecorePackage.getEString(), "historicValuesForUI", null, 0, -1, MValue.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMValue_ReadOnly(), ecorePackage.getEBoolean(), "readOnly", null, 1, 1, MValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		
 
 		initEClass(mApplicationEClass, MApplication.class, "MApplication", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getMApplication_MDataFileProperty(), this.getMProperty(), null, "mDataFileProperty", "new MDataFileProperty()", 1, 1, MApplication.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMApplication_MDataFileProperty(), this.getMProperty(), null, "mDataFileProperty", null, 1, 1, MApplication.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMApplication_DataFileProperty(), this.getMExistingFile(), "dataFileProperty", "Application Data Files\\Data.xml", 1, 1, MApplication.class, IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMApplication_InfoWebPageProperty(), this.getMUrl(), "infoWebPageProperty", "http://www.onceforall.org/dms-desktop/info.html", 1, 1, MApplication.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getMApplication_MInfoWebPageProperty(), this.getMProperty(), null, "mInfoWebPageProperty", "new MInfoWebPageProperty()", 1, 1, MApplication.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMApplication_MInfoWebPageProperty(), this.getMProperty(), null, "mInfoWebPageProperty", null, 1, 1, MApplication.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMApplication_DataFilePropertyHistoricValues(), this.getMFile(), "dataFilePropertyHistoricValues", null, 0, 5, MApplication.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getMApplication_MLogFileProperty(), this.getMProperty(), null, "mLogFileProperty", "", 1, 1, MApplication.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMApplication_MLogFileProperty(), this.getMProperty(), null, "mLogFileProperty", null, 1, 1, MApplication.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMApplication_LogFileProperty(), this.getMFile(), "logFileProperty", null, 1, 1, MApplication.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getMApplication_MPathProperty(), this.getMProperty(), null, "mPathProperty", null, 1, 1, MApplication.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMApplication_PathProperty(), this.getMExistingDirectory(), "pathProperty", null, 1, 1, MApplication.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getMApplication_MVersionProperty(), this.getMProperty(), null, "mVersionProperty", "", 1, 1, MApplication.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMApplication_MVersionProperty(), this.getMProperty(), null, "mVersionProperty", null, 1, 1, MApplication.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMApplication_VersionProperty(), this.getMString(), "versionProperty", "0.9.0", 1, 1, MApplication.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getMApplication_MLastSaveProperty(), this.getMProperty(), null, "mLastSaveProperty", "", 1, 1, MApplication.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMApplication_MLastSaveProperty(), this.getMProperty(), null, "mLastSaveProperty", null, 1, 1, MApplication.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMApplication_LastSaveProperty(), this.getMDateTime(), "lastSaveProperty", null, 0, 1, MApplication.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		
+
+		EOperation op = addEOperation(mApplicationEClass, ecorePackage.getEBoolean(), "validate", 1, 1);
+		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnosticsChain", 1, 1);
+		addEParameter(op, ecorePackage.getEMap(), "context", 1, 1);
 
 		initEClass(mScriptEClass, MScript.class, "MScript", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getMScript_MSteps(), this.getMStep(), null, "mSteps", null, 0, -1, MScript.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMScript_StateProperty(), this.getMStepState(), "stateProperty", "Pending", 1, 1, MScript.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getMScript_MProgressProperty(), this.getMProperty(), null, "mProgressProperty", "", 1, 1, MScript.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMScript_MProgressProperty(), this.getMProperty(), null, "mProgressProperty", null, 1, 1, MScript.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMScript_ProgressProperty(), this.getMLong(), "progressProperty", null, 0, 1, MScript.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getMScript_MProgressStatusProperty(), this.getMProperty(), null, "mProgressStatusProperty", "", 1, 1, MScript.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMScript_MProgressStatusProperty(), this.getMProperty(), null, "mProgressStatusProperty", null, 1, 1, MScript.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMScript_ProgressStatusProperty(), this.getMString(), "progressStatusProperty", null, 0, 1, MScript.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		
 
 		initEClass(mDmsApplicationEClass, MDmsApplication.class, "MDmsApplication", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getMDmsApplication_MServiceFilePathProperty(), this.getMProperty(), null, "mServiceFilePathProperty", "", 1, 1, MDmsApplication.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMDmsApplication_MServiceFilePathProperty(), this.getMProperty(), null, "mServiceFilePathProperty", null, 1, 1, MDmsApplication.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMDmsApplication_ServiceFilePathProperty(), this.getMExistingDirectory(), "serviceFilePathProperty", "Service Files", 1, 1, MDmsApplication.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getMDmsApplication_MWwxFilesPathProperty(), this.getMProperty(), null, "mWwxFilesPathProperty", "", 1, 1, MDmsApplication.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMDmsApplication_MWwxFilesPathProperty(), this.getMProperty(), null, "mWwxFilesPathProperty", null, 1, 1, MDmsApplication.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMDmsApplication_WwxFilesPathProperty(), this.getMExistingDirectory(), "wwxFilesPathProperty", "WWX Files", 1, 1, MDmsApplication.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getMDmsApplication_MMp3EncoderPathProperty(), this.getMProperty(), null, "mMp3EncoderPathProperty", "", 1, 1, MDmsApplication.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMDmsApplication_MMp3EncoderPathProperty(), this.getMProperty(), null, "mMp3EncoderPathProperty", null, 1, 1, MDmsApplication.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMDmsApplication_Mp3EncoderPathProperty(), this.getMExistingDirectory(), "mp3EncoderPathProperty", "Program Files\\LAME 3.96.1", 0, 1, MDmsApplication.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getMDmsApplication_MFtpServerUrlProperty(), this.getMProperty(), null, "mFtpServerUrlProperty", "", 1, 1, MDmsApplication.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMDmsApplication_MFtpServerUrlProperty(), this.getMProperty(), null, "mFtpServerUrlProperty", null, 1, 1, MDmsApplication.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMDmsApplication_FtpServerUrlProperty(), this.getMUrl(), "ftpServerUrlProperty", null, 0, 1, MDmsApplication.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMDmsApplication_FtpServerUrlPropertyHistoricValues(), this.getMUrl(), "ftpServerUrlPropertyHistoricValues", null, 0, 3, MDmsApplication.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getMDmsApplication_MFtpUserNameProperty(), this.getMProperty(), null, "mFtpUserNameProperty", "", 1, 1, MDmsApplication.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMDmsApplication_MFtpUserNameProperty(), this.getMProperty(), null, "mFtpUserNameProperty", null, 1, 1, MDmsApplication.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMDmsApplication_FtpUserNameProperty(), this.getMString(), "ftpUserNameProperty", null, 0, 1, MDmsApplication.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMDmsApplication_FtpUserNamePropertyHistoricValues(), this.getMString(), "ftpUserNamePropertyHistoricValues", null, 0, 3, MDmsApplication.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getMDmsApplication_MFtpUserPasswordProperty(), this.getMProperty(), null, "mFtpUserPasswordProperty", "", 1, 1, MDmsApplication.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMDmsApplication_MFtpUserPasswordProperty(), this.getMProperty(), null, "mFtpUserPasswordProperty", null, 1, 1, MDmsApplication.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMDmsApplication_FtpUserPasswordProperty(), this.getMPassword(), "ftpUserPasswordProperty", null, 0, 1, MDmsApplication.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getMDmsApplication_MWebServerUrlProperty(), this.getMProperty(), null, "mWebServerUrlProperty", "", 1, 1, MDmsApplication.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMDmsApplication_MWebServerUrlProperty(), this.getMProperty(), null, "mWebServerUrlProperty", null, 1, 1, MDmsApplication.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMDmsApplication_WebServerUrlProperty(), this.getMUrl(), "webServerUrlProperty", null, 0, 1, MDmsApplication.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMDmsApplication_WebServerUrlPropertyHistoricValues(), this.getMUrl(), "webServerUrlPropertyHistoricValues", null, 0, 3, MDmsApplication.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getMDmsApplication_MSmtpServerProperty(), this.getMProperty(), null, "mSmtpServerProperty", "", 1, 1, MDmsApplication.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMDmsApplication_MSmtpServerProperty(), this.getMProperty(), null, "mSmtpServerProperty", null, 1, 1, MDmsApplication.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMDmsApplication_SmtpServerProperty(), this.getMString(), "smtpServerProperty", null, 0, 1, MDmsApplication.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMDmsApplication_SmtpServerPropertyHistoricValues(), this.getMString(), "smtpServerPropertyHistoricValues", null, 0, 3, MDmsApplication.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getMDmsApplication_MSmtpUserNameProperty(), this.getMProperty(), null, "mSmtpUserNameProperty", "", 1, 1, MDmsApplication.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMDmsApplication_MSmtpUserNameProperty(), this.getMProperty(), null, "mSmtpUserNameProperty", null, 1, 1, MDmsApplication.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMDmsApplication_SmtpUserNameProperty(), this.getMString(), "smtpUserNameProperty", null, 0, 1, MDmsApplication.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMDmsApplication_SmtpUserNamePropertyHistoricValues(), this.getMString(), "smtpUserNamePropertyHistoricValues", null, 0, 3, MDmsApplication.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getMDmsApplication_MSmtpPasswordProperty(), this.getMProperty(), null, "mSmtpPasswordProperty", "", 1, 1, MDmsApplication.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMDmsApplication_MSmtpPasswordProperty(), this.getMProperty(), null, "mSmtpPasswordProperty", null, 1, 1, MDmsApplication.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMDmsApplication_SmtpPasswordProperty(), this.getMPassword(), "smtpPasswordProperty", null, 0, 1, MDmsApplication.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getMDmsApplication_MBurningSoftwareDirectoryPathProperty(), this.getMProperty(), null, "mBurningSoftwareDirectoryPathProperty", "", 1, 1, MDmsApplication.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMDmsApplication_MBurningSoftwareDirectoryPathProperty(), this.getMProperty(), null, "mBurningSoftwareDirectoryPathProperty", null, 1, 1, MDmsApplication.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMDmsApplication_BurningSoftwareDirectoryPathProperty(), this.getMExistingDirectory(), "burningSoftwareDirectoryPathProperty", null, 1, 1, MDmsApplication.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getMDmsApplication_MDriveProperty(), this.getMProperty(), null, "mDriveProperty", "", 1, 1, MDmsApplication.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMDmsApplication_MDriveProperty(), this.getMProperty(), null, "mDriveProperty", null, 1, 1, MDmsApplication.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMDmsApplication_DriveProperty(), this.getMString(), "driveProperty", null, 0, 1, MDmsApplication.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMDmsApplication_DrivePropertyHistoricValues(), this.getMString(), "drivePropertyHistoricValues", null, 0, 3, MDmsApplication.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getMDmsApplication_MUpgradeMessageProperty(), this.getMProperty(), null, "mUpgradeMessageProperty", "", 1, 1, MDmsApplication.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMDmsApplication_MUpgradeMessageProperty(), this.getMProperty(), null, "mUpgradeMessageProperty", null, 1, 1, MDmsApplication.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMDmsApplication_UpgradeMessageProperty(), this.getMString(), "upgradeMessageProperty", null, 0, 1, MDmsApplication.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getMDmsApplication_MUpgradeRelativeFtpPathProperty(), this.getMProperty(), null, "mUpgradeRelativeFtpPathProperty", "", 1, 1, MDmsApplication.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMDmsApplication_MUpgradeRelativeFtpPathProperty(), this.getMProperty(), null, "mUpgradeRelativeFtpPathProperty", null, 1, 1, MDmsApplication.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMDmsApplication_UpgradeRelativeFtpPathProperty(), this.getMString(), "upgradeRelativeFtpPathProperty", null, 0, 1, MDmsApplication.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getMDmsApplication_MLastUpgradeProperty(), this.getMProperty(), null, "mLastUpgradeProperty", "", 1, 1, MDmsApplication.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMDmsApplication_MLastUpgradeProperty(), this.getMProperty(), null, "mLastUpgradeProperty", null, 1, 1, MDmsApplication.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMDmsApplication_LastUpgradeProperty(), this.getMDateTime(), "lastUpgradeProperty", null, 0, 1, MDmsApplication.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getMDmsApplication_MOrganisationProperty(), this.getMProperty(), null, "mOrganisationProperty", "", 1, 1, MDmsApplication.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMDmsApplication_MOrganisationProperty(), this.getMProperty(), null, "mOrganisationProperty", null, 1, 1, MDmsApplication.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMDmsApplication_OrganisationProperty(), this.getMString(), "organisationProperty", "Christ Church Bromley", 1, 1, MDmsApplication.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getMDmsApplication_MGetDataUpgradeInfoStep(), this.getMDmsApplicationMGetDataUpgradeInfoStep(), null, "mGetDataUpgradeInfoStep", "", 1, 1, MDmsApplication.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getMDmsApplication_MUpgradeDataStep(), this.getMDmsApplicationMUpgradeDataStep(), null, "mUpgradeDataStep", "", 1, 1, MDmsApplication.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMDmsApplication_MGetDataUpgradeInfoStep(), this.getMDmsApplicationMGetDataUpgradeInfoStep(), null, "mGetDataUpgradeInfoStep", null, 1, 1, MDmsApplication.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMDmsApplication_MUpgradeDataStep(), this.getMDmsApplicationMUpgradeDataStep(), null, "mUpgradeDataStep", null, 1, 1, MDmsApplication.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getMDmsApplication_MScripts(), this.getMScript(), null, "mScripts", null, 1, -1, MDmsApplication.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getMDmsApplication_MMp3Folders(), this.getMMp3Folder(), null, "mMp3Folders", null, 1, -1, MDmsApplication.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		
+
+		initEClass(mDmsApplicationMGetDataUpgradeInfoStepEClass, MDmsApplicationMGetDataUpgradeInfoStep.class, "MDmsApplicationMGetDataUpgradeInfoStep", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getMDmsApplicationMGetDataUpgradeInfoStep_MUpgradeRelativeFtpPathProperty(), this.getMParameter(), null, "mUpgradeRelativeFtpPathProperty", null, 1, 1, MDmsApplicationMGetDataUpgradeInfoStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getMDmsApplicationMGetDataUpgradeInfoStep_UpgradeRelativeFtpPathProperty(), this.getMString(), "upgradeRelativeFtpPathProperty", null, 1, 1, MDmsApplicationMGetDataUpgradeInfoStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMDmsApplicationMGetDataUpgradeInfoStep_MUpgradeAvailableResult(), this.getMResult(), null, "mUpgradeAvailableResult", null, 1, 1, MDmsApplicationMGetDataUpgradeInfoStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getMDmsApplicationMGetDataUpgradeInfoStep_UpgradeAvailableResult(), this.getMBoolean(), "upgradeAvailableResult", null, 0, 1, MDmsApplicationMGetDataUpgradeInfoStep.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMDmsApplicationMGetDataUpgradeInfoStep_MUpgradeMessageResult(), this.getMResult(), null, "mUpgradeMessageResult", null, 1, 1, MDmsApplicationMGetDataUpgradeInfoStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getMDmsApplicationMGetDataUpgradeInfoStep_UpgradeMessageResult(), this.getMString(), "upgradeMessageResult", null, 0, 1, MDmsApplicationMGetDataUpgradeInfoStep.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMDmsApplicationMGetDataUpgradeInfoStep_MUpgradeDateResult(), this.getMResult(), null, "mUpgradeDateResult", null, 1, 1, MDmsApplicationMGetDataUpgradeInfoStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getMDmsApplicationMGetDataUpgradeInfoStep_UpgradeDateResult(), this.getMDateTime(), "upgradeDateResult", null, 0, 1, MDmsApplicationMGetDataUpgradeInfoStep.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(mDmsApplicationMUpgradeDataStepEClass, MDmsApplicationMUpgradeDataStep.class, "MDmsApplicationMUpgradeDataStep", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getMDmsApplicationMUpgradeDataStep_MUpgradeRelativeFtpPathProperty(), this.getMParameter(), null, "mUpgradeRelativeFtpPathProperty", null, 1, 1, MDmsApplicationMUpgradeDataStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getMDmsApplicationMUpgradeDataStep_UpgradeRelativeFtpPathProperty(), this.getMString(), "upgradeRelativeFtpPathProperty", null, 1, 1, MDmsApplicationMUpgradeDataStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMDmsApplicationMUpgradeDataStep_MUpgradeMessageParameter(), this.getMParameter(), null, "mUpgradeMessageParameter", null, 1, 1, MDmsApplicationMUpgradeDataStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getMDmsApplicationMUpgradeDataStep_UpgradeMessageParameter(), this.getMString(), "upgradeMessageParameter", null, 0, 1, MDmsApplicationMUpgradeDataStep.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMDmsApplicationMUpgradeDataStep_MUpgradeDateParameter(), this.getMParameter(), null, "mUpgradeDateParameter", null, 1, 1, MDmsApplicationMUpgradeDataStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getMDmsApplicationMUpgradeDataStep_UpgradeDateParameter(), this.getMDateTime(), "upgradeDateParameter", null, 0, 1, MDmsApplicationMUpgradeDataStep.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(mEnterInformationStepEClass, MEnterInformationStep.class, "MEnterInformationStep", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		
 
 		initEClass(mEnterWwxInformationStepEClass, MEnterWwxInformationStep.class, "MEnterWwxInformationStep", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getMEnterWwxInformationStep_MWwxDateParameter(), this.getMParameter(), null, "mWwxDateParameter", "", 1, 1, MEnterWwxInformationStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMEnterWwxInformationStep_MWwxDateParameter(), this.getMParameter(), null, "mWwxDateParameter", null, 1, 1, MEnterWwxInformationStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMEnterWwxInformationStep_WwxDateParameter(), this.getMDate(), "wwxDateParameter", null, 1, 1, MEnterWwxInformationStep.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getMEnterWwxInformationStep_MTitleOfTalkParameter(), this.getMParameter(), null, "mTitleOfTalkParameter", "", 1, 1, MEnterWwxInformationStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMEnterWwxInformationStep_MTitleOfTalkParameter(), this.getMParameter(), null, "mTitleOfTalkParameter", null, 1, 1, MEnterWwxInformationStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMEnterWwxInformationStep_TitleOfTalkParameter(), this.getMString(), "titleOfTalkParameter", null, 1, 1, MEnterWwxInformationStep.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getMEnterWwxInformationStep_MSpeakersNameParameter(), this.getMParameter(), null, "mSpeakersNameParameter", "", 1, 1, MEnterWwxInformationStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMEnterWwxInformationStep_MSpeakersNameParameter(), this.getMParameter(), null, "mSpeakersNameParameter", null, 1, 1, MEnterWwxInformationStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMEnterWwxInformationStep_SpeakersNameParameter(), this.getMString(), "speakersNameParameter", null, 1, 1, MEnterWwxInformationStep.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMEnterWwxInformationStep_SpeakersNameParameterHistoricValues(), this.getMString(), "speakersNameParameterHistoricValues", null, 0, 5, MEnterWwxInformationStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getMEnterWwxInformationStep_MFirstPartParameter(), this.getMParameter(), null, "mFirstPartParameter", "", 1, 1, MEnterWwxInformationStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMEnterWwxInformationStep_MFirstPartParameter(), this.getMParameter(), null, "mFirstPartParameter", null, 1, 1, MEnterWwxInformationStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMEnterWwxInformationStep_FirstPartParameter(), this.getMString(), "firstPartParameter", null, 1, 1, MEnterWwxInformationStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMEnterWwxInformationStep_FirstPartParameterHistoricValues(), this.getMString(), "firstPartParameterHistoricValues", null, 0, 2, MEnterWwxInformationStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getMEnterWwxInformationStep_MSecondPartParameter(), this.getMParameter(), null, "mSecondPartParameter", "", 1, 1, MEnterWwxInformationStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMEnterWwxInformationStep_MSecondPartParameter(), this.getMParameter(), null, "mSecondPartParameter", null, 1, 1, MEnterWwxInformationStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMEnterWwxInformationStep_SecondPartParameter(), this.getMString(), "secondPartParameter", null, 1, 1, MEnterWwxInformationStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMEnterWwxInformationStep_SecondPartParameterHistoricValues(), this.getMString(), "secondPartParameterHistoricValues", null, 0, 2, MEnterWwxInformationStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getMEnterWwxInformationStep_MRecordingUsersNameParameter(), this.getMParameter(), null, "mRecordingUsersNameParameter", "", 1, 1, MEnterWwxInformationStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMEnterWwxInformationStep_MRecordingUsersNameParameter(), this.getMParameter(), null, "mRecordingUsersNameParameter", null, 1, 1, MEnterWwxInformationStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMEnterWwxInformationStep_RecordingUsersNameParameter(), this.getMString(), "recordingUsersNameParameter", null, 1, 1, MEnterWwxInformationStep.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMEnterWwxInformationStep_RecordingUsersNameParameterHistoricValues(), this.getMString(), "recordingUsersNameParameterHistoricValues", null, 0, 5, MEnterWwxInformationStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getMEnterWwxInformationStep_MWwxDateResult(), this.getMResult(), null, "mWwxDateResult", "", 1, 1, MEnterWwxInformationStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMEnterWwxInformationStep_MWwxDateResult(), this.getMResult(), null, "mWwxDateResult", null, 1, 1, MEnterWwxInformationStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMEnterWwxInformationStep_WwxDateResult(), this.getMDate(), "wwxDateResult", null, 1, 1, MEnterWwxInformationStep.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getMEnterWwxInformationStep_MTitleOfTalkResult(), this.getMResult(), null, "mTitleOfTalkResult", "", 1, 1, MEnterWwxInformationStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMEnterWwxInformationStep_MTitleOfTalkResult(), this.getMResult(), null, "mTitleOfTalkResult", null, 1, 1, MEnterWwxInformationStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMEnterWwxInformationStep_TitleOfTalkResult(), this.getMString(), "titleOfTalkResult", null, 1, 1, MEnterWwxInformationStep.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getMEnterWwxInformationStep_MSpeakersNameResult(), this.getMResult(), null, "mSpeakersNameResult", "", 1, 1, MEnterWwxInformationStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMEnterWwxInformationStep_MSpeakersNameResult(), this.getMResult(), null, "mSpeakersNameResult", null, 1, 1, MEnterWwxInformationStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMEnterWwxInformationStep_SpeakersNameResult(), this.getMString(), "speakersNameResult", null, 1, 1, MEnterWwxInformationStep.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getMEnterWwxInformationStep_MFirstPartResult(), this.getMResult(), null, "mFirstPartResult", "", 1, 1, MEnterWwxInformationStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMEnterWwxInformationStep_MFirstPartResult(), this.getMResult(), null, "mFirstPartResult", null, 1, 1, MEnterWwxInformationStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMEnterWwxInformationStep_FirstPartResult(), this.getMString(), "firstPartResult", null, 1, 1, MEnterWwxInformationStep.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getMEnterWwxInformationStep_MSecondPartResult(), this.getMResult(), null, "mSecondPartResult", "", 1, 1, MEnterWwxInformationStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMEnterWwxInformationStep_MSecondPartResult(), this.getMResult(), null, "mSecondPartResult", null, 1, 1, MEnterWwxInformationStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMEnterWwxInformationStep_SecondPartResult(), this.getMString(), "secondPartResult", null, 1, 1, MEnterWwxInformationStep.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getMEnterWwxInformationStep_MRecordingUsersNameResult(), this.getMResult(), null, "mRecordingUsersNameResult", "", 1, 1, MEnterWwxInformationStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMEnterWwxInformationStep_MRecordingUsersNameResult(), this.getMResult(), null, "mRecordingUsersNameResult", null, 1, 1, MEnterWwxInformationStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMEnterWwxInformationStep_RecordingUsersNameResult(), this.getMString(), "recordingUsersNameResult", null, 1, 1, MEnterWwxInformationStep.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		
 
 		initEClass(mEnterServiceInformationStepEClass, MEnterServiceInformationStep.class, "MEnterServiceInformationStep", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getMEnterServiceInformationStep_MServiceDateParameter(), this.getMParameter(), null, "mServiceDateParameter", "", 1, 1, MEnterServiceInformationStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMEnterServiceInformationStep_MServiceDateParameter(), this.getMParameter(), null, "mServiceDateParameter", null, 1, 1, MEnterServiceInformationStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMEnterServiceInformationStep_ServiceDateParameter(), this.getMDate(), "serviceDateParameter", null, 1, 1, MEnterServiceInformationStep.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getMEnterServiceInformationStep_MServiceTypeParameter(), this.getMParameter(), null, "mServiceTypeParameter", "", 1, 1, MEnterServiceInformationStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMEnterServiceInformationStep_MServiceTypeParameter(), this.getMParameter(), null, "mServiceTypeParameter", null, 1, 1, MEnterServiceInformationStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMEnterServiceInformationStep_ServiceTypeParameter(), this.getMString(), "serviceTypeParameter", null, 1, 1, MEnterServiceInformationStep.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMEnterServiceInformationStep_ServiceTypeParameterHistoricValues(), this.getMString(), "serviceTypeParameterHistoricValues", null, 0, 5, MEnterServiceInformationStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getMEnterServiceInformationStep_MTitleOfTalkParameter(), this.getMParameter(), null, "mTitleOfTalkParameter", "", 1, 1, MEnterServiceInformationStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMEnterServiceInformationStep_MTitleOfTalkParameter(), this.getMParameter(), null, "mTitleOfTalkParameter", null, 1, 1, MEnterServiceInformationStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMEnterServiceInformationStep_TitleOfTalkParameter(), this.getMString(), "titleOfTalkParameter", null, 1, 1, MEnterServiceInformationStep.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getMEnterServiceInformationStep_MReadingParameter(), this.getMParameter(), null, "mReadingParameter", "", 1, 1, MEnterServiceInformationStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMEnterServiceInformationStep_MReadingParameter(), this.getMParameter(), null, "mReadingParameter", null, 1, 1, MEnterServiceInformationStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMEnterServiceInformationStep_ReadingParameter(), this.getMString(), "readingParameter", null, 0, 1, MEnterServiceInformationStep.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getMEnterServiceInformationStep_MSpeakersNameParameter(), this.getMParameter(), null, "mSpeakersNameParameter", "", 1, 1, MEnterServiceInformationStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMEnterServiceInformationStep_MSpeakersNameParameter(), this.getMParameter(), null, "mSpeakersNameParameter", null, 1, 1, MEnterServiceInformationStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMEnterServiceInformationStep_SpeakersNameParameter(), this.getMString(), "speakersNameParameter", null, 1, 1, MEnterServiceInformationStep.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMEnterServiceInformationStep_SpeakersNameParameterHistoricValues(), this.getMString(), "speakersNameParameterHistoricValues", null, 0, 5, MEnterServiceInformationStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getMEnterServiceInformationStep_MRecordingUsersNameParameter(), this.getMParameter(), null, "mRecordingUsersNameParameter", "", 1, 1, MEnterServiceInformationStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMEnterServiceInformationStep_MRecordingUsersNameParameter(), this.getMParameter(), null, "mRecordingUsersNameParameter", null, 1, 1, MEnterServiceInformationStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMEnterServiceInformationStep_RecordingUsersNameParameter(), this.getMString(), "recordingUsersNameParameter", null, 1, 1, MEnterServiceInformationStep.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMEnterServiceInformationStep_RecordingUsersNameParameterHistoricValues(), this.getMString(), "recordingUsersNameParameterHistoricValues", null, 0, 5, MEnterServiceInformationStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getMEnterServiceInformationStep_MServiceDateResult(), this.getMResult(), null, "mServiceDateResult", "", 1, 1, MEnterServiceInformationStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMEnterServiceInformationStep_MServiceDateResult(), this.getMResult(), null, "mServiceDateResult", null, 1, 1, MEnterServiceInformationStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMEnterServiceInformationStep_ServiceDateResult(), this.getMDate(), "serviceDateResult", null, 1, 1, MEnterServiceInformationStep.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getMEnterServiceInformationStep_MServiceTypeResult(), this.getMResult(), null, "mServiceTypeResult", "", 1, 1, MEnterServiceInformationStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMEnterServiceInformationStep_MServiceTypeResult(), this.getMResult(), null, "mServiceTypeResult", null, 1, 1, MEnterServiceInformationStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMEnterServiceInformationStep_ServiceTypeResult(), this.getMString(), "serviceTypeResult", null, 1, 1, MEnterServiceInformationStep.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getMEnterServiceInformationStep_MTitleOfTalkResult(), this.getMResult(), null, "mTitleOfTalkResult", "", 1, 1, MEnterServiceInformationStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMEnterServiceInformationStep_MTitleOfTalkResult(), this.getMResult(), null, "mTitleOfTalkResult", null, 1, 1, MEnterServiceInformationStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMEnterServiceInformationStep_TitleOfTalkResult(), this.getMString(), "titleOfTalkResult", null, 1, 1, MEnterServiceInformationStep.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getMEnterServiceInformationStep_MReadingResult(), this.getMResult(), null, "mReadingResult", "", 1, 1, MEnterServiceInformationStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMEnterServiceInformationStep_MReadingResult(), this.getMResult(), null, "mReadingResult", null, 1, 1, MEnterServiceInformationStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMEnterServiceInformationStep_ReadingResult(), this.getMString(), "readingResult", null, 0, 1, MEnterServiceInformationStep.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getMEnterServiceInformationStep_MSpeakersNameResult(), this.getMResult(), null, "mSpeakersNameResult", "", 1, 1, MEnterServiceInformationStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMEnterServiceInformationStep_MSpeakersNameResult(), this.getMResult(), null, "mSpeakersNameResult", null, 1, 1, MEnterServiceInformationStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMEnterServiceInformationStep_SpeakersNameResult(), this.getMString(), "speakersNameResult", null, 1, 1, MEnterServiceInformationStep.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getMEnterServiceInformationStep_MRecordingUsersNameResult(), this.getMResult(), null, "mRecordingUsersNameResult", "", 1, 1, MEnterServiceInformationStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMEnterServiceInformationStep_MRecordingUsersNameResult(), this.getMResult(), null, "mRecordingUsersNameResult", null, 1, 1, MEnterServiceInformationStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMEnterServiceInformationStep_RecordingUsersNameResult(), this.getMString(), "recordingUsersNameResult", null, 1, 1, MEnterServiceInformationStep.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		
 
 		initEClass(mCreateDirectoryStepEClass, MCreateDirectoryStep.class, "MCreateDirectoryStep", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getMCreateDirectoryStep_MParentDirectoryParameter(), this.getMParameter(), null, "mParentDirectoryParameter", "", 1, 1, MCreateDirectoryStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMCreateDirectoryStep_MParentDirectoryParameter(), this.getMParameter(), null, "mParentDirectoryParameter", null, 1, 1, MCreateDirectoryStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMCreateDirectoryStep_ParentDirectoryParameter(), this.getMExistingDirectory(), "parentDirectoryParameter", null, 1, 1, MCreateDirectoryStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMCreateDirectoryStep_ParentDirectoryParameterHistoricValues(), this.getMExistingDirectory(), "parentDirectoryParameterHistoricValues", null, 0, 3, MCreateDirectoryStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getMCreateDirectoryStep_MDirectoryNameParameter(), this.getMParameter(), null, "mDirectoryNameParameter", "", 1, 1, MCreateDirectoryStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMCreateDirectoryStep_MDirectoryNameParameter(), this.getMParameter(), null, "mDirectoryNameParameter", null, 1, 1, MCreateDirectoryStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMCreateDirectoryStep_DirectoryNameParameter(), this.getMDirectory(), "directoryNameParameter", null, 1, 1, MCreateDirectoryStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getMCreateDirectoryStep_MDirectoryResult(), this.getMResult(), null, "mDirectoryResult", "", 1, 1, MCreateDirectoryStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMCreateDirectoryStep_MDirectoryResult(), this.getMResult(), null, "mDirectoryResult", null, 1, 1, MCreateDirectoryStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMCreateDirectoryStep_DirectoryResult(), this.getMExistingDirectory(), "directoryResult", null, 1, 1, MCreateDirectoryStep.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		
 
 		initEClass(mCheckFreeDiskSpaceStepEClass, MCheckFreeDiskSpaceStep.class, "MCheckFreeDiskSpaceStep", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getMCheckFreeDiskSpaceStep_MRequiredFreeDiskSpaceParameter(), this.getMParameter(), null, "mRequiredFreeDiskSpaceParameter", "", 1, 1, MCheckFreeDiskSpaceStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMCheckFreeDiskSpaceStep_MRequiredFreeDiskSpaceParameter(), this.getMParameter(), null, "mRequiredFreeDiskSpaceParameter", null, 1, 1, MCheckFreeDiskSpaceStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMCheckFreeDiskSpaceStep_RequiredFreeDiskSpaceParameter(), this.getMLong(), "requiredFreeDiskSpaceParameter", null, 1, 1, MCheckFreeDiskSpaceStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getMCheckFreeDiskSpaceStep_MDirectoryParameter(), this.getMParameter(), null, "mDirectoryParameter", "", 1, 1, MCheckFreeDiskSpaceStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMCheckFreeDiskSpaceStep_MDirectoryParameter(), this.getMParameter(), null, "mDirectoryParameter", null, 1, 1, MCheckFreeDiskSpaceStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMCheckFreeDiskSpaceStep_DirectoryParameter(), this.getMExistingDirectory(), "directoryParameter", null, 1, 1, MCheckFreeDiskSpaceStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getMCheckFreeDiskSpaceStep_MFreeDiskSpaceResult(), this.getMResult(), null, "mFreeDiskSpaceResult", "", 1, 1, MCheckFreeDiskSpaceStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMCheckFreeDiskSpaceStep_MFreeDiskSpaceResult(), this.getMResult(), null, "mFreeDiskSpaceResult", null, 1, 1, MCheckFreeDiskSpaceStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMCheckFreeDiskSpaceStep_FreeDiskSpaceResult(), this.getMLong(), "freeDiskSpaceResult", null, 0, 1, MCheckFreeDiskSpaceStep.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		
 
 		initEClass(mAudioStepEClass, MAudioStep.class, "MAudioStep", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getMAudioStep_MLeftInputLevelProperty(), this.getMProperty(), null, "mLeftInputLevelProperty", "", 1, 1, MAudioStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMAudioStep_MLeftInputLevelProperty(), this.getMProperty(), null, "mLeftInputLevelProperty", null, 1, 1, MAudioStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMAudioStep_LeftInputLevelProperty(), this.getMLong(), "leftInputLevelProperty", "0", 1, 1, MAudioStep.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getMAudioStep_MRightInputLevelProperty(), this.getMProperty(), null, "mRightInputLevelProperty", "", 1, 1, MAudioStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMAudioStep_MRightInputLevelProperty(), this.getMProperty(), null, "mRightInputLevelProperty", null, 1, 1, MAudioStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMAudioStep_RightInputLevelProperty(), this.getMLong(), "rightInputLevelProperty", "0", 1, 1, MAudioStep.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getMAudioStep_MLeftInputDistortionProperty(), this.getMProperty(), null, "mLeftInputDistortionProperty", "", 1, 1, MAudioStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMAudioStep_MLeftInputDistortionProperty(), this.getMProperty(), null, "mLeftInputDistortionProperty", null, 1, 1, MAudioStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMAudioStep_LeftInputDistortionProperty(), this.getMBoolean(), "leftInputDistortionProperty", "false", 1, 1, MAudioStep.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getMAudioStep_MRightInputDistortionProperty(), this.getMProperty(), null, "mRightInputDistortionProperty", "", 1, 1, MAudioStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMAudioStep_MRightInputDistortionProperty(), this.getMProperty(), null, "mRightInputDistortionProperty", null, 1, 1, MAudioStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMAudioStep_RightInputDistortionProperty(), this.getMBoolean(), "rightInputDistortionProperty", "false", 1, 1, MAudioStep.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getMAudioStep_MUseDbProperty(), this.getMProperty(), null, "mUseDbProperty", "", 1, 1, MAudioStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMAudioStep_MUseDbProperty(), this.getMProperty(), null, "mUseDbProperty", null, 1, 1, MAudioStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMAudioStep_UseDbProperty(), this.getMBoolean(), "useDbProperty", "true", 1, 1, MAudioStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getMAudioStep_MHeadroomProperty(), this.getMProperty(), null, "mHeadroomProperty", "", 1, 1, MAudioStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMAudioStep_MHeadroomProperty(), this.getMProperty(), null, "mHeadroomProperty", null, 1, 1, MAudioStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMAudioStep_HeadroomProperty(), this.getMLong(), "headroomProperty", "9", 1, 1, MAudioStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		
 
 		initEClass(mCheckInputLevelsStepEClass, MCheckInputLevelsStep.class, "MCheckInputLevelsStep", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		
 
 		initEClass(mRecordStepEClass, MRecordStep.class, "MRecordStep", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getMRecordStep_MRecordingLengthProperty(), this.getMProperty(), null, "mRecordingLengthProperty", "", 1, 1, MRecordStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMRecordStep_MRecordingLengthProperty(), this.getMProperty(), null, "mRecordingLengthProperty", null, 1, 1, MRecordStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMRecordStep_RecordingLengthProperty(), this.getMDuration(), "recordingLengthProperty", null, 0, 1, MRecordStep.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getMRecordStep_MDirectoryParameter(), this.getMParameter(), null, "mDirectoryParameter", "", 1, 1, MRecordStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMRecordStep_MDirectoryParameter(), this.getMParameter(), null, "mDirectoryParameter", null, 1, 1, MRecordStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMRecordStep_DirectoryParameter(), this.getMExistingDirectory(), "directoryParameter", null, 1, 1, MRecordStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getMRecordStep_MRecordingFileParameter(), this.getMParameter(), null, "mRecordingFileParameter", "", 1, 1, MRecordStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMRecordStep_MRecordingFileParameter(), this.getMParameter(), null, "mRecordingFileParameter", null, 1, 1, MRecordStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMRecordStep_RecordingFileParameter(), this.getMFile(), "recordingFileParameter", "Recording.wav", 1, 1, MRecordStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getMRecordStep_MRecordingFileResult(), this.getMResult(), null, "mRecordingFileResult", "", 1, 1, MRecordStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMRecordStep_MRecordingFileResult(), this.getMResult(), null, "mRecordingFileResult", null, 1, 1, MRecordStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMRecordStep_RecordingFileResult(), this.getMExistingFile(), "recordingFileResult", null, 1, 1, MRecordStep.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getMRecordStep_MRecordingFileSizeResult(), this.getMResult(), null, "mRecordingFileSizeResult", "", 1, 1, MRecordStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMRecordStep_MRecordingFileSizeResult(), this.getMResult(), null, "mRecordingFileSizeResult", null, 1, 1, MRecordStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMRecordStep_RecordingFileSizeResult(), this.getMLong(), "recordingFileSizeResult", null, 1, 1, MRecordStep.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getMRecordStep_MRecordingLengthResult(), this.getMResult(), null, "mRecordingLengthResult", "", 1, 1, MRecordStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMRecordStep_MRecordingLengthResult(), this.getMResult(), null, "mRecordingLengthResult", null, 1, 1, MRecordStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMRecordStep_RecordingLengthResult(), this.getMDuration(), "recordingLengthResult", null, 1, 1, MRecordStep.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		
 
 		initEClass(mConvertToMP3StepEClass, MConvertToMP3Step.class, "MConvertToMP3Step", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getMConvertToMP3Step_MDirectoryParameter(), this.getMParameter(), null, "mDirectoryParameter", "", 1, 1, MConvertToMP3Step.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMConvertToMP3Step_MDirectoryParameter(), this.getMParameter(), null, "mDirectoryParameter", null, 1, 1, MConvertToMP3Step.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMConvertToMP3Step_DirectoryParameter(), this.getMExistingDirectory(), "directoryParameter", null, 1, 1, MConvertToMP3Step.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getMConvertToMP3Step_MMp3FileNameParameter(), this.getMParameter(), null, "mMp3FileNameParameter", "", 1, 1, MConvertToMP3Step.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMConvertToMP3Step_MMp3FileNameParameter(), this.getMParameter(), null, "mMp3FileNameParameter", null, 1, 1, MConvertToMP3Step.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMConvertToMP3Step_Mp3FileNameParameter(), this.getMFile(), "mp3FileNameParameter", null, 1, 1, MConvertToMP3Step.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getMConvertToMP3Step_MRecordingFileParameter(), this.getMParameter(), null, "mRecordingFileParameter", "", 1, 1, MConvertToMP3Step.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMConvertToMP3Step_MRecordingFileParameter(), this.getMParameter(), null, "mRecordingFileParameter", null, 1, 1, MConvertToMP3Step.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMConvertToMP3Step_RecordingFileParameter(), this.getMExistingFile(), "recordingFileParameter", null, 1, 1, MConvertToMP3Step.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getMConvertToMP3Step_MMp3EncoderPathParameter(), this.getMParameter(), null, "mMp3EncoderPathParameter", "", 1, 1, MConvertToMP3Step.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMConvertToMP3Step_MMp3EncoderPathParameter(), this.getMParameter(), null, "mMp3EncoderPathParameter", null, 1, 1, MConvertToMP3Step.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMConvertToMP3Step_Mp3EncoderPathParameter(), this.getMExistingDirectory(), "mp3EncoderPathParameter", null, 1, 1, MConvertToMP3Step.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getMConvertToMP3Step_MAverageBitRateParameter(), this.getMParameter(), null, "mAverageBitRateParameter", "", 1, 1, MConvertToMP3Step.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMConvertToMP3Step_MAverageBitRateParameter(), this.getMParameter(), null, "mAverageBitRateParameter", null, 1, 1, MConvertToMP3Step.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMConvertToMP3Step_AverageBitRateParameter(), this.getMLong(), "averageBitRateParameter", null, 1, 1, MConvertToMP3Step.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		
 
 		initEClass(mPublishMp3sStepEClass, MPublishMp3sStep.class, "MPublishMp3sStep", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getMPublishMp3sStep_MMaxiumumDiskSpaceParameter(), this.getMParameter(), null, "mMaxiumumDiskSpaceParameter", "", 1, 1, MPublishMp3sStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMPublishMp3sStep_MMaxiumumDiskSpaceParameter(), this.getMParameter(), null, "mMaxiumumDiskSpaceParameter", null, 1, 1, MPublishMp3sStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMPublishMp3sStep_MaxiumumDiskSpaceParameter(), this.getMLong(), "maxiumumDiskSpaceParameter", null, 0, 1, MPublishMp3sStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getMPublishMp3sStep_MMp3RelativeFtpPathParameter(), this.getMParameter(), null, "mMp3RelativeFtpPathParameter", "", 1, 1, MPublishMp3sStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMPublishMp3sStep_MMp3RelativeFtpPathParameter(), this.getMParameter(), null, "mMp3RelativeFtpPathParameter", null, 1, 1, MPublishMp3sStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMPublishMp3sStep_Mp3RelativeFtpPathParameter(), this.getMString(), "mp3RelativeFtpPathParameter", null, 1, 1, MPublishMp3sStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getMPublishMp3sStep_MWebServerUrlParameter(), this.getMParameter(), null, "mWebServerUrlParameter", "", 1, 1, MPublishMp3sStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMPublishMp3sStep_MWebServerUrlParameter(), this.getMParameter(), null, "mWebServerUrlParameter", null, 1, 1, MPublishMp3sStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMPublishMp3sStep_WebServerUrlParameter(), this.getMUrl(), "webServerUrlParameter", null, 1, 1, MPublishMp3sStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getMPublishMp3sStep_MContentPageRelativeFtpPathParameter(), this.getMParameter(), null, "mContentPageRelativeFtpPathParameter", "", 1, 1, MPublishMp3sStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMPublishMp3sStep_MContentPageRelativeFtpPathParameter(), this.getMParameter(), null, "mContentPageRelativeFtpPathParameter", null, 1, 1, MPublishMp3sStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMPublishMp3sStep_ContentPageRelativeFtpPathParameter(), this.getMString(), "contentPageRelativeFtpPathParameter", null, 1, 1, MPublishMp3sStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getMPublishMp3sStep_MContentHeaderFilePathParameter(), this.getMParameter(), null, "mContentHeaderFilePathParameter", "", 1, 1, MPublishMp3sStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMPublishMp3sStep_MContentHeaderFilePathParameter(), this.getMParameter(), null, "mContentHeaderFilePathParameter", null, 1, 1, MPublishMp3sStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMPublishMp3sStep_ContentHeaderFilePathParameter(), this.getMExistingFile(), "contentHeaderFilePathParameter", null, 1, 1, MPublishMp3sStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getMPublishMp3sStep_MContentFooterFilePathParameter(), this.getMParameter(), null, "mContentFooterFilePathParameter", "", 1, 1, MPublishMp3sStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMPublishMp3sStep_MContentFooterFilePathParameter(), this.getMParameter(), null, "mContentFooterFilePathParameter", null, 1, 1, MPublishMp3sStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMPublishMp3sStep_ContentFooterFilePathParameter(), this.getMExistingFile(), "contentFooterFilePathParameter", null, 1, 1, MPublishMp3sStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getMPublishMp3sStep_MContentPageFilePathParameter(), this.getMParameter(), null, "mContentPageFilePathParameter", "", 1, 1, MPublishMp3sStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMPublishMp3sStep_MContentPageFilePathParameter(), this.getMParameter(), null, "mContentPageFilePathParameter", null, 1, 1, MPublishMp3sStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMPublishMp3sStep_ContentPageFilePathParameter(), this.getMFile(), "contentPageFilePathParameter", null, 1, 1, MPublishMp3sStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getMPublishMp3sStep_MPodcastFilePathParameter(), this.getMParameter(), null, "mPodcastFilePathParameter", "", 1, 1, MPublishMp3sStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMPublishMp3sStep_MPodcastFilePathParameter(), this.getMParameter(), null, "mPodcastFilePathParameter", null, 1, 1, MPublishMp3sStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMPublishMp3sStep_PodcastFilePathParameter(), this.getMFile(), "podcastFilePathParameter", null, 1, 1, MPublishMp3sStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getMPublishMp3sStep_MPodcastRelativeFtpPathParameter(), this.getMParameter(), null, "mPodcastRelativeFtpPathParameter", "", 1, 1, MPublishMp3sStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMPublishMp3sStep_MPodcastRelativeFtpPathParameter(), this.getMParameter(), null, "mPodcastRelativeFtpPathParameter", null, 1, 1, MPublishMp3sStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMPublishMp3sStep_PodcastRelativeFtpPathParameter(), this.getMString(), "podcastRelativeFtpPathParameter", null, 1, 1, MPublishMp3sStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getMPublishMp3sStep_MPodcastHeaderFilePathParameter(), this.getMParameter(), null, "mPodcastHeaderFilePathParameter", "", 1, 1, MPublishMp3sStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMPublishMp3sStep_MPodcastHeaderFilePathParameter(), this.getMParameter(), null, "mPodcastHeaderFilePathParameter", null, 1, 1, MPublishMp3sStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMPublishMp3sStep_PodcastHeaderFilePathParameter(), this.getMExistingFile(), "podcastHeaderFilePathParameter", null, 1, 1, MPublishMp3sStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getMPublishMp3sStep_MContentIncludeMp3PlayerParameter(), this.getMParameter(), null, "mContentIncludeMp3PlayerParameter", "", 1, 1, MPublishMp3sStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMPublishMp3sStep_MContentIncludeMp3PlayerParameter(), this.getMParameter(), null, "mContentIncludeMp3PlayerParameter", null, 1, 1, MPublishMp3sStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMPublishMp3sStep_ContentIncludeMp3PlayerParameter(), this.getMBoolean(), "contentIncludeMp3PlayerParameter", "true", 0, 1, MPublishMp3sStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getMPublishMp3sStep_MContentGroupRecordingsParameter(), this.getMParameter(), null, "mContentGroupRecordingsParameter", "", 1, 1, MPublishMp3sStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMPublishMp3sStep_MContentGroupRecordingsParameter(), this.getMParameter(), null, "mContentGroupRecordingsParameter", null, 1, 1, MPublishMp3sStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMPublishMp3sStep_ContentGroupRecordingsParameter(), this.getMBoolean(), "contentGroupRecordingsParameter", "true", 1, 1, MPublishMp3sStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getMPublishMp3sStep_MContentPageUrlResult(), this.getMResult(), null, "mContentPageUrlResult", "", 1, 1, MPublishMp3sStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMPublishMp3sStep_MContentPageUrlResult(), this.getMResult(), null, "mContentPageUrlResult", null, 1, 1, MPublishMp3sStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMPublishMp3sStep_ContentPageUrlResult(), this.getMUrl(), "contentPageUrlResult", null, 1, 1, MPublishMp3sStep.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getMPublishMp3sStep_MPodcastFileUrlResult(), this.getMResult(), null, "mPodcastFileUrlResult", "", 1, 1, MPublishMp3sStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMPublishMp3sStep_MPodcastFileUrlResult(), this.getMResult(), null, "mPodcastFileUrlResult", null, 1, 1, MPublishMp3sStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMPublishMp3sStep_PodcastFileUrlResult(), this.getMUrl(), "podcastFileUrlResult", null, 1, 1, MPublishMp3sStep.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		
 
 		initEClass(mUpdatePublishedMp3sStepEClass, MUpdatePublishedMp3sStep.class, "MUpdatePublishedMp3sStep", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getMUpdatePublishedMp3sStep_MRepublishMp3Files(), this.getMParameter(), null, "mRepublishMp3Files", "", 1, 1, MUpdatePublishedMp3sStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMUpdatePublishedMp3sStep_MRepublishMp3Files(), this.getMParameter(), null, "mRepublishMp3Files", null, 1, 1, MUpdatePublishedMp3sStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMUpdatePublishedMp3sStep_RepublishMp3Files(), this.getMBoolean(), "republishMp3Files", "false", 1, 1, MUpdatePublishedMp3sStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getMUpdatePublishedMp3sStep_MMp3FolderReferenceParameter(), this.getMParameter(), null, "mMp3FolderReferenceParameter", "", 1, 1, MUpdatePublishedMp3sStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMUpdatePublishedMp3sStep_MMp3FolderReferenceParameter(), this.getMParameter(), null, "mMp3FolderReferenceParameter", null, 1, 1, MUpdatePublishedMp3sStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getMUpdatePublishedMp3sStep_Mp3FolderReferenceParameter(), this.getMMp3Folder(), null, "mp3FolderReferenceParameter", null, 1, 1, MUpdatePublishedMp3sStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getMUpdatePublishedMp3sStep_MMp3FolderReferenceResult(), this.getMResult(), null, "mMp3FolderReferenceResult", "", 1, 1, MUpdatePublishedMp3sStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMUpdatePublishedMp3sStep_MMp3FolderReferenceResult(), this.getMResult(), null, "mMp3FolderReferenceResult", null, 1, 1, MUpdatePublishedMp3sStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getMUpdatePublishedMp3sStep_Mp3FolderReferenceResult(), this.getMMp3Folder(), null, "mp3FolderReferenceResult", null, 1, 1, MUpdatePublishedMp3sStep.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		
 
 		initEClass(mPublishNewMp3StepEClass, MPublishNewMp3Step.class, "MPublishNewMp3Step", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getMPublishNewMp3Step_MMp3EntryReferenceParameter(), this.getMParameter(), null, "mMp3EntryReferenceParameter", "", 1, 1, MPublishNewMp3Step.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMPublishNewMp3Step_MMp3EntryReferenceParameter(), this.getMParameter(), null, "mMp3EntryReferenceParameter", null, 1, 1, MPublishNewMp3Step.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getMPublishNewMp3Step_Mp3EntryReferenceParameter(), this.getMMp3(), null, "mp3EntryReferenceParameter", null, 1, 1, MPublishNewMp3Step.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getMPublishNewMp3Step_MLinkTextParameter(), this.getMParameter(), null, "mLinkTextParameter", "", 1, 1, MPublishNewMp3Step.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMPublishNewMp3Step_MLinkTextParameter(), this.getMParameter(), null, "mLinkTextParameter", null, 1, 1, MPublishNewMp3Step.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMPublishNewMp3Step_LinkTextParameter(), this.getMString(), "linkTextParameter", null, 1, 1, MPublishNewMp3Step.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getMPublishNewMp3Step_MLinkDescriptionParameter(), this.getMParameter(), null, "mLinkDescriptionParameter", "", 1, 1, MPublishNewMp3Step.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMPublishNewMp3Step_MLinkDescriptionParameter(), this.getMParameter(), null, "mLinkDescriptionParameter", null, 1, 1, MPublishNewMp3Step.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMPublishNewMp3Step_LinkDescriptionParameter(), this.getMString(), "linkDescriptionParameter", null, 1, 1, MPublishNewMp3Step.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getMPublishNewMp3Step_MCommentParameter(), this.getMParameter(), null, "mCommentParameter", "", 1, 1, MPublishNewMp3Step.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMPublishNewMp3Step_MCommentParameter(), this.getMParameter(), null, "mCommentParameter", null, 1, 1, MPublishNewMp3Step.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMPublishNewMp3Step_CommentParameter(), this.getMString(), "commentParameter", null, 0, 1, MPublishNewMp3Step.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getMPublishNewMp3Step_MPodcastTitleParameter(), this.getMParameter(), null, "mPodcastTitleParameter", "", 1, 1, MPublishNewMp3Step.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMPublishNewMp3Step_MPodcastTitleParameter(), this.getMParameter(), null, "mPodcastTitleParameter", null, 1, 1, MPublishNewMp3Step.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMPublishNewMp3Step_PodcastTitleParameter(), this.getMString(), "podcastTitleParameter", null, 1, 1, MPublishNewMp3Step.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getMPublishNewMp3Step_MPodcastSubtitleParameter(), this.getMParameter(), null, "mPodcastSubtitleParameter", "", 1, 1, MPublishNewMp3Step.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMPublishNewMp3Step_MPodcastSubtitleParameter(), this.getMParameter(), null, "mPodcastSubtitleParameter", null, 1, 1, MPublishNewMp3Step.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMPublishNewMp3Step_PodcastSubtitleParameter(), this.getMString(), "podcastSubtitleParameter", null, 1, 1, MPublishNewMp3Step.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getMPublishNewMp3Step_MPodcastSummaryParameter(), this.getMParameter(), null, "mPodcastSummaryParameter", "", 1, 1, MPublishNewMp3Step.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMPublishNewMp3Step_MPodcastSummaryParameter(), this.getMParameter(), null, "mPodcastSummaryParameter", null, 1, 1, MPublishNewMp3Step.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMPublishNewMp3Step_PodcastSummaryParameter(), this.getMString(), "podcastSummaryParameter", null, 0, 1, MPublishNewMp3Step.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getMPublishNewMp3Step_MPodcastPublishingDateParameter(), this.getMParameter(), null, "mPodcastPublishingDateParameter", "", 1, 1, MPublishNewMp3Step.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMPublishNewMp3Step_MPodcastPublishingDateParameter(), this.getMParameter(), null, "mPodcastPublishingDateParameter", null, 1, 1, MPublishNewMp3Step.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMPublishNewMp3Step_PodcastPublishingDateParameter(), this.getMDateTime(), "podcastPublishingDateParameter", null, 1, 1, MPublishNewMp3Step.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getMPublishNewMp3Step_MPublishedMp3EntryReferenceResult(), this.getMResult(), null, "mPublishedMp3EntryReferenceResult", "", 1, 1, MPublishNewMp3Step.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMPublishNewMp3Step_MPublishedMp3EntryReferenceResult(), this.getMResult(), null, "mPublishedMp3EntryReferenceResult", null, 1, 1, MPublishNewMp3Step.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getMPublishNewMp3Step_PublishedMp3EntryReferenceResult(), this.getMMp3(), null, "publishedMp3EntryReferenceResult", null, 1, 1, MPublishNewMp3Step.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		
 
 		initEClass(mEmailEventLogStepEClass, MEmailEventLogStep.class, "MEmailEventLogStep", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getMEmailEventLogStep_MRecordingUsersNameParameter(), this.getMParameter(), null, "mRecordingUsersNameParameter", "", 1, 1, MEmailEventLogStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMEmailEventLogStep_MRecordingUsersNameParameter(), this.getMParameter(), null, "mRecordingUsersNameParameter", null, 1, 1, MEmailEventLogStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMEmailEventLogStep_RecordingUsersNameParameter(), this.getMString(), "recordingUsersNameParameter", null, 1, 1, MEmailEventLogStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getMEmailEventLogStep_MCommentParameter(), this.getMParameter(), null, "mCommentParameter", "", 1, 1, MEmailEventLogStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMEmailEventLogStep_MCommentParameter(), this.getMParameter(), null, "mCommentParameter", null, 1, 1, MEmailEventLogStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMEmailEventLogStep_CommentParameter(), this.getMString(), "commentParameter", null, 1, 1, MEmailEventLogStep.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMEmailEventLogStep_CommentParameterHistoricValues(), this.getMString(), "commentParameterHistoricValues", null, 0, 5, MEmailEventLogStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getMEmailEventLogStep_MLogFileParameter(), this.getMParameter(), null, "mLogFileParameter", "", 1, 1, MEmailEventLogStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMEmailEventLogStep_MLogFileParameter(), this.getMParameter(), null, "mLogFileParameter", null, 1, 1, MEmailEventLogStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMEmailEventLogStep_LogFileParameter(), this.getMExistingFile(), "logFileParameter", null, 1, 1, MEmailEventLogStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getMEmailEventLogStep_MDataFileParameter(), this.getMParameter(), null, "mDataFileParameter", "", 1, 1, MEmailEventLogStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMEmailEventLogStep_MDataFileParameter(), this.getMParameter(), null, "mDataFileParameter", null, 1, 1, MEmailEventLogStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMEmailEventLogStep_DataFileParameter(), this.getMExistingFile(), "dataFileParameter", null, 1, 1, MEmailEventLogStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getMEmailEventLogStep_MSubjectParameter(), this.getMParameter(), null, "mSubjectParameter", "", 1, 1, MEmailEventLogStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMEmailEventLogStep_MSubjectParameter(), this.getMParameter(), null, "mSubjectParameter", null, 1, 1, MEmailEventLogStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMEmailEventLogStep_SubjectParameter(), this.getMString(), "subjectParameter", null, 1, 1, MEmailEventLogStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getMEmailEventLogStep_MSendersEmailAddressParameter(), this.getMParameter(), null, "mSendersEmailAddressParameter", "", 1, 1, MEmailEventLogStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMEmailEventLogStep_MSendersEmailAddressParameter(), this.getMParameter(), null, "mSendersEmailAddressParameter", null, 1, 1, MEmailEventLogStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMEmailEventLogStep_SendersEmailAddressParameter(), this.getMString(), "sendersEmailAddressParameter", null, 1, 1, MEmailEventLogStep.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMEmailEventLogStep_SendersEmailAddressParameterHistoricValues(), this.getMString(), "sendersEmailAddressParameterHistoricValues", null, 0, 6, MEmailEventLogStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getMEmailEventLogStep_MReceipientsEmailAddressParameter(), this.getMParameter(), null, "mReceipientsEmailAddressParameter", "", 1, 1, MEmailEventLogStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMEmailEventLogStep_MReceipientsEmailAddressParameter(), this.getMParameter(), null, "mReceipientsEmailAddressParameter", null, 1, 1, MEmailEventLogStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMEmailEventLogStep_ReceipientsEmailAddressParameter(), this.getMString(), "receipientsEmailAddressParameter", null, 1, -1, MEmailEventLogStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getMEmailEventLogStep_MSmtpServerParameter(), this.getMParameter(), null, "mSmtpServerParameter", "", 1, 1, MEmailEventLogStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMEmailEventLogStep_MSmtpServerParameter(), this.getMParameter(), null, "mSmtpServerParameter", null, 1, 1, MEmailEventLogStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMEmailEventLogStep_SmtpServerParameter(), this.getMString(), "smtpServerParameter", null, 1, 1, MEmailEventLogStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getMEmailEventLogStep_MSmtpUserNameParameter(), this.getMParameter(), null, "mSmtpUserNameParameter", "", 1, 1, MEmailEventLogStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMEmailEventLogStep_MSmtpUserNameParameter(), this.getMParameter(), null, "mSmtpUserNameParameter", null, 1, 1, MEmailEventLogStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMEmailEventLogStep_SmtpUserNameParameter(), this.getMString(), "smtpUserNameParameter", null, 1, 1, MEmailEventLogStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getMEmailEventLogStep_MSmtpPasswordParameter(), this.getMParameter(), null, "mSmtpPasswordParameter", "", 1, 1, MEmailEventLogStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMEmailEventLogStep_MSmtpPasswordParameter(), this.getMParameter(), null, "mSmtpPasswordParameter", null, 1, 1, MEmailEventLogStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMEmailEventLogStep_SmtpPasswordParameter(), this.getMPassword(), "smtpPasswordParameter", null, 1, 1, MEmailEventLogStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		
 
 		initEClass(mMp3FolderEClass, MMp3Folder.class, "MMp3Folder", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getMMp3Folder_MSteps(), this.getMStep(), null, "mSteps", null, 1, -1, MMp3Folder.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getMMp3Folder_MMp3s(), this.getMMp3(), null, "mMp3s", null, 1, -1, MMp3Folder.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		
 
 		initEClass(mMp3EClass, MMp3.class, "MMp3", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getMMp3_StateProperty(), this.getMMp3State(), "stateProperty", "Not published", 1, 1, MMp3.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getMMp3_MFileProperty(), this.getMProperty(), null, "mFileProperty", "", 1, 1, MMp3.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMMp3_MFileProperty(), this.getMProperty(), null, "mFileProperty", null, 1, 1, MMp3.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMMp3_FileProperty(), this.getMExistingFile(), "fileProperty", null, 1, 1, MMp3.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getMMp3_MLinkTextProperty(), this.getMProperty(), null, "mLinkTextProperty", "", 1, 1, MMp3.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMMp3_MLinkTextProperty(), this.getMProperty(), null, "mLinkTextProperty", null, 1, 1, MMp3.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMMp3_LinkTextProperty(), this.getMString(), "linkTextProperty", null, 1, 1, MMp3.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getMMp3_MLinkDescriptionProperty(), this.getMProperty(), null, "mLinkDescriptionProperty", "", 1, 1, MMp3.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMMp3_MLinkDescriptionProperty(), this.getMProperty(), null, "mLinkDescriptionProperty", null, 1, 1, MMp3.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMMp3_LinkDescriptionProperty(), this.getMString(), "linkDescriptionProperty", null, 1, 1, MMp3.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getMMp3_MCommentProperty(), this.getMProperty(), null, "mCommentProperty", "", 1, 1, MMp3.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMMp3_MCommentProperty(), this.getMProperty(), null, "mCommentProperty", null, 1, 1, MMp3.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMMp3_CommentProperty(), this.getMString(), "commentProperty", null, 0, 1, MMp3.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getMMp3_MPodcastTitleProperty(), this.getMProperty(), null, "mPodcastTitleProperty", "", 1, 1, MMp3.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMMp3_MPodcastTitleProperty(), this.getMProperty(), null, "mPodcastTitleProperty", null, 1, 1, MMp3.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMMp3_PodcastTitleProperty(), this.getMString(), "podcastTitleProperty", null, 0, 1, MMp3.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getMMp3_MPodcastSubtitleProperty(), this.getMProperty(), null, "mPodcastSubtitleProperty", "", 1, 1, MMp3.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMMp3_MPodcastSubtitleProperty(), this.getMProperty(), null, "mPodcastSubtitleProperty", null, 1, 1, MMp3.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMMp3_PodcastSubtitleProperty(), this.getMString(), "podcastSubtitleProperty", null, 0, 1, MMp3.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getMMp3_MPodcastSummaryProperty(), this.getMProperty(), null, "mPodcastSummaryProperty", "", 1, 1, MMp3.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMMp3_MPodcastSummaryProperty(), this.getMProperty(), null, "mPodcastSummaryProperty", null, 1, 1, MMp3.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMMp3_PodcastSummaryProperty(), this.getMString(), "podcastSummaryProperty", null, 0, 1, MMp3.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getMMp3_MPodcastPublishingDateProperty(), this.getMProperty(), null, "mPodcastPublishingDateProperty", "", 1, 1, MMp3.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMMp3_MPodcastPublishingDateProperty(), this.getMProperty(), null, "mPodcastPublishingDateProperty", null, 1, 1, MMp3.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMMp3_PodcastPublishingDateProperty(), this.getMDateTime(), "podcastPublishingDateProperty", null, 0, 1, MMp3.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getMMp3_MPublishedFileNameProperty(), this.getMProperty(), null, "mPublishedFileNameProperty", "", 1, 1, MMp3.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMMp3_MPublishedFileNameProperty(), this.getMProperty(), null, "mPublishedFileNameProperty", null, 1, 1, MMp3.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMMp3_PublishedFileNameProperty(), this.getMString(), "publishedFileNameProperty", null, 0, 1, MMp3.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getMMp3_MKeepPublishedProperty(), this.getMProperty(), null, "mKeepPublishedProperty", "", 1, 1, MMp3.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMMp3_MKeepPublishedProperty(), this.getMProperty(), null, "mKeepPublishedProperty", null, 1, 1, MMp3.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMMp3_KeepPublishedProperty(), this.getMBoolean(), "keepPublishedProperty", "false", 1, 1, MMp3.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		
 
 		initEClass(mBurnCdStepEClass, MBurnCdStep.class, "MBurnCdStep", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getMBurnCdStep_MRecordingFilesParameter(), this.getMParameter(), null, "mRecordingFilesParameter", "", 1, 1, MBurnCdStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMBurnCdStep_MRecordingFilesParameter(), this.getMParameter(), null, "mRecordingFilesParameter", null, 1, 1, MBurnCdStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMBurnCdStep_RecordingFilesParameter(), this.getMExistingFile(), "recordingFilesParameter", null, 1, -1, MBurnCdStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getMBurnCdStep_MBurningSoftwareDirectoryPathParameter(), this.getMParameter(), null, "mBurningSoftwareDirectoryPathParameter", "", 1, 1, MBurnCdStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMBurnCdStep_MBurningSoftwareDirectoryPathParameter(), this.getMParameter(), null, "mBurningSoftwareDirectoryPathParameter", null, 1, 1, MBurnCdStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMBurnCdStep_BurningSoftwareDirectoryPathParameter(), this.getMExistingDirectory(), "burningSoftwareDirectoryPathParameter", null, 1, 1, MBurnCdStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getMBurnCdStep_MDriveParameter(), this.getMParameter(), null, "mDriveParameter", "", 1, 1, MBurnCdStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMBurnCdStep_MDriveParameter(), this.getMParameter(), null, "mDriveParameter", null, 1, 1, MBurnCdStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMBurnCdStep_DriveParameter(), this.getMString(), "driveParameter", null, 1, 1, MBurnCdStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getMBurnCdStep_MTotalRecordingLengthParameter(), this.getMParameter(), null, "mTotalRecordingLengthParameter", "", 1, 1, MBurnCdStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMBurnCdStep_MTotalRecordingLengthParameter(), this.getMParameter(), null, "mTotalRecordingLengthParameter", null, 1, 1, MBurnCdStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMBurnCdStep_TotalRecordingLengthParameter(), this.getMDuration(), "totalRecordingLengthParameter", null, 0, 1, MBurnCdStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getMBurnCdStep_MTotalRecordingFileSizeParameter(), this.getMParameter(), null, "mTotalRecordingFileSizeParameter", "", 1, 1, MBurnCdStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMBurnCdStep_MTotalRecordingFileSizeParameter(), this.getMParameter(), null, "mTotalRecordingFileSizeParameter", null, 1, 1, MBurnCdStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMBurnCdStep_TotalRecordingFileSizeParameter(), this.getMLong(), "totalRecordingFileSizeParameter", null, 0, 1, MBurnCdStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		
 
 		initEClass(mFtpStepEClass, MFtpStep.class, "MFtpStep", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getMFtpStep_MFtpServerUrlParameter(), this.getMParameter(), null, "mFtpServerUrlParameter", "", 1, 1, MFtpStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMFtpStep_MFtpServerUrlParameter(), this.getMParameter(), null, "mFtpServerUrlParameter", null, 1, 1, MFtpStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMFtpStep_FtpServerUrlParameter(), this.getMUrl(), "ftpServerUrlParameter", null, 1, 1, MFtpStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getMFtpStep_MFtpUserNameParameter(), this.getMParameter(), null, "mFtpUserNameParameter", "", 1, 1, MFtpStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMFtpStep_MFtpUserNameParameter(), this.getMParameter(), null, "mFtpUserNameParameter", null, 1, 1, MFtpStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMFtpStep_FtpUserNameParameter(), this.getMString(), "ftpUserNameParameter", null, 1, 1, MFtpStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getMFtpStep_MFtpUserPasswordParameter(), this.getMParameter(), null, "mFtpUserPasswordParameter", "", 1, 1, MFtpStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMFtpStep_MFtpUserPasswordParameter(), this.getMParameter(), null, "mFtpUserPasswordParameter", null, 1, 1, MFtpStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMFtpStep_FtpUserPasswordParameter(), this.getMPassword(), "ftpUserPasswordParameter", null, 0, 1, MFtpStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		
 
 		initEClass(mTestStepEClass, MTestStep.class, "MTestStep", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getMTestStep_MPersistentStringParameter(), this.getMParameter(), null, "mPersistentStringParameter", "", 1, 1, MTestStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMTestStep_MPersistentStringParameter(), this.getMParameter(), null, "mPersistentStringParameter", null, 1, 1, MTestStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMTestStep_PersistentStringParameter(), this.getMString(), "persistentStringParameter", null, 0, 1, MTestStep.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getMTestStep_MStringParameter(), this.getMParameter(), null, "mStringParameter", "", 1, 1, MTestStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMTestStep_MStringParameter(), this.getMParameter(), null, "mStringParameter", null, 1, 1, MTestStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMTestStep_StringParameter(), this.getMString(), "stringParameter", null, 0, 1, MTestStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		
 
 		initEClass(mNameTagMp3StepEClass, MNameTagMp3Step.class, "MNameTagMp3Step", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getMNameTagMp3Step_MDirectoryParameter(), this.getMParameter(), null, "mDirectoryParameter", "", 1, 1, MNameTagMp3Step.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMNameTagMp3Step_MDirectoryParameter(), this.getMParameter(), null, "mDirectoryParameter", null, 1, 1, MNameTagMp3Step.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMNameTagMp3Step_DirectoryParameter(), this.getMExistingDirectory(), "directoryParameter", null, 1, 1, MNameTagMp3Step.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getMNameTagMp3Step_MTaggedMp3FileNameParameter(), this.getMParameter(), null, "mTaggedMp3FileNameParameter", "", 1, 1, MNameTagMp3Step.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMNameTagMp3Step_MTaggedMp3FileNameParameter(), this.getMParameter(), null, "mTaggedMp3FileNameParameter", null, 1, 1, MNameTagMp3Step.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMNameTagMp3Step_TaggedMp3FileNameParameter(), this.getMFile(), "taggedMp3FileNameParameter", null, 1, 1, MNameTagMp3Step.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getMNameTagMp3Step_MRecordingMp3FileParameter(), this.getMParameter(), null, "mRecordingMp3FileParameter", "", 1, 1, MNameTagMp3Step.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMNameTagMp3Step_MRecordingMp3FileParameter(), this.getMParameter(), null, "mRecordingMp3FileParameter", null, 1, 1, MNameTagMp3Step.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMNameTagMp3Step_RecordingMp3FileParameter(), this.getMExistingFile(), "recordingMp3FileParameter", null, 1, 1, MNameTagMp3Step.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getMNameTagMp3Step_MTagAndRenameOriginalParameter(), this.getMParameter(), null, "mTagAndRenameOriginalParameter", "", 1, 1, MNameTagMp3Step.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMNameTagMp3Step_MTagAndRenameOriginalParameter(), this.getMParameter(), null, "mTagAndRenameOriginalParameter", null, 1, 1, MNameTagMp3Step.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMNameTagMp3Step_TagAndRenameOriginalParameter(), this.getMBoolean(), "tagAndRenameOriginalParameter", "false", 1, 1, MNameTagMp3Step.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		
 
 		initEClass(mTagStepEClass, MTagStep.class, "MTagStep", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getMTagStep_MArtistParameter(), this.getMParameter(), null, "mArtistParameter", "", 1, 1, MTagStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMTagStep_MArtistParameter(), this.getMParameter(), null, "mArtistParameter", null, 1, 1, MTagStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMTagStep_ArtistParameter(), this.getMString(), "artistParameter", null, 1, 1, MTagStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getMTagStep_MTitleParameter(), this.getMParameter(), null, "mTitleParameter", "", 1, 1, MTagStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMTagStep_MTitleParameter(), this.getMParameter(), null, "mTitleParameter", null, 1, 1, MTagStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMTagStep_TitleParameter(), this.getMString(), "titleParameter", null, 1, 1, MTagStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getMTagStep_MAlbumParameter(), this.getMParameter(), null, "mAlbumParameter", "", 1, 1, MTagStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMTagStep_MAlbumParameter(), this.getMParameter(), null, "mAlbumParameter", null, 1, 1, MTagStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMTagStep_AlbumParameter(), this.getMString(), "albumParameter", null, 1, 1, MTagStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getMTagStep_MGenreParameter(), this.getMParameter(), null, "mGenreParameter", "", 1, 1, MTagStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMTagStep_MGenreParameter(), this.getMParameter(), null, "mGenreParameter", null, 1, 1, MTagStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMTagStep_GenreParameter(), this.getMString(), "genreParameter", "Speech", 1, 1, MTagStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMTagStep_GenreParameterHistoricValues(), this.getMString(), "genreParameterHistoricValues", null, 0, 3, MTagStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getMTagStep_MYearParameter(), this.getMParameter(), null, "mYearParameter", "", 1, 1, MTagStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMTagStep_MYearParameter(), this.getMParameter(), null, "mYearParameter", null, 1, 1, MTagStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMTagStep_YearParameter(), this.getMString(), "yearParameter", null, 1, 1, MTagStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getMTagStep_MCommentParameter(), this.getMParameter(), null, "mCommentParameter", "", 1, 1, MTagStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMTagStep_MCommentParameter(), this.getMParameter(), null, "mCommentParameter", null, 1, 1, MTagStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMTagStep_CommentParameter(), this.getMString(), "commentParameter", null, 0, 1, MTagStep.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMTagStep_CommentParameterHistoricValues(), this.getMString(), "commentParameterHistoricValues", null, 0, 3, MTagStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getMTagStep_MMp3FolderReferenceParameter(), this.getMParameter(), null, "mMp3FolderReferenceParameter", "", 1, 1, MTagStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMTagStep_MMp3FolderReferenceParameter(), this.getMParameter(), null, "mMp3FolderReferenceParameter", null, 1, 1, MTagStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getMTagStep_Mp3FolderReferenceParameter(), this.getMMp3Folder(), null, "mp3FolderReferenceParameter", null, 1, 1, MTagStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getMTagStep_MMp3EntryNameParameter(), this.getMParameter(), null, "mMp3EntryNameParameter", "", 1, 1, MTagStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMTagStep_MMp3EntryNameParameter(), this.getMParameter(), null, "mMp3EntryNameParameter", null, 1, 1, MTagStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMTagStep_Mp3EntryNameParameter(), this.getMString(), "mp3EntryNameParameter", null, 1, 1, MTagStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getMTagStep_MMp3EntryReferenceResult(), this.getMResult(), null, "mMp3EntryReferenceResult", "", 1, 1, MTagStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMTagStep_MMp3EntryReferenceResult(), this.getMResult(), null, "mMp3EntryReferenceResult", null, 1, 1, MTagStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getMTagStep_Mp3EntryReferenceResult(), this.getMMp3(), null, "mp3EntryReferenceResult", null, 1, 1, MTagStep.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getMTagStep_MMp3FilePathResult(), this.getMResult(), null, "mMp3FilePathResult", "", 1, 1, MTagStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMTagStep_MMp3FilePathResult(), this.getMResult(), null, "mMp3FilePathResult", null, 1, 1, MTagStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMTagStep_Mp3FilePathResult(), this.getMExistingFile(), "mp3FilePathResult", null, 1, 1, MTagStep.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		
-
-		initEClass(mDmsApplicationMGetDataUpgradeInfoStepEClass, MDmsApplicationMGetDataUpgradeInfoStep.class, "MDmsApplicationMGetDataUpgradeInfoStep", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getMDmsApplicationMGetDataUpgradeInfoStep_MUpgradeRelativeFtpPathProperty(), this.getMParameter(), null, "mUpgradeRelativeFtpPathProperty", "", 1, 1, MDmsApplicationMGetDataUpgradeInfoStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getMDmsApplicationMGetDataUpgradeInfoStep_UpgradeRelativeFtpPathProperty(), this.getMString(), "upgradeRelativeFtpPathProperty", null, 1, 1, MDmsApplicationMGetDataUpgradeInfoStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getMDmsApplicationMGetDataUpgradeInfoStep_MUpgradeAvailableResult(), this.getMResult(), null, "mUpgradeAvailableResult", "", 1, 1, MDmsApplicationMGetDataUpgradeInfoStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getMDmsApplicationMGetDataUpgradeInfoStep_UpgradeAvailableResult(), this.getMBoolean(), "upgradeAvailableResult", null, 0, 1, MDmsApplicationMGetDataUpgradeInfoStep.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getMDmsApplicationMGetDataUpgradeInfoStep_MUpgradeMessageResult(), this.getMResult(), null, "mUpgradeMessageResult", "", 1, 1, MDmsApplicationMGetDataUpgradeInfoStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getMDmsApplicationMGetDataUpgradeInfoStep_UpgradeMessageResult(), this.getMString(), "upgradeMessageResult", null, 0, 1, MDmsApplicationMGetDataUpgradeInfoStep.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getMDmsApplicationMGetDataUpgradeInfoStep_MUpgradeDateResult(), this.getMResult(), null, "mUpgradeDateResult", "", 1, 1, MDmsApplicationMGetDataUpgradeInfoStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getMDmsApplicationMGetDataUpgradeInfoStep_UpgradeDateResult(), this.getMDateTime(), "upgradeDateResult", null, 0, 1, MDmsApplicationMGetDataUpgradeInfoStep.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		
-
-		initEClass(mDmsApplicationMUpgradeDataStepEClass, MDmsApplicationMUpgradeDataStep.class, "MDmsApplicationMUpgradeDataStep", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getMDmsApplicationMUpgradeDataStep_MUpgradeRelativeFtpPathProperty(), this.getMParameter(), null, "mUpgradeRelativeFtpPathProperty", "", 1, 1, MDmsApplicationMUpgradeDataStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getMDmsApplicationMUpgradeDataStep_UpgradeRelativeFtpPathProperty(), this.getMString(), "upgradeRelativeFtpPathProperty", null, 1, 1, MDmsApplicationMUpgradeDataStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getMDmsApplicationMUpgradeDataStep_MUpgradeMessageParameter(), this.getMParameter(), null, "mUpgradeMessageParameter", "", 1, 1, MDmsApplicationMUpgradeDataStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getMDmsApplicationMUpgradeDataStep_UpgradeMessageParameter(), this.getMString(), "upgradeMessageParameter", null, 0, 1, MDmsApplicationMUpgradeDataStep.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getMDmsApplicationMUpgradeDataStep_MUpgradeDateParameter(), this.getMParameter(), null, "mUpgradeDateParameter", "", 1, 1, MDmsApplicationMUpgradeDataStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getMDmsApplicationMUpgradeDataStep_UpgradeDateParameter(), this.getMDateTime(), "upgradeDateParameter", null, 0, 1, MDmsApplicationMUpgradeDataStep.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		
 
 		// Initialize data types
 		initEDataType(mDirectoryEDataType, File.class, "MDirectory", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);

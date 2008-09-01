@@ -80,7 +80,7 @@ public class MUpdatePublishedMp3sStep extends MPublishMp3sStep {
 	 * @generated
 	 * @ordered
 	 */
-	protected MParameter mRepublishMp3Files = null;
+	protected MParameter mRepublishMp3Files;
 
 	/**
 	 * The default value of the '{@link #getRepublishMp3Files() <em>Republish Mp3 Files</em>}' attribute.
@@ -123,7 +123,7 @@ public class MUpdatePublishedMp3sStep extends MPublishMp3sStep {
 	 * @generated
 	 * @ordered
 	 */
-	protected MParameter mMp3FolderReferenceParameter = null;
+	protected MParameter mMp3FolderReferenceParameter;
 
 	/**
 	 * The cached value of the '{@link #getMp3FolderReferenceParameter() <em>Mp3 Folder Reference Parameter</em>}' reference.
@@ -133,7 +133,7 @@ public class MUpdatePublishedMp3sStep extends MPublishMp3sStep {
 	 * @generated
 	 * @ordered
 	 */
-	protected MMp3Folder mp3FolderReferenceParameter = null;
+	protected MMp3Folder mp3FolderReferenceParameter;
 
 	/**
 	 * The cached value of the '{@link #getMMp3FolderReferenceResult() <em>MMp3 Folder Reference Result</em>}' containment reference.
@@ -143,7 +143,7 @@ public class MUpdatePublishedMp3sStep extends MPublishMp3sStep {
 	 * @generated
 	 * @ordered
 	 */
-	protected MResult mMp3FolderReferenceResult = null;
+	protected MResult mMp3FolderReferenceResult;
 
 	/**
 	 * The cached value of the '{@link #getMp3FolderReferenceResult() <em>Mp3 Folder Reference Result</em>}' reference.
@@ -153,7 +153,7 @@ public class MUpdatePublishedMp3sStep extends MPublishMp3sStep {
 	 * @generated
 	 * @ordered
 	 */
-	protected MMp3Folder mp3FolderReferenceResult = null;
+	protected MMp3Folder mp3FolderReferenceResult;
 
 	/**
 	 * Get the default value of the '{@link #isInterruptable() <em>Interruptable</em>}' attribute.
@@ -262,7 +262,7 @@ public class MUpdatePublishedMp3sStep extends MPublishMp3sStep {
 		name = "Update published MP3s";
 		interruptable = false;
 		terminatable = false;
-					 
+			 
 		setMRepublishMp3Files(new MParameter(false, "Republish MP3 files", "Specifies whether all already published MP3 files should be uploaded to the web site again.", null));			 
 		setMMp3FolderReferenceParameter(new MParameter(false, "MP3 folder reference", "Speficies a reference to the MP3 folder that contains the MP3 entries to be published or unpublished.", null));			 
 		setMMp3FolderReferenceResult(new MResult(false, "MP3 folder reference", "Speficies a reference to the MP3 folder that contains the MP3 entries that were published or unpublished.", null));
@@ -297,7 +297,6 @@ public class MUpdatePublishedMp3sStep extends MPublishMp3sStep {
 
 	/**
 	 * Returns the value of the '<em><b>MRepublish Mp3 Files</b></em>' containment reference.
-	 * The default value is <code>""</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>MRepublish Mp3 Files</em>' containment reference isn't clear,
@@ -404,7 +403,6 @@ public class MUpdatePublishedMp3sStep extends MPublishMp3sStep {
 
 	/**
 	 * Returns the value of the '<em><b>MMp3 Folder Reference Parameter</b></em>' containment reference.
-	 * The default value is <code>""</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>MMp3 Folder Reference Parameter</em>' containment reference isn't clear,
@@ -527,7 +525,6 @@ public class MUpdatePublishedMp3sStep extends MPublishMp3sStep {
 
 	/**
 	 * Returns the value of the '<em><b>MMp3 Folder Reference Result</b></em>' containment reference.
-	 * The default value is <code>""</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>MMp3 Folder Reference Result</em>' containment reference isn't clear,
@@ -697,22 +694,22 @@ public class MUpdatePublishedMp3sStep extends MPublishMp3sStep {
 	 */
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case LogicPackage.MUPDATE_PUBLISHED_MP3S_STEP__MREPUBLISH_MP3_FILES:    
+			case LogicPackage.MUPDATE_PUBLISHED_MP3S_STEP__MREPUBLISH_MP3_FILES:
 				setMRepublishMp3Files((MParameter)newValue);
 				return;
-			case LogicPackage.MUPDATE_PUBLISHED_MP3S_STEP__REPUBLISH_MP3_FILES:    
+			case LogicPackage.MUPDATE_PUBLISHED_MP3S_STEP__REPUBLISH_MP3_FILES:
 				setRepublishMp3Files((Boolean)newValue);
 				return;
-			case LogicPackage.MUPDATE_PUBLISHED_MP3S_STEP__MMP3_FOLDER_REFERENCE_PARAMETER:    
+			case LogicPackage.MUPDATE_PUBLISHED_MP3S_STEP__MMP3_FOLDER_REFERENCE_PARAMETER:
 				setMMp3FolderReferenceParameter((MParameter)newValue);
 				return;
-			case LogicPackage.MUPDATE_PUBLISHED_MP3S_STEP__MP3_FOLDER_REFERENCE_PARAMETER:    
+			case LogicPackage.MUPDATE_PUBLISHED_MP3S_STEP__MP3_FOLDER_REFERENCE_PARAMETER:
 				setMp3FolderReferenceParameter((MMp3Folder)newValue);
 				return;
-			case LogicPackage.MUPDATE_PUBLISHED_MP3S_STEP__MMP3_FOLDER_REFERENCE_RESULT:    
+			case LogicPackage.MUPDATE_PUBLISHED_MP3S_STEP__MMP3_FOLDER_REFERENCE_RESULT:
 				setMMp3FolderReferenceResult((MResult)newValue);
 				return;
-			case LogicPackage.MUPDATE_PUBLISHED_MP3S_STEP__MP3_FOLDER_REFERENCE_RESULT:    
+			case LogicPackage.MUPDATE_PUBLISHED_MP3S_STEP__MP3_FOLDER_REFERENCE_RESULT:
 				setMp3FolderReferenceResult((MMp3Folder)newValue);
 				return;
 		}

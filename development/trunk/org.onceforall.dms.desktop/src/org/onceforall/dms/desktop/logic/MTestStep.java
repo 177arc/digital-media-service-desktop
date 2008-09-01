@@ -71,7 +71,7 @@ public class MTestStep extends MStep {
 	 * @generated
 	 * @ordered
 	 */
-	protected MParameter mPersistentStringParameter = null;
+	protected MParameter mPersistentStringParameter;
 
 	/**
 	 * The default value of the '{@link #getPersistentStringParameter() <em>Persistent String Parameter</em>}' attribute.
@@ -114,7 +114,7 @@ public class MTestStep extends MStep {
 	 * @generated
 	 * @ordered
 	 */
-	protected MParameter mStringParameter = null;
+	protected MParameter mStringParameter;
 
 	/**
 	 * The default value of the '{@link #getStringParameter() <em>String Parameter</em>}' attribute.
@@ -257,7 +257,7 @@ public class MTestStep extends MStep {
 		name = "Test";
 		interruptable = false;
 		terminatable = false;
-					 
+			 
 		setMPersistentStringParameter(new MParameter(false, "Persistent string", "Specifies a string that is saved with the application data.", null));			 
 		setMStringParameter(new MParameter(false, "String", "Specifies a string that is not saved with the application data.", null));
 
@@ -291,7 +291,6 @@ public class MTestStep extends MStep {
 
 	/**
 	 * Returns the value of the '<em><b>MPersistent String Parameter</b></em>' containment reference.
-	 * The default value is <code>""</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>MPersistent String Parameter</em>' containment reference isn't clear,
@@ -397,7 +396,6 @@ public class MTestStep extends MStep {
 
 	/**
 	 * Returns the value of the '<em><b>MString Parameter</b></em>' containment reference.
-	 * The default value is <code>""</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>MString Parameter</em>' containment reference isn't clear,
@@ -542,16 +540,16 @@ public class MTestStep extends MStep {
 	 */
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case LogicPackage.MTEST_STEP__MPERSISTENT_STRING_PARAMETER:    
+			case LogicPackage.MTEST_STEP__MPERSISTENT_STRING_PARAMETER:
 				setMPersistentStringParameter((MParameter)newValue);
 				return;
-			case LogicPackage.MTEST_STEP__PERSISTENT_STRING_PARAMETER:    
+			case LogicPackage.MTEST_STEP__PERSISTENT_STRING_PARAMETER:
 				setPersistentStringParameter((String)newValue);
 				return;
-			case LogicPackage.MTEST_STEP__MSTRING_PARAMETER:    
+			case LogicPackage.MTEST_STEP__MSTRING_PARAMETER:
 				setMStringParameter((MParameter)newValue);
 				return;
-			case LogicPackage.MTEST_STEP__STRING_PARAMETER:    
+			case LogicPackage.MTEST_STEP__STRING_PARAMETER:
 				setStringParameter((String)newValue);
 				return;
 		}

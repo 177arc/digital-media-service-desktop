@@ -93,7 +93,7 @@ public class MPublishNewMp3Step extends MPublishMp3sStep {
 	 * @generated
 	 * @ordered
 	 */
-	protected MParameter mMp3EntryReferenceParameter = null;
+	protected MParameter mMp3EntryReferenceParameter;
 
 	/**
 	 * The cached value of the '{@link #getMp3EntryReferenceParameter() <em>Mp3 Entry Reference Parameter</em>}' reference.
@@ -103,7 +103,7 @@ public class MPublishNewMp3Step extends MPublishMp3sStep {
 	 * @generated
 	 * @ordered
 	 */
-	protected MMp3 mp3EntryReferenceParameter = null;
+	protected MMp3 mp3EntryReferenceParameter;
 
 	/**
 	 * The cached value of the '{@link #getMLinkTextParameter() <em>MLink Text Parameter</em>}' containment reference.
@@ -113,7 +113,7 @@ public class MPublishNewMp3Step extends MPublishMp3sStep {
 	 * @generated
 	 * @ordered
 	 */
-	protected MParameter mLinkTextParameter = null;
+	protected MParameter mLinkTextParameter;
 
 	/**
 	 * The default value of the '{@link #getLinkTextParameter() <em>Link Text Parameter</em>}' attribute.
@@ -156,7 +156,7 @@ public class MPublishNewMp3Step extends MPublishMp3sStep {
 	 * @generated
 	 * @ordered
 	 */
-	protected MParameter mLinkDescriptionParameter = null;
+	protected MParameter mLinkDescriptionParameter;
 
 	/**
 	 * The default value of the '{@link #getLinkDescriptionParameter() <em>Link Description Parameter</em>}' attribute.
@@ -199,7 +199,7 @@ public class MPublishNewMp3Step extends MPublishMp3sStep {
 	 * @generated
 	 * @ordered
 	 */
-	protected MParameter mCommentParameter = null;
+	protected MParameter mCommentParameter;
 
 	/**
 	 * The default value of the '{@link #getCommentParameter() <em>Comment Parameter</em>}' attribute.
@@ -242,7 +242,7 @@ public class MPublishNewMp3Step extends MPublishMp3sStep {
 	 * @generated
 	 * @ordered
 	 */
-	protected MParameter mPodcastTitleParameter = null;
+	protected MParameter mPodcastTitleParameter;
 
 	/**
 	 * The default value of the '{@link #getPodcastTitleParameter() <em>Podcast Title Parameter</em>}' attribute.
@@ -285,7 +285,7 @@ public class MPublishNewMp3Step extends MPublishMp3sStep {
 	 * @generated
 	 * @ordered
 	 */
-	protected MParameter mPodcastSubtitleParameter = null;
+	protected MParameter mPodcastSubtitleParameter;
 
 	/**
 	 * The default value of the '{@link #getPodcastSubtitleParameter() <em>Podcast Subtitle Parameter</em>}' attribute.
@@ -328,7 +328,7 @@ public class MPublishNewMp3Step extends MPublishMp3sStep {
 	 * @generated
 	 * @ordered
 	 */
-	protected MParameter mPodcastSummaryParameter = null;
+	protected MParameter mPodcastSummaryParameter;
 
 	/**
 	 * The default value of the '{@link #getPodcastSummaryParameter() <em>Podcast Summary Parameter</em>}' attribute.
@@ -371,7 +371,7 @@ public class MPublishNewMp3Step extends MPublishMp3sStep {
 	 * @generated
 	 * @ordered
 	 */
-	protected MParameter mPodcastPublishingDateParameter = null;
+	protected MParameter mPodcastPublishingDateParameter;
 
 	/**
 	 * The default value of the '{@link #getPodcastPublishingDateParameter() <em>Podcast Publishing Date Parameter</em>}' attribute.
@@ -413,7 +413,7 @@ public class MPublishNewMp3Step extends MPublishMp3sStep {
 	 * @generated
 	 * @ordered
 	 */
-	protected MResult mPublishedMp3EntryReferenceResult = null;
+	protected MResult mPublishedMp3EntryReferenceResult;
 
 	/**
 	 * The cached value of the '{@link #getPublishedMp3EntryReferenceResult() <em>Published Mp3 Entry Reference Result</em>}' reference.
@@ -423,7 +423,7 @@ public class MPublishNewMp3Step extends MPublishMp3sStep {
 	 * @generated
 	 * @ordered
 	 */
-	protected MMp3 publishedMp3EntryReferenceResult = null;
+	protected MMp3 publishedMp3EntryReferenceResult;
 
 	/**
 	 * Get the default value of the '{@link #isInterruptable() <em>Interruptable</em>}' attribute.
@@ -532,7 +532,7 @@ public class MPublishNewMp3Step extends MPublishMp3sStep {
 		name = "Publish MP3";
 		interruptable = false;
 		terminatable = false;
-					 
+			 
 		setMMp3EntryReferenceParameter(new MParameter(false, "MP3 entry reference", "Speficies a reference to the MP3 entry to be published.", null));			 
 		setMLinkTextParameter(new MParameter(false, "Link text", "Specifies the link text for the published MP3 file.", null));			 
 		setMLinkDescriptionParameter(new MParameter(false, "Link description", "Specifies the link description for the published MP3 file. The description will be displayed underneath the link.", null));			 
@@ -573,7 +573,6 @@ public class MPublishNewMp3Step extends MPublishMp3sStep {
 
 	/**
 	 * Returns the value of the '<em><b>MMp3 Entry Reference Parameter</b></em>' containment reference.
-	 * The default value is <code>""</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>MMp3 Entry Reference Parameter</em>' containment reference isn't clear,
@@ -696,7 +695,6 @@ public class MPublishNewMp3Step extends MPublishMp3sStep {
 
 	/**
 	 * Returns the value of the '<em><b>MLink Text Parameter</b></em>' containment reference.
-	 * The default value is <code>""</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>MLink Text Parameter</em>' containment reference isn't clear,
@@ -802,7 +800,6 @@ public class MPublishNewMp3Step extends MPublishMp3sStep {
 
 	/**
 	 * Returns the value of the '<em><b>MLink Description Parameter</b></em>' containment reference.
-	 * The default value is <code>""</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>MLink Description Parameter</em>' containment reference isn't clear,
@@ -908,7 +905,6 @@ public class MPublishNewMp3Step extends MPublishMp3sStep {
 
 	/**
 	 * Returns the value of the '<em><b>MComment Parameter</b></em>' containment reference.
-	 * The default value is <code>""</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>MComment Parameter</em>' containment reference isn't clear,
@@ -1014,7 +1010,6 @@ public class MPublishNewMp3Step extends MPublishMp3sStep {
 
 	/**
 	 * Returns the value of the '<em><b>MPodcast Title Parameter</b></em>' containment reference.
-	 * The default value is <code>""</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>MPodcast Title Parameter</em>' containment reference isn't clear,
@@ -1120,7 +1115,6 @@ public class MPublishNewMp3Step extends MPublishMp3sStep {
 
 	/**
 	 * Returns the value of the '<em><b>MPodcast Subtitle Parameter</b></em>' containment reference.
-	 * The default value is <code>""</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>MPodcast Subtitle Parameter</em>' containment reference isn't clear,
@@ -1226,7 +1220,6 @@ public class MPublishNewMp3Step extends MPublishMp3sStep {
 
 	/**
 	 * Returns the value of the '<em><b>MPodcast Summary Parameter</b></em>' containment reference.
-	 * The default value is <code>""</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>MPodcast Summary Parameter</em>' containment reference isn't clear,
@@ -1332,7 +1325,6 @@ public class MPublishNewMp3Step extends MPublishMp3sStep {
 
 	/**
 	 * Returns the value of the '<em><b>MPodcast Publishing Date Parameter</b></em>' containment reference.
-	 * The default value is <code>""</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>MPodcast Publishing Date Parameter</em>' containment reference isn't clear,
@@ -1438,7 +1430,6 @@ public class MPublishNewMp3Step extends MPublishMp3sStep {
 
 	/**
 	 * Returns the value of the '<em><b>MPublished Mp3 Entry Reference Result</b></em>' containment reference.
-	 * The default value is <code>""</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>MPublished Mp3 Entry Reference Result</em>' containment reference isn't clear,
@@ -1644,58 +1635,58 @@ public class MPublishNewMp3Step extends MPublishMp3sStep {
 	 */
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case LogicPackage.MPUBLISH_NEW_MP3_STEP__MMP3_ENTRY_REFERENCE_PARAMETER:    
+			case LogicPackage.MPUBLISH_NEW_MP3_STEP__MMP3_ENTRY_REFERENCE_PARAMETER:
 				setMMp3EntryReferenceParameter((MParameter)newValue);
 				return;
-			case LogicPackage.MPUBLISH_NEW_MP3_STEP__MP3_ENTRY_REFERENCE_PARAMETER:    
+			case LogicPackage.MPUBLISH_NEW_MP3_STEP__MP3_ENTRY_REFERENCE_PARAMETER:
 				setMp3EntryReferenceParameter((MMp3)newValue);
 				return;
-			case LogicPackage.MPUBLISH_NEW_MP3_STEP__MLINK_TEXT_PARAMETER:    
+			case LogicPackage.MPUBLISH_NEW_MP3_STEP__MLINK_TEXT_PARAMETER:
 				setMLinkTextParameter((MParameter)newValue);
 				return;
-			case LogicPackage.MPUBLISH_NEW_MP3_STEP__LINK_TEXT_PARAMETER:    
+			case LogicPackage.MPUBLISH_NEW_MP3_STEP__LINK_TEXT_PARAMETER:
 				setLinkTextParameter((String)newValue);
 				return;
-			case LogicPackage.MPUBLISH_NEW_MP3_STEP__MLINK_DESCRIPTION_PARAMETER:    
+			case LogicPackage.MPUBLISH_NEW_MP3_STEP__MLINK_DESCRIPTION_PARAMETER:
 				setMLinkDescriptionParameter((MParameter)newValue);
 				return;
-			case LogicPackage.MPUBLISH_NEW_MP3_STEP__LINK_DESCRIPTION_PARAMETER:    
+			case LogicPackage.MPUBLISH_NEW_MP3_STEP__LINK_DESCRIPTION_PARAMETER:
 				setLinkDescriptionParameter((String)newValue);
 				return;
-			case LogicPackage.MPUBLISH_NEW_MP3_STEP__MCOMMENT_PARAMETER:    
+			case LogicPackage.MPUBLISH_NEW_MP3_STEP__MCOMMENT_PARAMETER:
 				setMCommentParameter((MParameter)newValue);
 				return;
-			case LogicPackage.MPUBLISH_NEW_MP3_STEP__COMMENT_PARAMETER:    
+			case LogicPackage.MPUBLISH_NEW_MP3_STEP__COMMENT_PARAMETER:
 				setCommentParameter((String)newValue);
 				return;
-			case LogicPackage.MPUBLISH_NEW_MP3_STEP__MPODCAST_TITLE_PARAMETER:    
+			case LogicPackage.MPUBLISH_NEW_MP3_STEP__MPODCAST_TITLE_PARAMETER:
 				setMPodcastTitleParameter((MParameter)newValue);
 				return;
-			case LogicPackage.MPUBLISH_NEW_MP3_STEP__PODCAST_TITLE_PARAMETER:    
+			case LogicPackage.MPUBLISH_NEW_MP3_STEP__PODCAST_TITLE_PARAMETER:
 				setPodcastTitleParameter((String)newValue);
 				return;
-			case LogicPackage.MPUBLISH_NEW_MP3_STEP__MPODCAST_SUBTITLE_PARAMETER:    
+			case LogicPackage.MPUBLISH_NEW_MP3_STEP__MPODCAST_SUBTITLE_PARAMETER:
 				setMPodcastSubtitleParameter((MParameter)newValue);
 				return;
-			case LogicPackage.MPUBLISH_NEW_MP3_STEP__PODCAST_SUBTITLE_PARAMETER:    
+			case LogicPackage.MPUBLISH_NEW_MP3_STEP__PODCAST_SUBTITLE_PARAMETER:
 				setPodcastSubtitleParameter((String)newValue);
 				return;
-			case LogicPackage.MPUBLISH_NEW_MP3_STEP__MPODCAST_SUMMARY_PARAMETER:    
+			case LogicPackage.MPUBLISH_NEW_MP3_STEP__MPODCAST_SUMMARY_PARAMETER:
 				setMPodcastSummaryParameter((MParameter)newValue);
 				return;
-			case LogicPackage.MPUBLISH_NEW_MP3_STEP__PODCAST_SUMMARY_PARAMETER:    
+			case LogicPackage.MPUBLISH_NEW_MP3_STEP__PODCAST_SUMMARY_PARAMETER:
 				setPodcastSummaryParameter((String)newValue);
 				return;
-			case LogicPackage.MPUBLISH_NEW_MP3_STEP__MPODCAST_PUBLISHING_DATE_PARAMETER:    
+			case LogicPackage.MPUBLISH_NEW_MP3_STEP__MPODCAST_PUBLISHING_DATE_PARAMETER:
 				setMPodcastPublishingDateParameter((MParameter)newValue);
 				return;
-			case LogicPackage.MPUBLISH_NEW_MP3_STEP__PODCAST_PUBLISHING_DATE_PARAMETER:    
+			case LogicPackage.MPUBLISH_NEW_MP3_STEP__PODCAST_PUBLISHING_DATE_PARAMETER:
 				setPodcastPublishingDateParameter((Date)newValue);
 				return;
-			case LogicPackage.MPUBLISH_NEW_MP3_STEP__MPUBLISHED_MP3_ENTRY_REFERENCE_RESULT:    
+			case LogicPackage.MPUBLISH_NEW_MP3_STEP__MPUBLISHED_MP3_ENTRY_REFERENCE_RESULT:
 				setMPublishedMp3EntryReferenceResult((MResult)newValue);
 				return;
-			case LogicPackage.MPUBLISH_NEW_MP3_STEP__PUBLISHED_MP3_ENTRY_REFERENCE_RESULT:    
+			case LogicPackage.MPUBLISH_NEW_MP3_STEP__PUBLISHED_MP3_ENTRY_REFERENCE_RESULT:
 				setPublishedMp3EntryReferenceResult((MMp3)newValue);
 				return;
 		}

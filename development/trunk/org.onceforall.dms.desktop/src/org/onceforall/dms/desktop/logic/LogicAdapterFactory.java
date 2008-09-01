@@ -70,7 +70,7 @@ public class LogicAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * The switch the delegates to the <code>createXXX</code> methods.
+	 * The switch that delegates to the <code>createXXX</code> methods.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -109,6 +109,12 @@ public class LogicAdapterFactory extends AdapterFactoryImpl {
 			}
 			public Object caseMDmsApplication(MDmsApplication object) {
 				return createMDmsApplicationAdapter();
+			}
+			public Object caseMDmsApplicationMGetDataUpgradeInfoStep(MDmsApplicationMGetDataUpgradeInfoStep object) {
+				return createMDmsApplicationMGetDataUpgradeInfoStepAdapter();
+			}
+			public Object caseMDmsApplicationMUpgradeDataStep(MDmsApplicationMUpgradeDataStep object) {
+				return createMDmsApplicationMUpgradeDataStepAdapter();
 			}
 			public Object caseMEnterInformationStep(MEnterInformationStep object) {
 				return createMEnterInformationStepAdapter();
@@ -169,12 +175,6 @@ public class LogicAdapterFactory extends AdapterFactoryImpl {
 			}
 			public Object caseMTagStep(MTagStep object) {
 				return createMTagStepAdapter();
-			}
-			public Object caseMDmsApplicationMGetDataUpgradeInfoStep(MDmsApplicationMGetDataUpgradeInfoStep object) {
-				return createMDmsApplicationMGetDataUpgradeInfoStepAdapter();
-			}
-			public Object caseMDmsApplicationMUpgradeDataStep(MDmsApplicationMUpgradeDataStep object) {
-				return createMDmsApplicationMUpgradeDataStepAdapter();
 			}
 			public Object defaultCase(EObject object) {
 				return createEObjectAdapter();

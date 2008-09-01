@@ -231,7 +231,7 @@ public abstract class MTagStep extends MStep {
 	 * @generated
 	 * @ordered
 	 */
-	protected MParameter mArtistParameter = null;
+	protected MParameter mArtistParameter;
 
 	/**
 	 * The default value of the '{@link #getArtistParameter() <em>Artist Parameter</em>}' attribute.
@@ -274,7 +274,7 @@ public abstract class MTagStep extends MStep {
 	 * @generated
 	 * @ordered
 	 */
-	protected MParameter mTitleParameter = null;
+	protected MParameter mTitleParameter;
 
 	/**
 	 * The default value of the '{@link #getTitleParameter() <em>Title Parameter</em>}' attribute.
@@ -317,7 +317,7 @@ public abstract class MTagStep extends MStep {
 	 * @generated
 	 * @ordered
 	 */
-	protected MParameter mAlbumParameter = null;
+	protected MParameter mAlbumParameter;
 
 	/**
 	 * The default value of the '{@link #getAlbumParameter() <em>Album Parameter</em>}' attribute.
@@ -360,7 +360,7 @@ public abstract class MTagStep extends MStep {
 	 * @generated
 	 * @ordered
 	 */
-	protected MParameter mGenreParameter = null;
+	protected MParameter mGenreParameter;
 
 	/**
 	 * The default value of the '{@link #getGenreParameter() <em>Genre Parameter</em>}' attribute.
@@ -403,7 +403,7 @@ public abstract class MTagStep extends MStep {
 	 * @generated
 	 * @ordered
 	 */
-	protected EList genreParameterHistoricValues = null;
+	protected EList genreParameterHistoricValues;
 
 	/**
 	 * The cached value of the '{@link #getMYearParameter() <em>MYear Parameter</em>}' containment reference.
@@ -413,7 +413,7 @@ public abstract class MTagStep extends MStep {
 	 * @generated
 	 * @ordered
 	 */
-	protected MParameter mYearParameter = null;
+	protected MParameter mYearParameter;
 
 	/**
 	 * The default value of the '{@link #getYearParameter() <em>Year Parameter</em>}' attribute.
@@ -456,7 +456,7 @@ public abstract class MTagStep extends MStep {
 	 * @generated
 	 * @ordered
 	 */
-	protected MParameter mCommentParameter = null;
+	protected MParameter mCommentParameter;
 
 	/**
 	 * The default value of the '{@link #getCommentParameter() <em>Comment Parameter</em>}' attribute.
@@ -499,7 +499,7 @@ public abstract class MTagStep extends MStep {
 	 * @generated
 	 * @ordered
 	 */
-	protected EList commentParameterHistoricValues = null;
+	protected EList commentParameterHistoricValues;
 
 	/**
 	 * The cached value of the '{@link #getMMp3FolderReferenceParameter() <em>MMp3 Folder Reference Parameter</em>}' containment reference.
@@ -509,7 +509,7 @@ public abstract class MTagStep extends MStep {
 	 * @generated
 	 * @ordered
 	 */
-	protected MParameter mMp3FolderReferenceParameter = null;
+	protected MParameter mMp3FolderReferenceParameter;
 
 	/**
 	 * The cached value of the '{@link #getMp3FolderReferenceParameter() <em>Mp3 Folder Reference Parameter</em>}' reference.
@@ -519,7 +519,7 @@ public abstract class MTagStep extends MStep {
 	 * @generated
 	 * @ordered
 	 */
-	protected MMp3Folder mp3FolderReferenceParameter = null;
+	protected MMp3Folder mp3FolderReferenceParameter;
 
 	/**
 	 * The cached value of the '{@link #getMMp3EntryNameParameter() <em>MMp3 Entry Name Parameter</em>}' containment reference.
@@ -529,7 +529,7 @@ public abstract class MTagStep extends MStep {
 	 * @generated
 	 * @ordered
 	 */
-	protected MParameter mMp3EntryNameParameter = null;
+	protected MParameter mMp3EntryNameParameter;
 
 	/**
 	 * The default value of the '{@link #getMp3EntryNameParameter() <em>Mp3 Entry Name Parameter</em>}' attribute.
@@ -572,7 +572,7 @@ public abstract class MTagStep extends MStep {
 	 * @generated
 	 * @ordered
 	 */
-	protected MResult mMp3EntryReferenceResult = null;
+	protected MResult mMp3EntryReferenceResult;
 
 	/**
 	 * The cached value of the '{@link #getMp3EntryReferenceResult() <em>Mp3 Entry Reference Result</em>}' reference.
@@ -582,7 +582,7 @@ public abstract class MTagStep extends MStep {
 	 * @generated
 	 * @ordered
 	 */
-	protected MMp3 mp3EntryReferenceResult = null;
+	protected MMp3 mp3EntryReferenceResult;
 
 	/**
 	 * The cached value of the '{@link #getMMp3FilePathResult() <em>MMp3 File Path Result</em>}' containment reference.
@@ -592,7 +592,7 @@ public abstract class MTagStep extends MStep {
 	 * @generated
 	 * @ordered
 	 */
-	protected MResult mMp3FilePathResult = null;
+	protected MResult mMp3FilePathResult;
 
 	/**
 	 * The default value of the '{@link #getMp3FilePathResult() <em>Mp3 File Path Result</em>}' attribute.
@@ -707,7 +707,7 @@ public abstract class MTagStep extends MStep {
 		actionIconFilePath = (File)LogicFactory.eINSTANCE.createFromString(LogicPackage.eINSTANCE.getMFile(), "Image Files\\Mark as completed.gif");
 		terminatable = false;
 		actionName = "Mark as completed";
-					 
+			 
 		setMArtistParameter(new MParameter(false, "Artist", "Determines the text that will set as the ID3 artist tag on the MP3 file.", null));			 
 		setMTitleParameter(new MParameter(false, "Title", "Determines the text that will set as the ID3 title tag on the MP3 file.", null));			 
 		setMAlbumParameter(new MParameter(false, "Album", "Determines the text that will set as the ID3 album tag on the MP3 file.", null));			 
@@ -749,7 +749,6 @@ public abstract class MTagStep extends MStep {
 
 	/**
 	 * Returns the value of the '<em><b>MArtist Parameter</b></em>' containment reference.
-	 * The default value is <code>""</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>MArtist Parameter</em>' containment reference isn't clear,
@@ -855,7 +854,6 @@ public abstract class MTagStep extends MStep {
 
 	/**
 	 * Returns the value of the '<em><b>MTitle Parameter</b></em>' containment reference.
-	 * The default value is <code>""</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>MTitle Parameter</em>' containment reference isn't clear,
@@ -961,7 +959,6 @@ public abstract class MTagStep extends MStep {
 
 	/**
 	 * Returns the value of the '<em><b>MAlbum Parameter</b></em>' containment reference.
-	 * The default value is <code>""</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>MAlbum Parameter</em>' containment reference isn't clear,
@@ -1067,7 +1064,6 @@ public abstract class MTagStep extends MStep {
 
 	/**
 	 * Returns the value of the '<em><b>MGenre Parameter</b></em>' containment reference.
-	 * The default value is <code>""</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>MGenre Parameter</em>' containment reference isn't clear,
@@ -1183,7 +1179,7 @@ public abstract class MTagStep extends MStep {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Genre Parameter Historic Values</em>' attribute list.
 	 * @see org.onceforall.dms.desktop.logic.LogicPackage#getMTagStep_GenreParameterHistoricValues()
-	 * @model type="java.lang.String" dataType="org.onceforall.dms.desktop.logic.MString" upper="3"
+	 * @model dataType="org.onceforall.dms.desktop.logic.MString" upper="3"
 	 * @generated
 	 */
 	public EList getGenreParameterHistoricValues() {
@@ -1195,7 +1191,6 @@ public abstract class MTagStep extends MStep {
 
 	/**
 	 * Returns the value of the '<em><b>MYear Parameter</b></em>' containment reference.
-	 * The default value is <code>""</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>MYear Parameter</em>' containment reference isn't clear,
@@ -1301,7 +1296,6 @@ public abstract class MTagStep extends MStep {
 
 	/**
 	 * Returns the value of the '<em><b>MComment Parameter</b></em>' containment reference.
-	 * The default value is <code>""</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>MComment Parameter</em>' containment reference isn't clear,
@@ -1416,7 +1410,7 @@ public abstract class MTagStep extends MStep {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Comment Parameter Historic Values</em>' attribute list.
 	 * @see org.onceforall.dms.desktop.logic.LogicPackage#getMTagStep_CommentParameterHistoricValues()
-	 * @model type="java.lang.String" dataType="org.onceforall.dms.desktop.logic.MString" upper="3"
+	 * @model dataType="org.onceforall.dms.desktop.logic.MString" upper="3"
 	 * @generated
 	 */
 	public EList getCommentParameterHistoricValues() {
@@ -1428,7 +1422,6 @@ public abstract class MTagStep extends MStep {
 
 	/**
 	 * Returns the value of the '<em><b>MMp3 Folder Reference Parameter</b></em>' containment reference.
-	 * The default value is <code>""</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>MMp3 Folder Reference Parameter</em>' containment reference isn't clear,
@@ -1551,7 +1544,6 @@ public abstract class MTagStep extends MStep {
 
 	/**
 	 * Returns the value of the '<em><b>MMp3 Entry Name Parameter</b></em>' containment reference.
-	 * The default value is <code>""</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>MMp3 Entry Name Parameter</em>' containment reference isn't clear,
@@ -1657,7 +1649,6 @@ public abstract class MTagStep extends MStep {
 
 	/**
 	 * Returns the value of the '<em><b>MMp3 Entry Reference Result</b></em>' containment reference.
-	 * The default value is <code>""</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>MMp3 Entry Reference Result</em>' containment reference isn't clear,
@@ -1780,7 +1771,6 @@ public abstract class MTagStep extends MStep {
 
 	/**
 	 * Returns the value of the '<em><b>MMp3 File Path Result</b></em>' containment reference.
-	 * The default value is <code>""</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>MMp3 File Path Result</em>' containment reference isn't clear,
@@ -1979,72 +1969,72 @@ public abstract class MTagStep extends MStep {
 	 */
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case LogicPackage.MTAG_STEP__MARTIST_PARAMETER:    
+			case LogicPackage.MTAG_STEP__MARTIST_PARAMETER:
 				setMArtistParameter((MParameter)newValue);
 				return;
-			case LogicPackage.MTAG_STEP__ARTIST_PARAMETER:    
+			case LogicPackage.MTAG_STEP__ARTIST_PARAMETER:
 				setArtistParameter((String)newValue);
 				return;
-			case LogicPackage.MTAG_STEP__MTITLE_PARAMETER:    
+			case LogicPackage.MTAG_STEP__MTITLE_PARAMETER:
 				setMTitleParameter((MParameter)newValue);
 				return;
-			case LogicPackage.MTAG_STEP__TITLE_PARAMETER:    
+			case LogicPackage.MTAG_STEP__TITLE_PARAMETER:
 				setTitleParameter((String)newValue);
 				return;
-			case LogicPackage.MTAG_STEP__MALBUM_PARAMETER:    
+			case LogicPackage.MTAG_STEP__MALBUM_PARAMETER:
 				setMAlbumParameter((MParameter)newValue);
 				return;
-			case LogicPackage.MTAG_STEP__ALBUM_PARAMETER:    
+			case LogicPackage.MTAG_STEP__ALBUM_PARAMETER:
 				setAlbumParameter((String)newValue);
 				return;
-			case LogicPackage.MTAG_STEP__MGENRE_PARAMETER:    
+			case LogicPackage.MTAG_STEP__MGENRE_PARAMETER:
 				setMGenreParameter((MParameter)newValue);
 				return;
-			case LogicPackage.MTAG_STEP__GENRE_PARAMETER:    
+			case LogicPackage.MTAG_STEP__GENRE_PARAMETER:
 				setGenreParameter((String)newValue);
 				return;
 			case LogicPackage.MTAG_STEP__GENRE_PARAMETER_HISTORIC_VALUES:
 				getGenreParameterHistoricValues().clear();
 				getGenreParameterHistoricValues().addAll((Collection)newValue);
 				return;
-			case LogicPackage.MTAG_STEP__MYEAR_PARAMETER:    
+			case LogicPackage.MTAG_STEP__MYEAR_PARAMETER:
 				setMYearParameter((MParameter)newValue);
 				return;
-			case LogicPackage.MTAG_STEP__YEAR_PARAMETER:    
+			case LogicPackage.MTAG_STEP__YEAR_PARAMETER:
 				setYearParameter((String)newValue);
 				return;
-			case LogicPackage.MTAG_STEP__MCOMMENT_PARAMETER:    
+			case LogicPackage.MTAG_STEP__MCOMMENT_PARAMETER:
 				setMCommentParameter((MParameter)newValue);
 				return;
-			case LogicPackage.MTAG_STEP__COMMENT_PARAMETER:    
+			case LogicPackage.MTAG_STEP__COMMENT_PARAMETER:
 				setCommentParameter((String)newValue);
 				return;
 			case LogicPackage.MTAG_STEP__COMMENT_PARAMETER_HISTORIC_VALUES:
 				getCommentParameterHistoricValues().clear();
 				getCommentParameterHistoricValues().addAll((Collection)newValue);
 				return;
-			case LogicPackage.MTAG_STEP__MMP3_FOLDER_REFERENCE_PARAMETER:    
+			case LogicPackage.MTAG_STEP__MMP3_FOLDER_REFERENCE_PARAMETER:
 				setMMp3FolderReferenceParameter((MParameter)newValue);
 				return;
-			case LogicPackage.MTAG_STEP__MP3_FOLDER_REFERENCE_PARAMETER:    
+			case LogicPackage.MTAG_STEP__MP3_FOLDER_REFERENCE_PARAMETER:
 				setMp3FolderReferenceParameter((MMp3Folder)newValue);
 				return;
-			case LogicPackage.MTAG_STEP__MMP3_ENTRY_NAME_PARAMETER:    
+			case LogicPackage.MTAG_STEP__MMP3_ENTRY_NAME_PARAMETER:
 				setMMp3EntryNameParameter((MParameter)newValue);
 				return;
-			case LogicPackage.MTAG_STEP__MP3_ENTRY_NAME_PARAMETER:    
+			case LogicPackage.MTAG_STEP__MP3_ENTRY_NAME_PARAMETER:
 				setMp3EntryNameParameter((String)newValue);
 				return;
-			case LogicPackage.MTAG_STEP__MMP3_ENTRY_REFERENCE_RESULT:    
+			case LogicPackage.MTAG_STEP__MMP3_ENTRY_REFERENCE_RESULT:
 				setMMp3EntryReferenceResult((MResult)newValue);
 				return;
-			case LogicPackage.MTAG_STEP__MP3_ENTRY_REFERENCE_RESULT:    
+			case LogicPackage.MTAG_STEP__MP3_ENTRY_REFERENCE_RESULT:
 				setMp3EntryReferenceResult((MMp3)newValue);
 				return;
-			case LogicPackage.MTAG_STEP__MMP3_FILE_PATH_RESULT:    
+			case LogicPackage.MTAG_STEP__MMP3_FILE_PATH_RESULT:
 				setMMp3FilePathResult((MResult)newValue);
 				return;
-			case LogicPackage.MTAG_STEP__MP3_FILE_PATH_RESULT:    
+			case LogicPackage.MTAG_STEP__MP3_FILE_PATH_RESULT:
 				setMp3FilePathResult((File)newValue);
 				return;
 		}

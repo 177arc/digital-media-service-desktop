@@ -173,7 +173,7 @@ public class MCheckFreeDiskSpaceStep extends MStep {
 	 * @generated
 	 * @ordered
 	 */
-	protected MParameter mRequiredFreeDiskSpaceParameter = null;
+	protected MParameter mRequiredFreeDiskSpaceParameter;
 
 	/**
 	 * The default value of the '{@link #getRequiredFreeDiskSpaceParameter() <em>Required Free Disk Space Parameter</em>}' attribute.
@@ -216,7 +216,7 @@ public class MCheckFreeDiskSpaceStep extends MStep {
 	 * @generated
 	 * @ordered
 	 */
-	protected MParameter mDirectoryParameter = null;
+	protected MParameter mDirectoryParameter;
 
 	/**
 	 * The default value of the '{@link #getDirectoryParameter() <em>Directory Parameter</em>}' attribute.
@@ -259,7 +259,7 @@ public class MCheckFreeDiskSpaceStep extends MStep {
 	 * @generated
 	 * @ordered
 	 */
-	protected MResult mFreeDiskSpaceResult = null;
+	protected MResult mFreeDiskSpaceResult;
 
 	/**
 	 * The default value of the '{@link #getFreeDiskSpaceResult() <em>Free Disk Space Result</em>}' attribute.
@@ -416,7 +416,7 @@ public class MCheckFreeDiskSpaceStep extends MStep {
 		terminatable = false;
 		interruptable = false;
 		actionName = "Check";
-					 
+			 
 		setMRequiredFreeDiskSpaceParameter(new MParameter(false, "Required free disk space", "Specifies the estimated required free disk space in bytes on the drive where the recording will be stored.", null));			 
 		setMDirectoryParameter(new MParameter(false, "Directory", "Specifies the path of the created directory where the recordings will be stored.", null));			 
 		setMFreeDiskSpaceResult(new MResult(false, "Free disk space", "Specifies the actual free disk space on the drive where the recording will be stored.", null));
@@ -451,7 +451,6 @@ public class MCheckFreeDiskSpaceStep extends MStep {
 
 	/**
 	 * Returns the value of the '<em><b>MRequired Free Disk Space Parameter</b></em>' containment reference.
-	 * The default value is <code>""</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>MRequired Free Disk Space Parameter</em>' containment reference isn't clear,
@@ -557,7 +556,6 @@ public class MCheckFreeDiskSpaceStep extends MStep {
 
 	/**
 	 * Returns the value of the '<em><b>MDirectory Parameter</b></em>' containment reference.
-	 * The default value is <code>""</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>MDirectory Parameter</em>' containment reference isn't clear,
@@ -663,7 +661,6 @@ public class MCheckFreeDiskSpaceStep extends MStep {
 
 	/**
 	 * Returns the value of the '<em><b>MFree Disk Space Result</b></em>' containment reference.
-	 * The default value is <code>""</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>MFree Disk Space Result</em>' containment reference isn't clear,
@@ -814,22 +811,22 @@ public class MCheckFreeDiskSpaceStep extends MStep {
 	 */
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case LogicPackage.MCHECK_FREE_DISK_SPACE_STEP__MREQUIRED_FREE_DISK_SPACE_PARAMETER:    
+			case LogicPackage.MCHECK_FREE_DISK_SPACE_STEP__MREQUIRED_FREE_DISK_SPACE_PARAMETER:
 				setMRequiredFreeDiskSpaceParameter((MParameter)newValue);
 				return;
-			case LogicPackage.MCHECK_FREE_DISK_SPACE_STEP__REQUIRED_FREE_DISK_SPACE_PARAMETER:    
+			case LogicPackage.MCHECK_FREE_DISK_SPACE_STEP__REQUIRED_FREE_DISK_SPACE_PARAMETER:
 				setRequiredFreeDiskSpaceParameter((Long)newValue);
 				return;
-			case LogicPackage.MCHECK_FREE_DISK_SPACE_STEP__MDIRECTORY_PARAMETER:    
+			case LogicPackage.MCHECK_FREE_DISK_SPACE_STEP__MDIRECTORY_PARAMETER:
 				setMDirectoryParameter((MParameter)newValue);
 				return;
-			case LogicPackage.MCHECK_FREE_DISK_SPACE_STEP__DIRECTORY_PARAMETER:    
+			case LogicPackage.MCHECK_FREE_DISK_SPACE_STEP__DIRECTORY_PARAMETER:
 				setDirectoryParameter((File)newValue);
 				return;
-			case LogicPackage.MCHECK_FREE_DISK_SPACE_STEP__MFREE_DISK_SPACE_RESULT:    
+			case LogicPackage.MCHECK_FREE_DISK_SPACE_STEP__MFREE_DISK_SPACE_RESULT:
 				setMFreeDiskSpaceResult((MResult)newValue);
 				return;
-			case LogicPackage.MCHECK_FREE_DISK_SPACE_STEP__FREE_DISK_SPACE_RESULT:    
+			case LogicPackage.MCHECK_FREE_DISK_SPACE_STEP__FREE_DISK_SPACE_RESULT:
 				setFreeDiskSpaceResult((Long)newValue);
 				return;
 		}

@@ -20,6 +20,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.onceforall.dms.desktop.logic.types.PasswordType;
 import org.onceforall.dms.desktop.exception.DesktopException;
 import org.onceforall.dms.desktop.logic.types.ReferenceType;
 import org.onceforall.dms.desktop.logic.types.Type;
@@ -79,7 +80,7 @@ public abstract class MFtpStep extends MStep {
 	 * @generated
 	 * @ordered
 	 */
-	protected MParameter mFtpServerUrlParameter = null;
+	protected MParameter mFtpServerUrlParameter;
 
 	/**
 	 * The default value of the '{@link #getFtpServerUrlParameter() <em>Ftp Server Url Parameter</em>}' attribute.
@@ -122,7 +123,7 @@ public abstract class MFtpStep extends MStep {
 	 * @generated
 	 * @ordered
 	 */
-	protected MParameter mFtpUserNameParameter = null;
+	protected MParameter mFtpUserNameParameter;
 
 	/**
 	 * The default value of the '{@link #getFtpUserNameParameter() <em>Ftp User Name Parameter</em>}' attribute.
@@ -165,7 +166,7 @@ public abstract class MFtpStep extends MStep {
 	 * @generated
 	 * @ordered
 	 */
-	protected MParameter mFtpUserPasswordParameter = null;
+	protected MParameter mFtpUserPasswordParameter;
 
 	/**
 	 * The default value of the '{@link #getFtpUserPasswordParameter() <em>Ftp User Password Parameter</em>}' attribute.
@@ -279,7 +280,7 @@ public abstract class MFtpStep extends MStep {
 		actionIconFilePath = (File)LogicFactory.eINSTANCE.createFromString(LogicPackage.eINSTANCE.getMFile(), "Image Files\\Mark as completed.gif");
 		terminatable = false;
 		actionName = "Mark as completed";
-					 
+			 
 		setMFtpServerUrlParameter(new MParameter(false, "FTP server URL", "Specifies the URL to public HTML directory on the FTP server, e.g. \'ftp://ftp.ccbromley.net/public_html\'", null));			 
 		setMFtpUserNameParameter(new MParameter(false, "FTP user name", "Specifies the user name for accessing the FTP server, e.g. \'ccb001\'.", null));			 
 		setMFtpUserPasswordParameter(new MParameter(false, "FTP user password", "Specifies the user password for accessing the FTP server.", null));
@@ -314,7 +315,6 @@ public abstract class MFtpStep extends MStep {
 
 	/**
 	 * Returns the value of the '<em><b>MFtp Server Url Parameter</b></em>' containment reference.
-	 * The default value is <code>""</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>MFtp Server Url Parameter</em>' containment reference isn't clear,
@@ -420,7 +420,6 @@ public abstract class MFtpStep extends MStep {
 
 	/**
 	 * Returns the value of the '<em><b>MFtp User Name Parameter</b></em>' containment reference.
-	 * The default value is <code>""</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>MFtp User Name Parameter</em>' containment reference isn't clear,
@@ -526,7 +525,6 @@ public abstract class MFtpStep extends MStep {
 
 	/**
 	 * Returns the value of the '<em><b>MFtp User Password Parameter</b></em>' containment reference.
-	 * The default value is <code>""</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>MFtp User Password Parameter</em>' containment reference isn't clear,
@@ -677,26 +675,26 @@ public abstract class MFtpStep extends MStep {
 	 */
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case LogicPackage.MFTP_STEP__MFTP_SERVER_URL_PARAMETER:    
+			case LogicPackage.MFTP_STEP__MFTP_SERVER_URL_PARAMETER:
 				setMFtpServerUrlParameter((MParameter)newValue);
 				return;
-			case LogicPackage.MFTP_STEP__FTP_SERVER_URL_PARAMETER:    
+			case LogicPackage.MFTP_STEP__FTP_SERVER_URL_PARAMETER:
 				setFtpServerUrlParameter((URL)newValue);
 				return;
-			case LogicPackage.MFTP_STEP__MFTP_USER_NAME_PARAMETER:    
+			case LogicPackage.MFTP_STEP__MFTP_USER_NAME_PARAMETER:
 				setMFtpUserNameParameter((MParameter)newValue);
 				return;
-			case LogicPackage.MFTP_STEP__FTP_USER_NAME_PARAMETER:    
+			case LogicPackage.MFTP_STEP__FTP_USER_NAME_PARAMETER:
 				setFtpUserNameParameter((String)newValue);
 				return;
-			case LogicPackage.MFTP_STEP__MFTP_USER_PASSWORD_PARAMETER:    
+			case LogicPackage.MFTP_STEP__MFTP_USER_PASSWORD_PARAMETER:
 				setMFtpUserPasswordParameter((MParameter)newValue);
 				return;
 			case LogicPackage.MFTP_STEP__FTP_USER_PASSWORD_PARAMETER:
 				// Makes sure that that plain text password will be encrypted if they are not. TODO: Remove this code after migration. Then all passwords should encrypted anyway.
 				if(newValue != null && (((String) newValue).startsWith("esio") || ((String) newValue).startsWith("site")))
 						newValue = Type.PASSWORD_TYPE.encryptPassword((String) newValue);
-				    
+				
 				setFtpUserPasswordParameter((String)newValue);
 				return;
 		}

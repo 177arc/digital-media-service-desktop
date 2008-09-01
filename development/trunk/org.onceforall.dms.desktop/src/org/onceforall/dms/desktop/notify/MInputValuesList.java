@@ -16,6 +16,7 @@ package org.onceforall.dms.desktop.notify;
 import java.util.Collection;
 import java.util.List;
 
+import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.util.EObjectEList;
 import org.onceforall.dms.desktop.logic.LogicPackage;
@@ -57,7 +58,7 @@ public class MInputValuesList extends EObjectEList {
 		if(result)
 			// Adds owning managed value as adapter to the input value.
 			for(MValue mValue: (Collection<MValue>) collection)
-				((MValue) mValue).eAdapters().add(owner);
+				((MValue) mValue).eAdapters().add((Adapter) owner);
 		
 		return result;
 	}
@@ -77,7 +78,7 @@ public class MInputValuesList extends EObjectEList {
 		if(result)
 			// Adds owning managed value as adapter to the input values.
 			for(int idx = start; idx < end; ++idx)
-				((MValue) owner).eAdapters().add(objects[idx]);
+				((MValue) owner).eAdapters().add((Adapter) objects[idx]);
 		
 		return result;
 	}
@@ -93,7 +94,7 @@ public class MInputValuesList extends EObjectEList {
 		super.addUnique(index, object);
 
 		// Adds owning managed value as adapter to the input value.
-		((MValue) object).eAdapters().add(owner);
+		((MValue) object).eAdapters().add((Adapter) owner);
 	}
 
 	/**
@@ -107,7 +108,7 @@ public class MInputValuesList extends EObjectEList {
 		super.addUnique(object);
 		
 		// Adds owning managed value as adapter to the input value.
-		((MValue) object).eAdapters().add(owner);
+		((MValue) object).eAdapters().add((Adapter) owner);
 	}
 	
 

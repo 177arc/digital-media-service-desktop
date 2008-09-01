@@ -102,7 +102,7 @@ public class MEnterWwxInformationStep extends MEnterInformationStep {
 	 * @generated
 	 * @ordered
 	 */
-	protected MParameter mWwxDateParameter = null;
+	protected MParameter mWwxDateParameter;
 
 	/**
 	 * The default value of the '{@link #getWwxDateParameter() <em>Wwx Date Parameter</em>}' attribute.
@@ -144,7 +144,7 @@ public class MEnterWwxInformationStep extends MEnterInformationStep {
 	 * @generated
 	 * @ordered
 	 */
-	protected MParameter mTitleOfTalkParameter = null;
+	protected MParameter mTitleOfTalkParameter;
 
 	/**
 	 * The default value of the '{@link #getTitleOfTalkParameter() <em>Title Of Talk Parameter</em>}' attribute.
@@ -187,7 +187,7 @@ public class MEnterWwxInformationStep extends MEnterInformationStep {
 	 * @generated
 	 * @ordered
 	 */
-	protected MParameter mSpeakersNameParameter = null;
+	protected MParameter mSpeakersNameParameter;
 
 	/**
 	 * The default value of the '{@link #getSpeakersNameParameter() <em>Speakers Name Parameter</em>}' attribute.
@@ -230,7 +230,7 @@ public class MEnterWwxInformationStep extends MEnterInformationStep {
 	 * @generated
 	 * @ordered
 	 */
-	protected EList speakersNameParameterHistoricValues = null;
+	protected EList speakersNameParameterHistoricValues;
 
 	/**
 	 * The cached value of the '{@link #getMFirstPartParameter() <em>MFirst Part Parameter</em>}' containment reference.
@@ -240,7 +240,7 @@ public class MEnterWwxInformationStep extends MEnterInformationStep {
 	 * @generated
 	 * @ordered
 	 */
-	protected MParameter mFirstPartParameter = null;
+	protected MParameter mFirstPartParameter;
 
 	/**
 	 * The default value of the '{@link #getFirstPartParameter() <em>First Part Parameter</em>}' attribute.
@@ -283,7 +283,7 @@ public class MEnterWwxInformationStep extends MEnterInformationStep {
 	 * @generated
 	 * @ordered
 	 */
-	protected EList firstPartParameterHistoricValues = null;
+	protected EList firstPartParameterHistoricValues;
 
 	/**
 	 * The cached value of the '{@link #getMSecondPartParameter() <em>MSecond Part Parameter</em>}' containment reference.
@@ -293,7 +293,7 @@ public class MEnterWwxInformationStep extends MEnterInformationStep {
 	 * @generated
 	 * @ordered
 	 */
-	protected MParameter mSecondPartParameter = null;
+	protected MParameter mSecondPartParameter;
 
 	/**
 	 * The default value of the '{@link #getSecondPartParameter() <em>Second Part Parameter</em>}' attribute.
@@ -336,7 +336,7 @@ public class MEnterWwxInformationStep extends MEnterInformationStep {
 	 * @generated
 	 * @ordered
 	 */
-	protected EList secondPartParameterHistoricValues = null;
+	protected EList secondPartParameterHistoricValues;
 
 	/**
 	 * The cached value of the '{@link #getMRecordingUsersNameParameter() <em>MRecording Users Name Parameter</em>}' containment reference.
@@ -346,7 +346,7 @@ public class MEnterWwxInformationStep extends MEnterInformationStep {
 	 * @generated
 	 * @ordered
 	 */
-	protected MParameter mRecordingUsersNameParameter = null;
+	protected MParameter mRecordingUsersNameParameter;
 
 	/**
 	 * The default value of the '{@link #getRecordingUsersNameParameter() <em>Recording Users Name Parameter</em>}' attribute.
@@ -389,7 +389,7 @@ public class MEnterWwxInformationStep extends MEnterInformationStep {
 	 * @generated
 	 * @ordered
 	 */
-	protected EList recordingUsersNameParameterHistoricValues = null;
+	protected EList recordingUsersNameParameterHistoricValues;
 
 	/**
 	 * The cached value of the '{@link #getMWwxDateResult() <em>MWwx Date Result</em>}' containment reference.
@@ -399,7 +399,7 @@ public class MEnterWwxInformationStep extends MEnterInformationStep {
 	 * @generated
 	 * @ordered
 	 */
-	protected MResult mWwxDateResult = null;
+	protected MResult mWwxDateResult;
 
 	/**
 	 * The default value of the '{@link #getWwxDateResult() <em>Wwx Date Result</em>}' attribute.
@@ -442,7 +442,7 @@ public class MEnterWwxInformationStep extends MEnterInformationStep {
 	 * @generated
 	 * @ordered
 	 */
-	protected MResult mTitleOfTalkResult = null;
+	protected MResult mTitleOfTalkResult;
 
 	/**
 	 * The default value of the '{@link #getTitleOfTalkResult() <em>Title Of Talk Result</em>}' attribute.
@@ -485,7 +485,7 @@ public class MEnterWwxInformationStep extends MEnterInformationStep {
 	 * @generated
 	 * @ordered
 	 */
-	protected MResult mSpeakersNameResult = null;
+	protected MResult mSpeakersNameResult;
 
 	/**
 	 * The default value of the '{@link #getSpeakersNameResult() <em>Speakers Name Result</em>}' attribute.
@@ -528,7 +528,7 @@ public class MEnterWwxInformationStep extends MEnterInformationStep {
 	 * @generated
 	 * @ordered
 	 */
-	protected MResult mFirstPartResult = null;
+	protected MResult mFirstPartResult;
 
 	/**
 	 * The default value of the '{@link #getFirstPartResult() <em>First Part Result</em>}' attribute.
@@ -571,7 +571,7 @@ public class MEnterWwxInformationStep extends MEnterInformationStep {
 	 * @generated
 	 * @ordered
 	 */
-	protected MResult mSecondPartResult = null;
+	protected MResult mSecondPartResult;
 
 	/**
 	 * The default value of the '{@link #getSecondPartResult() <em>Second Part Result</em>}' attribute.
@@ -614,7 +614,7 @@ public class MEnterWwxInformationStep extends MEnterInformationStep {
 	 * @generated
 	 * @ordered
 	 */
-	protected MResult mRecordingUsersNameResult = null;
+	protected MResult mRecordingUsersNameResult;
 
 	/**
 	 * The default value of the '{@link #getRecordingUsersNameResult() <em>Recording Users Name Result</em>}' attribute.
@@ -742,7 +742,7 @@ public class MEnterWwxInformationStep extends MEnterInformationStep {
 		stoppable = false;
 		actionIconFilePath = (File)LogicFactory.eINSTANCE.createFromString(LogicPackage.eINSTANCE.getMFile(), "Image Files/Mark as completed.gif");
 		name = "Enter WordWiseXtra information";
-					 
+			 
 		setMWwxDateParameter(new MParameter(false, "Date", "Specifies the date of the WordWiseXtra meeting.", null));			 
 		setMTitleOfTalkParameter(new MParameter(false, "Topic", "Specifies the title of the talk.", null));			 
 		setMSpeakersNameParameter(new MParameter(false, "Speaker\'s name", "Specifies the name of the speaker who will give the talk.", null));			 
@@ -786,7 +786,6 @@ public class MEnterWwxInformationStep extends MEnterInformationStep {
 
 	/**
 	 * Returns the value of the '<em><b>MWwx Date Parameter</b></em>' containment reference.
-	 * The default value is <code>""</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>MWwx Date Parameter</em>' containment reference isn't clear,
@@ -892,7 +891,6 @@ public class MEnterWwxInformationStep extends MEnterInformationStep {
 
 	/**
 	 * Returns the value of the '<em><b>MTitle Of Talk Parameter</b></em>' containment reference.
-	 * The default value is <code>""</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>MTitle Of Talk Parameter</em>' containment reference isn't clear,
@@ -998,7 +996,6 @@ public class MEnterWwxInformationStep extends MEnterInformationStep {
 
 	/**
 	 * Returns the value of the '<em><b>MSpeakers Name Parameter</b></em>' containment reference.
-	 * The default value is <code>""</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>MSpeakers Name Parameter</em>' containment reference isn't clear,
@@ -1113,7 +1110,7 @@ public class MEnterWwxInformationStep extends MEnterInformationStep {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Speakers Name Parameter Historic Values</em>' attribute list.
 	 * @see org.onceforall.dms.desktop.logic.LogicPackage#getMEnterWwxInformationStep_SpeakersNameParameterHistoricValues()
-	 * @model type="java.lang.String" dataType="org.onceforall.dms.desktop.logic.MString" upper="5"
+	 * @model dataType="org.onceforall.dms.desktop.logic.MString" upper="5"
 	 * @generated
 	 */
 	public EList getSpeakersNameParameterHistoricValues() {
@@ -1125,7 +1122,6 @@ public class MEnterWwxInformationStep extends MEnterInformationStep {
 
 	/**
 	 * Returns the value of the '<em><b>MFirst Part Parameter</b></em>' containment reference.
-	 * The default value is <code>""</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>MFirst Part Parameter</em>' containment reference isn't clear,
@@ -1240,7 +1236,7 @@ public class MEnterWwxInformationStep extends MEnterInformationStep {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>First Part Parameter Historic Values</em>' attribute list.
 	 * @see org.onceforall.dms.desktop.logic.LogicPackage#getMEnterWwxInformationStep_FirstPartParameterHistoricValues()
-	 * @model type="java.lang.String" dataType="org.onceforall.dms.desktop.logic.MString" upper="2"
+	 * @model dataType="org.onceforall.dms.desktop.logic.MString" upper="2"
 	 * @generated
 	 */
 	public EList getFirstPartParameterHistoricValues() {
@@ -1252,7 +1248,6 @@ public class MEnterWwxInformationStep extends MEnterInformationStep {
 
 	/**
 	 * Returns the value of the '<em><b>MSecond Part Parameter</b></em>' containment reference.
-	 * The default value is <code>""</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>MSecond Part Parameter</em>' containment reference isn't clear,
@@ -1367,7 +1362,7 @@ public class MEnterWwxInformationStep extends MEnterInformationStep {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Second Part Parameter Historic Values</em>' attribute list.
 	 * @see org.onceforall.dms.desktop.logic.LogicPackage#getMEnterWwxInformationStep_SecondPartParameterHistoricValues()
-	 * @model type="java.lang.String" dataType="org.onceforall.dms.desktop.logic.MString" upper="2"
+	 * @model dataType="org.onceforall.dms.desktop.logic.MString" upper="2"
 	 * @generated
 	 */
 	public EList getSecondPartParameterHistoricValues() {
@@ -1379,7 +1374,6 @@ public class MEnterWwxInformationStep extends MEnterInformationStep {
 
 	/**
 	 * Returns the value of the '<em><b>MRecording Users Name Parameter</b></em>' containment reference.
-	 * The default value is <code>""</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>MRecording Users Name Parameter</em>' containment reference isn't clear,
@@ -1494,7 +1488,7 @@ public class MEnterWwxInformationStep extends MEnterInformationStep {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Recording Users Name Parameter Historic Values</em>' attribute list.
 	 * @see org.onceforall.dms.desktop.logic.LogicPackage#getMEnterWwxInformationStep_RecordingUsersNameParameterHistoricValues()
-	 * @model type="java.lang.String" dataType="org.onceforall.dms.desktop.logic.MString" upper="5"
+	 * @model dataType="org.onceforall.dms.desktop.logic.MString" upper="5"
 	 * @generated
 	 */
 	public EList getRecordingUsersNameParameterHistoricValues() {
@@ -1506,7 +1500,6 @@ public class MEnterWwxInformationStep extends MEnterInformationStep {
 
 	/**
 	 * Returns the value of the '<em><b>MWwx Date Result</b></em>' containment reference.
-	 * The default value is <code>""</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>MWwx Date Result</em>' containment reference isn't clear,
@@ -1612,7 +1605,6 @@ public class MEnterWwxInformationStep extends MEnterInformationStep {
 
 	/**
 	 * Returns the value of the '<em><b>MTitle Of Talk Result</b></em>' containment reference.
-	 * The default value is <code>""</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>MTitle Of Talk Result</em>' containment reference isn't clear,
@@ -1718,7 +1710,6 @@ public class MEnterWwxInformationStep extends MEnterInformationStep {
 
 	/**
 	 * Returns the value of the '<em><b>MSpeakers Name Result</b></em>' containment reference.
-	 * The default value is <code>""</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>MSpeakers Name Result</em>' containment reference isn't clear,
@@ -1824,7 +1815,6 @@ public class MEnterWwxInformationStep extends MEnterInformationStep {
 
 	/**
 	 * Returns the value of the '<em><b>MFirst Part Result</b></em>' containment reference.
-	 * The default value is <code>""</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>MFirst Part Result</em>' containment reference isn't clear,
@@ -1930,7 +1920,6 @@ public class MEnterWwxInformationStep extends MEnterInformationStep {
 
 	/**
 	 * Returns the value of the '<em><b>MSecond Part Result</b></em>' containment reference.
-	 * The default value is <code>""</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>MSecond Part Result</em>' containment reference isn't clear,
@@ -2036,7 +2025,6 @@ public class MEnterWwxInformationStep extends MEnterInformationStep {
 
 	/**
 	 * Returns the value of the '<em><b>MRecording Users Name Result</b></em>' containment reference.
-	 * The default value is <code>""</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>MRecording Users Name Result</em>' containment reference isn't clear,
@@ -2249,92 +2237,92 @@ public class MEnterWwxInformationStep extends MEnterInformationStep {
 	 */
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case LogicPackage.MENTER_WWX_INFORMATION_STEP__MWWX_DATE_PARAMETER:    
+			case LogicPackage.MENTER_WWX_INFORMATION_STEP__MWWX_DATE_PARAMETER:
 				setMWwxDateParameter((MParameter)newValue);
 				return;
-			case LogicPackage.MENTER_WWX_INFORMATION_STEP__WWX_DATE_PARAMETER:    
+			case LogicPackage.MENTER_WWX_INFORMATION_STEP__WWX_DATE_PARAMETER:
 				setWwxDateParameter((Date)newValue);
 				return;
-			case LogicPackage.MENTER_WWX_INFORMATION_STEP__MTITLE_OF_TALK_PARAMETER:    
+			case LogicPackage.MENTER_WWX_INFORMATION_STEP__MTITLE_OF_TALK_PARAMETER:
 				setMTitleOfTalkParameter((MParameter)newValue);
 				return;
-			case LogicPackage.MENTER_WWX_INFORMATION_STEP__TITLE_OF_TALK_PARAMETER:    
+			case LogicPackage.MENTER_WWX_INFORMATION_STEP__TITLE_OF_TALK_PARAMETER:
 				setTitleOfTalkParameter((String)newValue);
 				return;
-			case LogicPackage.MENTER_WWX_INFORMATION_STEP__MSPEAKERS_NAME_PARAMETER:    
+			case LogicPackage.MENTER_WWX_INFORMATION_STEP__MSPEAKERS_NAME_PARAMETER:
 				setMSpeakersNameParameter((MParameter)newValue);
 				return;
-			case LogicPackage.MENTER_WWX_INFORMATION_STEP__SPEAKERS_NAME_PARAMETER:    
+			case LogicPackage.MENTER_WWX_INFORMATION_STEP__SPEAKERS_NAME_PARAMETER:
 				setSpeakersNameParameter((String)newValue);
 				return;
 			case LogicPackage.MENTER_WWX_INFORMATION_STEP__SPEAKERS_NAME_PARAMETER_HISTORIC_VALUES:
 				getSpeakersNameParameterHistoricValues().clear();
 				getSpeakersNameParameterHistoricValues().addAll((Collection)newValue);
 				return;
-			case LogicPackage.MENTER_WWX_INFORMATION_STEP__MFIRST_PART_PARAMETER:    
+			case LogicPackage.MENTER_WWX_INFORMATION_STEP__MFIRST_PART_PARAMETER:
 				setMFirstPartParameter((MParameter)newValue);
 				return;
-			case LogicPackage.MENTER_WWX_INFORMATION_STEP__FIRST_PART_PARAMETER:    
+			case LogicPackage.MENTER_WWX_INFORMATION_STEP__FIRST_PART_PARAMETER:
 				setFirstPartParameter((String)newValue);
 				return;
 			case LogicPackage.MENTER_WWX_INFORMATION_STEP__FIRST_PART_PARAMETER_HISTORIC_VALUES:
 				getFirstPartParameterHistoricValues().clear();
 				getFirstPartParameterHistoricValues().addAll((Collection)newValue);
 				return;
-			case LogicPackage.MENTER_WWX_INFORMATION_STEP__MSECOND_PART_PARAMETER:    
+			case LogicPackage.MENTER_WWX_INFORMATION_STEP__MSECOND_PART_PARAMETER:
 				setMSecondPartParameter((MParameter)newValue);
 				return;
-			case LogicPackage.MENTER_WWX_INFORMATION_STEP__SECOND_PART_PARAMETER:    
+			case LogicPackage.MENTER_WWX_INFORMATION_STEP__SECOND_PART_PARAMETER:
 				setSecondPartParameter((String)newValue);
 				return;
 			case LogicPackage.MENTER_WWX_INFORMATION_STEP__SECOND_PART_PARAMETER_HISTORIC_VALUES:
 				getSecondPartParameterHistoricValues().clear();
 				getSecondPartParameterHistoricValues().addAll((Collection)newValue);
 				return;
-			case LogicPackage.MENTER_WWX_INFORMATION_STEP__MRECORDING_USERS_NAME_PARAMETER:    
+			case LogicPackage.MENTER_WWX_INFORMATION_STEP__MRECORDING_USERS_NAME_PARAMETER:
 				setMRecordingUsersNameParameter((MParameter)newValue);
 				return;
-			case LogicPackage.MENTER_WWX_INFORMATION_STEP__RECORDING_USERS_NAME_PARAMETER:    
+			case LogicPackage.MENTER_WWX_INFORMATION_STEP__RECORDING_USERS_NAME_PARAMETER:
 				setRecordingUsersNameParameter((String)newValue);
 				return;
 			case LogicPackage.MENTER_WWX_INFORMATION_STEP__RECORDING_USERS_NAME_PARAMETER_HISTORIC_VALUES:
 				getRecordingUsersNameParameterHistoricValues().clear();
 				getRecordingUsersNameParameterHistoricValues().addAll((Collection)newValue);
 				return;
-			case LogicPackage.MENTER_WWX_INFORMATION_STEP__MWWX_DATE_RESULT:    
+			case LogicPackage.MENTER_WWX_INFORMATION_STEP__MWWX_DATE_RESULT:
 				setMWwxDateResult((MResult)newValue);
 				return;
-			case LogicPackage.MENTER_WWX_INFORMATION_STEP__WWX_DATE_RESULT:    
+			case LogicPackage.MENTER_WWX_INFORMATION_STEP__WWX_DATE_RESULT:
 				setWwxDateResult((Date)newValue);
 				return;
-			case LogicPackage.MENTER_WWX_INFORMATION_STEP__MTITLE_OF_TALK_RESULT:    
+			case LogicPackage.MENTER_WWX_INFORMATION_STEP__MTITLE_OF_TALK_RESULT:
 				setMTitleOfTalkResult((MResult)newValue);
 				return;
-			case LogicPackage.MENTER_WWX_INFORMATION_STEP__TITLE_OF_TALK_RESULT:    
+			case LogicPackage.MENTER_WWX_INFORMATION_STEP__TITLE_OF_TALK_RESULT:
 				setTitleOfTalkResult((String)newValue);
 				return;
-			case LogicPackage.MENTER_WWX_INFORMATION_STEP__MSPEAKERS_NAME_RESULT:    
+			case LogicPackage.MENTER_WWX_INFORMATION_STEP__MSPEAKERS_NAME_RESULT:
 				setMSpeakersNameResult((MResult)newValue);
 				return;
-			case LogicPackage.MENTER_WWX_INFORMATION_STEP__SPEAKERS_NAME_RESULT:    
+			case LogicPackage.MENTER_WWX_INFORMATION_STEP__SPEAKERS_NAME_RESULT:
 				setSpeakersNameResult((String)newValue);
 				return;
-			case LogicPackage.MENTER_WWX_INFORMATION_STEP__MFIRST_PART_RESULT:    
+			case LogicPackage.MENTER_WWX_INFORMATION_STEP__MFIRST_PART_RESULT:
 				setMFirstPartResult((MResult)newValue);
 				return;
-			case LogicPackage.MENTER_WWX_INFORMATION_STEP__FIRST_PART_RESULT:    
+			case LogicPackage.MENTER_WWX_INFORMATION_STEP__FIRST_PART_RESULT:
 				setFirstPartResult((String)newValue);
 				return;
-			case LogicPackage.MENTER_WWX_INFORMATION_STEP__MSECOND_PART_RESULT:    
+			case LogicPackage.MENTER_WWX_INFORMATION_STEP__MSECOND_PART_RESULT:
 				setMSecondPartResult((MResult)newValue);
 				return;
-			case LogicPackage.MENTER_WWX_INFORMATION_STEP__SECOND_PART_RESULT:    
+			case LogicPackage.MENTER_WWX_INFORMATION_STEP__SECOND_PART_RESULT:
 				setSecondPartResult((String)newValue);
 				return;
-			case LogicPackage.MENTER_WWX_INFORMATION_STEP__MRECORDING_USERS_NAME_RESULT:    
+			case LogicPackage.MENTER_WWX_INFORMATION_STEP__MRECORDING_USERS_NAME_RESULT:
 				setMRecordingUsersNameResult((MResult)newValue);
 				return;
-			case LogicPackage.MENTER_WWX_INFORMATION_STEP__RECORDING_USERS_NAME_RESULT:    
+			case LogicPackage.MENTER_WWX_INFORMATION_STEP__RECORDING_USERS_NAME_RESULT:
 				setRecordingUsersNameResult((String)newValue);
 				return;
 		}

@@ -60,12 +60,12 @@ public class LogicValidator extends EObjectValidator {
 	public static final String DIAGNOSTIC_SOURCE = "org.onceforall.dms.desktop.logic";
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate' of 'MElement'.
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate' of 'MApplication'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int MELEMENT__VALIDATE = 1;
+	public static final int MAPPLICATION__VALIDATE = 1;
 
 	/**
 	 * A constant with a fixed name that can be used as the base value for additional hand written constants.
@@ -119,7 +119,7 @@ public class LogicValidator extends EObjectValidator {
 	}
 
 	/**
-	 * Calls <code>validateXXX</code> for the corresonding classifier of the model.
+	 * Calls <code>validateXXX</code> for the corresponding classifier of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -148,6 +148,10 @@ public class LogicValidator extends EObjectValidator {
 				return validateMScript((MScript)value, diagnostics, context);
 			case LogicPackage.MDMS_APPLICATION:
 				return validateMDmsApplication((MDmsApplication)value, diagnostics, context);
+			case LogicPackage.MDMS_APPLICATION_MGET_DATA_UPGRADE_INFO_STEP:
+				return validateMDmsApplicationMGetDataUpgradeInfoStep((MDmsApplicationMGetDataUpgradeInfoStep)value, diagnostics, context);
+			case LogicPackage.MDMS_APPLICATION_MUPGRADE_DATA_STEP:
+				return validateMDmsApplicationMUpgradeDataStep((MDmsApplicationMUpgradeDataStep)value, diagnostics, context);
 			case LogicPackage.MENTER_INFORMATION_STEP:
 				return validateMEnterInformationStep((MEnterInformationStep)value, diagnostics, context);
 			case LogicPackage.MENTER_WWX_INFORMATION_STEP:
@@ -188,10 +192,6 @@ public class LogicValidator extends EObjectValidator {
 				return validateMNameTagMp3Step((MNameTagMp3Step)value, diagnostics, context);
 			case LogicPackage.MTAG_STEP:
 				return validateMTagStep((MTagStep)value, diagnostics, context);
-			case LogicPackage.MDMS_APPLICATION_MGET_DATA_UPGRADE_INFO_STEP:
-				return validateMDmsApplicationMGetDataUpgradeInfoStep((MDmsApplicationMGetDataUpgradeInfoStep)value, diagnostics, context);
-			case LogicPackage.MDMS_APPLICATION_MUPGRADE_DATA_STEP:
-				return validateMDmsApplicationMUpgradeDataStep((MDmsApplicationMUpgradeDataStep)value, diagnostics, context);
 			case LogicPackage.MDIRECTORY:
 				return validateMDirectory((File)value, diagnostics, context);
 			case LogicPackage.MEXISTING_DIRECTORY:
@@ -226,7 +226,7 @@ public class LogicValidator extends EObjectValidator {
 				return validateEThrowable((Throwable)value, diagnostics, context);
 			case LogicPackage.MMP3_STATE:
 				return validateMMp3State((State)value, diagnostics, context);
-			default: 
+			default:
 				return true;
 		}
 	}
@@ -237,12 +237,7 @@ public class LogicValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateMObject(MObject mObject, DiagnosticChain diagnostics, Map context) {
-		boolean result = validate_EveryMultiplicityConforms((EObject)mObject, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryDataValueConforms((EObject)mObject, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained((EObject)mObject, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryProxyResolves((EObject)mObject, diagnostics, context);
-		if (result || diagnostics != null) result &= validateMElement_validate(mObject, diagnostics, context);
-		return result;
+		return validate_EveryDefaultConstraint((EObject)mObject, diagnostics, context);
 	}
 
 	/**
@@ -251,22 +246,7 @@ public class LogicValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateMElement(MElement mElement, DiagnosticChain diagnostics, Map context) {
-		boolean result = validate_EveryMultiplicityConforms((EObject)mElement, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryDataValueConforms((EObject)mElement, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained((EObject)mElement, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryProxyResolves((EObject)mElement, diagnostics, context);
-		if (result || diagnostics != null) result &= validateMElement_validate(mElement, diagnostics, context);
-		return result;
-	}
-
-	/**
-	 * Validates the validate constraint of '<em>MElement</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateMElement_validate(MElement mElement, DiagnosticChain diagnostics, Map context) {
-		return mElement.validate(diagnostics, context);
+		return validate_EveryDefaultConstraint((EObject)mElement, diagnostics, context);
 	}
 
 	/**
@@ -275,12 +255,7 @@ public class LogicValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateMParameter(MParameter mParameter, DiagnosticChain diagnostics, Map context) {
-		boolean result = validate_EveryMultiplicityConforms((EObject)mParameter, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryDataValueConforms((EObject)mParameter, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained((EObject)mParameter, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryProxyResolves((EObject)mParameter, diagnostics, context);
-		if (result || diagnostics != null) result &= validateMElement_validate(mParameter, diagnostics, context);
-		return result;
+		return validate_EveryDefaultConstraint((EObject)mParameter, diagnostics, context);
 	}
 
 	/**
@@ -289,12 +264,7 @@ public class LogicValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateMProperty(MProperty mProperty, DiagnosticChain diagnostics, Map context) {
-		boolean result = validate_EveryMultiplicityConforms((EObject)mProperty, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryDataValueConforms((EObject)mProperty, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained((EObject)mProperty, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryProxyResolves((EObject)mProperty, diagnostics, context);
-		if (result || diagnostics != null) result &= validateMElement_validate(mProperty, diagnostics, context);
-		return result;
+		return validate_EveryDefaultConstraint((EObject)mProperty, diagnostics, context);
 	}
 
 	/**
@@ -303,12 +273,7 @@ public class LogicValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateMResult(MResult mResult, DiagnosticChain diagnostics, Map context) {
-		boolean result = validate_EveryMultiplicityConforms((EObject)mResult, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryDataValueConforms((EObject)mResult, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained((EObject)mResult, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryProxyResolves((EObject)mResult, diagnostics, context);
-		if (result || diagnostics != null) result &= validateMElement_validate(mResult, diagnostics, context);
-		return result;
+		return validate_EveryDefaultConstraint((EObject)mResult, diagnostics, context);
 	}
 
 	/**
@@ -317,12 +282,7 @@ public class LogicValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateMStatefulObject(MStatefulObject mStatefulObject, DiagnosticChain diagnostics, Map context) {
-		boolean result = validate_EveryMultiplicityConforms((EObject)mStatefulObject, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryDataValueConforms((EObject)mStatefulObject, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained((EObject)mStatefulObject, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryProxyResolves((EObject)mStatefulObject, diagnostics, context);
-		if (result || diagnostics != null) result &= validateMElement_validate(mStatefulObject, diagnostics, context);
-		return result;
+		return validate_EveryDefaultConstraint((EObject)mStatefulObject, diagnostics, context);
 	}
 
 	/**
@@ -331,12 +291,7 @@ public class LogicValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateMStep(MStep mStep, DiagnosticChain diagnostics, Map context) {
-		boolean result = validate_EveryMultiplicityConforms((EObject)mStep, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryDataValueConforms((EObject)mStep, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained((EObject)mStep, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryProxyResolves((EObject)mStep, diagnostics, context);
-		if (result || diagnostics != null) result &= validateMElement_validate(mStep, diagnostics, context);
-		return result;
+		return validate_EveryDefaultConstraint((EObject)mStep, diagnostics, context);
 	}
 
 	/**
@@ -362,8 +317,21 @@ public class LogicValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_EveryDataValueConforms((EObject)mApplication, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained((EObject)mApplication, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryProxyResolves((EObject)mApplication, diagnostics, context);
-		if (result || diagnostics != null) result &= validateMElement_validate(mApplication, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID((EObject)mApplication, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique((EObject)mApplication, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique((EObject)mApplication, diagnostics, context);
+		if (result || diagnostics != null) result &= validateMApplication_validate(mApplication, diagnostics, context);
 		return result;
+	}
+
+	/**
+	 * Validates the validate constraint of '<em>MApplication</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateMApplication_validate(MApplication mApplication, DiagnosticChain diagnostics, Map context) {
+		return mApplication.validate(diagnostics, context);
 	}
 
 	/**
@@ -372,12 +340,7 @@ public class LogicValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateMScript(MScript mScript, DiagnosticChain diagnostics, Map context) {
-		boolean result = validate_EveryMultiplicityConforms((EObject)mScript, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryDataValueConforms((EObject)mScript, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained((EObject)mScript, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryProxyResolves((EObject)mScript, diagnostics, context);
-		if (result || diagnostics != null) result &= validateMElement_validate(mScript, diagnostics, context);
-		return result;
+		return validate_EveryDefaultConstraint((EObject)mScript, diagnostics, context);
 	}
 
 	/**
@@ -390,7 +353,10 @@ public class LogicValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_EveryDataValueConforms((EObject)mDmsApplication, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained((EObject)mDmsApplication, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryProxyResolves((EObject)mDmsApplication, diagnostics, context);
-		if (result || diagnostics != null) result &= validateMElement_validate(mDmsApplication, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID((EObject)mDmsApplication, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique((EObject)mDmsApplication, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique((EObject)mDmsApplication, diagnostics, context);
+		if (result || diagnostics != null) result &= validateMApplication_validate(mDmsApplication, diagnostics, context);
 		return result;
 	}
 
@@ -400,12 +366,7 @@ public class LogicValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateMEnterInformationStep(MEnterInformationStep mEnterInformationStep, DiagnosticChain diagnostics, Map context) {
-		boolean result = validate_EveryMultiplicityConforms((EObject)mEnterInformationStep, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryDataValueConforms((EObject)mEnterInformationStep, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained((EObject)mEnterInformationStep, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryProxyResolves((EObject)mEnterInformationStep, diagnostics, context);
-		if (result || diagnostics != null) result &= validateMElement_validate(mEnterInformationStep, diagnostics, context);
-		return result;
+		return validate_EveryDefaultConstraint((EObject)mEnterInformationStep, diagnostics, context);
 	}
 
 	/**
@@ -414,12 +375,7 @@ public class LogicValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateMEnterWwxInformationStep(MEnterWwxInformationStep mEnterWwxInformationStep, DiagnosticChain diagnostics, Map context) {
-		boolean result = validate_EveryMultiplicityConforms((EObject)mEnterWwxInformationStep, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryDataValueConforms((EObject)mEnterWwxInformationStep, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained((EObject)mEnterWwxInformationStep, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryProxyResolves((EObject)mEnterWwxInformationStep, diagnostics, context);
-		if (result || diagnostics != null) result &= validateMElement_validate(mEnterWwxInformationStep, diagnostics, context);
-		return result;
+		return validate_EveryDefaultConstraint((EObject)mEnterWwxInformationStep, diagnostics, context);
 	}
 
 	/**
@@ -428,12 +384,7 @@ public class LogicValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateMEnterServiceInformationStep(MEnterServiceInformationStep mEnterServiceInformationStep, DiagnosticChain diagnostics, Map context) {
-		boolean result = validate_EveryMultiplicityConforms((EObject)mEnterServiceInformationStep, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryDataValueConforms((EObject)mEnterServiceInformationStep, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained((EObject)mEnterServiceInformationStep, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryProxyResolves((EObject)mEnterServiceInformationStep, diagnostics, context);
-		if (result || diagnostics != null) result &= validateMElement_validate(mEnterServiceInformationStep, diagnostics, context);
-		return result;
+		return validate_EveryDefaultConstraint((EObject)mEnterServiceInformationStep, diagnostics, context);
 	}
 
 	/**
@@ -442,12 +393,7 @@ public class LogicValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateMCreateDirectoryStep(MCreateDirectoryStep mCreateDirectoryStep, DiagnosticChain diagnostics, Map context) {
-		boolean result = validate_EveryMultiplicityConforms((EObject)mCreateDirectoryStep, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryDataValueConforms((EObject)mCreateDirectoryStep, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained((EObject)mCreateDirectoryStep, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryProxyResolves((EObject)mCreateDirectoryStep, diagnostics, context);
-		if (result || diagnostics != null) result &= validateMElement_validate(mCreateDirectoryStep, diagnostics, context);
-		return result;
+		return validate_EveryDefaultConstraint((EObject)mCreateDirectoryStep, diagnostics, context);
 	}
 
 	/**
@@ -456,12 +402,7 @@ public class LogicValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateMCheckFreeDiskSpaceStep(MCheckFreeDiskSpaceStep mCheckFreeDiskSpaceStep, DiagnosticChain diagnostics, Map context) {
-		boolean result = validate_EveryMultiplicityConforms((EObject)mCheckFreeDiskSpaceStep, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryDataValueConforms((EObject)mCheckFreeDiskSpaceStep, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained((EObject)mCheckFreeDiskSpaceStep, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryProxyResolves((EObject)mCheckFreeDiskSpaceStep, diagnostics, context);
-		if (result || diagnostics != null) result &= validateMElement_validate(mCheckFreeDiskSpaceStep, diagnostics, context);
-		return result;
+		return validate_EveryDefaultConstraint((EObject)mCheckFreeDiskSpaceStep, diagnostics, context);
 	}
 
 	/**
@@ -470,12 +411,7 @@ public class LogicValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateMAudioStep(MAudioStep mAudioStep, DiagnosticChain diagnostics, Map context) {
-		boolean result = validate_EveryMultiplicityConforms((EObject)mAudioStep, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryDataValueConforms((EObject)mAudioStep, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained((EObject)mAudioStep, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryProxyResolves((EObject)mAudioStep, diagnostics, context);
-		if (result || diagnostics != null) result &= validateMElement_validate(mAudioStep, diagnostics, context);
-		return result;
+		return validate_EveryDefaultConstraint((EObject)mAudioStep, diagnostics, context);
 	}
 
 	/**
@@ -484,12 +420,7 @@ public class LogicValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateMCheckInputLevelsStep(MCheckInputLevelsStep mCheckInputLevelsStep, DiagnosticChain diagnostics, Map context) {
-		boolean result = validate_EveryMultiplicityConforms((EObject)mCheckInputLevelsStep, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryDataValueConforms((EObject)mCheckInputLevelsStep, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained((EObject)mCheckInputLevelsStep, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryProxyResolves((EObject)mCheckInputLevelsStep, diagnostics, context);
-		if (result || diagnostics != null) result &= validateMElement_validate(mCheckInputLevelsStep, diagnostics, context);
-		return result;
+		return validate_EveryDefaultConstraint((EObject)mCheckInputLevelsStep, diagnostics, context);
 	}
 
 	/**
@@ -498,12 +429,7 @@ public class LogicValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateMRecordStep(MRecordStep mRecordStep, DiagnosticChain diagnostics, Map context) {
-		boolean result = validate_EveryMultiplicityConforms((EObject)mRecordStep, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryDataValueConforms((EObject)mRecordStep, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained((EObject)mRecordStep, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryProxyResolves((EObject)mRecordStep, diagnostics, context);
-		if (result || diagnostics != null) result &= validateMElement_validate(mRecordStep, diagnostics, context);
-		return result;
+		return validate_EveryDefaultConstraint((EObject)mRecordStep, diagnostics, context);
 	}
 
 	/**
@@ -512,12 +438,7 @@ public class LogicValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateMConvertToMP3Step(MConvertToMP3Step mConvertToMP3Step, DiagnosticChain diagnostics, Map context) {
-		boolean result = validate_EveryMultiplicityConforms((EObject)mConvertToMP3Step, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryDataValueConforms((EObject)mConvertToMP3Step, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained((EObject)mConvertToMP3Step, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryProxyResolves((EObject)mConvertToMP3Step, diagnostics, context);
-		if (result || diagnostics != null) result &= validateMElement_validate(mConvertToMP3Step, diagnostics, context);
-		return result;
+		return validate_EveryDefaultConstraint((EObject)mConvertToMP3Step, diagnostics, context);
 	}
 
 	/**
@@ -526,12 +447,7 @@ public class LogicValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateMPublishMp3sStep(MPublishMp3sStep mPublishMp3sStep, DiagnosticChain diagnostics, Map context) {
-		boolean result = validate_EveryMultiplicityConforms((EObject)mPublishMp3sStep, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryDataValueConforms((EObject)mPublishMp3sStep, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained((EObject)mPublishMp3sStep, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryProxyResolves((EObject)mPublishMp3sStep, diagnostics, context);
-		if (result || diagnostics != null) result &= validateMElement_validate(mPublishMp3sStep, diagnostics, context);
-		return result;
+		return validate_EveryDefaultConstraint((EObject)mPublishMp3sStep, diagnostics, context);
 	}
 
 	/**
@@ -540,12 +456,7 @@ public class LogicValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateMUpdatePublishedMp3sStep(MUpdatePublishedMp3sStep mUpdatePublishedMp3sStep, DiagnosticChain diagnostics, Map context) {
-		boolean result = validate_EveryMultiplicityConforms((EObject)mUpdatePublishedMp3sStep, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryDataValueConforms((EObject)mUpdatePublishedMp3sStep, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained((EObject)mUpdatePublishedMp3sStep, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryProxyResolves((EObject)mUpdatePublishedMp3sStep, diagnostics, context);
-		if (result || diagnostics != null) result &= validateMElement_validate(mUpdatePublishedMp3sStep, diagnostics, context);
-		return result;
+		return validate_EveryDefaultConstraint((EObject)mUpdatePublishedMp3sStep, diagnostics, context);
 	}
 
 	/**
@@ -554,12 +465,7 @@ public class LogicValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateMPublishNewMp3Step(MPublishNewMp3Step mPublishNewMp3Step, DiagnosticChain diagnostics, Map context) {
-		boolean result = validate_EveryMultiplicityConforms((EObject)mPublishNewMp3Step, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryDataValueConforms((EObject)mPublishNewMp3Step, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained((EObject)mPublishNewMp3Step, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryProxyResolves((EObject)mPublishNewMp3Step, diagnostics, context);
-		if (result || diagnostics != null) result &= validateMElement_validate(mPublishNewMp3Step, diagnostics, context);
-		return result;
+		return validate_EveryDefaultConstraint((EObject)mPublishNewMp3Step, diagnostics, context);
 	}
 
 	/**
@@ -568,12 +474,7 @@ public class LogicValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateMEmailEventLogStep(MEmailEventLogStep mEmailEventLogStep, DiagnosticChain diagnostics, Map context) {
-		boolean result = validate_EveryMultiplicityConforms((EObject)mEmailEventLogStep, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryDataValueConforms((EObject)mEmailEventLogStep, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained((EObject)mEmailEventLogStep, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryProxyResolves((EObject)mEmailEventLogStep, diagnostics, context);
-		if (result || diagnostics != null) result &= validateMElement_validate(mEmailEventLogStep, diagnostics, context);
-		return result;
+		return validate_EveryDefaultConstraint((EObject)mEmailEventLogStep, diagnostics, context);
 	}
 
 	/**
@@ -582,12 +483,7 @@ public class LogicValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateMMp3Folder(MMp3Folder mMp3Folder, DiagnosticChain diagnostics, Map context) {
-		boolean result = validate_EveryMultiplicityConforms((EObject)mMp3Folder, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryDataValueConforms((EObject)mMp3Folder, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained((EObject)mMp3Folder, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryProxyResolves((EObject)mMp3Folder, diagnostics, context);
-		if (result || diagnostics != null) result &= validateMElement_validate(mMp3Folder, diagnostics, context);
-		return result;
+		return validate_EveryDefaultConstraint((EObject)mMp3Folder, diagnostics, context);
 	}
 
 	/**
@@ -596,12 +492,7 @@ public class LogicValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateMMp3(MMp3 mMp3, DiagnosticChain diagnostics, Map context) {
-		boolean result = validate_EveryMultiplicityConforms((EObject)mMp3, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryDataValueConforms((EObject)mMp3, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained((EObject)mMp3, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryProxyResolves((EObject)mMp3, diagnostics, context);
-		if (result || diagnostics != null) result &= validateMElement_validate(mMp3, diagnostics, context);
-		return result;
+		return validate_EveryDefaultConstraint((EObject)mMp3, diagnostics, context);
 	}
 
 	/**
@@ -610,12 +501,7 @@ public class LogicValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateMBurnCdStep(MBurnCdStep mBurnCdStep, DiagnosticChain diagnostics, Map context) {
-		boolean result = validate_EveryMultiplicityConforms((EObject)mBurnCdStep, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryDataValueConforms((EObject)mBurnCdStep, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained((EObject)mBurnCdStep, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryProxyResolves((EObject)mBurnCdStep, diagnostics, context);
-		if (result || diagnostics != null) result &= validateMElement_validate(mBurnCdStep, diagnostics, context);
-		return result;
+		return validate_EveryDefaultConstraint((EObject)mBurnCdStep, diagnostics, context);
 	}
 
 	/**
@@ -624,12 +510,7 @@ public class LogicValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateMFtpStep(MFtpStep mFtpStep, DiagnosticChain diagnostics, Map context) {
-		boolean result = validate_EveryMultiplicityConforms((EObject)mFtpStep, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryDataValueConforms((EObject)mFtpStep, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained((EObject)mFtpStep, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryProxyResolves((EObject)mFtpStep, diagnostics, context);
-		if (result || diagnostics != null) result &= validateMElement_validate(mFtpStep, diagnostics, context);
-		return result;
+		return validate_EveryDefaultConstraint((EObject)mFtpStep, diagnostics, context);
 	}
 
 	/**
@@ -638,12 +519,7 @@ public class LogicValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateMTestStep(MTestStep mTestStep, DiagnosticChain diagnostics, Map context) {
-		boolean result = validate_EveryMultiplicityConforms((EObject)mTestStep, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryDataValueConforms((EObject)mTestStep, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained((EObject)mTestStep, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryProxyResolves((EObject)mTestStep, diagnostics, context);
-		if (result || diagnostics != null) result &= validateMElement_validate(mTestStep, diagnostics, context);
-		return result;
+		return validate_EveryDefaultConstraint((EObject)mTestStep, diagnostics, context);
 	}
 
 	/**
@@ -652,12 +528,7 @@ public class LogicValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateMNameTagMp3Step(MNameTagMp3Step mNameTagMp3Step, DiagnosticChain diagnostics, Map context) {
-		boolean result = validate_EveryMultiplicityConforms((EObject)mNameTagMp3Step, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryDataValueConforms((EObject)mNameTagMp3Step, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained((EObject)mNameTagMp3Step, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryProxyResolves((EObject)mNameTagMp3Step, diagnostics, context);
-		if (result || diagnostics != null) result &= validateMElement_validate(mNameTagMp3Step, diagnostics, context);
-		return result;
+		return validate_EveryDefaultConstraint((EObject)mNameTagMp3Step, diagnostics, context);
 	}
 
 	/**
@@ -666,12 +537,7 @@ public class LogicValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateMTagStep(MTagStep mTagStep, DiagnosticChain diagnostics, Map context) {
-		boolean result = validate_EveryMultiplicityConforms((EObject)mTagStep, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryDataValueConforms((EObject)mTagStep, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained((EObject)mTagStep, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryProxyResolves((EObject)mTagStep, diagnostics, context);
-		if (result || diagnostics != null) result &= validateMElement_validate(mTagStep, diagnostics, context);
-		return result;
+		return validate_EveryDefaultConstraint((EObject)mTagStep, diagnostics, context);
 	}
 
 	/**
@@ -680,12 +546,7 @@ public class LogicValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateMDmsApplicationMGetDataUpgradeInfoStep(MDmsApplicationMGetDataUpgradeInfoStep mDmsApplicationMGetDataUpgradeInfoStep, DiagnosticChain diagnostics, Map context) {
-		boolean result = validate_EveryMultiplicityConforms((EObject)mDmsApplicationMGetDataUpgradeInfoStep, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryDataValueConforms((EObject)mDmsApplicationMGetDataUpgradeInfoStep, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained((EObject)mDmsApplicationMGetDataUpgradeInfoStep, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryProxyResolves((EObject)mDmsApplicationMGetDataUpgradeInfoStep, diagnostics, context);
-		if (result || diagnostics != null) result &= validateMElement_validate(mDmsApplicationMGetDataUpgradeInfoStep, diagnostics, context);
-		return result;
+		return validate_EveryDefaultConstraint((EObject)mDmsApplicationMGetDataUpgradeInfoStep, diagnostics, context);
 	}
 
 	/**
@@ -694,12 +555,7 @@ public class LogicValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateMDmsApplicationMUpgradeDataStep(MDmsApplicationMUpgradeDataStep mDmsApplicationMUpgradeDataStep, DiagnosticChain diagnostics, Map context) {
-		boolean result = validate_EveryMultiplicityConforms((EObject)mDmsApplicationMUpgradeDataStep, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryDataValueConforms((EObject)mDmsApplicationMUpgradeDataStep, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained((EObject)mDmsApplicationMUpgradeDataStep, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryProxyResolves((EObject)mDmsApplicationMUpgradeDataStep, diagnostics, context);
-		if (result || diagnostics != null) result &= validateMElement_validate(mDmsApplicationMUpgradeDataStep, diagnostics, context);
-		return result;
+		return validate_EveryDefaultConstraint((EObject)mDmsApplicationMUpgradeDataStep, diagnostics, context);
 	}
 
 	/**

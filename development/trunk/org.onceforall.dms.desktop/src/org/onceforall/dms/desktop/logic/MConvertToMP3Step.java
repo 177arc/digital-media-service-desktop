@@ -84,7 +84,7 @@ public class MConvertToMP3Step extends MTagStep {
 	 * @generated
 	 * @ordered
 	 */
-	protected MParameter mDirectoryParameter = null;
+	protected MParameter mDirectoryParameter;
 
 	/**
 	 * The default value of the '{@link #getDirectoryParameter() <em>Directory Parameter</em>}' attribute.
@@ -127,7 +127,7 @@ public class MConvertToMP3Step extends MTagStep {
 	 * @generated
 	 * @ordered
 	 */
-	protected MParameter mMp3FileNameParameter = null;
+	protected MParameter mMp3FileNameParameter;
 
 	/**
 	 * The default value of the '{@link #getMp3FileNameParameter() <em>Mp3 File Name Parameter</em>}' attribute.
@@ -170,7 +170,7 @@ public class MConvertToMP3Step extends MTagStep {
 	 * @generated
 	 * @ordered
 	 */
-	protected MParameter mRecordingFileParameter = null;
+	protected MParameter mRecordingFileParameter;
 
 	/**
 	 * The default value of the '{@link #getRecordingFileParameter() <em>Recording File Parameter</em>}' attribute.
@@ -213,7 +213,7 @@ public class MConvertToMP3Step extends MTagStep {
 	 * @generated
 	 * @ordered
 	 */
-	protected MParameter mMp3EncoderPathParameter = null;
+	protected MParameter mMp3EncoderPathParameter;
 
 	/**
 	 * The default value of the '{@link #getMp3EncoderPathParameter() <em>Mp3 Encoder Path Parameter</em>}' attribute.
@@ -256,7 +256,7 @@ public class MConvertToMP3Step extends MTagStep {
 	 * @generated
 	 * @ordered
 	 */
-	protected MParameter mAverageBitRateParameter = null;
+	protected MParameter mAverageBitRateParameter;
 
 	/**
 	 * The default value of the '{@link #getAverageBitRateParameter() <em>Average Bit Rate Parameter</em>}' attribute.
@@ -412,7 +412,7 @@ public class MConvertToMP3Step extends MTagStep {
 		terminatable = true;
 		interruptable = false;
 		actionName = "Convert";
-					 
+			 
 		setMDirectoryParameter(new MParameter(false, "Directory", "Specifies the directory where the converted MP3 file should be saved.", null));			 
 		setMMp3FileNameParameter(new MParameter(false, "MP3 file name", "Specifies the name of the MP3 file.", null));			 
 		setMRecordingFileParameter(new MParameter(false, "Recording file", "Contains the name of the recorded WAVE file.", null));			 
@@ -449,7 +449,6 @@ public class MConvertToMP3Step extends MTagStep {
 
 	/**
 	 * Returns the value of the '<em><b>MDirectory Parameter</b></em>' containment reference.
-	 * The default value is <code>""</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>MDirectory Parameter</em>' containment reference isn't clear,
@@ -555,7 +554,6 @@ public class MConvertToMP3Step extends MTagStep {
 
 	/**
 	 * Returns the value of the '<em><b>MMp3 File Name Parameter</b></em>' containment reference.
-	 * The default value is <code>""</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>MMp3 File Name Parameter</em>' containment reference isn't clear,
@@ -661,7 +659,6 @@ public class MConvertToMP3Step extends MTagStep {
 
 	/**
 	 * Returns the value of the '<em><b>MRecording File Parameter</b></em>' containment reference.
-	 * The default value is <code>""</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>MRecording File Parameter</em>' containment reference isn't clear,
@@ -767,7 +764,6 @@ public class MConvertToMP3Step extends MTagStep {
 
 	/**
 	 * Returns the value of the '<em><b>MMp3 Encoder Path Parameter</b></em>' containment reference.
-	 * The default value is <code>""</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>MMp3 Encoder Path Parameter</em>' containment reference isn't clear,
@@ -873,7 +869,6 @@ public class MConvertToMP3Step extends MTagStep {
 
 	/**
 	 * Returns the value of the '<em><b>MAverage Bit Rate Parameter</b></em>' containment reference.
-	 * The default value is <code>""</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>MAverage Bit Rate Parameter</em>' containment reference isn't clear,
@@ -1036,34 +1031,34 @@ public class MConvertToMP3Step extends MTagStep {
 	 */
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case LogicPackage.MCONVERT_TO_MP3_STEP__MDIRECTORY_PARAMETER:    
+			case LogicPackage.MCONVERT_TO_MP3_STEP__MDIRECTORY_PARAMETER:
 				setMDirectoryParameter((MParameter)newValue);
 				return;
-			case LogicPackage.MCONVERT_TO_MP3_STEP__DIRECTORY_PARAMETER:    
+			case LogicPackage.MCONVERT_TO_MP3_STEP__DIRECTORY_PARAMETER:
 				setDirectoryParameter((File)newValue);
 				return;
-			case LogicPackage.MCONVERT_TO_MP3_STEP__MMP3_FILE_NAME_PARAMETER:    
+			case LogicPackage.MCONVERT_TO_MP3_STEP__MMP3_FILE_NAME_PARAMETER:
 				setMMp3FileNameParameter((MParameter)newValue);
 				return;
-			case LogicPackage.MCONVERT_TO_MP3_STEP__MP3_FILE_NAME_PARAMETER:    
+			case LogicPackage.MCONVERT_TO_MP3_STEP__MP3_FILE_NAME_PARAMETER:
 				setMp3FileNameParameter((File)newValue);
 				return;
-			case LogicPackage.MCONVERT_TO_MP3_STEP__MRECORDING_FILE_PARAMETER:    
+			case LogicPackage.MCONVERT_TO_MP3_STEP__MRECORDING_FILE_PARAMETER:
 				setMRecordingFileParameter((MParameter)newValue);
 				return;
-			case LogicPackage.MCONVERT_TO_MP3_STEP__RECORDING_FILE_PARAMETER:    
+			case LogicPackage.MCONVERT_TO_MP3_STEP__RECORDING_FILE_PARAMETER:
 				setRecordingFileParameter((File)newValue);
 				return;
-			case LogicPackage.MCONVERT_TO_MP3_STEP__MMP3_ENCODER_PATH_PARAMETER:    
+			case LogicPackage.MCONVERT_TO_MP3_STEP__MMP3_ENCODER_PATH_PARAMETER:
 				setMMp3EncoderPathParameter((MParameter)newValue);
 				return;
-			case LogicPackage.MCONVERT_TO_MP3_STEP__MP3_ENCODER_PATH_PARAMETER:    
+			case LogicPackage.MCONVERT_TO_MP3_STEP__MP3_ENCODER_PATH_PARAMETER:
 				setMp3EncoderPathParameter((File)newValue);
 				return;
-			case LogicPackage.MCONVERT_TO_MP3_STEP__MAVERAGE_BIT_RATE_PARAMETER:    
+			case LogicPackage.MCONVERT_TO_MP3_STEP__MAVERAGE_BIT_RATE_PARAMETER:
 				setMAverageBitRateParameter((MParameter)newValue);
 				return;
-			case LogicPackage.MCONVERT_TO_MP3_STEP__AVERAGE_BIT_RATE_PARAMETER:    
+			case LogicPackage.MCONVERT_TO_MP3_STEP__AVERAGE_BIT_RATE_PARAMETER:
 				setAverageBitRateParameter((Long)newValue);
 				return;
 		}

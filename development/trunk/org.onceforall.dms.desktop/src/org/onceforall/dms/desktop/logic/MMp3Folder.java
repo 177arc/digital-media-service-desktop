@@ -270,7 +270,7 @@ public class MMp3Folder extends MObject {
 	 * @generated
 	 * @ordered
 	 */
-	protected EList mSteps = null;
+	protected EList mSteps;
 
 	/**
 	 * The cached value of the '{@link #getMMp3s() <em>MMp3s</em>}' containment reference list.
@@ -280,7 +280,7 @@ public class MMp3Folder extends MObject {
 	 * @generated
 	 * @ordered
 	 */
-	protected EList mMp3s = null;
+	protected EList mMp3s;
 
 	/**
 	 * Get the default value of the '{@link #getTypeNameForUI() <em>Type Name For UI</em>}' attribute.
@@ -347,7 +347,7 @@ public class MMp3Folder extends MObject {
 		description = "Contains MP3 recordings.";
 		name = "MP3s";
 		iconFilePath = (File)LogicFactory.eINSTANCE.createFromString(LogicPackage.eINSTANCE.getMFile(), "Image Files/MP3 folder.gif");
-		
+
 
 		lastMMp3FolderConstructorHook();		
 	}

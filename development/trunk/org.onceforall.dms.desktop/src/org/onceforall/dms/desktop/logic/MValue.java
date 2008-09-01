@@ -27,6 +27,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.util.EObjectEList;
 import org.onceforall.dms.desktop.exception.ConversionException;
 import org.onceforall.dms.desktop.logic.types.ReferenceType;
 import org.onceforall.dms.desktop.logic.types.Type;
@@ -93,7 +94,7 @@ public abstract class MValue extends MElement {
 	 * @generated
 	 * @ordered
 	 */
-	protected EList mInputValues = null;
+	protected EList mInputValues;
 
 	/**
 	 * The default value of the '{@link #getValueForUI() <em>Value For UI</em>}' attribute.

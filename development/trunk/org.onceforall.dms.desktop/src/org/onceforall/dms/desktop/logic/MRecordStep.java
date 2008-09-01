@@ -104,7 +104,7 @@ public class MRecordStep extends MAudioStep {
 	 * @generated
 	 * @ordered
 	 */
-	protected MProperty mRecordingLengthProperty = null;
+	protected MProperty mRecordingLengthProperty;
 
 	/**
 	 * The default value of the '{@link #getRecordingLengthProperty() <em>Recording Length Property</em>}' attribute.
@@ -147,7 +147,7 @@ public class MRecordStep extends MAudioStep {
 	 * @generated
 	 * @ordered
 	 */
-	protected MParameter mDirectoryParameter = null;
+	protected MParameter mDirectoryParameter;
 
 	/**
 	 * The default value of the '{@link #getDirectoryParameter() <em>Directory Parameter</em>}' attribute.
@@ -190,7 +190,7 @@ public class MRecordStep extends MAudioStep {
 	 * @generated
 	 * @ordered
 	 */
-	protected MParameter mRecordingFileParameter = null;
+	protected MParameter mRecordingFileParameter;
 
 	/**
 	 * The default value of the '{@link #getRecordingFileParameter() <em>Recording File Parameter</em>}' attribute.
@@ -233,7 +233,7 @@ public class MRecordStep extends MAudioStep {
 	 * @generated
 	 * @ordered
 	 */
-	protected MResult mRecordingFileResult = null;
+	protected MResult mRecordingFileResult;
 
 	/**
 	 * The default value of the '{@link #getRecordingFileResult() <em>Recording File Result</em>}' attribute.
@@ -276,7 +276,7 @@ public class MRecordStep extends MAudioStep {
 	 * @generated
 	 * @ordered
 	 */
-	protected MResult mRecordingFileSizeResult = null;
+	protected MResult mRecordingFileSizeResult;
 
 	/**
 	 * The default value of the '{@link #getRecordingFileSizeResult() <em>Recording File Size Result</em>}' attribute.
@@ -319,7 +319,7 @@ public class MRecordStep extends MAudioStep {
 	 * @generated
 	 * @ordered
 	 */
-	protected MResult mRecordingLengthResult = null;
+	protected MResult mRecordingLengthResult;
 
 	/**
 	 * The default value of the '{@link #getRecordingLengthResult() <em>Recording Length Result</em>}' attribute.
@@ -475,7 +475,7 @@ public class MRecordStep extends MAudioStep {
 		terminatable = false;
 		interruptable = true;
 		actionName = "Record";
-					 
+			 
 		setMRecordingLengthProperty(new MProperty(true, "Recording length", "Indicates the length of this recording.", null));			 
 		setMDirectoryParameter(new MParameter(false, "Directory", "Specifies the path of the created directory where the recordings will be stored.", null));			 
 		setMRecordingFileParameter(new MParameter(false, "Recording file", "Specifies the name of the WAVE file to be recorded.", null));			 
@@ -512,7 +512,6 @@ public class MRecordStep extends MAudioStep {
 
 	/**
 	 * Returns the value of the '<em><b>MRecording Length Property</b></em>' containment reference.
-	 * The default value is <code>""</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>MRecording Length Property</em>' containment reference isn't clear,
@@ -618,7 +617,6 @@ public class MRecordStep extends MAudioStep {
 
 	/**
 	 * Returns the value of the '<em><b>MRecording File Parameter</b></em>' containment reference.
-	 * The default value is <code>""</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>MRecording File Parameter</em>' containment reference isn't clear,
@@ -723,7 +721,6 @@ public class MRecordStep extends MAudioStep {
 
 	/**
 	 * Returns the value of the '<em><b>MDirectory Parameter</b></em>' containment reference.
-	 * The default value is <code>""</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>MDirectory Parameter</em>' containment reference isn't clear,
@@ -827,7 +824,6 @@ public class MRecordStep extends MAudioStep {
 
 	/**
 	 * Returns the value of the '<em><b>MRecording File Result</b></em>' containment reference.
-	 * The default value is <code>""</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>MRecording File Result</em>' containment reference isn't clear,
@@ -931,7 +927,6 @@ public class MRecordStep extends MAudioStep {
 
 	/**
 	 * Returns the value of the '<em><b>MRecording File Size Result</b></em>' containment reference.
-	 * The default value is <code>""</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>MRecording File Size Result</em>' containment reference isn't clear,
@@ -1035,7 +1030,6 @@ public class MRecordStep extends MAudioStep {
 
 	/**
 	 * Returns the value of the '<em><b>MRecording Length Result</b></em>' containment reference.
-	 * The default value is <code>""</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>MRecording Length Result</em>' containment reference isn't clear,
@@ -1202,40 +1196,40 @@ public class MRecordStep extends MAudioStep {
 	 */
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case LogicPackage.MRECORD_STEP__MRECORDING_LENGTH_PROPERTY:    
+			case LogicPackage.MRECORD_STEP__MRECORDING_LENGTH_PROPERTY:
 				setMRecordingLengthProperty((MProperty)newValue);
 				return;
-			case LogicPackage.MRECORD_STEP__RECORDING_LENGTH_PROPERTY:    
+			case LogicPackage.MRECORD_STEP__RECORDING_LENGTH_PROPERTY:
 				setRecordingLengthProperty((Long)newValue);
 				return;
-			case LogicPackage.MRECORD_STEP__MDIRECTORY_PARAMETER:    
+			case LogicPackage.MRECORD_STEP__MDIRECTORY_PARAMETER:
 				setMDirectoryParameter((MParameter)newValue);
 				return;
-			case LogicPackage.MRECORD_STEP__DIRECTORY_PARAMETER:    
+			case LogicPackage.MRECORD_STEP__DIRECTORY_PARAMETER:
 				setDirectoryParameter((File)newValue);
 				return;
-			case LogicPackage.MRECORD_STEP__MRECORDING_FILE_PARAMETER:    
+			case LogicPackage.MRECORD_STEP__MRECORDING_FILE_PARAMETER:
 				setMRecordingFileParameter((MParameter)newValue);
 				return;
-			case LogicPackage.MRECORD_STEP__RECORDING_FILE_PARAMETER:    
+			case LogicPackage.MRECORD_STEP__RECORDING_FILE_PARAMETER:
 				setRecordingFileParameter((File)newValue);
 				return;
-			case LogicPackage.MRECORD_STEP__MRECORDING_FILE_RESULT:    
+			case LogicPackage.MRECORD_STEP__MRECORDING_FILE_RESULT:
 				setMRecordingFileResult((MResult)newValue);
 				return;
-			case LogicPackage.MRECORD_STEP__RECORDING_FILE_RESULT:    
+			case LogicPackage.MRECORD_STEP__RECORDING_FILE_RESULT:
 				setRecordingFileResult((File)newValue);
 				return;
-			case LogicPackage.MRECORD_STEP__MRECORDING_FILE_SIZE_RESULT:    
+			case LogicPackage.MRECORD_STEP__MRECORDING_FILE_SIZE_RESULT:
 				setMRecordingFileSizeResult((MResult)newValue);
 				return;
-			case LogicPackage.MRECORD_STEP__RECORDING_FILE_SIZE_RESULT:    
+			case LogicPackage.MRECORD_STEP__RECORDING_FILE_SIZE_RESULT:
 				setRecordingFileSizeResult((Long)newValue);
 				return;
-			case LogicPackage.MRECORD_STEP__MRECORDING_LENGTH_RESULT:    
+			case LogicPackage.MRECORD_STEP__MRECORDING_LENGTH_RESULT:
 				setMRecordingLengthResult((MResult)newValue);
 				return;
-			case LogicPackage.MRECORD_STEP__RECORDING_LENGTH_RESULT:    
+			case LogicPackage.MRECORD_STEP__RECORDING_LENGTH_RESULT:
 				setRecordingLengthResult((Long)newValue);
 				return;
 		}

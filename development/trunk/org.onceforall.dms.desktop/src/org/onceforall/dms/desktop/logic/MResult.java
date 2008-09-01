@@ -242,7 +242,7 @@ public class MResult extends MValue {
 		firstMResultConstructorHook();
 				
 		typeNameForUI = "Result";
-		
+
 
 		lastMResultConstructorHook();		
 	}

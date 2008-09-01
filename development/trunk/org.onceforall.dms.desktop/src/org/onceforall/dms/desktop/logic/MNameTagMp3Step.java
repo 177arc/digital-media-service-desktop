@@ -87,7 +87,7 @@ public class MNameTagMp3Step extends MTagStep {
 	 * @generated
 	 * @ordered
 	 */
-	protected MParameter mDirectoryParameter = null;
+	protected MParameter mDirectoryParameter;
 
 	/**
 	 * The default value of the '{@link #getDirectoryParameter() <em>Directory Parameter</em>}' attribute.
@@ -130,7 +130,7 @@ public class MNameTagMp3Step extends MTagStep {
 	 * @generated
 	 * @ordered
 	 */
-	protected MParameter mTaggedMp3FileNameParameter = null;
+	protected MParameter mTaggedMp3FileNameParameter;
 
 	/**
 	 * The default value of the '{@link #getTaggedMp3FileNameParameter() <em>Tagged Mp3 File Name Parameter</em>}' attribute.
@@ -173,7 +173,7 @@ public class MNameTagMp3Step extends MTagStep {
 	 * @generated
 	 * @ordered
 	 */
-	protected MParameter mRecordingMp3FileParameter = null;
+	protected MParameter mRecordingMp3FileParameter;
 
 	/**
 	 * The default value of the '{@link #getRecordingMp3FileParameter() <em>Recording Mp3 File Parameter</em>}' attribute.
@@ -216,7 +216,7 @@ public class MNameTagMp3Step extends MTagStep {
 	 * @generated
 	 * @ordered
 	 */
-	protected MParameter mTagAndRenameOriginalParameter = null;
+	protected MParameter mTagAndRenameOriginalParameter;
 
 	/**
 	 * The default value of the '{@link #getTagAndRenameOriginalParameter() <em>Tag And Rename Original Parameter</em>}' attribute.
@@ -373,7 +373,7 @@ public class MNameTagMp3Step extends MTagStep {
 		terminatable = false;
 		interruptable = false;
 		actionName = "Tag";
-					 
+			 
 		setMDirectoryParameter(new MParameter(false, "Directory", "Specifies the directory where the renamed and tagged MP3 file should be copied to.", null));			 
 		setMTaggedMp3FileNameParameter(new MParameter(false, "Tagged MP3 file name", "Specifies the name of the MP3 file to be named and tagged.", null));			 
 		setMRecordingMp3FileParameter(new MParameter(false, "Recording MP3 file path", "Specifies the path of the MP3 file to be named and tagged.", null));			 
@@ -409,7 +409,6 @@ public class MNameTagMp3Step extends MTagStep {
 
 	/**
 	 * Returns the value of the '<em><b>MDirectory Parameter</b></em>' containment reference.
-	 * The default value is <code>""</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>MDirectory Parameter</em>' containment reference isn't clear,
@@ -515,7 +514,6 @@ public class MNameTagMp3Step extends MTagStep {
 
 	/**
 	 * Returns the value of the '<em><b>MTagged Mp3 File Name Parameter</b></em>' containment reference.
-	 * The default value is <code>""</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>MTagged Mp3 File Name Parameter</em>' containment reference isn't clear,
@@ -621,7 +619,6 @@ public class MNameTagMp3Step extends MTagStep {
 
 	/**
 	 * Returns the value of the '<em><b>MRecording Mp3 File Parameter</b></em>' containment reference.
-	 * The default value is <code>""</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>MRecording Mp3 File Parameter</em>' containment reference isn't clear,
@@ -727,7 +724,6 @@ public class MNameTagMp3Step extends MTagStep {
 
 	/**
 	 * Returns the value of the '<em><b>MTag And Rename Original Parameter</b></em>' containment reference.
-	 * The default value is <code>""</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>MTag And Rename Original Parameter</em>' containment reference isn't clear,
@@ -885,28 +881,28 @@ public class MNameTagMp3Step extends MTagStep {
 	 */
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case LogicPackage.MNAME_TAG_MP3_STEP__MDIRECTORY_PARAMETER:    
+			case LogicPackage.MNAME_TAG_MP3_STEP__MDIRECTORY_PARAMETER:
 				setMDirectoryParameter((MParameter)newValue);
 				return;
-			case LogicPackage.MNAME_TAG_MP3_STEP__DIRECTORY_PARAMETER:    
+			case LogicPackage.MNAME_TAG_MP3_STEP__DIRECTORY_PARAMETER:
 				setDirectoryParameter((File)newValue);
 				return;
-			case LogicPackage.MNAME_TAG_MP3_STEP__MTAGGED_MP3_FILE_NAME_PARAMETER:    
+			case LogicPackage.MNAME_TAG_MP3_STEP__MTAGGED_MP3_FILE_NAME_PARAMETER:
 				setMTaggedMp3FileNameParameter((MParameter)newValue);
 				return;
-			case LogicPackage.MNAME_TAG_MP3_STEP__TAGGED_MP3_FILE_NAME_PARAMETER:    
+			case LogicPackage.MNAME_TAG_MP3_STEP__TAGGED_MP3_FILE_NAME_PARAMETER:
 				setTaggedMp3FileNameParameter((File)newValue);
 				return;
-			case LogicPackage.MNAME_TAG_MP3_STEP__MRECORDING_MP3_FILE_PARAMETER:    
+			case LogicPackage.MNAME_TAG_MP3_STEP__MRECORDING_MP3_FILE_PARAMETER:
 				setMRecordingMp3FileParameter((MParameter)newValue);
 				return;
-			case LogicPackage.MNAME_TAG_MP3_STEP__RECORDING_MP3_FILE_PARAMETER:    
+			case LogicPackage.MNAME_TAG_MP3_STEP__RECORDING_MP3_FILE_PARAMETER:
 				setRecordingMp3FileParameter((File)newValue);
 				return;
-			case LogicPackage.MNAME_TAG_MP3_STEP__MTAG_AND_RENAME_ORIGINAL_PARAMETER:    
+			case LogicPackage.MNAME_TAG_MP3_STEP__MTAG_AND_RENAME_ORIGINAL_PARAMETER:
 				setMTagAndRenameOriginalParameter((MParameter)newValue);
 				return;
-			case LogicPackage.MNAME_TAG_MP3_STEP__TAG_AND_RENAME_ORIGINAL_PARAMETER:    
+			case LogicPackage.MNAME_TAG_MP3_STEP__TAG_AND_RENAME_ORIGINAL_PARAMETER:
 				setTagAndRenameOriginalParameter((Boolean)newValue);
 				return;
 		}

@@ -243,7 +243,7 @@ public class MProperty extends MValue {
 		firstMPropertyConstructorHook();
 				
 		typeNameForUI = "Property";
-		
+
 
 		lastMPropertyConstructorHook();		
 	}

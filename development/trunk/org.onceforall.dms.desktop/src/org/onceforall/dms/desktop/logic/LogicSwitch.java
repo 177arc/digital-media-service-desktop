@@ -183,6 +183,28 @@ public class LogicSwitch {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case LogicPackage.MDMS_APPLICATION_MGET_DATA_UPGRADE_INFO_STEP: {
+				MDmsApplicationMGetDataUpgradeInfoStep mDmsApplicationMGetDataUpgradeInfoStep = (MDmsApplicationMGetDataUpgradeInfoStep)theEObject;
+				Object result = caseMDmsApplicationMGetDataUpgradeInfoStep(mDmsApplicationMGetDataUpgradeInfoStep);
+				if (result == null) result = caseMFtpStep(mDmsApplicationMGetDataUpgradeInfoStep);
+				if (result == null) result = caseMStep(mDmsApplicationMGetDataUpgradeInfoStep);
+				if (result == null) result = caseMStatefulObject(mDmsApplicationMGetDataUpgradeInfoStep);
+				if (result == null) result = caseMObject(mDmsApplicationMGetDataUpgradeInfoStep);
+				if (result == null) result = caseMElement(mDmsApplicationMGetDataUpgradeInfoStep);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case LogicPackage.MDMS_APPLICATION_MUPGRADE_DATA_STEP: {
+				MDmsApplicationMUpgradeDataStep mDmsApplicationMUpgradeDataStep = (MDmsApplicationMUpgradeDataStep)theEObject;
+				Object result = caseMDmsApplicationMUpgradeDataStep(mDmsApplicationMUpgradeDataStep);
+				if (result == null) result = caseMFtpStep(mDmsApplicationMUpgradeDataStep);
+				if (result == null) result = caseMStep(mDmsApplicationMUpgradeDataStep);
+				if (result == null) result = caseMStatefulObject(mDmsApplicationMUpgradeDataStep);
+				if (result == null) result = caseMObject(mDmsApplicationMUpgradeDataStep);
+				if (result == null) result = caseMElement(mDmsApplicationMUpgradeDataStep);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			case LogicPackage.MENTER_INFORMATION_STEP: {
 				MEnterInformationStep mEnterInformationStep = (MEnterInformationStep)theEObject;
 				Object result = caseMEnterInformationStep(mEnterInformationStep);
@@ -391,40 +413,18 @@ public class LogicSwitch {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case LogicPackage.MDMS_APPLICATION_MGET_DATA_UPGRADE_INFO_STEP: {
-				MDmsApplicationMGetDataUpgradeInfoStep mDmsApplicationMGetDataUpgradeInfoStep = (MDmsApplicationMGetDataUpgradeInfoStep)theEObject;
-				Object result = caseMDmsApplicationMGetDataUpgradeInfoStep(mDmsApplicationMGetDataUpgradeInfoStep);
-				if (result == null) result = caseMFtpStep(mDmsApplicationMGetDataUpgradeInfoStep);
-				if (result == null) result = caseMStep(mDmsApplicationMGetDataUpgradeInfoStep);
-				if (result == null) result = caseMStatefulObject(mDmsApplicationMGetDataUpgradeInfoStep);
-				if (result == null) result = caseMObject(mDmsApplicationMGetDataUpgradeInfoStep);
-				if (result == null) result = caseMElement(mDmsApplicationMGetDataUpgradeInfoStep);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case LogicPackage.MDMS_APPLICATION_MUPGRADE_DATA_STEP: {
-				MDmsApplicationMUpgradeDataStep mDmsApplicationMUpgradeDataStep = (MDmsApplicationMUpgradeDataStep)theEObject;
-				Object result = caseMDmsApplicationMUpgradeDataStep(mDmsApplicationMUpgradeDataStep);
-				if (result == null) result = caseMFtpStep(mDmsApplicationMUpgradeDataStep);
-				if (result == null) result = caseMStep(mDmsApplicationMUpgradeDataStep);
-				if (result == null) result = caseMStatefulObject(mDmsApplicationMUpgradeDataStep);
-				if (result == null) result = caseMObject(mDmsApplicationMUpgradeDataStep);
-				if (result == null) result = caseMElement(mDmsApplicationMUpgradeDataStep);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
 			default: return defaultCase(theEObject);
 		}
 	}
 
 	/**
-	 * Returns the result of interpretting the object as an instance of '<em>MObject</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>MObject</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpretting the object as an instance of '<em>MObject</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>MObject</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
@@ -433,13 +433,13 @@ public class LogicSwitch {
 	}
 
 	/**
-	 * Returns the result of interpretting the object as an instance of '<em>MElement</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>MElement</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpretting the object as an instance of '<em>MElement</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>MElement</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
@@ -448,13 +448,13 @@ public class LogicSwitch {
 	}
 
 	/**
-	 * Returns the result of interpretting the object as an instance of '<em>MParameter</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>MParameter</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpretting the object as an instance of '<em>MParameter</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>MParameter</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
@@ -463,13 +463,13 @@ public class LogicSwitch {
 	}
 
 	/**
-	 * Returns the result of interpretting the object as an instance of '<em>MProperty</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>MProperty</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpretting the object as an instance of '<em>MProperty</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>MProperty</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
@@ -478,13 +478,13 @@ public class LogicSwitch {
 	}
 
 	/**
-	 * Returns the result of interpretting the object as an instance of '<em>MResult</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>MResult</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpretting the object as an instance of '<em>MResult</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>MResult</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
@@ -493,13 +493,13 @@ public class LogicSwitch {
 	}
 
 	/**
-	 * Returns the result of interpretting the object as an instance of '<em>MStateful Object</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>MStateful Object</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpretting the object as an instance of '<em>MStateful Object</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>MStateful Object</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
@@ -508,13 +508,13 @@ public class LogicSwitch {
 	}
 
 	/**
-	 * Returns the result of interpretting the object as an instance of '<em>MStep</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>MStep</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpretting the object as an instance of '<em>MStep</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>MStep</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
@@ -523,13 +523,13 @@ public class LogicSwitch {
 	}
 
 	/**
-	 * Returns the result of interpretting the object as an instance of '<em>MValue</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>MValue</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpretting the object as an instance of '<em>MValue</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>MValue</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
@@ -538,13 +538,13 @@ public class LogicSwitch {
 	}
 
 	/**
-	 * Returns the result of interpretting the object as an instance of '<em>MApplication</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>MApplication</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpretting the object as an instance of '<em>MApplication</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>MApplication</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
@@ -553,13 +553,13 @@ public class LogicSwitch {
 	}
 
 	/**
-	 * Returns the result of interpretting the object as an instance of '<em>MScript</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>MScript</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpretting the object as an instance of '<em>MScript</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>MScript</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
@@ -568,13 +568,13 @@ public class LogicSwitch {
 	}
 
 	/**
-	 * Returns the result of interpretting the object as an instance of '<em>MDms Application</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>MDms Application</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpretting the object as an instance of '<em>MDms Application</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>MDms Application</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
@@ -583,13 +583,13 @@ public class LogicSwitch {
 	}
 
 	/**
-	 * Returns the result of interpretting the object as an instance of '<em>MEnter Service Information Step</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>MEnter Service Information Step</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpretting the object as an instance of '<em>MEnter Service Information Step</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>MEnter Service Information Step</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
@@ -598,13 +598,13 @@ public class LogicSwitch {
 	}
 
 	/**
-	 * Returns the result of interpretting the object as an instance of '<em>MCreate Directory Step</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>MCreate Directory Step</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpretting the object as an instance of '<em>MCreate Directory Step</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>MCreate Directory Step</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
@@ -613,13 +613,13 @@ public class LogicSwitch {
 	}
 
 	/**
-	 * Returns the result of interpretting the object as an instance of '<em>MEnter Information Step</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>MEnter Information Step</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpretting the object as an instance of '<em>MEnter Information Step</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>MEnter Information Step</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
@@ -628,13 +628,13 @@ public class LogicSwitch {
 	}
 
 	/**
-	 * Returns the result of interpretting the object as an instance of '<em>MEnter Wwx Information Step</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>MEnter Wwx Information Step</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpretting the object as an instance of '<em>MEnter Wwx Information Step</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>MEnter Wwx Information Step</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
@@ -643,13 +643,13 @@ public class LogicSwitch {
 	}
 
 	/**
-	 * Returns the result of interpretting the object as an instance of '<em>MCheck Free Disk Space Step</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>MCheck Free Disk Space Step</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpretting the object as an instance of '<em>MCheck Free Disk Space Step</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>MCheck Free Disk Space Step</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
@@ -658,13 +658,13 @@ public class LogicSwitch {
 	}
 
 	/**
-	 * Returns the result of interpretting the object as an instance of '<em>MAudio Step</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>MAudio Step</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpretting the object as an instance of '<em>MAudio Step</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>MAudio Step</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
@@ -673,13 +673,13 @@ public class LogicSwitch {
 	}
 
 	/**
-	 * Returns the result of interpretting the object as an instance of '<em>MCheck Input Levels Step</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>MCheck Input Levels Step</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpretting the object as an instance of '<em>MCheck Input Levels Step</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>MCheck Input Levels Step</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
@@ -688,13 +688,13 @@ public class LogicSwitch {
 	}
 
 	/**
-	 * Returns the result of interpretting the object as an instance of '<em>MRecord Step</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>MRecord Step</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpretting the object as an instance of '<em>MRecord Step</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>MRecord Step</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
@@ -703,13 +703,13 @@ public class LogicSwitch {
 	}
 
 	/**
-	 * Returns the result of interpretting the object as an instance of '<em>MConvert To MP3 Step</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>MConvert To MP3 Step</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpretting the object as an instance of '<em>MConvert To MP3 Step</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>MConvert To MP3 Step</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
@@ -718,13 +718,13 @@ public class LogicSwitch {
 	}
 
 	/**
-	 * Returns the result of interpretting the object as an instance of '<em>MPublish Mp3s Step</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>MPublish Mp3s Step</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpretting the object as an instance of '<em>MPublish Mp3s Step</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>MPublish Mp3s Step</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
@@ -733,13 +733,13 @@ public class LogicSwitch {
 	}
 
 	/**
-	 * Returns the result of interpretting the object as an instance of '<em>MUpdate Published Mp3s Step</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>MUpdate Published Mp3s Step</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpretting the object as an instance of '<em>MUpdate Published Mp3s Step</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>MUpdate Published Mp3s Step</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
@@ -748,13 +748,13 @@ public class LogicSwitch {
 	}
 
 	/**
-	 * Returns the result of interpretting the object as an instance of '<em>MPublish New Mp3 Step</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>MPublish New Mp3 Step</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpretting the object as an instance of '<em>MPublish New Mp3 Step</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>MPublish New Mp3 Step</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
@@ -763,13 +763,13 @@ public class LogicSwitch {
 	}
 
 	/**
-	 * Returns the result of interpretting the object as an instance of '<em>MEmail Event Log Step</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>MEmail Event Log Step</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpretting the object as an instance of '<em>MEmail Event Log Step</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>MEmail Event Log Step</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
@@ -778,13 +778,13 @@ public class LogicSwitch {
 	}
 
 	/**
-	 * Returns the result of interpretting the object as an instance of '<em>MMp3 Folder</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>MMp3 Folder</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpretting the object as an instance of '<em>MMp3 Folder</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>MMp3 Folder</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
@@ -793,13 +793,13 @@ public class LogicSwitch {
 	}
 
 	/**
-	 * Returns the result of interpretting the object as an instance of '<em>MMp3</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>MMp3</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpretting the object as an instance of '<em>MMp3</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>MMp3</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
@@ -808,13 +808,13 @@ public class LogicSwitch {
 	}
 
 	/**
-	 * Returns the result of interpretting the object as an instance of '<em>MBurn Cd Step</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>MBurn Cd Step</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpretting the object as an instance of '<em>MBurn Cd Step</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>MBurn Cd Step</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
@@ -823,13 +823,13 @@ public class LogicSwitch {
 	}
 
 	/**
-	 * Returns the result of interpretting the object as an instance of '<em>MFtp Step</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>MFtp Step</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpretting the object as an instance of '<em>MFtp Step</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>MFtp Step</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
@@ -838,13 +838,13 @@ public class LogicSwitch {
 	}
 
 	/**
-	 * Returns the result of interpretting the object as an instance of '<em>MTest Step</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>MTest Step</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpretting the object as an instance of '<em>MTest Step</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>MTest Step</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
@@ -853,13 +853,13 @@ public class LogicSwitch {
 	}
 
 	/**
-	 * Returns the result of interpretting the object as an instance of '<em>MName Tag Mp3 Step</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>MName Tag Mp3 Step</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpretting the object as an instance of '<em>MName Tag Mp3 Step</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>MName Tag Mp3 Step</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
@@ -868,13 +868,13 @@ public class LogicSwitch {
 	}
 
 	/**
-	 * Returns the result of interpretting the object as an instance of '<em>MTag Step</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>MTag Step</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpretting the object as an instance of '<em>MTag Step</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>MTag Step</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
@@ -883,13 +883,13 @@ public class LogicSwitch {
 	}
 
 	/**
-	 * Returns the result of interpretting the object as an instance of '<em>MDms Application MGet Data Upgrade Info Step</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>MDms Application MGet Data Upgrade Info Step</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpretting the object as an instance of '<em>MDms Application MGet Data Upgrade Info Step</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>MDms Application MGet Data Upgrade Info Step</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
@@ -898,13 +898,13 @@ public class LogicSwitch {
 	}
 
 	/**
-	 * Returns the result of interpretting the object as an instance of '<em>MDms Application MUpgrade Data Step</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>MDms Application MUpgrade Data Step</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpretting the object as an instance of '<em>MDms Application MUpgrade Data Step</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>MDms Application MUpgrade Data Step</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
@@ -913,13 +913,13 @@ public class LogicSwitch {
 	}
 
 	/**
-	 * Returns the result of interpretting the object as an instance of '<em>EObject</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>EObject</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch, but this is the last case anyway.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpretting the object as an instance of '<em>EObject</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>EObject</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject)
 	 * @generated
 	 */

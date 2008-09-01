@@ -175,7 +175,7 @@ public abstract class MPublishMp3sStep extends MFtpStep {
 	 * @generated
 	 * @ordered
 	 */
-	protected MParameter mMaxiumumDiskSpaceParameter = null;
+	protected MParameter mMaxiumumDiskSpaceParameter;
 
 	/**
 	 * The default value of the '{@link #getMaxiumumDiskSpaceParameter() <em>Maxiumum Disk Space Parameter</em>}' attribute.
@@ -224,7 +224,7 @@ public abstract class MPublishMp3sStep extends MFtpStep {
 	 * @generated
 	 * @ordered
 	 */
-	protected MParameter mMp3RelativeFtpPathParameter = null;
+	protected MParameter mMp3RelativeFtpPathParameter;
 
 	/**
 	 * The default value of the '{@link #getMp3RelativeFtpPathParameter() <em>Mp3 Relative Ftp Path Parameter</em>}' attribute.
@@ -267,7 +267,7 @@ public abstract class MPublishMp3sStep extends MFtpStep {
 	 * @generated
 	 * @ordered
 	 */
-	protected MParameter mWebServerUrlParameter = null;
+	protected MParameter mWebServerUrlParameter;
 
 	/**
 	 * The default value of the '{@link #getWebServerUrlParameter() <em>Web Server Url Parameter</em>}' attribute.
@@ -313,7 +313,7 @@ public abstract class MPublishMp3sStep extends MFtpStep {
 	 * @generated
 	 * @ordered
 	 */
-	protected MParameter mContentPageRelativeFtpPathParameter = null;
+	protected MParameter mContentPageRelativeFtpPathParameter;
 
 	/**
 	 * The default value of the '{@link #getContentPageRelativeFtpPathParameter() <em>Content Page Relative Ftp Path Parameter</em>}' attribute.
@@ -356,7 +356,7 @@ public abstract class MPublishMp3sStep extends MFtpStep {
 	 * @generated
 	 * @ordered
 	 */
-	protected MParameter mContentHeaderFilePathParameter = null;
+	protected MParameter mContentHeaderFilePathParameter;
 
 	/**
 	 * The default value of the '{@link #getContentHeaderFilePathParameter() <em>Content Header File Path Parameter</em>}' attribute.
@@ -399,7 +399,7 @@ public abstract class MPublishMp3sStep extends MFtpStep {
 	 * @generated
 	 * @ordered
 	 */
-	protected MParameter mContentFooterFilePathParameter = null;
+	protected MParameter mContentFooterFilePathParameter;
 
 	/**
 	 * The default value of the '{@link #getContentFooterFilePathParameter() <em>Content Footer File Path Parameter</em>}' attribute.
@@ -442,7 +442,7 @@ public abstract class MPublishMp3sStep extends MFtpStep {
 	 * @generated
 	 * @ordered
 	 */
-	protected MParameter mContentPageFilePathParameter = null;
+	protected MParameter mContentPageFilePathParameter;
 
 	/**
 	 * The default value of the '{@link #getContentPageFilePathParameter() <em>Content Page File Path Parameter</em>}' attribute.
@@ -485,7 +485,7 @@ public abstract class MPublishMp3sStep extends MFtpStep {
 	 * @generated
 	 * @ordered
 	 */
-	protected MParameter mPodcastFilePathParameter = null;
+	protected MParameter mPodcastFilePathParameter;
 
 	/**
 	 * The default value of the '{@link #getPodcastFilePathParameter() <em>Podcast File Path Parameter</em>}' attribute.
@@ -528,7 +528,7 @@ public abstract class MPublishMp3sStep extends MFtpStep {
 	 * @generated
 	 * @ordered
 	 */
-	protected MParameter mPodcastRelativeFtpPathParameter = null;
+	protected MParameter mPodcastRelativeFtpPathParameter;
 
 	/**
 	 * The default value of the '{@link #getPodcastRelativeFtpPathParameter() <em>Podcast Relative Ftp Path Parameter</em>}' attribute.
@@ -571,7 +571,7 @@ public abstract class MPublishMp3sStep extends MFtpStep {
 	 * @generated
 	 * @ordered
 	 */
-	protected MParameter mPodcastHeaderFilePathParameter = null;
+	protected MParameter mPodcastHeaderFilePathParameter;
 
 	/**
 	 * The default value of the '{@link #getPodcastHeaderFilePathParameter() <em>Podcast Header File Path Parameter</em>}' attribute.
@@ -614,7 +614,7 @@ public abstract class MPublishMp3sStep extends MFtpStep {
 	 * @generated
 	 * @ordered
 	 */
-	protected MParameter mContentIncludeMp3PlayerParameter = null;
+	protected MParameter mContentIncludeMp3PlayerParameter;
 
 	/**
 	 * The default value of the '{@link #getContentIncludeMp3PlayerParameter() <em>Content Include Mp3 Player Parameter</em>}' attribute.
@@ -658,7 +658,7 @@ public abstract class MPublishMp3sStep extends MFtpStep {
 	 * @generated
 	 * @ordered
 	 */
-	protected MParameter mContentGroupRecordingsParameter = null;
+	protected MParameter mContentGroupRecordingsParameter;
 
 	/**
 	 * The default value of the '{@link #getContentGroupRecordingsParameter() <em>Content Group Recordings Parameter</em>}' attribute.
@@ -701,7 +701,7 @@ public abstract class MPublishMp3sStep extends MFtpStep {
 	 * @generated
 	 * @ordered
 	 */
-	protected MResult mContentPageUrlResult = null;
+	protected MResult mContentPageUrlResult;
 
 	/**
 	 * The default value of the '{@link #getContentPageUrlResult() <em>Content Page Url Result</em>}' attribute.
@@ -744,7 +744,7 @@ public abstract class MPublishMp3sStep extends MFtpStep {
 	 * @generated
 	 * @ordered
 	 */
-	protected MResult mPodcastFileUrlResult = null;
+	protected MResult mPodcastFileUrlResult;
 
 	/**
 	 * The default value of the '{@link #getPodcastFileUrlResult() <em>Podcast File Url Result</em>}' attribute.
@@ -901,7 +901,7 @@ public abstract class MPublishMp3sStep extends MFtpStep {
 		terminatable = false;
 		interruptable = false;
 		actionName = "Publish";
-					 
+			 
 		setMMaxiumumDiskSpaceParameter(new MParameter(false, "Maxiumum disk space", "Specifies the maximum disk space that the recordings are allowed to use on the FTP server in mega bytes.", null));			 
 		setMMp3RelativeFtpPathParameter(new MParameter(false, "MP3 relative FTP path", "Specifies the path of the directory on the FTP server to publish the MP3 files to, e.g. \'/recordings\'.", null));			 
 		setMWebServerUrlParameter(new MParameter(false, "Web server URL", "Specifies the public web server URL, e.g. \'http://www.ccbromley.net\'.", null));			 
@@ -947,7 +947,6 @@ public abstract class MPublishMp3sStep extends MFtpStep {
 
 	/**
 	 * Returns the value of the '<em><b>MMp3 Relative Ftp Path Parameter</b></em>' containment reference.
-	 * The default value is <code>""</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>MMp3 Relative Ftp Path Parameter</em>' containment reference isn't clear,
@@ -1053,7 +1052,6 @@ public abstract class MPublishMp3sStep extends MFtpStep {
 
 	/**
 	 * Returns the value of the '<em><b>MMaxiumum Disk Space Parameter</b></em>' containment reference.
-	 * The default value is <code>""</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>MMaxiumum Disk Space Parameter</em>' containment reference isn't clear,
@@ -1159,7 +1157,6 @@ public abstract class MPublishMp3sStep extends MFtpStep {
 
 	/**
 	 * Returns the value of the '<em><b>MWeb Server Url Parameter</b></em>' containment reference.
-	 * The default value is <code>""</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>MWeb Server Url Parameter</em>' containment reference isn't clear,
@@ -1265,7 +1262,6 @@ public abstract class MPublishMp3sStep extends MFtpStep {
 
 	/**
 	 * Returns the value of the '<em><b>MContent Page Relative Ftp Path Parameter</b></em>' containment reference.
-	 * The default value is <code>""</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>MContent Page Relative Ftp Path Parameter</em>' containment reference isn't clear,
@@ -1371,7 +1367,6 @@ public abstract class MPublishMp3sStep extends MFtpStep {
 
 	/**
 	 * Returns the value of the '<em><b>MContent Header File Path Parameter</b></em>' containment reference.
-	 * The default value is <code>""</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>MContent Header File Path Parameter</em>' containment reference isn't clear,
@@ -1477,7 +1472,6 @@ public abstract class MPublishMp3sStep extends MFtpStep {
 
 	/**
 	 * Returns the value of the '<em><b>MContent Footer File Path Parameter</b></em>' containment reference.
-	 * The default value is <code>""</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>MContent Footer File Path Parameter</em>' containment reference isn't clear,
@@ -1583,7 +1577,6 @@ public abstract class MPublishMp3sStep extends MFtpStep {
 
 	/**
 	 * Returns the value of the '<em><b>MContent Page File Path Parameter</b></em>' containment reference.
-	 * The default value is <code>""</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>MContent Page File Path Parameter</em>' containment reference isn't clear,
@@ -1689,7 +1682,6 @@ public abstract class MPublishMp3sStep extends MFtpStep {
 
 	/**
 	 * Returns the value of the '<em><b>MPodcast File Path Parameter</b></em>' containment reference.
-	 * The default value is <code>""</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>MPodcast File Path Parameter</em>' containment reference isn't clear,
@@ -1795,7 +1787,6 @@ public abstract class MPublishMp3sStep extends MFtpStep {
 
 	/**
 	 * Returns the value of the '<em><b>MPodcast Relative Ftp Path Parameter</b></em>' containment reference.
-	 * The default value is <code>""</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>MPodcast Relative Ftp Path Parameter</em>' containment reference isn't clear,
@@ -1901,7 +1892,6 @@ public abstract class MPublishMp3sStep extends MFtpStep {
 
 	/**
 	 * Returns the value of the '<em><b>MPodcast Header File Path Parameter</b></em>' containment reference.
-	 * The default value is <code>""</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>MPodcast Header File Path Parameter</em>' containment reference isn't clear,
@@ -2007,7 +1997,6 @@ public abstract class MPublishMp3sStep extends MFtpStep {
 
 	/**
 	 * Returns the value of the '<em><b>MContent Include Mp3 Player Parameter</b></em>' containment reference.
-	 * The default value is <code>""</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>MContent Include Mp3 Player Parameter</em>' containment reference isn't clear,
@@ -2114,7 +2103,6 @@ public abstract class MPublishMp3sStep extends MFtpStep {
 
 	/**
 	 * Returns the value of the '<em><b>MContent Group Recordings Parameter</b></em>' containment reference.
-	 * The default value is <code>""</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>MContent Group Recordings Parameter</em>' containment reference isn't clear,
@@ -2221,7 +2209,6 @@ public abstract class MPublishMp3sStep extends MFtpStep {
 
 	/**
 	 * Returns the value of the '<em><b>MContent Page Url Result</b></em>' containment reference.
-	 * The default value is <code>""</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>MContent Page Url Result</em>' containment reference isn't clear,
@@ -2327,7 +2314,6 @@ public abstract class MPublishMp3sStep extends MFtpStep {
 
 	/**
 	 * Returns the value of the '<em><b>MPodcast File Url Result</b></em>' containment reference.
-	 * The default value is <code>""</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>MPodcast File Url Result</em>' containment reference isn't clear,
@@ -2544,88 +2530,88 @@ public abstract class MPublishMp3sStep extends MFtpStep {
 	 */
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case LogicPackage.MPUBLISH_MP3S_STEP__MMAXIUMUM_DISK_SPACE_PARAMETER:    
+			case LogicPackage.MPUBLISH_MP3S_STEP__MMAXIUMUM_DISK_SPACE_PARAMETER:
 				setMMaxiumumDiskSpaceParameter((MParameter)newValue);
 				return;
-			case LogicPackage.MPUBLISH_MP3S_STEP__MAXIUMUM_DISK_SPACE_PARAMETER:    
+			case LogicPackage.MPUBLISH_MP3S_STEP__MAXIUMUM_DISK_SPACE_PARAMETER:
 				setMaxiumumDiskSpaceParameter((Long)newValue);
 				return;
-			case LogicPackage.MPUBLISH_MP3S_STEP__MMP3_RELATIVE_FTP_PATH_PARAMETER:    
+			case LogicPackage.MPUBLISH_MP3S_STEP__MMP3_RELATIVE_FTP_PATH_PARAMETER:
 				setMMp3RelativeFtpPathParameter((MParameter)newValue);
 				return;
-			case LogicPackage.MPUBLISH_MP3S_STEP__MP3_RELATIVE_FTP_PATH_PARAMETER:    
+			case LogicPackage.MPUBLISH_MP3S_STEP__MP3_RELATIVE_FTP_PATH_PARAMETER:
 				setMp3RelativeFtpPathParameter((String)newValue);
 				return;
-			case LogicPackage.MPUBLISH_MP3S_STEP__MWEB_SERVER_URL_PARAMETER:    
+			case LogicPackage.MPUBLISH_MP3S_STEP__MWEB_SERVER_URL_PARAMETER:
 				setMWebServerUrlParameter((MParameter)newValue);
 				return;
-			case LogicPackage.MPUBLISH_MP3S_STEP__WEB_SERVER_URL_PARAMETER:    
+			case LogicPackage.MPUBLISH_MP3S_STEP__WEB_SERVER_URL_PARAMETER:
 				setWebServerUrlParameter((URL)newValue);
 				return;
-			case LogicPackage.MPUBLISH_MP3S_STEP__MCONTENT_PAGE_RELATIVE_FTP_PATH_PARAMETER:    
+			case LogicPackage.MPUBLISH_MP3S_STEP__MCONTENT_PAGE_RELATIVE_FTP_PATH_PARAMETER:
 				setMContentPageRelativeFtpPathParameter((MParameter)newValue);
 				return;
-			case LogicPackage.MPUBLISH_MP3S_STEP__CONTENT_PAGE_RELATIVE_FTP_PATH_PARAMETER:    
+			case LogicPackage.MPUBLISH_MP3S_STEP__CONTENT_PAGE_RELATIVE_FTP_PATH_PARAMETER:
 				setContentPageRelativeFtpPathParameter((String)newValue);
 				return;
-			case LogicPackage.MPUBLISH_MP3S_STEP__MCONTENT_HEADER_FILE_PATH_PARAMETER:    
+			case LogicPackage.MPUBLISH_MP3S_STEP__MCONTENT_HEADER_FILE_PATH_PARAMETER:
 				setMContentHeaderFilePathParameter((MParameter)newValue);
 				return;
-			case LogicPackage.MPUBLISH_MP3S_STEP__CONTENT_HEADER_FILE_PATH_PARAMETER:    
+			case LogicPackage.MPUBLISH_MP3S_STEP__CONTENT_HEADER_FILE_PATH_PARAMETER:
 				setContentHeaderFilePathParameter((File)newValue);
 				return;
-			case LogicPackage.MPUBLISH_MP3S_STEP__MCONTENT_FOOTER_FILE_PATH_PARAMETER:    
+			case LogicPackage.MPUBLISH_MP3S_STEP__MCONTENT_FOOTER_FILE_PATH_PARAMETER:
 				setMContentFooterFilePathParameter((MParameter)newValue);
 				return;
-			case LogicPackage.MPUBLISH_MP3S_STEP__CONTENT_FOOTER_FILE_PATH_PARAMETER:    
+			case LogicPackage.MPUBLISH_MP3S_STEP__CONTENT_FOOTER_FILE_PATH_PARAMETER:
 				setContentFooterFilePathParameter((File)newValue);
 				return;
-			case LogicPackage.MPUBLISH_MP3S_STEP__MCONTENT_PAGE_FILE_PATH_PARAMETER:    
+			case LogicPackage.MPUBLISH_MP3S_STEP__MCONTENT_PAGE_FILE_PATH_PARAMETER:
 				setMContentPageFilePathParameter((MParameter)newValue);
 				return;
-			case LogicPackage.MPUBLISH_MP3S_STEP__CONTENT_PAGE_FILE_PATH_PARAMETER:    
+			case LogicPackage.MPUBLISH_MP3S_STEP__CONTENT_PAGE_FILE_PATH_PARAMETER:
 				setContentPageFilePathParameter((File)newValue);
 				return;
-			case LogicPackage.MPUBLISH_MP3S_STEP__MPODCAST_FILE_PATH_PARAMETER:    
+			case LogicPackage.MPUBLISH_MP3S_STEP__MPODCAST_FILE_PATH_PARAMETER:
 				setMPodcastFilePathParameter((MParameter)newValue);
 				return;
-			case LogicPackage.MPUBLISH_MP3S_STEP__PODCAST_FILE_PATH_PARAMETER:    
+			case LogicPackage.MPUBLISH_MP3S_STEP__PODCAST_FILE_PATH_PARAMETER:
 				setPodcastFilePathParameter((File)newValue);
 				return;
-			case LogicPackage.MPUBLISH_MP3S_STEP__MPODCAST_RELATIVE_FTP_PATH_PARAMETER:    
+			case LogicPackage.MPUBLISH_MP3S_STEP__MPODCAST_RELATIVE_FTP_PATH_PARAMETER:
 				setMPodcastRelativeFtpPathParameter((MParameter)newValue);
 				return;
-			case LogicPackage.MPUBLISH_MP3S_STEP__PODCAST_RELATIVE_FTP_PATH_PARAMETER:    
+			case LogicPackage.MPUBLISH_MP3S_STEP__PODCAST_RELATIVE_FTP_PATH_PARAMETER:
 				setPodcastRelativeFtpPathParameter((String)newValue);
 				return;
-			case LogicPackage.MPUBLISH_MP3S_STEP__MPODCAST_HEADER_FILE_PATH_PARAMETER:    
+			case LogicPackage.MPUBLISH_MP3S_STEP__MPODCAST_HEADER_FILE_PATH_PARAMETER:
 				setMPodcastHeaderFilePathParameter((MParameter)newValue);
 				return;
-			case LogicPackage.MPUBLISH_MP3S_STEP__PODCAST_HEADER_FILE_PATH_PARAMETER:    
+			case LogicPackage.MPUBLISH_MP3S_STEP__PODCAST_HEADER_FILE_PATH_PARAMETER:
 				setPodcastHeaderFilePathParameter((File)newValue);
 				return;
-			case LogicPackage.MPUBLISH_MP3S_STEP__MCONTENT_INCLUDE_MP3_PLAYER_PARAMETER:    
+			case LogicPackage.MPUBLISH_MP3S_STEP__MCONTENT_INCLUDE_MP3_PLAYER_PARAMETER:
 				setMContentIncludeMp3PlayerParameter((MParameter)newValue);
 				return;
-			case LogicPackage.MPUBLISH_MP3S_STEP__CONTENT_INCLUDE_MP3_PLAYER_PARAMETER:    
+			case LogicPackage.MPUBLISH_MP3S_STEP__CONTENT_INCLUDE_MP3_PLAYER_PARAMETER:
 				setContentIncludeMp3PlayerParameter((Boolean)newValue);
 				return;
-			case LogicPackage.MPUBLISH_MP3S_STEP__MCONTENT_GROUP_RECORDINGS_PARAMETER:    
+			case LogicPackage.MPUBLISH_MP3S_STEP__MCONTENT_GROUP_RECORDINGS_PARAMETER:
 				setMContentGroupRecordingsParameter((MParameter)newValue);
 				return;
-			case LogicPackage.MPUBLISH_MP3S_STEP__CONTENT_GROUP_RECORDINGS_PARAMETER:    
+			case LogicPackage.MPUBLISH_MP3S_STEP__CONTENT_GROUP_RECORDINGS_PARAMETER:
 				setContentGroupRecordingsParameter((Boolean)newValue);
 				return;
-			case LogicPackage.MPUBLISH_MP3S_STEP__MCONTENT_PAGE_URL_RESULT:    
+			case LogicPackage.MPUBLISH_MP3S_STEP__MCONTENT_PAGE_URL_RESULT:
 				setMContentPageUrlResult((MResult)newValue);
 				return;
-			case LogicPackage.MPUBLISH_MP3S_STEP__CONTENT_PAGE_URL_RESULT:    
+			case LogicPackage.MPUBLISH_MP3S_STEP__CONTENT_PAGE_URL_RESULT:
 				setContentPageUrlResult((URL)newValue);
 				return;
-			case LogicPackage.MPUBLISH_MP3S_STEP__MPODCAST_FILE_URL_RESULT:    
+			case LogicPackage.MPUBLISH_MP3S_STEP__MPODCAST_FILE_URL_RESULT:
 				setMPodcastFileUrlResult((MResult)newValue);
 				return;
-			case LogicPackage.MPUBLISH_MP3S_STEP__PODCAST_FILE_URL_RESULT:    
+			case LogicPackage.MPUBLISH_MP3S_STEP__PODCAST_FILE_URL_RESULT:
 				setPodcastFileUrlResult((URL)newValue);
 				return;
 		}

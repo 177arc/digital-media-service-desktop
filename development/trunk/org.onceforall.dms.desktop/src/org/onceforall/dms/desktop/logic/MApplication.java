@@ -22,12 +22,16 @@ import java.net.URL;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.Date;
+import java.util.Map;
 import java.util.logging.Level;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipOutputStream;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+import org.eclipse.emf.common.util.BasicDiagnostic;
+import org.eclipse.emf.common.util.Diagnostic;
+import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.common.util.URI;
@@ -35,10 +39,12 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.plugin.EcorePlugin;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
+import org.eclipse.emf.ecore.util.EObjectValidator;
 import org.eclipse.emf.ecore.xmi.FeatureNotFoundException;
 import org.eclipse.emf.ecore.xmi.UnresolvedReferenceException;
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
@@ -199,7 +205,7 @@ public abstract class MApplication extends MObject {
 	 * @generated
 	 * @ordered
 	 */
-	protected MProperty mDataFileProperty = null;
+	protected MProperty mDataFileProperty;
 
 	/**
 	 * The default value of the '{@link #getDataFileProperty() <em>Data File Property</em>}' attribute.
@@ -275,7 +281,7 @@ public abstract class MApplication extends MObject {
 	 * @generated
 	 * @ordered
 	 */
-	protected MProperty mInfoWebPageProperty = null;
+	protected MProperty mInfoWebPageProperty;
 
 	/**
 	 * The cached value of the '{@link #getDataFilePropertyHistoricValues() <em>Data File Property Historic Values</em>}' attribute list.
@@ -285,7 +291,7 @@ public abstract class MApplication extends MObject {
 	 * @generated
 	 * @ordered
 	 */
-	protected EList dataFilePropertyHistoricValues = null;
+	protected EList dataFilePropertyHistoricValues;
 
 	/**
 	 * The cached value of the '{@link #getMLogFileProperty() <em>MLog File Property</em>}' containment reference.
@@ -295,7 +301,7 @@ public abstract class MApplication extends MObject {
 	 * @generated
 	 * @ordered
 	 */
-	protected MProperty mLogFileProperty = null;
+	protected MProperty mLogFileProperty;
 
 	/**
 	 * The default value of the '{@link #getLogFileProperty() <em>Log File Property</em>}' attribute.
@@ -337,7 +343,7 @@ public abstract class MApplication extends MObject {
 	 * @generated
 	 * @ordered
 	 */
-	protected MProperty mPathProperty = null;
+	protected MProperty mPathProperty;
 
 	/**
 	 * The default value of the '{@link #getPathProperty() <em>Path Property</em>}' attribute.
@@ -379,7 +385,7 @@ public abstract class MApplication extends MObject {
 	 * @generated
 	 * @ordered
 	 */
-	protected MProperty mVersionProperty = null;
+	protected MProperty mVersionProperty;
 
 	/**
 	 * The default value of the '{@link #getVersionProperty() <em>Version Property</em>}' attribute.
@@ -423,7 +429,7 @@ public abstract class MApplication extends MObject {
 	 * @generated
 	 * @ordered
 	 */
-	protected MProperty mLastSaveProperty = null;
+	protected MProperty mLastSaveProperty;
 
 	/**
 	 * The default value of the '{@link #getLastSaveProperty() <em>Last Save Property</em>}' attribute.
@@ -590,7 +596,7 @@ public abstract class MApplication extends MObject {
 		description = "Represents the whole application.";
 		name = "Digital Media Service Desktop";
 		iconFilePath = (File)LogicFactory.eINSTANCE.createFromString(LogicPackage.eINSTANCE.getMFile(), "Image Files\\Application.gif");
-					 
+			 
 		setMDataFileProperty(new MProperty(true, "Data file", "Specifies the file that contains the application data.", null));			 
 		setMInfoWebPageProperty(new MProperty(true, "Information web page URL", "Specifies the URL of a web page that provides up-to-date information that is relevant to the users of this application.", null));			 
 		setMLogFileProperty(new MProperty(false, "Log file", "Specifies the file that contains the log data.", null));			 
@@ -635,7 +641,6 @@ public abstract class MApplication extends MObject {
 
 	/**
 	 * Returns the value of the '<em><b>MData File Property</b></em>' containment reference.
-	 * The default value is <code>"new MDataFileProperty()"</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>MData File Property</em>' containment reference isn't clear,
@@ -759,7 +764,6 @@ public abstract class MApplication extends MObject {
 
 	/**
 	 * Returns the value of the '<em><b>MInfo Web Page Property</b></em>' containment reference.
-	 * The default value is <code>"new MInfoWebPageProperty()"</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>MInfo Web Page Property</em>' containment reference isn't clear,
@@ -840,7 +844,7 @@ public abstract class MApplication extends MObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Data File Property Historic Values</em>' attribute list.
 	 * @see org.onceforall.dms.desktop.logic.LogicPackage#getMApplication_DataFilePropertyHistoricValues()
-	 * @model type="java.io.File" dataType="org.onceforall.dms.desktop.logic.MFile" upper="5" ordered="false"
+	 * @model dataType="org.onceforall.dms.desktop.logic.MFile" upper="5" ordered="false"
 	 * @generated
 	 */
 	public EList getDataFilePropertyHistoricValues() {
@@ -852,7 +856,6 @@ public abstract class MApplication extends MObject {
 
 	/**
 	 * Returns the value of the '<em><b>MLog File Property</b></em>' containment reference.
-	 * The default value is <code>""</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>MLog File Property</em>' containment reference isn't clear,
@@ -1059,7 +1062,6 @@ public abstract class MApplication extends MObject {
 
 	/**
 	 * Returns the value of the '<em><b>MVersion Property</b></em>' containment reference.
-	 * The default value is <code>""</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>MVersion Property</em>' containment reference isn't clear,
@@ -1164,7 +1166,6 @@ public abstract class MApplication extends MObject {
 
 	/**
 	 * Returns the value of the '<em><b>MLast Save Property</b></em>' containment reference.
-	 * The default value is <code>""</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>MLast Save Property</em>' containment reference isn't clear,
@@ -1271,6 +1272,32 @@ public abstract class MApplication extends MObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @model required="true" diagnosticsChainRequired="true" contextRequired="true"
+	 * @generated
+	 */
+	public boolean validate(DiagnosticChain diagnosticsChain, Map context) {
+		// TODO: implement this method
+		// -> specify the condition that violates the invariant
+		// -> verify the details of the diagnostic, including severity and message
+		// Ensure that you remove @generated or mark it @generated NOT
+		if (false) {
+			if (diagnosticsChain != null) {
+				diagnosticsChain.add
+					(new BasicDiagnostic
+						(Diagnostic.ERROR,
+						 LogicValidator.DIAGNOSTIC_SOURCE,
+						 LogicValidator.MAPPLICATION__VALIDATE,
+						 EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "validate", EObjectValidator.getObjectLabel(this, context) }),
+						 new Object [] { this }));
+			}
+			return false;
+		}
+		return true;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -1338,41 +1365,41 @@ public abstract class MApplication extends MObject {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case LogicPackage.MAPPLICATION__MDATA_FILE_PROPERTY:    
+			case LogicPackage.MAPPLICATION__MDATA_FILE_PROPERTY:
 				setMDataFileProperty((MProperty)newValue);
 				return;
-			case LogicPackage.MAPPLICATION__INFO_WEB_PAGE_PROPERTY:    
+			case LogicPackage.MAPPLICATION__INFO_WEB_PAGE_PROPERTY:
 				setInfoWebPageProperty((URL)newValue);
 				return;
-			case LogicPackage.MAPPLICATION__MINFO_WEB_PAGE_PROPERTY:    
+			case LogicPackage.MAPPLICATION__MINFO_WEB_PAGE_PROPERTY:
 				setMInfoWebPageProperty((MProperty)newValue);
 				return;
 			case LogicPackage.MAPPLICATION__DATA_FILE_PROPERTY_HISTORIC_VALUES:
 				getDataFilePropertyHistoricValues().clear();
 				getDataFilePropertyHistoricValues().addAll((Collection)newValue);
 				return;
-			case LogicPackage.MAPPLICATION__MLOG_FILE_PROPERTY:    
+			case LogicPackage.MAPPLICATION__MLOG_FILE_PROPERTY:
 				setMLogFileProperty((MProperty)newValue);
 				return;
-			case LogicPackage.MAPPLICATION__LOG_FILE_PROPERTY:    
+			case LogicPackage.MAPPLICATION__LOG_FILE_PROPERTY:
 				setLogFileProperty((File)newValue);
 				return;
-			case LogicPackage.MAPPLICATION__MPATH_PROPERTY:    
+			case LogicPackage.MAPPLICATION__MPATH_PROPERTY:
 				setMPathProperty((MProperty)newValue);
 				return;
-			case LogicPackage.MAPPLICATION__PATH_PROPERTY:    
+			case LogicPackage.MAPPLICATION__PATH_PROPERTY:
 				setPathProperty((File)newValue);
 				return;
-			case LogicPackage.MAPPLICATION__MVERSION_PROPERTY:    
+			case LogicPackage.MAPPLICATION__MVERSION_PROPERTY:
 				setMVersionProperty((MProperty)newValue);
 				return;
-			case LogicPackage.MAPPLICATION__VERSION_PROPERTY:    
+			case LogicPackage.MAPPLICATION__VERSION_PROPERTY:
 				setVersionProperty((String)newValue);
 				return;
-			case LogicPackage.MAPPLICATION__MLAST_SAVE_PROPERTY:    
+			case LogicPackage.MAPPLICATION__MLAST_SAVE_PROPERTY:
 				setMLastSaveProperty((MProperty)newValue);
 				return;
-			case LogicPackage.MAPPLICATION__LAST_SAVE_PROPERTY:    
+			case LogicPackage.MAPPLICATION__LAST_SAVE_PROPERTY:
 				setLastSaveProperty((Date)newValue);
 				return;
 		}

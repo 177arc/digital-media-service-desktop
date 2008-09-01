@@ -54,7 +54,7 @@ import org.onceforall.dms.desktop.logic.types.Type;
  *        annotation="http://www.onceforall.org/mcore typeNameForUI='Entry' compositeClassName='org.onceforall.dms.desktop.ui.MObjectComposite'"
  * @generated
  */
-public class MObject extends MElement implements EObject, SubstitutionLabelProvider {
+public class MObject extends MElement {
 
 	/**
 	 * Defines an Ecore list that does not notify its owner of changes.
@@ -132,7 +132,7 @@ public class MObject extends MElement implements EObject, SubstitutionLabelProvi
 	 * @generated
 	 * @ordered
 	 */
-	protected MProperty mNameProperty = null;
+	protected MProperty mNameProperty;
 
 	/**
 	 * The cached value of the '{@link #getMDescriptionProperty() <em>MDescription Property</em>}' containment reference.
@@ -142,7 +142,7 @@ public class MObject extends MElement implements EObject, SubstitutionLabelProvi
 	 * @generated
 	 * @ordered
 	 */
-	protected MProperty mDescriptionProperty = null;
+	protected MProperty mDescriptionProperty;
 
 	/**
 	 * The cached value of the '{@link #getMIconFilePathProperty() <em>MIcon File Path Property</em>}' containment reference.
@@ -152,7 +152,7 @@ public class MObject extends MElement implements EObject, SubstitutionLabelProvi
 	 * @generated
 	 * @ordered
 	 */
-	protected MProperty mIconFilePathProperty = null;
+	protected MProperty mIconFilePathProperty;
 
 	/**
 	 * Get the default value of the '{@link #getCompositeClassName() <em>Composite Class Name</em>}' attribute.
@@ -208,7 +208,7 @@ public class MObject extends MElement implements EObject, SubstitutionLabelProvi
 				
 		compositeClassName = "org.onceforall.dms.desktop.ui.MObjectComposite";
 		typeNameForUI = "Entry";
-					 
+			 
 		setMNameProperty(new MProperty(false, "Name", "Specifies the name.", null));			 
 		setMDescriptionProperty(new MProperty(false, "Description", "Specifies a detailed description.", null));			 
 		setMIconFilePathProperty(new MProperty(false, "Icon file path", "Specifies the file path to the icon that represents this element.", null));
@@ -244,7 +244,6 @@ public class MObject extends MElement implements EObject, SubstitutionLabelProvi
 
 	/**
 	 * Returns the value of the '<em><b>MName Property</b></em>' containment reference.
-	 * The default value is <code>""</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>MName Property</em>' reference isn't clear,
@@ -541,13 +540,13 @@ public class MObject extends MElement implements EObject, SubstitutionLabelProvi
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case LogicPackage.MOBJECT__MNAME_PROPERTY:    
+			case LogicPackage.MOBJECT__MNAME_PROPERTY:
 				setMNameProperty((MProperty)newValue);
 				return;
-			case LogicPackage.MOBJECT__MDESCRIPTION_PROPERTY:    
+			case LogicPackage.MOBJECT__MDESCRIPTION_PROPERTY:
 				setMDescriptionProperty((MProperty)newValue);
 				return;
-			case LogicPackage.MOBJECT__MICON_FILE_PATH_PROPERTY:    
+			case LogicPackage.MOBJECT__MICON_FILE_PATH_PROPERTY:
 				setMIconFilePathProperty((MProperty)newValue);
 				return;
 			case LogicPackage.MOBJECT__FIXED_MPROPERTIES:

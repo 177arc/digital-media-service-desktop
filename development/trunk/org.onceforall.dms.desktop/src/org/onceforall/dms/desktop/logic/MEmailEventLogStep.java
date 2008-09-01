@@ -46,6 +46,7 @@ import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
+import org.onceforall.dms.desktop.logic.types.PasswordType;
 import org.onceforall.dms.desktop.exception.DesktopException;
 import org.onceforall.dms.desktop.exception.DesktopExceptionList;
 import org.onceforall.dms.desktop.logging.Logger;
@@ -133,7 +134,7 @@ public class MEmailEventLogStep extends MStep {
 	 * @generated
 	 * @ordered
 	 */
-	protected MParameter mRecordingUsersNameParameter = null;
+	protected MParameter mRecordingUsersNameParameter;
 
 	/**
 	 * The default value of the '{@link #getRecordingUsersNameParameter() <em>Recording Users Name Parameter</em>}' attribute.
@@ -176,7 +177,7 @@ public class MEmailEventLogStep extends MStep {
 	 * @generated
 	 * @ordered
 	 */
-	protected MParameter mCommentParameter = null;
+	protected MParameter mCommentParameter;
 
 	/**
 	 * The default value of the '{@link #getCommentParameter() <em>Comment Parameter</em>}' attribute.
@@ -219,7 +220,7 @@ public class MEmailEventLogStep extends MStep {
 	 * @generated
 	 * @ordered
 	 */
-	protected EList commentParameterHistoricValues = null;
+	protected EList commentParameterHistoricValues;
 
 	/**
 	 * The cached value of the '{@link #getMLogFileParameter() <em>MLog File Parameter</em>}' containment reference.
@@ -229,7 +230,7 @@ public class MEmailEventLogStep extends MStep {
 	 * @generated
 	 * @ordered
 	 */
-	protected MParameter mLogFileParameter = null;
+	protected MParameter mLogFileParameter;
 
 	/**
 	 * The default value of the '{@link #getLogFileParameter() <em>Log File Parameter</em>}' attribute.
@@ -272,7 +273,7 @@ public class MEmailEventLogStep extends MStep {
 	 * @generated
 	 * @ordered
 	 */
-	protected MParameter mDataFileParameter = null;
+	protected MParameter mDataFileParameter;
 
 	/**
 	 * The default value of the '{@link #getDataFileParameter() <em>Data File Parameter</em>}' attribute.
@@ -315,7 +316,7 @@ public class MEmailEventLogStep extends MStep {
 	 * @generated
 	 * @ordered
 	 */
-	protected MParameter mSubjectParameter = null;
+	protected MParameter mSubjectParameter;
 
 	/**
 	 * The default value of the '{@link #getSubjectParameter() <em>Subject Parameter</em>}' attribute.
@@ -358,7 +359,7 @@ public class MEmailEventLogStep extends MStep {
 	 * @generated
 	 * @ordered
 	 */
-	protected MParameter mSendersEmailAddressParameter = null;
+	protected MParameter mSendersEmailAddressParameter;
 
 	/**
 	 * The default value of the '{@link #getSendersEmailAddressParameter() <em>Senders Email Address Parameter</em>}' attribute.
@@ -401,7 +402,7 @@ public class MEmailEventLogStep extends MStep {
 	 * @generated
 	 * @ordered
 	 */
-	protected EList sendersEmailAddressParameterHistoricValues = null;
+	protected EList sendersEmailAddressParameterHistoricValues;
 
 	/**
 	 * The cached value of the '{@link #getMReceipientsEmailAddressParameter() <em>MReceipients Email Address Parameter</em>}' containment reference.
@@ -411,7 +412,7 @@ public class MEmailEventLogStep extends MStep {
 	 * @generated
 	 * @ordered
 	 */
-	protected MParameter mReceipientsEmailAddressParameter = null;
+	protected MParameter mReceipientsEmailAddressParameter;
 
 	/**
 	 * The cached value of the '{@link #getReceipientsEmailAddressParameter() <em>Receipients Email Address Parameter</em>}' attribute list.
@@ -421,7 +422,7 @@ public class MEmailEventLogStep extends MStep {
 	 * @generated
 	 * @ordered
 	 */
-	protected EList receipientsEmailAddressParameter = null;
+	protected EList receipientsEmailAddressParameter;
 
 	/**
 	 * The cached value of the '{@link #getMSmtpServerParameter() <em>MSmtp Server Parameter</em>}' containment reference.
@@ -431,7 +432,7 @@ public class MEmailEventLogStep extends MStep {
 	 * @generated
 	 * @ordered
 	 */
-	protected MParameter mSmtpServerParameter = null;
+	protected MParameter mSmtpServerParameter;
 
 	/**
 	 * The default value of the '{@link #getSmtpServerParameter() <em>Smtp Server Parameter</em>}' attribute.
@@ -474,7 +475,7 @@ public class MEmailEventLogStep extends MStep {
 	 * @generated
 	 * @ordered
 	 */
-	protected MParameter mSmtpUserNameParameter = null;
+	protected MParameter mSmtpUserNameParameter;
 
 	/**
 	 * The default value of the '{@link #getSmtpUserNameParameter() <em>Smtp User Name Parameter</em>}' attribute.
@@ -517,7 +518,7 @@ public class MEmailEventLogStep extends MStep {
 	 * @generated
 	 * @ordered
 	 */
-	protected MParameter mSmtpPasswordParameter = null;
+	protected MParameter mSmtpPasswordParameter;
 
 	/**
 	 * The default value of the '{@link #getSmtpPasswordParameter() <em>Smtp Password Parameter</em>}' attribute.
@@ -673,7 +674,7 @@ public class MEmailEventLogStep extends MStep {
 		terminatable = false;
 		interruptable = false;
 		actionName = "Send";
-					 
+			 
 		setMRecordingUsersNameParameter(new MParameter(false, "Recording user\'s name", "Specifies the name of the recording user. Please enter your name.", null));			 
 		setMCommentParameter(new MParameter(false, "Comment", "Specifies a comment for the receipient of the email.", null));			 
 		setMLogFileParameter(new MParameter(false, "Log file", "Specifies the file that contains the log data.", null));			 
@@ -715,7 +716,6 @@ public class MEmailEventLogStep extends MStep {
 
 	/**
 	 * Returns the value of the '<em><b>MRecording Users Name Parameter</b></em>' containment reference.
-	 * The default value is <code>""</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>MRecording Users Name Parameter</em>' containment reference isn't clear,
@@ -821,7 +821,6 @@ public class MEmailEventLogStep extends MStep {
 
 	/**
 	 * Returns the value of the '<em><b>MComment Parameter</b></em>' containment reference.
-	 * The default value is <code>""</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>MComment Parameter</em>' containment reference isn't clear,
@@ -936,7 +935,7 @@ public class MEmailEventLogStep extends MStep {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Comment Parameter Historic Values</em>' attribute list.
 	 * @see org.onceforall.dms.desktop.logic.LogicPackage#getMEmailEventLogStep_CommentParameterHistoricValues()
-	 * @model type="java.lang.String" dataType="org.onceforall.dms.desktop.logic.MString" upper="5"
+	 * @model dataType="org.onceforall.dms.desktop.logic.MString" upper="5"
 	 * @generated
 	 */
 	public EList getCommentParameterHistoricValues() {
@@ -948,7 +947,6 @@ public class MEmailEventLogStep extends MStep {
 
 	/**
 	 * Returns the value of the '<em><b>MLog File Parameter</b></em>' containment reference.
-	 * The default value is <code>""</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>MLog File Parameter</em>' containment reference isn't clear,
@@ -1054,7 +1052,6 @@ public class MEmailEventLogStep extends MStep {
 
 	/**
 	 * Returns the value of the '<em><b>MData File Parameter</b></em>' containment reference.
-	 * The default value is <code>""</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>MData File Parameter</em>' containment reference isn't clear,
@@ -1160,7 +1157,6 @@ public class MEmailEventLogStep extends MStep {
 
 	/**
 	 * Returns the value of the '<em><b>MSubject Parameter</b></em>' containment reference.
-	 * The default value is <code>""</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>MSubject Parameter</em>' containment reference isn't clear,
@@ -1266,7 +1262,6 @@ public class MEmailEventLogStep extends MStep {
 
 	/**
 	 * Returns the value of the '<em><b>MSenders Email Address Parameter</b></em>' containment reference.
-	 * The default value is <code>""</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>MSenders Email Address Parameter</em>' containment reference isn't clear,
@@ -1381,7 +1376,7 @@ public class MEmailEventLogStep extends MStep {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Senders Email Address Parameter Historic Values</em>' attribute list.
 	 * @see org.onceforall.dms.desktop.logic.LogicPackage#getMEmailEventLogStep_SendersEmailAddressParameterHistoricValues()
-	 * @model type="java.lang.String" dataType="org.onceforall.dms.desktop.logic.MString" upper="6"
+	 * @model dataType="org.onceforall.dms.desktop.logic.MString" upper="6"
 	 * @generated
 	 */
 	public EList getSendersEmailAddressParameterHistoricValues() {
@@ -1393,7 +1388,6 @@ public class MEmailEventLogStep extends MStep {
 
 	/**
 	 * Returns the value of the '<em><b>MReceipients Email Address Parameter</b></em>' containment reference.
-	 * The default value is <code>""</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>MReceipients Email Address Parameter</em>' containment reference isn't clear,
@@ -1474,7 +1468,7 @@ public class MEmailEventLogStep extends MStep {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Receipients Email Address Parameter</em>' attribute list.
 	 * @see org.onceforall.dms.desktop.logic.LogicPackage#getMEmailEventLogStep_ReceipientsEmailAddressParameter()
-	 * @model type="java.lang.String" dataType="org.onceforall.dms.desktop.logic.MString" required="true"
+	 * @model dataType="org.onceforall.dms.desktop.logic.MString" required="true"
 	 * @generated
 	 */
 	public EList getReceipientsEmailAddressParameter() {
@@ -1486,7 +1480,6 @@ public class MEmailEventLogStep extends MStep {
 
 	/**
 	 * Returns the value of the '<em><b>MSmtp Server Parameter</b></em>' containment reference.
-	 * The default value is <code>""</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>MSmtp Server Parameter</em>' containment reference isn't clear,
@@ -1592,7 +1585,6 @@ public class MEmailEventLogStep extends MStep {
 
 	/**
 	 * Returns the value of the '<em><b>MSmtp User Name Parameter</b></em>' containment reference.
-	 * The default value is <code>""</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>MSmtp User Name Parameter</em>' containment reference isn't clear,
@@ -1698,7 +1690,6 @@ public class MEmailEventLogStep extends MStep {
 
 	/**
 	 * Returns the value of the '<em><b>MSmtp Password Parameter</b></em>' containment reference.
-	 * The default value is <code>""</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>MSmtp Password Parameter</em>' containment reference isn't clear,
@@ -1895,77 +1886,77 @@ public class MEmailEventLogStep extends MStep {
 	 */
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case LogicPackage.MEMAIL_EVENT_LOG_STEP__MRECORDING_USERS_NAME_PARAMETER:    
+			case LogicPackage.MEMAIL_EVENT_LOG_STEP__MRECORDING_USERS_NAME_PARAMETER:
 				setMRecordingUsersNameParameter((MParameter)newValue);
 				return;
-			case LogicPackage.MEMAIL_EVENT_LOG_STEP__RECORDING_USERS_NAME_PARAMETER:    
+			case LogicPackage.MEMAIL_EVENT_LOG_STEP__RECORDING_USERS_NAME_PARAMETER:
 				setRecordingUsersNameParameter((String)newValue);
 				return;
-			case LogicPackage.MEMAIL_EVENT_LOG_STEP__MCOMMENT_PARAMETER:    
+			case LogicPackage.MEMAIL_EVENT_LOG_STEP__MCOMMENT_PARAMETER:
 				setMCommentParameter((MParameter)newValue);
 				return;
-			case LogicPackage.MEMAIL_EVENT_LOG_STEP__COMMENT_PARAMETER:    
+			case LogicPackage.MEMAIL_EVENT_LOG_STEP__COMMENT_PARAMETER:
 				setCommentParameter((String)newValue);
 				return;
 			case LogicPackage.MEMAIL_EVENT_LOG_STEP__COMMENT_PARAMETER_HISTORIC_VALUES:
 				getCommentParameterHistoricValues().clear();
 				getCommentParameterHistoricValues().addAll((Collection)newValue);
 				return;
-			case LogicPackage.MEMAIL_EVENT_LOG_STEP__MLOG_FILE_PARAMETER:    
+			case LogicPackage.MEMAIL_EVENT_LOG_STEP__MLOG_FILE_PARAMETER:
 				setMLogFileParameter((MParameter)newValue);
 				return;
-			case LogicPackage.MEMAIL_EVENT_LOG_STEP__LOG_FILE_PARAMETER:    
+			case LogicPackage.MEMAIL_EVENT_LOG_STEP__LOG_FILE_PARAMETER:
 				setLogFileParameter((File)newValue);
 				return;
-			case LogicPackage.MEMAIL_EVENT_LOG_STEP__MDATA_FILE_PARAMETER:    
+			case LogicPackage.MEMAIL_EVENT_LOG_STEP__MDATA_FILE_PARAMETER:
 				setMDataFileParameter((MParameter)newValue);
 				return;
-			case LogicPackage.MEMAIL_EVENT_LOG_STEP__DATA_FILE_PARAMETER:    
+			case LogicPackage.MEMAIL_EVENT_LOG_STEP__DATA_FILE_PARAMETER:
 				setDataFileParameter((File)newValue);
 				return;
-			case LogicPackage.MEMAIL_EVENT_LOG_STEP__MSUBJECT_PARAMETER:    
+			case LogicPackage.MEMAIL_EVENT_LOG_STEP__MSUBJECT_PARAMETER:
 				setMSubjectParameter((MParameter)newValue);
 				return;
-			case LogicPackage.MEMAIL_EVENT_LOG_STEP__SUBJECT_PARAMETER:    
+			case LogicPackage.MEMAIL_EVENT_LOG_STEP__SUBJECT_PARAMETER:
 				setSubjectParameter((String)newValue);
 				return;
-			case LogicPackage.MEMAIL_EVENT_LOG_STEP__MSENDERS_EMAIL_ADDRESS_PARAMETER:    
+			case LogicPackage.MEMAIL_EVENT_LOG_STEP__MSENDERS_EMAIL_ADDRESS_PARAMETER:
 				setMSendersEmailAddressParameter((MParameter)newValue);
 				return;
-			case LogicPackage.MEMAIL_EVENT_LOG_STEP__SENDERS_EMAIL_ADDRESS_PARAMETER:    
+			case LogicPackage.MEMAIL_EVENT_LOG_STEP__SENDERS_EMAIL_ADDRESS_PARAMETER:
 				setSendersEmailAddressParameter((String)newValue);
 				return;
 			case LogicPackage.MEMAIL_EVENT_LOG_STEP__SENDERS_EMAIL_ADDRESS_PARAMETER_HISTORIC_VALUES:
 				getSendersEmailAddressParameterHistoricValues().clear();
 				getSendersEmailAddressParameterHistoricValues().addAll((Collection)newValue);
 				return;
-			case LogicPackage.MEMAIL_EVENT_LOG_STEP__MRECEIPIENTS_EMAIL_ADDRESS_PARAMETER:    
+			case LogicPackage.MEMAIL_EVENT_LOG_STEP__MRECEIPIENTS_EMAIL_ADDRESS_PARAMETER:
 				setMReceipientsEmailAddressParameter((MParameter)newValue);
 				return;
 			case LogicPackage.MEMAIL_EVENT_LOG_STEP__RECEIPIENTS_EMAIL_ADDRESS_PARAMETER:
 				getReceipientsEmailAddressParameter().clear();
 				getReceipientsEmailAddressParameter().addAll((Collection)newValue);
 				return;
-			case LogicPackage.MEMAIL_EVENT_LOG_STEP__MSMTP_SERVER_PARAMETER:    
+			case LogicPackage.MEMAIL_EVENT_LOG_STEP__MSMTP_SERVER_PARAMETER:
 				setMSmtpServerParameter((MParameter)newValue);
 				return;
-			case LogicPackage.MEMAIL_EVENT_LOG_STEP__SMTP_SERVER_PARAMETER:    
+			case LogicPackage.MEMAIL_EVENT_LOG_STEP__SMTP_SERVER_PARAMETER:
 				setSmtpServerParameter((String)newValue);
 				return;
-			case LogicPackage.MEMAIL_EVENT_LOG_STEP__MSMTP_USER_NAME_PARAMETER:    
+			case LogicPackage.MEMAIL_EVENT_LOG_STEP__MSMTP_USER_NAME_PARAMETER:
 				setMSmtpUserNameParameter((MParameter)newValue);
 				return;
-			case LogicPackage.MEMAIL_EVENT_LOG_STEP__SMTP_USER_NAME_PARAMETER:    
+			case LogicPackage.MEMAIL_EVENT_LOG_STEP__SMTP_USER_NAME_PARAMETER:
 				setSmtpUserNameParameter((String)newValue);
 				return;
-			case LogicPackage.MEMAIL_EVENT_LOG_STEP__MSMTP_PASSWORD_PARAMETER:    
+			case LogicPackage.MEMAIL_EVENT_LOG_STEP__MSMTP_PASSWORD_PARAMETER:
 				setMSmtpPasswordParameter((MParameter)newValue);
 				return;
 			case LogicPackage.MEMAIL_EVENT_LOG_STEP__SMTP_PASSWORD_PARAMETER:
 				// Makes sure that that plain text password will be encrypted if they are not. TODO: Remove this code after migration. Then all passwords should encrypted anyway.
 				if(newValue != null && (((String) newValue).startsWith("esio") || ((String) newValue).startsWith("site")))
 						newValue = Type.PASSWORD_TYPE.encryptPassword((String) newValue);
-				    
+				
 				setSmtpPasswordParameter((String)newValue);
 				return;
 		}

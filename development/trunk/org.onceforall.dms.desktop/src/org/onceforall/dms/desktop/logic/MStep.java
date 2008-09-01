@@ -69,10 +69,17 @@ import org.onceforall.dms.desktop.logic.types.Type;
  *        annotation="http://www.onceforall.org/mcore typeNameForUI='Task' compositeClassName='org.onceforall.dms.desktop.ui.MStepComposite'"
  * @generated
  */
-public abstract class MStep extends MStatefulObject implements Runnable {
+public abstract class MStep extends MStatefulObject {
     
     /** Specifies the progress that indicates that a managed step has been completed. */
     public static final Long COMPLETED_PROGRESS = new Long(100);
+    
+    /** Specifies a runnable for executing this managed step. This is a workaround for not being able to specify an interface in the ecore model for {@link MStep}. */
+    protected Runnable runnable = new Runnable() {
+		public void run() {
+			MStep.this.run();
+		}
+	};
     
 	/** 
 	 * Specifies a user-friendly representation of this managed element.
@@ -117,7 +124,7 @@ public abstract class MStep extends MStatefulObject implements Runnable {
 	 * @generated
 	 * @ordered
 	 */
-	protected EList mInputSteps = null;
+	protected EList mInputSteps;
 
 	/**
 	 * The default value of the '{@link #getExclusiveProperty() <em>Exclusive Property</em>}' attribute.
@@ -193,7 +200,7 @@ public abstract class MStep extends MStatefulObject implements Runnable {
 	 * @generated
 	 * @ordered
 	 */
-	protected MProperty mProgressProperty = null;
+	protected MProperty mProgressProperty;
 
 	/**
 	 * The default value of the '{@link #getProgressProperty() <em>Progress Property</em>}' attribute.
@@ -236,7 +243,7 @@ public abstract class MStep extends MStatefulObject implements Runnable {
 	 * @generated
 	 * @ordered
 	 */
-	protected MProperty mProgressStatusProperty = null;
+	protected MProperty mProgressStatusProperty;
 
 	/**
 	 * The default value of the '{@link #getProgressStatusProperty() <em>Progress Status Property</em>}' attribute.
@@ -279,7 +286,7 @@ public abstract class MStep extends MStatefulObject implements Runnable {
 	 * @generated
 	 * @ordered
 	 */
-	protected MProperty mStartTriggerProperty = null;
+	protected MProperty mStartTriggerProperty;
 
 	/**
 	 * The default value of the '{@link #getStartTriggerProperty() <em>Start Trigger Property</em>}' attribute.
@@ -596,7 +603,7 @@ public abstract class MStep extends MStatefulObject implements Runnable {
 				
 		compositeClassName = "org.onceforall.dms.desktop.ui.MStepComposite";
 		typeNameForUI = "Task";
-					 
+			 
 		setMStateProperty(new MProperty(true, "State", "Specifies the current state.", null));			 
 		setMProgressProperty(new MProperty(true, "Progress", "Specifies the progress of the processing in %.", null));			 
 		setMProgressStatusProperty(new MProperty(true, "Progress status", "Specifies a textual representation of the progress.", null));			 
@@ -789,7 +796,6 @@ public abstract class MStep extends MStatefulObject implements Runnable {
 
 	/**
 	 * Returns the value of the '<em><b>MProgress Property</b></em>' containment reference.
-	 * The default value is <code>""</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>MProgress Property</em>' containment reference isn't clear,
@@ -893,7 +899,6 @@ public abstract class MStep extends MStatefulObject implements Runnable {
 
 	/**
 	 * Returns the value of the '<em><b>MProgress Status Property</b></em>' containment reference.
-	 * The default value is <code>""</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>MProgress Status Property</em>' containment reference isn't clear,
@@ -997,7 +1002,6 @@ public abstract class MStep extends MStatefulObject implements Runnable {
 
 	/**
 	 * Returns the value of the '<em><b>MStart Trigger Property</b></em>' containment reference.
-	 * The default value is <code>""</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>MStart Trigger Property</em>' containment reference isn't clear,
@@ -1347,34 +1351,34 @@ public abstract class MStep extends MStatefulObject implements Runnable {
 				getFixedMResults().clear();
 				getFixedMResults().addAll((Collection)newValue);
 				return;
-			case LogicPackage.MSTEP__EXCLUSIVE_PROPERTY:    
+			case LogicPackage.MSTEP__EXCLUSIVE_PROPERTY:
 				setExclusiveProperty((Boolean)newValue);
 				return;
-			case LogicPackage.MSTEP__STATE_PROPERTY:    
+			case LogicPackage.MSTEP__STATE_PROPERTY:
 				setStateProperty((State)newValue);
 				return;
-			case LogicPackage.MSTEP__MPROGRESS_PROPERTY:    
+			case LogicPackage.MSTEP__MPROGRESS_PROPERTY:
 				setMProgressProperty((MProperty)newValue);
 				return;
-			case LogicPackage.MSTEP__PROGRESS_PROPERTY:    
+			case LogicPackage.MSTEP__PROGRESS_PROPERTY:
 				setProgressProperty((Long)newValue);
 				return;
-			case LogicPackage.MSTEP__MPROGRESS_STATUS_PROPERTY:    
+			case LogicPackage.MSTEP__MPROGRESS_STATUS_PROPERTY:
 				setMProgressStatusProperty((MProperty)newValue);
 				return;
-			case LogicPackage.MSTEP__PROGRESS_STATUS_PROPERTY:    
+			case LogicPackage.MSTEP__PROGRESS_STATUS_PROPERTY:
 				setProgressStatusProperty((String)newValue);
 				return;
-			case LogicPackage.MSTEP__MSTART_TRIGGER_PROPERTY:    
+			case LogicPackage.MSTEP__MSTART_TRIGGER_PROPERTY:
 				setMStartTriggerProperty((MProperty)newValue);
 				return;
-			case LogicPackage.MSTEP__START_TRIGGER_PROPERTY:    
+			case LogicPackage.MSTEP__START_TRIGGER_PROPERTY:
 				setStartTriggerProperty((String)newValue);
 				return;
-			case LogicPackage.MSTEP__ACTION_NAME:    
+			case LogicPackage.MSTEP__ACTION_NAME:
 				setActionName((String)newValue);
 				return;
-			case LogicPackage.MSTEP__ACTION_ICON_FILE_PATH:    
+			case LogicPackage.MSTEP__ACTION_ICON_FILE_PATH:
 				setActionIconFilePath((File)newValue);
 				return;
 		}
@@ -1583,6 +1587,7 @@ public abstract class MStep extends MStatefulObject implements Runnable {
     		// Does nothing.
     	}
     }
+
     /**
      * Initiates the execution of the managed step. The execution can be either synchronous
      * or in a thread.
@@ -1633,6 +1638,15 @@ public abstract class MStep extends MStatefulObject implements Runnable {
         	executeManaged(true);
     }
 
+    /**
+     * Returns a runnable for executing this managed step. This is a workaround for not being able to specify an interface in the ecore model for {@link MStep}.
+     * 
+     * @return Returns a runnable for executing this managed step.
+     */
+    public Runnable getRunnable() {
+    	return runnable;
+    }
+    
 	/**
 	 * @see org.onceforall.dms.desktop.logic.MObject#validate()
 	 */

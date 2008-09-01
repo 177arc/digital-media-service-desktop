@@ -262,7 +262,7 @@ public abstract class MStatefulObject extends MObject {
 	 * @generated
 	 * @ordered
 	 */
-	protected MProperty mStateProperty = null;
+	protected MProperty mStateProperty;
 
 	/**
 	 * The default value of the '{@link #getStateProperty() <em>State</em>}' attribute.
@@ -281,7 +281,7 @@ public abstract class MStatefulObject extends MObject {
 	 * @generated
 	 * @ordered
 	 */
-	protected MProperty mLastStateChangeProperty = null;
+	protected MProperty mLastStateChangeProperty;
 
 	/**
 	 * The default value of the '{@link #getLastStateChangeProperty() <em>Last State Change Property</em>}' attribute.
@@ -326,7 +326,7 @@ public abstract class MStatefulObject extends MObject {
 		
 		firstMStatefulObjectConstructorHook();
 				
-					 
+			 
 		setMLastStateChangeProperty(new MProperty(true, "Last state change", "Specifies the date and time of the last state change.", null));
 
 		lastMStatefulObjectConstructorHook();		
@@ -359,7 +359,6 @@ public abstract class MStatefulObject extends MObject {
 
 	/**
 	 * Returns the value of the '<em><b>MState Property</b></em>' containment reference.
-	 * The default value is <code>"Active"</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>MState Property</em>' containment reference isn't clear,
@@ -588,13 +587,13 @@ public abstract class MStatefulObject extends MObject {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case LogicPackage.MSTATEFUL_OBJECT__MSTATE_PROPERTY:    
+			case LogicPackage.MSTATEFUL_OBJECT__MSTATE_PROPERTY:
 				setMStateProperty((MProperty)newValue);
 				return;
-			case LogicPackage.MSTATEFUL_OBJECT__MLAST_STATE_CHANGE_PROPERTY:    
+			case LogicPackage.MSTATEFUL_OBJECT__MLAST_STATE_CHANGE_PROPERTY:
 				setMLastStateChangeProperty((MProperty)newValue);
 				return;
-			case LogicPackage.MSTATEFUL_OBJECT__LAST_STATE_CHANGE_PROPERTY:    
+			case LogicPackage.MSTATEFUL_OBJECT__LAST_STATE_CHANGE_PROPERTY:
 				setLastStateChangeProperty((Date)newValue);
 				return;
 		}

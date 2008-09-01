@@ -22,22 +22,18 @@ import java.util.Map;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.notify.Notifier;
-import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.common.util.BasicEList;
-import org.eclipse.emf.common.util.Diagnostic;
-import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EFactory;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
-import org.eclipse.emf.ecore.plugin.EcorePlugin;
-import org.eclipse.emf.ecore.util.EObjectValidator;
 import org.eclipse.emf.ecore.util.FeatureMap;
 import org.eclipse.emf.ecore.util.FeatureMapUtil;
 import org.onceforall.dms.desktop.Utilities;
@@ -883,31 +879,6 @@ public abstract class MElement extends EObjectImpl implements ThreadAdapter {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @model required="true" diagnosticsChainRequired="true" contextRequired="true"
-	 * @generated
-	 */
-	public boolean validate(DiagnosticChain diagnosticsChain, Map context) {
-		// TODO: implement this method
-		// -> specify the condition that violates the invariant
-		// -> verify the details of the diagnostic, including severity and message
-		// Ensure that you remove @generated or mark it @generated NOT
-		if (false) {
-			if (diagnosticsChain != null) {
-				diagnosticsChain.add
-					(new BasicDiagnostic
-						(Diagnostic.ERROR,
-						 LogicValidator.DIAGNOSTIC_SOURCE,
-						 LogicValidator.MELEMENT__VALIDATE,
-						 EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "validate", EObjectValidator.getObjectLabel(this, context) }),
-						 new Object [] { this }));
-			}
-			return false;
-		}
-		return true;
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -944,22 +915,22 @@ public abstract class MElement extends EObjectImpl implements ThreadAdapter {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case LogicPackage.MELEMENT__NAME:    
+			case LogicPackage.MELEMENT__NAME:
 				setName((String)newValue);
 				return;
-			case LogicPackage.MELEMENT__TYPE_NAME_FOR_UI:    
+			case LogicPackage.MELEMENT__TYPE_NAME_FOR_UI:
 				setTypeNameForUI((String)newValue);
 				return;
-			case LogicPackage.MELEMENT__DESCRIPTION:    
+			case LogicPackage.MELEMENT__DESCRIPTION:
 				setDescription((String)newValue);
 				return;
-			case LogicPackage.MELEMENT__ICON_FILE_PATH:    
+			case LogicPackage.MELEMENT__ICON_FILE_PATH:
 				setIconFilePath((File)newValue);
 				return;
-			case LogicPackage.MELEMENT__OVERLAY_ICON_FILE_PATH:    
+			case LogicPackage.MELEMENT__OVERLAY_ICON_FILE_PATH:
 				setOverlayIconFilePath((File)newValue);
 				return;
-			case LogicPackage.MELEMENT__COMPOSITE_CLASS_NAME:    
+			case LogicPackage.MELEMENT__COMPOSITE_CLASS_NAME:
 				setCompositeClassName((String)newValue);
 				return;
 			case LogicPackage.MELEMENT__SIMULATED:
@@ -1076,11 +1047,14 @@ public abstract class MElement extends EObjectImpl implements ThreadAdapter {
 		assert MElement.class.isAssignableFrom(mElementClass) : "The parameter 'mElementClass' must be the MElement class or a subclass.";
 		assert mName != null : "The parameter 'mName' cannot be empty.";
 
-		Iterator<MElement> iterator = eContents().iterator();
+		Iterator<EObject> iterator = eContents().iterator();
 		while (iterator.hasNext()) {
-			MElement mElement = iterator.next();
-			if (mElementClass.isAssignableFrom(mElement.getClass()) && mElement.getName().equals(mName))
-				return mElement;
+			EObject eObject = iterator.next();
+			if(eObject instanceof MElement) {
+				MElement mElement = (MElement) eObject;
+				if (mElementClass.isAssignableFrom(mElement.getClass()) && mElement.getName().equals(mName))
+					return mElement;
+			}
 		}
 
 		return null;
@@ -1103,11 +1077,14 @@ public abstract class MElement extends EObjectImpl implements ThreadAdapter {
 		assert MElement.class.isAssignableFrom(mElementClass) : "The parameter 'mElementClass' must be the MElement class or a subclass.";
 		assert eList != null : "The parameter 'eList' cannot be empty.";
 
-		Iterator<MElement> iterator = eContents().iterator();
+		Iterator<EObject> iterator = eContents().iterator();
 		while (iterator.hasNext()) {
-			MElement mElement = iterator.next();
-			if (mElementClass.isAssignableFrom(mElement.getClass()))
-				eList.add(mElement);
+			EObject eObject = iterator.next();
+			if(eObject instanceof MElement) {
+				MElement mElement = (MElement) eObject;
+				if (mElementClass.isAssignableFrom(mElement.getClass()))
+					eList.add(mElement);
+			}
 		}
 
 		return eList;

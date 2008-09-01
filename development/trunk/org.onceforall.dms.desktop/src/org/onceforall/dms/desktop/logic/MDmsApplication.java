@@ -25,6 +25,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
+import org.onceforall.dms.desktop.logic.types.PasswordType;
 import org.onceforall.dms.desktop.logic.types.ReferenceType;
 import org.onceforall.dms.desktop.logic.types.Type;
 
@@ -119,7 +120,7 @@ public class MDmsApplication extends MApplication {
 	 * @generated
 	 * @ordered
 	 */
-	protected MProperty mServiceFilePathProperty = null;
+	protected MProperty mServiceFilePathProperty;
 
 	/**
 	 * The default value of the '{@link #getServiceFilePathProperty() <em>Service File Path Property</em>}' attribute.
@@ -162,7 +163,7 @@ public class MDmsApplication extends MApplication {
 	 * @generated
 	 * @ordered
 	 */
-	protected MProperty mWwxFilesPathProperty = null;
+	protected MProperty mWwxFilesPathProperty;
 
 	/**
 	 * The default value of the '{@link #getWwxFilesPathProperty() <em>Wwx Files Path Property</em>}' attribute.
@@ -205,7 +206,7 @@ public class MDmsApplication extends MApplication {
 	 * @generated
 	 * @ordered
 	 */
-	protected MProperty mMp3EncoderPathProperty = null;
+	protected MProperty mMp3EncoderPathProperty;
 
 	/**
 	 * The default value of the '{@link #getMp3EncoderPathProperty() <em>Mp3 Encoder Path Property</em>}' attribute.
@@ -249,7 +250,7 @@ public class MDmsApplication extends MApplication {
 	 * @generated
 	 * @ordered
 	 */
-	protected MProperty mFtpServerUrlProperty = null;
+	protected MProperty mFtpServerUrlProperty;
 
 	/**
 	 * The default value of the '{@link #getFtpServerUrlProperty() <em>Ftp Server Url Property</em>}' attribute.
@@ -292,7 +293,7 @@ public class MDmsApplication extends MApplication {
 	 * @generated
 	 * @ordered
 	 */
-	protected EList ftpServerUrlPropertyHistoricValues = null;
+	protected EList ftpServerUrlPropertyHistoricValues;
 
 	/**
 	 * The cached value of the '{@link #getMFtpUserNameProperty() <em>MFtp User Name Property</em>}' containment reference.
@@ -302,7 +303,7 @@ public class MDmsApplication extends MApplication {
 	 * @generated
 	 * @ordered
 	 */
-	protected MProperty mFtpUserNameProperty = null;
+	protected MProperty mFtpUserNameProperty;
 
 	/**
 	 * The default value of the '{@link #getFtpUserNameProperty() <em>Ftp User Name Property</em>}' attribute.
@@ -345,7 +346,7 @@ public class MDmsApplication extends MApplication {
 	 * @generated
 	 * @ordered
 	 */
-	protected EList ftpUserNamePropertyHistoricValues = null;
+	protected EList ftpUserNamePropertyHistoricValues;
 
 	/**
 	 * The cached value of the '{@link #getMFtpUserPasswordProperty() <em>MFtp User Password Property</em>}' containment reference.
@@ -355,7 +356,7 @@ public class MDmsApplication extends MApplication {
 	 * @generated
 	 * @ordered
 	 */
-	protected MProperty mFtpUserPasswordProperty = null;
+	protected MProperty mFtpUserPasswordProperty;
 
 	/**
 	 * The default value of the '{@link #getFtpUserPasswordProperty() <em>Ftp User Password Property</em>}' attribute.
@@ -398,7 +399,7 @@ public class MDmsApplication extends MApplication {
 	 * @generated
 	 * @ordered
 	 */
-	protected MProperty mWebServerUrlProperty = null;
+	protected MProperty mWebServerUrlProperty;
 
 	/**
 	 * The default value of the '{@link #getWebServerUrlProperty() <em>Web Server Url Property</em>}' attribute.
@@ -441,7 +442,7 @@ public class MDmsApplication extends MApplication {
 	 * @generated
 	 * @ordered
 	 */
-	protected EList webServerUrlPropertyHistoricValues = null;
+	protected EList webServerUrlPropertyHistoricValues;
 
 	/**
 	 * The cached value of the '{@link #getMSmtpServerProperty() <em>MSmtp Server Property</em>}' containment reference.
@@ -451,7 +452,7 @@ public class MDmsApplication extends MApplication {
 	 * @generated
 	 * @ordered
 	 */
-	protected MProperty mSmtpServerProperty = null;
+	protected MProperty mSmtpServerProperty;
 
 	/**
 	 * The default value of the '{@link #getSmtpServerProperty() <em>Smtp Server Property</em>}' attribute.
@@ -494,7 +495,7 @@ public class MDmsApplication extends MApplication {
 	 * @generated
 	 * @ordered
 	 */
-	protected EList smtpServerPropertyHistoricValues = null;
+	protected EList smtpServerPropertyHistoricValues;
 
 	/**
 	 * The cached value of the '{@link #getMSmtpUserNameProperty() <em>MSmtp User Name Property</em>}' containment reference.
@@ -504,7 +505,7 @@ public class MDmsApplication extends MApplication {
 	 * @generated
 	 * @ordered
 	 */
-	protected MProperty mSmtpUserNameProperty = null;
+	protected MProperty mSmtpUserNameProperty;
 
 	/**
 	 * The default value of the '{@link #getSmtpUserNameProperty() <em>Smtp User Name Property</em>}' attribute.
@@ -547,7 +548,7 @@ public class MDmsApplication extends MApplication {
 	 * @generated
 	 * @ordered
 	 */
-	protected EList smtpUserNamePropertyHistoricValues = null;
+	protected EList smtpUserNamePropertyHistoricValues;
 
 	/**
 	 * The cached value of the '{@link #getMSmtpPasswordProperty() <em>MSmtp Password Property</em>}' containment reference.
@@ -557,7 +558,7 @@ public class MDmsApplication extends MApplication {
 	 * @generated
 	 * @ordered
 	 */
-	protected MProperty mSmtpPasswordProperty = null;
+	protected MProperty mSmtpPasswordProperty;
 
 	/**
 	 * The default value of the '{@link #getSmtpPasswordProperty() <em>Smtp Password Property</em>}' attribute.
@@ -600,7 +601,7 @@ public class MDmsApplication extends MApplication {
 	 * @generated
 	 * @ordered
 	 */
-	protected MProperty mBurningSoftwareDirectoryPathProperty = null;
+	protected MProperty mBurningSoftwareDirectoryPathProperty;
 
 	/**
 	 * The default value of the '{@link #getBurningSoftwareDirectoryPathProperty() <em>Burning Software Directory Path Property</em>}' attribute.
@@ -643,7 +644,7 @@ public class MDmsApplication extends MApplication {
 	 * @generated
 	 * @ordered
 	 */
-	protected MProperty mDriveProperty = null;
+	protected MProperty mDriveProperty;
 
 	/**
 	 * The default value of the '{@link #getDriveProperty() <em>Drive Property</em>}' attribute.
@@ -686,7 +687,7 @@ public class MDmsApplication extends MApplication {
 	 * @generated
 	 * @ordered
 	 */
-	protected EList drivePropertyHistoricValues = null;
+	protected EList drivePropertyHistoricValues;
 
 	/**
 	 * The cached value of the '{@link #getMUpgradeMessageProperty() <em>MUpgrade Message Property</em>}' containment reference.
@@ -696,7 +697,7 @@ public class MDmsApplication extends MApplication {
 	 * @generated
 	 * @ordered
 	 */
-	protected MProperty mUpgradeMessageProperty = null;
+	protected MProperty mUpgradeMessageProperty;
 
 	/**
 	 * The default value of the '{@link #getUpgradeMessageProperty() <em>Upgrade Message Property</em>}' attribute.
@@ -739,7 +740,7 @@ public class MDmsApplication extends MApplication {
 	 * @generated
 	 * @ordered
 	 */
-	protected MProperty mUpgradeRelativeFtpPathProperty = null;
+	protected MProperty mUpgradeRelativeFtpPathProperty;
 
 	/**
 	 * The default value of the '{@link #getUpgradeRelativeFtpPathProperty() <em>Upgrade Relative Ftp Path Property</em>}' attribute.
@@ -782,7 +783,7 @@ public class MDmsApplication extends MApplication {
 	 * @generated
 	 * @ordered
 	 */
-	protected MProperty mLastUpgradeProperty = null;
+	protected MProperty mLastUpgradeProperty;
 
 	/**
 	 * The default value of the '{@link #getLastUpgradeProperty() <em>Last Upgrade Property</em>}' attribute.
@@ -825,7 +826,7 @@ public class MDmsApplication extends MApplication {
 	 * @generated
 	 * @ordered
 	 */
-	protected MProperty mOrganisationProperty = null;
+	protected MProperty mOrganisationProperty;
 
 	/**
 	 * The default value of the '{@link #getOrganisationProperty() <em>Organisation Property</em>}' attribute.
@@ -868,7 +869,7 @@ public class MDmsApplication extends MApplication {
 	 * @generated
 	 * @ordered
 	 */
-	protected MDmsApplicationMGetDataUpgradeInfoStep mGetDataUpgradeInfoStep = null;
+	protected MDmsApplicationMGetDataUpgradeInfoStep mGetDataUpgradeInfoStep;
 
 	/**
 	 * The cached value of the '{@link #getMUpgradeDataStep() <em>MUpgrade Data Step</em>}' containment reference.
@@ -878,7 +879,7 @@ public class MDmsApplication extends MApplication {
 	 * @generated
 	 * @ordered
 	 */
-	protected MDmsApplicationMUpgradeDataStep mUpgradeDataStep = null;
+	protected MDmsApplicationMUpgradeDataStep mUpgradeDataStep;
 
 	/**
 	 * The cached value of the '{@link #getMScripts() <em>MScripts</em>}' containment reference list.
@@ -888,7 +889,7 @@ public class MDmsApplication extends MApplication {
 	 * @generated
 	 * @ordered
 	 */
-	protected EList mScripts = null;
+	protected EList mScripts;
 
 	/**
 	 * The cached value of the '{@link #getMMp3Folders() <em>MMp3 Folders</em>}' containment reference list.
@@ -898,7 +899,7 @@ public class MDmsApplication extends MApplication {
 	 * @generated
 	 * @ordered
 	 */
-	protected EList mMp3Folders = null;
+	protected EList mMp3Folders;
 
 	/**
 	 * Get the default value of the '{@link #getName() <em>Name</em>}' attribute.
@@ -923,7 +924,7 @@ public class MDmsApplication extends MApplication {
 		firstMDmsApplicationConstructorHook();
 				
 		name = "Digital Media Service Desktop";
-					 
+			 
 		setMServiceFilePathProperty(new MProperty(false, "Service files path", "Specifies the relative or absolute file path to the directory where the service recording files are stored.", null));			 
 		setMWwxFilesPathProperty(new MProperty(false, "WWX files path", "Specifies the relative or absolute file path to the directory where the WordWiseXtra recording files are stored.", null));			 
 		setMMp3EncoderPathProperty(new MProperty(false, "MP3 encoder path", "Specifies the path to the directory that contains the \'lame.exe\'.", null));			 
@@ -973,7 +974,6 @@ public class MDmsApplication extends MApplication {
 
 	/**
 	 * Returns the value of the '<em><b>MService File Path Property</b></em>' containment reference.
-	 * The default value is <code>""</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>MService File Path Property</em>' containment reference isn't clear,
@@ -1080,7 +1080,6 @@ public class MDmsApplication extends MApplication {
 
 	/**
 	 * Returns the value of the '<em><b>MWwx Files Path Property</b></em>' containment reference.
-	 * The default value is <code>""</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>MWwx Files Path Property</em>' containment reference isn't clear,
@@ -1187,7 +1186,6 @@ public class MDmsApplication extends MApplication {
 
 	/**
 	 * Returns the value of the '<em><b>MMp3 Encoder Path Property</b></em>' containment reference.
-	 * The default value is <code>""</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>MMp3 Encoder Path Property</em>' containment reference isn't clear,
@@ -1294,7 +1292,6 @@ public class MDmsApplication extends MApplication {
 
 	/**
 	 * Returns the value of the '<em><b>MFtp Server Url Property</b></em>' containment reference.
-	 * The default value is <code>""</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>MFtp Server Url Property</em>' containment reference isn't clear,
@@ -1409,7 +1406,7 @@ public class MDmsApplication extends MApplication {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Ftp Server Url Property Historic Values</em>' attribute list.
 	 * @see org.onceforall.dms.desktop.logic.LogicPackage#getMDmsApplication_FtpServerUrlPropertyHistoricValues()
-	 * @model type="java.net.URL" dataType="org.onceforall.dms.desktop.logic.MUrl" upper="3"
+	 * @model dataType="org.onceforall.dms.desktop.logic.MUrl" upper="3"
 	 * @generated
 	 */
 	public EList getFtpServerUrlPropertyHistoricValues() {
@@ -1421,7 +1418,6 @@ public class MDmsApplication extends MApplication {
 
 	/**
 	 * Returns the value of the '<em><b>MFtp User Name Property</b></em>' containment reference.
-	 * The default value is <code>""</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>MFtp User Name Property</em>' containment reference isn't clear,
@@ -1536,7 +1532,7 @@ public class MDmsApplication extends MApplication {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Ftp User Name Property Historic Values</em>' attribute list.
 	 * @see org.onceforall.dms.desktop.logic.LogicPackage#getMDmsApplication_FtpUserNamePropertyHistoricValues()
-	 * @model type="java.lang.String" dataType="org.onceforall.dms.desktop.logic.MString" upper="3"
+	 * @model dataType="org.onceforall.dms.desktop.logic.MString" upper="3"
 	 * @generated
 	 */
 	public EList getFtpUserNamePropertyHistoricValues() {
@@ -1548,7 +1544,6 @@ public class MDmsApplication extends MApplication {
 
 	/**
 	 * Returns the value of the '<em><b>MFtp User Password Property</b></em>' containment reference.
-	 * The default value is <code>""</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>MFtp User Password Property</em>' containment reference isn't clear,
@@ -1654,7 +1649,6 @@ public class MDmsApplication extends MApplication {
 
 	/**
 	 * Returns the value of the '<em><b>MWeb Server Url Property</b></em>' containment reference.
-	 * The default value is <code>""</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>MWeb Server Url Property</em>' containment reference isn't clear,
@@ -1769,7 +1763,7 @@ public class MDmsApplication extends MApplication {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Web Server Url Property Historic Values</em>' attribute list.
 	 * @see org.onceforall.dms.desktop.logic.LogicPackage#getMDmsApplication_WebServerUrlPropertyHistoricValues()
-	 * @model type="java.net.URL" dataType="org.onceforall.dms.desktop.logic.MUrl" upper="3"
+	 * @model dataType="org.onceforall.dms.desktop.logic.MUrl" upper="3"
 	 * @generated
 	 */
 	public EList getWebServerUrlPropertyHistoricValues() {
@@ -1781,7 +1775,6 @@ public class MDmsApplication extends MApplication {
 
 	/**
 	 * Returns the value of the '<em><b>MSmtp Server Property</b></em>' containment reference.
-	 * The default value is <code>""</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>MSmtp Server Property</em>' containment reference isn't clear,
@@ -1896,7 +1889,7 @@ public class MDmsApplication extends MApplication {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Smtp Server Property Historic Values</em>' attribute list.
 	 * @see org.onceforall.dms.desktop.logic.LogicPackage#getMDmsApplication_SmtpServerPropertyHistoricValues()
-	 * @model type="java.lang.String" dataType="org.onceforall.dms.desktop.logic.MString" upper="3"
+	 * @model dataType="org.onceforall.dms.desktop.logic.MString" upper="3"
 	 * @generated
 	 */
 	public EList getSmtpServerPropertyHistoricValues() {
@@ -1908,7 +1901,6 @@ public class MDmsApplication extends MApplication {
 
 	/**
 	 * Returns the value of the '<em><b>MSmtp User Name Property</b></em>' containment reference.
-	 * The default value is <code>""</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>MSmtp User Name Property</em>' containment reference isn't clear,
@@ -2023,7 +2015,7 @@ public class MDmsApplication extends MApplication {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Smtp User Name Property Historic Values</em>' attribute list.
 	 * @see org.onceforall.dms.desktop.logic.LogicPackage#getMDmsApplication_SmtpUserNamePropertyHistoricValues()
-	 * @model type="java.lang.String" dataType="org.onceforall.dms.desktop.logic.MString" upper="3"
+	 * @model dataType="org.onceforall.dms.desktop.logic.MString" upper="3"
 	 * @generated
 	 */
 	public EList getSmtpUserNamePropertyHistoricValues() {
@@ -2035,7 +2027,6 @@ public class MDmsApplication extends MApplication {
 
 	/**
 	 * Returns the value of the '<em><b>MSmtp Password Property</b></em>' containment reference.
-	 * The default value is <code>""</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>MSmtp Password Property</em>' containment reference isn't clear,
@@ -2141,7 +2132,6 @@ public class MDmsApplication extends MApplication {
 
 	/**
 	 * Returns the value of the '<em><b>MBurning Software Directory Path Property</b></em>' containment reference.
-	 * The default value is <code>""</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>MBurning Software Directory Path Property</em>' containment reference isn't clear,
@@ -2247,7 +2237,6 @@ public class MDmsApplication extends MApplication {
 
 	/**
 	 * Returns the value of the '<em><b>MDrive Property</b></em>' containment reference.
-	 * The default value is <code>""</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>MDrive Property</em>' containment reference isn't clear,
@@ -2362,7 +2351,7 @@ public class MDmsApplication extends MApplication {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Drive Property Historic Values</em>' attribute list.
 	 * @see org.onceforall.dms.desktop.logic.LogicPackage#getMDmsApplication_DrivePropertyHistoricValues()
-	 * @model type="java.lang.String" dataType="org.onceforall.dms.desktop.logic.MString" upper="3"
+	 * @model dataType="org.onceforall.dms.desktop.logic.MString" upper="3"
 	 * @generated
 	 */
 	public EList getDrivePropertyHistoricValues() {
@@ -2374,7 +2363,6 @@ public class MDmsApplication extends MApplication {
 
 	/**
 	 * Returns the value of the '<em><b>MUpgrade Message Property</b></em>' containment reference.
-	 * The default value is <code>""</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>MUpgrade Message Property</em>' containment reference isn't clear,
@@ -2480,7 +2468,6 @@ public class MDmsApplication extends MApplication {
 
 	/**
 	 * Returns the value of the '<em><b>MUpgrade Relative Ftp Path Property</b></em>' containment reference.
-	 * The default value is <code>""</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>MUpgrade Relative Ftp Path Property</em>' containment reference isn't clear,
@@ -2586,7 +2573,6 @@ public class MDmsApplication extends MApplication {
 
 	/**
 	 * Returns the value of the '<em><b>MLast Upgrade Property</b></em>' containment reference.
-	 * The default value is <code>""</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>MLast Upgrade Property</em>' containment reference isn't clear,
@@ -2692,7 +2678,6 @@ public class MDmsApplication extends MApplication {
 
 	/**
 	 * Returns the value of the '<em><b>MOrganisation Property</b></em>' containment reference.
-	 * The default value is <code>""</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>MOrganisation Property</em>' containment reference isn't clear,
@@ -2799,7 +2784,6 @@ public class MDmsApplication extends MApplication {
 
 	/**
 	 * Returns the value of the '<em><b>MGet Data Upgrade Info Step</b></em>' containment reference.
-	 * The default value is <code>""</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>MGet Data Upgrade Info Step</em>' containment reference isn't clear,
@@ -2865,7 +2849,6 @@ public class MDmsApplication extends MApplication {
 
 	/**
 	 * Returns the value of the '<em><b>MUpgrade Data Step</b></em>' containment reference.
-	 * The default value is <code>""</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>MUpgrade Data Step</em>' containment reference isn't clear,
@@ -3124,138 +3107,138 @@ public class MDmsApplication extends MApplication {
 	 */
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case LogicPackage.MDMS_APPLICATION__MSERVICE_FILE_PATH_PROPERTY:    
+			case LogicPackage.MDMS_APPLICATION__MSERVICE_FILE_PATH_PROPERTY:
 				setMServiceFilePathProperty((MProperty)newValue);
 				return;
-			case LogicPackage.MDMS_APPLICATION__SERVICE_FILE_PATH_PROPERTY:    
+			case LogicPackage.MDMS_APPLICATION__SERVICE_FILE_PATH_PROPERTY:
 				setServiceFilePathProperty((File)newValue);
 				return;
-			case LogicPackage.MDMS_APPLICATION__MWWX_FILES_PATH_PROPERTY:    
+			case LogicPackage.MDMS_APPLICATION__MWWX_FILES_PATH_PROPERTY:
 				setMWwxFilesPathProperty((MProperty)newValue);
 				return;
-			case LogicPackage.MDMS_APPLICATION__WWX_FILES_PATH_PROPERTY:    
+			case LogicPackage.MDMS_APPLICATION__WWX_FILES_PATH_PROPERTY:
 				setWwxFilesPathProperty((File)newValue);
 				return;
-			case LogicPackage.MDMS_APPLICATION__MMP3_ENCODER_PATH_PROPERTY:    
+			case LogicPackage.MDMS_APPLICATION__MMP3_ENCODER_PATH_PROPERTY:
 				setMMp3EncoderPathProperty((MProperty)newValue);
 				return;
-			case LogicPackage.MDMS_APPLICATION__MP3_ENCODER_PATH_PROPERTY:    
+			case LogicPackage.MDMS_APPLICATION__MP3_ENCODER_PATH_PROPERTY:
 				setMp3EncoderPathProperty((File)newValue);
 				return;
-			case LogicPackage.MDMS_APPLICATION__MFTP_SERVER_URL_PROPERTY:    
+			case LogicPackage.MDMS_APPLICATION__MFTP_SERVER_URL_PROPERTY:
 				setMFtpServerUrlProperty((MProperty)newValue);
 				return;
-			case LogicPackage.MDMS_APPLICATION__FTP_SERVER_URL_PROPERTY:    
+			case LogicPackage.MDMS_APPLICATION__FTP_SERVER_URL_PROPERTY:
 				setFtpServerUrlProperty((URL)newValue);
 				return;
 			case LogicPackage.MDMS_APPLICATION__FTP_SERVER_URL_PROPERTY_HISTORIC_VALUES:
 				getFtpServerUrlPropertyHistoricValues().clear();
 				getFtpServerUrlPropertyHistoricValues().addAll((Collection)newValue);
 				return;
-			case LogicPackage.MDMS_APPLICATION__MFTP_USER_NAME_PROPERTY:    
+			case LogicPackage.MDMS_APPLICATION__MFTP_USER_NAME_PROPERTY:
 				setMFtpUserNameProperty((MProperty)newValue);
 				return;
-			case LogicPackage.MDMS_APPLICATION__FTP_USER_NAME_PROPERTY:    
+			case LogicPackage.MDMS_APPLICATION__FTP_USER_NAME_PROPERTY:
 				setFtpUserNameProperty((String)newValue);
 				return;
 			case LogicPackage.MDMS_APPLICATION__FTP_USER_NAME_PROPERTY_HISTORIC_VALUES:
 				getFtpUserNamePropertyHistoricValues().clear();
 				getFtpUserNamePropertyHistoricValues().addAll((Collection)newValue);
 				return;
-			case LogicPackage.MDMS_APPLICATION__MFTP_USER_PASSWORD_PROPERTY:    
+			case LogicPackage.MDMS_APPLICATION__MFTP_USER_PASSWORD_PROPERTY:
 				setMFtpUserPasswordProperty((MProperty)newValue);
 				return;
 			case LogicPackage.MDMS_APPLICATION__FTP_USER_PASSWORD_PROPERTY:
 				// Makes sure that that plain text password will be encrypted if they are not. TODO: Remove this code after migration. Then all passwords should encrypted anyway.
 				if(newValue != null && (((String) newValue).startsWith("esio") || ((String) newValue).startsWith("site")))
 						newValue = Type.PASSWORD_TYPE.encryptPassword((String) newValue);
-				    
+				
 				setFtpUserPasswordProperty((String)newValue);
 				return;
-			case LogicPackage.MDMS_APPLICATION__MWEB_SERVER_URL_PROPERTY:    
+			case LogicPackage.MDMS_APPLICATION__MWEB_SERVER_URL_PROPERTY:
 				setMWebServerUrlProperty((MProperty)newValue);
 				return;
-			case LogicPackage.MDMS_APPLICATION__WEB_SERVER_URL_PROPERTY:    
+			case LogicPackage.MDMS_APPLICATION__WEB_SERVER_URL_PROPERTY:
 				setWebServerUrlProperty((URL)newValue);
 				return;
 			case LogicPackage.MDMS_APPLICATION__WEB_SERVER_URL_PROPERTY_HISTORIC_VALUES:
 				getWebServerUrlPropertyHistoricValues().clear();
 				getWebServerUrlPropertyHistoricValues().addAll((Collection)newValue);
 				return;
-			case LogicPackage.MDMS_APPLICATION__MSMTP_SERVER_PROPERTY:    
+			case LogicPackage.MDMS_APPLICATION__MSMTP_SERVER_PROPERTY:
 				setMSmtpServerProperty((MProperty)newValue);
 				return;
-			case LogicPackage.MDMS_APPLICATION__SMTP_SERVER_PROPERTY:    
+			case LogicPackage.MDMS_APPLICATION__SMTP_SERVER_PROPERTY:
 				setSmtpServerProperty((String)newValue);
 				return;
 			case LogicPackage.MDMS_APPLICATION__SMTP_SERVER_PROPERTY_HISTORIC_VALUES:
 				getSmtpServerPropertyHistoricValues().clear();
 				getSmtpServerPropertyHistoricValues().addAll((Collection)newValue);
 				return;
-			case LogicPackage.MDMS_APPLICATION__MSMTP_USER_NAME_PROPERTY:    
+			case LogicPackage.MDMS_APPLICATION__MSMTP_USER_NAME_PROPERTY:
 				setMSmtpUserNameProperty((MProperty)newValue);
 				return;
-			case LogicPackage.MDMS_APPLICATION__SMTP_USER_NAME_PROPERTY:    
+			case LogicPackage.MDMS_APPLICATION__SMTP_USER_NAME_PROPERTY:
 				setSmtpUserNameProperty((String)newValue);
 				return;
 			case LogicPackage.MDMS_APPLICATION__SMTP_USER_NAME_PROPERTY_HISTORIC_VALUES:
 				getSmtpUserNamePropertyHistoricValues().clear();
 				getSmtpUserNamePropertyHistoricValues().addAll((Collection)newValue);
 				return;
-			case LogicPackage.MDMS_APPLICATION__MSMTP_PASSWORD_PROPERTY:    
+			case LogicPackage.MDMS_APPLICATION__MSMTP_PASSWORD_PROPERTY:
 				setMSmtpPasswordProperty((MProperty)newValue);
 				return;
 			case LogicPackage.MDMS_APPLICATION__SMTP_PASSWORD_PROPERTY:
 				// Makes sure that that plain text password will be encrypted if they are not. TODO: Remove this code after migration. Then all passwords should encrypted anyway.
 				if(newValue != null && (((String) newValue).startsWith("esio") || ((String) newValue).startsWith("site")))
 						newValue = Type.PASSWORD_TYPE.encryptPassword((String) newValue);
-				    
+				
 				setSmtpPasswordProperty((String)newValue);
 				return;
-			case LogicPackage.MDMS_APPLICATION__MBURNING_SOFTWARE_DIRECTORY_PATH_PROPERTY:    
+			case LogicPackage.MDMS_APPLICATION__MBURNING_SOFTWARE_DIRECTORY_PATH_PROPERTY:
 				setMBurningSoftwareDirectoryPathProperty((MProperty)newValue);
 				return;
-			case LogicPackage.MDMS_APPLICATION__BURNING_SOFTWARE_DIRECTORY_PATH_PROPERTY:    
+			case LogicPackage.MDMS_APPLICATION__BURNING_SOFTWARE_DIRECTORY_PATH_PROPERTY:
 				setBurningSoftwareDirectoryPathProperty((File)newValue);
 				return;
-			case LogicPackage.MDMS_APPLICATION__MDRIVE_PROPERTY:    
+			case LogicPackage.MDMS_APPLICATION__MDRIVE_PROPERTY:
 				setMDriveProperty((MProperty)newValue);
 				return;
-			case LogicPackage.MDMS_APPLICATION__DRIVE_PROPERTY:    
+			case LogicPackage.MDMS_APPLICATION__DRIVE_PROPERTY:
 				setDriveProperty((String)newValue);
 				return;
 			case LogicPackage.MDMS_APPLICATION__DRIVE_PROPERTY_HISTORIC_VALUES:
 				getDrivePropertyHistoricValues().clear();
 				getDrivePropertyHistoricValues().addAll((Collection)newValue);
 				return;
-			case LogicPackage.MDMS_APPLICATION__MUPGRADE_MESSAGE_PROPERTY:    
+			case LogicPackage.MDMS_APPLICATION__MUPGRADE_MESSAGE_PROPERTY:
 				setMUpgradeMessageProperty((MProperty)newValue);
 				return;
-			case LogicPackage.MDMS_APPLICATION__UPGRADE_MESSAGE_PROPERTY:    
+			case LogicPackage.MDMS_APPLICATION__UPGRADE_MESSAGE_PROPERTY:
 				setUpgradeMessageProperty((String)newValue);
 				return;
-			case LogicPackage.MDMS_APPLICATION__MUPGRADE_RELATIVE_FTP_PATH_PROPERTY:    
+			case LogicPackage.MDMS_APPLICATION__MUPGRADE_RELATIVE_FTP_PATH_PROPERTY:
 				setMUpgradeRelativeFtpPathProperty((MProperty)newValue);
 				return;
-			case LogicPackage.MDMS_APPLICATION__UPGRADE_RELATIVE_FTP_PATH_PROPERTY:    
+			case LogicPackage.MDMS_APPLICATION__UPGRADE_RELATIVE_FTP_PATH_PROPERTY:
 				setUpgradeRelativeFtpPathProperty((String)newValue);
 				return;
-			case LogicPackage.MDMS_APPLICATION__MLAST_UPGRADE_PROPERTY:    
+			case LogicPackage.MDMS_APPLICATION__MLAST_UPGRADE_PROPERTY:
 				setMLastUpgradeProperty((MProperty)newValue);
 				return;
-			case LogicPackage.MDMS_APPLICATION__LAST_UPGRADE_PROPERTY:    
+			case LogicPackage.MDMS_APPLICATION__LAST_UPGRADE_PROPERTY:
 				setLastUpgradeProperty((Date)newValue);
 				return;
-			case LogicPackage.MDMS_APPLICATION__MORGANISATION_PROPERTY:    
+			case LogicPackage.MDMS_APPLICATION__MORGANISATION_PROPERTY:
 				setMOrganisationProperty((MProperty)newValue);
 				return;
-			case LogicPackage.MDMS_APPLICATION__ORGANISATION_PROPERTY:    
+			case LogicPackage.MDMS_APPLICATION__ORGANISATION_PROPERTY:
 				setOrganisationProperty((String)newValue);
 				return;
-			case LogicPackage.MDMS_APPLICATION__MGET_DATA_UPGRADE_INFO_STEP:    
+			case LogicPackage.MDMS_APPLICATION__MGET_DATA_UPGRADE_INFO_STEP:
 				setMGetDataUpgradeInfoStep((MDmsApplicationMGetDataUpgradeInfoStep)newValue);
 				return;
-			case LogicPackage.MDMS_APPLICATION__MUPGRADE_DATA_STEP:    
+			case LogicPackage.MDMS_APPLICATION__MUPGRADE_DATA_STEP:
 				setMUpgradeDataStep((MDmsApplicationMUpgradeDataStep)newValue);
 				return;
 			case LogicPackage.MDMS_APPLICATION__MSCRIPTS:

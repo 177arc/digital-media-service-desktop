@@ -55,7 +55,7 @@ import org.onceforall.dms.desktop.logic.types.Type;
  *        annotation="http://www.onceforall.org/mcore typeNameForUI='Script' name='Script' description='Contains a number of tasks that should be completed.' iconFilePath='Image Files\\Script.gif'"
  * @generated
  */
-public class MScript extends MStatefulObject implements EObject {
+public class MScript extends MStatefulObject {
 	/** 
 	 * Specifies a user-friendly representation of this managed element.
 	 * <!-- begin-user-doc -->
@@ -278,7 +278,7 @@ public class MScript extends MStatefulObject implements EObject {
 	 * @generated
 	 * @ordered
 	 */
-	protected EList mSteps = null;
+	protected EList mSteps;
 
 	/**
 	 * The default value of the '{@link #getStateProperty() <em>State Property</em>}' attribute.
@@ -321,7 +321,7 @@ public class MScript extends MStatefulObject implements EObject {
 	 * @generated
 	 * @ordered
 	 */
-	protected MProperty mProgressProperty = null;
+	protected MProperty mProgressProperty;
 
 	/**
 	 * The default value of the '{@link #getProgressProperty() <em>Progress Property</em>}' attribute.
@@ -364,7 +364,7 @@ public class MScript extends MStatefulObject implements EObject {
 	 * @generated
 	 * @ordered
 	 */
-	protected MProperty mProgressStatusProperty = null;
+	protected MProperty mProgressStatusProperty;
 
 	/**
 	 * The default value of the '{@link #getProgressStatusProperty() <em>Progress Status Property</em>}' attribute.
@@ -464,7 +464,7 @@ public class MScript extends MStatefulObject implements EObject {
 		description = "Contains a number of tasks that should be completed.";
 		name = "Script";
 		iconFilePath = (File)LogicFactory.eINSTANCE.createFromString(LogicPackage.eINSTANCE.getMFile(), "Image Files\\Script.gif");
-					 
+			 
 		setMStateProperty(new MProperty(true, "State", "Specifies the current state.", null));			 
 		setMProgressProperty(new MProperty(true, "Progress", "Specifies the progress of the processing in %.", null));			 
 		setMProgressStatusProperty(new MProperty(true, "Progress status", "Specifies a textual representation of the progress.", null));
@@ -581,7 +581,6 @@ public class MScript extends MStatefulObject implements EObject {
 
 	/**
 	 * Returns the value of the '<em><b>MProgress Property</b></em>' containment reference.
-	 * The default value is <code>""</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>MProgress Property</em>' containment reference isn't clear,
@@ -687,7 +686,6 @@ public class MScript extends MStatefulObject implements EObject {
 
 	/**
 	 * Returns the value of the '<em><b>MProgress Status Property</b></em>' containment reference.
-	 * The default value is <code>""</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>MProgress Status Property</em>' containment reference isn't clear,

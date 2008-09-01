@@ -88,7 +88,7 @@ public class MCreateDirectoryStep extends MStep {
 	 * @generated
 	 * @ordered
 	 */
-	protected MParameter mParentDirectoryParameter = null;
+	protected MParameter mParentDirectoryParameter;
 
 	/**
 	 * The default value of the '{@link #getParentDirectoryParameter() <em>Parent Directory Parameter</em>}' attribute.
@@ -131,7 +131,7 @@ public class MCreateDirectoryStep extends MStep {
 	 * @generated
 	 * @ordered
 	 */
-	protected EList parentDirectoryParameterHistoricValues = null;
+	protected EList parentDirectoryParameterHistoricValues;
 
 	/**
 	 * The cached value of the '{@link #getMDirectoryNameParameter() <em>MDirectory Name Parameter</em>}' containment reference.
@@ -141,7 +141,7 @@ public class MCreateDirectoryStep extends MStep {
 	 * @generated
 	 * @ordered
 	 */
-	protected MParameter mDirectoryNameParameter = null;
+	protected MParameter mDirectoryNameParameter;
 
 	/**
 	 * The default value of the '{@link #getDirectoryNameParameter() <em>Directory Name Parameter</em>}' attribute.
@@ -184,7 +184,7 @@ public class MCreateDirectoryStep extends MStep {
 	 * @generated
 	 * @ordered
 	 */
-	protected MResult mDirectoryResult = null;
+	protected MResult mDirectoryResult;
 
 	/**
 	 * The default value of the '{@link #getDirectoryResult() <em>Directory Result</em>}' attribute.
@@ -340,7 +340,7 @@ public class MCreateDirectoryStep extends MStep {
 		terminatable = false;
 		interruptable = false;
 		actionName = "Create";
-					 
+			 
 		setMParentDirectoryParameter(new MParameter(false, "Parent directory", "Specifies the path to the directory in which the new directory is to be created.", null));			 
 		setMDirectoryNameParameter(new MParameter(false, "Directory name", "Specifies the name of the directory to be created.", null));			 
 		setMDirectoryResult(new MResult(false, "Directory", "Specifies the path of the created service directory.", null));
@@ -375,7 +375,6 @@ public class MCreateDirectoryStep extends MStep {
 
 	/**
 	 * Returns the value of the '<em><b>MParent Directory Parameter</b></em>' containment reference.
-	 * The default value is <code>""</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>MParent Directory Parameter</em>' containment reference isn't clear,
@@ -488,7 +487,7 @@ public class MCreateDirectoryStep extends MStep {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Parent Directory Parameter Historic Values</em>' attribute list.
 	 * @see org.onceforall.dms.desktop.logic.LogicPackage#getMCreateDirectoryStep_ParentDirectoryParameterHistoricValues()
-	 * @model type="java.io.File" dataType="org.onceforall.dms.desktop.logic.MExistingDirectory" upper="3"
+	 * @model dataType="org.onceforall.dms.desktop.logic.MExistingDirectory" upper="3"
 	 * @generated
 	 */
 	public EList getParentDirectoryParameterHistoricValues() {
@@ -500,7 +499,6 @@ public class MCreateDirectoryStep extends MStep {
 
 	/**
 	 * Returns the value of the '<em><b>MDirectory Name Parameter</b></em>' containment reference.
-	 * The default value is <code>""</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>MDirectory Name Parameter</em>' containment reference isn't clear,
@@ -604,7 +602,6 @@ public class MCreateDirectoryStep extends MStep {
 
 	/**
 	 * Returns the value of the '<em><b>MDirectory Result</b></em>' containment reference.
-	 * The default value is <code>""</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>MDirectory Result</em>' containment reference isn't clear,
@@ -755,26 +752,26 @@ public class MCreateDirectoryStep extends MStep {
 	 */
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case LogicPackage.MCREATE_DIRECTORY_STEP__MPARENT_DIRECTORY_PARAMETER:    
+			case LogicPackage.MCREATE_DIRECTORY_STEP__MPARENT_DIRECTORY_PARAMETER:
 				setMParentDirectoryParameter((MParameter)newValue);
 				return;
-			case LogicPackage.MCREATE_DIRECTORY_STEP__PARENT_DIRECTORY_PARAMETER:    
+			case LogicPackage.MCREATE_DIRECTORY_STEP__PARENT_DIRECTORY_PARAMETER:
 				setParentDirectoryParameter((File)newValue);
 				return;
 			case LogicPackage.MCREATE_DIRECTORY_STEP__PARENT_DIRECTORY_PARAMETER_HISTORIC_VALUES:
 				getParentDirectoryParameterHistoricValues().clear();
 				getParentDirectoryParameterHistoricValues().addAll((Collection)newValue);
 				return;
-			case LogicPackage.MCREATE_DIRECTORY_STEP__MDIRECTORY_NAME_PARAMETER:    
+			case LogicPackage.MCREATE_DIRECTORY_STEP__MDIRECTORY_NAME_PARAMETER:
 				setMDirectoryNameParameter((MParameter)newValue);
 				return;
-			case LogicPackage.MCREATE_DIRECTORY_STEP__DIRECTORY_NAME_PARAMETER:    
+			case LogicPackage.MCREATE_DIRECTORY_STEP__DIRECTORY_NAME_PARAMETER:
 				setDirectoryNameParameter((File)newValue);
 				return;
-			case LogicPackage.MCREATE_DIRECTORY_STEP__MDIRECTORY_RESULT:    
+			case LogicPackage.MCREATE_DIRECTORY_STEP__MDIRECTORY_RESULT:
 				setMDirectoryResult((MResult)newValue);
 				return;
-			case LogicPackage.MCREATE_DIRECTORY_STEP__DIRECTORY_RESULT:    
+			case LogicPackage.MCREATE_DIRECTORY_STEP__DIRECTORY_RESULT:
 				setDirectoryResult((File)newValue);
 				return;
 		}

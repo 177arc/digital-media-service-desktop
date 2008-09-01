@@ -81,7 +81,7 @@ public class MDmsApplicationMUpgradeDataStep extends MFtpStep {
 	 * @generated
 	 * @ordered
 	 */
-	protected MParameter mUpgradeRelativeFtpPathProperty = null;
+	protected MParameter mUpgradeRelativeFtpPathProperty;
 
 	/**
 	 * The default value of the '{@link #getUpgradeRelativeFtpPathProperty() <em>Upgrade Relative Ftp Path Property</em>}' attribute.
@@ -124,7 +124,7 @@ public class MDmsApplicationMUpgradeDataStep extends MFtpStep {
 	 * @generated
 	 * @ordered
 	 */
-	protected MParameter mUpgradeMessageParameter = null;
+	protected MParameter mUpgradeMessageParameter;
 
 	/**
 	 * The default value of the '{@link #getUpgradeMessageParameter() <em>Upgrade Message Parameter</em>}' attribute.
@@ -167,7 +167,7 @@ public class MDmsApplicationMUpgradeDataStep extends MFtpStep {
 	 * @generated
 	 * @ordered
 	 */
-	protected MParameter mUpgradeDateParameter = null;
+	protected MParameter mUpgradeDateParameter;
 
 	/**
 	 * The default value of the '{@link #getUpgradeDateParameter() <em>Upgrade Date Parameter</em>}' attribute.
@@ -310,7 +310,7 @@ public class MDmsApplicationMUpgradeDataStep extends MFtpStep {
 		name = "Upgrade application data";
 		interruptable = false;
 		terminatable = false;
-					 
+			 
 		setMUpgradeRelativeFtpPathProperty(new MParameter(false, "Application data upgrade relative FTP path", "Specifies the path of the directory on the FTP server to the application data upgrade file, e.g. \'/dms/data.xml\'.", null));			 
 		setMUpgradeMessageParameter(new MParameter(false, "Application data upgrade message", "Specifies a message that provides a description of the application data upgrade. If this parameter contains a message, the user has to acknowledge it before he/she can proceed.", null));			 
 		setMUpgradeDateParameter(new MParameter(false, "Application data upgrade date", "Specifies the date and time when the application data upgrade was created.", null));
@@ -345,7 +345,6 @@ public class MDmsApplicationMUpgradeDataStep extends MFtpStep {
 
 	/**
 	 * Returns the value of the '<em><b>MUpgrade Relative Ftp Path Property</b></em>' containment reference.
-	 * The default value is <code>""</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>MUpgrade Relative Ftp Path Property</em>' containment reference isn't clear,
@@ -451,7 +450,6 @@ public class MDmsApplicationMUpgradeDataStep extends MFtpStep {
 
 	/**
 	 * Returns the value of the '<em><b>MUpgrade Message Parameter</b></em>' containment reference.
-	 * The default value is <code>""</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>MUpgrade Message Parameter</em>' containment reference isn't clear,
@@ -557,7 +555,6 @@ public class MDmsApplicationMUpgradeDataStep extends MFtpStep {
 
 	/**
 	 * Returns the value of the '<em><b>MUpgrade Date Parameter</b></em>' containment reference.
-	 * The default value is <code>""</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>MUpgrade Date Parameter</em>' containment reference isn't clear,
@@ -708,22 +705,22 @@ public class MDmsApplicationMUpgradeDataStep extends MFtpStep {
 	 */
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case LogicPackage.MDMS_APPLICATION_MUPGRADE_DATA_STEP__MUPGRADE_RELATIVE_FTP_PATH_PROPERTY:    
+			case LogicPackage.MDMS_APPLICATION_MUPGRADE_DATA_STEP__MUPGRADE_RELATIVE_FTP_PATH_PROPERTY:
 				setMUpgradeRelativeFtpPathProperty((MParameter)newValue);
 				return;
-			case LogicPackage.MDMS_APPLICATION_MUPGRADE_DATA_STEP__UPGRADE_RELATIVE_FTP_PATH_PROPERTY:    
+			case LogicPackage.MDMS_APPLICATION_MUPGRADE_DATA_STEP__UPGRADE_RELATIVE_FTP_PATH_PROPERTY:
 				setUpgradeRelativeFtpPathProperty((String)newValue);
 				return;
-			case LogicPackage.MDMS_APPLICATION_MUPGRADE_DATA_STEP__MUPGRADE_MESSAGE_PARAMETER:    
+			case LogicPackage.MDMS_APPLICATION_MUPGRADE_DATA_STEP__MUPGRADE_MESSAGE_PARAMETER:
 				setMUpgradeMessageParameter((MParameter)newValue);
 				return;
-			case LogicPackage.MDMS_APPLICATION_MUPGRADE_DATA_STEP__UPGRADE_MESSAGE_PARAMETER:    
+			case LogicPackage.MDMS_APPLICATION_MUPGRADE_DATA_STEP__UPGRADE_MESSAGE_PARAMETER:
 				setUpgradeMessageParameter((String)newValue);
 				return;
-			case LogicPackage.MDMS_APPLICATION_MUPGRADE_DATA_STEP__MUPGRADE_DATE_PARAMETER:    
+			case LogicPackage.MDMS_APPLICATION_MUPGRADE_DATA_STEP__MUPGRADE_DATE_PARAMETER:
 				setMUpgradeDateParameter((MParameter)newValue);
 				return;
-			case LogicPackage.MDMS_APPLICATION_MUPGRADE_DATA_STEP__UPGRADE_DATE_PARAMETER:    
+			case LogicPackage.MDMS_APPLICATION_MUPGRADE_DATA_STEP__UPGRADE_DATE_PARAMETER:
 				setUpgradeDateParameter((Date)newValue);
 				return;
 		}

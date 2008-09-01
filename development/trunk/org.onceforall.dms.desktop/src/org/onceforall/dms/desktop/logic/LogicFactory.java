@@ -91,6 +91,8 @@ public class LogicFactory extends EFactoryImpl {
 			case LogicPackage.MRESULT: return (EObject)createMResult();
 			case LogicPackage.MSCRIPT: return (EObject)createMScript();
 			case LogicPackage.MDMS_APPLICATION: return (EObject)createMDmsApplication();
+			case LogicPackage.MDMS_APPLICATION_MGET_DATA_UPGRADE_INFO_STEP: return (EObject)createMDmsApplicationMGetDataUpgradeInfoStep();
+			case LogicPackage.MDMS_APPLICATION_MUPGRADE_DATA_STEP: return (EObject)createMDmsApplicationMUpgradeDataStep();
 			case LogicPackage.MENTER_WWX_INFORMATION_STEP: return (EObject)createMEnterWwxInformationStep();
 			case LogicPackage.MENTER_SERVICE_INFORMATION_STEP: return (EObject)createMEnterServiceInformationStep();
 			case LogicPackage.MCREATE_DIRECTORY_STEP: return (EObject)createMCreateDirectoryStep();
@@ -106,8 +108,6 @@ public class LogicFactory extends EFactoryImpl {
 			case LogicPackage.MBURN_CD_STEP: return (EObject)createMBurnCdStep();
 			case LogicPackage.MTEST_STEP: return (EObject)createMTestStep();
 			case LogicPackage.MNAME_TAG_MP3_STEP: return (EObject)createMNameTagMp3Step();
-			case LogicPackage.MDMS_APPLICATION_MGET_DATA_UPGRADE_INFO_STEP: return (EObject)createMDmsApplicationMGetDataUpgradeInfoStep();
-			case LogicPackage.MDMS_APPLICATION_MUPGRADE_DATA_STEP: return (EObject)createMDmsApplicationMUpgradeDataStep();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}

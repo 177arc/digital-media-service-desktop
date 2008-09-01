@@ -303,7 +303,7 @@ public class MMp3 extends MStatefulObject {
 	 * @generated
 	 * @ordered
 	 */
-	protected MProperty mFileProperty = null;
+	protected MProperty mFileProperty;
 
 	/**
 	 * The default value of the '{@link #getFileProperty() <em>File Property</em>}' attribute.
@@ -346,7 +346,7 @@ public class MMp3 extends MStatefulObject {
 	 * @generated
 	 * @ordered
 	 */
-	protected MProperty mLinkTextProperty = null;
+	protected MProperty mLinkTextProperty;
 
 	/**
 	 * The default value of the '{@link #getLinkTextProperty() <em>Link Text Property</em>}' attribute.
@@ -389,7 +389,7 @@ public class MMp3 extends MStatefulObject {
 	 * @generated
 	 * @ordered
 	 */
-	protected MProperty mLinkDescriptionProperty = null;
+	protected MProperty mLinkDescriptionProperty;
 
 	/**
 	 * The default value of the '{@link #getLinkDescriptionProperty() <em>Link Description Property</em>}' attribute.
@@ -432,7 +432,7 @@ public class MMp3 extends MStatefulObject {
 	 * @generated
 	 * @ordered
 	 */
-	protected MProperty mCommentProperty = null;
+	protected MProperty mCommentProperty;
 
 	/**
 	 * The default value of the '{@link #getCommentProperty() <em>Comment Property</em>}' attribute.
@@ -475,7 +475,7 @@ public class MMp3 extends MStatefulObject {
 	 * @generated
 	 * @ordered
 	 */
-	protected MProperty mPodcastTitleProperty = null;
+	protected MProperty mPodcastTitleProperty;
 
 	/**
 	 * The default value of the '{@link #getPodcastTitleProperty() <em>Podcast Title Property</em>}' attribute.
@@ -518,7 +518,7 @@ public class MMp3 extends MStatefulObject {
 	 * @generated
 	 * @ordered
 	 */
-	protected MProperty mPodcastSubtitleProperty = null;
+	protected MProperty mPodcastSubtitleProperty;
 
 	/**
 	 * The default value of the '{@link #getPodcastSubtitleProperty() <em>Podcast Subtitle Property</em>}' attribute.
@@ -561,7 +561,7 @@ public class MMp3 extends MStatefulObject {
 	 * @generated
 	 * @ordered
 	 */
-	protected MProperty mPodcastSummaryProperty = null;
+	protected MProperty mPodcastSummaryProperty;
 
 	/**
 	 * The default value of the '{@link #getPodcastSummaryProperty() <em>Podcast Summary Property</em>}' attribute.
@@ -604,7 +604,7 @@ public class MMp3 extends MStatefulObject {
 	 * @generated
 	 * @ordered
 	 */
-	protected MProperty mPodcastPublishingDateProperty = null;
+	protected MProperty mPodcastPublishingDateProperty;
 
 	/**
 	 * The default value of the '{@link #getPodcastPublishingDateProperty() <em>Podcast Publishing Date Property</em>}' attribute.
@@ -647,7 +647,7 @@ public class MMp3 extends MStatefulObject {
 	 * @generated
 	 * @ordered
 	 */
-	protected MProperty mPublishedFileNameProperty = null;
+	protected MProperty mPublishedFileNameProperty;
 
 	/**
 	 * The default value of the '{@link #getPublishedFileNameProperty() <em>Published File Name Property</em>}' attribute.
@@ -690,7 +690,7 @@ public class MMp3 extends MStatefulObject {
 	 * @generated
 	 * @ordered
 	 */
-	protected MProperty mKeepPublishedProperty = null;
+	protected MProperty mKeepPublishedProperty;
 
 	/**
 	 * The default value of the '{@link #getKeepPublishedProperty() <em>Keep Published Property</em>}' attribute.
@@ -791,7 +791,7 @@ public class MMp3 extends MStatefulObject {
 		description = "Contains all information associated with an MP3 file that can be published.";
 		name = "MP3";
 		iconFilePath = (File)LogicFactory.eINSTANCE.createFromString(LogicPackage.eINSTANCE.getMFile(), "Image Files/MP3.gif");
-					 
+			 
 		setMStateProperty(new MProperty(true, "State", "Specifies the current state.", null));			 
 		setMFileProperty(new MProperty(false, "File", "Specifies the MP3 recording file on this computer.", null));			 
 		setMLinkTextProperty(new MProperty(false, "Link text", "Specifies the link text for the published MP3 file.", null));			 
@@ -895,7 +895,6 @@ public class MMp3 extends MStatefulObject {
 
 	/**
 	 * Returns the value of the '<em><b>MFile Property</b></em>' containment reference.
-	 * The default value is <code>""</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>MFile Property</em>' containment reference isn't clear,
@@ -1001,7 +1000,6 @@ public class MMp3 extends MStatefulObject {
 
 	/**
 	 * Returns the value of the '<em><b>MLink Text Property</b></em>' containment reference.
-	 * The default value is <code>""</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>MLink Text Property</em>' containment reference isn't clear,
@@ -1107,7 +1105,6 @@ public class MMp3 extends MStatefulObject {
 
 	/**
 	 * Returns the value of the '<em><b>MLink Description Property</b></em>' containment reference.
-	 * The default value is <code>""</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>MLink Description Property</em>' containment reference isn't clear,
@@ -1213,7 +1210,6 @@ public class MMp3 extends MStatefulObject {
 
 	/**
 	 * Returns the value of the '<em><b>MComment Property</b></em>' containment reference.
-	 * The default value is <code>""</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>MComment Property</em>' containment reference isn't clear,
@@ -1319,7 +1315,6 @@ public class MMp3 extends MStatefulObject {
 
 	/**
 	 * Returns the value of the '<em><b>MPodcast Title Property</b></em>' containment reference.
-	 * The default value is <code>""</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>MPodcast Title Property</em>' containment reference isn't clear,
@@ -1425,7 +1420,6 @@ public class MMp3 extends MStatefulObject {
 
 	/**
 	 * Returns the value of the '<em><b>MPodcast Subtitle Property</b></em>' containment reference.
-	 * The default value is <code>""</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>MPodcast Subtitle Property</em>' containment reference isn't clear,
@@ -1531,7 +1525,6 @@ public class MMp3 extends MStatefulObject {
 
 	/**
 	 * Returns the value of the '<em><b>MPodcast Summary Property</b></em>' containment reference.
-	 * The default value is <code>""</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>MPodcast Summary Property</em>' containment reference isn't clear,
@@ -1637,7 +1630,6 @@ public class MMp3 extends MStatefulObject {
 
 	/**
 	 * Returns the value of the '<em><b>MPodcast Publishing Date Property</b></em>' containment reference.
-	 * The default value is <code>""</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>MPodcast Publishing Date Property</em>' containment reference isn't clear,
@@ -1743,7 +1735,6 @@ public class MMp3 extends MStatefulObject {
 
 	/**
 	 * Returns the value of the '<em><b>MPublished File Name Property</b></em>' containment reference.
-	 * The default value is <code>""</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>MPublished File Name Property</em>' containment reference isn't clear,
@@ -1849,7 +1840,6 @@ public class MMp3 extends MStatefulObject {
 
 	/**
 	 * Returns the value of the '<em><b>MKeep Published Property</b></em>' containment reference.
-	 * The default value is <code>""</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>MKeep Published Property</em>' containment reference isn't clear,
@@ -2045,67 +2035,67 @@ public class MMp3 extends MStatefulObject {
 	 */
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case LogicPackage.MMP3__STATE_PROPERTY:    
+			case LogicPackage.MMP3__STATE_PROPERTY:
 				setStateProperty((State)newValue);
 				return;
-			case LogicPackage.MMP3__MFILE_PROPERTY:    
+			case LogicPackage.MMP3__MFILE_PROPERTY:
 				setMFileProperty((MProperty)newValue);
 				return;
-			case LogicPackage.MMP3__FILE_PROPERTY:    
+			case LogicPackage.MMP3__FILE_PROPERTY:
 				setFileProperty((File)newValue);
 				return;
-			case LogicPackage.MMP3__MLINK_TEXT_PROPERTY:    
+			case LogicPackage.MMP3__MLINK_TEXT_PROPERTY:
 				setMLinkTextProperty((MProperty)newValue);
 				return;
-			case LogicPackage.MMP3__LINK_TEXT_PROPERTY:    
+			case LogicPackage.MMP3__LINK_TEXT_PROPERTY:
 				setLinkTextProperty((String)newValue);
 				return;
-			case LogicPackage.MMP3__MLINK_DESCRIPTION_PROPERTY:    
+			case LogicPackage.MMP3__MLINK_DESCRIPTION_PROPERTY:
 				setMLinkDescriptionProperty((MProperty)newValue);
 				return;
-			case LogicPackage.MMP3__LINK_DESCRIPTION_PROPERTY:    
+			case LogicPackage.MMP3__LINK_DESCRIPTION_PROPERTY:
 				setLinkDescriptionProperty((String)newValue);
 				return;
-			case LogicPackage.MMP3__MCOMMENT_PROPERTY:    
+			case LogicPackage.MMP3__MCOMMENT_PROPERTY:
 				setMCommentProperty((MProperty)newValue);
 				return;
-			case LogicPackage.MMP3__COMMENT_PROPERTY:    
+			case LogicPackage.MMP3__COMMENT_PROPERTY:
 				setCommentProperty((String)newValue);
 				return;
-			case LogicPackage.MMP3__MPODCAST_TITLE_PROPERTY:    
+			case LogicPackage.MMP3__MPODCAST_TITLE_PROPERTY:
 				setMPodcastTitleProperty((MProperty)newValue);
 				return;
-			case LogicPackage.MMP3__PODCAST_TITLE_PROPERTY:    
+			case LogicPackage.MMP3__PODCAST_TITLE_PROPERTY:
 				setPodcastTitleProperty((String)newValue);
 				return;
-			case LogicPackage.MMP3__MPODCAST_SUBTITLE_PROPERTY:    
+			case LogicPackage.MMP3__MPODCAST_SUBTITLE_PROPERTY:
 				setMPodcastSubtitleProperty((MProperty)newValue);
 				return;
-			case LogicPackage.MMP3__PODCAST_SUBTITLE_PROPERTY:    
+			case LogicPackage.MMP3__PODCAST_SUBTITLE_PROPERTY:
 				setPodcastSubtitleProperty((String)newValue);
 				return;
-			case LogicPackage.MMP3__MPODCAST_SUMMARY_PROPERTY:    
+			case LogicPackage.MMP3__MPODCAST_SUMMARY_PROPERTY:
 				setMPodcastSummaryProperty((MProperty)newValue);
 				return;
-			case LogicPackage.MMP3__PODCAST_SUMMARY_PROPERTY:    
+			case LogicPackage.MMP3__PODCAST_SUMMARY_PROPERTY:
 				setPodcastSummaryProperty((String)newValue);
 				return;
-			case LogicPackage.MMP3__MPODCAST_PUBLISHING_DATE_PROPERTY:    
+			case LogicPackage.MMP3__MPODCAST_PUBLISHING_DATE_PROPERTY:
 				setMPodcastPublishingDateProperty((MProperty)newValue);
 				return;
-			case LogicPackage.MMP3__PODCAST_PUBLISHING_DATE_PROPERTY:    
+			case LogicPackage.MMP3__PODCAST_PUBLISHING_DATE_PROPERTY:
 				setPodcastPublishingDateProperty((Date)newValue);
 				return;
-			case LogicPackage.MMP3__MPUBLISHED_FILE_NAME_PROPERTY:    
+			case LogicPackage.MMP3__MPUBLISHED_FILE_NAME_PROPERTY:
 				setMPublishedFileNameProperty((MProperty)newValue);
 				return;
-			case LogicPackage.MMP3__PUBLISHED_FILE_NAME_PROPERTY:    
+			case LogicPackage.MMP3__PUBLISHED_FILE_NAME_PROPERTY:
 				setPublishedFileNameProperty((String)newValue);
 				return;
-			case LogicPackage.MMP3__MKEEP_PUBLISHED_PROPERTY:    
+			case LogicPackage.MMP3__MKEEP_PUBLISHED_PROPERTY:
 				setMKeepPublishedProperty((MProperty)newValue);
 				return;
-			case LogicPackage.MMP3__KEEP_PUBLISHED_PROPERTY:    
+			case LogicPackage.MMP3__KEEP_PUBLISHED_PROPERTY:
 				setKeepPublishedProperty((Boolean)newValue);
 				return;
 		}

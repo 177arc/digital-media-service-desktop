@@ -329,7 +329,7 @@ public abstract class MEnterInformationStep extends MStep {
 		terminatable = false;
 		interruptable = false;
 		actionName = "Mark as completed";
-		
+
 
 		lastMEnterInformationStepConstructorHook();		
 	}

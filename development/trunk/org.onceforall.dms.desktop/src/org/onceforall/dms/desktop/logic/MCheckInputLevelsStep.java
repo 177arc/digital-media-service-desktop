@@ -328,7 +328,7 @@ public class MCheckInputLevelsStep extends MAudioStep {
 		terminatable = false;
 		interruptable = false;
 		actionName = "Mark as completed";
-		
+
 
 		lastMCheckInputLevelsStepConstructorHook();		
 	}
