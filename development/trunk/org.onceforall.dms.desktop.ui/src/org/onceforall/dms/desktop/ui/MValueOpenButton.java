@@ -1,4 +1,4 @@
-package org.eclipse.swt.widgets;
+package org.onceforall.dms.desktop.ui;
 
 import java.awt.Desktop;
 import java.io.File;
@@ -9,12 +9,12 @@ import java.util.logging.Level;
 
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.graphics.Cursor;
+import org.eclipse.swt.widgets.Composite;
 import org.onceforall.dms.desktop.interfaces.CommandLineInterface;
 import org.onceforall.dms.desktop.logging.Logger;
 import org.onceforall.dms.desktop.logic.MElement;
 import org.onceforall.dms.desktop.logic.MValue;
 import org.onceforall.dms.desktop.logic.types.Type;
-import org.onceforall.dms.desktop.ui.MElementButton;
 
 /**
  * Defines a button that opens managed elements of a supported value type in an

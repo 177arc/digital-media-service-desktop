@@ -181,4 +181,11 @@ public abstract class MElementButton extends Button implements ThreadAdapter, ME
 	 * Performs that action that this button represents.
 	 */
 	protected abstract void performAction();
+
+	@Override
+	protected void checkSubclass() {
+		// Does nothing to prevent an exception being thrown for subclassing Button.
+	}
+	
+	
 }

@@ -1,13 +1,12 @@
-package org.eclipse.swt.widgets;
+package org.onceforall.dms.desktop.ui;
 
 import java.io.File;
 
+import org.eclipse.swt.widgets.Composite;
 import org.onceforall.dms.desktop.exception.DesktopExceptionList;
 import org.onceforall.dms.desktop.logic.MStep;
 import org.onceforall.dms.desktop.logic.types.MStepStateType;
 import org.onceforall.dms.desktop.logic.types.State;
-import org.onceforall.dms.desktop.ui.MStepButton;
-import org.onceforall.dms.desktop.ui.Utilities;
 
 /**
  * Defines a button that starts the action that is associated
@@ -79,9 +78,7 @@ public class MStepStartButton extends MStepButton {
 		else {
 			DesktopExceptionList exceptions = mStep.validate();
 	    	if(Utilities.showValidationExceptionsDialog(getShell(), exceptions))	
-	    		getDisplay().asyncExec((MStep) mElement);			
+	    		getDisplay().asyncExec(((MStep) mElement).getRunnable());			
 		}
 	}
-
-
 }

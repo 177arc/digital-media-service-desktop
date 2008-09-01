@@ -58,7 +58,6 @@ import org.eclipse.jface.viewers.TextCellEditor;
 import org.eclipse.jface.viewers.Viewer;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.custom.CCombo;
-import org.eclipse.swt.custom.CComboWrapper;
 import org.eclipse.swt.events.ControlAdapter;
 import org.eclipse.swt.events.ControlEvent;
 import org.eclipse.swt.events.FocusAdapter;
@@ -80,7 +79,6 @@ import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Control;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.Label;
-import org.eclipse.swt.widgets.MValueOpenButton;
 import org.eclipse.swt.widgets.MessageBox;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.swt.widgets.Table;
@@ -133,20 +131,14 @@ public class ValuesTableComposite extends MElementComposite {
     /** Specifies the combo box cell editor that the table uses to allow the user to choose from a list of possible values. */
     protected ComboBoxCellEditor validValuesCellEditor;
     
-    /** Specifies a wrapper for the CCombo control of the combo box cell editor that provides access to methods with default access. */
-    protected CComboWrapper validValuesComboBoxWrapper;
+    /** Specifies the combo box cell editor that provides access to methods with default access. */
+    protected CCombo validValuesComboBox;
     
     /** Specifies the combo box cell editor that the table uses to allow the user to choose from a list of historic values. */
     protected ComboBoxCellEditor historicValuesCellEditor;
     
-    /** Specifies a wrapper for the CCombo control of the combo box cell editor that provides access to methods with default access. */
-    protected CComboWrapper historicValuesComboBoxWrapper;
-    
-    /** Specifies the combo box cell editor that the table uses to allow the user to choose the null value. */
-    //protected ComboBoxCellEditor nullableCellEditor;
-    
-    /** Specifies a wrapper for the CCombo control of the combo box cell editor that provides access to methods with default access. */
-    //protected CComboWrapper nullableComboBoxWrapper;
+    /** Specifies the combo box cell editor that provides access to methods with default access. */
+    protected CCombo historicValuesComboBox;
     
     /** Specifies the text cell editor that the table uses to allow the user input text. */
     protected TextCellEditor textCellEditor;
@@ -402,20 +394,20 @@ public class ValuesTableComposite extends MElementComposite {
 	    
 	    // Creates the cell editor for valid values.
 	    validValuesCellEditor = new ComboBoxCellEditor(table, new String[0], SWT.READ_ONLY);
-	    validValuesComboBoxWrapper = new CComboWrapper(((CCombo) validValuesCellEditor.getControl()));
+	    validValuesComboBox = (CCombo) validValuesCellEditor.getControl();
 	    validValuesCellEditor.getControl().addFocusListener(new FocusAdapter() {
             @Override
 			public void focusGained(FocusEvent e) {
-                validValuesComboBoxWrapper.dropDown(true);
+                validValuesComboBox.setListVisible(true);
             }});
 	    
 	    // Creates the cell editor for historic values.
 	    historicValuesCellEditor = new ComboBoxCellEditor(table, new String[0]);
-	    historicValuesComboBoxWrapper = new CComboWrapper(((CCombo) historicValuesCellEditor.getControl()));
+	    historicValuesComboBox = (CCombo) historicValuesCellEditor.getControl();
 	    historicValuesCellEditor.getControl().addFocusListener(new FocusAdapter() {
             @Override
 			public void focusGained(FocusEvent e) {
-                historicValuesComboBoxWrapper.dropDown(true);
+                historicValuesComboBox.setListVisible(true);
             }});
 	    
 	    // Creates the cell editor for the null value.

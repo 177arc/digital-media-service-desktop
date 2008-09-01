@@ -1,11 +1,11 @@
-package org.eclipse.swt.widgets;
+package org.onceforall.dms.desktop.ui;
 
 import java.io.File;
 
+import org.eclipse.swt.widgets.Composite;
 import org.onceforall.dms.desktop.logic.MStep;
 import org.onceforall.dms.desktop.logic.types.MStepStateType;
 import org.onceforall.dms.desktop.logic.types.State;
-import org.onceforall.dms.desktop.ui.MStepButton;
 
 /**
  * Defines a button that stop the action that is associated

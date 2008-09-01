@@ -6,7 +6,6 @@ import java.text.MessageFormat;
 import org.eclipse.jface.viewers.DialogCellEditor;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.custom.CCombo;
-import org.eclipse.swt.custom.CComboWrapper;
 import org.eclipse.swt.events.FocusAdapter;
 import org.eclipse.swt.events.FocusEvent;
 import org.eclipse.swt.events.FocusListener;
@@ -37,8 +36,8 @@ public class FileDialogCellEditor extends DialogCellEditor {
 	/** Specifies the control used to show the value of this cell editor. */
 	protected Control contents;
 	
-	/** Specifies the wrapper control for the combo box if {@link org.eclipse.swt.SWT.SIMPLE} is not specified. */
-	protected CComboWrapper wrapper;
+	/** Specifies combo box to be used if {@link org.eclipse.swt.SWT.SIMPLE} is not specified. */
+	protected CCombo cCombo;
 
 	/** Specifies the button that the user can press to open the file dialog. */
 	protected Button button;
@@ -186,7 +185,7 @@ public class FileDialogCellEditor extends DialogCellEditor {
 	    contents = new Text(cell, getStyle());
 		else {
 			contents = new CCombo(cell, getStyle());
-			wrapper = new CComboWrapper((CCombo) contents);
+			cCombo = (CCombo) contents;
 		}
 		
 		contents.setFont(cell.getFont());
