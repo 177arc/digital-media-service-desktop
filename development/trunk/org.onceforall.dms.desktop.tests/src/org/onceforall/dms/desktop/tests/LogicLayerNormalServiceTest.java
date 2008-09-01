@@ -90,7 +90,7 @@ public class LogicLayerNormalServiceTest extends LogicLayerTest {
 	/**
 	 * Tests requirement R 1.3.
 	 */
-	@Test(dependsOnMethods = { "testMEnterServiceInformationStep" }, alwaysRun=true) //$NON-NLS-1$
+	@Test(dependsOnMethods = { "org.onceforall.dms.desktop.tests.LogicLayerNormalServiceTest.testMEnterServiceInformationStep" }, alwaysRun=true) //$NON-NLS-1$
 	public void testMCheckFreeDiskSpaceStep() {
 		MCheckFreeDiskSpaceStep mStep = (MCheckFreeDiskSpaceStep) mScript.getMSteps().get(1);
 		
@@ -101,7 +101,7 @@ public class LogicLayerNormalServiceTest extends LogicLayerTest {
 	/**
 	 * Tests requirement R 1.2.
 	 */
-	@Test(dependsOnMethods = { "testMCheckFreeDiskSpaceStep" }, alwaysRun=true) //$NON-NLS-1$
+	@Test(dependsOnMethods = { "org.onceforall.dms.desktop.tests.LogicLayerNormalServiceTest.testMCheckFreeDiskSpaceStep" }, alwaysRun=true) //$NON-NLS-1$
 	public void testMCreateServiceDirectoryStep() {
 		MCreateDirectoryStep mStep = (MCreateDirectoryStep) mScript.getMSteps().get(2);
 		MEnterServiceInformationStep mEnterServiceInformationStep = (MEnterServiceInformationStep) mScript.getMSteps().get(0);
@@ -111,7 +111,7 @@ public class LogicLayerNormalServiceTest extends LogicLayerTest {
 	/**
 	 * Tests requirement R 1.4.
 	 */
-	@Test(dependsOnMethods = { "testMCreateServiceDirectoryStep" }, alwaysRun=true) //$NON-NLS-1$
+	@Test(dependsOnMethods = { "org.onceforall.dms.desktop.tests.LogicLayerNormalServiceTest.testMCreateServiceDirectoryStep" }, alwaysRun=true) //$NON-NLS-1$
 	public void testMCheckInputLevelsStep() {
 		MCheckInputLevelsStep mStep = (MCheckInputLevelsStep) mScript.getMSteps().get(3);
 		testMCheckInputLevelsStep(mStep);
@@ -123,7 +123,7 @@ public class LogicLayerNormalServiceTest extends LogicLayerTest {
 	 * @throws IOException Thrown if the recorded file format cannot be read.
 	 * @throws UnsupportedAudioFileException  Thrown if the recorded file format is not supported.
 	 */
-	@Test(dependsOnMethods = { "testMCheckInputLevelsStep" }, alwaysRun=true) //$NON-NLS-1$
+	@Test(dependsOnMethods = { "org.onceforall.dms.desktop.tests.LogicLayerNormalServiceTest.testMCheckInputLevelsStep" }, alwaysRun=true) //$NON-NLS-1$
 	public void testMRecordPreSermonStep() throws UnsupportedAudioFileException, IOException {
 		testMRecordStep((MRecordStep) mScript.getMSteps().get(4), 
 				new File(TestData.LogicLayerNormalServiceTest_PreSermonRecordingFileParameter), new File(TestData.LogicLayerNormalServiceTest_PreSermonAudioFile));
@@ -135,7 +135,7 @@ public class LogicLayerNormalServiceTest extends LogicLayerTest {
 	 * @throws IOException Thrown if the recorded file format cannot be read.
 	 * @throws UnsupportedAudioFileException  Thrown if the recorded file format is not supported.
 	 */
-	@Test(dependsOnMethods = { "testMRecordPreSermonStep" }, alwaysRun=true) //$NON-NLS-1$
+	@Test(dependsOnMethods = { "org.onceforall.dms.desktop.tests.LogicLayerNormalServiceTest.testMRecordPreSermonStep" }, alwaysRun=true) //$NON-NLS-1$
 	public void testMRecordSermonStep() throws UnsupportedAudioFileException, IOException {
 		testMRecordStep((MRecordStep) mScript.getMSteps().get(5), 
 				new File(TestData.LogicLayerNormalServiceTest_SermonRecordingFileParameter), new File(TestData.LogicLayerNormalServiceTest_SermonAudioFile));
@@ -147,7 +147,7 @@ public class LogicLayerNormalServiceTest extends LogicLayerTest {
 	 * @throws IOException Thrown if the recorded file format cannot be read.
 	 * @throws UnsupportedAudioFileException  Thrown if the recorded file format is not supported.
 	 */
-	@Test(dependsOnMethods = { "testMRecordSermonStep" }, alwaysRun=true) //$NON-NLS-1$
+	@Test(dependsOnMethods = { "org.onceforall.dms.desktop.tests.LogicLayerNormalServiceTest.testMRecordSermonStep" }, alwaysRun=true) //$NON-NLS-1$
 	public void testMRecordPostSermonStep() throws UnsupportedAudioFileException, IOException {
 		testMRecordStep((MRecordStep) mScript.getMSteps().get(6), 
 				new File(TestData.LogicLayerNormalServiceTest_PostSermonRecordingFileParameter), new File(TestData.LogicLayerNormalServiceTest_PostSermonAudioFile));
@@ -156,7 +156,7 @@ public class LogicLayerNormalServiceTest extends LogicLayerTest {
 	/**
 	 * Tests requirement R 1.6.
 	 */
-	@Test(dependsOnMethods = { "testMRecordPostSermonStep" }, alwaysRun=true) //$NON-NLS-1$
+	@Test(dependsOnMethods = { "org.onceforall.dms.desktop.tests.LogicLayerNormalServiceTest.testMRecordPostSermonStep" }, alwaysRun=true) //$NON-NLS-1$
 	public void testMBurnCdStep() {
 		MBurnCdStep mStep = (MBurnCdStep) mScript.getMSteps().get(7);
 		Logger.getLogger().info("For this test to succeed, the burning softare Nero 6 has be installed at '"+mStep.getBurningSoftwareDirectoryPathParameter()+"'. Nero is not included because it is a commercial product.");
@@ -185,7 +185,7 @@ public class LogicLayerNormalServiceTest extends LogicLayerTest {
 	 * @throws IOException Thrown if the recorded file or file format cannot be read.
 	 * @throws UnsupportedAudioFileException  Thrown if the recorded file format is not supported.
 	 */
-	@Test(dependsOnMethods = { "testMBurnCdStep" }, alwaysRun=true) //$NON-NLS-1$
+	@Test(dependsOnMethods = { "org.onceforall.dms.desktop.tests.LogicLayerNormalServiceTest.testMBurnCdStep" }, alwaysRun=true) //$NON-NLS-1$
 	public void testMConvertToMP3Step() throws UnsupportedAudioFileException, IOException, TagException {
 		MConvertToMP3Step mStep = (MConvertToMP3Step) mScript.getMSteps().get(8);
 		mStep.setCommentParameter(TestData.LogicLayerNormalServiceTest_CommentParameter);
@@ -212,7 +212,7 @@ public class LogicLayerNormalServiceTest extends LogicLayerTest {
 	 * 
 	 * @throws Exception Thrown if an error occurs.
 	 */
-	@Test(dependsOnMethods = { "testMConvertToMP3Step" }, alwaysRun=true) //$NON-NLS-1$
+	@Test(dependsOnMethods = { "org.onceforall.dms.desktop.tests.LogicLayerNormalServiceTest.testMConvertToMP3Step" }, alwaysRun=true) //$NON-NLS-1$
 	public void testMPublishMP3Step() throws Exception {
 		final MPublishNewMp3Step mStep = (MPublishNewMp3Step) mScript.getMSteps().get(9);
 		final MConvertToMP3Step mConvertToMP3Step = (MConvertToMP3Step) mScript.getMSteps().get(8); 
@@ -243,7 +243,7 @@ public class LogicLayerNormalServiceTest extends LogicLayerTest {
 	 * .
 	 * @throws Exception Thrown if an error occurs.
 	 */
-	@Test(dependsOnMethods = { "testMPublishMP3Step" }, alwaysRun=true) //$NON-NLS-1$
+	@Test(dependsOnMethods = { "org.onceforall.dms.desktop.tests.LogicLayerNormalServiceTest.testMPublishMP3Step" }, alwaysRun=true) //$NON-NLS-1$
 	public void testMEmailEventLogStepStep() throws Exception {
 		final MEmailEventLogStep mStep = (MEmailEventLogStep) mScript.getMSteps().get(10);
 		MEnterServiceInformationStep mEnterServiceInformationStep = (MEnterServiceInformationStep) mScript.getMSteps().get(0); 
