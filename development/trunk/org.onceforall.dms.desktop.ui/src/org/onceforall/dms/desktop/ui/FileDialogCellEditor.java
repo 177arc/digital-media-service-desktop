@@ -45,8 +45,11 @@ public class FileDialogCellEditor extends DialogCellEditor {
 	/** Specifies the button focus listener that determines whether the button is loosing its focus. */
 	protected FocusListener buttonFocusListener;
 	
-	/** Specifies whether the button is loosing the focus. */
-	protected boolean buttonLoosingFocus;
+	/** Specifies whether the content has the focus. */
+	protected boolean contentFocused;
+	
+	/** Specifies whether the button has the focus. */
+	protected boolean buttonFocused;
 	
 	/** Specifies whether the multiple files can be selected in the file dialog. */
 	protected boolean multiple;
@@ -219,30 +222,30 @@ public class FileDialogCellEditor extends DialogCellEditor {
 		contents.addFocusListener(new FocusAdapter() {
 			
             /**
+			 * @see org.eclipse.swt.events.FocusAdapter#focusGained(org.eclipse.swt.events.FocusEvent)
+			 */
+			@Override
+			public void focusGained(FocusEvent e) {
+				contentFocused = true;
+			}
+
+			/**
 			 * @see org.eclipse.swt.events.FocusAdapter#focusLost(org.eclipse.swt.events.FocusEvent)
 			 */
 			@Override
-			public void focusLost(FocusEvent event) {
-		        String newValue = null;
-				if(contents instanceof CCombo)
-					newValue = ((CCombo) contents).getText();
-		        else if(contents instanceof Text)
-		        	newValue = ((Text) contents).getText();
+			public void focusLost(FocusEvent event) {				
+				contentFocused = false;
+			
+				// Workaround for the problem that the content control loses the focus before button gets it when the button is pressed.
+				if(!buttonFocused && button.isFocusControl())
+					return;
 
-            	if (newValue != null) {
-                    boolean newValidState = isCorrect(newValue);
-                    if (newValidState) {
-                        markDirty();
-                        doSetValue(newValue);
-                    }
-
-                    fireApplyEditorValue();
-                }
+				applyEditorValue();
             }
         });
         return contents;
 	}
-
+	
     /**
 	 * @see org.eclipse.jface.viewers.DialogCellEditor#createButton(org.eclipse.swt.widgets.Composite)
 	 */
@@ -250,14 +253,26 @@ public class FileDialogCellEditor extends DialogCellEditor {
 	protected Button createButton(Composite parent) {
 		button =  super.createButton(parent);
 		button.setToolTipText("Opens a dialog for selecting a file or folder.");
+
 		
 		buttonFocusListener = new FocusAdapter() {
+			
+			/**
+			 * @see org.eclipse.swt.events.FocusAdapter#focusGained(org.eclipse.swt.events.FocusEvent)
+			 */
+			@Override
+			public void focusGained(FocusEvent e) {
+				buttonFocused = true;
+			}
+
 			/**
 			 * @see org.eclipse.swt.events.FocusAdapter#focusLost(org.eclipse.swt.events.FocusEvent)
 			 */
 			@Override
 			public void focusLost(FocusEvent event) {
-				buttonLoosingFocus = true;
+				buttonFocused = false;
+				
+				applyEditorValue();
 			}
 		};
 		
@@ -265,18 +280,45 @@ public class FileDialogCellEditor extends DialogCellEditor {
 		
 		return button;
 	}
+	
+
+	/**
+	 * Commits the current editor value to the managed values.
+	 */
+	protected void applyEditorValue() {
+        String newValue = null;
+		if(contents instanceof CCombo)
+			newValue = ((CCombo) contents).getText();
+        else if(contents instanceof Text)
+        	newValue = ((Text) contents).getText();
+
+    	if (newValue != null) {
+            boolean newValidState = isCorrect(newValue);
+            if (newValidState) {
+                markDirty();
+                doSetValue(newValue);
+            }
+
+            fireApplyEditorValue();
+        }		
+	}
+	
+	/**
+	 * @see org.eclipse.jface.viewers.CellEditor#focusLost()
+	 */
+	@Override
+	protected void focusLost() {
+		// Prevents the focusLost method of the superclass from being executed.
+	}
 
 	/**
 	 * @see org.eclipse.jface.viewers.CellEditor#fireApplyEditorValue()
 	 */
 	@Override
-	protected void fireApplyEditorValue() {
-		if(contents.isFocusControl() || button.isFocusControl() && !buttonLoosingFocus) {
-			buttonLoosingFocus = false;
+	protected void fireApplyEditorValue() {	
+		if(contentFocused || buttonFocused)
 			return;
-		}
-		
-		buttonLoosingFocus = false;
+
 		super.fireApplyEditorValue();
 	}
 
@@ -284,10 +326,13 @@ public class FileDialogCellEditor extends DialogCellEditor {
 	 * @see org.eclipse.jface.viewers.DialogCellEditor#doSetFocus()
 	 */
 	@Override
-	protected void doSetFocus() {
-		super.doSetFocus();
-		
+	protected void doSetFocus() {	
 		contents.setFocus();
+	}
+
+	@Override
+	public boolean isActivated() {
+		return /* receivingFocus ? false : */super.isActivated();
 	}
 
 	/**
