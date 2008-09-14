@@ -176,6 +176,12 @@ public class LogicAdapterFactory extends AdapterFactoryImpl {
 			public Object caseMTagStep(MTagStep object) {
 				return createMTagStepAdapter();
 			}
+			public Object caseMCopyDirectoryStep(MCopyDirectoryStep object) {
+				return createMCopyDirectoryStepAdapter();
+			}
+			public Object caseMManualTaskStep(MManualTaskStep object) {
+				return createMManualTaskStepAdapter();
+			}
 			public Object defaultCase(EObject object) {
 				return createEObjectAdapter();
 			}
@@ -625,6 +631,34 @@ public class LogicAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createMTagStepAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.onceforall.dms.desktop.logic.MCopyDirectoryStep <em>MCopy Directory Step</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.onceforall.dms.desktop.logic.MCopyDirectoryStep
+	 * @generated
+	 */
+	public Adapter createMCopyDirectoryStepAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.onceforall.dms.desktop.logic.MManualTaskStep <em>MManual Task Step</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.onceforall.dms.desktop.logic.MManualTaskStep
+	 * @generated
+	 */
+	public Adapter createMManualTaskStepAdapter() {
 		return null;
 	}
 
