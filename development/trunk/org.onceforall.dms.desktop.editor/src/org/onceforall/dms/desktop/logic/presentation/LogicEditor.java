@@ -742,10 +742,15 @@ public class LogicEditor
 	 * This is the method called to load a resource into the editing domain's resource set based on the editor's input.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * TODO: Added generated annotation again when load resource bug is fixed.
 	 */
 	public void createModel() {
 		URI resourceURI = URI.createURI(getEditorInput().getName());
+		
+		// Fix for a bug that causes the resourceURI to be the last segment of the URI instead of the full URI.
+		if(getEditorInput() instanceof URIEditorInput)
+			resourceURI = ((URIEditorInput) getEditorInput()).getURI();
+		
 		Exception exception = null;
 		Resource resource = null;
 		try {
