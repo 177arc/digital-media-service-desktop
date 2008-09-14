@@ -1110,7 +1110,7 @@ public class MEnterWwxInformationStep extends MEnterInformationStep {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Speakers Name Parameter Historic Values</em>' attribute list.
 	 * @see org.onceforall.dms.desktop.logic.LogicPackage#getMEnterWwxInformationStep_SpeakersNameParameterHistoricValues()
-	 * @model dataType="org.onceforall.dms.desktop.logic.MString" upper="5"
+	 * @model dataType="org.onceforall.dms.desktop.logic.MString" upper="10"
 	 * @generated
 	 */
 	public EList getSpeakersNameParameterHistoricValues() {
@@ -1488,7 +1488,7 @@ public class MEnterWwxInformationStep extends MEnterInformationStep {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Recording Users Name Parameter Historic Values</em>' attribute list.
 	 * @see org.onceforall.dms.desktop.logic.LogicPackage#getMEnterWwxInformationStep_RecordingUsersNameParameterHistoricValues()
-	 * @model dataType="org.onceforall.dms.desktop.logic.MString" upper="5"
+	 * @model dataType="org.onceforall.dms.desktop.logic.MString" upper="10"
 	 * @generated
 	 */
 	public EList getRecordingUsersNameParameterHistoricValues() {

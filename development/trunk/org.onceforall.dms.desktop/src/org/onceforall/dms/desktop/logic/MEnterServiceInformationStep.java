@@ -1336,7 +1336,7 @@ public class MEnterServiceInformationStep extends MEnterInformationStep {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Speakers Name Parameter Historic Values</em>' attribute list.
 	 * @see org.onceforall.dms.desktop.logic.LogicPackage#getMEnterServiceInformationStep_SpeakersNameParameterHistoricValues()
-	 * @model dataType="org.onceforall.dms.desktop.logic.MString" upper="5"
+	 * @model dataType="org.onceforall.dms.desktop.logic.MString" upper="10"
 	 * @generated
 	 */
 	public EList getSpeakersNameParameterHistoricValues() {
@@ -1460,7 +1460,7 @@ public class MEnterServiceInformationStep extends MEnterInformationStep {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Recording Users Name Parameter Historic Values</em>' attribute list.
 	 * @see org.onceforall.dms.desktop.logic.LogicPackage#getMEnterServiceInformationStep_RecordingUsersNameParameterHistoricValues()
-	 * @model dataType="org.onceforall.dms.desktop.logic.MString" upper="5"
+	 * @model dataType="org.onceforall.dms.desktop.logic.MString" upper="10"
 	 * @generated
 	 */
 	public EList getRecordingUsersNameParameterHistoricValues() {
