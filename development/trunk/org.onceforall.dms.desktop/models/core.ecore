@@ -676,7 +676,7 @@
 	     </eAnnotations>
 	   </eStructuralFeatures>  		
        <eStructuralFeatures xsi:type="ecore:EAttribute" name="speakersNameParameter" lowerBound="1" upperBound="1" transient="true" eType="//MString" derived="false" volatile="false"/>
-     	<eStructuralFeatures xsi:type="ecore:EAttribute" name="speakersNameParameterHistoricValues" upperBound="5" transient="false" eType="//MString"/>
+     	<eStructuralFeatures xsi:type="ecore:EAttribute" name="speakersNameParameterHistoricValues" upperBound="10" transient="false" eType="//MString"/>
 	   	<eStructuralFeatures xsi:type="ecore:EReference" name="mFirstPartParameter"
 	      lowerBound="1" eType="#//MParameter"
 	      containment="true" resolveProxies="false">
@@ -706,7 +706,7 @@
 	     </eAnnotations>
 	   </eStructuralFeatures>  		
        <eStructuralFeatures xsi:type="ecore:EAttribute" name="recordingUsersNameParameter" lowerBound="1" upperBound="1" transient="true" eType="//MString" derived="false" volatile="false"/>
-     	<eStructuralFeatures xsi:type="ecore:EAttribute" name="recordingUsersNameParameterHistoricValues" upperBound="5" transient="false" eType="//MString"/>
+     	<eStructuralFeatures xsi:type="ecore:EAttribute" name="recordingUsersNameParameterHistoricValues" upperBound="10" transient="false" eType="//MString"/>
 	   	<eStructuralFeatures xsi:type="ecore:EReference" name="mWwxDateResult"
 	      lowerBound="1" eType="#//MResult"
 	      containment="true" resolveProxies="false">
@@ -818,7 +818,7 @@
 	     </eAnnotations>
 	   </eStructuralFeatures>  		
        <eStructuralFeatures xsi:type="ecore:EAttribute" name="speakersNameParameter" lowerBound="1" upperBound="1" transient="true" eType="//MString" derived="false" volatile="false"/>
-     	<eStructuralFeatures xsi:type="ecore:EAttribute" name="speakersNameParameterHistoricValues" upperBound="5" transient="false" eType="//MString"/>
+     	<eStructuralFeatures xsi:type="ecore:EAttribute" name="speakersNameParameterHistoricValues" upperBound="10" transient="false" eType="//MString"/>
 	   	<eStructuralFeatures xsi:type="ecore:EReference" name="mRecordingUsersNameParameter"
 	      lowerBound="1" eType="#//MParameter"
 	      containment="true" resolveProxies="false">
@@ -828,7 +828,7 @@
 	     </eAnnotations>
 	   </eStructuralFeatures>  		
        <eStructuralFeatures xsi:type="ecore:EAttribute" name="recordingUsersNameParameter" lowerBound="1" upperBound="1" transient="true" eType="//MString" derived="false" volatile="false"/>
-     	<eStructuralFeatures xsi:type="ecore:EAttribute" name="recordingUsersNameParameterHistoricValues" upperBound="5" transient="false" eType="//MString"/>
+     	<eStructuralFeatures xsi:type="ecore:EAttribute" name="recordingUsersNameParameterHistoricValues" upperBound="10" transient="false" eType="//MString"/>
 	   	<eStructuralFeatures xsi:type="ecore:EReference" name="mServiceDateResult"
 	      lowerBound="1" eType="#//MResult"
 	      containment="true" resolveProxies="false">
@@ -1952,6 +1952,56 @@ Please enter your own email address here so that we can contact you if we have a
 	     </eAnnotations>
 	   </eStructuralFeatures>  		
        <eStructuralFeatures xsi:type="ecore:EAttribute" name="mp3FilePathResult" lowerBound="1" upperBound="1" transient="true" eType="//MExistingFile" derived="false" volatile="false"/>
+	</eClassifiers>
+	<eClassifiers xsi:type="ecore:EClass" name="MCopyDirectoryStep" eSuperTypes="#//MStep" abstract="false">
+ 		<eAnnotations source="http://www.onceforall.org/mcore">
+   		<details key="name" value="Copy directory"/>
+   		<details key="description" value="Copies a directory and its sub-directories to the given directory."/>
+   		<details key="iconFilePath" value="Image Files/Copy.gif"/>
+	   	<details key="actionName" value="Copy"/>
+	   	<details key="actionIconFilePath" value="Image Files\Mark as completed.gif"/>
+	   	<details key="interruptable" value="false"/>
+	   	<details key="stoppable" value="false"/>
+	   	<details key="terminatable" value="false"/>
+ 		</eAnnotations>
+	   	<eStructuralFeatures xsi:type="ecore:EReference" name="mSourceDirectoryParameter"
+	      lowerBound="1" eType="#//MParameter"
+	      containment="true" resolveProxies="false">
+	     <eAnnotations source="http://www.onceforall.org/mcore">
+	       <details key="name" value="Source directory"/>
+	       <details key="description" value="Specifies the path to the source directory to be copied."/>
+	     </eAnnotations>
+	   </eStructuralFeatures>  		
+       <eStructuralFeatures xsi:type="ecore:EAttribute" name="sourceDirectoryParameter" lowerBound="1" upperBound="1" transient="false" eType="//MExistingDirectory" derived="false" volatile="false"/>
+	   	<eStructuralFeatures xsi:type="ecore:EReference" name="mDestinationDirectoryParameter"
+	      lowerBound="1" eType="#//MParameter"
+	      containment="true" resolveProxies="false">
+	     <eAnnotations source="http://www.onceforall.org/mcore">
+	       <details key="name" value="Destination directory"/>
+	       <details key="description" value="Specifies the path to new destination directory. If this directory does not already exist, it will be created."/>
+	     </eAnnotations>
+	   </eStructuralFeatures>  		
+       <eStructuralFeatures xsi:type="ecore:EAttribute" name="destinationDirectoryParameter" lowerBound="1" upperBound="1" transient="false" eType="//MDirectory" derived="false" volatile="false"/>
+	   	<eStructuralFeatures xsi:type="ecore:EReference" name="mCopiedDirectoryResult"
+	      lowerBound="1" eType="#//MResult"
+	      containment="true" resolveProxies="false">
+	     <eAnnotations source="http://www.onceforall.org/mcore">
+	       <details key="name" value="Copied directory"/>
+	       <details key="description" value="Specifies the path to the copied directory (which is the destination directory)."/>
+	     </eAnnotations>
+	   </eStructuralFeatures>  		
+       <eStructuralFeatures xsi:type="ecore:EAttribute" name="copiedDirectoryResult" lowerBound="1" upperBound="1" transient="true" eType="//MExistingDirectory" derived="false" volatile="false"/>
+	</eClassifiers>
+	<eClassifiers xsi:type="ecore:EClass" name="MManualTaskStep" eSuperTypes="#//MStep" abstract="false">
+ 		<eAnnotations source="http://www.onceforall.org/mcore">
+   		<details key="name" value="Manual task"/>
+   		<details key="description" value="Marks a manual task as completed. This task does not perform any automated actions."/>
+	   	<details key="actionName" value="Mark as completed"/>
+	   	<details key="actionIconFilePath" value="Image Files\Mark as completed.gif"/>
+	   	<details key="interruptable" value="false"/>
+	   	<details key="stoppable" value="false"/>
+	   	<details key="terminatable" value="false"/>
+ 		</eAnnotations>
 	</eClassifiers>
 </ecore:EPackage>
 

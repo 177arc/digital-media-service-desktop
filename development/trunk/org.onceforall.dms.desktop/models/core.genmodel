@@ -454,6 +454,16 @@
        <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference core.ecore#//MTagStep/mMp3FilePathResult"/>
        <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MTagStep/mp3FilePathResult"/>
     </genClasses>
+    <genClasses ecoreClass="core.ecore#//MCopyDirectoryStep">
+       <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference core.ecore#//MCopyDirectoryStep/mSourceDirectoryParameter"/>
+       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MCopyDirectoryStep/sourceDirectoryParameter"/>
+       <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference core.ecore#//MCopyDirectoryStep/mDestinationDirectoryParameter"/>
+       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MCopyDirectoryStep/destinationDirectoryParameter"/>
+       <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference core.ecore#//MCopyDirectoryStep/mCopiedDirectoryResult"/>
+       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MCopyDirectoryStep/copiedDirectoryResult"/>
+    </genClasses>
+    <genClasses ecoreClass="core.ecore#//MManualTaskStep">
+    </genClasses>
   </genPackages>
 </genmodel:GenModel>
 
