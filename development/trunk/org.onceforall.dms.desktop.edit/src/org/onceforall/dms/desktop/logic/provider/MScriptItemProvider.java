@@ -313,6 +313,16 @@ public class MScriptItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
+				(LogicPackage.Literals.MSCRIPT__MSTEPS,
+				 LogicFactory.eINSTANCE.createMCopyDirectoryStep()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(LogicPackage.Literals.MSCRIPT__MSTEPS,
+				 LogicFactory.eINSTANCE.createMManualTaskStep()));
+
+		newChildDescriptors.add
+			(createChildParameter
 				(LogicPackage.Literals.MSCRIPT__MPROGRESS_PROPERTY,
 				 LogicFactory.eINSTANCE.createMProperty()));
 

@@ -439,6 +439,50 @@ public class LogicItemProviderAdapterFactory extends LogicAdapterFactory impleme
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link org.onceforall.dms.desktop.logic.MCopyDirectoryStep} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected MCopyDirectoryStepItemProvider mCopyDirectoryStepItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.onceforall.dms.desktop.logic.MCopyDirectoryStep}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Adapter createMCopyDirectoryStepAdapter() {
+		if (mCopyDirectoryStepItemProvider == null) {
+			mCopyDirectoryStepItemProvider = new MCopyDirectoryStepItemProvider(this);
+		}
+
+		return mCopyDirectoryStepItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link org.onceforall.dms.desktop.logic.MManualTaskStep} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected MManualTaskStepItemProvider mManualTaskStepItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.onceforall.dms.desktop.logic.MManualTaskStep}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Adapter createMManualTaskStepAdapter() {
+		if (mManualTaskStepItemProvider == null) {
+			mManualTaskStepItemProvider = new MManualTaskStepItemProvider(this);
+		}
+
+		return mManualTaskStepItemProvider;
+	}
+
+	/**
 	 * This keeps track of the one adapter used for all {@link org.onceforall.dms.desktop.logic.MDmsApplicationMGetDataUpgradeInfoStep} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -711,6 +755,8 @@ public class LogicItemProviderAdapterFactory extends LogicAdapterFactory impleme
 		if (mBurnCdStepItemProvider != null) mBurnCdStepItemProvider.dispose();
 		if (mTestStepItemProvider != null) mTestStepItemProvider.dispose();
 		if (mNameTagMp3StepItemProvider != null) mNameTagMp3StepItemProvider.dispose();
+		if (mCopyDirectoryStepItemProvider != null) mCopyDirectoryStepItemProvider.dispose();
+		if (mManualTaskStepItemProvider != null) mManualTaskStepItemProvider.dispose();
 	}
 
 }

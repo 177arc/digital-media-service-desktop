@@ -237,6 +237,16 @@ public class MMp3FolderItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
+				(LogicPackage.Literals.MMP3_FOLDER__MSTEPS,
+				 LogicFactory.eINSTANCE.createMCopyDirectoryStep()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(LogicPackage.Literals.MMP3_FOLDER__MSTEPS,
+				 LogicFactory.eINSTANCE.createMManualTaskStep()));
+
+		newChildDescriptors.add
+			(createChildParameter
 				(LogicPackage.Literals.MMP3_FOLDER__MMP3S,
 				 LogicFactory.eINSTANCE.createMMp3()));
 	}

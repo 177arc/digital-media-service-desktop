@@ -516,6 +516,16 @@ public class MStepItemProvider
 			(createChildParameter
 				(LogicPackage.Literals.MSTEP__MINPUT_STEPS,
 				 LogicFactory.eINSTANCE.createMNameTagMp3Step()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(LogicPackage.Literals.MSTEP__MINPUT_STEPS,
+				 LogicFactory.eINSTANCE.createMCopyDirectoryStep()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(LogicPackage.Literals.MSTEP__MINPUT_STEPS,
+				 LogicFactory.eINSTANCE.createMManualTaskStep()));
 	}
 
 }
