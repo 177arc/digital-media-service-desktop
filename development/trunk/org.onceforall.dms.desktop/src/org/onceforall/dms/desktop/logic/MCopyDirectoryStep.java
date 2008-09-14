@@ -22,6 +22,8 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
+import org.onceforall.dms.desktop.exception.DesktopException;
+import org.onceforall.dms.desktop.exception.DesktopExceptionList;
 import org.onceforall.dms.desktop.logic.types.ReferenceType;
 import org.onceforall.dms.desktop.logic.types.Type;
 
@@ -347,6 +349,31 @@ public class MCopyDirectoryStep extends MStep {
 		// Does nothing by default. Remove the @generated tag to provide an implementation for this method.
 	}
 
+
+	/**
+	 * @see org.onceforall.dms.desktop.logic.MStep#validate()
+	 */
+	@Override
+	public DesktopExceptionList validate() {
+		DesktopExceptionList validationExceptions = super.validate();
+		
+		if(getSourceDirectoryParameter() != null && getDestinationDirectoryParameter() != null) {
+			try {
+				if(getSourceDirectoryParameter().getCanonicalPath().equals(getDestinationDirectoryParameter().getCanonicalPath()))
+					validationExceptions.add(new DesktopException("The source and destination directory cannot point to the same directory.", "Please choose either a different source or destination directory.", DesktopException.ERROR_SEVERITY, null));
+
+				else if(getSourceDirectoryParameter().getCanonicalPath().startsWith(getDestinationDirectoryParameter().getCanonicalPath()))
+					validationExceptions.add(new DesktopException("The source directory cannot be a sub-directory of the destination directory.", "Please choose either a different source or destination directory.", DesktopException.ERROR_SEVERITY, null));		
+				
+				else if(getDestinationDirectoryParameter().getCanonicalPath().startsWith(getSourceDirectoryParameter().getCanonicalPath()))
+					validationExceptions.add(new DesktopException("The destination directory cannot be a sub-directory of the source directory.", "Please choose either a different source or destination directory.", DesktopException.ERROR_SEVERITY, null));		
+			} catch (IOException exception) {
+				validationExceptions.add(new DesktopException("The path of the source and/or destination directory is not valid.", "Please make sure that both paths are valid.", DesktopException.CRITICAL_SEVERITY, exception));
+			}		
+		}
+	
+		return validationExceptions;
+	}
 	
 	/**
 	 * @see org.onceforall.dms.desktop.logic.MStep#execute()
