@@ -2883,6 +2883,7 @@ public abstract class MPublishMp3sStep extends MFtpStep {
             //publishedMP3sHTML.append("run-active-content.js");
             //publishedMP3sHTML.append("\"></script>");
            
+            int currentMp3Count = 0;
             
             // Writes a table row for each published MP3.
             MMp3 perviousMMp3 = null;
@@ -2951,18 +2952,17 @@ public abstract class MPublishMp3sStep extends MFtpStep {
 			            publishedMP3sHTML.append("' );");
 			            publishedMP3sHTML.append("</script></div>"); */
 			            
-				            //publishedMP3sHTML.append("<div class=\"contentPlayer\"><object width=\"290\" height=\"16\" classid=\"clsid:d27cdb6e-ae6d-11cf-96b8-444553540000\" class=\"player\" codebase=\"http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0\">\n");
-			            	publishedMP3sHTML.append("<div class=\"contentPlayer\"><object width=\"290\" height=\"16\" type=\"application/x-shockwave-flash\" data=\"compact-player.swf\">\n");
-			            	publishedMP3sHTML.append("<param name=\"movie\" value=\"compact-player.swf\"/>\n");
-			            	publishedMP3sHTML.append("<param name=\"FlashVars\" value=\"soundFile=");
-				            publishedMP3sHTML.append(URLEncoder.encode(mp3WebPath, "UTF-8"));
-				            publishedMP3sHTML.append("\"/>\n");
-				            publishedMP3sHTML.append("<param name=\"quality\" value=\"high\"/>\n");
-				            publishedMP3sHTML.append("<param name=\"allowscriptaccess\" value=\"sameDomain\"/>\n");
-				            /*publishedMP3sHTML.append("<embed width=\"290\" height=\"16\" type=\"application/x-shockwave-flash\" pluginspage=\"http://www.macromedia.com/go/getflashplayer\" allowscriptaccess=\"sameDomain\" class=\"player\" quality=\"high\" src=\"compact-player.swf?soundFile=");
-				            publishedMP3sHTML.append(mp3WebPath);
-				            publishedMP3sHTML.append("\"/>\n");*/
-				            publishedMP3sHTML.append("</object></div>\n");
+			            	// Makes sure that only a maximum of 10 players get included on a web page because of a Flash plug-in bug on some browsers (see Issue 49).
+			            	if(currentMp3Count < 10) {
+				            	publishedMP3sHTML.append("<div class=\"contentPlayer\"><object width=\"290\" height=\"16\" type=\"application/x-shockwave-flash\" data=\"compact-player.swf\">\n");
+				            	publishedMP3sHTML.append("<param name=\"movie\" value=\"compact-player.swf\"/>\n");
+				            	publishedMP3sHTML.append("<param name=\"FlashVars\" value=\"soundFile=");
+					            publishedMP3sHTML.append(URLEncoder.encode(mp3WebPath, "UTF-8"));
+					            publishedMP3sHTML.append("\"/>\n");
+					            publishedMP3sHTML.append("<param name=\"quality\" value=\"high\"/>\n");
+					            publishedMP3sHTML.append("<param name=\"allowscriptaccess\" value=\"sameDomain\"/>\n");
+					            publishedMP3sHTML.append("</object></div>\n");
+			            	}
 			            }
 		            
 			            publishedMP3sHTML.append("</td>\n");
@@ -3040,6 +3040,7 @@ public abstract class MPublishMp3sStep extends MFtpStep {
 	                }
                                         
                     perviousMMp3 = mMp3;
+                    ++currentMp3Count;
                 }
             }
             
