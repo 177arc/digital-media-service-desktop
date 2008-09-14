@@ -192,6 +192,10 @@ public class LogicValidator extends EObjectValidator {
 				return validateMNameTagMp3Step((MNameTagMp3Step)value, diagnostics, context);
 			case LogicPackage.MTAG_STEP:
 				return validateMTagStep((MTagStep)value, diagnostics, context);
+			case LogicPackage.MCOPY_DIRECTORY_STEP:
+				return validateMCopyDirectoryStep((MCopyDirectoryStep)value, diagnostics, context);
+			case LogicPackage.MMANUAL_TASK_STEP:
+				return validateMManualTaskStep((MManualTaskStep)value, diagnostics, context);
 			case LogicPackage.MDIRECTORY:
 				return validateMDirectory((File)value, diagnostics, context);
 			case LogicPackage.MEXISTING_DIRECTORY:
@@ -538,6 +542,24 @@ public class LogicValidator extends EObjectValidator {
 	 */
 	public boolean validateMTagStep(MTagStep mTagStep, DiagnosticChain diagnostics, Map context) {
 		return validate_EveryDefaultConstraint((EObject)mTagStep, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateMCopyDirectoryStep(MCopyDirectoryStep mCopyDirectoryStep, DiagnosticChain diagnostics, Map context) {
+		return validate_EveryDefaultConstraint((EObject)mCopyDirectoryStep, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateMManualTaskStep(MManualTaskStep mManualTaskStep, DiagnosticChain diagnostics, Map context) {
+		return validate_EveryDefaultConstraint((EObject)mManualTaskStep, diagnostics, context);
 	}
 
 	/**

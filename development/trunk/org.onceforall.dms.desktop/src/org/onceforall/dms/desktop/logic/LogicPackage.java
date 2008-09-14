@@ -13438,6 +13438,728 @@ public class LogicPackage extends EPackageImpl {
 	public static final int MNAME_TAG_MP3_STEP_FEATURE_COUNT = MTAG_STEP_FEATURE_COUNT + 8;
 
 	/**
+	 * The meta object id for the '{@link org.onceforall.dms.desktop.logic.MCopyDirectoryStep <em>MCopy Directory Step</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.onceforall.dms.desktop.logic.MCopyDirectoryStep
+	 * @see org.onceforall.dms.desktop.logic.LogicPackage#getMCopyDirectoryStep()
+	 * @generated
+	 */
+	public static final int MCOPY_DIRECTORY_STEP = 33;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MCOPY_DIRECTORY_STEP__NAME = MSTEP__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Type Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MCOPY_DIRECTORY_STEP__TYPE_NAME = MSTEP__TYPE_NAME;
+
+	/**
+	 * The feature id for the '<em><b>Type Name For UI</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MCOPY_DIRECTORY_STEP__TYPE_NAME_FOR_UI = MSTEP__TYPE_NAME_FOR_UI;
+
+	/**
+	 * The feature id for the '<em><b>Name For UI</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MCOPY_DIRECTORY_STEP__NAME_FOR_UI = MSTEP__NAME_FOR_UI;
+
+	/**
+	 * The feature id for the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MCOPY_DIRECTORY_STEP__DESCRIPTION = MSTEP__DESCRIPTION;
+
+	/**
+	 * The feature id for the '<em><b>Description For UI</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MCOPY_DIRECTORY_STEP__DESCRIPTION_FOR_UI = MSTEP__DESCRIPTION_FOR_UI;
+
+	/**
+	 * The feature id for the '<em><b>Icon File Path</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MCOPY_DIRECTORY_STEP__ICON_FILE_PATH = MSTEP__ICON_FILE_PATH;
+
+	/**
+	 * The feature id for the '<em><b>Overlay Icon File Path</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MCOPY_DIRECTORY_STEP__OVERLAY_ICON_FILE_PATH = MSTEP__OVERLAY_ICON_FILE_PATH;
+
+	/**
+	 * The feature id for the '<em><b>Composite Class Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MCOPY_DIRECTORY_STEP__COMPOSITE_CLASS_NAME = MSTEP__COMPOSITE_CLASS_NAME;
+
+	/**
+	 * The feature id for the '<em><b>Simulated</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MCOPY_DIRECTORY_STEP__SIMULATED = MSTEP__SIMULATED;
+
+	/**
+	 * The feature id for the '<em><b>MName Property</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MCOPY_DIRECTORY_STEP__MNAME_PROPERTY = MSTEP__MNAME_PROPERTY;
+
+	/**
+	 * The feature id for the '<em><b>MDescription Property</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MCOPY_DIRECTORY_STEP__MDESCRIPTION_PROPERTY = MSTEP__MDESCRIPTION_PROPERTY;
+
+	/**
+	 * The feature id for the '<em><b>MIcon File Path Property</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MCOPY_DIRECTORY_STEP__MICON_FILE_PATH_PROPERTY = MSTEP__MICON_FILE_PATH_PROPERTY;
+
+	/**
+	 * The feature id for the '<em><b>Fixed MProperties</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MCOPY_DIRECTORY_STEP__FIXED_MPROPERTIES = MSTEP__FIXED_MPROPERTIES;
+
+	/**
+	 * The feature id for the '<em><b>Fixed MSteps</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MCOPY_DIRECTORY_STEP__FIXED_MSTEPS = MSTEP__FIXED_MSTEPS;
+
+	/**
+	 * The feature id for the '<em><b>MState Property</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MCOPY_DIRECTORY_STEP__MSTATE_PROPERTY = MSTEP__MSTATE_PROPERTY;
+
+	/**
+	 * The feature id for the '<em><b>MLast State Change Property</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MCOPY_DIRECTORY_STEP__MLAST_STATE_CHANGE_PROPERTY = MSTEP__MLAST_STATE_CHANGE_PROPERTY;
+
+	/**
+	 * The feature id for the '<em><b>Last State Change Property</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MCOPY_DIRECTORY_STEP__LAST_STATE_CHANGE_PROPERTY = MSTEP__LAST_STATE_CHANGE_PROPERTY;
+
+	/**
+	 * The feature id for the '<em><b>MInput Steps</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MCOPY_DIRECTORY_STEP__MINPUT_STEPS = MSTEP__MINPUT_STEPS;
+
+	/**
+	 * The feature id for the '<em><b>Fixed MParameters</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MCOPY_DIRECTORY_STEP__FIXED_MPARAMETERS = MSTEP__FIXED_MPARAMETERS;
+
+	/**
+	 * The feature id for the '<em><b>Fixed MResults</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MCOPY_DIRECTORY_STEP__FIXED_MRESULTS = MSTEP__FIXED_MRESULTS;
+
+	/**
+	 * The feature id for the '<em><b>Exclusive Property</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MCOPY_DIRECTORY_STEP__EXCLUSIVE_PROPERTY = MSTEP__EXCLUSIVE_PROPERTY;
+
+	/**
+	 * The feature id for the '<em><b>State Property</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MCOPY_DIRECTORY_STEP__STATE_PROPERTY = MSTEP__STATE_PROPERTY;
+
+	/**
+	 * The feature id for the '<em><b>MProgress Property</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MCOPY_DIRECTORY_STEP__MPROGRESS_PROPERTY = MSTEP__MPROGRESS_PROPERTY;
+
+	/**
+	 * The feature id for the '<em><b>Progress Property</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MCOPY_DIRECTORY_STEP__PROGRESS_PROPERTY = MSTEP__PROGRESS_PROPERTY;
+
+	/**
+	 * The feature id for the '<em><b>MProgress Status Property</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MCOPY_DIRECTORY_STEP__MPROGRESS_STATUS_PROPERTY = MSTEP__MPROGRESS_STATUS_PROPERTY;
+
+	/**
+	 * The feature id for the '<em><b>Progress Status Property</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MCOPY_DIRECTORY_STEP__PROGRESS_STATUS_PROPERTY = MSTEP__PROGRESS_STATUS_PROPERTY;
+
+	/**
+	 * The feature id for the '<em><b>MStart Trigger Property</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MCOPY_DIRECTORY_STEP__MSTART_TRIGGER_PROPERTY = MSTEP__MSTART_TRIGGER_PROPERTY;
+
+	/**
+	 * The feature id for the '<em><b>Start Trigger Property</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MCOPY_DIRECTORY_STEP__START_TRIGGER_PROPERTY = MSTEP__START_TRIGGER_PROPERTY;
+
+	/**
+	 * The feature id for the '<em><b>Interruptable</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MCOPY_DIRECTORY_STEP__INTERRUPTABLE = MSTEP__INTERRUPTABLE;
+
+	/**
+	 * The feature id for the '<em><b>Stoppable</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MCOPY_DIRECTORY_STEP__STOPPABLE = MSTEP__STOPPABLE;
+
+	/**
+	 * The feature id for the '<em><b>Terminatable</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MCOPY_DIRECTORY_STEP__TERMINATABLE = MSTEP__TERMINATABLE;
+
+	/**
+	 * The feature id for the '<em><b>Action Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MCOPY_DIRECTORY_STEP__ACTION_NAME = MSTEP__ACTION_NAME;
+
+	/**
+	 * The feature id for the '<em><b>Action Icon File Path</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MCOPY_DIRECTORY_STEP__ACTION_ICON_FILE_PATH = MSTEP__ACTION_ICON_FILE_PATH;
+
+	/**
+	 * The feature id for the '<em><b>Exception</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MCOPY_DIRECTORY_STEP__EXCEPTION = MSTEP__EXCEPTION;
+
+	/**
+	 * The feature id for the '<em><b>MSource Directory Parameter</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MCOPY_DIRECTORY_STEP__MSOURCE_DIRECTORY_PARAMETER = MSTEP_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Source Directory Parameter</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MCOPY_DIRECTORY_STEP__SOURCE_DIRECTORY_PARAMETER = MSTEP_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>MDestination Directory Parameter</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MCOPY_DIRECTORY_STEP__MDESTINATION_DIRECTORY_PARAMETER = MSTEP_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Destination Directory Parameter</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MCOPY_DIRECTORY_STEP__DESTINATION_DIRECTORY_PARAMETER = MSTEP_FEATURE_COUNT + 3;
+
+	/**
+	 * The feature id for the '<em><b>MCopied Directory Result</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MCOPY_DIRECTORY_STEP__MCOPIED_DIRECTORY_RESULT = MSTEP_FEATURE_COUNT + 4;
+
+	/**
+	 * The feature id for the '<em><b>Copied Directory Result</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MCOPY_DIRECTORY_STEP__COPIED_DIRECTORY_RESULT = MSTEP_FEATURE_COUNT + 5;
+
+	/**
+	 * The number of structural features of the '<em>MCopy Directory Step</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MCOPY_DIRECTORY_STEP_FEATURE_COUNT = MSTEP_FEATURE_COUNT + 6;
+
+	/**
+	 * The meta object id for the '{@link org.onceforall.dms.desktop.logic.MManualTaskStep <em>MManual Task Step</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.onceforall.dms.desktop.logic.MManualTaskStep
+	 * @see org.onceforall.dms.desktop.logic.LogicPackage#getMManualTaskStep()
+	 * @generated
+	 */
+	public static final int MMANUAL_TASK_STEP = 34;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MMANUAL_TASK_STEP__NAME = MSTEP__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Type Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MMANUAL_TASK_STEP__TYPE_NAME = MSTEP__TYPE_NAME;
+
+	/**
+	 * The feature id for the '<em><b>Type Name For UI</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MMANUAL_TASK_STEP__TYPE_NAME_FOR_UI = MSTEP__TYPE_NAME_FOR_UI;
+
+	/**
+	 * The feature id for the '<em><b>Name For UI</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MMANUAL_TASK_STEP__NAME_FOR_UI = MSTEP__NAME_FOR_UI;
+
+	/**
+	 * The feature id for the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MMANUAL_TASK_STEP__DESCRIPTION = MSTEP__DESCRIPTION;
+
+	/**
+	 * The feature id for the '<em><b>Description For UI</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MMANUAL_TASK_STEP__DESCRIPTION_FOR_UI = MSTEP__DESCRIPTION_FOR_UI;
+
+	/**
+	 * The feature id for the '<em><b>Icon File Path</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MMANUAL_TASK_STEP__ICON_FILE_PATH = MSTEP__ICON_FILE_PATH;
+
+	/**
+	 * The feature id for the '<em><b>Overlay Icon File Path</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MMANUAL_TASK_STEP__OVERLAY_ICON_FILE_PATH = MSTEP__OVERLAY_ICON_FILE_PATH;
+
+	/**
+	 * The feature id for the '<em><b>Composite Class Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MMANUAL_TASK_STEP__COMPOSITE_CLASS_NAME = MSTEP__COMPOSITE_CLASS_NAME;
+
+	/**
+	 * The feature id for the '<em><b>Simulated</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MMANUAL_TASK_STEP__SIMULATED = MSTEP__SIMULATED;
+
+	/**
+	 * The feature id for the '<em><b>MName Property</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MMANUAL_TASK_STEP__MNAME_PROPERTY = MSTEP__MNAME_PROPERTY;
+
+	/**
+	 * The feature id for the '<em><b>MDescription Property</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MMANUAL_TASK_STEP__MDESCRIPTION_PROPERTY = MSTEP__MDESCRIPTION_PROPERTY;
+
+	/**
+	 * The feature id for the '<em><b>MIcon File Path Property</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MMANUAL_TASK_STEP__MICON_FILE_PATH_PROPERTY = MSTEP__MICON_FILE_PATH_PROPERTY;
+
+	/**
+	 * The feature id for the '<em><b>Fixed MProperties</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MMANUAL_TASK_STEP__FIXED_MPROPERTIES = MSTEP__FIXED_MPROPERTIES;
+
+	/**
+	 * The feature id for the '<em><b>Fixed MSteps</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MMANUAL_TASK_STEP__FIXED_MSTEPS = MSTEP__FIXED_MSTEPS;
+
+	/**
+	 * The feature id for the '<em><b>MState Property</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MMANUAL_TASK_STEP__MSTATE_PROPERTY = MSTEP__MSTATE_PROPERTY;
+
+	/**
+	 * The feature id for the '<em><b>MLast State Change Property</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MMANUAL_TASK_STEP__MLAST_STATE_CHANGE_PROPERTY = MSTEP__MLAST_STATE_CHANGE_PROPERTY;
+
+	/**
+	 * The feature id for the '<em><b>Last State Change Property</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MMANUAL_TASK_STEP__LAST_STATE_CHANGE_PROPERTY = MSTEP__LAST_STATE_CHANGE_PROPERTY;
+
+	/**
+	 * The feature id for the '<em><b>MInput Steps</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MMANUAL_TASK_STEP__MINPUT_STEPS = MSTEP__MINPUT_STEPS;
+
+	/**
+	 * The feature id for the '<em><b>Fixed MParameters</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MMANUAL_TASK_STEP__FIXED_MPARAMETERS = MSTEP__FIXED_MPARAMETERS;
+
+	/**
+	 * The feature id for the '<em><b>Fixed MResults</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MMANUAL_TASK_STEP__FIXED_MRESULTS = MSTEP__FIXED_MRESULTS;
+
+	/**
+	 * The feature id for the '<em><b>Exclusive Property</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MMANUAL_TASK_STEP__EXCLUSIVE_PROPERTY = MSTEP__EXCLUSIVE_PROPERTY;
+
+	/**
+	 * The feature id for the '<em><b>State Property</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MMANUAL_TASK_STEP__STATE_PROPERTY = MSTEP__STATE_PROPERTY;
+
+	/**
+	 * The feature id for the '<em><b>MProgress Property</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MMANUAL_TASK_STEP__MPROGRESS_PROPERTY = MSTEP__MPROGRESS_PROPERTY;
+
+	/**
+	 * The feature id for the '<em><b>Progress Property</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MMANUAL_TASK_STEP__PROGRESS_PROPERTY = MSTEP__PROGRESS_PROPERTY;
+
+	/**
+	 * The feature id for the '<em><b>MProgress Status Property</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MMANUAL_TASK_STEP__MPROGRESS_STATUS_PROPERTY = MSTEP__MPROGRESS_STATUS_PROPERTY;
+
+	/**
+	 * The feature id for the '<em><b>Progress Status Property</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MMANUAL_TASK_STEP__PROGRESS_STATUS_PROPERTY = MSTEP__PROGRESS_STATUS_PROPERTY;
+
+	/**
+	 * The feature id for the '<em><b>MStart Trigger Property</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MMANUAL_TASK_STEP__MSTART_TRIGGER_PROPERTY = MSTEP__MSTART_TRIGGER_PROPERTY;
+
+	/**
+	 * The feature id for the '<em><b>Start Trigger Property</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MMANUAL_TASK_STEP__START_TRIGGER_PROPERTY = MSTEP__START_TRIGGER_PROPERTY;
+
+	/**
+	 * The feature id for the '<em><b>Interruptable</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MMANUAL_TASK_STEP__INTERRUPTABLE = MSTEP__INTERRUPTABLE;
+
+	/**
+	 * The feature id for the '<em><b>Stoppable</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MMANUAL_TASK_STEP__STOPPABLE = MSTEP__STOPPABLE;
+
+	/**
+	 * The feature id for the '<em><b>Terminatable</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MMANUAL_TASK_STEP__TERMINATABLE = MSTEP__TERMINATABLE;
+
+	/**
+	 * The feature id for the '<em><b>Action Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MMANUAL_TASK_STEP__ACTION_NAME = MSTEP__ACTION_NAME;
+
+	/**
+	 * The feature id for the '<em><b>Action Icon File Path</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MMANUAL_TASK_STEP__ACTION_ICON_FILE_PATH = MSTEP__ACTION_ICON_FILE_PATH;
+
+	/**
+	 * The feature id for the '<em><b>Exception</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MMANUAL_TASK_STEP__EXCEPTION = MSTEP__EXCEPTION;
+
+	/**
+	 * The number of structural features of the '<em>MManual Task Step</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MMANUAL_TASK_STEP_FEATURE_COUNT = MSTEP_FEATURE_COUNT + 0;
+
+	/**
 	 * The meta object id for the '<em>MDirectory</em>' data type.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -13445,7 +14167,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @see org.onceforall.dms.desktop.logic.LogicPackage#getMDirectory()
 	 * @generated
 	 */
-	public static final int MDIRECTORY = 33;
+	public static final int MDIRECTORY = 35;
 
 	/**
 	 * The meta object id for the '<em>MExisting Directory</em>' data type.
@@ -13455,7 +14177,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @see org.onceforall.dms.desktop.logic.LogicPackage#getMExistingDirectory()
 	 * @generated
 	 */
-	public static final int MEXISTING_DIRECTORY = 34;
+	public static final int MEXISTING_DIRECTORY = 36;
 
 	/**
 	 * The meta object id for the '<em>MFile</em>' data type.
@@ -13465,7 +14187,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @see org.onceforall.dms.desktop.logic.LogicPackage#getMFile()
 	 * @generated
 	 */
-	public static final int MFILE = 35;
+	public static final int MFILE = 37;
 
 	/**
 	 * The meta object id for the '<em>MExisting File</em>' data type.
@@ -13475,7 +14197,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @see org.onceforall.dms.desktop.logic.LogicPackage#getMExistingFile()
 	 * @generated
 	 */
-	public static final int MEXISTING_FILE = 36;
+	public static final int MEXISTING_FILE = 38;
 
 	/**
 	 * The meta object id for the '<em>MState</em>' data type.
@@ -13485,7 +14207,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @see org.onceforall.dms.desktop.logic.LogicPackage#getMState()
 	 * @generated
 	 */
-	public static final int MSTATE = 37;
+	public static final int MSTATE = 39;
 
 	/**
 	 * The meta object id for the '<em>MStep State</em>' data type.
@@ -13495,7 +14217,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @see org.onceforall.dms.desktop.logic.LogicPackage#getMStepState()
 	 * @generated
 	 */
-	public static final int MSTEP_STATE = 38;
+	public static final int MSTEP_STATE = 40;
 
 	/**
 	 * The meta object id for the '<em>MBoolean</em>' data type.
@@ -13505,7 +14227,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @see org.onceforall.dms.desktop.logic.LogicPackage#getMBoolean()
 	 * @generated
 	 */
-	public static final int MBOOLEAN = 39;
+	public static final int MBOOLEAN = 41;
 
 	/**
 	 * The meta object id for the '<em>MDate Time</em>' data type.
@@ -13515,7 +14237,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @see org.onceforall.dms.desktop.logic.LogicPackage#getMDateTime()
 	 * @generated
 	 */
-	public static final int MDATE_TIME = 40;
+	public static final int MDATE_TIME = 42;
 
 	/**
 	 * The meta object id for the '<em>MDate</em>' data type.
@@ -13525,7 +14247,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @see org.onceforall.dms.desktop.logic.LogicPackage#getMDate()
 	 * @generated
 	 */
-	public static final int MDATE = 41;
+	public static final int MDATE = 43;
 
 	/**
 	 * The meta object id for the '<em>MTime</em>' data type.
@@ -13535,7 +14257,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @see org.onceforall.dms.desktop.logic.LogicPackage#getMTime()
 	 * @generated
 	 */
-	public static final int MTIME = 42;
+	public static final int MTIME = 44;
 
 	/**
 	 * The meta object id for the '<em>MDuration</em>' data type.
@@ -13545,7 +14267,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @see org.onceforall.dms.desktop.logic.LogicPackage#getMDuration()
 	 * @generated
 	 */
-	public static final int MDURATION = 43;
+	public static final int MDURATION = 45;
 
 	/**
 	 * The meta object id for the '<em>MLong</em>' data type.
@@ -13555,7 +14277,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @see org.onceforall.dms.desktop.logic.LogicPackage#getMLong()
 	 * @generated
 	 */
-	public static final int MLONG = 44;
+	public static final int MLONG = 46;
 
 	/**
 	 * The meta object id for the '<em>MPassword</em>' data type.
@@ -13565,7 +14287,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @see org.onceforall.dms.desktop.logic.LogicPackage#getMPassword()
 	 * @generated
 	 */
-	public static final int MPASSWORD = 45;
+	public static final int MPASSWORD = 47;
 
 	/**
 	 * The meta object id for the '<em>MString</em>' data type.
@@ -13575,7 +14297,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @see org.onceforall.dms.desktop.logic.LogicPackage#getMString()
 	 * @generated
 	 */
-	public static final int MSTRING = 46;
+	public static final int MSTRING = 48;
 
 	/**
 	 * The meta object id for the '<em>MUrl</em>' data type.
@@ -13585,7 +14307,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @see org.onceforall.dms.desktop.logic.LogicPackage#getMUrl()
 	 * @generated
 	 */
-	public static final int MURL = 47;
+	public static final int MURL = 49;
 
 	/**
 	 * The meta object id for the '<em>EThrowable</em>' data type.
@@ -13595,7 +14317,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @see org.onceforall.dms.desktop.logic.LogicPackage#getEThrowable()
 	 * @generated
 	 */
-	public static final int ETHROWABLE = 48;
+	public static final int ETHROWABLE = 50;
 
 	/**
 	 * The meta object id for the '<em>MMp3 State</em>' data type.
@@ -13605,7 +14327,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @see org.onceforall.dms.desktop.logic.LogicPackage#getMMp3State()
 	 * @generated
 	 */
-	public static final int MMP3_STATE = 49;
+	public static final int MMP3_STATE = 51;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -13823,6 +14545,20 @@ public class LogicPackage extends EPackageImpl {
 	 * @generated
 	 */
 	private EClass mTagStepEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass mCopyDirectoryStepEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass mManualTaskStepEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -18958,6 +19694,116 @@ public class LogicPackage extends EPackageImpl {
 	}
 
 	/**
+	 * Returns the meta object for class '{@link org.onceforall.dms.desktop.logic.MCopyDirectoryStep <em>MCopy Directory Step</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>MCopy Directory Step</em>'.
+	 * @see org.onceforall.dms.desktop.logic.MCopyDirectoryStep
+	 * @generated
+	 */
+	public EClass getMCopyDirectoryStep() {
+		return mCopyDirectoryStepEClass;
+	}
+
+
+	/**
+	 * Returns the meta object for the containment reference '{@link org.onceforall.dms.desktop.logic.MCopyDirectoryStep#getMSourceDirectoryParameter <em>MSource Directory Parameter</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>MSource Directory Parameter</em>'.
+	 * @see org.onceforall.dms.desktop.logic.MCopyDirectoryStep#getMSourceDirectoryParameter()
+	 * @see #getMCopyDirectoryStep()
+	 * @generated
+	 */
+	public EReference getMCopyDirectoryStep_MSourceDirectoryParameter() {
+		return (EReference)mCopyDirectoryStepEClass.getEStructuralFeatures().get(0);
+	}
+
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.onceforall.dms.desktop.logic.MCopyDirectoryStep#getSourceDirectoryParameter <em>Source Directory Parameter</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Source Directory Parameter</em>'.
+	 * @see org.onceforall.dms.desktop.logic.MCopyDirectoryStep#getSourceDirectoryParameter()
+	 * @see #getMCopyDirectoryStep()
+	 * @generated
+	 */
+	public EAttribute getMCopyDirectoryStep_SourceDirectoryParameter() {
+		return (EAttribute)mCopyDirectoryStepEClass.getEStructuralFeatures().get(1);
+	}
+
+
+	/**
+	 * Returns the meta object for the containment reference '{@link org.onceforall.dms.desktop.logic.MCopyDirectoryStep#getMDestinationDirectoryParameter <em>MDestination Directory Parameter</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>MDestination Directory Parameter</em>'.
+	 * @see org.onceforall.dms.desktop.logic.MCopyDirectoryStep#getMDestinationDirectoryParameter()
+	 * @see #getMCopyDirectoryStep()
+	 * @generated
+	 */
+	public EReference getMCopyDirectoryStep_MDestinationDirectoryParameter() {
+		return (EReference)mCopyDirectoryStepEClass.getEStructuralFeatures().get(2);
+	}
+
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.onceforall.dms.desktop.logic.MCopyDirectoryStep#getDestinationDirectoryParameter <em>Destination Directory Parameter</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Destination Directory Parameter</em>'.
+	 * @see org.onceforall.dms.desktop.logic.MCopyDirectoryStep#getDestinationDirectoryParameter()
+	 * @see #getMCopyDirectoryStep()
+	 * @generated
+	 */
+	public EAttribute getMCopyDirectoryStep_DestinationDirectoryParameter() {
+		return (EAttribute)mCopyDirectoryStepEClass.getEStructuralFeatures().get(3);
+	}
+
+
+	/**
+	 * Returns the meta object for the containment reference '{@link org.onceforall.dms.desktop.logic.MCopyDirectoryStep#getMCopiedDirectoryResult <em>MCopied Directory Result</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>MCopied Directory Result</em>'.
+	 * @see org.onceforall.dms.desktop.logic.MCopyDirectoryStep#getMCopiedDirectoryResult()
+	 * @see #getMCopyDirectoryStep()
+	 * @generated
+	 */
+	public EReference getMCopyDirectoryStep_MCopiedDirectoryResult() {
+		return (EReference)mCopyDirectoryStepEClass.getEStructuralFeatures().get(4);
+	}
+
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.onceforall.dms.desktop.logic.MCopyDirectoryStep#getCopiedDirectoryResult <em>Copied Directory Result</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Copied Directory Result</em>'.
+	 * @see org.onceforall.dms.desktop.logic.MCopyDirectoryStep#getCopiedDirectoryResult()
+	 * @see #getMCopyDirectoryStep()
+	 * @generated
+	 */
+	public EAttribute getMCopyDirectoryStep_CopiedDirectoryResult() {
+		return (EAttribute)mCopyDirectoryStepEClass.getEStructuralFeatures().get(5);
+	}
+
+
+	/**
+	 * Returns the meta object for class '{@link org.onceforall.dms.desktop.logic.MManualTaskStep <em>MManual Task Step</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>MManual Task Step</em>'.
+	 * @see org.onceforall.dms.desktop.logic.MManualTaskStep
+	 * @generated
+	 */
+	public EClass getMManualTaskStep() {
+		return mManualTaskStepEClass;
+	}
+
+
+	/**
 	 * Returns the meta object for class '{@link org.onceforall.dms.desktop.logic.MDmsApplicationMGetDataUpgradeInfoStep <em>MDms Application MGet Data Upgrade Info Step</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -19874,6 +20720,16 @@ public class LogicPackage extends EPackageImpl {
 		createEReference(mTagStepEClass, MTAG_STEP__MMP3_FILE_PATH_RESULT);
 		createEAttribute(mTagStepEClass, MTAG_STEP__MP3_FILE_PATH_RESULT);
 
+		mCopyDirectoryStepEClass = createEClass(MCOPY_DIRECTORY_STEP);
+		createEReference(mCopyDirectoryStepEClass, MCOPY_DIRECTORY_STEP__MSOURCE_DIRECTORY_PARAMETER);
+		createEAttribute(mCopyDirectoryStepEClass, MCOPY_DIRECTORY_STEP__SOURCE_DIRECTORY_PARAMETER);
+		createEReference(mCopyDirectoryStepEClass, MCOPY_DIRECTORY_STEP__MDESTINATION_DIRECTORY_PARAMETER);
+		createEAttribute(mCopyDirectoryStepEClass, MCOPY_DIRECTORY_STEP__DESTINATION_DIRECTORY_PARAMETER);
+		createEReference(mCopyDirectoryStepEClass, MCOPY_DIRECTORY_STEP__MCOPIED_DIRECTORY_RESULT);
+		createEAttribute(mCopyDirectoryStepEClass, MCOPY_DIRECTORY_STEP__COPIED_DIRECTORY_RESULT);
+
+		mManualTaskStepEClass = createEClass(MMANUAL_TASK_STEP);
+
 		// Create data types
 		mDirectoryEDataType = createEDataType(MDIRECTORY);
 		mExistingDirectoryEDataType = createEDataType(MEXISTING_DIRECTORY);
@@ -19950,6 +20806,8 @@ public class LogicPackage extends EPackageImpl {
 		mTestStepEClass.getESuperTypes().add(this.getMStep());
 		mNameTagMp3StepEClass.getESuperTypes().add(this.getMTagStep());
 		mTagStepEClass.getESuperTypes().add(this.getMStep());
+		mCopyDirectoryStepEClass.getESuperTypes().add(this.getMStep());
+		mManualTaskStepEClass.getESuperTypes().add(this.getMStep());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(mObjectEClass, MObject.class, "MObject", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -20107,7 +20965,7 @@ public class LogicPackage extends EPackageImpl {
 		initEAttribute(getMEnterWwxInformationStep_TitleOfTalkParameter(), this.getMString(), "titleOfTalkParameter", null, 1, 1, MEnterWwxInformationStep.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getMEnterWwxInformationStep_MSpeakersNameParameter(), this.getMParameter(), null, "mSpeakersNameParameter", null, 1, 1, MEnterWwxInformationStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMEnterWwxInformationStep_SpeakersNameParameter(), this.getMString(), "speakersNameParameter", null, 1, 1, MEnterWwxInformationStep.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getMEnterWwxInformationStep_SpeakersNameParameterHistoricValues(), this.getMString(), "speakersNameParameterHistoricValues", null, 0, 5, MEnterWwxInformationStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getMEnterWwxInformationStep_SpeakersNameParameterHistoricValues(), this.getMString(), "speakersNameParameterHistoricValues", null, 0, 10, MEnterWwxInformationStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getMEnterWwxInformationStep_MFirstPartParameter(), this.getMParameter(), null, "mFirstPartParameter", null, 1, 1, MEnterWwxInformationStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMEnterWwxInformationStep_FirstPartParameter(), this.getMString(), "firstPartParameter", null, 1, 1, MEnterWwxInformationStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMEnterWwxInformationStep_FirstPartParameterHistoricValues(), this.getMString(), "firstPartParameterHistoricValues", null, 0, 2, MEnterWwxInformationStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -20116,7 +20974,7 @@ public class LogicPackage extends EPackageImpl {
 		initEAttribute(getMEnterWwxInformationStep_SecondPartParameterHistoricValues(), this.getMString(), "secondPartParameterHistoricValues", null, 0, 2, MEnterWwxInformationStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getMEnterWwxInformationStep_MRecordingUsersNameParameter(), this.getMParameter(), null, "mRecordingUsersNameParameter", null, 1, 1, MEnterWwxInformationStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMEnterWwxInformationStep_RecordingUsersNameParameter(), this.getMString(), "recordingUsersNameParameter", null, 1, 1, MEnterWwxInformationStep.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getMEnterWwxInformationStep_RecordingUsersNameParameterHistoricValues(), this.getMString(), "recordingUsersNameParameterHistoricValues", null, 0, 5, MEnterWwxInformationStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getMEnterWwxInformationStep_RecordingUsersNameParameterHistoricValues(), this.getMString(), "recordingUsersNameParameterHistoricValues", null, 0, 10, MEnterWwxInformationStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getMEnterWwxInformationStep_MWwxDateResult(), this.getMResult(), null, "mWwxDateResult", null, 1, 1, MEnterWwxInformationStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMEnterWwxInformationStep_WwxDateResult(), this.getMDate(), "wwxDateResult", null, 1, 1, MEnterWwxInformationStep.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getMEnterWwxInformationStep_MTitleOfTalkResult(), this.getMResult(), null, "mTitleOfTalkResult", null, 1, 1, MEnterWwxInformationStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -20142,10 +21000,10 @@ public class LogicPackage extends EPackageImpl {
 		initEAttribute(getMEnterServiceInformationStep_ReadingParameter(), this.getMString(), "readingParameter", null, 0, 1, MEnterServiceInformationStep.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getMEnterServiceInformationStep_MSpeakersNameParameter(), this.getMParameter(), null, "mSpeakersNameParameter", null, 1, 1, MEnterServiceInformationStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMEnterServiceInformationStep_SpeakersNameParameter(), this.getMString(), "speakersNameParameter", null, 1, 1, MEnterServiceInformationStep.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getMEnterServiceInformationStep_SpeakersNameParameterHistoricValues(), this.getMString(), "speakersNameParameterHistoricValues", null, 0, 5, MEnterServiceInformationStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getMEnterServiceInformationStep_SpeakersNameParameterHistoricValues(), this.getMString(), "speakersNameParameterHistoricValues", null, 0, 10, MEnterServiceInformationStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getMEnterServiceInformationStep_MRecordingUsersNameParameter(), this.getMParameter(), null, "mRecordingUsersNameParameter", null, 1, 1, MEnterServiceInformationStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMEnterServiceInformationStep_RecordingUsersNameParameter(), this.getMString(), "recordingUsersNameParameter", null, 1, 1, MEnterServiceInformationStep.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getMEnterServiceInformationStep_RecordingUsersNameParameterHistoricValues(), this.getMString(), "recordingUsersNameParameterHistoricValues", null, 0, 5, MEnterServiceInformationStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getMEnterServiceInformationStep_RecordingUsersNameParameterHistoricValues(), this.getMString(), "recordingUsersNameParameterHistoricValues", null, 0, 10, MEnterServiceInformationStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getMEnterServiceInformationStep_MServiceDateResult(), this.getMResult(), null, "mServiceDateResult", null, 1, 1, MEnterServiceInformationStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMEnterServiceInformationStep_ServiceDateResult(), this.getMDate(), "serviceDateResult", null, 1, 1, MEnterServiceInformationStep.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getMEnterServiceInformationStep_MServiceTypeResult(), this.getMResult(), null, "mServiceTypeResult", null, 1, 1, MEnterServiceInformationStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -20386,6 +21244,16 @@ public class LogicPackage extends EPackageImpl {
 		initEReference(getMTagStep_Mp3EntryReferenceResult(), this.getMMp3(), null, "mp3EntryReferenceResult", null, 1, 1, MTagStep.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getMTagStep_MMp3FilePathResult(), this.getMResult(), null, "mMp3FilePathResult", null, 1, 1, MTagStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMTagStep_Mp3FilePathResult(), this.getMExistingFile(), "mp3FilePathResult", null, 1, 1, MTagStep.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(mCopyDirectoryStepEClass, MCopyDirectoryStep.class, "MCopyDirectoryStep", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getMCopyDirectoryStep_MSourceDirectoryParameter(), this.getMParameter(), null, "mSourceDirectoryParameter", null, 1, 1, MCopyDirectoryStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getMCopyDirectoryStep_SourceDirectoryParameter(), this.getMExistingDirectory(), "sourceDirectoryParameter", null, 1, 1, MCopyDirectoryStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMCopyDirectoryStep_MDestinationDirectoryParameter(), this.getMParameter(), null, "mDestinationDirectoryParameter", null, 1, 1, MCopyDirectoryStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getMCopyDirectoryStep_DestinationDirectoryParameter(), this.getMDirectory(), "destinationDirectoryParameter", null, 1, 1, MCopyDirectoryStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMCopyDirectoryStep_MCopiedDirectoryResult(), this.getMResult(), null, "mCopiedDirectoryResult", null, 1, 1, MCopyDirectoryStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getMCopyDirectoryStep_CopiedDirectoryResult(), this.getMExistingDirectory(), "copiedDirectoryResult", null, 1, 1, MCopyDirectoryStep.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(mManualTaskStepEClass, MManualTaskStep.class, "MManualTaskStep", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		// Initialize data types
 		initEDataType(mDirectoryEDataType, File.class, "MDirectory", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
@@ -21970,6 +22838,52 @@ public class LogicPackage extends EPackageImpl {
 			 "name", "MP3 file path",
 			 "description", "Specifies the path of the converted MP3 file.",
 			 "readOnly", "true"
+		   });		
+		addAnnotation
+		  (mCopyDirectoryStepEClass, 
+		   source, 
+		   new String[] {
+			 "name", "Copy directory",
+			 "description", "Copies a directory and its sub-directories to the given directory.",
+			 "iconFilePath", "Image Files/Copy.gif",
+			 "actionName", "Copy",
+			 "actionIconFilePath", "Image Files\\Mark as completed.gif",
+			 "interruptable", "false",
+			 "stoppable", "false",
+			 "terminatable", "false"
+		   });		
+		addAnnotation
+		  (getMCopyDirectoryStep_MSourceDirectoryParameter(), 
+		   source, 
+		   new String[] {
+			 "name", "Source directory",
+			 "description", "Specifies the path to the source directory to be copied."
+		   });		
+		addAnnotation
+		  (getMCopyDirectoryStep_MDestinationDirectoryParameter(), 
+		   source, 
+		   new String[] {
+			 "name", "Destination directory",
+			 "description", "Specifies the path to new destination directory. If this directory does not already exist, it will be created."
+		   });		
+		addAnnotation
+		  (getMCopyDirectoryStep_MCopiedDirectoryResult(), 
+		   source, 
+		   new String[] {
+			 "name", "Copied directory",
+			 "description", "Specifies the path to the copied directory (which is the destination directory)."
+		   });		
+		addAnnotation
+		  (mManualTaskStepEClass, 
+		   source, 
+		   new String[] {
+			 "name", "Manual task",
+			 "description", "Marks a manual task as completed. This task does not perform any automated actions.",
+			 "actionName", "Mark as completed",
+			 "actionIconFilePath", "Image Files\\Mark as completed.gif",
+			 "interruptable", "false",
+			 "stoppable", "false",
+			 "terminatable", "false"
 		   });
 	}
 
@@ -25103,6 +26017,74 @@ public class LogicPackage extends EPackageImpl {
 		 * @generated
 		 */
 		public static final EAttribute MTAG_STEP__MP3_FILE_PATH_RESULT = eINSTANCE.getMTagStep_Mp3FilePathResult();
+
+		/**
+		 * The meta object literal for the '{@link org.onceforall.dms.desktop.logic.MCopyDirectoryStep <em>MCopy Directory Step</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.onceforall.dms.desktop.logic.MCopyDirectoryStep
+		 * @see org.onceforall.dms.desktop.logic.LogicPackage#getMCopyDirectoryStep()
+		 * @generated
+		 */
+		public static final EClass MCOPY_DIRECTORY_STEP = eINSTANCE.getMCopyDirectoryStep();
+
+		/**
+		 * The meta object literal for the '<em><b>MSource Directory Parameter</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		public static final EReference MCOPY_DIRECTORY_STEP__MSOURCE_DIRECTORY_PARAMETER = eINSTANCE.getMCopyDirectoryStep_MSourceDirectoryParameter();
+
+		/**
+		 * The meta object literal for the '<em><b>Source Directory Parameter</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		public static final EAttribute MCOPY_DIRECTORY_STEP__SOURCE_DIRECTORY_PARAMETER = eINSTANCE.getMCopyDirectoryStep_SourceDirectoryParameter();
+
+		/**
+		 * The meta object literal for the '<em><b>MDestination Directory Parameter</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		public static final EReference MCOPY_DIRECTORY_STEP__MDESTINATION_DIRECTORY_PARAMETER = eINSTANCE.getMCopyDirectoryStep_MDestinationDirectoryParameter();
+
+		/**
+		 * The meta object literal for the '<em><b>Destination Directory Parameter</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		public static final EAttribute MCOPY_DIRECTORY_STEP__DESTINATION_DIRECTORY_PARAMETER = eINSTANCE.getMCopyDirectoryStep_DestinationDirectoryParameter();
+
+		/**
+		 * The meta object literal for the '<em><b>MCopied Directory Result</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		public static final EReference MCOPY_DIRECTORY_STEP__MCOPIED_DIRECTORY_RESULT = eINSTANCE.getMCopyDirectoryStep_MCopiedDirectoryResult();
+
+		/**
+		 * The meta object literal for the '<em><b>Copied Directory Result</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		public static final EAttribute MCOPY_DIRECTORY_STEP__COPIED_DIRECTORY_RESULT = eINSTANCE.getMCopyDirectoryStep_CopiedDirectoryResult();
+
+		/**
+		 * The meta object literal for the '{@link org.onceforall.dms.desktop.logic.MManualTaskStep <em>MManual Task Step</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.onceforall.dms.desktop.logic.MManualTaskStep
+		 * @see org.onceforall.dms.desktop.logic.LogicPackage#getMManualTaskStep()
+		 * @generated
+		 */
+		public static final EClass MMANUAL_TASK_STEP = eINSTANCE.getMManualTaskStep();
 
 		/**
 		 * The meta object literal for the '{@link org.onceforall.dms.desktop.logic.MDmsApplicationMGetDataUpgradeInfoStep <em>MDms Application MGet Data Upgrade Info Step</em>}' class.

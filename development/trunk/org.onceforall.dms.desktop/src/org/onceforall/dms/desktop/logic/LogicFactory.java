@@ -108,6 +108,8 @@ public class LogicFactory extends EFactoryImpl {
 			case LogicPackage.MBURN_CD_STEP: return (EObject)createMBurnCdStep();
 			case LogicPackage.MTEST_STEP: return (EObject)createMTestStep();
 			case LogicPackage.MNAME_TAG_MP3_STEP: return (EObject)createMNameTagMp3Step();
+			case LogicPackage.MCOPY_DIRECTORY_STEP: return (EObject)createMCopyDirectoryStep();
+			case LogicPackage.MMANUAL_TASK_STEP: return (EObject)createMManualTaskStep();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -363,6 +365,26 @@ public class LogicFactory extends EFactoryImpl {
 	public MNameTagMp3Step createMNameTagMp3Step() {
 		MNameTagMp3Step mNameTagMp3Step = new MNameTagMp3Step();
 		return mNameTagMp3Step;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public MCopyDirectoryStep createMCopyDirectoryStep() {
+		MCopyDirectoryStep mCopyDirectoryStep = new MCopyDirectoryStep();
+		return mCopyDirectoryStep;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public MManualTaskStep createMManualTaskStep() {
+		MManualTaskStep mManualTaskStep = new MManualTaskStep();
+		return mManualTaskStep;
 	}
 
 	/**

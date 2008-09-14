@@ -413,6 +413,26 @@ public class LogicSwitch {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case LogicPackage.MCOPY_DIRECTORY_STEP: {
+				MCopyDirectoryStep mCopyDirectoryStep = (MCopyDirectoryStep)theEObject;
+				Object result = caseMCopyDirectoryStep(mCopyDirectoryStep);
+				if (result == null) result = caseMStep(mCopyDirectoryStep);
+				if (result == null) result = caseMStatefulObject(mCopyDirectoryStep);
+				if (result == null) result = caseMObject(mCopyDirectoryStep);
+				if (result == null) result = caseMElement(mCopyDirectoryStep);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case LogicPackage.MMANUAL_TASK_STEP: {
+				MManualTaskStep mManualTaskStep = (MManualTaskStep)theEObject;
+				Object result = caseMManualTaskStep(mManualTaskStep);
+				if (result == null) result = caseMStep(mManualTaskStep);
+				if (result == null) result = caseMStatefulObject(mManualTaskStep);
+				if (result == null) result = caseMObject(mManualTaskStep);
+				if (result == null) result = caseMElement(mManualTaskStep);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			default: return defaultCase(theEObject);
 		}
 	}
@@ -879,6 +899,36 @@ public class LogicSwitch {
 	 * @generated
 	 */
 	public Object caseMTagStep(MTagStep object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>MCopy Directory Step</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>MCopy Directory Step</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public Object caseMCopyDirectoryStep(MCopyDirectoryStep object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>MManual Task Step</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>MManual Task Step</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public Object caseMManualTaskStep(MManualTaskStep object) {
 		return null;
 	}
 
