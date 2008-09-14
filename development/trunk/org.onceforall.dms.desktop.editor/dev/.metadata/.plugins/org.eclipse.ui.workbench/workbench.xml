@@ -14,10 +14,15 @@
 <editorArea activeWorkbook="DefaultEditorWorkbook">
 <info part="DefaultEditorWorkbook">
 <folder appearance="1" expanded="2">
-<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
+<part id="0"/>
+</presentation>
 </folder>
 </info>
 </editorArea>
+<editor focus="true" id="org.onceforall.dms.desktop.logic.presentation.LogicEditorID" name="Data.xml" partName="Data.xml" title="Data.xml" tooltip="file:/C:/DMS%20UAT/CCB/Onceforall/DMS%20Desktop/Application%20Data%20Files/Data.xml" workbook="DefaultEditorWorkbook">
+<input bundle="org.eclipse.emf.common.ui" class="org.eclipse.emf.common.ui.URIEditorInput" factoryID="org.eclipse.emf.common.ui.URIEditorInputFactory" uri="file:/C:/DMS%20UAT/CCB/Onceforall/DMS%20Desktop/Application%20Data%20Files/Data.xml"/>
+</editor>
 </editors>
 <views>
 <view id="org.eclipse.ui.views.PropertySheet" partName="Properties">
@@ -43,7 +48,7 @@
 <page content="org.eclipse.ui.internal.introview" label="LabelNotFound"/>
 </folder>
 </info>
-<info folder="true" part="right" ratio="0.7006599" ratioLeft="1168" ratioRight="499" relationship="2" relative="org.eclipse.ui.editorss">
+<info folder="true" part="right" ratio="0.52366686" ratioLeft="874" ratioRight="795" relationship="2" relative="org.eclipse.ui.editorss">
 <folder appearance="2" expanded="2">
 <page content="org.eclipse.ui.views.ContentOutline" label="LabelNotFound"/>
 <presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory"/>
@@ -62,7 +67,23 @@
 </perspective>
 </perspectives>
 <workingSets/>
-<navigationHistory/>
+<navigationHistory>
+<editors>
+<editor bundle="org.eclipse.emf.common.ui" class="org.eclipse.emf.common.ui.URIEditorInput" factoryID="org.eclipse.emf.common.ui.URIEditorInputFactory" id="org.onceforall.dms.desktop.logic.presentation.LogicEditorID" uri="file:/C:/DMS%20UAT/LRBC/Onceforall/DMS%20Desktop/Application%20Data%20Files/Data.xml"/>
+<editor bundle="org.eclipse.emf.common.ui" class="org.eclipse.emf.common.ui.URIEditorInput" factoryID="org.eclipse.emf.common.ui.URIEditorInputFactory" id="org.onceforall.dms.desktop.logic.presentation.LogicEditorID" uri="file:/C:/Projects/Digital%20Media%20Service/Desktop/Development/org.onceforall.dms.desktop.ui/dev/Application%20Data%20Files/Data.xml"/>
+<editor bundle="org.eclipse.emf.common.ui" class="org.eclipse.emf.common.ui.URIEditorInput" factoryID="org.eclipse.emf.common.ui.URIEditorInputFactory" id="org.onceforall.dms.desktop.logic.presentation.LogicEditorID" uri="file:/C:/DMS%20UAT/LRBC/Onceforall/DMS%20Desktop/Application%20Data%20Files/Data.xml"/>
+<editor bundle="org.eclipse.emf.common.ui" class="org.eclipse.emf.common.ui.URIEditorInput" factoryID="org.eclipse.emf.common.ui.URIEditorInputFactory" id="org.onceforall.dms.desktop.logic.presentation.LogicEditorID" uri="file:/C:/DMS%20UAT/CCB/Onceforall/DMS%20Desktop/Application%20Data%20Files/Data.xml"/>
+</editors>
+<item historyLabel="Data.xml" index="0"/>
+<item historyLabel="Data.xml" index="0"/>
+<item historyLabel="Data.xml" index="0"/>
+<item historyLabel="Data.xml" index="1"/>
+<item historyLabel="Data.xml" index="2"/>
+<item historyLabel="Data.xml" index="1"/>
+<item historyLabel="Data.xml" index="2"/>
+<item historyLabel="Data.xml" index="1"/>
+<item active="true" historyLabel="Data.xml" index="3"/>
+</navigationHistory>
 </page>
 <workbenchWindowAdvisor/>
 <actionBarAdvisor/>
@@ -72,5 +93,18 @@
 </trimArea>
 </trimLayout>
 </window>
-<mruList/>
+<mruList>
+<file factoryID="org.eclipse.emf.common.ui.URIEditorInputFactory" id="org.onceforall.dms.desktop.logic.presentation.LogicEditorID" name="Data.xml" tooltip="file:/C:/DMS%20UAT/CCB/Onceforall/DMS%20Desktop/Application%20Data%20Files/Data.xml">
+<persistable bundle="org.eclipse.emf.common.ui" class="org.eclipse.emf.common.ui.URIEditorInput" uri="file:/C:/DMS%20UAT/CCB/Onceforall/DMS%20Desktop/Application%20Data%20Files/Data.xml"/>
+</file>
+<file factoryID="org.eclipse.emf.common.ui.URIEditorInputFactory" id="org.onceforall.dms.desktop.logic.presentation.LogicEditorID" name="Data.xml" tooltip="file:/C:/Projects/Digital%20Media%20Service/Desktop/Development/org.onceforall.dms.desktop.ui/dev/Application%20Data%20Files/Data.xml">
+<persistable bundle="org.eclipse.emf.common.ui" class="org.eclipse.emf.common.ui.URIEditorInput" uri="file:/C:/Projects/Digital%20Media%20Service/Desktop/Development/org.onceforall.dms.desktop.ui/dev/Application%20Data%20Files/Data.xml"/>
+</file>
+<file factoryID="org.eclipse.emf.common.ui.URIEditorInputFactory" id="org.onceforall.dms.desktop.logic.presentation.LogicEditorID" name="Data.xml" tooltip="file:/C:/DMS%20UAT/LRBC/Onceforall/DMS%20Desktop/Application%20Data%20Files/Data.xml">
+<persistable bundle="org.eclipse.emf.common.ui" class="org.eclipse.emf.common.ui.URIEditorInput" uri="file:/C:/DMS%20UAT/LRBC/Onceforall/DMS%20Desktop/Application%20Data%20Files/Data.xml"/>
+</file>
+<file factoryID="org.eclipse.emf.common.ui.URIEditorInputFactory" id="org.onceforall.dms.desktop.logic.presentation.LogicEditorID" name="Data (old).xml" tooltip="file:/C:/DMS%20UAT/CCB/Onceforall/DMS%20Desktop/Application%20Data%20Files/Data%20(old).xml">
+<persistable bundle="org.eclipse.emf.common.ui" class="org.eclipse.emf.common.ui.URIEditorInput" uri="file:/C:/DMS%20UAT/CCB/Onceforall/DMS%20Desktop/Application%20Data%20Files/Data%20(old).xml"/>
+</file>
+</mruList>
 </workbench>
