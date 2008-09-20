@@ -6,7 +6,6 @@ Revision History:
 $$Log: build.xml,v $
 $Revision 1.1  2007/05/12 11:03:50  marc
 $Moved to EMF model-based application.
-$
  
 -->
 <project name="Digital Media Service Desktop" default="release" basedir=".">
@@ -111,6 +110,7 @@ $
 	<fileset id="programFiles" dir="${programFiles}">
 		<include name="LAME 3.96.1/**" />
 		<include name="Nero 6.0/**" />
+		<include name="Nero/**" />
 	</fileset>
 
 	<zipfileset id="jre" dir="${projects}" prefix="Onceforall">
@@ -239,6 +239,8 @@ $
 				<exclude name="WWX Files/**" />
 				<exclude name="Test Files/**" />
 				<exclude name="Log Files/**" />
+				<exclude name="Program Files/Editor/Log Files/**" />
+				<exclude name="neroerr*.txt" />
 				<exclude name="*.bat" />
 				<exclude name="Program Files/Editor/editor.ini" />
 				<exclude name="Program Files/Nero */**" />
@@ -259,6 +261,8 @@ $
 				<exclude name="WWX Files/**" />
 				<exclude name="Test Files/**" />
 				<exclude name="Log Files/**" />
+				<exclude name="Program Files/Editor/Log Files/**" />
+				<exclude name="neroerr*.txt" />
 				<exclude name="*.bat" />
 				<exclude name="Program Files/Editor/editor.ini" />
 				<exclude name="Program Files/Nero */**" />
@@ -303,6 +307,7 @@ $
 				<exclude name="Digital Media Service\Desktop\Development\org.onceforall.dms.desktop.ui\test\Log Files/**" />
 				<exclude name="Digital Media Service\Desktop\Development\org.onceforall.dms.desktop.ui\dev\Program Files/Nero */**" />
 				<exclude name="Digital Media Service\Desktop\Development\org.onceforall.dms.desktop.ui\test\Program Files/Nero */**" />
+				<exclude name="Digital Media Service\Desktop\Development\org.onceforall.dms.desktop.ui\test\neroerr*.txt" />
 
 				<include name="Common\Program Files\JDK 1.6.0\**" />
 				<exclude name="Common\Program Files\JDK 1.6.0\src\**" />
