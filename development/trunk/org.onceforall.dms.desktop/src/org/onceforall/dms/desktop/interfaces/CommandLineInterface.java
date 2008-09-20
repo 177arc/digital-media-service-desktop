@@ -25,13 +25,11 @@
  */
 package org.onceforall.dms.desktop.interfaces;
 
-import java.io.File;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.util.StringTokenizer;
 
 import org.onceforall.dms.desktop.exception.DesktopException;
-import org.onceforall.dms.desktop.logic.MApplication;
 import org.onceforall.dms.desktop.logic.MStep;
 import org.onceforall.dms.desktop.logic.types.MStepStateType;
 
@@ -82,7 +80,7 @@ public class CommandLineInterface {
         String resultOutput = "";
         String result = null;
 
-		String osName = System.getProperty("os.name").toLowerCase();
+        /*String osName = System.getProperty("os.name").toLowerCase();
 		String[] transformedCommandAndArguments;
 		if(commandAndArguments[0].indexOf(File.separatorChar) < 0 && (osName.equals("solaris") || osName.equals("sunos") || osName.equals("linux"))) {
         	// Assumes the command path is the start path if no path is specified and the OS is Solaris or Linux.
@@ -90,10 +88,12 @@ public class CommandLineInterface {
             transformedCommandAndArguments = removeQuotes(commandAndArguments);
    		}
 		else
-            transformedCommandAndArguments = tokenise(commandAndArguments);
+            transformedCommandAndArguments = tokenise(commandAndArguments);*/
 
-      	try {
-        	process = Runtime.getRuntime().exec(transformedCommandAndArguments);
+      	try {		
+      		ProcessBuilder processBuilder = new ProcessBuilder(removeQuotes(commandAndArguments));
+      		process = processBuilder.start();
+        	//Runtime.getRuntime().exec(transformedCommandAndArguments);
 
             if(input != null) {
                 OutputStream outputStream = process.getOutputStream();

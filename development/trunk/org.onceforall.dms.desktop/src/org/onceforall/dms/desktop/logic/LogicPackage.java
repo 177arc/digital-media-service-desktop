@@ -20827,7 +20827,11 @@ public class LogicPackage extends EPackageImpl {
 		initEAttribute(getMElement_IconFilePath(), this.getMFile(), "iconFilePath", null, 0, 1, MElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMElement_OverlayIconFilePath(), this.getMFile(), "overlayIconFilePath", null, 0, 1, MElement.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMElement_CompositeClassName(), ecorePackage.getEString(), "compositeClassName", "", 0, 1, MElement.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getMElement_Simulated(), ecorePackage.getEBoolean(), "simulated", null, 1, 1, MElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getMElement_Simulated(), ecorePackage.getEBoolean(), "simulated", "false", 1, 1, MElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		EOperation op = addEOperation(mElementEClass, ecorePackage.getEBoolean(), "validate", 1, 1);
+		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnosticsChain", 1, 1);
+		addEParameter(op, ecorePackage.getEMap(), "context", 1, 1);
 
 		initEClass(mParameterEClass, MParameter.class, "MParameter", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -20881,10 +20885,6 @@ public class LogicPackage extends EPackageImpl {
 		initEAttribute(getMApplication_VersionProperty(), this.getMString(), "versionProperty", "0.9.0", 1, 1, MApplication.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getMApplication_MLastSaveProperty(), this.getMProperty(), null, "mLastSaveProperty", null, 1, 1, MApplication.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMApplication_LastSaveProperty(), this.getMDateTime(), "lastSaveProperty", null, 0, 1, MApplication.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		EOperation op = addEOperation(mApplicationEClass, ecorePackage.getEBoolean(), "validate", 1, 1);
-		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnosticsChain", 1, 1);
-		addEParameter(op, ecorePackage.getEMap(), "context", 1, 1);
 
 		initEClass(mScriptEClass, MScript.class, "MScript", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getMScript_MSteps(), this.getMStep(), null, "mSteps", null, 0, -1, MScript.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -22616,7 +22616,7 @@ public class LogicPackage extends EPackageImpl {
 			 "actionIconFilePath", "Image Files/Burn CD.gif",
 			 "interruptable", "false",
 			 "stoppable", "false",
-			 "terminatable", "false"
+			 "terminatable", "true"
 		   });		
 		addAnnotation
 		  (getMBurnCdStep_MRecordingFilesParameter(), 

@@ -1172,7 +1172,8 @@ public class MConvertToMP3Step extends MTagStep {
 	    String genre = CommandLineInterface.escapeArgument(getMGenreParameter().getValueForUI());
 	    String comment = CommandLineInterface.escapeArgument(getMCommentParameter().getValueForUI());
 	    
-	    String commentParameter = getMCommentParameter().getValue() != null ? "--tc \""+comment+"\"" : "";
+	    String commentParameterFlag = getMCommentParameter().getValue() != null ? "--tc" : "";
+	    String commentParameter = getMCommentParameter().getValue() != null ? "\""+comment+"\"" : "";
 	    
 	    File inputFile = getRecordingFileParameter();
 	    File directory = getDirectoryParameter();
@@ -1181,14 +1182,14 @@ public class MConvertToMP3Step extends MTagStep {
 	    //* new File("Service Files\\MP3 Files").mkdirs();
 	    String lameEncoderPath = getMp3EncoderPathParameter().getCanonicalPath();
 	    CommandLineInterface.execute(new String[] {"\""+lameEncoderPath+File.separator+
-	            "lame.exe\"", "-h", "-m j", "--abr "+getAverageBitRateParameter(),
-	            "--tt \""+title+"\"",
-	            "--ta \""+artist+"\"",
-	            "--tl \""+album+"\"",
-	            "--ty \""+year+"\"",
-	            "--tg \""+genre+"\"",
-	            commentParameter, 
-	            "--resample 22.050",
+	            "lame.exe\"", "-h", "-m", "j", "--abr", ""+getAverageBitRateParameter(),
+	            "--tt", "\""+title+"\"",
+	            "--ta", "\""+artist+"\"",
+	            "--tl", "\""+album+"\"",
+	            "--ty", "\""+year+"\"",
+	            "--tg", "\""+genre+"\"",
+	            commentParameterFlag, commentParameter, 
+	            "--resample", "22.050",
 	            "\""+inputFile.getAbsolutePath()+"\"", "\""+outputFile.getAbsolutePath()+"\""},
 	            this,
 	            null);

@@ -56,7 +56,7 @@ import org.onceforall.dms.desktop.logic.types.Type;
  *
  * @see org.onceforall.dms.desktop.logic.LogicPackage#getMBurnCdStep()
  * @model kind="class"
- *        annotation="http://www.onceforall.org/mcore name='Burn CDs for sale' description='Burns the recordings on a writable CD for sale. Please insert a blank CD before initiating the burning process. Note that the post-sermon recording does not need to be included.' iconFilePath='Image Files/Burn CD step.gif' actionName='Burn' actionIconFilePath='Image Files/Burn CD.gif' interruptable='false' stoppable='false' terminatable='false'"
+ *        annotation="http://www.onceforall.org/mcore name='Burn CDs for sale' description='Burns the recordings on a writable CD for sale. Please insert a blank CD before initiating the burning process. Note that the post-sermon recording does not need to be included.' iconFilePath='Image Files/Burn CD step.gif' actionName='Burn' actionIconFilePath='Image Files/Burn CD.gif' interruptable='false' stoppable='false' terminatable='true'"
  * @generated
  */
 public class MBurnCdStep extends MStep {
@@ -383,7 +383,7 @@ public class MBurnCdStep extends MStep {
 	 * @ordered
 	 */
 	public boolean getDefaultTerminatable() {
-		return false;
+		return true;
 	}
 
 	/** 
@@ -407,7 +407,7 @@ public class MBurnCdStep extends MStep {
 		actionIconFilePath = (File)LogicFactory.eINSTANCE.createFromString(LogicPackage.eINSTANCE.getMFile(), "Image Files/Burn CD.gif");
 		name = "Burn CDs for sale";
 		iconFilePath = (File)LogicFactory.eINSTANCE.createFromString(LogicPackage.eINSTANCE.getMFile(), "Image Files/Burn CD step.gif");
-		terminatable = false;
+		terminatable = true;
 		interruptable = false;
 		actionName = "Burn";
 			 
@@ -1156,23 +1156,35 @@ public class MBurnCdStep extends MStep {
 	    
 	    List<String> commandLineParameters = new ArrayList(6+recordingFiles.size());
 	    String burningPath = getBurningSoftwareDirectoryPathParameter().getCanonicalPath();
-	    commandLineParameters.add(burningPath+File.separator+"nerocmd.exe");
+	    commandLineParameters.add("\""+burningPath+File.separator+"nerocmd.exe\"");
 	    commandLineParameters.add("--write");
 	    commandLineParameters.add("--underrun_prot");
-	    commandLineParameters.add("--detect_non_empty_disc");
-	    commandLineParameters.add("--audio");
+	    //commandLineParameters.add("--detect_non_empty_disc");
+	    //commandLineParameters.add("--entire");
+	    commandLineParameters.add("--no_user_interaction");
 	    commandLineParameters.add("--enable_abort");
-
+	    commandLineParameters.add("--nero_log_timestamp");
+	    commandLineParameters.add("--error_log");
+	    commandLineParameters.add("\""+Logger.getLogFilePath("Nero error messages")+"\"");
+	    
 	    if(simulated) {
-	    	File imageFile = new File("Test Output Files\\Service CD.img");
+	    	File imageFile = new File("\"Test Output Files\\Service CD.img\"");
 	    	imageFile.delete();
 	    	imageFile.getParentFile().mkdirs();
-		    commandLineParameters.add("--drivename \"Image Recorder\"");
-	    	commandLineParameters.add("--output_image \""+imageFile.getCanonicalPath()+"\"");
+		    commandLineParameters.add("--drivename");
+		    commandLineParameters.add("\"Image Recorder\"");
+	    	commandLineParameters.add("--output_image");
+	    	commandLineParameters.add("\""+imageFile.getCanonicalPath()+"\"");
 	    }
-	    else
-		    commandLineParameters.add("--drivename \""+getDriveParameter()+"\"");
+	    else {
+		    commandLineParameters.add("--real");
+		    commandLineParameters.add("--detect_non_empty_cdrw");
+		    commandLineParameters.add("--force_erase_disc");
+	    	commandLineParameters.add("--drivename");
+		    commandLineParameters.add("\""+getDriveParameter()+"\"");
+	    }
 	    	
+	    commandLineParameters.add("--audio");
 	    Iterator iterator = recordingFiles.iterator();
 	    while(iterator.hasNext())
 	    	commandLineParameters.add("\""+((File) iterator.next()).getCanonicalPath()+"\"");

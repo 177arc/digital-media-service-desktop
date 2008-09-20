@@ -53,7 +53,7 @@ public class Logger extends java.util.logging.Logger {
         // Configures the logger.
         MemoryHandler memoryHandler = new MemoryHandler();
     	addHandler(memoryHandler);
-        logFileName = "Log Files\\Logged events (from "+FILE_DATE_FORMATTER.format(new Date())+" onwards).txt";
+        logFileName = getLogFilePath("Logged events");
         try {
         	FileHandler fileHandler = new FileHandler(logFileName);
         	fileHandler.setFormatter(new SimpleFormatter());
@@ -63,6 +63,17 @@ public class Logger extends java.util.logging.Logger {
         	System.err.println("The application could not initialise the logger that writes to the file '"+logFileName+"'.");
         	exception.printStackTrace();
         }
+	}
+	
+	/**
+	 * Gets the log file path based on the given file name (part). For example, for <code>Logged events</code>
+	 * the following will be returned: <code>Log Files\Logged events (from 20-Sep-2008 14-36-00 onwards).txt</code>.
+	 * 
+	 * @param baseFileName Specifies the file name base part of the log file path.
+	 * @return Returns the log file path based on the given file name (part).
+	 */
+	public static String getLogFilePath(String baseFileName) {
+		return "Log Files\\"+baseFileName+" (from "+FILE_DATE_FORMATTER.format(new Date())+" onwards).txt";
 	}
 	
 	/**
@@ -90,5 +101,5 @@ public class Logger extends java.util.logging.Logger {
      */
     public String getLogFileName() {
         return logFileName;
-    }    
+    }
 }

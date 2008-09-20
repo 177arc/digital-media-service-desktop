@@ -20,6 +20,9 @@ import java.util.List;
 import java.util.Map;
 
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.util.BasicDiagnostic;
+import org.eclipse.emf.common.util.Diagnostic;
+import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.notify.Notifier;
 import org.eclipse.emf.common.util.BasicEList;
@@ -34,6 +37,8 @@ import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
+import org.eclipse.emf.ecore.plugin.EcorePlugin;
+import org.eclipse.emf.ecore.util.EObjectValidator;
 import org.eclipse.emf.ecore.util.FeatureMap;
 import org.eclipse.emf.ecore.util.FeatureMapUtil;
 import org.onceforall.dms.desktop.Utilities;
@@ -875,6 +880,32 @@ public abstract class MElement extends EObjectImpl implements ThreadAdapter {
 		simulated = newSimulated;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, LogicPackage.MELEMENT__SIMULATED, oldSimulated, simulated));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model required="true" diagnosticsChainRequired="true" contextRequired="true"
+	 * @generated
+	 */
+	public boolean validate(DiagnosticChain diagnosticsChain, Map context) {
+		// TODO: implement this method
+		// -> specify the condition that violates the invariant
+		// -> verify the details of the diagnostic, including severity and message
+		// Ensure that you remove @generated or mark it @generated NOT
+		if (false) {
+			if (diagnosticsChain != null) {
+				diagnosticsChain.add
+					(new BasicDiagnostic
+						(Diagnostic.ERROR,
+						 LogicValidator.DIAGNOSTIC_SOURCE,
+						 LogicValidator.MELEMENT__VALIDATE,
+						 EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "validate", EObjectValidator.getObjectLabel(this, context) }),
+						 new Object [] { this }));
+			}
+			return false;
+		}
+		return true;
 	}
 
 	/**

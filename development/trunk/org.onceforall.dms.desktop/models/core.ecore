@@ -40,6 +40,10 @@
         derived="true" resolveProxies="false"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="MElement" abstract="true">
+  	<eOperations name="validate" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eParameters name="diagnosticsChain" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain"/>
+      <eParameters name="context" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EMap"/>
+    </eOperations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="#//MString"
         defaultValueLiteral=""/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="typeName" lowerBound="1"
@@ -60,7 +64,7 @@
         changeable="true" transient="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="compositeClassName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
         transient="true" defaultValueLiteral=""/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="simulated" lowerBound="1"
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="simulated" lowerBound="1" defaultValueLiteral="false"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="MParameter" eSuperTypes="#//MValue">
@@ -180,10 +184,6 @@
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="MApplication" abstract="true" eSuperTypes="#//MObject">
-	<eOperations name="validate" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
-      <eParameters name="diagnosticsChain" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain"/>
-      <eParameters name="context" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EMap"/>
-    </eOperations>
     <eAnnotations source="http://www.onceforall.org/mcore">
       <details key="typeNameForUI" value="Application"/>
       <details key="name" value="Digital Media Service Desktop"/>
@@ -1683,7 +1683,7 @@ Please enter your own email address here so that we can contact you if we have a
 	   	<details key="actionIconFilePath" value="Image Files/Burn CD.gif"/>
 	   	<details key="interruptable" value="false"/>
 	   	<details key="stoppable" value="false"/>
-	   	<details key="terminatable" value="false"/>
+	   	<details key="terminatable" value="true"/>
  		</eAnnotations>
 	   	<eStructuralFeatures xsi:type="ecore:EReference" name="mRecordingFilesParameter"
 	      lowerBound="1" eType="#//MParameter"

@@ -107,6 +107,8 @@ public class StreamReaderThread extends Thread {
 	                    		catch(NumberFormatException exception) {}
 	                    }
 	                }
+	                else
+	                	mStep.setProgressStatusProperty(line.trim());
                 }
             }
         } catch (IOException exception) {

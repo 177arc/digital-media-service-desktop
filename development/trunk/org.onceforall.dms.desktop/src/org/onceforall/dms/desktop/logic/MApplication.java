@@ -1272,32 +1272,6 @@ public abstract class MApplication extends MObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model required="true" diagnosticsChainRequired="true" contextRequired="true"
-	 * @generated
-	 */
-	public boolean validate(DiagnosticChain diagnosticsChain, Map context) {
-		// TODO: implement this method
-		// -> specify the condition that violates the invariant
-		// -> verify the details of the diagnostic, including severity and message
-		// Ensure that you remove @generated or mark it @generated NOT
-		if (false) {
-			if (diagnosticsChain != null) {
-				diagnosticsChain.add
-					(new BasicDiagnostic
-						(Diagnostic.ERROR,
-						 LogicValidator.DIAGNOSTIC_SOURCE,
-						 LogicValidator.MAPPLICATION__VALIDATE,
-						 EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "validate", EObjectValidator.getObjectLabel(this, context) }),
-						 new Object [] { this }));
-			}
-			return false;
-		}
-		return true;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
