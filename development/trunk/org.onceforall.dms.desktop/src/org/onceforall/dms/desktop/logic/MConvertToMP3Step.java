@@ -1211,6 +1211,7 @@ public class MConvertToMP3Step extends MTagStep {
 	    	getMp3FolderReferenceParameter().getMMp3s().add(newMMp3);
 	    }
 	    
+	    setProgressStatusProperty(null);
 	    setMp3EntryReferenceResult(newMMp3);
 	    setMp3FilePathResult(outputFile);
 	}
