@@ -33,6 +33,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 
+import org.onceforall.dms.desktop.logic.MConvertToMP3Step;
 import org.onceforall.dms.desktop.logic.MStep;
 
 
@@ -107,9 +108,11 @@ public class StreamReaderThread extends Thread {
 	                    		catch(NumberFormatException exception) {}
 	                    }
 	                }
-	                else
-	                	mStep.setProgressStatusProperty(line.trim());
-                }
+	                else {
+	                	if(!(mStep instanceof MConvertToMP3Step))
+	                		mStep.setProgressStatusProperty(line.trim());
+	                } 
+	           }
             }
         } catch (IOException exception) {
 			exception.printStackTrace();
