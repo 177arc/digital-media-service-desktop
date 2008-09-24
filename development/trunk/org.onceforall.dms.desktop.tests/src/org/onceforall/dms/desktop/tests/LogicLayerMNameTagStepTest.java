@@ -33,14 +33,16 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 /**
- * Tests the managed publish MP3 step.
+ * Tests the managed name tag step.
  *
  * @author Marc
  */
 public class LogicLayerMNameTagStepTest extends LogicLayerTest {
+	/** Specifies the managed MP3 folder that will contain the managed MP3 entries created by the managed name tag step. */
 	protected MMp3Folder mMp3Folder;
+	
+	/** Specifies the managed name tag step to test. */
 	protected MNameTagMp3Step mStep;
-
 	
 	/**
 	 * Creates a managed MP3 folder under the application root. It also
@@ -49,7 +51,7 @@ public class LogicLayerMNameTagStepTest extends LogicLayerTest {
 	 * @throws Exception Thrown if an error occurs.
 	 */
 	@BeforeClass
-	public void createMMp3FolderAndStep() throws Exception {
+	public void initialise() throws Exception {
 		mDmsApplication = (MDmsApplication) MApplication.getInstance();
 		
 		mMp3Folder = LogicFactory.eINSTANCE.createMMp3Folder();
@@ -66,8 +68,7 @@ public class LogicLayerMNameTagStepTest extends LogicLayerTest {
 		mStep.getMMp3EntryNameParameter().setValueForUI(TestData.LogicLayerMNameTagStepTest_Mp3Entry);
 		mStep.getMDirectoryParameter().setValueForUI(TestData.LogicLayerMNameTagStepTest_Directory);
 		mStep.getMTaggedMp3FileNameParameter().setValueForUI(TestData.LogicLayerMNameTagStepTest_TaggedMp3FileName);
-		mStep.getMRecordingMp3FileParameter().setValueForUI(TestData.LogicLayerMNameTagStepTest_RecordingMp3File);
-		
+		mStep.getMRecordingMp3FileParameter().setValueForUI(TestData.LogicLayerMNameTagStepTest_RecordingMp3File);		
 		
 		mStep.getMMp3FolderReferenceParameter().setValueForUI(mMp3Folder.getPath());
 	}
