@@ -51,22 +51,6 @@ public class Main {
 	 * @param arguments Specifies the command line arguments.
 	 */
 	public static void main(String[] arguments) {		
-
-	    // Makes sure that only one instance of the application is running.
-		try {
-	        new ServerSocket(53431);
-		}
-		catch(BindException exception) {
-	    	MessageBox messageBox = new MessageBox(new Shell(), SWT.OK | SWT.ICON_ERROR);
-			messageBox.setMessage("Another instance of this application is already running on this computer.\n\nYou cannot run two instances of this application at the same time.");
-			messageBox.setText("Digital Media Service Desktop Error");
-			messageBox.open();    	
-			System.exit(0);
-		}
-		catch(Throwable exception) {
-			// Ignores other exceptions.
-		}
-
 		try {
 	        Logger.getLogger().info("Application started.");      
 	        
