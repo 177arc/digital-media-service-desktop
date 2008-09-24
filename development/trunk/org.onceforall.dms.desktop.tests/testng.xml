@@ -14,7 +14,12 @@ Updated to checkpoint progress.
 -->
 
 <suite name="All" verbose="1">
-	<test name="Logic layer Tag and rename test" annotations="JDK5">
+  <test name="Logic layer Copy directory test" annotations="JDK5">
+    <classes>
+      <class name="org.onceforall.dms.desktop.tests.LogicLayerMCopyDirectoryStepTest" />
+    </classes>
+  </test>
+  <test name="Logic layer Tag and rename test" annotations="JDK5">
     <classes>
       <class name="org.onceforall.dms.desktop.tests.LogicLayerMNameTagStepTest" />
     </classes>
