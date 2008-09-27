@@ -20,7 +20,7 @@
 </folder>
 </info>
 </editorArea>
-<editor focus="true" id="org.onceforall.dms.desktop.logic.presentation.LogicEditorID" name="Data.xml" partName="Data.xml" title="Data.xml" tooltip="file:/C:/DMS%20UAT/CCB/Onceforall/DMS%20Desktop/Application%20Data%20Files/Data.xml" workbook="DefaultEditorWorkbook">
+<editor activePart="true" focus="true" id="org.onceforall.dms.desktop.logic.presentation.LogicEditorID" name="Data.xml" partName="Data.xml" title="Data.xml" tooltip="file:/C:/DMS%20UAT/CCB/Onceforall/DMS%20Desktop/Application%20Data%20Files/Data.xml" workbook="DefaultEditorWorkbook">
 <input bundle="org.eclipse.emf.common.ui" class="org.eclipse.emf.common.ui.URIEditorInput" factoryID="org.eclipse.emf.common.ui.URIEditorInputFactory" uri="file:/C:/DMS%20UAT/CCB/Onceforall/DMS%20Desktop/Application%20Data%20Files/Data.xml"/>
 </editor>
 </editors>
@@ -29,7 +29,7 @@
 <viewState/>
 </view>
 </views>
-<perspectives activePart="org.eclipse.ui.views.PropertySheet" activePerspective="org.onceforall.dms.desktop.logic.presentation.DMSDesktopEditorAdvisorPerspective">
+<perspectives activePart="org.onceforall.dms.desktop.logic.presentation.LogicEditorID" activePerspective="org.onceforall.dms.desktop.logic.presentation.DMSDesktopEditorAdvisorPerspective">
 <perspective editorAreaTrimState="2" editorAreaVisible="1" fixed="0" version="0.016">
 <descriptor class="org.onceforall.dms.desktop.logic.presentation.DMSDesktopEditorAdvisor$Perspective" id="org.onceforall.dms.desktop.logic.presentation.DMSDesktopEditorAdvisorPerspective" label="DMSDesktop"/>
 <alwaysOnActionSet id="org.eclipse.ui.actionSet.keyBindings"/>
