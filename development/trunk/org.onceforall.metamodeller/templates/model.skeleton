@@ -1,0 +1,109 @@
+/*
+ * Revision History:
+ * $Log: model.skeleton,v $
+ * Revision 1.1  2006/08/29 00:58:58  marc
+ * Added initial revision.
+ *
+ */
+import java.util.Collections;
+import java.io.IOException;
+import java.io.File;
+
+import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.emf.ecore.resource.ResourceSet;
+import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
+import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
+import org.eclipse.emf.common.util.URI;
+
+/**
+ * Defines a class that generates an Ecore model from an Ecore meta model.
+ */
+public class CLASS { 
+	/** Specifies the root of the Ecore meta model that the model generator uses. */
+	protected ERootPackageType modelRoot;
+
+	/** Specifies the path of the Ecore file to generate the Ecore model and the Generation model from. */
+	protected File ecoreFile;
+
+	/** Specifies the path of the Ecore file to be generated. */
+	protected File generatedEcoreFile;
+	
+	/**
+	 * Gets the root of the Ecore meta model to use a the input for the model generator.
+	 *
+	 * @return Returns the root of the Ecore meta model.
+	 * @throws IOException Thrown if the generator model file cannot be loaded.
+	 */
+	 public ERootPackageType getModelRoot() throws IOException {
+		// TODO: Find a way to only reload model when necessary. The problem with naive caching is that changes to the meta model are not reflected when validating.
+		//?if(modelRoot == null) {
+			ResourceSet resourceSet = new ResourceSetImpl();
+
+			// Registers the default resource factory.
+			resourceSet.getResourceFactoryRegistry().getExtensionToFactoryMap().put(
+			Resource.Factory.Registry.DEFAULT_EXTENSION, new XMIResourceFactoryImpl());
+
+			// Gets the URI of the model file.
+			URI fileURI = URI.createFileURI(ecoreFile.getAbsolutePath());
+                
+			// Creates a resource for this file.
+			Resource resource = resourceSet.createResource(fileURI);
+        
+			// Registers the model package.
+			@SuppressWarnings("unused")
+			MetaModellerPackage modelPackage = MetaModellerPackage.eINSTANCE;
+   
+			resource.load(Collections.EMPTY_MAP);
+			modelRoot = (ERootPackageType) resource.getContents().get(0);
+		//?}
+	 	
+	 	return modelRoot;
+	}
+
+	/**
+	 * Gets the path of the Ecore file to generate the Ecore model and the Generation model from.
+	 * 
+	 * @return Returns the path of the Ecore file to generate the Ecore model and the Generation model from.
+	 */
+	public File getEcoreFile() {
+		return ecoreFile;
+	}
+
+	/**
+	 * Sets the path of the Ecore file to generate the Ecore model and the Generation model from.
+	 *
+	 * @param ecoreFile Specifies the path of the Ecore file to generate the Ecore model and the Generation model from.
+	 */
+	public void setEcoreFile(File ecoreFile) {
+		this.ecoreFile = ecoreFile;
+	}	
+
+	/**
+	 * Gets the path of the Ecore file to be generated.
+	 * 
+	 * @return Returns the path of the Ecore file to be generated.
+	 */
+	public File getGeneratedEcoreFile() {
+		return generatedEcoreFile;
+	}
+
+	/**
+	 * Sets the path of the Ecore file to be generated.
+	 *
+	 * @param generatedEcoreFile Specifies the path of the Ecore file to be generated.
+	 */
+	public void setGeneratedEcoreFile(File generatedEcoreFile) {
+		this.generatedEcoreFile = generatedEcoreFile;
+	}	
+	 	
+	/**
+	 * Generate the Ecore model. Before this method can be executed,
+	 * the {@link #setEcoreFile(java.io.File) model} has to be set.
+	 *
+	 * @return Returns the generated Ecore model as Ecore XML.
+	 * @throws IOException Thrown if the generator model file cannot be loaded.
+	 */
+	public String generate(Object argument) throws IOException {
+		return "";
+	}
+}
