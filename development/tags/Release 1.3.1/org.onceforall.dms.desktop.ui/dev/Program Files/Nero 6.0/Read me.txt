@@ -1,0 +1,5 @@
+Ahead Nero 6.0 is required for CD burning as the DMS Desktop integrates with Nero 6.0 via its excellently designed command line interface. It is not included because it is a commercial product :-(. 
+
+Nero 6.0 may be difficult to get hold of but a cheap OEM version of Nero 7 can be purchased from retailers such as Ebuyer (http://www.ebuyer.com).
+
+Please note that integration with Nero 7 has not yet been tested. Once tested this note will be removed.
