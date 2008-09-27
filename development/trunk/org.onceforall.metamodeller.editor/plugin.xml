@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+ <copyright>
+ </copyright>
+
+ $Id: plugin.xml,v 1.1 2006/08/29 01:00:14 marc Exp $
+-->
+
+<plugin>
+
+
+  <extension
+    point = "org.eclipse.ui.newWizards">
+    <category
+      id = "org.eclipse.emf.ecore.Wizard.category.ID"
+      name="%_UI_Wizard_category">
+    </category>
+    <wizard
+      id = "org.onceforall.metamodeller.presentation.MetaModellerModelWizardID"
+      name = "%_UI_MetaModellerModelWizard_label"
+      class = "org.onceforall.metamodeller.presentation.MetaModellerModelWizard"
+      category = "org.eclipse.emf.ecore.Wizard.category.ID"
+      icon = "icons/full/obj16/MetaModellerModelFile.gif">
+      <description>%_UI_MetaModellerModelWizard_description</description>
+      <selection class = "org.eclipse.core.resources.IResource" />
+    </wizard>
+  </extension>
+
+  <extension point = "org.eclipse.ui.editors">
+    <editor
+        id = "org.onceforall.metamodeller.presentation.MetaModellerEditorID"
+        name = "%_UI_MetaModellerEditor_label"
+        icon = "icons/full/obj16/MetaModellerModelFile.gif"
+        extensions = "%_UI_MetaModellerEditorFilenameExtension"
+        class = "org.onceforall.metamodeller.presentation.MetaModellerEditor" 
+        contributorClass="org.onceforall.metamodeller.presentation.MetaModellerActionBarContributor" >
+    </editor>
+  </extension>    
+</plugin>
