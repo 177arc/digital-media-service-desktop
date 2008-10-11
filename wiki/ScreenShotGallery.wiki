@@ -21,11 +21,11 @@ As part of publishing the MP3 recordings to your web site, the DMS Desktop gener
 == iGoogle ==
   [http://www.onceforall.org/dms-desktop/images/igoogle.png]
 
-== Microsoft Live ==
-  [http://www.onceforall.org/dms-desktop/images/live.png]
-
 == !MyYahoo! ==
  [http://www.onceforall.org/dms-desktop/images/my-yahoo.png]
+
+== Microsoft Live ==
+  [http://www.onceforall.org/dms-desktop/images/live.png]
 
 = Broadcast your MP3 recordings with RSS =
 As part of publishing the MP3 recordings to your web site, the DMS Desktop generates a podcast/RSS file that users can add their favourite RSS readers, such as Google Reader.
