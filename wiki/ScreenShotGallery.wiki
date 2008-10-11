@@ -11,7 +11,7 @@ With the DMS Desktop, you can easily publish recordings as [http://en.wikipedia.
   [http://www.onceforall.org/dms-desktop/images/web-page.png]
 
 = Podcast your MP3 recordings ==
-As part of publishing the [http://en.wikipedia.org/wiki/MP3 MP3] recordings to your web site, the DMS Desktop generates a podcast/RSS file that users can subscribe to via iTunes or similar application for free. Once subscribed via iTunes, owners of iPods and iPhones have the latest recordings downloaded automatically to their device so they can listen to your recordings wherever they are.
+As part of publishing the [http://en.wikipedia.org/wiki/MP3 MP3] recordings to your web site, the DMS Desktop generates a [http://en.wikipedia.org/wiki/Podcast podcast]/[http://en.wikipedia.org/wiki/RSS RSS] file that users can subscribe to via iTunes or similar application for free. Once subscribed via iTunes, owners of [http://en.wikipedia.org/wiki/Ipod iPods] and [http://en.wikipedia.org/wiki/Iphone iPhones] have the latest recordings downloaded automatically to their device so they can listen to your recordings wherever they are.
 
   [http://www.onceforall.org/dms-desktop/images/itunes.png]
 
