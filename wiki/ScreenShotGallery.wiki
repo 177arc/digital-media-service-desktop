@@ -27,7 +27,7 @@ As part of publishing the MP3 recordings to your web site, the DMS Desktop gener
 == !MyYahoo! ==
  [http://www.onceforall.org/dms-desktop/images/my-yahoo.png]
 
-= Publish your MP3 recordings with RSS =
+= Broadcast your MP3 recordings with RSS =
 As part of publishing the MP3 recordings to your web site, the DMS Desktop generates a podcast/RSS file that users can add their favourite RSS readers, such as Google Reader.
 
  [http://www.onceforall.org/dms-desktop/images/rss.png]
