@@ -1,4 +1,4 @@
-#Uses screen shots to explain the functionality of the software.
+#summary Uses screen shots to explain the functionality of the software.
 
 = Record and publish your audio recordings =
 The Digital Media Service Desktop (DMS Desktop) is an application that guides the user through the process of recording and publishing digital audio recordings. After entering some event information, the user can record the event, produce audio CDs and publish the recording on the web as MP3 files - only with a few click.
