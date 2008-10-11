@@ -16,7 +16,7 @@ As part of publishing the [http://en.wikipedia.org/wiki/MP3 MP3] recordings to y
   [http://www.onceforall.org/dms-desktop/images/itunes.png]
 
 = Integrate your MP3 recordings with major portals =
-As part of publishing the [http://en.wikipedia.org/wiki/MP3 MP3] recordings to your web site, the DMS Desktop generates a [http://en.wikipedia.org/wiki/Podcast podcast]/[http://en.wikipedia.org/wiki/RSS RSS] file that users can add to their favourite portal, such as [http://www.google.co.uk/ig?hl=en iGoogle], [http://my.live.com Live] and [http://my.yahoo.com !MyYahoo!], so that they always have the latest recordings at their fingertips.
+As part of publishing the [http://en.wikipedia.org/wiki/MP3 MP3] recordings to your web site, the DMS Desktop generates a [http://en.wikipedia.org/wiki/Podcast podcast]/[http://en.wikipedia.org/wiki/RSS RSS] file that users can add to their favourite portal, such as [http://www.google.co.uk/ig?hl=en iGoogle], [http://my.live.com Live] and [http://my.yahoo.com MyYahoo!], so that they always have the latest recordings at their fingertips.
 
 == iGoogle ==
   [http://www.onceforall.org/dms-desktop/images/igoogle.png]
@@ -28,7 +28,7 @@ As part of publishing the [http://en.wikipedia.org/wiki/MP3 MP3] recordings to y
   [http://www.onceforall.org/dms-desktop/images/live.png]
 
 = Broadcast your MP3 recordings with RSS =
-As part of publishing the MP3 recordings to your web site, the DMS Desktop generates a [http://en.wikipedia.org/wiki/Podcast podcast]/[http://en.wikipedia.org/wiki/RSS RSS] file that users can add their favourite RSS readers, such as Google Reader.
+As part of publishing the MP3 recordings to your web site, the DMS Desktop generates a [http://en.wikipedia.org/wiki/Podcast podcast]/[http://en.wikipedia.org/wiki/RSS RSS] file that users can add their favourite RSS readers, such as [http://www.google.co.uk/reader Google Reader].
 
  [http://www.onceforall.org/dms-desktop/images/rss.png]
 
