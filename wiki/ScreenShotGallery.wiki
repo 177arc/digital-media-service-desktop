@@ -1,0 +1,43 @@
+#Uses screen shots to explain the functionality of the software.
+
+= Record and publish your audio recordings =
+The Digital Media Service Desktop (DMS Desktop) is an application that guides the user through the process of recording and publishing digital audio recordings. After entering some event information, the user can record the event, produce audio CDs and publish the recording on the web as MP3 files - only with a few click.
+
+  [http://www.onceforall.org/dms-desktop/images/dms-desktop.png]
+
+= Publish MP3 recordings on your web site =
+With the DMS Desktop, you can easily publish recordings as MP3 files to your web site. Your visitors can either download the recordings or play them back directly in the web page. Integrating the recordings web page into your existing site requires minimal effort and does not require any particular server configuration.
+
+  [http://www.onceforall.org/dms-desktop/images/web-page.png]
+
+= Podcast your MP3 recordings ==
+As part of publishing the MP3 recordings to your web site, the DMS Desktop generates a podcast/RSS file that users can subscribe to via iTunes or similar application for free. Once subscribed via iTunes, owners of iPods and iPhones have the latest recordings downloaded automatically to their device so they can listen to your recordings wherever they are.
+
+  [http://www.onceforall.org/dms-desktop/images/itunes.png]
+
+= Integrate your MP3 recordings with major portals =
+As part of publishing the MP3 recordings to your web site, the DMS Desktop generates a podcast/RSS file that users can add to their favourite portal, such as iGoogle, Live and !MyYahoo!, so that they always have the latest recordings at their fingertips.
+
+== iGoogle ==
+  [http://www.onceforall.org/dms-desktop/images/igoogle.png]
+
+== Microsoft Live ==
+  [http://www.onceforall.org/dms-desktop/images/live.png]
+
+== !MyYahoo! ==
+ [http://www.onceforall.org/dms-desktop/images/my-yahoo.png]
+
+= Publish your MP3 recordings with RSS =
+As part of publishing the MP3 recordings to your web site, the DMS Desktop generates a podcast/RSS file that users can add their favourite RSS readers, such as Google Reader.
+
+ [http://www.onceforall.org/dms-desktop/images/rss.png]
+
+= Burn high quality audio recordings on CD =
+The DMS Desktop records using the loss-less [WAV|http://en.wikipedia.org/wiki/WAV] format to help for optimal audio quality. Because the DMS Desktop integrates with the CD burning software package [Nero|http://en.wikipedia.org/wiki/Nero_Burning_ROM] (separate commercial software), a DMS Desktop user can produce CDs of the recorded event with a single mouse click.
+
+  [http://www.onceforall.org/dms-desktop/images/cd-burning.png]
+
+= Customise your recording and publishing process =
+The DMS Desktop includes a tool called the DMS Desktop Editor that can be used to customise DMS Desktop, e.g. to change the task list for recording and publishing. In this way, the DMS Desktop can be easily adapted to suit your individual requirements. The editor can also be used to change all data associated with the DMS Desktop.
+
+  [http://www.onceforall.org/dms-desktop/images/dms-desktop-editor.png]
