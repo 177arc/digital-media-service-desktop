@@ -83,16 +83,19 @@ public class MonitoredAudioInputStream extends AudioInputStream implements Notif
     /** Indicates whether the reader thread should be suspended. */
     protected boolean suspendReader;
     
-    /** Specifies the current left level reading of the input stream as value between 0 and {@link #MAXIMUM_LEVEL}. */
+    /** Specifies the thread which is currently reading externally from the stream. */
+    protected Thread externalReaderThread;
+
+	/** Specifies the current left level reading of the input stream as value between 0 and {@link #MAXIMUM_LEVEL}. */
     protected int leftLevel;
     
     /** Specifies the current right level reading of the input stream as value between 0 and {@link #MAXIMUM_LEVEL}. */
     protected int rightLevel;
     
-    /** Indicates whether the left input signal is distored. */
+    /** Indicates whether the left input signal is distorted. */
     protected boolean leftDistorted;
     
-    /** Indicates whether the right input signal is distored. */
+    /** Indicates whether the right input signal is distorted. */
     protected boolean rightDistorted;
     
     /** Specifies the time when the distortion on the left channel was detected. The time is used to reset an alert after a short time after it occurred. */
@@ -101,16 +104,16 @@ public class MonitoredAudioInputStream extends AudioInputStream implements Notif
     /** Specifies the time when the distortion on the right channel was detected. The time is used to reset an alert after a short time after it occurred. */
     protected long rightDistortedTime;
 
-    /** Indicates whether the distrortion alert for the left channel is set. The alert remains set for a short time after a possible distortion has been detected. */
+    /** Indicates whether the distortion alert for the left channel is set. The alert remains set for a short time after a possible distortion has been detected. */
     protected boolean leftDistortionAlert;
 
-    /** Indicates whether the distrortion alert for the right chanbel is set. The alert remains set for a short time after a possible distortion has been detected. */
+    /** Indicates whether the distortion alert for the right channel is set. The alert remains set for a short time after a possible distortion has been detected. */
     protected boolean rightDistortionAlert;
     
     /** Specifies the line to read from. */
     protected TargetDataLine line;
     
-    /** Specifiies the audio format of the audio input stream. */
+    /** Specifies the audio format of the audio input stream. */
     protected AudioFormat audioFormat;
     
     /** Indicates whether the closing of the stream has been requested. */
@@ -126,7 +129,7 @@ public class MonitoredAudioInputStream extends AudioInputStream implements Notif
     protected boolean paused;
     
     /** Specifies the notifier to hold all adapters of this object.
-      * The notfier is added by delegation and not inheritance because Java does not
+      * The notifier is added by delegation and not inheritance because Java does not
       * support multiple inheritance and this class HAS TO inherit from Notifier. */
     protected Notifier notifier;
     
@@ -260,16 +263,22 @@ public class MonitoredAudioInputStream extends AudioInputStream implements Notif
      */
     public void close() throws IOException {        
         closeRequested = true;
+        
+        while(!closed)
+			try {
+				Thread.sleep(50);
+			} catch (InterruptedException e) {
+			}
     }
     
     /**
-     * Stop the audio stream. While thestream is stopped the monitor level reader will read from the audio stream
+     * Stop the audio stream. While the stream is stopped the monitor level reader will read from the audio stream
      * to update the level readings.
      */
-    public void stop() {
-        try {
-            close();
-        } catch (IOException exception) {}
+    public void stop() {	    
+    	try {
+	    	close();
+	    } catch (IOException exception) {}
     }
     
     /**
@@ -359,43 +368,73 @@ public class MonitoredAudioInputStream extends AudioInputStream implements Notif
     /**
      * @see java.io.InputStream#read(byte[], int, int)
      */
-    public int read(byte[] buffer, int offset, int length) throws IOException {
-        if(pauseRequested) {
-            // Activates level monitor reader and waits till the pause request is reversed.
-            suspendReader = false;
-            paused = true;
-            while(pauseRequested && !closeRequested)
-                try {
-                    Thread.sleep(FRAME_BUFFER_SIZE);
-                } catch (InterruptedException exception) {}
-        }
-        
-        if(closeRequested) {
-            pauseRequested = false;
-            closeRequested = false;
-            suspendReader = false;
-            closed = true;
-            return(-1);
-        }
-        
-        closed = false;
-        paused = false;
-        
-        suspendReader = true;
-        synchronized(frameBuffer) {
-	        int bytesRead = super.read(buffer, offset, length);
-	        //?System.out.println("Buffer size: "+buffer.length+", offset: "+offset+", length "+length);
+    public int read(byte[] buffer, int offset, int length) throws IOException {		
+		synchronized(this) {
+    		if(externalReaderThread != null 
+    				&& externalReaderThread != Thread.currentThread())
+    			throw new IOException("The thread '"+externalReaderThread.getName()+"' is currently reading from the audio input. Only one thread can read from the audio input at any point in time.");
+        	
+    		externalReaderThread = Thread.currentThread();
+		}
+
+		try {    			
+	        	if(pauseRequested) {
+		            // Activates level monitor reader and waits till the pause request is reversed.
+	    			suspendReader = false;
+		            paused = true;
+		            while(pauseRequested && !closeRequested)
+		                try {
+		                    Thread.sleep(FRAME_BUFFER_SIZE);
+		                } catch (InterruptedException exception) {}
+		        }
+		        
+		        if(closeRequested) {
+		            pauseRequested = false;
+		            closeRequested = false;
+		            suspendReader = false;
+		            closed = true;
+		            
+				    synchronized(this) {
+				    	externalReaderThread = null;
+				    }
+				    
+		            return(-1);
+		        }
+		        
+		        closed = false;
+		        paused = false;
 	        
-	        
-	        for(int index = offset; index < bytesRead+offset; ++index) {
-	            frameBuffer[frameBufferIndex++] = buffer[index];
-	            
-	            if(frameBufferIndex >= frameBuffer.length)
-	                updateLevels();
+	        	suspendReader = true;
+	        	synchronized(frameBuffer) {	
+			        int bytesRead = super.read(buffer, offset, length);
+			        //?System.out.println("Buffer size: "+buffer.length+", offset: "+offset+", length "+length);
+			        
+			        
+			        for(int index = offset; index < bytesRead+offset; ++index) {
+			            frameBuffer[frameBufferIndex++] = buffer[index];
+			            
+			            if(frameBufferIndex >= frameBuffer.length)
+			                updateLevels();
+			        }
+		        
+		        	return(bytesRead);
+	        	}
 	        }
-	        
-	        return(bytesRead);
-        }
+        	catch(RuntimeException exception) {
+    	    	externalReaderThread = null;
+    	    	
+    	    	throw exception;
+        	}
+        	catch(Error exception) {
+    	    	externalReaderThread = null;
+    	    	
+    	    	throw exception;
+        	}
+        	catch(IOException exception) {
+    	    	externalReaderThread = null;
+    	    	
+    	    	throw exception;
+        	}
     }
     
     /**
@@ -415,7 +454,17 @@ public class MonitoredAudioInputStream extends AudioInputStream implements Notif
     public int getRightLevel() {
         return rightLevel;
     }
-    
+
+	/**
+	 * Gets the thread which is currently reading externally from the stream.
+	 * 
+	 * @return Returns the thread which is currently reading externally from the stream.
+	 * @see #externalReaderThread
+	 */
+	public synchronized Thread getExternalReaderThread() {
+		return externalReaderThread;
+	}
+
     /**
      * Defines the thread that constantly reads from the audio input stream into a buffer while,
      * the stream is not read by another object. This allows the monitored audio input stream to
