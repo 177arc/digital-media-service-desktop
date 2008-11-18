@@ -935,11 +935,11 @@ public class MScript extends MStatefulObject {
 	}
 
 	/**
-	 * Gets the step before the {@link #getCurrentStep() current step}.
+	 * Gets the step before the {@link #getCurrentMStep() current step}.
 	 * 
 	 * @return Returns the step before the current step.
 	 */
-	public MStep getPreviousStep() {
+	public MStep getPreviousMStep() {
 		MStep result = null;
 		
 		Iterator iterator = mSteps.iterator();
@@ -962,7 +962,7 @@ public class MScript extends MStatefulObject {
 	 * 
 	 * @return Returns the current step.
 	 */
-	public MStep getCurrentStep() {
+	public MStep getCurrentMStep() {
 		Iterator iterator = mSteps.iterator();
 		while(iterator.hasNext()) {
 			EObject eObject = (EObject) iterator.next();
@@ -976,11 +976,11 @@ public class MScript extends MStatefulObject {
 
 
 	/**
-	 * Gets the step after the {@link #getCurrentStep() current step}.
+	 * Gets the step after the {@link #getCurrentMStep() current step}.
 	 * 
 	 * @return Returns the step after the current step.
 	 */
-	public MStep getNextStep() {
+	public MStep getNextMStep() {
 		boolean foundCurrentStep = false;
 
 		Iterator iterator = mSteps.iterator();
@@ -1006,7 +1006,9 @@ public class MScript extends MStatefulObject {
 	public void processNotification(Notification notification) {
 		super.processNotification(notification);
 		
-		if(notification.getEventType() == Notification.SET  && notification.getNotifier() instanceof MValue) {
+		if(MApplication.state != MApplication.LOADING_STATE 
+				&& notification.getEventType() == Notification.SET  
+				&& notification.getNotifier() instanceof MValue) {
 			MValue mValue = (MValue) notification.getNotifier();
 			if(mValue.eContainingFeatureID() == LogicPackage.MSTEP__MPROGRESS_PROPERTY) {
 				long progress = 0;
