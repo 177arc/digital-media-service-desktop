@@ -120,6 +120,15 @@
        <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MDmsApplication/ftpUserNamePropertyHistoricValues"/>
        <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference core.ecore#//MDmsApplication/MFtpUserPasswordProperty"/>
        <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MDmsApplication/ftpUserPasswordProperty"/>
+       <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference core.ecore#//MDmsApplication/MMp3RelativeFtpPathProperty"/>
+       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MDmsApplication/mp3RelativeFtpPathProperty"/>
+       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MDmsApplication/mp3RelativeFtpPathPropertyHistoricValues"/>
+       <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference core.ecore#//MDmsApplication/MContentPageRelativeFtpPathProperty"/>
+       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MDmsApplication/contentPageRelativeFtpPathProperty"/>
+       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MDmsApplication/contentPageRelativeFtpPathPropertyHistoricValues"/>
+       <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference core.ecore#//MDmsApplication/MPodcastRelativeFtpPathProperty"/>
+       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MDmsApplication/podcastRelativeFtpPathProperty"/>
+       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MDmsApplication/podcastRelativeFtpPathPropertyHistoricValues"/>
        <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference core.ecore#//MDmsApplication/MWebServerUrlProperty"/>
        <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MDmsApplication/webServerUrlProperty"/>
        <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MDmsApplication/webServerUrlPropertyHistoricValues"/>
@@ -131,6 +140,9 @@
        <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MDmsApplication/smtpUserNamePropertyHistoricValues"/>
        <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference core.ecore#//MDmsApplication/MSmtpPasswordProperty"/>
        <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MDmsApplication/smtpPasswordProperty"/>
+       <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference core.ecore#//MDmsApplication/MReceipientsEmailAddressProperty"/>
+       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MDmsApplication/receipientsEmailAddressProperty"/>
+       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MDmsApplication/receipientsEmailAddressPropertyHistoricValues"/>
        <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference core.ecore#//MDmsApplication/MBurningSoftwareDirectoryPathProperty"/>
        <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MDmsApplication/burningSoftwareDirectoryPathProperty"/>
        <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference core.ecore#//MDmsApplication/MDriveProperty"/>

@@ -203,7 +203,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="dataFileProperty" lowerBound="1"
         eType="#//MExistingFile" changeable="false" transient="true" defaultValueLiteral="Application Data Files\Data.xml"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="infoWebPageProperty" lowerBound="1"
-        eType="#//MUrl" changeable="true" transient="true" defaultValueLiteral="http://www.onceforall.org/dms-desktop/info.html"/>
+        eType="#//MUrl" changeable="true" transient="false" defaultValueLiteral="http://www.onceforall.org/dms-desktop/info.php"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="mInfoWebPageProperty" lowerBound="1"
         eType="#//MProperty" containment="true"
         resolveProxies="false">
@@ -426,6 +426,36 @@
 	     </eAnnotations>
 	   </eStructuralFeatures>  		
        <eStructuralFeatures xsi:type="ecore:EAttribute" name="ftpUserPasswordProperty" lowerBound="0" upperBound="1" transient="false" eType="//MPassword" derived="false" volatile="false"/>
+	   	<eStructuralFeatures xsi:type="ecore:EReference" name="mMp3RelativeFtpPathProperty"
+	      lowerBound="1" eType="#//MProperty"
+	      containment="true" resolveProxies="false">
+	     <eAnnotations source="http://www.onceforall.org/mcore">
+	       <details key="name" value="MP3 relative FTP path"/>
+	       <details key="description" value="Specifies the path of the directory on the FTP server to publish the MP3 files to, e.g. &apos;/recordings&apos;."/>
+	     </eAnnotations>
+	   </eStructuralFeatures>  		
+       <eStructuralFeatures xsi:type="ecore:EAttribute" name="mp3RelativeFtpPathProperty" lowerBound="0" upperBound="1" transient="false" eType="//MString" derived="false" volatile="false"/>
+     	<eStructuralFeatures xsi:type="ecore:EAttribute" name="mp3RelativeFtpPathPropertyHistoricValues" upperBound="3" transient="false" eType="//MString"/>
+	   	<eStructuralFeatures xsi:type="ecore:EReference" name="mContentPageRelativeFtpPathProperty"
+	      lowerBound="1" eType="#//MProperty"
+	      containment="true" resolveProxies="false">
+	     <eAnnotations source="http://www.onceforall.org/mcore">
+	       <details key="name" value="Content page relative FTP path"/>
+	       <details key="description" value="Specifies the path of the directory relative to the FTP path where to publish the MP3 content page to, e.g. &apos;/recordings&apos;."/>
+	     </eAnnotations>
+	   </eStructuralFeatures>  		
+       <eStructuralFeatures xsi:type="ecore:EAttribute" name="contentPageRelativeFtpPathProperty" lowerBound="0" upperBound="1" transient="false" eType="//MString" derived="false" volatile="false"/>
+     	<eStructuralFeatures xsi:type="ecore:EAttribute" name="contentPageRelativeFtpPathPropertyHistoricValues" upperBound="3" transient="false" eType="//MString"/>
+	   	<eStructuralFeatures xsi:type="ecore:EReference" name="mPodcastRelativeFtpPathProperty"
+	      lowerBound="1" eType="#//MProperty"
+	      containment="true" resolveProxies="false">
+	     <eAnnotations source="http://www.onceforall.org/mcore">
+	       <details key="name" value="Podcast relative FTP path"/>
+	       <details key="description" value="Specifies the path relative to the FTP path where the podcast RSS feed should be created or updated."/>
+	     </eAnnotations>
+	   </eStructuralFeatures>  		
+       <eStructuralFeatures xsi:type="ecore:EAttribute" name="podcastRelativeFtpPathProperty" lowerBound="0" upperBound="1" transient="false" eType="//MString" derived="false" volatile="false"/>
+     	<eStructuralFeatures xsi:type="ecore:EAttribute" name="podcastRelativeFtpPathPropertyHistoricValues" upperBound="3" transient="false" eType="//MString"/>
 	   	<eStructuralFeatures xsi:type="ecore:EReference" name="mWebServerUrlProperty"
 	      lowerBound="1" eType="#//MProperty"
 	      containment="true" resolveProxies="false">
@@ -467,6 +497,17 @@
 	     </eAnnotations>
 	   </eStructuralFeatures>  		
        <eStructuralFeatures xsi:type="ecore:EAttribute" name="smtpPasswordProperty" lowerBound="0" upperBound="1" transient="false" eType="//MPassword" derived="false" volatile="false"/>
+	   	<eStructuralFeatures xsi:type="ecore:EReference" name="mReceipientsEmailAddressProperty"
+	      lowerBound="1" eType="#//MProperty"
+	      containment="true" resolveProxies="false">
+	     <eAnnotations source="http://www.onceforall.org/mcore">
+	       <details key="name" value="Receipients&apos; email address"/>
+	       <details key="description" value="Specifies the email addresses of the recipients, i.e. the To field of the email. Multiple email addresses can entered, separated by a semicolon &apos;;&apos;."/>
+	       <details key="readOnly" value="false"/>
+	     </eAnnotations>
+	   </eStructuralFeatures>  		
+       <eStructuralFeatures xsi:type="ecore:EAttribute" name="receipientsEmailAddressProperty" lowerBound="0" upperBound="-1" transient="false" eType="//MString" derived="false" volatile="false"/>
+     	<eStructuralFeatures xsi:type="ecore:EAttribute" name="receipientsEmailAddressPropertyHistoricValues" upperBound="3" transient="false" eType="//MString"/>
 	   	<eStructuralFeatures xsi:type="ecore:EReference" name="mBurningSoftwareDirectoryPathProperty"
 	      lowerBound="1" eType="#//MProperty"
 	      containment="true" resolveProxies="false">
@@ -480,7 +521,7 @@
 	      lowerBound="1" eType="#//MProperty"
 	      containment="true" resolveProxies="false">
 	     <eAnnotations source="http://www.onceforall.org/mcore">
-	       <details key="name" value="Drive"/>
+	       <details key="name" value="CD-ROM Drive"/>
 	       <details key="description" value="Specifies either the full name of the CD-ROM drive or the drive letter."/>
 	     </eAnnotations>
 	   </eStructuralFeatures>  		
@@ -1523,8 +1564,8 @@ Please enter your own email address here so that we can contact you if we have a
 	      lowerBound="1" eType="#//MParameter"
 	      containment="true" resolveProxies="false">
 	     <eAnnotations source="http://www.onceforall.org/mcore">
-	       <details key="name" value="Receipient&apos;s email address"/>
-	       <details key="description" value="Specifies the email addresses of the recipients, i.e. the To field of the email."/>
+	       <details key="name" value="Receipients&apos; email address"/>
+	       <details key="description" value="Specifies the email addresses of the recipients, i.e. the To field of the email. Multiple email addresses can entered, separated by a semicolon &apos;;&apos;."/>
 	     </eAnnotations>
 	   </eStructuralFeatures>  		
        <eStructuralFeatures xsi:type="ecore:EAttribute" name="receipientsEmailAddressParameter" lowerBound="1" upperBound="-1" transient="false" eType="//MString" derived="false" volatile="false"/>
