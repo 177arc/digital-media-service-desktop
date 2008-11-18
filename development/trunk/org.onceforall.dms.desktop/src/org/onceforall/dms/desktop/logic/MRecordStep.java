@@ -1390,11 +1390,10 @@ public class MRecordStep extends MAudioStep {
         
         // Starts the line and progress thread.
         (new ProgressMonitorThread()).start();
-        
+       
         // Writes the sound to the recording file, till the line is stopped.
         AudioSystem.write(audioInputStream, audioFileFormat.getType(), recordingFile);
-
-        
+      
         if(recordingFile != null) {
             setRecordingFileResult(recordingFile);
             setRecordingFileSizeResult(new Long(recordingFile.length()));            
@@ -1409,7 +1408,7 @@ public class MRecordStep extends MAudioStep {
 	public DesktopExceptionList validate() {
 		DesktopExceptionList validationExceptions = super.validate();
 		
-		if(getDirectoryParameter() != null) {
+		if(getDirectoryParameter() != null && getRecordingFileParameter() != null) {
 	        File recordingFile = new File(getDirectoryParameter().getPath()+File.separator+getRecordingFileParameter().getName());
 			if(recordingFile.exists())
 				validationExceptions.add(new DesktopException("A file with the same name as the recording file '"+recordingFile.getName()+"' already exists in the recording directory '"+getDirectoryParameter().getPath()+"'. If you choose to proceed, you will overwrite it.", null, DesktopException.WARNING_SEVERITY, null));
@@ -1500,7 +1499,7 @@ public class MRecordStep extends MAudioStep {
 			boolean pausedTimingStarted = false;
 
 			String progressStatusForUI = null;
-			while (!audioInputStream.getClosed()) {
+			while (!audioInputStream.getClosed() && isInProcessingState()) {
 				if (!audioInputStream.getPaused()) {
 					if (pausedTimingStarted) {
 						startTime += System.currentTimeMillis() - pausedTime;
