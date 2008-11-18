@@ -681,7 +681,7 @@ public class MEmailEventLogStep extends MStep {
 		setMDataFileParameter(new MParameter(false, "Data file", "Specifies the file that contains the application data.", null));			 
 		setMSubjectParameter(new MParameter(false, "Subject", "Specifies the subject of the email.", null));			 
 		setMSendersEmailAddressParameter(new MParameter(false, "Sender\'s email address", "Specifies the sender\'s email address. Please enter your own email address here so that we can contact you if we have any questions. Alternatively use \'sounddesk@ccbromley.net\'.", null));			 
-		setMReceipientsEmailAddressParameter(new MParameter(false, "Receipient\'s email address", "Specifies the email addresses of the recipients, i.e. the To field of the email.", null));			 
+		setMReceipientsEmailAddressParameter(new MParameter(false, "Receipients\' email address", "Specifies the email addresses of the recipients, i.e. the To field of the email. Multiple email addresses can entered, separated by a semicolon \';\'.", null));			 
 		setMSmtpServerParameter(new MParameter(false, "SMTP server", "Specifies the name or IP address of the (SMTP) server that is responsible for sending the email.", null));			 
 		setMSmtpUserNameParameter(new MParameter(false, "SMTP user name", "Specifies user name used to authenticate on the (SMTP) server that is responsible for sending the email.", null));			 
 		setMSmtpPasswordParameter(new MParameter(false, "SMTP password", "Specifies password used to authenticate on (SMTP) server that is responsible for sending the email.", null));
@@ -1398,7 +1398,7 @@ public class MEmailEventLogStep extends MStep {
 	 * @see #setMReceipientsEmailAddressParameter(MParameter)
 	 * @see org.onceforall.dms.desktop.logic.LogicPackage#getMEmailEventLogStep_MReceipientsEmailAddressParameter()
 	 * @model containment="true" required="true"
-	 *        annotation="http://www.onceforall.org/mcore name='Receipient\'s email address' description='Specifies the email addresses of the recipients, i.e. the To field of the email.'"
+	 *        annotation="http://www.onceforall.org/mcore name='Receipients\' email address' description='Specifies the email addresses of the recipients, i.e. the To field of the email. Multiple email addresses can entered, separated by a semicolon \';\'.'"
 	 * @generated
 	 */
 	public MParameter getMReceipientsEmailAddressParameter() {
@@ -1435,8 +1435,8 @@ public class MEmailEventLogStep extends MStep {
 			if (mReceipientsEmailAddressParameter != null)
 				msgs = ((InternalEObject)mReceipientsEmailAddressParameter).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - LogicPackage.MEMAIL_EVENT_LOG_STEP__MRECEIPIENTS_EMAIL_ADDRESS_PARAMETER, null, msgs);
 			if (newMReceipientsEmailAddressParameter != null) {				
-				newMReceipientsEmailAddressParameter.setDefaultDescription("Specifies the email addresses of the recipients, i.e. the To field of the email.");
-				newMReceipientsEmailAddressParameter.setDefaultName("Receipient\'s email address");
+				newMReceipientsEmailAddressParameter.setDefaultDescription("Specifies the email addresses of the recipients, i.e. the To field of the email. Multiple email addresses can entered, separated by a semicolon \';\'.");
+				newMReceipientsEmailAddressParameter.setDefaultName("Receipients\' email address");
 				newMReceipientsEmailAddressParameter.setValueType(Type.getTypeForName("Text"));
 				newMReceipientsEmailAddressParameter.setValueEFeature((EStructuralFeature) eClass().getEStructuralFeature(LogicPackage.MEMAIL_EVENT_LOG_STEP__RECEIPIENTS_EMAIL_ADDRESS_PARAMETER));
 				newMReceipientsEmailAddressParameter.setHistoricValuesEFeature(null);
