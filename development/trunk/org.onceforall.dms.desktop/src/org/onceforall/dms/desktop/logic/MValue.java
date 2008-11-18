@@ -919,9 +919,11 @@ public abstract class MValue extends MElement {
 	 * @see org.onceforall.dms.desktop.logic.MElement#processNotification(org.eclipse.emf.common.notify.Notification)
 	 */
 	@Override
-	public synchronized void processNotification(Notification notification) {
-		processInputValuesNotification(notification);
-		propagateNotification(notification);
+	public void processNotification(Notification notification) {
+        if(MApplication.state != MApplication.LOADING_STATE) {
+        	processInputValuesNotification(notification);
+        	propagateNotification(notification);
+        }
 	}
 	
 	/**
@@ -1008,9 +1010,9 @@ public abstract class MValue extends MElement {
 		((MObject) eContainer()).mValuesByHistoricValuesEFeature.put(historicValuesEFeature, this);	
 
 		// Updates the acutal value of this managed value depending on its input values.
-		if(mInputValues != null)
+		/*if(mInputValues != null)
 			for(MValue mValue: (List<MValue>) mInputValues)
-				setValueFromMValue(mValue);
+				setValueFromMValue(mValue); */
 
 		((MObject) eContainer()).eAdapters().add(this);
 				
