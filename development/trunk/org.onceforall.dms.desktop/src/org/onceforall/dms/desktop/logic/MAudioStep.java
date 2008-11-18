@@ -1380,7 +1380,9 @@ public abstract class MAudioStep extends MStep {
 	public void processNotification(Notification notification) {
 		super.processNotification(notification);
 		
-        if(notification.getEventType() == Notification.NO_FEATURE_ID && audioInputStream != null) {
+        if(MApplication.state != MApplication.LOADING_STATE 
+        		&& notification.getEventType() == Notification.NO_FEATURE_ID 
+        		&& audioInputStream != null) {
             // Update input levels in minimum intervals to avoid unnecessary use of processing resources.
             if(System.currentTimeMillis()-lastInputLevelsUpdate > 100) {
             	if(getUseDbProperty()) {
