@@ -20,6 +20,8 @@ import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.onceforall.dms.desktop.Utilities;
+import org.onceforall.dms.desktop.exception.DesktopException;
+import org.onceforall.dms.desktop.exception.DesktopExceptionList;
 import org.onceforall.dms.desktop.interfaces.CommandLineInterface;
 import org.onceforall.dms.desktop.logic.types.MStepStateType;
 import org.onceforall.dms.desktop.logic.types.ReferenceType;
@@ -1158,6 +1160,28 @@ public class MConvertToMP3Step extends MTagStep {
 		result.append(averageBitRateParameter);
 		result.append(')');
 		return result.toString();
+	}
+	
+    /**
+	 * @see org.onceforall.dms.desktop.logic.MStep#validate()
+	 */
+	@Override
+	public DesktopExceptionList validate() {
+		DesktopExceptionList validationExceptions = super.validate();
+		
+		if(getDirectoryParameter() != null && getMp3FileNameParameter() != null) {
+	        File mp3File = new File(getDirectoryParameter().getPath()+File.separator+getMp3FileNameParameter().getName());
+			if(mp3File.exists())
+				validationExceptions.add(new DesktopException("A file with the same name as the MP3 file '"+mp3File.getName()+"' already exists in the recording directory '"+getDirectoryParameter().getPath()+"'. If you choose to proceed, you will overwrite it.", null, DesktopException.WARNING_SEVERITY, null));
+		}
+		
+		if(getMp3FolderReferenceParameter() != null && getMp3EntryNameParameter() != null) {
+			for(MMp3 mMp3: (List<MMp3>)getMp3FolderReferenceParameter().getMMp3s())
+				if(mMp3.getName() != null && mMp3.getName().equals(getMp3EntryNameParameter()))
+					validationExceptions.add(new DesktopException("An entry with the same name as the MP3 entry '"+mMp3.getNameForUI()+"' already exists in the folder '"+getMp3FolderReferenceParameter().getNameForUI()+"'. If you choose to proceed, you will overwrite it.", null, DesktopException.WARNING_SEVERITY, null));					
+	    }
+		
+		return validationExceptions;
 	}
 
 	/**
