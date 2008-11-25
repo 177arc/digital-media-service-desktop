@@ -18,33 +18,31 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.Collection;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.Date;
-import java.util.Map;
+import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipOutputStream;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-import org.eclipse.emf.common.util.BasicDiagnostic;
-import org.eclipse.emf.common.util.Diagnostic;
-import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.plugin.EcorePlugin;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
-import org.eclipse.emf.ecore.util.EObjectValidator;
 import org.eclipse.emf.ecore.xmi.FeatureNotFoundException;
 import org.eclipse.emf.ecore.xmi.UnresolvedReferenceException;
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
@@ -248,7 +246,7 @@ public abstract class MApplication extends MObject {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final URL INFO_WEB_PAGE_PROPERTY_EDEFAULT = (URL)LogicFactory.eINSTANCE.createFromString(LogicPackage.eINSTANCE.getMUrl(), "http://www.onceforall.org/dms-desktop/info.html");
+	protected static final URL INFO_WEB_PAGE_PROPERTY_EDEFAULT = (URL)LogicFactory.eINSTANCE.createFromString(LogicPackage.eINSTANCE.getMUrl(), "http://www.onceforall.org/dms-desktop/info.php");
 
 	/**
 	 * Get the default value of the '{@link #getInfoWebPageProperty() <em>Info Web Page Property</em>}' attribute.
@@ -541,7 +539,7 @@ public abstract class MApplication extends MObject {
 	 * @return Returns the managed application instance.
 	 */
 	public static MApplication getInstance() {
-		if(instance == null)
+		if(instance == null) 
 			instance = loadFromXML(DATA_FILE);
 		
 		return instance;
@@ -629,6 +627,15 @@ public abstract class MApplication extends MObject {
     /** Specifies the application path. */
     public static final File PATH = PATH_PROPERTY_EDEFAULT;
 
+    /** Specifies the interval in milliseconds in which the data file will be touched. The timestamp on the
+     * 	data file is used to make sure that only one instance of this application is using the data file.*/
+    public static final long TOUCH_INTERVAL = 5000;
+    
+    /** Specifies the thread that touches in regular intervals by updating the last modified timestamp of the data file. The timestamp on the
+     * 	data file is used to make sure that only one instance of this application is using the data file.*/
+    protected Thread touchThread;
+    
+    
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -729,7 +736,7 @@ public abstract class MApplication extends MObject {
 
 	/**
 	 * Returns the value of the '<em><b>Info Web Page Property</b></em>' attribute.
-	 * The default value is <code>"http://www.onceforall.org/dms-desktop/info.html"</code>.
+	 * The default value is <code>"http://www.onceforall.org/dms-desktop/info.php"</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Info Web Page Property</em>' attribute isn't clear,
@@ -739,7 +746,7 @@ public abstract class MApplication extends MObject {
 	 * @return the value of the '<em>Info Web Page Property</em>' attribute.
 	 * @see #setInfoWebPageProperty(URL)
 	 * @see org.onceforall.dms.desktop.logic.LogicPackage#getMApplication_InfoWebPageProperty()
-	 * @model default="http://www.onceforall.org/dms-desktop/info.html" dataType="org.onceforall.dms.desktop.logic.MUrl" required="true" transient="true"
+	 * @model default="http://www.onceforall.org/dms-desktop/info.php" dataType="org.onceforall.dms.desktop.logic.MUrl" required="true"
 	 * @generated
 	 */
 	public URL getInfoWebPageProperty() {
@@ -1503,61 +1510,139 @@ public abstract class MApplication extends MObject {
      * @throws ReadException Thrown if the application data cannot be completely loaded.
      */
     protected static synchronized MApplication loadFromXML(File dataFile, URI dataFileUri, InputStream inputStream) throws ReadException {
-        state = LOADING_STATE;
-        
-        Resource resource = getResource(dataFile, dataFileUri);
-        if(dataFile == null || dataFile.exists()) {
-        	String dataFileForUi = dataFile == null ? dataFileUri.toString() : dataFile.getAbsolutePath();
-        	try {
-        		if(inputStream != null)
-        			resource.load(inputStream, Collections.EMPTY_MAP);
-        		else
-        			resource.load(Collections.EMPTY_MAP);
-        	} catch (IOException exception) {
-				if(exception.getCause() == null || !(exception.getCause() instanceof UnresolvedReferenceException) && !(exception.getCause() instanceof FeatureNotFoundException))
-					throw new ReadException("The application could not read the application data from '"+dataFileForUi+"' because its content is not in correct XML format.", "Please make sure the content is correctly formatted.", DesktopException.CRITICAL_SEVERITY, exception);
-				else
-	        		Logger.getLogger().log(Level.WARNING, "The application could not resolve some references in the application data file '"+dataFileForUi+"'.", exception.getCause());
-			}
-        	
-        	if(resource.getContents().size() < 1) {
-        		Logger.getLogger().log(Level.WARNING, "The file '"+dataFileForUi+"' does not contain any application data.");
-        		resource.getContents().add(new MDmsApplication()); // TODO: Remove upward dependency.
-        	}
-        	
-        	Object object = resource.getContents().get(0);
-        	if(!(object instanceof MApplication)) {
-                throw new ReadException("The application data in file '"+dataFileForUi+"' is not valid. The root of the application data must be a managed application object.", "Please correct the application data file or delete it to start with an empty application.", DesktopException.CRITICAL_SEVERITY, null);       		
-        	}
-        	
-        	Logger.getLogger().log(Level.INFO, "Loaded application data from '"+dataFileForUi+"'.");
+    	MApplication mApplication = null;
+    	
+    	state = LOADING_STATE;
+        try {
+	        Resource resource = getResource(dataFile, dataFileUri);
+	        if(dataFile == null || dataFile.exists()) {
+	        	String dataFileForUi = dataFile == null ? dataFileUri.toString() : dataFile.getAbsolutePath();
+	        	try {
+	        		if(inputStream != null)
+	        			resource.load(inputStream, Collections.EMPTY_MAP);
+	        		else
+	        			resource.load(Collections.EMPTY_MAP);
+	        	} catch (IOException exception) {
+					if(exception.getCause() == null || !(exception.getCause() instanceof UnresolvedReferenceException) && !(exception.getCause() instanceof FeatureNotFoundException))
+						throw new ReadException("The application could not read the application data from '"+dataFileForUi+"' because its content is not in correct XML format.", "Please make sure the content is correctly formatted.", DesktopException.CRITICAL_SEVERITY, exception);
+					else
+		        		Logger.getLogger().log(Level.WARNING, "The application could not resolve some references in the application data file '"+dataFileForUi+"'.", exception.getCause());
+				}
+	        	
+	        	if(resource.getContents().size() < 1) {
+	        		Logger.getLogger().log(Level.WARNING, "The file '"+dataFileForUi+"' does not contain any application data.");
+	        		resource.getContents().add(new MDmsApplication()); // TODO: Remove upward dependency.
+	        	}
+	        	
+	        	Object object = resource.getContents().get(0);
+	        	if(!(object instanceof MApplication)) {
+	                throw new ReadException("The application data in file '"+dataFileForUi+"' is not valid. The root of the application data must be a managed application object.", "Please correct the application data file or delete it to start with an empty application.", DesktopException.CRITICAL_SEVERITY, null);       		
+	        	}
+	        	
+	        	Logger.getLogger().log(Level.INFO, "Loaded application data from '"+dataFileForUi+"'.");
+	        }
+	        else
+	        	resource.getContents().add(new MDmsApplication());
+
+			
+			mApplication = (MApplication) resource.getContents().get(0);		
+			upgradeData(mApplication);
+	
+	        
+	        isDirty = false;
         }
-        else
-        	resource.getContents().add(new MDmsApplication());
-
-        
-        isDirty = false;
-        
-        state = OPERATING_STATE;
-
-		
-		MApplication mApplication = (MApplication) resource.getContents().get(0);		
-		// TODO: Removed this code. 
-        // Makes sure that the sender's email address is not loaded. This is a temporary workaround because
-		// the application loads this property if it is present in the XML file although it is now transient.
-		TreeIterator iteractor = mApplication.eAllContents();
-		while(iteractor.hasNext()) {
-			Object object = iteractor.next();
-			if(object instanceof MEmailEventLogStep)
-				((MEmailEventLogStep) object).setSendersEmailAddressParameter(null);
-		}
-		
+        finally {
+        	state = OPERATING_STATE;
+        }
 		
 		mApplication.setLastSaveProperty(new Date(DATA_FILE.lastModified()));
-       
+   
     	Logger.getLogger().log(Level.INFO, "Running DMS Desktop version "+mApplication.getVersionProperty()+".");		
 		
         return mApplication;
+    }
+    
+    protected static synchronized void upgradeData(MApplication mApplication) {	    
+	    ResourceBundle bundle = ResourceBundle.getBundle("build-info");
+	    String version = bundle.getString("version");
+	    String user = bundle.getString("user");
+	    String date = bundle.getString("date");
+	    String build = bundle.getString("build");
+
+	    // Determines the version of the previous DMS Desktop.
+		String[] prevVersionParts = mApplication.getVersionProperty().split("[ ]");
+
+		VersionComparator versionComparator = new VersionComparator();
+		
+		// Iterates over the complete application tree.
+	    TreeIterator<EObject> iterator = mApplication.eAllContents();
+		while(iterator.hasNext()) {
+			EObject object = iterator.next();
+			if(object instanceof MEmailEventLogStep)
+				((MEmailEventLogStep) object).setSendersEmailAddressParameter(null);
+			
+			if(versionComparator.compare(prevVersionParts[0], "1.3.2") < 0
+					&& mApplication instanceof MDmsApplication
+					&& object instanceof MPublishMp3sStep) {
+				MDmsApplication mDmsApplication = (MDmsApplication) mApplication;
+				MPublishMp3sStep mPublishMp3sStep = (MPublishMp3sStep) object;
+				
+				// Sets the newly added properties based on the publish tasks parameters if the properites are not set already.
+				if(mDmsApplication.getContentPageRelativeFtpPathProperty() == null)
+					mDmsApplication.setContentPageRelativeFtpPathProperty(mPublishMp3sStep.getContentPageRelativeFtpPathParameter());
+				
+				if(mDmsApplication.getMp3RelativeFtpPathProperty() == null)
+					mDmsApplication.setMp3RelativeFtpPathProperty(mPublishMp3sStep.getMp3RelativeFtpPathParameter());
+				
+				if(mDmsApplication.getPodcastRelativeFtpPathProperty() == null)
+					mDmsApplication.setPodcastRelativeFtpPathProperty(mPublishMp3sStep.getPodcastRelativeFtpPathParameter());
+				
+				// Makes the publish tasks parameters dependent on the newly added properties.
+				EList mInputValues = mPublishMp3sStep.getMContentPageRelativeFtpPathParameter().getMInputValues();
+				if(!mInputValues.contains(mDmsApplication.getMContentPageRelativeFtpPathProperty()))
+					mInputValues.add(mDmsApplication.getMContentPageRelativeFtpPathProperty());
+				
+				mInputValues = mPublishMp3sStep.getMMp3RelativeFtpPathParameter().getMInputValues();
+				if(!mInputValues.contains(mDmsApplication.getMMp3RelativeFtpPathProperty()))
+					mInputValues.add(mDmsApplication.getMMp3RelativeFtpPathProperty());
+				
+				mInputValues = mPublishMp3sStep.getMPodcastRelativeFtpPathParameter().getMInputValues();
+				if(!mInputValues.contains(mDmsApplication.getMPodcastRelativeFtpPathProperty()))
+					mInputValues.add(mDmsApplication.getMPodcastRelativeFtpPathProperty());
+				
+		    	Logger.getLogger().log(Level.INFO, "Automatic update: The relative FTP path parameters of task '"+mPublishMp3sStep.getNameForUI()+"' are now dependent the corresponding properites of '"+mApplication.getNameForUI()+"'.");		
+			}
+			
+			if(versionComparator.compare(prevVersionParts[0], "1.3.2") < 0
+					&& mApplication instanceof MDmsApplication
+					&& object instanceof MEmailEventLogStep) {
+				MDmsApplication mDmsApplication = (MDmsApplication) mApplication;
+				MEmailEventLogStep mEmailEventLogStep = (MEmailEventLogStep) object;
+				
+				// Sets the newly added properties based on the event log tasks parameters if the properites are not set already.
+				if(mDmsApplication.getReceipientsEmailAddressProperty() == null)
+					mDmsApplication.getReceipientsEmailAddressProperty().addAll(mEmailEventLogStep.getReceipientsEmailAddressParameter());
+
+				// Makes the publish tasks parameters dependent on the newly added properties.
+				EList mInputValues = mEmailEventLogStep.getMReceipientsEmailAddressParameter().getMInputValues();
+				if(!mInputValues.contains(mDmsApplication.getMReceipientsEmailAddressProperty()))
+					mInputValues.add(mDmsApplication.getMReceipientsEmailAddressProperty());
+				
+		    	Logger.getLogger().log(Level.INFO, "Automatic update: The receipients' email address parameter of task '"+mEmailEventLogStep.getNameForUI()+"' are now dependent the corresponding properites of '"+mApplication.getNameForUI()+"'.");		
+			}
+		}
+		
+	    mApplication.setVersionProperty(version+"."+build+" (built on "+date+" by "+user+")");
+	    
+	    if(bundle.containsKey("info")) {
+		    String infoWebPageUrl = bundle.getString("info");
+		    try {
+				mApplication.setInfoWebPageProperty(new URL(infoWebPageUrl));
+			} catch (MalformedURLException exception) {
+			   	Logger.getLogger().log(Level.SEVERE, exception.getMessage());		
+			}
+	    }
+  	
     }
 
     /**
@@ -1572,6 +1657,39 @@ public abstract class MApplication extends MObject {
     }
     
     /**
+     * Checks the last modified timestamp on the data file to make sure that only one instance of this application is using the data file
+     * 
+     * @exception DesktopException Thrown if another instance is detected accessing the same data file.
+     */
+    public synchronized void checkSingleInstance() throws DesktopException {
+    	if(!DATA_FILE.exists())
+    		return;
+    	
+    	if(DATA_FILE.lastModified() > System.currentTimeMillis()-2*TOUCH_INTERVAL && touchThread == null)
+    		throw new DesktopException("Another application is already running which uses the data file '"+DATA_FILE+"'. Only one instance of this application with the same data file can be started to avoid data corruption.", "Please close the other application instance or use a different data file.", DesktopException.ERROR_SEVERITY, null);
+    
+    	// Creates a thread that touches the data file in regular intervals if such a thread has not be created yet.
+    	if(touchThread == null) {
+    		touchThread = new Thread(new Runnable() {
+
+				@Override
+				public void run() {
+					while(true) {
+						touchXML();
+						try {
+							Thread.sleep(TOUCH_INTERVAL);
+						} catch (InterruptedException e) {
+						}
+					}
+					
+				}
+    			
+    		});
+    		touchThread.start();
+    	}
+    }
+    
+    /**
      * Saves the application data to an XML file.
      */
     public synchronized void saveToXML() {
@@ -1579,8 +1697,7 @@ public abstract class MApplication extends MObject {
     	if(!isDirty)
     		return;
 
-    	// TODO: This is a quick fix. We need to make sure that only one instance of the application can
-    	// be started so that this situation will never occur.
+    	/*
     	Date lastSave = getLastSaveProperty();
     	if(lastSave != null && DATA_FILE.exists() && DATA_FILE.lastModified() > lastSave.getTime()) {
 			throw new DesktopException("The application has detected a conflict. Please read the following explanation carefully and make sure that you understand it:  Another instance of this application has saved its data to '"
@@ -1589,7 +1706,8 @@ public abstract class MApplication extends MObject {
 					+"This problem has occurred because at least two instances of this application are running although only one instance should be running at any one point in time.", 
 					"If you want to keep the data of this application instance, go to '"+getNameForUI()+"' and change the '"+getMLastSaveProperty().getNameForUI()+"' property to the current time. Please note that need to hold down the Ctrl key change it because this property is read-only. "
 					+"If you want to keep the data of the other application instances, just close this instance and acknowledge any further error.", DesktopException.CRITICAL_SEVERITY, null);
-    	}
+    	}*/
+    	checkSingleInstance();
     	
     	try {
     		getResource().getContents().set(0, instance); // Makes sure that always the last loaded managed application instance is saved.
@@ -1597,10 +1715,18 @@ public abstract class MApplication extends MObject {
 			setLastSaveProperty(new Date());
 			isDirty = false;
 		} catch (IOException exception) {
-			throw new DesktopException("The application could not write the application data to the file '"+DATA_FILE.getAbsolutePath()+"'.", "Please make sure that application data file is writeable, has the appropriate rights and is not used by a different application.", DesktopException.CRITICAL_SEVERITY, exception);
+		   	Logger.getLogger().log(Level.SEVERE, exception.getMessage());		
 		}
     }
-  
+    
+    /**
+     * Touches the data file by updating its last modified timestamp.
+     */
+    public synchronized void touchXML() {
+    	if(DATA_FILE.exists())
+    		DATA_FILE.setLastModified(System.currentTimeMillis());
+    }
+    
     /** 
      * Zips the current data XML file and stores it the application data directory. 
      */
@@ -1615,12 +1741,13 @@ public abstract class MApplication extends MObject {
 	        // Writes the entry.
 	        int length;
 	        byte[] buffer = new byte[1024*16];
-	        while ((length = dataFileInputStream.read(buffer)) > 0) {
+	        while ((length = dataFileInputStream.read(buffer)) >= 0) {
 	            zipFileOutputStream.write(buffer, 0, length);
 	        }
 	
 	        // Completes the entry.
 	        zipFileOutputStream.closeEntry();
+	        zipFileOutputStream.close();
 	        dataFileInputStream.close();
     	} catch (IOException exception) {
     		throw new DesktopException("The application could not back up the application data file '"+DATA_FILE.getAbsolutePath()+"'.", "Please make sure that application data file is writeable, has the appropriate rights and is not used by a different application.", DesktopException.CRITICAL_SEVERITY, exception);
@@ -1677,4 +1804,52 @@ public abstract class MApplication extends MObject {
 	public boolean isDirty() {
 		return isDirty;
 	}
+	
+	/**
+	 * Defines a comparator than can compare version strings, e.g. <code>1.2.4</code>.
+	 */
+	protected static class VersionComparator implements Comparator<String>  {
+		/**
+		 * @see java.util.Comparator#compare(java.lang.Object, java.lang.Object)
+		 */
+		@Override
+		public int compare(String version1, String version2) {
+			String[] version1Parts = version1.split("[\\.]");
+			String[] version2Parts = version2.split("[\\.]");				
+	
+			
+			int result = 0;
+			int index = 0;
+			while(result == 0) {
+				result = compareVersionPart(version1Parts, version2Parts, index++);
+				if(result != 0)
+					return result;
+			}
+			
+			return result;
+		}
+		
+		/**
+		 * Compares the given part of both versions arrays. The arrays don't have to be
+		 * of the same length but must contain strings that can be converted integers.
+		 * 
+		 * @param version1Parts Specifies the first version parts array. E.g. <code>["1", "2", "3"]</code>.
+		 * @param version2Parts Specifies the second version parts array. 
+		 * @param index Specifies the element of the arrays to compare.
+		 * @return Returns the value <code>0</code> if <code>version1Parts</code> is
+		 * 		equal to <code>version2Parts</code>; a value less than
+		 * 		<code>0</code> if <code>version1Parts</code> is numerically less
+		 * 		than <code>version2Parts</code>; and a value greater 
+		 * 		than <code>0</code> if <code>version1Parts</code> is numerically
+		 * 		greater than <code>version2Parts</code> (signed
+		 * 		comparison).
+		 */
+		int compareVersionPart(String[] version1Parts, String[] version2Parts, int index) {
+			if(version1Parts.length == index || version2Parts.length == index)
+				return version1Parts.length == index ? -1 : 1;
+				
+			return new Integer(version1Parts[index]).compareTo(new Integer(version2Parts[index]));
+		}
+		
+	};
 } // MApplication
