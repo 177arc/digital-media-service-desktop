@@ -51,6 +51,15 @@ import org.onceforall.dms.desktop.logic.types.Type;
  *   <li>{@link org.onceforall.dms.desktop.logic.MDmsApplication#getFtpUserNamePropertyHistoricValues <em>Ftp User Name Property Historic Values</em>}</li>
  *   <li>{@link org.onceforall.dms.desktop.logic.MDmsApplication#getMFtpUserPasswordProperty <em>MFtp User Password Property</em>}</li>
  *   <li>{@link org.onceforall.dms.desktop.logic.MDmsApplication#getFtpUserPasswordProperty <em>Ftp User Password Property</em>}</li>
+ *   <li>{@link org.onceforall.dms.desktop.logic.MDmsApplication#getMMp3RelativeFtpPathProperty <em>MMp3 Relative Ftp Path Property</em>}</li>
+ *   <li>{@link org.onceforall.dms.desktop.logic.MDmsApplication#getMp3RelativeFtpPathProperty <em>Mp3 Relative Ftp Path Property</em>}</li>
+ *   <li>{@link org.onceforall.dms.desktop.logic.MDmsApplication#getMp3RelativeFtpPathPropertyHistoricValues <em>Mp3 Relative Ftp Path Property Historic Values</em>}</li>
+ *   <li>{@link org.onceforall.dms.desktop.logic.MDmsApplication#getMContentPageRelativeFtpPathProperty <em>MContent Page Relative Ftp Path Property</em>}</li>
+ *   <li>{@link org.onceforall.dms.desktop.logic.MDmsApplication#getContentPageRelativeFtpPathProperty <em>Content Page Relative Ftp Path Property</em>}</li>
+ *   <li>{@link org.onceforall.dms.desktop.logic.MDmsApplication#getContentPageRelativeFtpPathPropertyHistoricValues <em>Content Page Relative Ftp Path Property Historic Values</em>}</li>
+ *   <li>{@link org.onceforall.dms.desktop.logic.MDmsApplication#getMPodcastRelativeFtpPathProperty <em>MPodcast Relative Ftp Path Property</em>}</li>
+ *   <li>{@link org.onceforall.dms.desktop.logic.MDmsApplication#getPodcastRelativeFtpPathProperty <em>Podcast Relative Ftp Path Property</em>}</li>
+ *   <li>{@link org.onceforall.dms.desktop.logic.MDmsApplication#getPodcastRelativeFtpPathPropertyHistoricValues <em>Podcast Relative Ftp Path Property Historic Values</em>}</li>
  *   <li>{@link org.onceforall.dms.desktop.logic.MDmsApplication#getMWebServerUrlProperty <em>MWeb Server Url Property</em>}</li>
  *   <li>{@link org.onceforall.dms.desktop.logic.MDmsApplication#getWebServerUrlProperty <em>Web Server Url Property</em>}</li>
  *   <li>{@link org.onceforall.dms.desktop.logic.MDmsApplication#getWebServerUrlPropertyHistoricValues <em>Web Server Url Property Historic Values</em>}</li>
@@ -62,6 +71,9 @@ import org.onceforall.dms.desktop.logic.types.Type;
  *   <li>{@link org.onceforall.dms.desktop.logic.MDmsApplication#getSmtpUserNamePropertyHistoricValues <em>Smtp User Name Property Historic Values</em>}</li>
  *   <li>{@link org.onceforall.dms.desktop.logic.MDmsApplication#getMSmtpPasswordProperty <em>MSmtp Password Property</em>}</li>
  *   <li>{@link org.onceforall.dms.desktop.logic.MDmsApplication#getSmtpPasswordProperty <em>Smtp Password Property</em>}</li>
+ *   <li>{@link org.onceforall.dms.desktop.logic.MDmsApplication#getMReceipientsEmailAddressProperty <em>MReceipients Email Address Property</em>}</li>
+ *   <li>{@link org.onceforall.dms.desktop.logic.MDmsApplication#getReceipientsEmailAddressProperty <em>Receipients Email Address Property</em>}</li>
+ *   <li>{@link org.onceforall.dms.desktop.logic.MDmsApplication#getReceipientsEmailAddressPropertyHistoricValues <em>Receipients Email Address Property Historic Values</em>}</li>
  *   <li>{@link org.onceforall.dms.desktop.logic.MDmsApplication#getMBurningSoftwareDirectoryPathProperty <em>MBurning Software Directory Path Property</em>}</li>
  *   <li>{@link org.onceforall.dms.desktop.logic.MDmsApplication#getBurningSoftwareDirectoryPathProperty <em>Burning Software Directory Path Property</em>}</li>
  *   <li>{@link org.onceforall.dms.desktop.logic.MDmsApplication#getMDriveProperty <em>MDrive Property</em>}</li>
@@ -392,6 +404,165 @@ public class MDmsApplication extends MApplication {
 	protected String ftpUserPasswordProperty = FTP_USER_PASSWORD_PROPERTY_EDEFAULT;
 	
 	/**
+	 * The cached value of the '{@link #getMMp3RelativeFtpPathProperty() <em>MMp3 Relative Ftp Path Property</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMMp3RelativeFtpPathProperty()
+	 * @generated
+	 * @ordered
+	 */
+	protected MProperty mMp3RelativeFtpPathProperty;
+
+	/**
+	 * The default value of the '{@link #getMp3RelativeFtpPathProperty() <em>Mp3 Relative Ftp Path Property</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMp3RelativeFtpPathProperty()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String MP3_RELATIVE_FTP_PATH_PROPERTY_EDEFAULT = null;
+
+	/**
+	 * Get the default value of the '{@link #getMp3RelativeFtpPathProperty() <em>Mp3 Relative Ftp Path Property</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return Returns the default value of the '{@link #getMp3RelativeFtpPathProperty() <em>Mp3 Relative Ftp Path Property</em>}' attribute.
+	 * @see #getMp3RelativeFtpPathProperty()
+	 * @generated
+	 * @ordered
+	 */
+	public String getDefaultMp3RelativeFtpPathProperty() {
+		return MP3_RELATIVE_FTP_PATH_PROPERTY_EDEFAULT;
+	}
+
+	/**
+	 * The cached value of the '{@link #getMp3RelativeFtpPathProperty() <em>Mp3 Relative Ftp Path Property</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMp3RelativeFtpPathProperty()
+	 * @generated
+	 * @ordered
+	 */
+	protected String mp3RelativeFtpPathProperty = MP3_RELATIVE_FTP_PATH_PROPERTY_EDEFAULT; // TODO: Check that default value is assigned correctly.
+
+	/**
+	 * The cached value of the '{@link #getMp3RelativeFtpPathPropertyHistoricValues() <em>Mp3 Relative Ftp Path Property Historic Values</em>}' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMp3RelativeFtpPathPropertyHistoricValues()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList mp3RelativeFtpPathPropertyHistoricValues;
+
+	/**
+	 * The cached value of the '{@link #getMContentPageRelativeFtpPathProperty() <em>MContent Page Relative Ftp Path Property</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMContentPageRelativeFtpPathProperty()
+	 * @generated
+	 * @ordered
+	 */
+	protected MProperty mContentPageRelativeFtpPathProperty;
+
+	/**
+	 * The default value of the '{@link #getContentPageRelativeFtpPathProperty() <em>Content Page Relative Ftp Path Property</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getContentPageRelativeFtpPathProperty()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String CONTENT_PAGE_RELATIVE_FTP_PATH_PROPERTY_EDEFAULT = null;
+
+	/**
+	 * Get the default value of the '{@link #getContentPageRelativeFtpPathProperty() <em>Content Page Relative Ftp Path Property</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return Returns the default value of the '{@link #getContentPageRelativeFtpPathProperty() <em>Content Page Relative Ftp Path Property</em>}' attribute.
+	 * @see #getContentPageRelativeFtpPathProperty()
+	 * @generated
+	 * @ordered
+	 */
+	public String getDefaultContentPageRelativeFtpPathProperty() {
+		return CONTENT_PAGE_RELATIVE_FTP_PATH_PROPERTY_EDEFAULT;
+	}
+
+	/**
+	 * The cached value of the '{@link #getContentPageRelativeFtpPathProperty() <em>Content Page Relative Ftp Path Property</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getContentPageRelativeFtpPathProperty()
+	 * @generated
+	 * @ordered
+	 */
+	protected String contentPageRelativeFtpPathProperty = CONTENT_PAGE_RELATIVE_FTP_PATH_PROPERTY_EDEFAULT; // TODO: Check that default value is assigned correctly.
+
+	/**
+	 * The cached value of the '{@link #getContentPageRelativeFtpPathPropertyHistoricValues() <em>Content Page Relative Ftp Path Property Historic Values</em>}' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getContentPageRelativeFtpPathPropertyHistoricValues()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList contentPageRelativeFtpPathPropertyHistoricValues;
+
+	/**
+	 * The cached value of the '{@link #getMPodcastRelativeFtpPathProperty() <em>MPodcast Relative Ftp Path Property</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMPodcastRelativeFtpPathProperty()
+	 * @generated
+	 * @ordered
+	 */
+	protected MProperty mPodcastRelativeFtpPathProperty;
+
+	/**
+	 * The default value of the '{@link #getPodcastRelativeFtpPathProperty() <em>Podcast Relative Ftp Path Property</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPodcastRelativeFtpPathProperty()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String PODCAST_RELATIVE_FTP_PATH_PROPERTY_EDEFAULT = null;
+
+	/**
+	 * Get the default value of the '{@link #getPodcastRelativeFtpPathProperty() <em>Podcast Relative Ftp Path Property</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return Returns the default value of the '{@link #getPodcastRelativeFtpPathProperty() <em>Podcast Relative Ftp Path Property</em>}' attribute.
+	 * @see #getPodcastRelativeFtpPathProperty()
+	 * @generated
+	 * @ordered
+	 */
+	public String getDefaultPodcastRelativeFtpPathProperty() {
+		return PODCAST_RELATIVE_FTP_PATH_PROPERTY_EDEFAULT;
+	}
+
+	/**
+	 * The cached value of the '{@link #getPodcastRelativeFtpPathProperty() <em>Podcast Relative Ftp Path Property</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPodcastRelativeFtpPathProperty()
+	 * @generated
+	 * @ordered
+	 */
+	protected String podcastRelativeFtpPathProperty = PODCAST_RELATIVE_FTP_PATH_PROPERTY_EDEFAULT; // TODO: Check that default value is assigned correctly.
+
+	/**
+	 * The cached value of the '{@link #getPodcastRelativeFtpPathPropertyHistoricValues() <em>Podcast Relative Ftp Path Property Historic Values</em>}' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPodcastRelativeFtpPathPropertyHistoricValues()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList podcastRelativeFtpPathPropertyHistoricValues;
+
+	/**
 	 * The cached value of the '{@link #getMWebServerUrlProperty() <em>MWeb Server Url Property</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -593,6 +764,36 @@ public class MDmsApplication extends MApplication {
 	 */
 	protected String smtpPasswordProperty = SMTP_PASSWORD_PROPERTY_EDEFAULT;
 	
+	/**
+	 * The cached value of the '{@link #getMReceipientsEmailAddressProperty() <em>MReceipients Email Address Property</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMReceipientsEmailAddressProperty()
+	 * @generated
+	 * @ordered
+	 */
+	protected MProperty mReceipientsEmailAddressProperty;
+
+	/**
+	 * The cached value of the '{@link #getReceipientsEmailAddressProperty() <em>Receipients Email Address Property</em>}' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getReceipientsEmailAddressProperty()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList receipientsEmailAddressProperty; // TODO: Check that default value is assigned correctly.
+
+	/**
+	 * The cached value of the '{@link #getReceipientsEmailAddressPropertyHistoricValues() <em>Receipients Email Address Property Historic Values</em>}' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getReceipientsEmailAddressPropertyHistoricValues()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList receipientsEmailAddressPropertyHistoricValues;
+
 	/**
 	 * The cached value of the '{@link #getMBurningSoftwareDirectoryPathProperty() <em>MBurning Software Directory Path Property</em>}' containment reference.
 	 * <!-- begin-user-doc -->
@@ -931,12 +1132,16 @@ public class MDmsApplication extends MApplication {
 		setMFtpServerUrlProperty(new MProperty(false, "FTP server URL", "Specifies the URL to public HTML directory on the FTP server, e.g. \'ftp://ftp.ccbromley.net/public_html\'", null));			 
 		setMFtpUserNameProperty(new MProperty(false, "FTP user name", "Specifies the user name for accessing the FTP server, e.g. \'ccb001\'.", null));			 
 		setMFtpUserPasswordProperty(new MProperty(false, "FTP user password", "Specifies the user password for accessing the FTP server.", null));			 
+		setMMp3RelativeFtpPathProperty(new MProperty(false, "MP3 relative FTP path", "Specifies the path of the directory on the FTP server to publish the MP3 files to, e.g. \'/recordings\'.", null));			 
+		setMContentPageRelativeFtpPathProperty(new MProperty(false, "Content page relative FTP path", "Specifies the path of the directory relative to the FTP path where to publish the MP3 content page to, e.g. \'/recordings\'.", null));			 
+		setMPodcastRelativeFtpPathProperty(new MProperty(false, "Podcast relative FTP path", "Specifies the path relative to the FTP path where the podcast RSS feed should be created or updated.", null));			 
 		setMWebServerUrlProperty(new MProperty(false, "Web server URL", "Specifies the public web server URL, e.g.\'http://www.ccbromley.net\'.", null));			 
 		setMSmtpServerProperty(new MProperty(false, "SMTP server", "Specifies the name or IP address of the (SMTP) server that is responsible for sending the email.", null));			 
 		setMSmtpUserNameProperty(new MProperty(false, "SMTP user name", "Specifies user name used to authenticate on the (SMTP) server that is responsible for sending the email.", null));			 
 		setMSmtpPasswordProperty(new MProperty(false, "SMTP password", "Specifies password used to authenticate on the (SMTP) server that is responsible for sending the email.", null));			 
+		setMReceipientsEmailAddressProperty(new MProperty(false, "Receipients\' email address", "Specifies the email addresses of the recipients, i.e. the To field of the email. Multiple email addresses can entered, separated by a semicolon \';\'.", null));			 
 		setMBurningSoftwareDirectoryPathProperty(new MProperty(false, "CD-ROM burning software directory path", "Specifies the path to the directory that contains the \'nerocmd.exe\'.", null));			 
-		setMDriveProperty(new MProperty(false, "Drive", "Specifies either the full name of the CD-ROM drive or the drive letter.", null));			 
+		setMDriveProperty(new MProperty(false, "CD-ROM Drive", "Specifies either the full name of the CD-ROM drive or the drive letter.", null));			 
 		setMUpgradeMessageProperty(new MProperty(true, "Application data upgrade message", "Specifies important information about the last application data upgrade.", null));			 
 		setMUpgradeRelativeFtpPathProperty(new MProperty(false, "Application data upgrade relative FTP path", "Specifies the relative path on the FTP server to the application data upgrade file, e.g. \'/dms/data.xml\'.", null));			 
 		setMLastUpgradeProperty(new MProperty(true, "Last application data upgrade", "Specifies the date and time when the application data was last upgraded.", null));			 
@@ -1648,6 +1853,366 @@ public class MDmsApplication extends MApplication {
 	}
 
 	/**
+	 * Returns the value of the '<em><b>MMp3 Relative Ftp Path Property</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>MMp3 Relative Ftp Path Property</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>MMp3 Relative Ftp Path Property</em>' containment reference.
+	 * @see #setMMp3RelativeFtpPathProperty(MProperty)
+	 * @see org.onceforall.dms.desktop.logic.LogicPackage#getMDmsApplication_MMp3RelativeFtpPathProperty()
+	 * @model containment="true" required="true"
+	 *        annotation="http://www.onceforall.org/mcore name='MP3 relative FTP path' description='Specifies the path of the directory on the FTP server to publish the MP3 files to, e.g. \'/recordings\'.'"
+	 * @generated
+	 */
+	public MProperty getMMp3RelativeFtpPathProperty() {
+		return mMp3RelativeFtpPathProperty;
+	}
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetMMp3RelativeFtpPathProperty(MProperty newMMp3RelativeFtpPathProperty, NotificationChain msgs) {
+		MProperty oldMMp3RelativeFtpPathProperty = mMp3RelativeFtpPathProperty;
+		mMp3RelativeFtpPathProperty = newMMp3RelativeFtpPathProperty;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, LogicPackage.MDMS_APPLICATION__MMP3_RELATIVE_FTP_PATH_PROPERTY, oldMMp3RelativeFtpPathProperty, newMMp3RelativeFtpPathProperty);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+	/**
+	 * Sets the value of the '{@link org.onceforall.dms.desktop.logic.MDmsApplication#getMMp3RelativeFtpPathProperty <em>MMp3 Relative Ftp Path Property</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	   
+	 * @param newMMp3RelativeFtpPathProperty the new value of the '<em>MMp3 Relative Ftp Path Property</em>' containment reference.
+	 * @see #getMMp3RelativeFtpPathProperty()
+	 * @generated
+	 */
+	public void setMMp3RelativeFtpPathProperty(MProperty newMMp3RelativeFtpPathProperty) {
+		if (newMMp3RelativeFtpPathProperty != mMp3RelativeFtpPathProperty) {
+			NotificationChain msgs = null;
+			if (mMp3RelativeFtpPathProperty != null)
+				msgs = ((InternalEObject)mMp3RelativeFtpPathProperty).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - LogicPackage.MDMS_APPLICATION__MMP3_RELATIVE_FTP_PATH_PROPERTY, null, msgs);
+			if (newMMp3RelativeFtpPathProperty != null) {				
+				newMMp3RelativeFtpPathProperty.setDefaultDescription("Specifies the path of the directory on the FTP server to publish the MP3 files to, e.g. \'/recordings\'.");
+				newMMp3RelativeFtpPathProperty.setDefaultName("MP3 relative FTP path");
+				newMMp3RelativeFtpPathProperty.setValueType(Type.getTypeForName("Text"));
+				newMMp3RelativeFtpPathProperty.setValueEFeature((EStructuralFeature) eClass().getEStructuralFeature(LogicPackage.MDMS_APPLICATION__MP3_RELATIVE_FTP_PATH_PROPERTY));
+				newMMp3RelativeFtpPathProperty.setHistoricValuesEFeature((EStructuralFeature) eClass().getEStructuralFeature(LogicPackage.MDMS_APPLICATION__MP3_RELATIVE_FTP_PATH_PROPERTY_HISTORIC_VALUES));
+				msgs = ((InternalEObject)newMMp3RelativeFtpPathProperty).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - LogicPackage.MDMS_APPLICATION__MMP3_RELATIVE_FTP_PATH_PROPERTY, null, msgs);
+			}
+			
+			// Transfers the adpaters from the old managed value to the new one.
+			if(mMp3RelativeFtpPathProperty != null) {
+				if(newMMp3RelativeFtpPathProperty != null)
+					newMMp3RelativeFtpPathProperty.eAdapters().addAll(mMp3RelativeFtpPathProperty.eAdapters());			
+			
+				mMp3RelativeFtpPathProperty.eAdapters().clear();
+			}
+			msgs = basicSetMMp3RelativeFtpPathProperty(newMMp3RelativeFtpPathProperty, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, LogicPackage.MDMS_APPLICATION__MMP3_RELATIVE_FTP_PATH_PROPERTY, newMMp3RelativeFtpPathProperty, newMMp3RelativeFtpPathProperty));
+	}
+	/**
+	 * Returns the value of the '<em><b>Mp3 Relative Ftp Path Property</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Mp3 Relative Ftp Path Property</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Mp3 Relative Ftp Path Property</em>' attribute.
+	 * @see #setMp3RelativeFtpPathProperty(String)
+	 * @see org.onceforall.dms.desktop.logic.LogicPackage#getMDmsApplication_Mp3RelativeFtpPathProperty()
+	 * @model dataType="org.onceforall.dms.desktop.logic.MString"
+	 * @generated
+	 */
+	public String getMp3RelativeFtpPathProperty() {
+		return mp3RelativeFtpPathProperty;
+	}
+	/**
+	 * Sets the value of the '{@link org.onceforall.dms.desktop.logic.MDmsApplication#getMp3RelativeFtpPathProperty <em>Mp3 Relative Ftp Path Property</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	   
+	 * @param newMp3RelativeFtpPathProperty the new value of the '<em>Mp3 Relative Ftp Path Property</em>' attribute.
+	 * @see #getMp3RelativeFtpPathProperty()
+	 * @generated
+	 */
+	public void setMp3RelativeFtpPathProperty(String newMp3RelativeFtpPathProperty) {
+		String oldMp3RelativeFtpPathProperty = mp3RelativeFtpPathProperty;
+		mp3RelativeFtpPathProperty = newMp3RelativeFtpPathProperty;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, LogicPackage.MDMS_APPLICATION__MP3_RELATIVE_FTP_PATH_PROPERTY, oldMp3RelativeFtpPathProperty, mp3RelativeFtpPathProperty));
+	}
+	/**
+	 * Returns the value of the '<em><b>Mp3 Relative Ftp Path Property Historic Values</b></em>' attribute list.
+	 * The list contents are of type {@link java.lang.String}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Mp3 Relative Ftp Path Property Historic Values</em>' attribute list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Mp3 Relative Ftp Path Property Historic Values</em>' attribute list.
+	 * @see org.onceforall.dms.desktop.logic.LogicPackage#getMDmsApplication_Mp3RelativeFtpPathPropertyHistoricValues()
+	 * @model dataType="org.onceforall.dms.desktop.logic.MString" upper="3"
+	 * @generated
+	 */
+	public EList getMp3RelativeFtpPathPropertyHistoricValues() {
+		if (mp3RelativeFtpPathPropertyHistoricValues == null) {
+			mp3RelativeFtpPathPropertyHistoricValues = new EDataTypeUniqueEList(String.class, this, LogicPackage.MDMS_APPLICATION__MP3_RELATIVE_FTP_PATH_PROPERTY_HISTORIC_VALUES);
+		}
+		return mp3RelativeFtpPathPropertyHistoricValues;
+	}
+	/**
+	 * Returns the value of the '<em><b>MContent Page Relative Ftp Path Property</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>MContent Page Relative Ftp Path Property</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>MContent Page Relative Ftp Path Property</em>' containment reference.
+	 * @see #setMContentPageRelativeFtpPathProperty(MProperty)
+	 * @see org.onceforall.dms.desktop.logic.LogicPackage#getMDmsApplication_MContentPageRelativeFtpPathProperty()
+	 * @model containment="true" required="true"
+	 *        annotation="http://www.onceforall.org/mcore name='Content page relative FTP path' description='Specifies the path of the directory relative to the FTP path where to publish the MP3 content page to, e.g. \'/recordings\'.'"
+	 * @generated
+	 */
+	public MProperty getMContentPageRelativeFtpPathProperty() {
+		return mContentPageRelativeFtpPathProperty;
+	}
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetMContentPageRelativeFtpPathProperty(MProperty newMContentPageRelativeFtpPathProperty, NotificationChain msgs) {
+		MProperty oldMContentPageRelativeFtpPathProperty = mContentPageRelativeFtpPathProperty;
+		mContentPageRelativeFtpPathProperty = newMContentPageRelativeFtpPathProperty;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, LogicPackage.MDMS_APPLICATION__MCONTENT_PAGE_RELATIVE_FTP_PATH_PROPERTY, oldMContentPageRelativeFtpPathProperty, newMContentPageRelativeFtpPathProperty);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+	/**
+	 * Sets the value of the '{@link org.onceforall.dms.desktop.logic.MDmsApplication#getMContentPageRelativeFtpPathProperty <em>MContent Page Relative Ftp Path Property</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	   
+	 * @param newMContentPageRelativeFtpPathProperty the new value of the '<em>MContent Page Relative Ftp Path Property</em>' containment reference.
+	 * @see #getMContentPageRelativeFtpPathProperty()
+	 * @generated
+	 */
+	public void setMContentPageRelativeFtpPathProperty(MProperty newMContentPageRelativeFtpPathProperty) {
+		if (newMContentPageRelativeFtpPathProperty != mContentPageRelativeFtpPathProperty) {
+			NotificationChain msgs = null;
+			if (mContentPageRelativeFtpPathProperty != null)
+				msgs = ((InternalEObject)mContentPageRelativeFtpPathProperty).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - LogicPackage.MDMS_APPLICATION__MCONTENT_PAGE_RELATIVE_FTP_PATH_PROPERTY, null, msgs);
+			if (newMContentPageRelativeFtpPathProperty != null) {				
+				newMContentPageRelativeFtpPathProperty.setDefaultDescription("Specifies the path of the directory relative to the FTP path where to publish the MP3 content page to, e.g. \'/recordings\'.");
+				newMContentPageRelativeFtpPathProperty.setDefaultName("Content page relative FTP path");
+				newMContentPageRelativeFtpPathProperty.setValueType(Type.getTypeForName("Text"));
+				newMContentPageRelativeFtpPathProperty.setValueEFeature((EStructuralFeature) eClass().getEStructuralFeature(LogicPackage.MDMS_APPLICATION__CONTENT_PAGE_RELATIVE_FTP_PATH_PROPERTY));
+				newMContentPageRelativeFtpPathProperty.setHistoricValuesEFeature((EStructuralFeature) eClass().getEStructuralFeature(LogicPackage.MDMS_APPLICATION__CONTENT_PAGE_RELATIVE_FTP_PATH_PROPERTY_HISTORIC_VALUES));
+				msgs = ((InternalEObject)newMContentPageRelativeFtpPathProperty).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - LogicPackage.MDMS_APPLICATION__MCONTENT_PAGE_RELATIVE_FTP_PATH_PROPERTY, null, msgs);
+			}
+			
+			// Transfers the adpaters from the old managed value to the new one.
+			if(mContentPageRelativeFtpPathProperty != null) {
+				if(newMContentPageRelativeFtpPathProperty != null)
+					newMContentPageRelativeFtpPathProperty.eAdapters().addAll(mContentPageRelativeFtpPathProperty.eAdapters());			
+			
+				mContentPageRelativeFtpPathProperty.eAdapters().clear();
+			}
+			msgs = basicSetMContentPageRelativeFtpPathProperty(newMContentPageRelativeFtpPathProperty, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, LogicPackage.MDMS_APPLICATION__MCONTENT_PAGE_RELATIVE_FTP_PATH_PROPERTY, newMContentPageRelativeFtpPathProperty, newMContentPageRelativeFtpPathProperty));
+	}
+	/**
+	 * Returns the value of the '<em><b>Content Page Relative Ftp Path Property</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Content Page Relative Ftp Path Property</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Content Page Relative Ftp Path Property</em>' attribute.
+	 * @see #setContentPageRelativeFtpPathProperty(String)
+	 * @see org.onceforall.dms.desktop.logic.LogicPackage#getMDmsApplication_ContentPageRelativeFtpPathProperty()
+	 * @model dataType="org.onceforall.dms.desktop.logic.MString"
+	 * @generated
+	 */
+	public String getContentPageRelativeFtpPathProperty() {
+		return contentPageRelativeFtpPathProperty;
+	}
+	/**
+	 * Sets the value of the '{@link org.onceforall.dms.desktop.logic.MDmsApplication#getContentPageRelativeFtpPathProperty <em>Content Page Relative Ftp Path Property</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	   
+	 * @param newContentPageRelativeFtpPathProperty the new value of the '<em>Content Page Relative Ftp Path Property</em>' attribute.
+	 * @see #getContentPageRelativeFtpPathProperty()
+	 * @generated
+	 */
+	public void setContentPageRelativeFtpPathProperty(String newContentPageRelativeFtpPathProperty) {
+		String oldContentPageRelativeFtpPathProperty = contentPageRelativeFtpPathProperty;
+		contentPageRelativeFtpPathProperty = newContentPageRelativeFtpPathProperty;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, LogicPackage.MDMS_APPLICATION__CONTENT_PAGE_RELATIVE_FTP_PATH_PROPERTY, oldContentPageRelativeFtpPathProperty, contentPageRelativeFtpPathProperty));
+	}
+	/**
+	 * Returns the value of the '<em><b>Content Page Relative Ftp Path Property Historic Values</b></em>' attribute list.
+	 * The list contents are of type {@link java.lang.String}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Content Page Relative Ftp Path Property Historic Values</em>' attribute list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Content Page Relative Ftp Path Property Historic Values</em>' attribute list.
+	 * @see org.onceforall.dms.desktop.logic.LogicPackage#getMDmsApplication_ContentPageRelativeFtpPathPropertyHistoricValues()
+	 * @model dataType="org.onceforall.dms.desktop.logic.MString" upper="3"
+	 * @generated
+	 */
+	public EList getContentPageRelativeFtpPathPropertyHistoricValues() {
+		if (contentPageRelativeFtpPathPropertyHistoricValues == null) {
+			contentPageRelativeFtpPathPropertyHistoricValues = new EDataTypeUniqueEList(String.class, this, LogicPackage.MDMS_APPLICATION__CONTENT_PAGE_RELATIVE_FTP_PATH_PROPERTY_HISTORIC_VALUES);
+		}
+		return contentPageRelativeFtpPathPropertyHistoricValues;
+	}
+	/**
+	 * Returns the value of the '<em><b>MPodcast Relative Ftp Path Property</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>MPodcast Relative Ftp Path Property</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>MPodcast Relative Ftp Path Property</em>' containment reference.
+	 * @see #setMPodcastRelativeFtpPathProperty(MProperty)
+	 * @see org.onceforall.dms.desktop.logic.LogicPackage#getMDmsApplication_MPodcastRelativeFtpPathProperty()
+	 * @model containment="true" required="true"
+	 *        annotation="http://www.onceforall.org/mcore name='Podcast relative FTP path' description='Specifies the path relative to the FTP path where the podcast RSS feed should be created or updated.'"
+	 * @generated
+	 */
+	public MProperty getMPodcastRelativeFtpPathProperty() {
+		return mPodcastRelativeFtpPathProperty;
+	}
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetMPodcastRelativeFtpPathProperty(MProperty newMPodcastRelativeFtpPathProperty, NotificationChain msgs) {
+		MProperty oldMPodcastRelativeFtpPathProperty = mPodcastRelativeFtpPathProperty;
+		mPodcastRelativeFtpPathProperty = newMPodcastRelativeFtpPathProperty;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, LogicPackage.MDMS_APPLICATION__MPODCAST_RELATIVE_FTP_PATH_PROPERTY, oldMPodcastRelativeFtpPathProperty, newMPodcastRelativeFtpPathProperty);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+	/**
+	 * Sets the value of the '{@link org.onceforall.dms.desktop.logic.MDmsApplication#getMPodcastRelativeFtpPathProperty <em>MPodcast Relative Ftp Path Property</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	   
+	 * @param newMPodcastRelativeFtpPathProperty the new value of the '<em>MPodcast Relative Ftp Path Property</em>' containment reference.
+	 * @see #getMPodcastRelativeFtpPathProperty()
+	 * @generated
+	 */
+	public void setMPodcastRelativeFtpPathProperty(MProperty newMPodcastRelativeFtpPathProperty) {
+		if (newMPodcastRelativeFtpPathProperty != mPodcastRelativeFtpPathProperty) {
+			NotificationChain msgs = null;
+			if (mPodcastRelativeFtpPathProperty != null)
+				msgs = ((InternalEObject)mPodcastRelativeFtpPathProperty).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - LogicPackage.MDMS_APPLICATION__MPODCAST_RELATIVE_FTP_PATH_PROPERTY, null, msgs);
+			if (newMPodcastRelativeFtpPathProperty != null) {				
+				newMPodcastRelativeFtpPathProperty.setDefaultDescription("Specifies the path relative to the FTP path where the podcast RSS feed should be created or updated.");
+				newMPodcastRelativeFtpPathProperty.setDefaultName("Podcast relative FTP path");
+				newMPodcastRelativeFtpPathProperty.setValueType(Type.getTypeForName("Text"));
+				newMPodcastRelativeFtpPathProperty.setValueEFeature((EStructuralFeature) eClass().getEStructuralFeature(LogicPackage.MDMS_APPLICATION__PODCAST_RELATIVE_FTP_PATH_PROPERTY));
+				newMPodcastRelativeFtpPathProperty.setHistoricValuesEFeature((EStructuralFeature) eClass().getEStructuralFeature(LogicPackage.MDMS_APPLICATION__PODCAST_RELATIVE_FTP_PATH_PROPERTY_HISTORIC_VALUES));
+				msgs = ((InternalEObject)newMPodcastRelativeFtpPathProperty).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - LogicPackage.MDMS_APPLICATION__MPODCAST_RELATIVE_FTP_PATH_PROPERTY, null, msgs);
+			}
+			
+			// Transfers the adpaters from the old managed value to the new one.
+			if(mPodcastRelativeFtpPathProperty != null) {
+				if(newMPodcastRelativeFtpPathProperty != null)
+					newMPodcastRelativeFtpPathProperty.eAdapters().addAll(mPodcastRelativeFtpPathProperty.eAdapters());			
+			
+				mPodcastRelativeFtpPathProperty.eAdapters().clear();
+			}
+			msgs = basicSetMPodcastRelativeFtpPathProperty(newMPodcastRelativeFtpPathProperty, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, LogicPackage.MDMS_APPLICATION__MPODCAST_RELATIVE_FTP_PATH_PROPERTY, newMPodcastRelativeFtpPathProperty, newMPodcastRelativeFtpPathProperty));
+	}
+	/**
+	 * Returns the value of the '<em><b>Podcast Relative Ftp Path Property</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Podcast Relative Ftp Path Property</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Podcast Relative Ftp Path Property</em>' attribute.
+	 * @see #setPodcastRelativeFtpPathProperty(String)
+	 * @see org.onceforall.dms.desktop.logic.LogicPackage#getMDmsApplication_PodcastRelativeFtpPathProperty()
+	 * @model dataType="org.onceforall.dms.desktop.logic.MString"
+	 * @generated
+	 */
+	public String getPodcastRelativeFtpPathProperty() {
+		return podcastRelativeFtpPathProperty;
+	}
+	/**
+	 * Sets the value of the '{@link org.onceforall.dms.desktop.logic.MDmsApplication#getPodcastRelativeFtpPathProperty <em>Podcast Relative Ftp Path Property</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	   
+	 * @param newPodcastRelativeFtpPathProperty the new value of the '<em>Podcast Relative Ftp Path Property</em>' attribute.
+	 * @see #getPodcastRelativeFtpPathProperty()
+	 * @generated
+	 */
+	public void setPodcastRelativeFtpPathProperty(String newPodcastRelativeFtpPathProperty) {
+		String oldPodcastRelativeFtpPathProperty = podcastRelativeFtpPathProperty;
+		podcastRelativeFtpPathProperty = newPodcastRelativeFtpPathProperty;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, LogicPackage.MDMS_APPLICATION__PODCAST_RELATIVE_FTP_PATH_PROPERTY, oldPodcastRelativeFtpPathProperty, podcastRelativeFtpPathProperty));
+	}
+	/**
+	 * Returns the value of the '<em><b>Podcast Relative Ftp Path Property Historic Values</b></em>' attribute list.
+	 * The list contents are of type {@link java.lang.String}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Podcast Relative Ftp Path Property Historic Values</em>' attribute list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Podcast Relative Ftp Path Property Historic Values</em>' attribute list.
+	 * @see org.onceforall.dms.desktop.logic.LogicPackage#getMDmsApplication_PodcastRelativeFtpPathPropertyHistoricValues()
+	 * @model dataType="org.onceforall.dms.desktop.logic.MString" upper="3"
+	 * @generated
+	 */
+	public EList getPodcastRelativeFtpPathPropertyHistoricValues() {
+		if (podcastRelativeFtpPathPropertyHistoricValues == null) {
+			podcastRelativeFtpPathPropertyHistoricValues = new EDataTypeUniqueEList(String.class, this, LogicPackage.MDMS_APPLICATION__PODCAST_RELATIVE_FTP_PATH_PROPERTY_HISTORIC_VALUES);
+		}
+		return podcastRelativeFtpPathPropertyHistoricValues;
+	}
+	/**
 	 * Returns the value of the '<em><b>MWeb Server Url Property</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -2131,6 +2696,114 @@ public class MDmsApplication extends MApplication {
 	}
 
 	/**
+	 * Returns the value of the '<em><b>MReceipients Email Address Property</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>MReceipients Email Address Property</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>MReceipients Email Address Property</em>' containment reference.
+	 * @see #setMReceipientsEmailAddressProperty(MProperty)
+	 * @see org.onceforall.dms.desktop.logic.LogicPackage#getMDmsApplication_MReceipientsEmailAddressProperty()
+	 * @model containment="true" required="true"
+	 *        annotation="http://www.onceforall.org/mcore name='Receipients\' email address' description='Specifies the email addresses of the recipients, i.e. the To field of the email. Multiple email addresses can entered, separated by a semicolon \';\'.' readOnly='false'"
+	 * @generated
+	 */
+	public MProperty getMReceipientsEmailAddressProperty() {
+		return mReceipientsEmailAddressProperty;
+	}
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetMReceipientsEmailAddressProperty(MProperty newMReceipientsEmailAddressProperty, NotificationChain msgs) {
+		MProperty oldMReceipientsEmailAddressProperty = mReceipientsEmailAddressProperty;
+		mReceipientsEmailAddressProperty = newMReceipientsEmailAddressProperty;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, LogicPackage.MDMS_APPLICATION__MRECEIPIENTS_EMAIL_ADDRESS_PROPERTY, oldMReceipientsEmailAddressProperty, newMReceipientsEmailAddressProperty);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+	/**
+	 * Sets the value of the '{@link org.onceforall.dms.desktop.logic.MDmsApplication#getMReceipientsEmailAddressProperty <em>MReceipients Email Address Property</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	   
+	 * @param newMReceipientsEmailAddressProperty the new value of the '<em>MReceipients Email Address Property</em>' containment reference.
+	 * @see #getMReceipientsEmailAddressProperty()
+	 * @generated
+	 */
+	public void setMReceipientsEmailAddressProperty(MProperty newMReceipientsEmailAddressProperty) {
+		if (newMReceipientsEmailAddressProperty != mReceipientsEmailAddressProperty) {
+			NotificationChain msgs = null;
+			if (mReceipientsEmailAddressProperty != null)
+				msgs = ((InternalEObject)mReceipientsEmailAddressProperty).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - LogicPackage.MDMS_APPLICATION__MRECEIPIENTS_EMAIL_ADDRESS_PROPERTY, null, msgs);
+			if (newMReceipientsEmailAddressProperty != null) {				
+				newMReceipientsEmailAddressProperty.setDefaultName("Receipients\' email address");
+				newMReceipientsEmailAddressProperty.setDefaultDescription("Specifies the email addresses of the recipients, i.e. the To field of the email. Multiple email addresses can entered, separated by a semicolon \';\'.");
+				newMReceipientsEmailAddressProperty.setValueType(Type.getTypeForName("Text"));
+				newMReceipientsEmailAddressProperty.setValueEFeature((EStructuralFeature) eClass().getEStructuralFeature(LogicPackage.MDMS_APPLICATION__RECEIPIENTS_EMAIL_ADDRESS_PROPERTY));
+				newMReceipientsEmailAddressProperty.setHistoricValuesEFeature((EStructuralFeature) eClass().getEStructuralFeature(LogicPackage.MDMS_APPLICATION__RECEIPIENTS_EMAIL_ADDRESS_PROPERTY_HISTORIC_VALUES));
+				msgs = ((InternalEObject)newMReceipientsEmailAddressProperty).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - LogicPackage.MDMS_APPLICATION__MRECEIPIENTS_EMAIL_ADDRESS_PROPERTY, null, msgs);
+			}
+			
+			// Transfers the adpaters from the old managed value to the new one.
+			if(mReceipientsEmailAddressProperty != null) {
+				if(newMReceipientsEmailAddressProperty != null)
+					newMReceipientsEmailAddressProperty.eAdapters().addAll(mReceipientsEmailAddressProperty.eAdapters());			
+			
+				mReceipientsEmailAddressProperty.eAdapters().clear();
+			}
+			msgs = basicSetMReceipientsEmailAddressProperty(newMReceipientsEmailAddressProperty, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, LogicPackage.MDMS_APPLICATION__MRECEIPIENTS_EMAIL_ADDRESS_PROPERTY, newMReceipientsEmailAddressProperty, newMReceipientsEmailAddressProperty));
+	}
+	/**
+	 * Returns the value of the '<em><b>Receipients Email Address Property</b></em>' attribute list.
+	 * The list contents are of type {@link java.lang.String}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Receipients Email Address Property</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Receipients Email Address Property</em>' attribute list.
+	 * @see org.onceforall.dms.desktop.logic.LogicPackage#getMDmsApplication_ReceipientsEmailAddressProperty()
+	 * @model dataType="org.onceforall.dms.desktop.logic.MString"
+	 * @generated
+	 */
+	public EList getReceipientsEmailAddressProperty() {
+		if (receipientsEmailAddressProperty == null) {
+			receipientsEmailAddressProperty = new EDataTypeUniqueEList(String.class, this, LogicPackage.MDMS_APPLICATION__RECEIPIENTS_EMAIL_ADDRESS_PROPERTY);
+		}
+		return receipientsEmailAddressProperty;
+	}
+	/**
+	 * Returns the value of the '<em><b>Receipients Email Address Property Historic Values</b></em>' attribute list.
+	 * The list contents are of type {@link java.lang.String}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Receipients Email Address Property Historic Values</em>' attribute list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Receipients Email Address Property Historic Values</em>' attribute list.
+	 * @see org.onceforall.dms.desktop.logic.LogicPackage#getMDmsApplication_ReceipientsEmailAddressPropertyHistoricValues()
+	 * @model dataType="org.onceforall.dms.desktop.logic.MString" upper="3"
+	 * @generated
+	 */
+	public EList getReceipientsEmailAddressPropertyHistoricValues() {
+		if (receipientsEmailAddressPropertyHistoricValues == null) {
+			receipientsEmailAddressPropertyHistoricValues = new EDataTypeUniqueEList(String.class, this, LogicPackage.MDMS_APPLICATION__RECEIPIENTS_EMAIL_ADDRESS_PROPERTY_HISTORIC_VALUES);
+		}
+		return receipientsEmailAddressPropertyHistoricValues;
+	}
+	/**
 	 * Returns the value of the '<em><b>MBurning Software Directory Path Property</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -2247,7 +2920,7 @@ public class MDmsApplication extends MApplication {
 	 * @see #setMDriveProperty(MProperty)
 	 * @see org.onceforall.dms.desktop.logic.LogicPackage#getMDmsApplication_MDriveProperty()
 	 * @model containment="true" required="true"
-	 *        annotation="http://www.onceforall.org/mcore name='Drive' description='Specifies either the full name of the CD-ROM drive or the drive letter.'"
+	 *        annotation="http://www.onceforall.org/mcore name='CD-ROM Drive' description='Specifies either the full name of the CD-ROM drive or the drive letter.'"
 	 * @generated
 	 */
 	public MProperty getMDriveProperty() {
@@ -2285,7 +2958,7 @@ public class MDmsApplication extends MApplication {
 				msgs = ((InternalEObject)mDriveProperty).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - LogicPackage.MDMS_APPLICATION__MDRIVE_PROPERTY, null, msgs);
 			if (newMDriveProperty != null) {				
 				newMDriveProperty.setDefaultDescription("Specifies either the full name of the CD-ROM drive or the drive letter.");
-				newMDriveProperty.setDefaultName("Drive");
+				newMDriveProperty.setDefaultName("CD-ROM Drive");
 				newMDriveProperty.setValueType(Type.getTypeForName("Text"));
 				newMDriveProperty.setValueEFeature((EStructuralFeature) eClass().getEStructuralFeature(LogicPackage.MDMS_APPLICATION__DRIVE_PROPERTY));
 				newMDriveProperty.setHistoricValuesEFeature((EStructuralFeature) eClass().getEStructuralFeature(LogicPackage.MDMS_APPLICATION__DRIVE_PROPERTY_HISTORIC_VALUES));
@@ -2973,6 +3646,12 @@ public class MDmsApplication extends MApplication {
 				return basicSetMFtpUserNameProperty(null, msgs);
 			case LogicPackage.MDMS_APPLICATION__MFTP_USER_PASSWORD_PROPERTY:
 				return basicSetMFtpUserPasswordProperty(null, msgs);
+			case LogicPackage.MDMS_APPLICATION__MMP3_RELATIVE_FTP_PATH_PROPERTY:
+				return basicSetMMp3RelativeFtpPathProperty(null, msgs);
+			case LogicPackage.MDMS_APPLICATION__MCONTENT_PAGE_RELATIVE_FTP_PATH_PROPERTY:
+				return basicSetMContentPageRelativeFtpPathProperty(null, msgs);
+			case LogicPackage.MDMS_APPLICATION__MPODCAST_RELATIVE_FTP_PATH_PROPERTY:
+				return basicSetMPodcastRelativeFtpPathProperty(null, msgs);
 			case LogicPackage.MDMS_APPLICATION__MWEB_SERVER_URL_PROPERTY:
 				return basicSetMWebServerUrlProperty(null, msgs);
 			case LogicPackage.MDMS_APPLICATION__MSMTP_SERVER_PROPERTY:
@@ -2981,6 +3660,8 @@ public class MDmsApplication extends MApplication {
 				return basicSetMSmtpUserNameProperty(null, msgs);
 			case LogicPackage.MDMS_APPLICATION__MSMTP_PASSWORD_PROPERTY:
 				return basicSetMSmtpPasswordProperty(null, msgs);
+			case LogicPackage.MDMS_APPLICATION__MRECEIPIENTS_EMAIL_ADDRESS_PROPERTY:
+				return basicSetMReceipientsEmailAddressProperty(null, msgs);
 			case LogicPackage.MDMS_APPLICATION__MBURNING_SOFTWARE_DIRECTORY_PATH_PROPERTY:
 				return basicSetMBurningSoftwareDirectoryPathProperty(null, msgs);
 			case LogicPackage.MDMS_APPLICATION__MDRIVE_PROPERTY:
@@ -3040,6 +3721,24 @@ public class MDmsApplication extends MApplication {
 				return getMFtpUserPasswordProperty();
 			case LogicPackage.MDMS_APPLICATION__FTP_USER_PASSWORD_PROPERTY:
 				return getFtpUserPasswordProperty();
+			case LogicPackage.MDMS_APPLICATION__MMP3_RELATIVE_FTP_PATH_PROPERTY:
+				return getMMp3RelativeFtpPathProperty();
+			case LogicPackage.MDMS_APPLICATION__MP3_RELATIVE_FTP_PATH_PROPERTY:
+				return getMp3RelativeFtpPathProperty();
+			case LogicPackage.MDMS_APPLICATION__MP3_RELATIVE_FTP_PATH_PROPERTY_HISTORIC_VALUES:
+				return getMp3RelativeFtpPathPropertyHistoricValues();
+			case LogicPackage.MDMS_APPLICATION__MCONTENT_PAGE_RELATIVE_FTP_PATH_PROPERTY:
+				return getMContentPageRelativeFtpPathProperty();
+			case LogicPackage.MDMS_APPLICATION__CONTENT_PAGE_RELATIVE_FTP_PATH_PROPERTY:
+				return getContentPageRelativeFtpPathProperty();
+			case LogicPackage.MDMS_APPLICATION__CONTENT_PAGE_RELATIVE_FTP_PATH_PROPERTY_HISTORIC_VALUES:
+				return getContentPageRelativeFtpPathPropertyHistoricValues();
+			case LogicPackage.MDMS_APPLICATION__MPODCAST_RELATIVE_FTP_PATH_PROPERTY:
+				return getMPodcastRelativeFtpPathProperty();
+			case LogicPackage.MDMS_APPLICATION__PODCAST_RELATIVE_FTP_PATH_PROPERTY:
+				return getPodcastRelativeFtpPathProperty();
+			case LogicPackage.MDMS_APPLICATION__PODCAST_RELATIVE_FTP_PATH_PROPERTY_HISTORIC_VALUES:
+				return getPodcastRelativeFtpPathPropertyHistoricValues();
 			case LogicPackage.MDMS_APPLICATION__MWEB_SERVER_URL_PROPERTY:
 				return getMWebServerUrlProperty();
 			case LogicPackage.MDMS_APPLICATION__WEB_SERVER_URL_PROPERTY:
@@ -3062,6 +3761,12 @@ public class MDmsApplication extends MApplication {
 				return getMSmtpPasswordProperty();
 			case LogicPackage.MDMS_APPLICATION__SMTP_PASSWORD_PROPERTY:
 				return getSmtpPasswordProperty();
+			case LogicPackage.MDMS_APPLICATION__MRECEIPIENTS_EMAIL_ADDRESS_PROPERTY:
+				return getMReceipientsEmailAddressProperty();
+			case LogicPackage.MDMS_APPLICATION__RECEIPIENTS_EMAIL_ADDRESS_PROPERTY:
+				return getReceipientsEmailAddressProperty();
+			case LogicPackage.MDMS_APPLICATION__RECEIPIENTS_EMAIL_ADDRESS_PROPERTY_HISTORIC_VALUES:
+				return getReceipientsEmailAddressPropertyHistoricValues();
 			case LogicPackage.MDMS_APPLICATION__MBURNING_SOFTWARE_DIRECTORY_PATH_PROPERTY:
 				return getMBurningSoftwareDirectoryPathProperty();
 			case LogicPackage.MDMS_APPLICATION__BURNING_SOFTWARE_DIRECTORY_PATH_PROPERTY:
@@ -3155,6 +3860,36 @@ public class MDmsApplication extends MApplication {
 				
 				setFtpUserPasswordProperty((String)newValue);
 				return;
+			case LogicPackage.MDMS_APPLICATION__MMP3_RELATIVE_FTP_PATH_PROPERTY:
+				setMMp3RelativeFtpPathProperty((MProperty)newValue);
+				return;
+			case LogicPackage.MDMS_APPLICATION__MP3_RELATIVE_FTP_PATH_PROPERTY:
+				setMp3RelativeFtpPathProperty((String)newValue);
+				return;
+			case LogicPackage.MDMS_APPLICATION__MP3_RELATIVE_FTP_PATH_PROPERTY_HISTORIC_VALUES:
+				getMp3RelativeFtpPathPropertyHistoricValues().clear();
+				getMp3RelativeFtpPathPropertyHistoricValues().addAll((Collection)newValue);
+				return;
+			case LogicPackage.MDMS_APPLICATION__MCONTENT_PAGE_RELATIVE_FTP_PATH_PROPERTY:
+				setMContentPageRelativeFtpPathProperty((MProperty)newValue);
+				return;
+			case LogicPackage.MDMS_APPLICATION__CONTENT_PAGE_RELATIVE_FTP_PATH_PROPERTY:
+				setContentPageRelativeFtpPathProperty((String)newValue);
+				return;
+			case LogicPackage.MDMS_APPLICATION__CONTENT_PAGE_RELATIVE_FTP_PATH_PROPERTY_HISTORIC_VALUES:
+				getContentPageRelativeFtpPathPropertyHistoricValues().clear();
+				getContentPageRelativeFtpPathPropertyHistoricValues().addAll((Collection)newValue);
+				return;
+			case LogicPackage.MDMS_APPLICATION__MPODCAST_RELATIVE_FTP_PATH_PROPERTY:
+				setMPodcastRelativeFtpPathProperty((MProperty)newValue);
+				return;
+			case LogicPackage.MDMS_APPLICATION__PODCAST_RELATIVE_FTP_PATH_PROPERTY:
+				setPodcastRelativeFtpPathProperty((String)newValue);
+				return;
+			case LogicPackage.MDMS_APPLICATION__PODCAST_RELATIVE_FTP_PATH_PROPERTY_HISTORIC_VALUES:
+				getPodcastRelativeFtpPathPropertyHistoricValues().clear();
+				getPodcastRelativeFtpPathPropertyHistoricValues().addAll((Collection)newValue);
+				return;
 			case LogicPackage.MDMS_APPLICATION__MWEB_SERVER_URL_PROPERTY:
 				setMWebServerUrlProperty((MProperty)newValue);
 				return;
@@ -3194,6 +3929,17 @@ public class MDmsApplication extends MApplication {
 						newValue = Type.PASSWORD_TYPE.encryptPassword((String) newValue);
 				
 				setSmtpPasswordProperty((String)newValue);
+				return;
+			case LogicPackage.MDMS_APPLICATION__MRECEIPIENTS_EMAIL_ADDRESS_PROPERTY:
+				setMReceipientsEmailAddressProperty((MProperty)newValue);
+				return;
+			case LogicPackage.MDMS_APPLICATION__RECEIPIENTS_EMAIL_ADDRESS_PROPERTY:
+				getReceipientsEmailAddressProperty().clear();
+				getReceipientsEmailAddressProperty().addAll((Collection)newValue);
+				return;
+			case LogicPackage.MDMS_APPLICATION__RECEIPIENTS_EMAIL_ADDRESS_PROPERTY_HISTORIC_VALUES:
+				getReceipientsEmailAddressPropertyHistoricValues().clear();
+				getReceipientsEmailAddressPropertyHistoricValues().addAll((Collection)newValue);
 				return;
 			case LogicPackage.MDMS_APPLICATION__MBURNING_SOFTWARE_DIRECTORY_PATH_PROPERTY:
 				setMBurningSoftwareDirectoryPathProperty((MProperty)newValue);
@@ -3302,6 +4048,33 @@ public class MDmsApplication extends MApplication {
 			case LogicPackage.MDMS_APPLICATION__FTP_USER_PASSWORD_PROPERTY:
 				setFtpUserPasswordProperty(getDefaultFtpUserPasswordProperty());
 				return;
+			case LogicPackage.MDMS_APPLICATION__MMP3_RELATIVE_FTP_PATH_PROPERTY:
+				setMMp3RelativeFtpPathProperty((MProperty)null);
+				return;
+			case LogicPackage.MDMS_APPLICATION__MP3_RELATIVE_FTP_PATH_PROPERTY:
+				setMp3RelativeFtpPathProperty(getDefaultMp3RelativeFtpPathProperty());
+				return;
+			case LogicPackage.MDMS_APPLICATION__MP3_RELATIVE_FTP_PATH_PROPERTY_HISTORIC_VALUES:
+				getMp3RelativeFtpPathPropertyHistoricValues().clear();
+				return;
+			case LogicPackage.MDMS_APPLICATION__MCONTENT_PAGE_RELATIVE_FTP_PATH_PROPERTY:
+				setMContentPageRelativeFtpPathProperty((MProperty)null);
+				return;
+			case LogicPackage.MDMS_APPLICATION__CONTENT_PAGE_RELATIVE_FTP_PATH_PROPERTY:
+				setContentPageRelativeFtpPathProperty(getDefaultContentPageRelativeFtpPathProperty());
+				return;
+			case LogicPackage.MDMS_APPLICATION__CONTENT_PAGE_RELATIVE_FTP_PATH_PROPERTY_HISTORIC_VALUES:
+				getContentPageRelativeFtpPathPropertyHistoricValues().clear();
+				return;
+			case LogicPackage.MDMS_APPLICATION__MPODCAST_RELATIVE_FTP_PATH_PROPERTY:
+				setMPodcastRelativeFtpPathProperty((MProperty)null);
+				return;
+			case LogicPackage.MDMS_APPLICATION__PODCAST_RELATIVE_FTP_PATH_PROPERTY:
+				setPodcastRelativeFtpPathProperty(getDefaultPodcastRelativeFtpPathProperty());
+				return;
+			case LogicPackage.MDMS_APPLICATION__PODCAST_RELATIVE_FTP_PATH_PROPERTY_HISTORIC_VALUES:
+				getPodcastRelativeFtpPathPropertyHistoricValues().clear();
+				return;
 			case LogicPackage.MDMS_APPLICATION__MWEB_SERVER_URL_PROPERTY:
 				setMWebServerUrlProperty((MProperty)null);
 				return;
@@ -3334,6 +4107,15 @@ public class MDmsApplication extends MApplication {
 				return;
 			case LogicPackage.MDMS_APPLICATION__SMTP_PASSWORD_PROPERTY:
 				setSmtpPasswordProperty(getDefaultSmtpPasswordProperty());
+				return;
+			case LogicPackage.MDMS_APPLICATION__MRECEIPIENTS_EMAIL_ADDRESS_PROPERTY:
+				setMReceipientsEmailAddressProperty((MProperty)null);
+				return;
+			case LogicPackage.MDMS_APPLICATION__RECEIPIENTS_EMAIL_ADDRESS_PROPERTY:
+				getReceipientsEmailAddressProperty().clear();
+				return;
+			case LogicPackage.MDMS_APPLICATION__RECEIPIENTS_EMAIL_ADDRESS_PROPERTY_HISTORIC_VALUES:
+				getReceipientsEmailAddressPropertyHistoricValues().clear();
 				return;
 			case LogicPackage.MDMS_APPLICATION__MBURNING_SOFTWARE_DIRECTORY_PATH_PROPERTY:
 				setMBurningSoftwareDirectoryPathProperty((MProperty)null);
@@ -3425,6 +4207,24 @@ public class MDmsApplication extends MApplication {
 				return mFtpUserPasswordProperty != null;
 			case LogicPackage.MDMS_APPLICATION__FTP_USER_PASSWORD_PROPERTY:
 				return getDefaultFtpUserPasswordProperty() == null ? ftpUserPasswordProperty != null : !getDefaultFtpUserPasswordProperty().equals(ftpUserPasswordProperty);
+			case LogicPackage.MDMS_APPLICATION__MMP3_RELATIVE_FTP_PATH_PROPERTY:
+				return mMp3RelativeFtpPathProperty != null;
+			case LogicPackage.MDMS_APPLICATION__MP3_RELATIVE_FTP_PATH_PROPERTY:
+				return getDefaultMp3RelativeFtpPathProperty() == null ? mp3RelativeFtpPathProperty != null : !getDefaultMp3RelativeFtpPathProperty().equals(mp3RelativeFtpPathProperty);
+			case LogicPackage.MDMS_APPLICATION__MP3_RELATIVE_FTP_PATH_PROPERTY_HISTORIC_VALUES:
+				return mp3RelativeFtpPathPropertyHistoricValues != null && !mp3RelativeFtpPathPropertyHistoricValues.isEmpty();
+			case LogicPackage.MDMS_APPLICATION__MCONTENT_PAGE_RELATIVE_FTP_PATH_PROPERTY:
+				return mContentPageRelativeFtpPathProperty != null;
+			case LogicPackage.MDMS_APPLICATION__CONTENT_PAGE_RELATIVE_FTP_PATH_PROPERTY:
+				return getDefaultContentPageRelativeFtpPathProperty() == null ? contentPageRelativeFtpPathProperty != null : !getDefaultContentPageRelativeFtpPathProperty().equals(contentPageRelativeFtpPathProperty);
+			case LogicPackage.MDMS_APPLICATION__CONTENT_PAGE_RELATIVE_FTP_PATH_PROPERTY_HISTORIC_VALUES:
+				return contentPageRelativeFtpPathPropertyHistoricValues != null && !contentPageRelativeFtpPathPropertyHistoricValues.isEmpty();
+			case LogicPackage.MDMS_APPLICATION__MPODCAST_RELATIVE_FTP_PATH_PROPERTY:
+				return mPodcastRelativeFtpPathProperty != null;
+			case LogicPackage.MDMS_APPLICATION__PODCAST_RELATIVE_FTP_PATH_PROPERTY:
+				return getDefaultPodcastRelativeFtpPathProperty() == null ? podcastRelativeFtpPathProperty != null : !getDefaultPodcastRelativeFtpPathProperty().equals(podcastRelativeFtpPathProperty);
+			case LogicPackage.MDMS_APPLICATION__PODCAST_RELATIVE_FTP_PATH_PROPERTY_HISTORIC_VALUES:
+				return podcastRelativeFtpPathPropertyHistoricValues != null && !podcastRelativeFtpPathPropertyHistoricValues.isEmpty();
 			case LogicPackage.MDMS_APPLICATION__MWEB_SERVER_URL_PROPERTY:
 				return mWebServerUrlProperty != null;
 			case LogicPackage.MDMS_APPLICATION__WEB_SERVER_URL_PROPERTY:
@@ -3447,6 +4247,12 @@ public class MDmsApplication extends MApplication {
 				return mSmtpPasswordProperty != null;
 			case LogicPackage.MDMS_APPLICATION__SMTP_PASSWORD_PROPERTY:
 				return getDefaultSmtpPasswordProperty() == null ? smtpPasswordProperty != null : !getDefaultSmtpPasswordProperty().equals(smtpPasswordProperty);
+			case LogicPackage.MDMS_APPLICATION__MRECEIPIENTS_EMAIL_ADDRESS_PROPERTY:
+				return mReceipientsEmailAddressProperty != null;
+			case LogicPackage.MDMS_APPLICATION__RECEIPIENTS_EMAIL_ADDRESS_PROPERTY:
+				return receipientsEmailAddressProperty != null && !receipientsEmailAddressProperty.isEmpty();
+			case LogicPackage.MDMS_APPLICATION__RECEIPIENTS_EMAIL_ADDRESS_PROPERTY_HISTORIC_VALUES:
+				return receipientsEmailAddressPropertyHistoricValues != null && !receipientsEmailAddressPropertyHistoricValues.isEmpty();
 			case LogicPackage.MDMS_APPLICATION__MBURNING_SOFTWARE_DIRECTORY_PATH_PROPERTY:
 				return mBurningSoftwareDirectoryPathProperty != null;
 			case LogicPackage.MDMS_APPLICATION__BURNING_SOFTWARE_DIRECTORY_PATH_PROPERTY:
@@ -3510,6 +4316,18 @@ public class MDmsApplication extends MApplication {
 		result.append(ftpUserNamePropertyHistoricValues);
 		result.append(", ftpUserPasswordProperty: ");
 		result.append(ftpUserPasswordProperty);
+		result.append(", mp3RelativeFtpPathProperty: ");
+		result.append(mp3RelativeFtpPathProperty);
+		result.append(", mp3RelativeFtpPathPropertyHistoricValues: ");
+		result.append(mp3RelativeFtpPathPropertyHistoricValues);
+		result.append(", contentPageRelativeFtpPathProperty: ");
+		result.append(contentPageRelativeFtpPathProperty);
+		result.append(", contentPageRelativeFtpPathPropertyHistoricValues: ");
+		result.append(contentPageRelativeFtpPathPropertyHistoricValues);
+		result.append(", podcastRelativeFtpPathProperty: ");
+		result.append(podcastRelativeFtpPathProperty);
+		result.append(", podcastRelativeFtpPathPropertyHistoricValues: ");
+		result.append(podcastRelativeFtpPathPropertyHistoricValues);
 		result.append(", webServerUrlProperty: ");
 		result.append(webServerUrlProperty);
 		result.append(", webServerUrlPropertyHistoricValues: ");
@@ -3524,6 +4342,10 @@ public class MDmsApplication extends MApplication {
 		result.append(smtpUserNamePropertyHistoricValues);
 		result.append(", smtpPasswordProperty: ");
 		result.append(smtpPasswordProperty);
+		result.append(", receipientsEmailAddressProperty: ");
+		result.append(receipientsEmailAddressProperty);
+		result.append(", receipientsEmailAddressPropertyHistoricValues: ");
+		result.append(receipientsEmailAddressPropertyHistoricValues);
 		result.append(", burningSoftwareDirectoryPathProperty: ");
 		result.append(burningSoftwareDirectoryPathProperty);
 		result.append(", driveProperty: ");
