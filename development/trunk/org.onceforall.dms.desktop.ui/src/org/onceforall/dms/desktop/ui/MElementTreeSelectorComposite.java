@@ -1,5 +1,4 @@
 package org.onceforall.dms.desktop.ui;
-
 import java.util.ArrayList;
 import java.util.Iterator;
 
@@ -10,18 +9,23 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.MouseEvent;
-import org.eclipse.swt.events.MouseMoveListener;
 import org.eclipse.swt.events.MouseTrackAdapter;
 import org.eclipse.swt.events.SelectionAdapter;
 import org.eclipse.swt.events.SelectionEvent;
+import org.eclipse.swt.graphics.Color;
+import org.eclipse.swt.graphics.Font;
+import org.eclipse.swt.graphics.FontData;
 import org.eclipse.swt.graphics.Point;
 import org.eclipse.swt.graphics.Rectangle;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Composite;
+import org.eclipse.swt.widgets.Event;
+import org.eclipse.swt.widgets.Listener;
 import org.eclipse.swt.widgets.Tree;
 import org.eclipse.swt.widgets.TreeItem;
 import org.eclipse.swt.widgets.Widget;
+import org.eclipse.ui.forms.IFormColors;
 import org.onceforall.dms.desktop.logic.LogicPackage;
 import org.onceforall.dms.desktop.logic.MApplication;
 import org.onceforall.dms.desktop.logic.MDmsApplication;
@@ -68,6 +72,18 @@ public class MElementTreeSelectorComposite extends MElementComposite implements 
     /** Specifies the tree item under the current mouse position. */
     protected TreeItem pointedTreeItem;
     
+    /** Specifies the standard tree item foreground colour. */
+    protected Color defaultColor;
+    
+    /** Specifies the standard tree item font. */
+    protected Font defaultFont;
+    
+    /** Specifies the tree item highlight colour. */
+    protected Color highlightColor;
+    
+    /** Specifies the tree item highlight font. */
+    protected Font highlightFont;
+    
     /** 
      * Specifies the area that the mouse pointer has to leave in order to hide the managed element buttons.
      * It extends from the first button to the right end of the tree control. The border has 5 pixels distance from the buttons.
@@ -102,78 +118,85 @@ public class MElementTreeSelectorComposite extends MElementComposite implements 
 		    }
 		});
 
-		tree.addMouseTrackListener(new MouseTrackAdapter() {
-
+		tree.getDisplay().addFilter(SWT.MouseMove, new Listener() {
 			/**
-			 * @see org.eclipse.swt.events.MouseTrackAdapter#mouseExit(org.eclipse.swt.events.MouseEvent)
+			 * @see org.eclipse.swt.widgets.Listener#handleEvent(org.eclipse.swt.widgets.Event)
 			 */
 			@Override
-			public void mouseExit(MouseEvent event) {
-				// Makes sure that the buttons are hidden when the mouse pointer leave the tree area.
-				mousePosition.x = event.x;
-				mousePosition.y = mousePosition.y;
-				if(tree.getBounds().contains(mousePosition))
-					return;
-				
-				hideMElementButtons();
-				
-				pointedArea = null;
-				pointedTreeItem = null;	
-			}
-				
-			});
-			
-		tree.addMouseMoveListener(new MouseMoveListener() {
-
-			public void mouseMove(MouseEvent event) {
+			public void handleEvent(Event event) {
+				// Makes sure that the buttons are hidden when the mouse pointer leaves the tree area.
 				mousePosition.x = event.x;
 				mousePosition.y = event.y;
-				
-				TreeItem treeItem = findTreeItem(tree.getTopItem(), mousePosition);
-				
-				if(treeItem == pointedTreeItem)
-					return;
-				
-				if(pointedTreeItem != null
-						&& treeItem == null 
-						&& pointedArea != null 
-						&& pointedArea.contains(mousePosition))
-					return;
+								
+				if(event.widget != tree 
+						&& event.widget != startButton
+						 && event.widget != stopButton
+						 && event.widget != terminateButton
+						 && event.widget != skipButton) {				
+					hideMElementButtons();
 					
-				pointedTreeItem = treeItem;
-				hideMElementButtons();
-				
-				if(pointedTreeItem != null && pointedTreeItem.getData() != null && pointedTreeItem.getData() instanceof MStep) {
-					MStep mStep = (MStep) pointedTreeItem.getData();
-					
-					int defaultHeight = startButton.getDefaultHeight();
-				
-					// Links the buttons to their managed elements and hides their captions.
-					for(MElementButton mElementButton: mElementButtons) {
-						if(mElementButton == null)
-							continue;
-						
-						mElementButton.setMElement(mStep);
-						if(mElementButton != startButton && mElementButton.getVisible())
-							mElementButton.setText("");
-					}
-					
-					Rectangle treeItemBounds = pointedTreeItem.getBounds();
-					pointedArea = new Rectangle(treeItemBounds.x, treeItemBounds.y-(defaultHeight-pointedTreeItem.getBounds().height)/2-BUTTON_SPACING, tree.getBounds().width-treeItemBounds.x, defaultHeight+BUTTON_SPACING*2);		
-
-					layoutMElementButtons();
-					
-				}
-				else {
 					pointedArea = null;
-					pointedTreeItem = null;	
+					pointedTreeItem = null;
 				}
-			}});
+				else if(event.widget == tree) {
+					TreeItem treeItem = findTreeItem(tree.getTopItem(), mousePosition);
+					
+					if(treeItem == pointedTreeItem)
+						return;
+					
+					if(pointedTreeItem != null
+							&& treeItem == null 
+							&& pointedArea != null 
+							&& pointedArea.contains(mousePosition))
+						return;
+						
+					pointedTreeItem = treeItem;
+					hideMElementButtons();
+					
+					if(pointedTreeItem != null && pointedTreeItem.getData() != null && pointedTreeItem.getData() instanceof MStep) {
+						MStep mStep = (MStep) pointedTreeItem.getData();
+						
+						int defaultHeight = startButton.getDefaultHeight();
+					
+						// Links the buttons to their managed elements and hides their captions.
+						for(MElementButton mElementButton: mElementButtons) {
+							if(mElementButton == null)
+								continue;
+							
+							mElementButton.setMElement(mStep);
+						}
+						
+						Rectangle treeItemBounds = pointedTreeItem.getBounds();
+						Rectangle clientArea = tree.getClientArea();
+						pointedArea = new Rectangle(treeItemBounds.x, treeItemBounds.y-(defaultHeight-pointedTreeItem.getBounds().height)/2-BUTTON_SPACING, clientArea.width-treeItemBounds.x, defaultHeight+BUTTON_SPACING*2);		
+
+						layoutMElementButtons();
+						
+					}
+					else {
+						pointedArea = null;
+						pointedTreeItem = null;	
+					}
+
+				}		
+			}
+			
+		});		
+
+		
 		tree.setLayoutData(new GridData(GridData.FILL, GridData.FILL, true, true));
+		
+		defaultColor = tree.getForeground();
+		defaultFont = tree.getFont();
+		highlightColor = getDefaultFormToolkit().getColors().getColor(IFormColors.TITLE);
+		FontData[] fontData = tree.getFont().getFontData();
+		fontData[0].setStyle(fontData[0].getStyle() | SWT.BOLD);
+		highlightFont = new Font(tree.getFont().getDevice(), fontData);
 		
 		startButton = new MStepStartButton(tree, SWT.NONE);
 		stopButton = new MStepStopButton(tree, SWT.NONE);
 		skipButton = new MStepSkipButton(tree, SWT.NONE);
+
 		terminateButton = new MStepTerminateButton(tree, SWT.NONE);
 		mElementButtons[0] = startButton;
 		mElementButtons[1] = stopButton;
@@ -238,6 +261,8 @@ public class MElementTreeSelectorComposite extends MElementComposite implements 
        TreeItem applicationTreeItem  = createTreeItem(getMElement(), tree);
        if(applicationTreeItem != null)
     	   applicationTreeItem.setExpanded(true); 
+       
+       updateTreeItem(tree.getItems(), null);
 	}
 	
 	
@@ -392,10 +417,11 @@ public class MElementTreeSelectorComposite extends MElementComposite implements 
 	 * Hides all managed element buttons.
 	 */
 	protected void hideMElementButtons() {
-		for(MElementButton button: mElementButtons) {
-			button.setVisible(false);
-			button.setMElement(null);
-		}
+		for(MElementButton button: mElementButtons)
+			if(button.getMElement() != null) {
+				button.setMElement(null);
+				button.setVisible(false);
+			}
 	}
 	
 	/**
@@ -406,14 +432,19 @@ public class MElementTreeSelectorComposite extends MElementComposite implements 
 			return;
 
 		Rectangle treeItemBounds = pointedTreeItem.getBounds();
-		
 		Rectangle imageBounds = startButton.getImage().getBounds();
+		Rectangle clientArea = tree.getClientArea();
 		
 		// Determines the width of all visible buttons.
 		int visibleButtonsWidth = 0;
+		int visibleExpandedButtonsWidth = 0;
 		for(MElementButton mElementButton: mElementButtons) {
 			if(mElementButton == null || !mElementButton.getVisible())
 				continue;
+			
+			if((clientArea.width < 300 || mElementButton != startButton)
+					&& mElementButton.getVisible())
+				mElementButton.setText("");
 			
 			mElementButton.pack();
 			
@@ -433,12 +464,12 @@ public class MElementTreeSelectorComposite extends MElementComposite implements 
 		if(visibleButtonsWidth > 0)
 			visibleButtonsWidth -= BUTTON_SPACING;
 		
-		Rectangle buttonsArea = new Rectangle(Math.min(treeItemBounds.x+treeItemBounds.width+BUTTON_SPACING, tree.getBounds().width-visibleButtonsWidth-BUTTON_SPACING*2),
+		Rectangle buttonsArea = new Rectangle(clientArea.width-visibleButtonsWidth-BUTTON_SPACING*2,
 				treeItemBounds.y-(defaultHeight-treeItemBounds.height)/2,
 			visibleButtonsWidth+BUTTON_SPACING*2, 
 			defaultHeight);
 		
-		// Arranges the butttons.
+		// Arranges the buttons.
 		int currentX = buttonsArea.x+BUTTON_SPACING;
 		for(MElementButton mElementButton: mElementButtons) {
 			if(mElementButton == null || !mElementButton.getVisible())
@@ -584,6 +615,26 @@ public class MElementTreeSelectorComposite extends MElementComposite implements 
                 treeItems[index].setText(getTreeNodeText(mObject));
                 treeItems[index].setImage(iconCache.get(mObject));
             }
+            
+            // Highlights the tree item of managed steps that are ready.
+            if(treeItems[index].getData() instanceof MStep) {
+            	MStep mStep = (MStep) treeItems[index].getData();
+            	
+            	boolean ready = mStep.isReady();
+            	
+            	if(ready && !treeItems[index].getForeground().equals(highlightColor))
+            		treeItems[index].setForeground(highlightColor);
+            	
+            	if(ready && !treeItems[index].getFont().equals(highlightFont))
+            			treeItems[index].setFont(highlightFont);
+
+            	if(!ready && !treeItems[index].getForeground().equals(defaultColor))
+            		treeItems[index].setForeground(defaultColor);
+            	
+            	if(!ready && !treeItems[index].getFont().equals(defaultFont))
+        			treeItems[index].setFont(defaultFont);
+            }
+            	
             updateTreeItem(treeItems[index].getItems(), mObject);
         }
     }
