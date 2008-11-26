@@ -576,7 +576,7 @@ public abstract class MStep extends MStatefulObject {
     /**
      * Determines whether the steps state represents a processing state, i.e. is an active managed step.
      *
-     * @return Returns  whether the steps state represents a processing state.
+     * @return Returns whether the steps state represents a processing state.
      */
     public boolean isInProcessingState() {
         return(isProcessingState(getStateProperty()));
@@ -585,12 +585,33 @@ public abstract class MStep extends MStatefulObject {
     /**
      * Determines whether the steps state represents a non-processing state, i.e. is an inactive managed step.
      *
-     * @return Returns  whether the steps state represents a non-processing state.
+     * @return Returns whether the steps state represents a non-processing state.
      */
     public boolean isInNonProcessingState() {
         return(isNonProcessingState(getStateProperty()));
     }
 
+    /**
+     * Determines whether this managed step is ready. A managed step is ready if it is not completed
+     * and all managed steps that it depends on have completed or it has no dependencies.
+     * 
+     * @return Returns whether this managed step is ready.
+     */
+    public boolean isReady() {
+    	if(getStateProperty() == MStepStateType.COMPLETED_STATE)
+    		return false;
+    	
+    	boolean ready = true;
+    	EList<MStep> mInputSteps = getMInputSteps();
+    	for(MStep mInputStep: mInputSteps)
+    		if(mInputStep.getStateProperty() != MStepStateType.COMPLETED_STATE) {
+    			ready = false;
+    			break;
+    		}
+    	
+    	return ready;
+    }
+    
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
