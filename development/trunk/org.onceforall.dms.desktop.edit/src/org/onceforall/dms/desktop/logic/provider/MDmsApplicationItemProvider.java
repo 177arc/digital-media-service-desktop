@@ -83,6 +83,12 @@ public class MDmsApplicationItemProvider
 			addFtpUserNamePropertyPropertyDescriptor(object);
 			addFtpUserNamePropertyHistoricValuesPropertyDescriptor(object);
 			addFtpUserPasswordPropertyPropertyDescriptor(object);
+			addMp3RelativeFtpPathPropertyPropertyDescriptor(object);
+			addMp3RelativeFtpPathPropertyHistoricValuesPropertyDescriptor(object);
+			addContentPageRelativeFtpPathPropertyPropertyDescriptor(object);
+			addContentPageRelativeFtpPathPropertyHistoricValuesPropertyDescriptor(object);
+			addPodcastRelativeFtpPathPropertyPropertyDescriptor(object);
+			addPodcastRelativeFtpPathPropertyHistoricValuesPropertyDescriptor(object);
 			addWebServerUrlPropertyPropertyDescriptor(object);
 			addWebServerUrlPropertyHistoricValuesPropertyDescriptor(object);
 			addSmtpServerPropertyPropertyDescriptor(object);
@@ -90,6 +96,8 @@ public class MDmsApplicationItemProvider
 			addSmtpUserNamePropertyPropertyDescriptor(object);
 			addSmtpUserNamePropertyHistoricValuesPropertyDescriptor(object);
 			addSmtpPasswordPropertyPropertyDescriptor(object);
+			addReceipientsEmailAddressPropertyPropertyDescriptor(object);
+			addReceipientsEmailAddressPropertyHistoricValuesPropertyDescriptor(object);
 			addBurningSoftwareDirectoryPathPropertyPropertyDescriptor(object);
 			addDrivePropertyPropertyDescriptor(object);
 			addDrivePropertyHistoricValuesPropertyDescriptor(object);
@@ -278,6 +286,138 @@ public class MDmsApplicationItemProvider
 	}
 
 	/**
+	 * This adds a property descriptor for the Mp3 Relative Ftp Path Property feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addMp3RelativeFtpPathPropertyPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_MDmsApplication_mp3RelativeFtpPathProperty_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_MDmsApplication_mp3RelativeFtpPathProperty_feature", "_UI_MDmsApplication_type"),
+				 LogicPackage.Literals.MDMS_APPLICATION__MP3_RELATIVE_FTP_PATH_PROPERTY,
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Mp3 Relative Ftp Path Property Historic Values feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addMp3RelativeFtpPathPropertyHistoricValuesPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_MDmsApplication_mp3RelativeFtpPathPropertyHistoricValues_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_MDmsApplication_mp3RelativeFtpPathPropertyHistoricValues_feature", "_UI_MDmsApplication_type"),
+				 LogicPackage.Literals.MDMS_APPLICATION__MP3_RELATIVE_FTP_PATH_PROPERTY_HISTORIC_VALUES,
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Content Page Relative Ftp Path Property feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addContentPageRelativeFtpPathPropertyPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_MDmsApplication_contentPageRelativeFtpPathProperty_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_MDmsApplication_contentPageRelativeFtpPathProperty_feature", "_UI_MDmsApplication_type"),
+				 LogicPackage.Literals.MDMS_APPLICATION__CONTENT_PAGE_RELATIVE_FTP_PATH_PROPERTY,
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Content Page Relative Ftp Path Property Historic Values feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addContentPageRelativeFtpPathPropertyHistoricValuesPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_MDmsApplication_contentPageRelativeFtpPathPropertyHistoricValues_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_MDmsApplication_contentPageRelativeFtpPathPropertyHistoricValues_feature", "_UI_MDmsApplication_type"),
+				 LogicPackage.Literals.MDMS_APPLICATION__CONTENT_PAGE_RELATIVE_FTP_PATH_PROPERTY_HISTORIC_VALUES,
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Podcast Relative Ftp Path Property feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addPodcastRelativeFtpPathPropertyPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_MDmsApplication_podcastRelativeFtpPathProperty_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_MDmsApplication_podcastRelativeFtpPathProperty_feature", "_UI_MDmsApplication_type"),
+				 LogicPackage.Literals.MDMS_APPLICATION__PODCAST_RELATIVE_FTP_PATH_PROPERTY,
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Podcast Relative Ftp Path Property Historic Values feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addPodcastRelativeFtpPathPropertyHistoricValuesPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_MDmsApplication_podcastRelativeFtpPathPropertyHistoricValues_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_MDmsApplication_podcastRelativeFtpPathPropertyHistoricValues_feature", "_UI_MDmsApplication_type"),
+				 LogicPackage.Literals.MDMS_APPLICATION__PODCAST_RELATIVE_FTP_PATH_PROPERTY_HISTORIC_VALUES,
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This adds a property descriptor for the Web Server Url Property feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -423,6 +563,50 @@ public class MDmsApplicationItemProvider
 				 getString("_UI_MDmsApplication_smtpPasswordProperty_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_MDmsApplication_smtpPasswordProperty_feature", "_UI_MDmsApplication_type"),
 				 LogicPackage.Literals.MDMS_APPLICATION__SMTP_PASSWORD_PROPERTY,
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Receipients Email Address Property feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addReceipientsEmailAddressPropertyPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_MDmsApplication_receipientsEmailAddressProperty_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_MDmsApplication_receipientsEmailAddressProperty_feature", "_UI_MDmsApplication_type"),
+				 LogicPackage.Literals.MDMS_APPLICATION__RECEIPIENTS_EMAIL_ADDRESS_PROPERTY,
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Receipients Email Address Property Historic Values feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addReceipientsEmailAddressPropertyHistoricValuesPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_MDmsApplication_receipientsEmailAddressPropertyHistoricValues_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_MDmsApplication_receipientsEmailAddressPropertyHistoricValues_feature", "_UI_MDmsApplication_type"),
+				 LogicPackage.Literals.MDMS_APPLICATION__RECEIPIENTS_EMAIL_ADDRESS_PROPERTY_HISTORIC_VALUES,
 				 false,
 				 false,
 				 false,
@@ -602,10 +786,14 @@ public class MDmsApplicationItemProvider
 			childrenFeatures.add(LogicPackage.Literals.MDMS_APPLICATION__MFTP_SERVER_URL_PROPERTY);
 			childrenFeatures.add(LogicPackage.Literals.MDMS_APPLICATION__MFTP_USER_NAME_PROPERTY);
 			childrenFeatures.add(LogicPackage.Literals.MDMS_APPLICATION__MFTP_USER_PASSWORD_PROPERTY);
+			childrenFeatures.add(LogicPackage.Literals.MDMS_APPLICATION__MMP3_RELATIVE_FTP_PATH_PROPERTY);
+			childrenFeatures.add(LogicPackage.Literals.MDMS_APPLICATION__MCONTENT_PAGE_RELATIVE_FTP_PATH_PROPERTY);
+			childrenFeatures.add(LogicPackage.Literals.MDMS_APPLICATION__MPODCAST_RELATIVE_FTP_PATH_PROPERTY);
 			childrenFeatures.add(LogicPackage.Literals.MDMS_APPLICATION__MWEB_SERVER_URL_PROPERTY);
 			childrenFeatures.add(LogicPackage.Literals.MDMS_APPLICATION__MSMTP_SERVER_PROPERTY);
 			childrenFeatures.add(LogicPackage.Literals.MDMS_APPLICATION__MSMTP_USER_NAME_PROPERTY);
 			childrenFeatures.add(LogicPackage.Literals.MDMS_APPLICATION__MSMTP_PASSWORD_PROPERTY);
+			childrenFeatures.add(LogicPackage.Literals.MDMS_APPLICATION__MRECEIPIENTS_EMAIL_ADDRESS_PROPERTY);
 			childrenFeatures.add(LogicPackage.Literals.MDMS_APPLICATION__MBURNING_SOFTWARE_DIRECTORY_PATH_PROPERTY);
 			childrenFeatures.add(LogicPackage.Literals.MDMS_APPLICATION__MDRIVE_PROPERTY);
 			childrenFeatures.add(LogicPackage.Literals.MDMS_APPLICATION__MUPGRADE_MESSAGE_PROPERTY);
@@ -674,6 +862,12 @@ public class MDmsApplicationItemProvider
 			case LogicPackage.MDMS_APPLICATION__FTP_USER_NAME_PROPERTY:
 			case LogicPackage.MDMS_APPLICATION__FTP_USER_NAME_PROPERTY_HISTORIC_VALUES:
 			case LogicPackage.MDMS_APPLICATION__FTP_USER_PASSWORD_PROPERTY:
+			case LogicPackage.MDMS_APPLICATION__MP3_RELATIVE_FTP_PATH_PROPERTY:
+			case LogicPackage.MDMS_APPLICATION__MP3_RELATIVE_FTP_PATH_PROPERTY_HISTORIC_VALUES:
+			case LogicPackage.MDMS_APPLICATION__CONTENT_PAGE_RELATIVE_FTP_PATH_PROPERTY:
+			case LogicPackage.MDMS_APPLICATION__CONTENT_PAGE_RELATIVE_FTP_PATH_PROPERTY_HISTORIC_VALUES:
+			case LogicPackage.MDMS_APPLICATION__PODCAST_RELATIVE_FTP_PATH_PROPERTY:
+			case LogicPackage.MDMS_APPLICATION__PODCAST_RELATIVE_FTP_PATH_PROPERTY_HISTORIC_VALUES:
 			case LogicPackage.MDMS_APPLICATION__WEB_SERVER_URL_PROPERTY:
 			case LogicPackage.MDMS_APPLICATION__WEB_SERVER_URL_PROPERTY_HISTORIC_VALUES:
 			case LogicPackage.MDMS_APPLICATION__SMTP_SERVER_PROPERTY:
@@ -681,6 +875,8 @@ public class MDmsApplicationItemProvider
 			case LogicPackage.MDMS_APPLICATION__SMTP_USER_NAME_PROPERTY:
 			case LogicPackage.MDMS_APPLICATION__SMTP_USER_NAME_PROPERTY_HISTORIC_VALUES:
 			case LogicPackage.MDMS_APPLICATION__SMTP_PASSWORD_PROPERTY:
+			case LogicPackage.MDMS_APPLICATION__RECEIPIENTS_EMAIL_ADDRESS_PROPERTY:
+			case LogicPackage.MDMS_APPLICATION__RECEIPIENTS_EMAIL_ADDRESS_PROPERTY_HISTORIC_VALUES:
 			case LogicPackage.MDMS_APPLICATION__BURNING_SOFTWARE_DIRECTORY_PATH_PROPERTY:
 			case LogicPackage.MDMS_APPLICATION__DRIVE_PROPERTY:
 			case LogicPackage.MDMS_APPLICATION__DRIVE_PROPERTY_HISTORIC_VALUES:
@@ -696,10 +892,14 @@ public class MDmsApplicationItemProvider
 			case LogicPackage.MDMS_APPLICATION__MFTP_SERVER_URL_PROPERTY:
 			case LogicPackage.MDMS_APPLICATION__MFTP_USER_NAME_PROPERTY:
 			case LogicPackage.MDMS_APPLICATION__MFTP_USER_PASSWORD_PROPERTY:
+			case LogicPackage.MDMS_APPLICATION__MMP3_RELATIVE_FTP_PATH_PROPERTY:
+			case LogicPackage.MDMS_APPLICATION__MCONTENT_PAGE_RELATIVE_FTP_PATH_PROPERTY:
+			case LogicPackage.MDMS_APPLICATION__MPODCAST_RELATIVE_FTP_PATH_PROPERTY:
 			case LogicPackage.MDMS_APPLICATION__MWEB_SERVER_URL_PROPERTY:
 			case LogicPackage.MDMS_APPLICATION__MSMTP_SERVER_PROPERTY:
 			case LogicPackage.MDMS_APPLICATION__MSMTP_USER_NAME_PROPERTY:
 			case LogicPackage.MDMS_APPLICATION__MSMTP_PASSWORD_PROPERTY:
+			case LogicPackage.MDMS_APPLICATION__MRECEIPIENTS_EMAIL_ADDRESS_PROPERTY:
 			case LogicPackage.MDMS_APPLICATION__MBURNING_SOFTWARE_DIRECTORY_PATH_PROPERTY:
 			case LogicPackage.MDMS_APPLICATION__MDRIVE_PROPERTY:
 			case LogicPackage.MDMS_APPLICATION__MUPGRADE_MESSAGE_PROPERTY:
@@ -758,6 +958,21 @@ public class MDmsApplicationItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
+				(LogicPackage.Literals.MDMS_APPLICATION__MMP3_RELATIVE_FTP_PATH_PROPERTY,
+				 LogicFactory.eINSTANCE.createMProperty()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(LogicPackage.Literals.MDMS_APPLICATION__MCONTENT_PAGE_RELATIVE_FTP_PATH_PROPERTY,
+				 LogicFactory.eINSTANCE.createMProperty()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(LogicPackage.Literals.MDMS_APPLICATION__MPODCAST_RELATIVE_FTP_PATH_PROPERTY,
+				 LogicFactory.eINSTANCE.createMProperty()));
+
+		newChildDescriptors.add
+			(createChildParameter
 				(LogicPackage.Literals.MDMS_APPLICATION__MWEB_SERVER_URL_PROPERTY,
 				 LogicFactory.eINSTANCE.createMProperty()));
 
@@ -774,6 +989,11 @@ public class MDmsApplicationItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(LogicPackage.Literals.MDMS_APPLICATION__MSMTP_PASSWORD_PROPERTY,
+				 LogicFactory.eINSTANCE.createMProperty()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(LogicPackage.Literals.MDMS_APPLICATION__MRECEIPIENTS_EMAIL_ADDRESS_PROPERTY,
 				 LogicFactory.eINSTANCE.createMProperty()));
 
 		newChildDescriptors.add
@@ -846,10 +1066,14 @@ public class MDmsApplicationItemProvider
 			childFeature == LogicPackage.Literals.MDMS_APPLICATION__MFTP_SERVER_URL_PROPERTY ||
 			childFeature == LogicPackage.Literals.MDMS_APPLICATION__MFTP_USER_NAME_PROPERTY ||
 			childFeature == LogicPackage.Literals.MDMS_APPLICATION__MFTP_USER_PASSWORD_PROPERTY ||
+			childFeature == LogicPackage.Literals.MDMS_APPLICATION__MMP3_RELATIVE_FTP_PATH_PROPERTY ||
+			childFeature == LogicPackage.Literals.MDMS_APPLICATION__MCONTENT_PAGE_RELATIVE_FTP_PATH_PROPERTY ||
+			childFeature == LogicPackage.Literals.MDMS_APPLICATION__MPODCAST_RELATIVE_FTP_PATH_PROPERTY ||
 			childFeature == LogicPackage.Literals.MDMS_APPLICATION__MWEB_SERVER_URL_PROPERTY ||
 			childFeature == LogicPackage.Literals.MDMS_APPLICATION__MSMTP_SERVER_PROPERTY ||
 			childFeature == LogicPackage.Literals.MDMS_APPLICATION__MSMTP_USER_NAME_PROPERTY ||
 			childFeature == LogicPackage.Literals.MDMS_APPLICATION__MSMTP_PASSWORD_PROPERTY ||
+			childFeature == LogicPackage.Literals.MDMS_APPLICATION__MRECEIPIENTS_EMAIL_ADDRESS_PROPERTY ||
 			childFeature == LogicPackage.Literals.MDMS_APPLICATION__MBURNING_SOFTWARE_DIRECTORY_PATH_PROPERTY ||
 			childFeature == LogicPackage.Literals.MDMS_APPLICATION__MDRIVE_PROPERTY ||
 			childFeature == LogicPackage.Literals.MDMS_APPLICATION__MUPGRADE_MESSAGE_PROPERTY ||

@@ -232,7 +232,7 @@ public class MApplicationItemProvider
 				 getString("_UI_MApplication_lastSaveProperty_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_MApplication_lastSaveProperty_feature", "_UI_MApplication_type"),
 				 LogicPackage.Literals.MAPPLICATION__LAST_SAVE_PROPERTY,
-				 true,
+				 false,
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
