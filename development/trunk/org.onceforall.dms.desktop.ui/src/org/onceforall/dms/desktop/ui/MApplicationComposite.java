@@ -318,7 +318,7 @@ public class MApplicationComposite extends MObjectComposite {
     public void setMElement(MElement mElement)
             throws IllegalArgumentException {
         
-        // Makes sure that the simple object is an applcation object.
+        // Makes sure that the simple object is an application object.
         if(mElement != null && !(mElement instanceof MApplication))
             throw new IllegalArgumentException("The object is not an application object.");
 
@@ -363,9 +363,12 @@ public class MApplicationComposite extends MObjectComposite {
      */
     protected boolean navigateToUrl(String url) {
 		try {
-			URLConnection connection = new URL(url).openConnection();
-			connection.setConnectTimeout(10000);
-			connection.connect();
+			URL urlObject = new URL(url);
+			if(!urlObject.getProtocol().equals("file")) {
+				URLConnection connection = urlObject.openConnection();
+				connection.setConnectTimeout(10000);
+				connection.connect();
+			}
 			browser.setUrl(url);
 			return true;
 		} catch (MalformedURLException e) {
