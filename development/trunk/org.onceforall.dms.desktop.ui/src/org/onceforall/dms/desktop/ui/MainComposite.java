@@ -51,12 +51,16 @@ import java.util.logging.Level;
 import java.util.logging.LogRecord;
 
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.custom.SashForm;
 import org.eclipse.swt.custom.ScrolledComposite;
 import org.eclipse.swt.events.DisposeEvent;
 import org.eclipse.swt.events.DisposeListener;
+import org.eclipse.swt.events.MouseEvent;
+import org.eclipse.swt.events.MouseListener;
+import org.eclipse.swt.events.MouseMoveListener;
 import org.eclipse.swt.graphics.Cursor;
 import org.eclipse.swt.graphics.Image;
 import org.eclipse.swt.layout.FormAttachment;
@@ -67,6 +71,7 @@ import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Control;
 import org.eclipse.swt.widgets.Display;
+import org.eclipse.swt.widgets.Event;
 import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Listener;
 import org.eclipse.swt.widgets.MessageBox;
@@ -154,7 +159,7 @@ public class MainComposite extends MElementComposite {
 	protected MStep triggerStepForNextStep;
 	
 	/** Specifies the mStep that should be started next. */
-	protected MStep nextStep;
+	protected MStep mNextStep;
 	
 	/** Specifies whether the Ctrl key is pressed. */
 	protected boolean ctrlPressed;
@@ -273,55 +278,65 @@ public class MainComposite extends MElementComposite {
 	    if(key == 's' && event.stateMask == SWT.CONTROL)
 	    	MApplication.getInstance().saveToXML();
 	    else if (mElementComposite instanceof MStepComposite) {
-	        MStepComposite stepComposite = (MStepComposite) mElementComposite;
-            MStep step = (MStep) stepComposite.getMElement();
+	        MStepComposite mStepComposite = (MStepComposite) mElementComposite;
+            MStep mStep = (MStep) mStepComposite.getMElement();
 	       
 	        if(event.keyCode == SWT.F2)
 	            // Starts the current mStep.
-	            stepComposite.start();
+	            mStepComposite.start();
 	        
 	        else if(event.keyCode == SWT.F3)
 	            // Stops the current mStep.
-	            stepComposite.stop();
+	            mStepComposite.stop();
 	         
 	        else if(event.keyCode == SWT.F4)
 	            // Terminates the current mStep.
-	            stepComposite.terminate();
+	            mStepComposite.terminate();
 	        
 	        else if(event.keyCode == SWT.F5)
 	            // Skips the current mStep.
-	            stepComposite.skip();
+	            mStepComposite.skip();
 	        
 	        else if(event.keyCode == SWT.F6) {
 	            // Goes to the previous mStep.
-	            if(step != null && step.eContainer() instanceof MScript) {
-	            	MScript owner = (MScript) step.eContainer();
-	            	selectMElement(owner.getPreviousStep(), false);
+	            if(mStep != null && mStep.eContainer() instanceof MScript) {
+	            	MScript mScript = (MScript) mStep.eContainer();
+	            	EList<MStep> mSteps = mScript.getMSteps();
+	            	int index = mSteps.indexOf(mStep);
+	            	if(index > 0)
+	            		selectMElement(mSteps.get(index-1), false);
 	            }
 	        }
 
 	        else if(event.keyCode == SWT.F7) {
 	            // Goes to the next mStep.
-	            if(step != null && step.eContainer() instanceof MScript) {
-	            	MScript owner = (MScript) step.eContainer();
-	            	selectMElement(owner.getNextStep(), false);
+	            if(mStep != null && mStep.eContainer() instanceof MScript) {
+	            	MScript mScript = (MScript) mStep.eContainer();
+	            	EList<MStep> mSteps = mScript.getMSteps();
+	            	int index = mSteps.indexOf(mStep);
+	            	if(index < mSteps.size()-1)
+	            		selectMElement(mSteps.get(index+1), false);
 	            }
 	        }
 
 	        else if(event.keyCode == SWT.F8) {
                 // Stops the current mStep, goes to the next mStep and starts it, if the mStep is processing.
-	            if(step.isInProcessingState()) {
-	                stepComposite.stop(); 
-	                triggerStepForNextStep = step;
+	            if(mStep.isInProcessingState()) {
+	                mStepComposite.stop(); 
+	                triggerStepForNextStep = mStep;
 	            }
 	            
-                MScript mScript = (MScript) step.eContainer();
-                nextStep = mScript.getNextStep();
-                if(nextStep != null) {                
+                MScript mScript = (MScript) mStep.eContainer();
+            	EList<MStep> mSteps = mScript.getMSteps();
+            	int index = mSteps.indexOf(mStep);
+            	if(index < mSteps.size()-1)
+            		mNextStep = mSteps.get(index+1);
+            	
+                if(mNextStep != null) {                
                     // Starts the next mStep immediately, if the current mStep is not processing.
                     // Otherwise the applicaton has to wait for the mStep completion notification first (see update method).
-                    if(!step.isInProcessingState()) {
-	                    selectMElement(nextStep, false);
+                    if(!mStep.isInProcessingState()) {
+	                    selectMElement(mNextStep, false);
 	                    ((MStepComposite) mElementComposite).start();
                     }
                 }
@@ -391,7 +406,8 @@ public class MainComposite extends MElementComposite {
 	 * Processes the windows messages.
 	 */
 	protected void processMessages() {
-	
+		final long POLL_INTERVAL = 100;
+ 	    
 	    // Defines the main message loop.
 	    while(!isDisposed())
 		    try {
@@ -408,7 +424,7 @@ public class MainComposite extends MElementComposite {
 	             if(eventCount < memoryHandler.getLoggedRecords().size())
 	                 updateEventLogTable();
 	             
-	             Thread.sleep(100);
+	             Thread.sleep(POLL_INTERVAL);
 	 	    }
 	 	    catch(Throwable throwable) {
 	 	    	Logger.getLogger().log(Level.SEVERE, throwable.getMessage(), throwable);
@@ -450,16 +466,6 @@ public class MainComposite extends MElementComposite {
 	    
 	    MApplication mApplication = MApplication.getInstance();
 	    
-	    ResourceBundle bundle = ResourceBundle.getBundle("build-info");
-	    String version = bundle.getString("version");
-	    String user = bundle.getString("user");
-	    String date = bundle.getString("date");
-	    String build = bundle.getString("build");
-	    mApplication.setVersionProperty(version+"."+build+" (built on "+date+" by "+user+")");
-	    
-	    String infoWebPageUrl = bundle.getString("info");
-	    mApplication.setInfoWebPageProperty(new URL(infoWebPageUrl));
-	    
 	    // Set the window title, icon and size.
 	    Image smallIcon = new Image(display, mApplication.getIconFilePath().getAbsolutePath());
 	    Image largeIcon = new Image(display, "Image Files"+File.separator+"Logo (32x32).gif");
@@ -477,10 +483,32 @@ public class MainComposite extends MElementComposite {
 		formData.left = new FormAttachment(0, 0);
 		formData.right = new FormAttachment(100, 0);
 		mainComposite.setLayoutData(formData);
+		
+	    try {
+	    	MApplication.getInstance().checkSingleInstance();
+	    }
+ 	    catch(Throwable throwable) {
+ 	    	Logger.getLogger().log(Level.SEVERE, throwable.getMessage(), throwable);
+ 		    
+ 	    	splashShell.dispose();
+ 		    
+ 	       	String message = throwable.getMessage();
+ 	        if(message != null) {
+	 	        if(throwable instanceof DesktopException)
+	 	        	message += "\n\n"+((DesktopException) throwable).getAdvice();
+	 	        
+		    	MessageBox messageBox = new MessageBox(shell, SWT.OK | SWT.ICON_ERROR);
+				messageBox.setMessage(message);
+				messageBox.setText("Digital Media Service Desktop Error");
+				messageBox.open();
+ 	        }
+ 	        
 
+ 	        return;
+ 	    }
 	    shell.open();
 	    splashShell.dispose();
-
+	    
 	    mainComposite.processMessages();
 	}
 	
@@ -810,16 +838,16 @@ public class MainComposite extends MElementComposite {
                     	} */
                     	
                     	// Starts the next mStep if this has been previously requested.
-                    	if(nextStep != null && triggerStepForNextStep != null && state.equals(MStepStateType.COMPLETED_STATE) && mStep.equals(triggerStepForNextStep))
+                    	if(mNextStep != null && triggerStepForNextStep != null && state.equals(MStepStateType.COMPLETED_STATE) && mStep.equals(triggerStepForNextStep))
                     	try {
-    	                    selectMElement(nextStep, false);
+    	                    selectMElement(mNextStep, false);
     	                    
     	                    if(mElementComposite instanceof MStepComposite)
     	                        ((MStepComposite) mElementComposite).start();
                 	    }
                 	    finally {
     	                    triggerStepForNextStep = null;
-    	                    nextStep = null;
+    	                    mNextStep = null;
                 	    }
                     }
                     else if(state.equals(MStepStateType.SKIPPED_STATE))
