@@ -64,6 +64,7 @@ import org.eclipse.emf.ecore.util.FeatureMap;
 import org.eclipse.emf.ecore.util.FeatureMapUtil;
 import org.onceforall.dms.desktop.exception.DesktopException;
 import org.onceforall.dms.desktop.exception.DesktopExceptionList;
+import org.onceforall.dms.desktop.logging.Logger;
 import org.onceforall.dms.desktop.logic.MDmsApplication;
 import org.onceforall.dms.desktop.logic.MElement;
 import org.onceforall.dms.desktop.logic.MObject;
@@ -112,6 +113,7 @@ public class Test extends org.onceforall.core.tests.Test {
 		
 		System.out.print("Loading application data from '"+newDataFile.getAbsolutePath()+"' ...");		 //$NON-NLS-1$ //$NON-NLS-2$
 		mDmsApplication = (MDmsApplication) MDmsApplication.loadInstance(newDataFile);
+		mDmsApplication.getMLogFileProperty().setValue(new File(Logger.getLogger().getLogFileName()));
 		System.out.println(" completed.");		 //$NON-NLS-1$
 	}
 	
