@@ -2409,13 +2409,94 @@ public class LogicPackage extends EPackageImpl {
 	public static final int MDMS_APPLICATION__FTP_USER_PASSWORD_PROPERTY = MAPPLICATION_FEATURE_COUNT + 13;
 
 	/**
+	 * The feature id for the '<em><b>MMp3 Relative Ftp Path Property</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MDMS_APPLICATION__MMP3_RELATIVE_FTP_PATH_PROPERTY = MAPPLICATION_FEATURE_COUNT + 14;
+
+	/**
+	 * The feature id for the '<em><b>Mp3 Relative Ftp Path Property</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MDMS_APPLICATION__MP3_RELATIVE_FTP_PATH_PROPERTY = MAPPLICATION_FEATURE_COUNT + 15;
+
+	/**
+	 * The feature id for the '<em><b>Mp3 Relative Ftp Path Property Historic Values</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MDMS_APPLICATION__MP3_RELATIVE_FTP_PATH_PROPERTY_HISTORIC_VALUES = MAPPLICATION_FEATURE_COUNT + 16;
+
+	/**
+	 * The feature id for the '<em><b>MContent Page Relative Ftp Path Property</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MDMS_APPLICATION__MCONTENT_PAGE_RELATIVE_FTP_PATH_PROPERTY = MAPPLICATION_FEATURE_COUNT + 17;
+
+	/**
+	 * The feature id for the '<em><b>Content Page Relative Ftp Path Property</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MDMS_APPLICATION__CONTENT_PAGE_RELATIVE_FTP_PATH_PROPERTY = MAPPLICATION_FEATURE_COUNT + 18;
+
+	/**
+	 * The feature id for the '<em><b>Content Page Relative Ftp Path Property Historic Values</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MDMS_APPLICATION__CONTENT_PAGE_RELATIVE_FTP_PATH_PROPERTY_HISTORIC_VALUES = MAPPLICATION_FEATURE_COUNT + 19;
+
+	/**
+	 * The feature id for the '<em><b>MPodcast Relative Ftp Path Property</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MDMS_APPLICATION__MPODCAST_RELATIVE_FTP_PATH_PROPERTY = MAPPLICATION_FEATURE_COUNT + 20;
+
+	/**
+	 * The feature id for the '<em><b>Podcast Relative Ftp Path Property</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MDMS_APPLICATION__PODCAST_RELATIVE_FTP_PATH_PROPERTY = MAPPLICATION_FEATURE_COUNT + 21;
+
+	/**
+	 * The feature id for the '<em><b>Podcast Relative Ftp Path Property Historic Values</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MDMS_APPLICATION__PODCAST_RELATIVE_FTP_PATH_PROPERTY_HISTORIC_VALUES = MAPPLICATION_FEATURE_COUNT + 22;
+
+	/**
 	 * The feature id for the '<em><b>MWeb Server Url Property</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	public static final int MDMS_APPLICATION__MWEB_SERVER_URL_PROPERTY = MAPPLICATION_FEATURE_COUNT + 14;
+	public static final int MDMS_APPLICATION__MWEB_SERVER_URL_PROPERTY = MAPPLICATION_FEATURE_COUNT + 23;
 
 	/**
 	 * The feature id for the '<em><b>Web Server Url Property</b></em>' attribute.
@@ -2424,7 +2505,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int MDMS_APPLICATION__WEB_SERVER_URL_PROPERTY = MAPPLICATION_FEATURE_COUNT + 15;
+	public static final int MDMS_APPLICATION__WEB_SERVER_URL_PROPERTY = MAPPLICATION_FEATURE_COUNT + 24;
 
 	/**
 	 * The feature id for the '<em><b>Web Server Url Property Historic Values</b></em>' attribute list.
@@ -2433,7 +2514,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int MDMS_APPLICATION__WEB_SERVER_URL_PROPERTY_HISTORIC_VALUES = MAPPLICATION_FEATURE_COUNT + 16;
+	public static final int MDMS_APPLICATION__WEB_SERVER_URL_PROPERTY_HISTORIC_VALUES = MAPPLICATION_FEATURE_COUNT + 25;
 
 	/**
 	 * The feature id for the '<em><b>MSmtp Server Property</b></em>' containment reference.
@@ -2442,7 +2523,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int MDMS_APPLICATION__MSMTP_SERVER_PROPERTY = MAPPLICATION_FEATURE_COUNT + 17;
+	public static final int MDMS_APPLICATION__MSMTP_SERVER_PROPERTY = MAPPLICATION_FEATURE_COUNT + 26;
 
 	/**
 	 * The feature id for the '<em><b>Smtp Server Property</b></em>' attribute.
@@ -2451,7 +2532,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int MDMS_APPLICATION__SMTP_SERVER_PROPERTY = MAPPLICATION_FEATURE_COUNT + 18;
+	public static final int MDMS_APPLICATION__SMTP_SERVER_PROPERTY = MAPPLICATION_FEATURE_COUNT + 27;
 
 	/**
 	 * The feature id for the '<em><b>Smtp Server Property Historic Values</b></em>' attribute list.
@@ -2460,7 +2541,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int MDMS_APPLICATION__SMTP_SERVER_PROPERTY_HISTORIC_VALUES = MAPPLICATION_FEATURE_COUNT + 19;
+	public static final int MDMS_APPLICATION__SMTP_SERVER_PROPERTY_HISTORIC_VALUES = MAPPLICATION_FEATURE_COUNT + 28;
 
 	/**
 	 * The feature id for the '<em><b>MSmtp User Name Property</b></em>' containment reference.
@@ -2469,7 +2550,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int MDMS_APPLICATION__MSMTP_USER_NAME_PROPERTY = MAPPLICATION_FEATURE_COUNT + 20;
+	public static final int MDMS_APPLICATION__MSMTP_USER_NAME_PROPERTY = MAPPLICATION_FEATURE_COUNT + 29;
 
 	/**
 	 * The feature id for the '<em><b>Smtp User Name Property</b></em>' attribute.
@@ -2478,7 +2559,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int MDMS_APPLICATION__SMTP_USER_NAME_PROPERTY = MAPPLICATION_FEATURE_COUNT + 21;
+	public static final int MDMS_APPLICATION__SMTP_USER_NAME_PROPERTY = MAPPLICATION_FEATURE_COUNT + 30;
 
 	/**
 	 * The feature id for the '<em><b>Smtp User Name Property Historic Values</b></em>' attribute list.
@@ -2487,7 +2568,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int MDMS_APPLICATION__SMTP_USER_NAME_PROPERTY_HISTORIC_VALUES = MAPPLICATION_FEATURE_COUNT + 22;
+	public static final int MDMS_APPLICATION__SMTP_USER_NAME_PROPERTY_HISTORIC_VALUES = MAPPLICATION_FEATURE_COUNT + 31;
 
 	/**
 	 * The feature id for the '<em><b>MSmtp Password Property</b></em>' containment reference.
@@ -2496,7 +2577,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int MDMS_APPLICATION__MSMTP_PASSWORD_PROPERTY = MAPPLICATION_FEATURE_COUNT + 23;
+	public static final int MDMS_APPLICATION__MSMTP_PASSWORD_PROPERTY = MAPPLICATION_FEATURE_COUNT + 32;
 
 	/**
 	 * The feature id for the '<em><b>Smtp Password Property</b></em>' attribute.
@@ -2505,7 +2586,34 @@ public class LogicPackage extends EPackageImpl {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int MDMS_APPLICATION__SMTP_PASSWORD_PROPERTY = MAPPLICATION_FEATURE_COUNT + 24;
+	public static final int MDMS_APPLICATION__SMTP_PASSWORD_PROPERTY = MAPPLICATION_FEATURE_COUNT + 33;
+
+	/**
+	 * The feature id for the '<em><b>MReceipients Email Address Property</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MDMS_APPLICATION__MRECEIPIENTS_EMAIL_ADDRESS_PROPERTY = MAPPLICATION_FEATURE_COUNT + 34;
+
+	/**
+	 * The feature id for the '<em><b>Receipients Email Address Property</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MDMS_APPLICATION__RECEIPIENTS_EMAIL_ADDRESS_PROPERTY = MAPPLICATION_FEATURE_COUNT + 35;
+
+	/**
+	 * The feature id for the '<em><b>Receipients Email Address Property Historic Values</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MDMS_APPLICATION__RECEIPIENTS_EMAIL_ADDRESS_PROPERTY_HISTORIC_VALUES = MAPPLICATION_FEATURE_COUNT + 36;
 
 	/**
 	 * The feature id for the '<em><b>MBurning Software Directory Path Property</b></em>' containment reference.
@@ -2514,7 +2622,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int MDMS_APPLICATION__MBURNING_SOFTWARE_DIRECTORY_PATH_PROPERTY = MAPPLICATION_FEATURE_COUNT + 25;
+	public static final int MDMS_APPLICATION__MBURNING_SOFTWARE_DIRECTORY_PATH_PROPERTY = MAPPLICATION_FEATURE_COUNT + 37;
 
 	/**
 	 * The feature id for the '<em><b>Burning Software Directory Path Property</b></em>' attribute.
@@ -2523,7 +2631,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int MDMS_APPLICATION__BURNING_SOFTWARE_DIRECTORY_PATH_PROPERTY = MAPPLICATION_FEATURE_COUNT + 26;
+	public static final int MDMS_APPLICATION__BURNING_SOFTWARE_DIRECTORY_PATH_PROPERTY = MAPPLICATION_FEATURE_COUNT + 38;
 
 	/**
 	 * The feature id for the '<em><b>MDrive Property</b></em>' containment reference.
@@ -2532,7 +2640,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int MDMS_APPLICATION__MDRIVE_PROPERTY = MAPPLICATION_FEATURE_COUNT + 27;
+	public static final int MDMS_APPLICATION__MDRIVE_PROPERTY = MAPPLICATION_FEATURE_COUNT + 39;
 
 	/**
 	 * The feature id for the '<em><b>Drive Property</b></em>' attribute.
@@ -2541,7 +2649,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int MDMS_APPLICATION__DRIVE_PROPERTY = MAPPLICATION_FEATURE_COUNT + 28;
+	public static final int MDMS_APPLICATION__DRIVE_PROPERTY = MAPPLICATION_FEATURE_COUNT + 40;
 
 	/**
 	 * The feature id for the '<em><b>Drive Property Historic Values</b></em>' attribute list.
@@ -2550,7 +2658,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int MDMS_APPLICATION__DRIVE_PROPERTY_HISTORIC_VALUES = MAPPLICATION_FEATURE_COUNT + 29;
+	public static final int MDMS_APPLICATION__DRIVE_PROPERTY_HISTORIC_VALUES = MAPPLICATION_FEATURE_COUNT + 41;
 
 	/**
 	 * The feature id for the '<em><b>MUpgrade Message Property</b></em>' containment reference.
@@ -2559,7 +2667,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int MDMS_APPLICATION__MUPGRADE_MESSAGE_PROPERTY = MAPPLICATION_FEATURE_COUNT + 30;
+	public static final int MDMS_APPLICATION__MUPGRADE_MESSAGE_PROPERTY = MAPPLICATION_FEATURE_COUNT + 42;
 
 	/**
 	 * The feature id for the '<em><b>Upgrade Message Property</b></em>' attribute.
@@ -2568,7 +2676,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int MDMS_APPLICATION__UPGRADE_MESSAGE_PROPERTY = MAPPLICATION_FEATURE_COUNT + 31;
+	public static final int MDMS_APPLICATION__UPGRADE_MESSAGE_PROPERTY = MAPPLICATION_FEATURE_COUNT + 43;
 
 	/**
 	 * The feature id for the '<em><b>MUpgrade Relative Ftp Path Property</b></em>' containment reference.
@@ -2577,7 +2685,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int MDMS_APPLICATION__MUPGRADE_RELATIVE_FTP_PATH_PROPERTY = MAPPLICATION_FEATURE_COUNT + 32;
+	public static final int MDMS_APPLICATION__MUPGRADE_RELATIVE_FTP_PATH_PROPERTY = MAPPLICATION_FEATURE_COUNT + 44;
 
 	/**
 	 * The feature id for the '<em><b>Upgrade Relative Ftp Path Property</b></em>' attribute.
@@ -2586,7 +2694,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int MDMS_APPLICATION__UPGRADE_RELATIVE_FTP_PATH_PROPERTY = MAPPLICATION_FEATURE_COUNT + 33;
+	public static final int MDMS_APPLICATION__UPGRADE_RELATIVE_FTP_PATH_PROPERTY = MAPPLICATION_FEATURE_COUNT + 45;
 
 	/**
 	 * The feature id for the '<em><b>MLast Upgrade Property</b></em>' containment reference.
@@ -2595,7 +2703,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int MDMS_APPLICATION__MLAST_UPGRADE_PROPERTY = MAPPLICATION_FEATURE_COUNT + 34;
+	public static final int MDMS_APPLICATION__MLAST_UPGRADE_PROPERTY = MAPPLICATION_FEATURE_COUNT + 46;
 
 	/**
 	 * The feature id for the '<em><b>Last Upgrade Property</b></em>' attribute.
@@ -2604,7 +2712,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int MDMS_APPLICATION__LAST_UPGRADE_PROPERTY = MAPPLICATION_FEATURE_COUNT + 35;
+	public static final int MDMS_APPLICATION__LAST_UPGRADE_PROPERTY = MAPPLICATION_FEATURE_COUNT + 47;
 
 	/**
 	 * The feature id for the '<em><b>MOrganisation Property</b></em>' containment reference.
@@ -2613,7 +2721,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int MDMS_APPLICATION__MORGANISATION_PROPERTY = MAPPLICATION_FEATURE_COUNT + 36;
+	public static final int MDMS_APPLICATION__MORGANISATION_PROPERTY = MAPPLICATION_FEATURE_COUNT + 48;
 
 	/**
 	 * The feature id for the '<em><b>Organisation Property</b></em>' attribute.
@@ -2622,7 +2730,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int MDMS_APPLICATION__ORGANISATION_PROPERTY = MAPPLICATION_FEATURE_COUNT + 37;
+	public static final int MDMS_APPLICATION__ORGANISATION_PROPERTY = MAPPLICATION_FEATURE_COUNT + 49;
 
 	/**
 	 * The feature id for the '<em><b>MGet Data Upgrade Info Step</b></em>' containment reference.
@@ -2631,7 +2739,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int MDMS_APPLICATION__MGET_DATA_UPGRADE_INFO_STEP = MAPPLICATION_FEATURE_COUNT + 38;
+	public static final int MDMS_APPLICATION__MGET_DATA_UPGRADE_INFO_STEP = MAPPLICATION_FEATURE_COUNT + 50;
 
 	/**
 	 * The feature id for the '<em><b>MUpgrade Data Step</b></em>' containment reference.
@@ -2640,7 +2748,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int MDMS_APPLICATION__MUPGRADE_DATA_STEP = MAPPLICATION_FEATURE_COUNT + 39;
+	public static final int MDMS_APPLICATION__MUPGRADE_DATA_STEP = MAPPLICATION_FEATURE_COUNT + 51;
 
 	/**
 	 * The feature id for the '<em><b>MScripts</b></em>' containment reference list.
@@ -2649,7 +2757,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int MDMS_APPLICATION__MSCRIPTS = MAPPLICATION_FEATURE_COUNT + 40;
+	public static final int MDMS_APPLICATION__MSCRIPTS = MAPPLICATION_FEATURE_COUNT + 52;
 
 	/**
 	 * The feature id for the '<em><b>MMp3 Folders</b></em>' containment reference list.
@@ -2658,7 +2766,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int MDMS_APPLICATION__MMP3_FOLDERS = MAPPLICATION_FEATURE_COUNT + 41;
+	public static final int MDMS_APPLICATION__MMP3_FOLDERS = MAPPLICATION_FEATURE_COUNT + 53;
 
 	/**
 	 * The number of structural features of the '<em>MDms Application</em>' class.
@@ -2667,7 +2775,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int MDMS_APPLICATION_FEATURE_COUNT = MAPPLICATION_FEATURE_COUNT + 42;
+	public static final int MDMS_APPLICATION_FEATURE_COUNT = MAPPLICATION_FEATURE_COUNT + 54;
 
 	/**
 	 * The meta object id for the '{@link org.onceforall.dms.desktop.logic.MEnterInformationStep <em>MEnter Information Step</em>}' class.
@@ -15866,6 +15974,132 @@ public class LogicPackage extends EPackageImpl {
 	}
 
 	/**
+	 * Returns the meta object for the containment reference '{@link org.onceforall.dms.desktop.logic.MDmsApplication#getMMp3RelativeFtpPathProperty <em>MMp3 Relative Ftp Path Property</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>MMp3 Relative Ftp Path Property</em>'.
+	 * @see org.onceforall.dms.desktop.logic.MDmsApplication#getMMp3RelativeFtpPathProperty()
+	 * @see #getMDmsApplication()
+	 * @generated
+	 */
+	public EReference getMDmsApplication_MMp3RelativeFtpPathProperty() {
+		return (EReference)mDmsApplicationEClass.getEStructuralFeatures().get(14);
+	}
+
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.onceforall.dms.desktop.logic.MDmsApplication#getMp3RelativeFtpPathProperty <em>Mp3 Relative Ftp Path Property</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Mp3 Relative Ftp Path Property</em>'.
+	 * @see org.onceforall.dms.desktop.logic.MDmsApplication#getMp3RelativeFtpPathProperty()
+	 * @see #getMDmsApplication()
+	 * @generated
+	 */
+	public EAttribute getMDmsApplication_Mp3RelativeFtpPathProperty() {
+		return (EAttribute)mDmsApplicationEClass.getEStructuralFeatures().get(15);
+	}
+
+
+	/**
+	 * Returns the meta object for the attribute list '{@link org.onceforall.dms.desktop.logic.MDmsApplication#getMp3RelativeFtpPathPropertyHistoricValues <em>Mp3 Relative Ftp Path Property Historic Values</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute list '<em>Mp3 Relative Ftp Path Property Historic Values</em>'.
+	 * @see org.onceforall.dms.desktop.logic.MDmsApplication#getMp3RelativeFtpPathPropertyHistoricValues()
+	 * @see #getMDmsApplication()
+	 * @generated
+	 */
+	public EAttribute getMDmsApplication_Mp3RelativeFtpPathPropertyHistoricValues() {
+		return (EAttribute)mDmsApplicationEClass.getEStructuralFeatures().get(16);
+	}
+
+
+	/**
+	 * Returns the meta object for the containment reference '{@link org.onceforall.dms.desktop.logic.MDmsApplication#getMContentPageRelativeFtpPathProperty <em>MContent Page Relative Ftp Path Property</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>MContent Page Relative Ftp Path Property</em>'.
+	 * @see org.onceforall.dms.desktop.logic.MDmsApplication#getMContentPageRelativeFtpPathProperty()
+	 * @see #getMDmsApplication()
+	 * @generated
+	 */
+	public EReference getMDmsApplication_MContentPageRelativeFtpPathProperty() {
+		return (EReference)mDmsApplicationEClass.getEStructuralFeatures().get(17);
+	}
+
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.onceforall.dms.desktop.logic.MDmsApplication#getContentPageRelativeFtpPathProperty <em>Content Page Relative Ftp Path Property</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Content Page Relative Ftp Path Property</em>'.
+	 * @see org.onceforall.dms.desktop.logic.MDmsApplication#getContentPageRelativeFtpPathProperty()
+	 * @see #getMDmsApplication()
+	 * @generated
+	 */
+	public EAttribute getMDmsApplication_ContentPageRelativeFtpPathProperty() {
+		return (EAttribute)mDmsApplicationEClass.getEStructuralFeatures().get(18);
+	}
+
+
+	/**
+	 * Returns the meta object for the attribute list '{@link org.onceforall.dms.desktop.logic.MDmsApplication#getContentPageRelativeFtpPathPropertyHistoricValues <em>Content Page Relative Ftp Path Property Historic Values</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute list '<em>Content Page Relative Ftp Path Property Historic Values</em>'.
+	 * @see org.onceforall.dms.desktop.logic.MDmsApplication#getContentPageRelativeFtpPathPropertyHistoricValues()
+	 * @see #getMDmsApplication()
+	 * @generated
+	 */
+	public EAttribute getMDmsApplication_ContentPageRelativeFtpPathPropertyHistoricValues() {
+		return (EAttribute)mDmsApplicationEClass.getEStructuralFeatures().get(19);
+	}
+
+
+	/**
+	 * Returns the meta object for the containment reference '{@link org.onceforall.dms.desktop.logic.MDmsApplication#getMPodcastRelativeFtpPathProperty <em>MPodcast Relative Ftp Path Property</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>MPodcast Relative Ftp Path Property</em>'.
+	 * @see org.onceforall.dms.desktop.logic.MDmsApplication#getMPodcastRelativeFtpPathProperty()
+	 * @see #getMDmsApplication()
+	 * @generated
+	 */
+	public EReference getMDmsApplication_MPodcastRelativeFtpPathProperty() {
+		return (EReference)mDmsApplicationEClass.getEStructuralFeatures().get(20);
+	}
+
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.onceforall.dms.desktop.logic.MDmsApplication#getPodcastRelativeFtpPathProperty <em>Podcast Relative Ftp Path Property</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Podcast Relative Ftp Path Property</em>'.
+	 * @see org.onceforall.dms.desktop.logic.MDmsApplication#getPodcastRelativeFtpPathProperty()
+	 * @see #getMDmsApplication()
+	 * @generated
+	 */
+	public EAttribute getMDmsApplication_PodcastRelativeFtpPathProperty() {
+		return (EAttribute)mDmsApplicationEClass.getEStructuralFeatures().get(21);
+	}
+
+
+	/**
+	 * Returns the meta object for the attribute list '{@link org.onceforall.dms.desktop.logic.MDmsApplication#getPodcastRelativeFtpPathPropertyHistoricValues <em>Podcast Relative Ftp Path Property Historic Values</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute list '<em>Podcast Relative Ftp Path Property Historic Values</em>'.
+	 * @see org.onceforall.dms.desktop.logic.MDmsApplication#getPodcastRelativeFtpPathPropertyHistoricValues()
+	 * @see #getMDmsApplication()
+	 * @generated
+	 */
+	public EAttribute getMDmsApplication_PodcastRelativeFtpPathPropertyHistoricValues() {
+		return (EAttribute)mDmsApplicationEClass.getEStructuralFeatures().get(22);
+	}
+
+
+	/**
 	 * Returns the meta object for the containment reference '{@link org.onceforall.dms.desktop.logic.MDmsApplication#getMWebServerUrlProperty <em>MWeb Server Url Property</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -15875,7 +16109,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @generated
 	 */
 	public EReference getMDmsApplication_MWebServerUrlProperty() {
-		return (EReference)mDmsApplicationEClass.getEStructuralFeatures().get(14);
+		return (EReference)mDmsApplicationEClass.getEStructuralFeatures().get(23);
 	}
 
 	/**
@@ -15888,7 +16122,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @generated
 	 */
 	public EAttribute getMDmsApplication_WebServerUrlProperty() {
-		return (EAttribute)mDmsApplicationEClass.getEStructuralFeatures().get(15);
+		return (EAttribute)mDmsApplicationEClass.getEStructuralFeatures().get(24);
 	}
 
 	/**
@@ -15901,7 +16135,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @generated
 	 */
 	public EAttribute getMDmsApplication_WebServerUrlPropertyHistoricValues() {
-		return (EAttribute)mDmsApplicationEClass.getEStructuralFeatures().get(16);
+		return (EAttribute)mDmsApplicationEClass.getEStructuralFeatures().get(25);
 	}
 
 	/**
@@ -15914,7 +16148,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @generated
 	 */
 	public EReference getMDmsApplication_MSmtpServerProperty() {
-		return (EReference)mDmsApplicationEClass.getEStructuralFeatures().get(17);
+		return (EReference)mDmsApplicationEClass.getEStructuralFeatures().get(26);
 	}
 
 	/**
@@ -15927,7 +16161,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @generated
 	 */
 	public EAttribute getMDmsApplication_SmtpServerProperty() {
-		return (EAttribute)mDmsApplicationEClass.getEStructuralFeatures().get(18);
+		return (EAttribute)mDmsApplicationEClass.getEStructuralFeatures().get(27);
 	}
 
 	/**
@@ -15940,7 +16174,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @generated
 	 */
 	public EAttribute getMDmsApplication_SmtpServerPropertyHistoricValues() {
-		return (EAttribute)mDmsApplicationEClass.getEStructuralFeatures().get(19);
+		return (EAttribute)mDmsApplicationEClass.getEStructuralFeatures().get(28);
 	}
 
 	/**
@@ -15953,7 +16187,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @generated
 	 */
 	public EReference getMDmsApplication_MSmtpUserNameProperty() {
-		return (EReference)mDmsApplicationEClass.getEStructuralFeatures().get(20);
+		return (EReference)mDmsApplicationEClass.getEStructuralFeatures().get(29);
 	}
 
 	/**
@@ -15966,7 +16200,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @generated
 	 */
 	public EAttribute getMDmsApplication_SmtpUserNameProperty() {
-		return (EAttribute)mDmsApplicationEClass.getEStructuralFeatures().get(21);
+		return (EAttribute)mDmsApplicationEClass.getEStructuralFeatures().get(30);
 	}
 
 	/**
@@ -15979,7 +16213,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @generated
 	 */
 	public EAttribute getMDmsApplication_SmtpUserNamePropertyHistoricValues() {
-		return (EAttribute)mDmsApplicationEClass.getEStructuralFeatures().get(22);
+		return (EAttribute)mDmsApplicationEClass.getEStructuralFeatures().get(31);
 	}
 
 	/**
@@ -15992,7 +16226,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @generated
 	 */
 	public EReference getMDmsApplication_MSmtpPasswordProperty() {
-		return (EReference)mDmsApplicationEClass.getEStructuralFeatures().get(23);
+		return (EReference)mDmsApplicationEClass.getEStructuralFeatures().get(32);
 	}
 
 	/**
@@ -16005,8 +16239,50 @@ public class LogicPackage extends EPackageImpl {
 	 * @generated
 	 */
 	public EAttribute getMDmsApplication_SmtpPasswordProperty() {
-		return (EAttribute)mDmsApplicationEClass.getEStructuralFeatures().get(24);
+		return (EAttribute)mDmsApplicationEClass.getEStructuralFeatures().get(33);
 	}
+
+	/**
+	 * Returns the meta object for the containment reference '{@link org.onceforall.dms.desktop.logic.MDmsApplication#getMReceipientsEmailAddressProperty <em>MReceipients Email Address Property</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>MReceipients Email Address Property</em>'.
+	 * @see org.onceforall.dms.desktop.logic.MDmsApplication#getMReceipientsEmailAddressProperty()
+	 * @see #getMDmsApplication()
+	 * @generated
+	 */
+	public EReference getMDmsApplication_MReceipientsEmailAddressProperty() {
+		return (EReference)mDmsApplicationEClass.getEStructuralFeatures().get(34);
+	}
+
+
+	/**
+	 * Returns the meta object for the attribute list '{@link org.onceforall.dms.desktop.logic.MDmsApplication#getReceipientsEmailAddressProperty <em>Receipients Email Address Property</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute list '<em>Receipients Email Address Property</em>'.
+	 * @see org.onceforall.dms.desktop.logic.MDmsApplication#getReceipientsEmailAddressProperty()
+	 * @see #getMDmsApplication()
+	 * @generated
+	 */
+	public EAttribute getMDmsApplication_ReceipientsEmailAddressProperty() {
+		return (EAttribute)mDmsApplicationEClass.getEStructuralFeatures().get(35);
+	}
+
+
+	/**
+	 * Returns the meta object for the attribute list '{@link org.onceforall.dms.desktop.logic.MDmsApplication#getReceipientsEmailAddressPropertyHistoricValues <em>Receipients Email Address Property Historic Values</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute list '<em>Receipients Email Address Property Historic Values</em>'.
+	 * @see org.onceforall.dms.desktop.logic.MDmsApplication#getReceipientsEmailAddressPropertyHistoricValues()
+	 * @see #getMDmsApplication()
+	 * @generated
+	 */
+	public EAttribute getMDmsApplication_ReceipientsEmailAddressPropertyHistoricValues() {
+		return (EAttribute)mDmsApplicationEClass.getEStructuralFeatures().get(36);
+	}
+
 
 	/**
 	 * Returns the meta object for the containment reference '{@link org.onceforall.dms.desktop.logic.MDmsApplication#getMBurningSoftwareDirectoryPathProperty <em>MBurning Software Directory Path Property</em>}'.
@@ -16018,7 +16294,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @generated
 	 */
 	public EReference getMDmsApplication_MBurningSoftwareDirectoryPathProperty() {
-		return (EReference)mDmsApplicationEClass.getEStructuralFeatures().get(25);
+		return (EReference)mDmsApplicationEClass.getEStructuralFeatures().get(37);
 	}
 
 	/**
@@ -16031,7 +16307,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @generated
 	 */
 	public EAttribute getMDmsApplication_BurningSoftwareDirectoryPathProperty() {
-		return (EAttribute)mDmsApplicationEClass.getEStructuralFeatures().get(26);
+		return (EAttribute)mDmsApplicationEClass.getEStructuralFeatures().get(38);
 	}
 
 	/**
@@ -16044,7 +16320,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @generated
 	 */
 	public EReference getMDmsApplication_MDriveProperty() {
-		return (EReference)mDmsApplicationEClass.getEStructuralFeatures().get(27);
+		return (EReference)mDmsApplicationEClass.getEStructuralFeatures().get(39);
 	}
 
 	/**
@@ -16057,7 +16333,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @generated
 	 */
 	public EAttribute getMDmsApplication_DriveProperty() {
-		return (EAttribute)mDmsApplicationEClass.getEStructuralFeatures().get(28);
+		return (EAttribute)mDmsApplicationEClass.getEStructuralFeatures().get(40);
 	}
 
 	/**
@@ -16070,7 +16346,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @generated
 	 */
 	public EAttribute getMDmsApplication_DrivePropertyHistoricValues() {
-		return (EAttribute)mDmsApplicationEClass.getEStructuralFeatures().get(29);
+		return (EAttribute)mDmsApplicationEClass.getEStructuralFeatures().get(41);
 	}
 
 	/**
@@ -16083,7 +16359,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @generated
 	 */
 	public EReference getMDmsApplication_MUpgradeMessageProperty() {
-		return (EReference)mDmsApplicationEClass.getEStructuralFeatures().get(30);
+		return (EReference)mDmsApplicationEClass.getEStructuralFeatures().get(42);
 	}
 
 	/**
@@ -16096,7 +16372,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @generated
 	 */
 	public EAttribute getMDmsApplication_UpgradeMessageProperty() {
-		return (EAttribute)mDmsApplicationEClass.getEStructuralFeatures().get(31);
+		return (EAttribute)mDmsApplicationEClass.getEStructuralFeatures().get(43);
 	}
 
 	/**
@@ -16109,7 +16385,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @generated
 	 */
 	public EReference getMDmsApplication_MUpgradeRelativeFtpPathProperty() {
-		return (EReference)mDmsApplicationEClass.getEStructuralFeatures().get(32);
+		return (EReference)mDmsApplicationEClass.getEStructuralFeatures().get(44);
 	}
 
 	/**
@@ -16122,7 +16398,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @generated
 	 */
 	public EAttribute getMDmsApplication_UpgradeRelativeFtpPathProperty() {
-		return (EAttribute)mDmsApplicationEClass.getEStructuralFeatures().get(33);
+		return (EAttribute)mDmsApplicationEClass.getEStructuralFeatures().get(45);
 	}
 
 	/**
@@ -16135,7 +16411,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @generated
 	 */
 	public EReference getMDmsApplication_MLastUpgradeProperty() {
-		return (EReference)mDmsApplicationEClass.getEStructuralFeatures().get(34);
+		return (EReference)mDmsApplicationEClass.getEStructuralFeatures().get(46);
 	}
 
 	/**
@@ -16148,7 +16424,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @generated
 	 */
 	public EAttribute getMDmsApplication_LastUpgradeProperty() {
-		return (EAttribute)mDmsApplicationEClass.getEStructuralFeatures().get(35);
+		return (EAttribute)mDmsApplicationEClass.getEStructuralFeatures().get(47);
 	}
 
 	/**
@@ -16161,7 +16437,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @generated
 	 */
 	public EReference getMDmsApplication_MOrganisationProperty() {
-		return (EReference)mDmsApplicationEClass.getEStructuralFeatures().get(36);
+		return (EReference)mDmsApplicationEClass.getEStructuralFeatures().get(48);
 	}
 
 	/**
@@ -16174,7 +16450,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @generated
 	 */
 	public EAttribute getMDmsApplication_OrganisationProperty() {
-		return (EAttribute)mDmsApplicationEClass.getEStructuralFeatures().get(37);
+		return (EAttribute)mDmsApplicationEClass.getEStructuralFeatures().get(49);
 	}
 
 	/**
@@ -16187,7 +16463,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @generated
 	 */
 	public EReference getMDmsApplication_MGetDataUpgradeInfoStep() {
-		return (EReference)mDmsApplicationEClass.getEStructuralFeatures().get(38);
+		return (EReference)mDmsApplicationEClass.getEStructuralFeatures().get(50);
 	}
 
 	/**
@@ -16200,7 +16476,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @generated
 	 */
 	public EReference getMDmsApplication_MScripts() {
-		return (EReference)mDmsApplicationEClass.getEStructuralFeatures().get(40);
+		return (EReference)mDmsApplicationEClass.getEStructuralFeatures().get(52);
 	}
 
 	/**
@@ -16213,7 +16489,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @generated
 	 */
 	public EReference getMDmsApplication_MMp3Folders() {
-		return (EReference)mDmsApplicationEClass.getEStructuralFeatures().get(41);
+		return (EReference)mDmsApplicationEClass.getEStructuralFeatures().get(53);
 	}
 
 	/**
@@ -20047,7 +20323,7 @@ public class LogicPackage extends EPackageImpl {
 	 * @generated
 	 */
 	public EReference getMDmsApplication_MUpgradeDataStep() {
-		return (EReference)mDmsApplicationEClass.getEStructuralFeatures().get(39);
+		return (EReference)mDmsApplicationEClass.getEStructuralFeatures().get(51);
 	}
 
 	/**
@@ -20384,6 +20660,15 @@ public class LogicPackage extends EPackageImpl {
 		createEAttribute(mDmsApplicationEClass, MDMS_APPLICATION__FTP_USER_NAME_PROPERTY_HISTORIC_VALUES);
 		createEReference(mDmsApplicationEClass, MDMS_APPLICATION__MFTP_USER_PASSWORD_PROPERTY);
 		createEAttribute(mDmsApplicationEClass, MDMS_APPLICATION__FTP_USER_PASSWORD_PROPERTY);
+		createEReference(mDmsApplicationEClass, MDMS_APPLICATION__MMP3_RELATIVE_FTP_PATH_PROPERTY);
+		createEAttribute(mDmsApplicationEClass, MDMS_APPLICATION__MP3_RELATIVE_FTP_PATH_PROPERTY);
+		createEAttribute(mDmsApplicationEClass, MDMS_APPLICATION__MP3_RELATIVE_FTP_PATH_PROPERTY_HISTORIC_VALUES);
+		createEReference(mDmsApplicationEClass, MDMS_APPLICATION__MCONTENT_PAGE_RELATIVE_FTP_PATH_PROPERTY);
+		createEAttribute(mDmsApplicationEClass, MDMS_APPLICATION__CONTENT_PAGE_RELATIVE_FTP_PATH_PROPERTY);
+		createEAttribute(mDmsApplicationEClass, MDMS_APPLICATION__CONTENT_PAGE_RELATIVE_FTP_PATH_PROPERTY_HISTORIC_VALUES);
+		createEReference(mDmsApplicationEClass, MDMS_APPLICATION__MPODCAST_RELATIVE_FTP_PATH_PROPERTY);
+		createEAttribute(mDmsApplicationEClass, MDMS_APPLICATION__PODCAST_RELATIVE_FTP_PATH_PROPERTY);
+		createEAttribute(mDmsApplicationEClass, MDMS_APPLICATION__PODCAST_RELATIVE_FTP_PATH_PROPERTY_HISTORIC_VALUES);
 		createEReference(mDmsApplicationEClass, MDMS_APPLICATION__MWEB_SERVER_URL_PROPERTY);
 		createEAttribute(mDmsApplicationEClass, MDMS_APPLICATION__WEB_SERVER_URL_PROPERTY);
 		createEAttribute(mDmsApplicationEClass, MDMS_APPLICATION__WEB_SERVER_URL_PROPERTY_HISTORIC_VALUES);
@@ -20395,6 +20680,9 @@ public class LogicPackage extends EPackageImpl {
 		createEAttribute(mDmsApplicationEClass, MDMS_APPLICATION__SMTP_USER_NAME_PROPERTY_HISTORIC_VALUES);
 		createEReference(mDmsApplicationEClass, MDMS_APPLICATION__MSMTP_PASSWORD_PROPERTY);
 		createEAttribute(mDmsApplicationEClass, MDMS_APPLICATION__SMTP_PASSWORD_PROPERTY);
+		createEReference(mDmsApplicationEClass, MDMS_APPLICATION__MRECEIPIENTS_EMAIL_ADDRESS_PROPERTY);
+		createEAttribute(mDmsApplicationEClass, MDMS_APPLICATION__RECEIPIENTS_EMAIL_ADDRESS_PROPERTY);
+		createEAttribute(mDmsApplicationEClass, MDMS_APPLICATION__RECEIPIENTS_EMAIL_ADDRESS_PROPERTY_HISTORIC_VALUES);
 		createEReference(mDmsApplicationEClass, MDMS_APPLICATION__MBURNING_SOFTWARE_DIRECTORY_PATH_PROPERTY);
 		createEAttribute(mDmsApplicationEClass, MDMS_APPLICATION__BURNING_SOFTWARE_DIRECTORY_PATH_PROPERTY);
 		createEReference(mDmsApplicationEClass, MDMS_APPLICATION__MDRIVE_PROPERTY);
@@ -20874,7 +21162,7 @@ public class LogicPackage extends EPackageImpl {
 		initEClass(mApplicationEClass, MApplication.class, "MApplication", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getMApplication_MDataFileProperty(), this.getMProperty(), null, "mDataFileProperty", null, 1, 1, MApplication.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMApplication_DataFileProperty(), this.getMExistingFile(), "dataFileProperty", "Application Data Files\\Data.xml", 1, 1, MApplication.class, IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getMApplication_InfoWebPageProperty(), this.getMUrl(), "infoWebPageProperty", "http://www.onceforall.org/dms-desktop/info.html", 1, 1, MApplication.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getMApplication_InfoWebPageProperty(), this.getMUrl(), "infoWebPageProperty", "http://www.onceforall.org/dms-desktop/info.php", 1, 1, MApplication.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getMApplication_MInfoWebPageProperty(), this.getMProperty(), null, "mInfoWebPageProperty", null, 1, 1, MApplication.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMApplication_DataFilePropertyHistoricValues(), this.getMFile(), "dataFilePropertyHistoricValues", null, 0, 5, MApplication.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getMApplication_MLogFileProperty(), this.getMProperty(), null, "mLogFileProperty", null, 1, 1, MApplication.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -20909,6 +21197,15 @@ public class LogicPackage extends EPackageImpl {
 		initEAttribute(getMDmsApplication_FtpUserNamePropertyHistoricValues(), this.getMString(), "ftpUserNamePropertyHistoricValues", null, 0, 3, MDmsApplication.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getMDmsApplication_MFtpUserPasswordProperty(), this.getMProperty(), null, "mFtpUserPasswordProperty", null, 1, 1, MDmsApplication.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMDmsApplication_FtpUserPasswordProperty(), this.getMPassword(), "ftpUserPasswordProperty", null, 0, 1, MDmsApplication.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMDmsApplication_MMp3RelativeFtpPathProperty(), this.getMProperty(), null, "mMp3RelativeFtpPathProperty", null, 1, 1, MDmsApplication.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getMDmsApplication_Mp3RelativeFtpPathProperty(), this.getMString(), "mp3RelativeFtpPathProperty", null, 0, 1, MDmsApplication.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getMDmsApplication_Mp3RelativeFtpPathPropertyHistoricValues(), this.getMString(), "mp3RelativeFtpPathPropertyHistoricValues", null, 0, 3, MDmsApplication.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMDmsApplication_MContentPageRelativeFtpPathProperty(), this.getMProperty(), null, "mContentPageRelativeFtpPathProperty", null, 1, 1, MDmsApplication.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getMDmsApplication_ContentPageRelativeFtpPathProperty(), this.getMString(), "contentPageRelativeFtpPathProperty", null, 0, 1, MDmsApplication.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getMDmsApplication_ContentPageRelativeFtpPathPropertyHistoricValues(), this.getMString(), "contentPageRelativeFtpPathPropertyHistoricValues", null, 0, 3, MDmsApplication.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMDmsApplication_MPodcastRelativeFtpPathProperty(), this.getMProperty(), null, "mPodcastRelativeFtpPathProperty", null, 1, 1, MDmsApplication.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getMDmsApplication_PodcastRelativeFtpPathProperty(), this.getMString(), "podcastRelativeFtpPathProperty", null, 0, 1, MDmsApplication.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getMDmsApplication_PodcastRelativeFtpPathPropertyHistoricValues(), this.getMString(), "podcastRelativeFtpPathPropertyHistoricValues", null, 0, 3, MDmsApplication.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getMDmsApplication_MWebServerUrlProperty(), this.getMProperty(), null, "mWebServerUrlProperty", null, 1, 1, MDmsApplication.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMDmsApplication_WebServerUrlProperty(), this.getMUrl(), "webServerUrlProperty", null, 0, 1, MDmsApplication.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMDmsApplication_WebServerUrlPropertyHistoricValues(), this.getMUrl(), "webServerUrlPropertyHistoricValues", null, 0, 3, MDmsApplication.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -20920,6 +21217,9 @@ public class LogicPackage extends EPackageImpl {
 		initEAttribute(getMDmsApplication_SmtpUserNamePropertyHistoricValues(), this.getMString(), "smtpUserNamePropertyHistoricValues", null, 0, 3, MDmsApplication.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getMDmsApplication_MSmtpPasswordProperty(), this.getMProperty(), null, "mSmtpPasswordProperty", null, 1, 1, MDmsApplication.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMDmsApplication_SmtpPasswordProperty(), this.getMPassword(), "smtpPasswordProperty", null, 0, 1, MDmsApplication.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMDmsApplication_MReceipientsEmailAddressProperty(), this.getMProperty(), null, "mReceipientsEmailAddressProperty", null, 1, 1, MDmsApplication.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getMDmsApplication_ReceipientsEmailAddressProperty(), this.getMString(), "receipientsEmailAddressProperty", null, 0, -1, MDmsApplication.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getMDmsApplication_ReceipientsEmailAddressPropertyHistoricValues(), this.getMString(), "receipientsEmailAddressPropertyHistoricValues", null, 0, 3, MDmsApplication.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getMDmsApplication_MBurningSoftwareDirectoryPathProperty(), this.getMProperty(), null, "mBurningSoftwareDirectoryPathProperty", null, 1, 1, MDmsApplication.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMDmsApplication_BurningSoftwareDirectoryPathProperty(), this.getMExistingDirectory(), "burningSoftwareDirectoryPathProperty", null, 1, 1, MDmsApplication.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getMDmsApplication_MDriveProperty(), this.getMProperty(), null, "mDriveProperty", null, 1, 1, MDmsApplication.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -21610,6 +21910,27 @@ public class LogicPackage extends EPackageImpl {
 			 "description", "Specifies the user password for accessing the FTP server."
 		   });		
 		addAnnotation
+		  (getMDmsApplication_MMp3RelativeFtpPathProperty(), 
+		   source, 
+		   new String[] {
+			 "name", "MP3 relative FTP path",
+			 "description", "Specifies the path of the directory on the FTP server to publish the MP3 files to, e.g. \'/recordings\'."
+		   });		
+		addAnnotation
+		  (getMDmsApplication_MContentPageRelativeFtpPathProperty(), 
+		   source, 
+		   new String[] {
+			 "name", "Content page relative FTP path",
+			 "description", "Specifies the path of the directory relative to the FTP path where to publish the MP3 content page to, e.g. \'/recordings\'."
+		   });		
+		addAnnotation
+		  (getMDmsApplication_MPodcastRelativeFtpPathProperty(), 
+		   source, 
+		   new String[] {
+			 "name", "Podcast relative FTP path",
+			 "description", "Specifies the path relative to the FTP path where the podcast RSS feed should be created or updated."
+		   });		
+		addAnnotation
 		  (getMDmsApplication_MWebServerUrlProperty(), 
 		   source, 
 		   new String[] {
@@ -21640,6 +21961,14 @@ public class LogicPackage extends EPackageImpl {
 			 "readOnly", "false"
 		   });		
 		addAnnotation
+		  (getMDmsApplication_MReceipientsEmailAddressProperty(), 
+		   source, 
+		   new String[] {
+			 "name", "Receipients\' email address",
+			 "description", "Specifies the email addresses of the recipients, i.e. the To field of the email. Multiple email addresses can entered, separated by a semicolon \';\'.",
+			 "readOnly", "false"
+		   });		
+		addAnnotation
 		  (getMDmsApplication_MBurningSoftwareDirectoryPathProperty(), 
 		   source, 
 		   new String[] {
@@ -21650,7 +21979,7 @@ public class LogicPackage extends EPackageImpl {
 		  (getMDmsApplication_MDriveProperty(), 
 		   source, 
 		   new String[] {
-			 "name", "Drive",
+			 "name", "CD-ROM Drive",
 			 "description", "Specifies either the full name of the CD-ROM drive or the drive letter."
 		   });		
 		addAnnotation
@@ -22490,8 +22819,8 @@ public class LogicPackage extends EPackageImpl {
 		  (getMEmailEventLogStep_MReceipientsEmailAddressParameter(), 
 		   source, 
 		   new String[] {
-			 "name", "Receipient\'s email address",
-			 "description", "Specifies the email addresses of the recipients, i.e. the To field of the email."
+			 "name", "Receipients\' email address",
+			 "description", "Specifies the email addresses of the recipients, i.e. the To field of the email. Multiple email addresses can entered, separated by a semicolon \';\'."
 		   });		
 		addAnnotation
 		  (getMEmailEventLogStep_MSmtpServerParameter(), 
@@ -23603,6 +23932,78 @@ public class LogicPackage extends EPackageImpl {
 		public static final EAttribute MDMS_APPLICATION__FTP_USER_PASSWORD_PROPERTY = eINSTANCE.getMDmsApplication_FtpUserPasswordProperty();
 
 		/**
+		 * The meta object literal for the '<em><b>MMp3 Relative Ftp Path Property</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		public static final EReference MDMS_APPLICATION__MMP3_RELATIVE_FTP_PATH_PROPERTY = eINSTANCE.getMDmsApplication_MMp3RelativeFtpPathProperty();
+
+		/**
+		 * The meta object literal for the '<em><b>Mp3 Relative Ftp Path Property</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		public static final EAttribute MDMS_APPLICATION__MP3_RELATIVE_FTP_PATH_PROPERTY = eINSTANCE.getMDmsApplication_Mp3RelativeFtpPathProperty();
+
+		/**
+		 * The meta object literal for the '<em><b>Mp3 Relative Ftp Path Property Historic Values</b></em>' attribute list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		public static final EAttribute MDMS_APPLICATION__MP3_RELATIVE_FTP_PATH_PROPERTY_HISTORIC_VALUES = eINSTANCE.getMDmsApplication_Mp3RelativeFtpPathPropertyHistoricValues();
+
+		/**
+		 * The meta object literal for the '<em><b>MContent Page Relative Ftp Path Property</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		public static final EReference MDMS_APPLICATION__MCONTENT_PAGE_RELATIVE_FTP_PATH_PROPERTY = eINSTANCE.getMDmsApplication_MContentPageRelativeFtpPathProperty();
+
+		/**
+		 * The meta object literal for the '<em><b>Content Page Relative Ftp Path Property</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		public static final EAttribute MDMS_APPLICATION__CONTENT_PAGE_RELATIVE_FTP_PATH_PROPERTY = eINSTANCE.getMDmsApplication_ContentPageRelativeFtpPathProperty();
+
+		/**
+		 * The meta object literal for the '<em><b>Content Page Relative Ftp Path Property Historic Values</b></em>' attribute list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		public static final EAttribute MDMS_APPLICATION__CONTENT_PAGE_RELATIVE_FTP_PATH_PROPERTY_HISTORIC_VALUES = eINSTANCE.getMDmsApplication_ContentPageRelativeFtpPathPropertyHistoricValues();
+
+		/**
+		 * The meta object literal for the '<em><b>MPodcast Relative Ftp Path Property</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		public static final EReference MDMS_APPLICATION__MPODCAST_RELATIVE_FTP_PATH_PROPERTY = eINSTANCE.getMDmsApplication_MPodcastRelativeFtpPathProperty();
+
+		/**
+		 * The meta object literal for the '<em><b>Podcast Relative Ftp Path Property</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		public static final EAttribute MDMS_APPLICATION__PODCAST_RELATIVE_FTP_PATH_PROPERTY = eINSTANCE.getMDmsApplication_PodcastRelativeFtpPathProperty();
+
+		/**
+		 * The meta object literal for the '<em><b>Podcast Relative Ftp Path Property Historic Values</b></em>' attribute list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		public static final EAttribute MDMS_APPLICATION__PODCAST_RELATIVE_FTP_PATH_PROPERTY_HISTORIC_VALUES = eINSTANCE.getMDmsApplication_PodcastRelativeFtpPathPropertyHistoricValues();
+
+		/**
 		 * The meta object literal for the '<em><b>MWeb Server Url Property</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -23689,6 +24090,30 @@ public class LogicPackage extends EPackageImpl {
 		 * @generated
 		 */
 		public static final EAttribute MDMS_APPLICATION__SMTP_PASSWORD_PROPERTY = eINSTANCE.getMDmsApplication_SmtpPasswordProperty();
+
+		/**
+		 * The meta object literal for the '<em><b>MReceipients Email Address Property</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		public static final EReference MDMS_APPLICATION__MRECEIPIENTS_EMAIL_ADDRESS_PROPERTY = eINSTANCE.getMDmsApplication_MReceipientsEmailAddressProperty();
+
+		/**
+		 * The meta object literal for the '<em><b>Receipients Email Address Property</b></em>' attribute list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		public static final EAttribute MDMS_APPLICATION__RECEIPIENTS_EMAIL_ADDRESS_PROPERTY = eINSTANCE.getMDmsApplication_ReceipientsEmailAddressProperty();
+
+		/**
+		 * The meta object literal for the '<em><b>Receipients Email Address Property Historic Values</b></em>' attribute list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		public static final EAttribute MDMS_APPLICATION__RECEIPIENTS_EMAIL_ADDRESS_PROPERTY_HISTORIC_VALUES = eINSTANCE.getMDmsApplication_ReceipientsEmailAddressPropertyHistoricValues();
 
 		/**
 		 * The meta object literal for the '<em><b>MBurning Software Directory Path Property</b></em>' containment reference feature.
