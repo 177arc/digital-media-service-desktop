@@ -68,7 +68,6 @@ import org.eclipse.swt.events.MouseTrackAdapter;
 import org.eclipse.swt.events.SelectionAdapter;
 import org.eclipse.swt.events.SelectionEvent;
 import org.eclipse.swt.graphics.Color;
-import org.eclipse.swt.graphics.GC;
 import org.eclipse.swt.graphics.Image;
 import org.eclipse.swt.graphics.Point;
 import org.eclipse.swt.graphics.Rectangle;
@@ -329,20 +328,14 @@ public class ValuesTableComposite extends MElementComposite {
 				currentTableItem = tableItem;
 				
 				// Calculates the absolute position of the mouse and the table item.
-				int valueWidth = new GC(table).stringExtent(tableItem.getText(1)).x+5;
-				int toolBarX = Math.min(tableItem.getBounds().x+table.getColumn(0).getWidth()+table.getGridLineWidth()*1+valueWidth, 
-						tableItem.getBounds().x+table.getColumn(0).getWidth()+table.getColumn(1).getWidth()+table.getGridLineWidth()*2-openButton.getBounds().width-5);
+				//int valueWidth = new GC(table).stringExtent(tableItem.getText(1)).x+5;
+				int toolBarX = tableItem.getBounds().x+table.getColumn(0).getWidth()+table.getColumn(1).getWidth()+table.getGridLineWidth()*2-openButton.getBounds().width-5;
 				int toolBarY = tableItem.getBounds().y-(openButton.getBounds().height-tableItem.getBounds().height)/2;
 				openButton.setLocation(toolBarX, toolBarY);
 				openButton.setMElement(mValue);
 			
 			}});
-		table.addSelectionListener(new SelectionAdapter() {
-			public void widgetSelected(SelectionEvent event) {
-				//openButton.setBackground(Display.getCurrent().getSystemColor(SWT.COLOR_LIST_SELECTION));	
-			}
-			
-		});
+
 		table.addMouseTrackListener(new MouseTrackAdapter() {
 
 			@Override
@@ -407,7 +400,7 @@ public class ValuesTableComposite extends MElementComposite {
 	    historicValuesCellEditor.getControl().addFocusListener(new FocusAdapter() {
             @Override
 			public void focusGained(FocusEvent e) {
-                historicValuesComboBox.setListVisible(true);
+               historicValuesComboBox.setListVisible(true);
             }});
 	    
 	    // Creates the cell editor for the null value.
