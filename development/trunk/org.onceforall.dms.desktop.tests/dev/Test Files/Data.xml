@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<org.onceforall.dms.desktop.logic:MDmsApplication xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:org.onceforall.dms.desktop.logic="http://www.onceforall.org/dms/desktop/model.ecore" versionProperty="1.0" serviceFilePathProperty="Recording Files" wwxFilesPathProperty="Recording Files" mp3EncoderPathProperty="..\..\org.onceforall.dms.desktop.ui\dev\Program Files\LAME 3.96.1" ftpServerUrlProperty="ftp://www.onceforall.org" ftpUserNameProperty="www.onceforall.org" ftpUserPasswordProperty="itrustyou" webServerUrlProperty="http://www.onceforall.org" smtpServerProperty="post.strato.de" smtpUserNameProperty="dms-testing%onceforall.org" smtpPasswordProperty="M3vPeg+oRr9k8xtkFmFbfg==" burningSoftwareDirectoryPathProperty="..\..\org.onceforall.dms.desktop.ui\dev\Program Files\Nero 6.0\Nero" driveProperty="D" upgradeMessageProperty="" upgradeRelativeFtpPathProperty="/dms-desktop/testing/Data.zip" lastUpgradeProperty="2007-02-04T22:31:31.484+0000">
+<org.onceforall.dms.desktop.logic:MDmsApplication xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:org.onceforall.dms.desktop.logic="http://www.onceforall.org/dms/desktop/model.ecore" versionProperty="1.3.1.41 (built on 25 Nov 2008 by Marc and Rach)" serviceFilePathProperty="Recording Files" wwxFilesPathProperty="Recording Files" mp3EncoderPathProperty="..\..\org.onceforall.dms.desktop.ui\dev\Program Files\LAME 3.96.1" ftpServerUrlProperty="ftp://www.onceforall.org" ftpUserNameProperty="www.onceforall.org" ftpUserPasswordProperty="M3vPeg+oRr9k8xtkFmFbfg==" mp3RelativeFtpPathProperty="/dms-desktop/testing" contentPageRelativeFtpPathProperty="/dms-desktop/testing" podcastRelativeFtpPathProperty="/dms-desktop/testing" webServerUrlProperty="http://www.onceforall.org" smtpServerProperty="post.strato.de" smtpUserNameProperty="dms-testing%onceforall.org" smtpPasswordProperty="M3vPeg+oRr9k8xtkFmFbfg==" burningSoftwareDirectoryPathProperty="..\..\org.onceforall.dms.desktop.ui\dev\Program Files\Nero 6.0\Nero" driveProperty="D" upgradeMessageProperty="" upgradeRelativeFtpPathProperty="/dms-desktop/testing/Data.zip" lastUpgradeProperty="2007-02-04T22:31:31.484+0000">
   <mNameProperty/>
   <mDescriptionProperty/>
   <mIconFilePathProperty/>
@@ -17,11 +17,15 @@
   <mFtpUserNameProperty/>
   <ftpUserNamePropertyHistoricValues>www.onceforall.org</ftpUserNamePropertyHistoricValues>
   <mFtpUserPasswordProperty/>
+  <mMp3RelativeFtpPathProperty/>
+  <mContentPageRelativeFtpPathProperty/>
+  <mPodcastRelativeFtpPathProperty/>
   <mWebServerUrlProperty/>
   <webServerUrlPropertyHistoricValues>http://www.onceforall.org</webServerUrlPropertyHistoricValues>
   <mSmtpServerProperty/>
   <mSmtpUserNameProperty/>
   <mSmtpPasswordProperty/>
+  <mReceipientsEmailAddressProperty/>
   <mBurningSoftwareDirectoryPathProperty/>
   <mDriveProperty/>
   <drivePropertyHistoricValues>D</drivePropertyHistoricValues>
@@ -29,7 +33,7 @@
   <mUpgradeRelativeFtpPathProperty/>
   <mLastUpgradeProperty readOnly="true"/>
   <mOrganisationProperty/>
-  <mGetDataUpgradeInfoStep lastStateChangeProperty="2007-08-26T11:30:52.750+0100" ftpServerUrlParameter="ftp://www.onceforall.org" ftpUserNameParameter="www.onceforall.org" ftpUserPasswordParameter="itrustyou" upgradeRelativeFtpPathProperty="/dms-desktop/testing/Data.zip">
+  <mGetDataUpgradeInfoStep lastStateChangeProperty="2007-08-26T11:30:52.750+0100" ftpServerUrlParameter="ftp://www.onceforall.org" ftpUserNameParameter="www.onceforall.org" ftpUserPasswordParameter="M3vPeg+oRr9k8xtkFmFbfg==" upgradeRelativeFtpPathProperty="/dms-desktop/testing/Data.zip">
     <mNameProperty/>
     <mDescriptionProperty/>
     <mIconFilePathProperty/>
@@ -46,7 +50,7 @@
     <mUpgradeMessageResult/>
     <mUpgradeDateResult/>
   </mGetDataUpgradeInfoStep>
-  <mUpgradeDataStep mInputSteps="//@mGetDataUpgradeInfoStep" ftpServerUrlParameter="ftp://www.onceforall.org" ftpUserNameParameter="www.onceforall.org" ftpUserPasswordParameter="itrustyou" upgradeRelativeFtpPathProperty="/dms-desktop/testing/Data.zip">
+  <mUpgradeDataStep mInputSteps="//@mGetDataUpgradeInfoStep" ftpServerUrlParameter="ftp://www.onceforall.org" ftpUserNameParameter="www.onceforall.org" ftpUserPasswordParameter="M3vPeg+oRr9k8xtkFmFbfg==" upgradeRelativeFtpPathProperty="/dms-desktop/testing/Data.zip">
     <mNameProperty/>
     <mDescriptionProperty/>
     <mIconFilePathProperty/>
@@ -68,7 +72,7 @@
     <mIconFilePathProperty/>
     <mStateProperty readOnly="true"/>
     <mLastStateChangeProperty readOnly="true"/>
-    <mSteps xsi:type="org.onceforall.dms.desktop.logic:MEnterServiceInformationStep" name="Enter event information" description="Please enter the required information about the event and then select 'Mark as completed'. Data entered here will appear on the content web page, the RSS/podcast title and the MP3 file name and tags." lastStateChangeProperty="2008-08-31T22:57:01.376+0100">
+    <mSteps xsi:type="org.onceforall.dms.desktop.logic:MEnterServiceInformationStep" name="Enter event information" description="Please enter the required information about the event and then select 'Mark as completed'. Data entered here will appear on the content web page, the RSS/podcast title and the MP3 file name and tags." lastStateChangeProperty="2008-11-26T22:20:16.163+0000">
       <mNameProperty/>
       <mDescriptionProperty/>
       <mIconFilePathProperty/>
@@ -99,7 +103,7 @@
       <mSpeakersNameResult/>
       <mRecordingUsersNameResult/>
     </mSteps>
-    <mSteps xsi:type="org.onceforall.dms.desktop.logic:MCheckFreeDiskSpaceStep" lastStateChangeProperty="2008-08-31T22:57:01.476+0100" requiredFreeDiskSpaceParameter="800000000" directoryParameter="Recording Files">
+    <mSteps xsi:type="org.onceforall.dms.desktop.logic:MCheckFreeDiskSpaceStep" lastStateChangeProperty="2008-11-26T22:20:16.274+0000" requiredFreeDiskSpaceParameter="800000000" directoryParameter="Recording Files">
       <mNameProperty/>
       <mDescriptionProperty/>
       <mIconFilePathProperty/>
@@ -112,7 +116,7 @@
       <mDirectoryParameter mInputValues="//@mServiceFilePathProperty"/>
       <mFreeDiskSpaceResult/>
     </mSteps>
-    <mSteps xsi:type="org.onceforall.dms.desktop.logic:MCreateDirectoryStep" lastStateChangeProperty="2008-08-31T22:57:01.591+0100" mInputSteps="//@mScripts.0/@mSteps.0" parentDirectoryParameter="Recording Files" directoryNameParameter="2007-08-27 Automated test event type">
+    <mSteps xsi:type="org.onceforall.dms.desktop.logic:MCreateDirectoryStep" lastStateChangeProperty="2008-11-26T22:20:16.386+0000" mInputSteps="//@mScripts.0/@mSteps.0" parentDirectoryParameter="Recording Files" directoryNameParameter="2007-08-27 Automated test event type">
       <mNameProperty/>
       <mDescriptionProperty/>
       <mIconFilePathProperty/>
@@ -126,7 +130,7 @@
       <mDirectoryNameParameter mInputValues="//@mScripts.0/@mSteps.0/@mServiceTypeResult //@mScripts.0/@mSteps.0/@mServiceDateResult"/>
       <mDirectoryResult/>
     </mSteps>
-    <mSteps xsi:type="org.onceforall.dms.desktop.logic:MCheckInputLevelsStep" lastStateChangeProperty="2008-08-31T22:57:02.390+0100">
+    <mSteps xsi:type="org.onceforall.dms.desktop.logic:MCheckInputLevelsStep" lastStateChangeProperty="2008-11-26T22:20:17.195+0000">
       <mNameProperty/>
       <mDescriptionProperty/>
       <mIconFilePathProperty/>
@@ -142,7 +146,7 @@
       <mUseDbProperty description="Specifies whether the meters should show the signal readings in dBFS (logarithmic) or raw (linear).  For an explanation of dBFS, please refer to http://en.wikipedia.org/wiki/DBFS."/>
       <mHeadroomProperty description="Specifies the headroom in dBFS. This must be a number between 0 and 18.  For an explanation of the headroom please refer to http://en.wikipedia.org/wiki/Headroom. For an explanation of dBFS, please refer to http://en.wikipedia.org/wiki/DBFS.  "/>
     </mSteps>
-    <mSteps xsi:type="org.onceforall.dms.desktop.logic:MRecordStep" name="Record pre-talk" description="Records the first part of the event. This part will not be published but be burned to CD. It records from the main audio input line to an uncompressed WAV file. Please make sure that the input level will not exceed the maximum." lastStateChangeProperty="2008-08-31T22:57:04.808+0100" mInputSteps="//@mScripts.0/@mSteps.3 //@mScripts.0/@mSteps.1 //@mScripts.0/@mSteps.2" directoryParameter="Recording Files\2007-08-27 Automated test event type" recordingFileParameter="Automated test pre-talk.wav">
+    <mSteps xsi:type="org.onceforall.dms.desktop.logic:MRecordStep" name="Record pre-talk" description="Records the first part of the event. This part will not be published but be burned to CD. It records from the main audio input line to an uncompressed WAV file. Please make sure that the input level will not exceed the maximum." lastStateChangeProperty="2008-11-26T22:20:19.577+0000" mInputSteps="//@mScripts.0/@mSteps.3 //@mScripts.0/@mSteps.1 //@mScripts.0/@mSteps.2" directoryParameter="Recording Files\2007-08-27 Automated test event type" recordingFileParameter="Automated test pre-talk.wav">
       <mNameProperty/>
       <mDescriptionProperty/>
       <mIconFilePathProperty/>
@@ -164,7 +168,7 @@
       <mRecordingFileSizeResult/>
       <mRecordingLengthResult/>
     </mSteps>
-    <mSteps xsi:type="org.onceforall.dms.desktop.logic:MRecordStep" name="Record talk" lastStateChangeProperty="2008-08-31T22:57:06.738+0100" mInputSteps="//@mScripts.0/@mSteps.3 //@mScripts.0/@mSteps.1 //@mScripts.0/@mSteps.2" directoryParameter="Recording Files\2007-08-27 Automated test event type" recordingFileParameter="Automated test talk.wav">
+    <mSteps xsi:type="org.onceforall.dms.desktop.logic:MRecordStep" name="Record talk" lastStateChangeProperty="2008-11-26T22:20:21.455+0000" mInputSteps="//@mScripts.0/@mSteps.3 //@mScripts.0/@mSteps.1 //@mScripts.0/@mSteps.2" directoryParameter="Recording Files\2007-08-27 Automated test event type" recordingFileParameter="Automated test talk.wav">
       <mNameProperty/>
       <mDescriptionProperty/>
       <mIconFilePathProperty/>
@@ -186,7 +190,7 @@
       <mRecordingFileSizeResult/>
       <mRecordingLengthResult/>
     </mSteps>
-    <mSteps xsi:type="org.onceforall.dms.desktop.logic:MRecordStep" name="Record post-talk" description="Records the second part of the event. It records from the main audio input line to an uncompressed WAV file. Please make sure that the input level will not exceed the maximum." lastStateChangeProperty="2008-08-31T22:57:08.737+0100" mInputSteps="//@mScripts.0/@mSteps.3 //@mScripts.0/@mSteps.1 //@mScripts.0/@mSteps.2" directoryParameter="Recording Files\2007-08-27 Automated test event type" recordingFileParameter="Automated test post-talk.wav">
+    <mSteps xsi:type="org.onceforall.dms.desktop.logic:MRecordStep" name="Record post-talk" description="Records the second part of the event. It records from the main audio input line to an uncompressed WAV file. Please make sure that the input level will not exceed the maximum." lastStateChangeProperty="2008-11-26T22:20:23.321+0000" mInputSteps="//@mScripts.0/@mSteps.3 //@mScripts.0/@mSteps.1 //@mScripts.0/@mSteps.2" directoryParameter="Recording Files\2007-08-27 Automated test event type" recordingFileParameter="Automated test post-talk.wav">
       <mNameProperty/>
       <mDescriptionProperty/>
       <mIconFilePathProperty/>
@@ -208,7 +212,7 @@
       <mRecordingFileSizeResult/>
       <mRecordingLengthResult/>
     </mSteps>
-    <mSteps xsi:type="org.onceforall.dms.desktop.logic:MBurnCdStep" simulated="true" lastStateChangeProperty="2008-08-31T22:57:09.767+0100" mInputSteps="//@mScripts.0/@mSteps.6 //@mScripts.0/@mSteps.4 //@mScripts.0/@mSteps.5" burningSoftwareDirectoryPathParameter="..\..\org.onceforall.dms.desktop.ui\dev\Program Files\Nero 6.0\Nero" driveParameter="D" totalRecordingLengthParameter="3042" totalRecordingFileSizeParameter="536708">
+    <mSteps xsi:type="org.onceforall.dms.desktop.logic:MBurnCdStep" simulated="true" lastStateChangeProperty="2008-11-26T22:20:25.985+0000" mInputSteps="//@mScripts.0/@mSteps.6 //@mScripts.0/@mSteps.4 //@mScripts.0/@mSteps.5" burningSoftwareDirectoryPathParameter="..\..\org.onceforall.dms.desktop.ui\dev\Program Files\Nero 6.0\Nero" driveParameter="D" totalRecordingLengthParameter="2880" totalRecordingFileSizeParameter="508036">
       <mNameProperty/>
       <mDescriptionProperty/>
       <mIconFilePathProperty/>
@@ -226,7 +230,7 @@
       <mTotalRecordingLengthParameter/>
       <mTotalRecordingFileSizeParameter/>
     </mSteps>
-    <mSteps xsi:type="org.onceforall.dms.desktop.logic:MConvertToMP3Step" name="Convert WAV recording to MP3" description="Converts a WAV file to MP3 format using the MP3 encoder." lastStateChangeProperty="2008-08-31T22:57:10.371+0100" mInputSteps="//@mScripts.0/@mSteps.5 //@mScripts.0/@mSteps.0" artistParameter="Automated test speaker" titleParameter="Automated test title of talk - Automated test &quot;additional information&quot; on 27 Aug 2007" albumParameter="Automated test event type" yearParameter="2007" mp3FolderReferenceParameter="//@mMp3Folders.0" mp3EntryNameParameter="Automated test event type on 27 Aug 2007" directoryParameter="Recording Files\2007-08-27 Automated test event type" mp3FileNameParameter="Automated_test_title_of_talk_-_Automated_test__additional_information_.mp3" recordingFileParameter="Recording Files\2007-08-27 Automated test event type\Automated test talk.wav" mp3EncoderPathParameter="..\..\org.onceforall.dms.desktop.ui\dev\Program Files\LAME 3.96.1" averageBitRateParameter="64">
+    <mSteps xsi:type="org.onceforall.dms.desktop.logic:MConvertToMP3Step" name="Convert WAV recording to MP3" description="Converts a WAV file to MP3 format using the MP3 encoder." lastStateChangeProperty="2008-11-26T22:20:26.591+0000" mInputSteps="//@mScripts.0/@mSteps.5 //@mScripts.0/@mSteps.0" artistParameter="Automated test speaker" titleParameter="Automated test title of talk - Automated test &quot;additional information&quot; on 27 Aug 2007" albumParameter="Automated test event type" yearParameter="2007" mp3FolderReferenceParameter="//@mMp3Folders.0" mp3EntryNameParameter="Automated test event type on 27 Aug 2007" directoryParameter="Recording Files\2007-08-27 Automated test event type" mp3FileNameParameter="Automated_test_title_of_talk_-_Automated_test__additional_information_.mp3" recordingFileParameter="Recording Files\2007-08-27 Automated test event type\Automated test talk.wav" mp3EncoderPathParameter="..\..\org.onceforall.dms.desktop.ui\dev\Program Files\LAME 3.96.1" averageBitRateParameter="64">
       <mNameProperty/>
       <mDescriptionProperty/>
       <mIconFilePathProperty/>
@@ -253,7 +257,7 @@
       <mMp3EncoderPathParameter mInputValues="//@mMp3EncoderPathProperty"/>
       <mAverageBitRateParameter/>
     </mSteps>
-    <mSteps xsi:type="org.onceforall.dms.desktop.logic:MPublishNewMp3Step" name="Publish talk as MP3" description="Publishes a new MP3 recording to the web site and creates/updates the podcast RSS file accordingly. In order to achieve this, first uploads the MP3 file and than it generates the content web page from the content page header and footer locally. It does the same for the podcast file and then uploads both files replacing the older versions." lastStateChangeProperty="2008-08-31T22:57:15.483+0100" mInputSteps="//@mScripts.0/@mSteps.0 //@mScripts.0/@mSteps.8" ftpServerUrlParameter="ftp://www.onceforall.org" ftpUserNameParameter="www.onceforall.org" ftpUserPasswordParameter="itrustyou" maxiumumDiskSpaceParameter="9" mp3RelativeFtpPathParameter="/dms-desktop/automated-testing" webServerUrlParameter="http://www.onceforall.org" contentPageRelativeFtpPathParameter="/dms-desktop/automated-testing" contentHeaderFilePathParameter="Web Files\recordings-header.html" contentFooterFilePathParameter="Web Files\recordings-footer.html" contentPageFilePathParameter="Web Files\recordings.html" podcastFilePathParameter="Web Files\recordings.xml" podcastRelativeFtpPathParameter="/dms-desktop/automated-testing" podcastHeaderFilePathParameter="Web Files\recordings-header.xml" mp3EntryReferenceParameter="//@mMp3Folders.0/@mMp3s.0" linkTextParameter="Automated test title of talk - Automated test &quot;additional information&quot;" linkDescriptionParameter="27 Aug 2007 - Automated test event type - Automated test speaker" podcastTitleParameter="Automated test title of talk - Automated test &quot;additional information&quot;" podcastSubtitleParameter="27 Aug 2007 - Automated test event type - Automated test speaker" podcastSummaryParameter="Automated test &quot;additional information&quot;">
+    <mSteps xsi:type="org.onceforall.dms.desktop.logic:MPublishNewMp3Step" name="Publish talk as MP3" description="Publishes a new MP3 recording to the web site and creates/updates the podcast RSS file accordingly. In order to achieve this, first uploads the MP3 file and than it generates the content web page from the content page header and footer locally. It does the same for the podcast file and then uploads both files replacing the older versions." lastStateChangeProperty="2008-11-26T22:20:30.672+0000" mInputSteps="//@mScripts.0/@mSteps.0 //@mScripts.0/@mSteps.8" ftpServerUrlParameter="ftp://www.onceforall.org" ftpUserNameParameter="www.onceforall.org" ftpUserPasswordParameter="M3vPeg+oRr9k8xtkFmFbfg==" maxiumumDiskSpaceParameter="8" mp3RelativeFtpPathParameter="/dms-desktop/automated-testing" webServerUrlParameter="http://www.onceforall.org" contentPageRelativeFtpPathParameter="/dms-desktop/automated-testing" contentHeaderFilePathParameter="Web Files\recordings-header.html" contentFooterFilePathParameter="Web Files\recordings-footer.html" contentPageFilePathParameter="Web Files\recordings.html" podcastFilePathParameter="Web Files\recordings.xml" podcastRelativeFtpPathParameter="/dms-desktop/automated-testing" podcastHeaderFilePathParameter="Web Files\recordings-header.xml" mp3EntryReferenceParameter="//@mMp3Folders.0/@mMp3s.0" linkTextParameter="Automated test title of talk - Automated test &quot;additional information&quot;" linkDescriptionParameter="27 Aug 2007 - Automated test event type - Automated test speaker" podcastTitleParameter="Automated test title of talk - Automated test &quot;additional information&quot;" podcastSubtitleParameter="27 Aug 2007 - Automated test event type - Automated test speaker" podcastSummaryParameter="Automated test &quot;additional information&quot;">
       <mNameProperty/>
       <mDescriptionProperty/>
       <mIconFilePathProperty/>
@@ -266,14 +270,14 @@
       <mFtpUserNameParameter mInputValues="//@mFtpUserNameProperty"/>
       <mFtpUserPasswordParameter mInputValues="//@mFtpUserPasswordProperty"/>
       <mMaxiumumDiskSpaceParameter/>
-      <mMp3RelativeFtpPathParameter/>
+      <mMp3RelativeFtpPathParameter mInputValues="//@mMp3RelativeFtpPathProperty"/>
       <mWebServerUrlParameter mInputValues="//@mWebServerUrlProperty"/>
-      <mContentPageRelativeFtpPathParameter/>
+      <mContentPageRelativeFtpPathParameter mInputValues="//@mContentPageRelativeFtpPathProperty"/>
       <mContentHeaderFilePathParameter/>
       <mContentFooterFilePathParameter/>
       <mContentPageFilePathParameter/>
       <mPodcastFilePathParameter/>
-      <mPodcastRelativeFtpPathParameter/>
+      <mPodcastRelativeFtpPathParameter mInputValues="//@mPodcastRelativeFtpPathProperty"/>
       <mPodcastHeaderFilePathParameter/>
       <mContentIncludeMp3PlayerParameter/>
       <mContentGroupRecordingsParameter/>
@@ -289,7 +293,7 @@
       <mPodcastPublishingDateParameter/>
       <mPublishedMp3EntryReferenceResult/>
     </mSteps>
-    <mSteps xsi:type="org.onceforall.dms.desktop.logic:MEmailEventLogStep" lastStateChangeProperty="2008-08-31T22:57:18.324+0100" mInputSteps="//@mScripts.0/@mSteps.0" recordingUsersNameParameter="Automated tester" logFileParameter="Log Files\Logged events (from 31-Aug-2008 22-56-20 onwards).txt" dataFileParameter="Application Data Files\Data.xml" subjectParameter="DMS log of Automated test event type on 27 Aug 2007" smtpServerParameter="post.strato.de" smtpUserNameParameter="dms-testing%onceforall.org" smtpPasswordParameter="M3vPeg+oRr9k8xtkFmFbfg==">
+    <mSteps xsi:type="org.onceforall.dms.desktop.logic:MEmailEventLogStep" lastStateChangeProperty="2008-11-26T22:20:33.591+0000" mInputSteps="//@mScripts.0/@mSteps.0" recordingUsersNameParameter="Automated tester" logFileParameter="Log Files\Logged events (from 26-Nov-2008 22-19-38 onwards).txt" dataFileParameter="Application Data Files\Data.xml" subjectParameter="DMS log of Automated test event type on 27 Aug 2007" smtpServerParameter="post.strato.de" smtpUserNameParameter="dms-testing%onceforall.org" smtpPasswordParameter="M3vPeg+oRr9k8xtkFmFbfg==">
       <mNameProperty/>
       <mDescriptionProperty/>
       <mIconFilePathProperty/>
@@ -307,7 +311,7 @@
       <mSendersEmailAddressParameter/>
       <sendersEmailAddressParameterHistoricValues>automated-tester@onceforall.org</sendersEmailAddressParameterHistoricValues>
       <sendersEmailAddressParameterHistoricValues>automatictester@onceforall.org</sendersEmailAddressParameterHistoricValues>
-      <mReceipientsEmailAddressParameter/>
+      <mReceipientsEmailAddressParameter mInputValues="//@mReceipientsEmailAddressProperty"/>
       <receipientsEmailAddressParameter>dms-testing@onceforall.org</receipientsEmailAddressParameter>
       <receipientsEmailAddressParameter>also-dms-testing@onceforall.org</receipientsEmailAddressParameter>
       <mSmtpServerParameter mInputValues="//@mSmtpServerProperty"/>
@@ -321,7 +325,7 @@
     <mNameProperty/>
     <mDescriptionProperty/>
     <mIconFilePathProperty/>
-    <mSteps xsi:type="org.onceforall.dms.desktop.logic:MUpdatePublishedMp3sStep" name="Republish MP3s" description="Updates the MP3 recordings on the web site and creates/updates the podcast RSS file accordingly. In order to achieve this, it first uploads the MP3 files that are not yet published (and already published ones, depending on the 'Republish MP3 files' parameter) and than it generates the content web page from the content page header and footer locally. It does the same for the podcast file and then uploads both files replacing the older versionsIt reads the states of the MP3 entries to determine whether to publish or unpublish." lastStateChangeProperty="2007-08-17T16:26:08.171+0100" actionName="Republished MP3s" ftpServerUrlParameter="ftp://www.onceforall.org" ftpUserNameParameter="www.onceforall.org" ftpUserPasswordParameter="itrustyou" maxiumumDiskSpaceParameter="200" mp3RelativeFtpPathParameter="/dms-desktop/testing" webServerUrlParameter="http://www.onceforall.org" contentPageRelativeFtpPathParameter="/dms-desktop/testing" contentHeaderFilePathParameter="Web Files\recordings-header.html" contentFooterFilePathParameter="Web Files\recordings-footer.html" contentPageFilePathParameter="Web Files\recordings.html" podcastFilePathParameter="Web Files\recordings.xml" podcastRelativeFtpPathParameter="/dms-desktop/testing" podcastHeaderFilePathParameter="Web Files\recordings-header.xml" mp3FolderReferenceParameter="//@mMp3Folders.0">
+    <mSteps xsi:type="org.onceforall.dms.desktop.logic:MUpdatePublishedMp3sStep" name="Republish MP3s" description="Updates the MP3 recordings on the web site and creates/updates the podcast RSS file accordingly. In order to achieve this, it first uploads the MP3 files that are not yet published (and already published ones, depending on the 'Republish MP3 files' parameter) and than it generates the content web page from the content page header and footer locally. It does the same for the podcast file and then uploads both files replacing the older versionsIt reads the states of the MP3 entries to determine whether to publish or unpublish." lastStateChangeProperty="2007-08-17T16:26:08.171+0100" actionName="Republished MP3s" ftpServerUrlParameter="ftp://www.onceforall.org" ftpUserNameParameter="www.onceforall.org" ftpUserPasswordParameter="M3vPeg+oRr9k8xtkFmFbfg==" maxiumumDiskSpaceParameter="200" mp3RelativeFtpPathParameter="/dms-desktop/testing" webServerUrlParameter="http://www.onceforall.org" contentPageRelativeFtpPathParameter="/dms-desktop/testing" contentHeaderFilePathParameter="Web Files\recordings-header.html" contentFooterFilePathParameter="Web Files\recordings-footer.html" contentPageFilePathParameter="Web Files\recordings.html" podcastFilePathParameter="Web Files\recordings.xml" podcastRelativeFtpPathParameter="/dms-desktop/testing" podcastHeaderFilePathParameter="Web Files\recordings-header.xml" mp3FolderReferenceParameter="//@mMp3Folders.0">
       <mNameProperty/>
       <mDescriptionProperty/>
       <mIconFilePathProperty/>
@@ -334,14 +338,14 @@
       <mFtpUserNameParameter mInputValues="//@mFtpUserNameProperty"/>
       <mFtpUserPasswordParameter mInputValues="//@mFtpUserPasswordProperty"/>
       <mMaxiumumDiskSpaceParameter/>
-      <mMp3RelativeFtpPathParameter/>
+      <mMp3RelativeFtpPathParameter mInputValues="//@mMp3RelativeFtpPathProperty"/>
       <mWebServerUrlParameter mInputValues="//@mWebServerUrlProperty"/>
-      <mContentPageRelativeFtpPathParameter/>
+      <mContentPageRelativeFtpPathParameter mInputValues="//@mContentPageRelativeFtpPathProperty"/>
       <mContentHeaderFilePathParameter/>
       <mContentFooterFilePathParameter/>
       <mContentPageFilePathParameter/>
       <mPodcastFilePathParameter/>
-      <mPodcastRelativeFtpPathParameter/>
+      <mPodcastRelativeFtpPathParameter mInputValues="//@mPodcastRelativeFtpPathProperty"/>
       <mPodcastHeaderFilePathParameter/>
       <mContentIncludeMp3PlayerParameter/>
       <mContentGroupRecordingsParameter/>
@@ -351,7 +355,7 @@
       <mMp3FolderReferenceParameter/>
       <mMp3FolderReferenceResult/>
     </mSteps>
-    <mMp3s name="Automated test event type on 27 Aug 2007" lastStateChangeProperty="2008-08-31T22:57:13.524+0100" stateProperty="Published" fileProperty="Recording Files\2007-08-27 Automated test event type\Automated_test_title_of_talk_-_Automated_test__additional_information_.mp3" linkTextProperty="Automated test title of talk - Automated test &quot;additional information&quot;" linkDescriptionProperty="27 Aug 2007 - Automated test event type - Automated test speaker" commentProperty="Automated test comment" podcastTitleProperty="Automated test title of talk - Automated test &quot;additional information&quot;" podcastSubtitleProperty="27 Aug 2007 - Automated test event type - Automated test speaker" podcastSummaryProperty="Automated test &quot;additional information&quot;" podcastPublishingDateProperty="2008-08-31T22:56:20.561+0100" publishedFileNameProperty="Automated_test_title_of_talk_-_Automated_test__additional_information_.mp3">
+    <mMp3s name="Automated test event type on 27 Aug 2007" lastStateChangeProperty="2008-11-26T22:20:29.909+0000" stateProperty="Published" fileProperty="Recording Files\2007-08-27 Automated test event type\Automated_test_title_of_talk_-_Automated_test__additional_information_.mp3" linkTextProperty="Automated test title of talk - Automated test &quot;additional information&quot;" linkDescriptionProperty="27 Aug 2007 - Automated test event type - Automated test speaker" commentProperty="Automated test comment" podcastTitleProperty="Automated test title of talk - Automated test &quot;additional information&quot;" podcastSubtitleProperty="27 Aug 2007 - Automated test event type - Automated test speaker" podcastSummaryProperty="Automated test &quot;additional information&quot;" podcastPublishingDateProperty="2008-11-26T22:19:39.262+0000" publishedFileNameProperty="Automated_test_title_of_talk_-_Automated_test__additional_information_.mp3">
       <mNameProperty/>
       <mDescriptionProperty/>
       <mIconFilePathProperty/>
