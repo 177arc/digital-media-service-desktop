@@ -28,7 +28,7 @@ $Moved to EMF model-based application.
 	<property name="ui.bin" location="./bin" />
 	<property name="ui.config.testEnv" location="./config/test" />
 	<property name="ui.config.deployEnv" location="./config/deploy" />
-	<property name="ui.buildInfoProperties" location="${ui.src}/build-info.properties" />
+	<property name="ui.buildInfoProperties" location="${core.src}/build-info.properties" />
 
 	<property name="testEnv" location="test" />
 	<property name="testEnv.webFiles" location="${testEnv}/Web Files" />
