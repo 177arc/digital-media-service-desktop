@@ -298,7 +298,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="dataFileProperty" lowerBound="1"
         eType="#//MExistingFile" changeable="false" transient="true" defaultValueLiteral="Application Data Files\Data.xml"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="infoWebPageProperty" lowerBound="1"
-        eType="#//MUrl" changeable="true" transient="true" defaultValueLiteral="http://www.onceforall.org/dms-desktop/info.html"/>
+        eType="#//MUrl" changeable="true" transient="false" defaultValueLiteral="http://www.onceforall.org/dms-desktop/info.php"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="mInfoWebPageProperty" lowerBound="1"
         eType="#//MProperty" containment="true"
         resolveProxies="false">
