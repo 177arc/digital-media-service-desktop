@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Revision History:
+  $Log: Migrate\040MP3\040entries.xml,v $
+  Revision 1.2  2006/09/19 12:51:08  marc
+  Updated to checkpoint progress.
+
+  Revision 1.1  2006/08/29 00:42:21  marc
+  Added initial revision.
+
+  Revision 1.1  2006/08/28 04:22:36  marc
+  Added initial revision.
+ 
+-->
+<project name="Migrate MP3 entries" default="Migrate MP3 entries" basedir=".">
+  <!-- Sets global properties. -->
+  <property name="Input file" location="./Data.xml"/>
+  <property name="Output file" location="./Migrated MP3 entries.xml"/>
+  <property name="Stylesheet" location="./MP3 entry migration.xslt"/>
+	
+	<target name="Migrate MP3 entries" description="Converts the MP3 entries from old application data format to the new format. It does not convert other application data.">
+		<xslt in="${Input file}" out="${Output file}" style="${Stylesheet}"/>
+	</target>
+
+	 
+	<target name="Validate MP3 entries" description="Validates the migrated MP3 entries.">
+    <xmlvalidate file="${Output file}">
+       <attribute name="http://xml.org/sax/features/validation" value="true"/>
+       <attribute name="http://apache.org/xml/features/validation/schema"  value="true"/>
+       <attribute name="http://xml.org/sax/features/namespaces"/>	
+    	<property
+    	   name="http://apache.org/xml/properties/schema/external-noNamespaceSchemaLocation"
+    	   value="Test.xsd"/>
+    </xmlvalidate>
+	</target>
+</project>

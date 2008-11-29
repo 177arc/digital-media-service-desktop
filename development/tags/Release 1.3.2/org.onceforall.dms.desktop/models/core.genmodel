@@ -1,0 +1,482 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" copyrightText="Copyright 2007, Marc Maier"
+    modelDirectory="/org.onceforall.dms.desktop/src" editDirectory="/org.onceforall.dms.desktop.edit/src"
+    modelPluginID="org.onceforall.dms.desktop" templateDirectory="/org.onceforall.dms.desktop/templates"
+    dynamicTemplates="true" redirection="" modelName="DMSDesktop" modelPluginClass=""
+    rootExtendsInterface="org.onceforall.dms.desktop.notify.ThreadAdapter" rootImplementsInterface=""
+    suppressInterfaces="true" featureMapWrapperInterface="" featureMapWrapperInternalInterface=""
+    featureMapWrapperClass="" richClientPlatform="true" testsDirectory="" testSuiteClass=""
+    booleanFlagsField="" importerID="org.eclipse.emf.importer.ecore">
+  <foreignModel>core.ecore</foreignModel>
+  <genPackages prefix="Logic" basePackage="org.onceforall.dms.desktop" resource="XMI"
+      disposableProviderFactory="true" utilityPackageSuffix="" multipleEditorPages="false"
+      ecorePackage="core.ecore#/">
+    <genClasses ecoreClass="core.ecore#//MObject">
+      <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference core.ecore#//MObject/mNameProperty"/>
+      <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference core.ecore#//MObject/mDescriptionProperty"/>
+      <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference core.ecore#//MObject/mIconFilePathProperty"/>
+      <genFeatures property="None" notify="false" createChild="false" propertyCategory=""
+          propertySortChoices="true" ecoreFeature="ecore:EReference core.ecore#//MObject/fixedMProperties"/>
+      <genFeatures property="None" notify="false" createChild="false" propertyCategory=""
+          propertySortChoices="true" ecoreFeature="ecore:EReference core.ecore#//MObject/fixedMSteps"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="core.ecore#//MElement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MElement/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MElement/typeName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MElement/typeNameForUI"/>
+      <genFeatures property="None" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MElement/nameForUI"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MElement/description"/>
+      <genFeatures property="None" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MElement/descriptionForUI"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MElement/iconFilePath"/>
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MElement/overlayIconFilePath"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MElement/compositeClassName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MElement/simulated"/>
+    </genClasses>
+    <genClasses ecoreClass="core.ecore#//MParameter"/>
+    <genClasses ecoreClass="core.ecore#//MProperty"/>
+    <genClasses ecoreClass="core.ecore#//MResult"/>
+    <genClasses image="false" ecoreClass="core.ecore#//MStatefulObject">
+      <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference core.ecore#//MStatefulObject/mStateProperty"/>
+      <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference core.ecore#//MStatefulObject/mLastStateChangeProperty"/>
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MStatefulObject/lastStateChangeProperty"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="core.ecore#//MStep">
+      <genFeatures notify="false" children="true" createChild="true" propertySortChoices="true"
+          ecoreFeature="ecore:EReference core.ecore#//MStep/mInputSteps"/>
+      <genFeatures property="None" notify="false" createChild="false" propertySortChoices="true"
+          ecoreFeature="ecore:EReference core.ecore#//MStep/fixedMParameters"/>
+      <genFeatures property="None" notify="false" createChild="false" propertySortChoices="true"
+          ecoreFeature="ecore:EReference core.ecore#//MStep/fixedMResults"/>
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MStep/stateProperty"/>
+      <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference core.ecore#//MStep/mProgressProperty"/>
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MStep/progressProperty"/>
+      <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference core.ecore#//MStep/mProgressStatusProperty"/>
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MStep/progressStatusProperty"/>
+      <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference core.ecore#//MStep/mStartTriggerProperty"/>
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MStep/startTriggerProperty"/>
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MStep/interruptable"/>
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MStep/stoppable"/>
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MStep/terminatable"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MStep/actionName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MStep/actionIconFilePath"/>
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MStep/exception"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="core.ecore#//MValue">
+      <genFeatures notify="false" children="true" createChild="true" propertySortChoices="true"
+          ecoreFeature="ecore:EReference core.ecore#//MValue/mInputValues"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MValue/valueForUI"/>
+      <genFeatures property="None" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MValue/value"/>
+      <genFeatures property="None" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MValue/historicValues"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MValue/historicValuesForUI"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MValue/readOnly"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="core.ecore#//MApplication">
+      <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference core.ecore#//MApplication/mDataFileProperty"/>
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MApplication/dataFileProperty"/>
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MApplication/dataFilePropertyHistoricValues"/>
+      <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference core.ecore#//MApplication/mLogFileProperty"/>
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MApplication/logFileProperty"/>
+      <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference core.ecore#//MApplication/mPathProperty"/>
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MApplication/pathProperty"/>
+      <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference core.ecore#//MApplication/mVersionProperty"/>
+      <genFeatures property="Readonly" createChild="false" propertyCategory="" ecoreFeature="ecore:EAttribute core.ecore#//MApplication/versionProperty"/>
+      <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference core.ecore#//MDmsApplication/MLastSaveProperty"/>
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MDmsApplication/lastSaveProperty"/>
+    </genClasses>
+    <genClasses ecoreClass="core.ecore#//MScript">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference core.ecore#//MScript/mSteps"/>
+    </genClasses>
+    <genDataTypes ecoreDataType="core.ecore#//MDirectory"/>
+    <genDataTypes ecoreDataType="core.ecore#//MExistingDirectory"/>
+    <genDataTypes ecoreDataType="core.ecore#//MFile"/>
+    <genDataTypes ecoreDataType="core.ecore#//MExistingFile"/>
+    <genDataTypes ecoreDataType="core.ecore#//MState"/>
+    <genDataTypes ecoreDataType="core.ecore#//MStepState"/>
+    <genDataTypes ecoreDataType="core.ecore#//MBoolean"/>
+    <genDataTypes ecoreDataType="core.ecore#//MDateTime"/>
+    <genDataTypes ecoreDataType="core.ecore#//MDate"/>
+    <genDataTypes ecoreDataType="core.ecore#//MTime"/>
+    <genDataTypes ecoreDataType="core.ecore#//MDuration"/>
+    <genDataTypes ecoreDataType="core.ecore#//MLong"/>
+    <genDataTypes ecoreDataType="core.ecore#//MPassword"/>
+    <genDataTypes ecoreDataType="core.ecore#//MString"/>
+    <genDataTypes ecoreDataType="core.ecore#//MUrl"/>
+    <genDataTypes ecoreDataType="core.ecore#//EThrowable"/>
+    <genDataTypes ecoreDataType="core.ecore#//MMp3State"/>
+    <genClasses ecoreClass="core.ecore#//MDmsApplication">
+       <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference core.ecore#//MDmsApplication/MServiceFilePathProperty"/>
+       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MDmsApplication/serviceFilePathProperty"/>
+       <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference core.ecore#//MDmsApplication/MWwxFilesPathProperty"/>
+       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MDmsApplication/wwxFilesPathProperty"/>
+       <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference core.ecore#//MDmsApplication/MMp3EncoderPathProperty"/>
+       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MDmsApplication/mp3EncoderPathProperty"/>
+       <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference core.ecore#//MDmsApplication/MFtpServerUrlProperty"/>
+       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MDmsApplication/ftpServerUrlProperty"/>
+       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MDmsApplication/ftpServerUrlPropertyHistoricValues"/>
+       <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference core.ecore#//MDmsApplication/MFtpUserNameProperty"/>
+       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MDmsApplication/ftpUserNameProperty"/>
+       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MDmsApplication/ftpUserNamePropertyHistoricValues"/>
+       <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference core.ecore#//MDmsApplication/MFtpUserPasswordProperty"/>
+       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MDmsApplication/ftpUserPasswordProperty"/>
+       <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference core.ecore#//MDmsApplication/MMp3RelativeFtpPathProperty"/>
+       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MDmsApplication/mp3RelativeFtpPathProperty"/>
+       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MDmsApplication/mp3RelativeFtpPathPropertyHistoricValues"/>
+       <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference core.ecore#//MDmsApplication/MContentPageRelativeFtpPathProperty"/>
+       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MDmsApplication/contentPageRelativeFtpPathProperty"/>
+       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MDmsApplication/contentPageRelativeFtpPathPropertyHistoricValues"/>
+       <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference core.ecore#//MDmsApplication/MPodcastRelativeFtpPathProperty"/>
+       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MDmsApplication/podcastRelativeFtpPathProperty"/>
+       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MDmsApplication/podcastRelativeFtpPathPropertyHistoricValues"/>
+       <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference core.ecore#//MDmsApplication/MWebServerUrlProperty"/>
+       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MDmsApplication/webServerUrlProperty"/>
+       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MDmsApplication/webServerUrlPropertyHistoricValues"/>
+       <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference core.ecore#//MDmsApplication/MSmtpServerProperty"/>
+       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MDmsApplication/smtpServerProperty"/>
+       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MDmsApplication/smtpServerPropertyHistoricValues"/>
+       <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference core.ecore#//MDmsApplication/MSmtpUserNameProperty"/>
+       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MDmsApplication/smtpUserNameProperty"/>
+       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MDmsApplication/smtpUserNamePropertyHistoricValues"/>
+       <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference core.ecore#//MDmsApplication/MSmtpPasswordProperty"/>
+       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MDmsApplication/smtpPasswordProperty"/>
+       <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference core.ecore#//MDmsApplication/MReceipientsEmailAddressProperty"/>
+       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MDmsApplication/receipientsEmailAddressProperty"/>
+       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MDmsApplication/receipientsEmailAddressPropertyHistoricValues"/>
+       <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference core.ecore#//MDmsApplication/MBurningSoftwareDirectoryPathProperty"/>
+       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MDmsApplication/burningSoftwareDirectoryPathProperty"/>
+       <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference core.ecore#//MDmsApplication/MDriveProperty"/>
+       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MDmsApplication/driveProperty"/>
+       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MDmsApplication/drivePropertyHistoricValues"/>
+       <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference core.ecore#//MDmsApplication/MUpgradeMessageProperty"/>
+       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MDmsApplication/upgradeMessageProperty"/>
+       <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference core.ecore#//MDmsApplication/MUpgradeRelativeFtpPathProperty"/>
+       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MDmsApplication/upgradeRelativeFtpPathProperty"/>
+       <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference core.ecore#//MDmsApplication/MLastUpgradeProperty"/>
+       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MDmsApplication/lastUpgradeProperty"/>
+       <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference core.ecore#//MDmsApplication/MOrganisationProperty"/>
+       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MDmsApplication/organisationProperty"/>
+       <genFeatures property="None" createChild="true" children="true" ecoreFeature="ecore:EReference core.ecore#//MDmsApplication/mScripts"/>
+       <genFeatures property="None" createChild="true" children="true" ecoreFeature="ecore:EReference core.ecore#//MDmsApplication/mMp3Folders"/>
+    </genClasses>
+    <genClasses ecoreClass="core.ecore#//MDmsApplication/MGetDataUpgradeInfoStep">
+       <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference core.ecore#//MDmsApplication/MGetDataUpgradeInfoStep/MUpgradeRelativeFtpPathProperty"/>
+       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MDmsApplication/MGetDataUpgradeInfoStep/upgradeRelativeFtpPathProperty"/>
+       <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference core.ecore#//MDmsApplication/MGetDataUpgradeInfoStep/MUpgradeAvailableResult"/>
+       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MDmsApplication/MGetDataUpgradeInfoStep/upgradeAvailableResult"/>
+       <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference core.ecore#//MDmsApplication/MGetDataUpgradeInfoStep/MUpgradeMessageResult"/>
+       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MDmsApplication/MGetDataUpgradeInfoStep/upgradeMessageResult"/>
+       <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference core.ecore#//MDmsApplication/MGetDataUpgradeInfoStep/MUpgradeDateResult"/>
+       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MDmsApplication/MGetDataUpgradeInfoStep/upgradeDateResult"/>
+    </genClasses>
+    <genClasses ecoreClass="core.ecore#//MDmsApplication/MUpgradeDataStep">
+       <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference core.ecore#//MDmsApplication/MUpgradeDataStep/MUpgradeRelativeFtpPathProperty"/>
+       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MDmsApplication/MUpgradeDataStep/upgradeRelativeFtpPathProperty"/>
+       <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference core.ecore#//MDmsApplication/MUpgradeDataStep/MUpgradeMessageParameter"/>
+       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MDmsApplication/MUpgradeDataStep/upgradeMessageParameter"/>
+       <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference core.ecore#//MDmsApplication/MUpgradeDataStep/MUpgradeDateParameter"/>
+       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MDmsApplication/MUpgradeDataStep/upgradeDateParameter"/>
+    </genClasses>
+    <genClasses ecoreClass="core.ecore#//MEnterInformationStep">
+    </genClasses>
+    <genClasses ecoreClass="core.ecore#//MEnterWwxInformationStep">
+       <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference core.ecore#//MEnterWwxInformationStep/mWwxDateParameter"/>
+       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MEnterWwxInformationStep/wwxDateParameter"/>
+       <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference core.ecore#//MEnterWwxInformationStep/mTitleOfTalkParameter"/>
+       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MEnterWwxInformationStep/titleOfTalkParameter"/>
+       <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference core.ecore#//MEnterWwxInformationStep/mSpeakersNameParameter"/>
+       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MEnterWwxInformationStep/speakersNameParameter"/>
+       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MEnterWwxInformationStep/speakersNameParameterHistoricValues"/>
+       <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference core.ecore#//MEnterWwxInformationStep/mFirstPartParameter"/>
+       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MEnterWwxInformationStep/firstPartParameter"/>
+       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MEnterWwxInformationStep/firstPartParameterHistoricValues"/>
+       <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference core.ecore#//MEnterWwxInformationStep/mSecondPartParameter"/>
+       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MEnterWwxInformationStep/secondPartParameter"/>
+       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MEnterWwxInformationStep/secondPartParameterHistoricValues"/>
+       <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference core.ecore#//MEnterWwxInformationStep/mRecordingUsersNameParameter"/>
+       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MEnterWwxInformationStep/recordingUsersNameParameter"/>
+       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MEnterWwxInformationStep/recordingUsersNameParameterHistoricValues"/>
+       <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference core.ecore#//MEnterWwxInformationStep/mWwxDateResult"/>
+       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MEnterWwxInformationStep/wwxDateResult"/>
+       <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference core.ecore#//MEnterWwxInformationStep/mTitleOfTalkResult"/>
+       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MEnterWwxInformationStep/titleOfTalkResult"/>
+       <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference core.ecore#//MEnterWwxInformationStep/MSpeakersNameResult"/>
+       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MEnterWwxInformationStep/speakersNameResult"/>
+       <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference core.ecore#//MEnterWwxInformationStep/mFirstPartResult"/>
+       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MEnterWwxInformationStep/firstPartResult"/>
+       <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference core.ecore#//MEnterWwxInformationStep/mSecondPartResult"/>
+       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MEnterWwxInformationStep/secondPartResult"/>
+       <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference core.ecore#//MEnterWwxInformationStep/MRecordingUsersNameResult"/>
+       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MEnterWwxInformationStep/recordingUsersNameResult"/>
+    </genClasses>
+    <genClasses ecoreClass="core.ecore#//MEnterServiceInformationStep">
+       <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference core.ecore#//MEnterServiceInformationStep/mServiceDateParameter"/>
+       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MEnterServiceInformationStep/serviceDateParameter"/>
+       <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference core.ecore#//MEnterServiceInformationStep/mServiceTypeParameter"/>
+       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MEnterServiceInformationStep/serviceTypeParameter"/>
+       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MEnterServiceInformationStep/serviceTypeParameterHistoricValues"/>
+       <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference core.ecore#//MEnterServiceInformationStep/mTitleOfTalkParameter"/>
+       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MEnterServiceInformationStep/titleOfTalkParameter"/>
+       <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference core.ecore#//MEnterServiceInformationStep/mReadingParameter"/>
+       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MEnterServiceInformationStep/readingParameter"/>
+       <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference core.ecore#//MEnterServiceInformationStep/mSpeakersNameParameter"/>
+       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MEnterServiceInformationStep/speakersNameParameter"/>
+       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MEnterServiceInformationStep/speakersNameParameterHistoricValues"/>
+       <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference core.ecore#//MEnterServiceInformationStep/mRecordingUsersNameParameter"/>
+       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MEnterServiceInformationStep/recordingUsersNameParameter"/>
+       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MEnterServiceInformationStep/recordingUsersNameParameterHistoricValues"/>
+       <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference core.ecore#//MEnterServiceInformationStep/mServiceDateResult"/>
+       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MEnterServiceInformationStep/serviceDateResult"/>
+       <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference core.ecore#//MEnterServiceInformationStep/mServiceTypeResult"/>
+       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MEnterServiceInformationStep/serviceTypeResult"/>
+       <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference core.ecore#//MEnterServiceInformationStep/mTitleOfTalkResult"/>
+       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MEnterServiceInformationStep/titleOfTalkResult"/>
+       <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference core.ecore#//MEnterServiceInformationStep/mReadingResult"/>
+       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MEnterServiceInformationStep/readingResult"/>
+       <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference core.ecore#//MEnterServiceInformationStep/mSpeakersNameResult"/>
+       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MEnterServiceInformationStep/speakersNameResult"/>
+       <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference core.ecore#//MEnterServiceInformationStep/mRecordingUsersNameResult"/>
+       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MEnterServiceInformationStep/recordingUsersNameResult"/>
+    </genClasses>
+    <genClasses ecoreClass="core.ecore#//MCreateDirectoryStep">
+       <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference core.ecore#//MCreateDirectoryStep/MParentDirectoryParameter"/>
+       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MCreateDirectoryStep/parentDirectoryParameter"/>
+       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MCreateDirectoryStep/parentDirectoryParameterHistoricValues"/>
+       <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference core.ecore#//MCreateDirectoryStep/MDirectoryNameParameter"/>
+       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MCreateDirectoryStep/directoryNameParameter"/>
+       <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference core.ecore#//MCreateDirectoryStep/MDirectoryResult"/>
+       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MCreateDirectoryStep/directoryResult"/>
+    </genClasses>
+    <genClasses ecoreClass="core.ecore#//MCheckFreeDiskSpaceStep">
+       <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference core.ecore#//MCheckFreeDiskSpaceStep/MRequiredFreeDiskSpaceParameter"/>
+       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MCheckFreeDiskSpaceStep/requiredFreeDiskSpaceParameter"/>
+       <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference core.ecore#//MCheckFreeDiskSpaceStep/mDirectoryParameter"/>
+       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MCheckFreeDiskSpaceStep/directoryParameter"/>
+       <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference core.ecore#//MCheckFreeDiskSpaceStep/MFreeDiskSpaceResult"/>
+       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MCheckFreeDiskSpaceStep/freeDiskSpaceResult"/>
+    </genClasses>
+    <genClasses ecoreClass="core.ecore#//MAudioStep">
+       <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference core.ecore#//MAudioStep/mLeftInputLevelProperty"/>
+       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MAudioStep/leftInputLevelProperty"/>
+       <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference core.ecore#//MAudioStep/mRightInputLevelProperty"/>
+       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MAudioStep/rightInputLevelProperty"/>
+       <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference core.ecore#//MAudioStep/mLeftInputDistortionProperty"/>
+       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MAudioStep/leftInputDistortionProperty"/>
+       <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference core.ecore#//MAudioStep/mRightInputDistortionProperty"/>
+       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MAudioStep/rightInputDistortionProperty"/>
+       <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference core.ecore#//MAudioStep/mUseDbProperty"/>
+       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MAudioStep/useDbProperty"/>
+       <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference core.ecore#//MAudioStep/mHeadroomProperty"/>
+       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MAudioStep/headroomProperty"/>
+    </genClasses>
+    <genClasses ecoreClass="core.ecore#//MCheckInputLevelsStep">
+    </genClasses>
+    <genClasses ecoreClass="core.ecore#//MRecordStep">
+       <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference core.ecore#//MRecordStep/mRecordingLengthProperty"/>
+       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MRecordStep/recordingLengthProperty"/>
+       <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference core.ecore#//MRecordStep/mDirectoryParameter"/>
+       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MRecordStep/directoryParameter"/>
+       <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference core.ecore#//MRecordStep/mRecordingFileParameter"/>
+       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MRecordStep/recordingFileParameter"/>
+       <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference core.ecore#//MRecordStep/mRecordingFileResult"/>
+       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MRecordStep/recordingFileResult"/>
+       <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference core.ecore#//MRecordStep/mRecordingFileSizeResult"/>
+       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MRecordStep/recordingFileSizeResult"/>
+       <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference core.ecore#//MRecordStep/mRecordingLengthResult"/>
+       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MRecordStep/recordingLengthResult"/>
+    </genClasses>
+    <genClasses ecoreClass="core.ecore#//MConvertToMP3Step">
+       <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference core.ecore#//MConvertToMP3Step/mDirectoryParameter"/>
+       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MConvertToMP3Step/directoryParameter"/>
+       <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference core.ecore#//MConvertToMP3Step/mMp3FileNameParameter"/>
+       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MConvertToMP3Step/mp3FileNameParameter"/>
+       <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference core.ecore#//MConvertToMP3Step/mRecordingFileParameter"/>
+       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MConvertToMP3Step/recordingFileParameter"/>
+       <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference core.ecore#//MConvertToMP3Step/mMp3EncoderPathParameter"/>
+       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MConvertToMP3Step/mp3EncoderPathParameter"/>
+       <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference core.ecore#//MConvertToMP3Step/mAverageBitRateParameter"/>
+       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MConvertToMP3Step/averageBitRateParameter"/>
+    </genClasses>
+    <genClasses ecoreClass="core.ecore#//MPublishMp3sStep">
+       <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference core.ecore#//MPublishMp3sStep/MMaxiumumDiskSpaceParameter"/>
+       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MPublishMp3sStep/maxiumumDiskSpaceParameter"/>
+       <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference core.ecore#//MPublishMp3sStep/MMp3RelativeFtpPathParameter"/>
+       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MPublishMp3sStep/mp3RelativeFtpPathParameter"/>
+       <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference core.ecore#//MPublishMp3sStep/MWebServerUrlParameter"/>
+       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MPublishMp3sStep/webServerUrlParameter"/>
+       <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference core.ecore#//MPublishMp3sStep/MContentPageRelativeFtpPathParameter"/>
+       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MPublishMp3sStep/contentPageRelativeFtpPathParameter"/>
+       <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference core.ecore#//MPublishMp3sStep/MContentHeaderFilePathParameter"/>
+       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MPublishMp3sStep/contentHeaderFilePathParameter"/>
+       <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference core.ecore#//MPublishMp3sStep/MContentFooterFilePathParameter"/>
+       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MPublishMp3sStep/contentFooterFilePathParameter"/>
+       <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference core.ecore#//MPublishMp3sStep/MContentPageFilePathParameter"/>
+       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MPublishMp3sStep/contentPageFilePathParameter"/>
+       <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference core.ecore#//MPublishMp3sStep/MPodcastFilePathParameter"/>
+       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MPublishMp3sStep/podcastFilePathParameter"/>
+       <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference core.ecore#//MPublishMp3sStep/MPodcastRelativeFtpPathParameter"/>
+       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MPublishMp3sStep/podcastRelativeFtpPathParameter"/>
+       <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference core.ecore#//MPublishMp3sStep/MPodcastHeaderFilePathParameter"/>
+       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MPublishMp3sStep/podcastHeaderFilePathParameter"/>
+       <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference core.ecore#//MPublishMp3sStep/MContentIncludeMp3PlayerParameter"/>
+       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MPublishMp3sStep/contentIncludeMp3PlayerParameter"/>
+       <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference core.ecore#//MPublishMp3sStep/MContentGroupRecordingsParameter"/>
+       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MPublishMp3sStep/contentGroupRecordingsParameter"/>
+       <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference core.ecore#//MPublishMp3sStep/MContentPageUrlResult"/>
+       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MPublishMp3sStep/contentPageUrlResult"/>
+       <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference core.ecore#//MPublishMp3sStep/MPodcastFileUrlResult"/>
+       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MPublishMp3sStep/podcastFileUrlResult"/>
+    </genClasses>
+    <genClasses ecoreClass="core.ecore#//MUpdatePublishedMp3sStep">
+       <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference core.ecore#//MUpdatePublishedMp3sStep/MRepublishMp3Files"/>
+       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MUpdatePublishedMp3sStep/republishMp3Files"/>
+       <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference core.ecore#//MUpdatePublishedMp3sStep/MMp3FolderReferenceParameter"/>
+       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EReference core.ecore#//MUpdatePublishedMp3sStep/mp3FolderReferenceParameter"/>
+       <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference core.ecore#//MUpdatePublishedMp3sStep/MMp3FolderReferenceResult"/>
+       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EReference core.ecore#//MUpdatePublishedMp3sStep/mp3FolderReferenceResult"/>
+    </genClasses>
+    <genClasses ecoreClass="core.ecore#//MPublishNewMp3Step">
+       <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference core.ecore#//MPublishNewMp3Step/MMp3EntryReferenceParameter"/>
+       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EReference core.ecore#//MPublishNewMp3Step/mp3EntryReferenceParameter"/>
+       <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference core.ecore#//MPublishNewMp3Step/MLinkTextParameter"/>
+       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MPublishNewMp3Step/linkTextParameter"/>
+       <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference core.ecore#//MPublishNewMp3Step/MLinkDescriptionParameter"/>
+       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MPublishNewMp3Step/linkDescriptionParameter"/>
+       <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference core.ecore#//MPublishNewMp3Step/MCommentParameter"/>
+       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MPublishNewMp3Step/commentParameter"/>
+       <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference core.ecore#//MPublishNewMp3Step/MPodcastTitleParameter"/>
+       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MPublishNewMp3Step/podcastTitleParameter"/>
+       <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference core.ecore#//MPublishNewMp3Step/MPodcastSubtitleParameter"/>
+       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MPublishNewMp3Step/podcastSubtitleParameter"/>
+       <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference core.ecore#//MPublishNewMp3Step/MPodcastSummaryParameter"/>
+       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MPublishNewMp3Step/podcastSummaryParameter"/>
+       <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference core.ecore#//MPublishNewMp3Step/MPodcastPublishingDateParameter"/>
+       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MPublishNewMp3Step/podcastPublishingDateParameter"/>
+       <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference core.ecore#//MPublishNewMp3Step/MPublishedMp3EntryReferenceResult"/>
+       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EReference core.ecore#//MPublishNewMp3Step/publishedMp3EntryReferenceResult"/>
+    </genClasses>
+    <genClasses ecoreClass="core.ecore#//MEmailEventLogStep">
+       <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference core.ecore#//MEmailEventLogStep/MRecordingUsersNameParameter"/>
+       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MEmailEventLogStep/recordingUsersNameParameter"/>
+       <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference core.ecore#//MEmailEventLogStep/MCommentParameter"/>
+       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MEmailEventLogStep/commentParameter"/>
+       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MEmailEventLogStep/commentParameterHistoricValues"/>
+       <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference core.ecore#//MEmailEventLogStep/MLogFileParameter"/>
+       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MEmailEventLogStep/logFileParameter"/>
+       <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference core.ecore#//MEmailEventLogStep/MDataFileParameter"/>
+       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MEmailEventLogStep/dataFileParameter"/>
+       <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference core.ecore#//MEmailEventLogStep/MSubjectParameter"/>
+       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MEmailEventLogStep/subjectParameter"/>
+       <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference core.ecore#//MEmailEventLogStep/MSendersEmailAddressParameter"/>
+       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MEmailEventLogStep/sendersEmailAddressParameter"/>
+       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MEmailEventLogStep/sendersEmailAddressParameterHistoricValues"/>
+       <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference core.ecore#//MEmailEventLogStep/MReceipientsEmailAddressParameter"/>
+       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MEmailEventLogStep/receipientsEmailAddressParameter"/>
+       <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference core.ecore#//MEmailEventLogStep/MSmtpServerParameter"/>
+       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MEmailEventLogStep/smtpServerParameter"/>
+       <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference core.ecore#//MEmailEventLogStep/MSmtpUserNameParameter"/>
+       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MEmailEventLogStep/smtpUserNameParameter"/>
+       <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference core.ecore#//MEmailEventLogStep/MSmtpPasswordParameter"/>
+       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MEmailEventLogStep/smtpPasswordParameter"/>
+    </genClasses>
+    <genClasses ecoreClass="core.ecore#//MMp3Folder">
+       <genFeatures property="None" createChild="true" children="true" ecoreFeature="ecore:EReference core.ecore#//MMp3Folder/mSteps"/>
+       <genFeatures property="None" createChild="true" children="true" ecoreFeature="ecore:EReference core.ecore#//MMp3Folder/mMp3s"/>
+    </genClasses>
+    <genClasses ecoreClass="core.ecore#//MMp3">
+       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MMp3/stateProperty"/>
+       <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference core.ecore#//MMp3/MFileProperty"/>
+       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MMp3/fileProperty"/>
+       <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference core.ecore#//MMp3/MLinkTextProperty"/>
+       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MMp3/linkTextProperty"/>
+       <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference core.ecore#//MMp3/MLinkDescriptionProperty"/>
+       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MMp3/linkDescriptionProperty"/>
+       <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference core.ecore#//MMp3/MCommentProperty"/>
+       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MMp3/commentProperty"/>
+       <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference core.ecore#//MMp3/MPodcastTitleProperty"/>
+       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MMp3/podcastTitleProperty"/>
+       <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference core.ecore#//MMp3/MPodcastSubtitleProperty"/>
+       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MMp3/podcastSubtitleProperty"/>
+       <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference core.ecore#//MMp3/MPodcastSummaryProperty"/>
+       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MMp3/podcastSummaryProperty"/>
+       <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference core.ecore#//MMp3/MPodcastPublishingDateProperty"/>
+       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MMp3/podcastPublishingDateProperty"/>
+       <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference core.ecore#//MMp3/MPublishedFileNameProperty"/>
+       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MMp3/publishedFileNameProperty"/>
+       <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference core.ecore#//MMp3/MKeepPublishedProperty"/>
+       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MMp3/keepPublishedProperty"/>
+    </genClasses>
+    <genClasses ecoreClass="core.ecore#//MBurnCdStep">
+       <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference core.ecore#//MBurnCdStep/MRecordingFilesParameter"/>
+       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MBurnCdStep/recordingFilesParameter"/>
+       <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference core.ecore#//MBurnCdStep/MBurningSoftwareDirectoryPathParameter"/>
+       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MBurnCdStep/burningSoftwareDirectoryPathParameter"/>
+       <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference core.ecore#//MBurnCdStep/MDriveParameter"/>
+       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MBurnCdStep/driveParameter"/>
+       <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference core.ecore#//MBurnCdStep/MTotalRecordingLengthParameter"/>
+       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MBurnCdStep/totalRecordingLengthParameter"/>
+       <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference core.ecore#//MBurnCdStep/MTotalRecordingFileSizeParameter"/>
+       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MBurnCdStep/totalRecordingFileSizeParameter"/>
+    </genClasses>
+    <genClasses ecoreClass="core.ecore#//MFtpStep">
+       <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference core.ecore#//MFtpStep/MFtpServerUrlParameter"/>
+       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MFtpStep/ftpServerUrlParameter"/>
+       <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference core.ecore#//MFtpStep/MFtpUserNameParameter"/>
+       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MFtpStep/ftpUserNameParameter"/>
+       <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference core.ecore#//MFtpStep/MFtpUserPasswordParameter"/>
+       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MFtpStep/ftpUserPasswordParameter"/>
+    </genClasses>
+    <genClasses ecoreClass="core.ecore#//MTestStep">
+       <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference core.ecore#//MTestStep/MPersistentStringParameter"/>
+       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MTestStep/persistentStringParameter"/>
+       <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference core.ecore#//MTestStep/MStringParameter"/>
+       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MTestStep/stringParameter"/>
+    </genClasses>
+    <genClasses ecoreClass="core.ecore#//MNameTagMp3Step">
+       <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference core.ecore#//MNameTagMp3Step/mDirectoryParameter"/>
+       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MNameTagMp3Step/directoryParameter"/>
+       <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference core.ecore#//MNameTagMp3Step/mTaggedMp3FileNameParameter"/>
+       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MNameTagMp3Step/taggedMp3FileNameParameter"/>
+       <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference core.ecore#//MNameTagMp3Step/mRecordingMp3FileParameter"/>
+       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MNameTagMp3Step/recordingMp3FileParameter"/>
+       <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference core.ecore#//MNameTagMp3Step/mTagAndRenameOriginalParameter"/>
+       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MNameTagMp3Step/tagAndRenameOriginalParameter"/>
+    </genClasses>
+    <genClasses ecoreClass="core.ecore#//MTagStep">
+       <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference core.ecore#//MTagStep/mArtistParameter"/>
+       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MTagStep/artistParameter"/>
+       <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference core.ecore#//MTagStep/mTitleParameter"/>
+       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MTagStep/titleParameter"/>
+       <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference core.ecore#//MTagStep/mAlbumParameter"/>
+       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MTagStep/albumParameter"/>
+       <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference core.ecore#//MTagStep/mGenreParameter"/>
+       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MTagStep/genreParameter"/>
+       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MTagStep/genreParameterHistoricValues"/>
+       <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference core.ecore#//MTagStep/mYearParameter"/>
+       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MTagStep/yearParameter"/>
+       <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference core.ecore#//MTagStep/mCommentParameter"/>
+       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MTagStep/commentParameter"/>
+       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MTagStep/commentParameterHistoricValues"/>
+       <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference core.ecore#//MTagStep/mMp3FolderReferenceParameter"/>
+       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EReference core.ecore#//MTagStep/mp3FolderReferenceParameter"/>
+       <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference core.ecore#//MTagStep/MMp3EntryNameParameter"/>
+       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MTagStep/mp3EntryNameParameter"/>
+       <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference core.ecore#//MTagStep/mMp3EntryReferenceResult"/>
+       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EReference core.ecore#//MTagStep/mp3EntryReferenceResult"/>
+       <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference core.ecore#//MTagStep/mMp3FilePathResult"/>
+       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MTagStep/mp3FilePathResult"/>
+    </genClasses>
+    <genClasses ecoreClass="core.ecore#//MCopyDirectoryStep">
+       <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference core.ecore#//MCopyDirectoryStep/mSourceDirectoryParameter"/>
+       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MCopyDirectoryStep/sourceDirectoryParameter"/>
+       <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference core.ecore#//MCopyDirectoryStep/mDestinationDirectoryParameter"/>
+       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MCopyDirectoryStep/destinationDirectoryParameter"/>
+       <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference core.ecore#//MCopyDirectoryStep/mCopiedDirectoryResult"/>
+       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MCopyDirectoryStep/copiedDirectoryResult"/>
+    </genClasses>
+    <genClasses ecoreClass="core.ecore#//MManualTaskStep">
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>
+
+      

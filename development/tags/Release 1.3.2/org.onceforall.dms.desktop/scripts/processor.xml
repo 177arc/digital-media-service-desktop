@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Contains scripts to post process Java files that have been generated with EMF.
+
+Revision History:
+$Log: processor.xml,v $
+Revision 1.2  2006/09/19 12:52:12  marc
+Updated to checkpoint progress.
+
+-->
+<project name="Model processor" default="Process meta model" basedir=".">
+	<taskdef name="modelgenerator" classname="org.onceforall.metamodeller.generator.EcoreModelGeneratorTask"/>
+	
+  <!-- Sets global properties. -->
+  <property name="Ecore meta model file" location="./core.metamodeller"/>
+  <property name="Ecore model file" location="./core.ecore"/>
+  <property name="Ecore generator model file" location="./core.genmodel"/>
+  <property name="Ecore model generator stylesheet" location="./model/Model Generator.xslt"/>
+  <property name="Ecore input file" location="./model.ecore"/>
+  <property name="Ecore output file" location="./model.corrected.ecore"/>
+  <property name="Ecore stylesheet" location="./Ecore.xslt"/>
+	<property name="Generator file" location="model.genmodel"/>
+
+  <!-- Defines file sets. -->
+	<fileset id="Java files" dir=".\src" includes="**/*.java"/>
+	
+	<target name="Process meta model" description="Generates the Ecore model from the Ecore meta model.">
+		<modelgenerator infile="${Ecore meta model file}" outfile="${Ecore model file}"/>
+		<!-- <xslt in="${Ecore meta model file}" out="${Ecore model file}" style="${Ecore model generator stylesheet}"/> -->
+	</target>
+	
+	<target name="Process model" description="Generates the Java files from the Ecore model.">
+		<emf.Ecore2Java model="${Ecore model file}" genModel="${Ecore generator model file}" 
+			reconcileGenModel="reload" generateModelProject="false" generateEditorProject="false"
+			modelProject="." modelProjectFragmentPath="../src"/>
+	</target>
+</project>
