@@ -323,7 +323,7 @@ public class MainComposite extends MElementComposite {
                 // Stops the current mStep, goes to the next mStep and starts it, if the mStep is processing.
 	            if(mStep.isInProcessingState()) {
 	                mStepComposite.stop(); 
-	                triggerStepForNextStep = mStep;
+	                //?triggerStepForNextStep = mStep;
 	            }
 	            
                 MScript mScript = (MScript) mStep.eContainer();
@@ -332,9 +332,10 @@ public class MainComposite extends MElementComposite {
             	if(index < mSteps.size()-1)
             		mNextStep = mSteps.get(index+1);
             	
-                if(mNextStep != null) {                
+                if(mNextStep != null) {
+                	while(display.readAndDispatch());
                     // Starts the next mStep immediately, if the current mStep is not processing.
-                    // Otherwise the applicaton has to wait for the mStep completion notification first (see update method).
+                    // Otherwise the application has to wait for the mStep completion notification first (see update method).
                     if(!mStep.isInProcessingState()) {
 	                    selectMElement(mNextStep, false);
 	                    ((MStepComposite) mElementComposite).start();
