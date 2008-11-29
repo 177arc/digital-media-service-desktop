@@ -31,7 +31,7 @@ Once the DMS Desktop and DMS Desktop Editor have been deployed to the test envir
 
 ==Release==
 To package the DMS Desktop and the DMS Desktop Editor into a software release, follow these steps:
-  # _Update build properties_: Update the `version` and `info` properties of the `org.onceforall.dms.desktop.ui\src\build-info.properties`. The `info` property should point to the release notes page to created as part of the publishing (see below).
+  # _Update build properties_: Update the `version` and `info` properties of the `org.onceforall.dms.desktop\src\build-info.properties`. The `info` property should point to the release notes page to created as part of the publishing (see below).
   # _Check in all changed files (if you haven't already):_ *All commit comments have to link the checked in file to an issue* using the following pattern `Implemented issue `(Issue number)`.`, e.g. `Implemented issue 20 and issue 25.`, followed by an additional description of the changes. The only time you don't have to link the check in to an issues is when you made change that have either no or a minimal impact on the functionality, e.g. refactoring. All significant changes that the user may notice have to have an issue entry and have to linked to the check in.
   # _Update issues_: Make sure that you change the status of all issues that are included in the release to `Released` and label it with `Implemented-`(Version number).
   # _Label all projects_: Multi-select all projects -> right-click -> `Team` -> `Tag ...` and enter `Release `(Version number), e.g. `Release 1.1.0`, in the `Tag` field.
