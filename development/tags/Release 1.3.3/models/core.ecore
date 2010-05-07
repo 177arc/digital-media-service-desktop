@@ -1,0 +1,2049 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="logic"
+    nsURI="http://www.onceforall.org/dms/desktop/model.ecore" nsPrefix="org.onceforall.dms.desktop.logic">
+  <eClassifiers xsi:type="ecore:EClass" name="MObject" eSuperTypes="#//MElement">
+    <eAnnotations source="http://www.onceforall.org/mcore">
+      <details key="typeNameForUI" value="Entry"/>
+      <details key="compositeClassName" value="org.onceforall.dms.desktop.ui.MObjectComposite"/>  		
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="mNameProperty" lowerBound="1"
+        eType="#//MProperty" containment="true" resolveProxies="false">
+      <eAnnotations source="http://www.onceforall.org/mcore">
+        <details key="name" value="Name"/>
+        <details key="description" value="Specifies the name."/>
+        <details key="valueEFeature" value="name"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="mDescriptionProperty" lowerBound="1"
+        eType="#//MProperty" containment="true" resolveProxies="false">
+      <eAnnotations source="http://www.onceforall.org/mcore">
+        <details key="name" value="Description"/>
+        <details key="description" value="Specifies a detailed description."/>
+        <details key="valueEFeature" value="description"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="mIconFilePathProperty"
+        lowerBound="1" eType="#//MProperty" containment="true" resolveProxies="false">
+      <eAnnotations source="http://www.onceforall.org/mcore">
+        <details key="name" value="Icon file path"/>
+        <details key="description" value="Specifies the file path to the icon that represents this element."/>
+        <details key="valueEFeature" value="iconFilePath"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="fixedMProperties" upperBound="-1"
+        eType="#//MProperty" volatile="true" transient="true"
+        derived="true" resolveProxies="false"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="fixedMSteps" upperBound="-1"
+        eType="#//MStep" volatile="true" transient="true"
+        derived="true" resolveProxies="false"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MElement" abstract="true">
+  	<eOperations name="validate" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eParameters name="diagnosticsChain" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain"/>
+      <eParameters name="context" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EMap"/>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="#//MString"
+        defaultValueLiteral=""/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="typeName" lowerBound="1"
+        eType="#//MString" changeable="false" volatile="true" transient="true" derived="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="typeNameForUI" lowerBound="1"
+        eType="#//MString" transient="true" defaultValueLiteral="Element"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="nameForUI" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" changeable="false"
+        volatile="true" transient="true" defaultValueLiteral="Element" derived="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" lowerBound="1"
+        eType="#//MString" defaultValueLiteral=""/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="descriptionForUI" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" changeable="false"
+        volatile="true" transient="true" defaultValueLiteral="" derived="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="iconFilePath" eType="#//MFile"
+        changeable="true" transient="false"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="overlayIconFilePath" eType="#//MFile"
+        changeable="true" transient="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="compositeClassName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        transient="true" defaultValueLiteral=""/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="simulated" lowerBound="1" defaultValueLiteral="false"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MParameter" eSuperTypes="#//MValue">
+    <eAnnotations source="http://www.onceforall.org/mcore">
+      <details key="typeNameForUI" value="Parameter"/>		
+    </eAnnotations>
+	</eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MProperty" eSuperTypes="#//MValue">
+    <eAnnotations source="http://www.onceforall.org/mcore">
+      <details key="typeNameForUI" value="Property"/>		
+    </eAnnotations>
+	</eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MResult" eSuperTypes="#//MValue">
+    <eAnnotations source="http://www.onceforall.org/mcore">
+      <details key="typeNameForUI" value="Result"/>		
+    </eAnnotations>
+	</eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MStatefulObject" abstract="true" eSuperTypes="#//MObject">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="mStateProperty" lowerBound="1"
+        eType="#//MProperty" containment="true" resolveProxies="false">
+      <eAnnotations source="http://www.onceforall.org/mcore">
+        <details key="name" value="State"/>
+        <details key="description" value="Specifies the current state."/>
+        <details key="readOnly" value="true"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="mLastStateChangeProperty"
+        lowerBound="1" eType="#//MProperty" containment="true" resolveProxies="false">
+      <eAnnotations source="http://www.onceforall.org/mcore">
+        <details key="name" value="Last state change"/>
+        <details key="description" value="Specifies the date and time of the last state change."/>
+        <details key="readOnly" value="true"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="lastStateChangeProperty"
+        eType="#//MDateTime"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MStep" abstract="true" eSuperTypes="#//MStatefulObject">
+    <eAnnotations source="http://www.onceforall.org/mcore">
+      <details key="typeNameForUI" value="Task"/>
+      <details key="compositeClassName" value="org.onceforall.dms.desktop.ui.MStepComposite"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="mInputSteps" ordered="false"
+        upperBound="-1" eType="#//MStep" resolveProxies="false"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="fixedMParameters" upperBound="-1"
+        eType="#//MParameter" volatile="true" transient="true"
+        derived="true" resolveProxies="false"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="fixedMResults" upperBound="-1"
+        eType="#//MResult" volatile="true" transient="true"
+        derived="true" resolveProxies="false"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="exclusiveProperty" lowerBound="1"
+        eType="#//MBoolean" transient="false" defaultValueLiteral="false"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="stateProperty" lowerBound="1"
+        eType="#//MStepState" transient="true" defaultValueLiteral="Pending"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="mProgressProperty" lowerBound="1"
+        eType="#//MProperty" containment="true" resolveProxies="false">
+      <eAnnotations source="http://www.onceforall.org/mcore">
+        <details key="name" value="Progress"/>
+        <details key="description" value="Specifies the progress of the processing in %."/>
+        <details key="readOnly" value="true"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="progressProperty" eType="#//MLong"
+        transient="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="mProgressStatusProperty"
+        lowerBound="1" eType="#//MProperty" containment="true"
+        resolveProxies="false">
+      <eAnnotations source="http://www.onceforall.org/mcore">
+        <details key="name" value="Progress status"/>
+        <details key="description" value="Specifies a textual representation of the progress."/>
+        <details key="readOnly" value="true"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="progressStatusProperty"
+        eType="#//MString" transient="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="mStartTriggerProperty"
+        lowerBound="1" eType="#//MProperty" containment="true"
+        resolveProxies="false">
+      <eAnnotations source="http://www.onceforall.org/mcore">
+        <details key="name" value="Start trigger"/>
+        <details key="description" value="Specifies when the step should be started.&#xD;&#xA;&#xD;&#xA;It can hold the following values:&#xD;&#xA;   'Manual' means that the step only starts when you explicitly request it.&#xD;&#xA;   'Semi-automatic' means that the step will request to be started when all steps it depends on have been completed and all necessary parameters have been entered.&#xD;&#xA;   'Automatic' means that the step will automatically start all steps it depends on have been completed and all necessary parameters have been entered."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="startTriggerProperty" lowerBound="1"
+        eType="#//MString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="interruptable" lowerBound="1" transient="true"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean" changeable="false"
+        defaultValueLiteral="false"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="stoppable" lowerBound="1" transient="true"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean" changeable="false"
+        defaultValueLiteral="false"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="terminatable" lowerBound="1" transient="true"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean" changeable="false"
+        defaultValueLiteral="false"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="actionName" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" defaultValueLiteral="Mark as completed"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="actionIconFilePath" changeable="true" transient="false"
+        eType="#//MFile" defaultValueLiteral="Image Files\Mark as completed.gif"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="exception" lowerBound="1" transient="true"
+        eType="#//EThrowable" changeable="false"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MValue" abstract="true" eSuperTypes="#//MElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="mInputValues" upperBound="-1"
+        eType="#//MValue" resolveProxies="false"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="valueForUI" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" volatile="true"
+        transient="true" derived="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"
+        volatile="true" transient="true" derived="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="historicValues" ordered="false"
+        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"
+        volatile="true" transient="true" derived="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="historicValuesForUI" upperBound="-1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" volatile="true"
+        transient="true" derived="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="readOnly" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MApplication" abstract="true" eSuperTypes="#//MObject">
+    <eAnnotations source="http://www.onceforall.org/mcore">
+      <details key="typeNameForUI" value="Application"/>
+      <details key="name" value="Digital Media Service Desktop"/>
+      <details key="description" value="Represents the whole application."/>
+      <details key="compositeClassName" value="org.onceforall.dms.desktop.ui.MApplicationComposite"/>
+      <details key="iconFilePath" value="Image Files\Application.gif"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="mDataFileProperty" lowerBound="1"
+        eType="#//MProperty" containment="true"
+        resolveProxies="false">
+      <eAnnotations source="http://www.onceforall.org/mcore">
+        <details key="name" value="Data file"/>
+        <details key="description" value="Specifies the file that contains the application data."/>
+        <details key="readOnly" value="true"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="dataFileProperty" lowerBound="1"
+        eType="#//MExistingFile" changeable="false" transient="true" defaultValueLiteral="Application Data Files\Data.xml"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="infoWebPageProperty" lowerBound="1"
+        eType="#//MUrl" changeable="true" transient="false" defaultValueLiteral="http://www.onceforall.org/dms-desktop/info.php"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="mInfoWebPageProperty" lowerBound="1"
+        eType="#//MProperty" containment="true"
+        resolveProxies="false">
+      <eAnnotations source="http://www.onceforall.org/mcore">
+        <details key="name" value="Information web page URL"/>
+        <details key="description" value="Specifies the URL of a web page that provides up-to-date information that is relevant to the users of this application."/>
+        <details key="readOnly" value="true"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="dataFilePropertyHistoricValues"
+        ordered="false" upperBound="5" eType="#//MFile"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="mLogFileProperty" lowerBound="1"
+      eType="#//MProperty" containment="true" resolveProxies="false">
+      <eAnnotations source="http://www.onceforall.org/mcore">
+        <details key="name" value="Log file"/>
+        <details key="description" value="Specifies the file that contains the log data."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="logFileProperty" lowerBound="1"
+        eType="#//MFile"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="mPathProperty" lowerBound="1"
+        eType="#//MProperty" containment="true" resolveProxies="false">
+      <eAnnotations source="http://www.onceforall.org/mcore">
+        <details key="name" value="Path"/>
+        <details key="description" value="Specifies the path where this application has been started from."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="pathProperty" lowerBound="1"
+        eType="#//MExistingDirectory"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="mVersionProperty" lowerBound="1"
+        eType="#//MProperty" containment="true" resolveProxies="false">
+      <eAnnotations source="http://www.onceforall.org/mcore">
+        <details key="name" value="Version"/>
+        <details key="description" value="Specifies the version of the application."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="versionProperty" lowerBound="1"
+        eType="#//MString" defaultValueLiteral="0.9.0"/>
+	<eStructuralFeatures xsi:type="ecore:EReference" name="mLastSaveProperty"
+	  lowerBound="1" eType="#//MProperty" containment="true" resolveProxies="false">
+	  <eAnnotations source="http://www.onceforall.org/mcore">
+	    <details key="name" value="Last application data save"/>
+	    <details key="description" value="Specifies the date and time when the application data was last saved."/>
+	    <details key="readOnly" value="true"/>
+	  </eAnnotations>
+	</eStructuralFeatures>  		
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="lastSaveProperty" lowerBound="0" upperBound="1" transient="true" eType="//MDateTime" derived="false" volatile="false"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MScript" eSuperTypes="#//MStatefulObject">
+    <eAnnotations source="http://www.onceforall.org/mcore">
+      <details key="typeNameForUI" value="Script"/>
+      <details key="name" value="Script"/>
+      <details key="description" value="Contains a number of tasks that should be completed."/>
+      <details key="iconFilePath" value="Image Files\Script.gif"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="mSteps" upperBound="-1"
+        eType="#//MStep" containment="true" resolveProxies="false"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="stateProperty" lowerBound="1"
+        eType="#//MStepState" transient="true" defaultValueLiteral="Pending"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="mProgressProperty" lowerBound="1"
+        eType="#//MProperty" containment="true" resolveProxies="false">
+      <eAnnotations source="http://www.onceforall.org/mcore">
+        <details key="name" value="Progress"/>
+        <details key="description" value="Specifies the progress of the processing in %."/>
+        <details key="readOnly" value="true"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="progressProperty" eType="#//MLong"
+        transient="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="mProgressStatusProperty"
+        lowerBound="1" eType="#//MProperty" containment="true"
+        resolveProxies="false">
+      <eAnnotations source="http://www.onceforall.org/mcore">
+        <details key="name" value="Progress status"/>
+        <details key="description" value="Specifies a textual representation of the progress."/>
+        <details key="readOnly" value="true"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="progressStatusProperty"
+        eType="#//MString" transient="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EDataType" name="MDirectory" instanceClassName="java.io.File">
+    <eAnnotations source="http://www.onceforall.org/mcore">
+      <details key="name" value="Directory"/>
+    </eAnnotations>	
+  </eClassifiers>		
+  <eClassifiers xsi:type="ecore:EDataType" name="MExistingDirectory" instanceClassName="java.io.File">
+    <eAnnotations source="http://www.onceforall.org/mcore">
+      <details key="name" value="Directory (must exist)"/>
+    </eAnnotations>	
+  </eClassifiers>		
+  <eClassifiers xsi:type="ecore:EDataType" name="MFile" instanceClassName="java.io.File">
+    <eAnnotations source="http://www.onceforall.org/mcore">
+      <details key="name" value="File"/>
+    </eAnnotations>	
+  </eClassifiers>		
+  <eClassifiers xsi:type="ecore:EDataType" name="MExistingFile" instanceClassName="java.io.File">
+    <eAnnotations source="http://www.onceforall.org/mcore">
+      <details key="name" value="File (must exist)"/>
+    </eAnnotations>	
+  </eClassifiers>		
+  <eClassifiers xsi:type="ecore:EDataType" name="MState" instanceClassName="org.onceforall.dms.desktop.logic.types.State">
+    <eAnnotations source="http://www.onceforall.org/mcore">
+      <details key="name" value="State"/>
+    </eAnnotations>	
+  </eClassifiers>		
+  <eClassifiers xsi:type="ecore:EDataType" name="MStepState" instanceClassName="org.onceforall.dms.desktop.logic.types.State">
+    <eAnnotations source="http://www.onceforall.org/mcore">
+      <details key="name" value="Step state"/>
+    </eAnnotations>	
+  </eClassifiers>		
+  <eClassifiers xsi:type="ecore:EDataType" name="MBoolean" instanceClassName="java.lang.Boolean">
+    <eAnnotations source="http://www.onceforall.org/mcore">
+      <details key="name" value="Yes/No"/>
+    </eAnnotations>	
+  </eClassifiers>		
+  <eClassifiers xsi:type="ecore:EDataType" name="MDateTime" instanceClassName="java.util.Date">
+    <eAnnotations source="http://www.onceforall.org/mcore">
+      <details key="name" value="Date and time"/>
+    </eAnnotations>	
+  </eClassifiers>		
+  <eClassifiers xsi:type="ecore:EDataType" name="MDate" instanceClassName="java.util.Date">
+    <eAnnotations source="http://www.onceforall.org/mcore">
+      <details key="name" value="Date"/>
+    </eAnnotations>	
+  </eClassifiers>		
+  <eClassifiers xsi:type="ecore:EDataType" name="MTime" instanceClassName="java.util.Date">
+    <eAnnotations source="http://www.onceforall.org/mcore">
+      <details key="name" value="Time"/>
+    </eAnnotations>	
+  </eClassifiers>		
+  <eClassifiers xsi:type="ecore:EDataType" name="MDuration" instanceClassName="java.lang.Long">
+    <eAnnotations source="http://www.onceforall.org/mcore">
+      <details key="name" value="Duration"/>
+    </eAnnotations>	
+  </eClassifiers>		
+  <eClassifiers xsi:type="ecore:EDataType" name="MLong" instanceClassName="java.lang.Long">
+    <eAnnotations source="http://www.onceforall.org/mcore">
+      <details key="name" value="Number"/>
+    </eAnnotations>	
+  </eClassifiers>		
+  <eClassifiers xsi:type="ecore:EDataType" name="MPassword" instanceClassName="java.lang.String">
+    <eAnnotations source="http://www.onceforall.org/mcore">
+      <details key="name" value="Password"/>
+    </eAnnotations>	
+  </eClassifiers>		
+  <eClassifiers xsi:type="ecore:EDataType" name="MString" instanceClassName="java.lang.String">
+    <eAnnotations source="http://www.onceforall.org/mcore">
+      <details key="name" value="Text"/>
+    </eAnnotations>	
+  </eClassifiers>		
+  <eClassifiers xsi:type="ecore:EDataType" name="MUrl" instanceClassName="java.net.URL">
+    <eAnnotations source="http://www.onceforall.org/mcore">
+      <details key="name" value="URL"/>
+    </eAnnotations>	
+  </eClassifiers>		
+  <eClassifiers xsi:type="ecore:EDataType" name="EThrowable" instanceClassName="java.lang.Throwable"/>		
+  <eClassifiers xsi:type="ecore:EDataType" name="MMp3State" instanceClassName="org.onceforall.dms.desktop.logic.types.State">
+    <eAnnotations source="http://www.onceforall.org/mcore">
+      <details key="name" value="MP3 state"/>
+    </eAnnotations>	
+  </eClassifiers>		
+	<eClassifiers xsi:type="ecore:EClass" name="MDmsApplication" eSuperTypes="#//MApplication" abstract="false">
+ 		<eAnnotations source="http://www.onceforall.org/mcore">
+   		<details key="name" value="Digital Media Service Desktop"/>
+ 		</eAnnotations>
+	   	<eStructuralFeatures xsi:type="ecore:EReference" name="mServiceFilePathProperty"
+	      lowerBound="1" eType="#//MProperty"
+	      containment="true" resolveProxies="false">
+	     <eAnnotations source="http://www.onceforall.org/mcore">
+	       <details key="name" value="Service files path"/>
+	       <details key="description" value="Specifies the relative or absolute file path to the directory where the service recording files are stored."/>
+	     </eAnnotations>
+	   </eStructuralFeatures>  		
+       <eStructuralFeatures xsi:type="ecore:EAttribute" name="serviceFilePathProperty" lowerBound="1" upperBound="1" defaultValueLiteral="Service Files" transient="false" eType="//MExistingDirectory" derived="false" volatile="false"/>
+	   	<eStructuralFeatures xsi:type="ecore:EReference" name="mWwxFilesPathProperty"
+	      lowerBound="1" eType="#//MProperty"
+	      containment="true" resolveProxies="false">
+	     <eAnnotations source="http://www.onceforall.org/mcore">
+	       <details key="name" value="WWX files path"/>
+	       <details key="description" value="Specifies the relative or absolute file path to the directory where the WordWiseXtra recording files are stored."/>
+	     </eAnnotations>
+	   </eStructuralFeatures>  		
+       <eStructuralFeatures xsi:type="ecore:EAttribute" name="wwxFilesPathProperty" lowerBound="1" upperBound="1" defaultValueLiteral="WWX Files" transient="false" eType="//MExistingDirectory" derived="false" volatile="false"/>
+	   	<eStructuralFeatures xsi:type="ecore:EReference" name="mMp3EncoderPathProperty"
+	      lowerBound="1" eType="#//MProperty"
+	      containment="true" resolveProxies="false">
+	     <eAnnotations source="http://www.onceforall.org/mcore">
+	       <details key="name" value="MP3 encoder path"/>
+	       <details key="description" value="Specifies the path to the directory that contains the &apos;lame.exe&apos;."/>
+	     </eAnnotations>
+	   </eStructuralFeatures>  		
+       <eStructuralFeatures xsi:type="ecore:EAttribute" name="mp3EncoderPathProperty" lowerBound="0" upperBound="1" defaultValueLiteral="Program Files\LAME 3.96.1" transient="false" eType="//MExistingDirectory" derived="false" volatile="false"/>
+	   	<eStructuralFeatures xsi:type="ecore:EReference" name="mFtpServerUrlProperty"
+	      lowerBound="1" eType="#//MProperty"
+	      containment="true" resolveProxies="false">
+	     <eAnnotations source="http://www.onceforall.org/mcore">
+	       <details key="name" value="FTP server URL"/>
+	       <details key="description" value="Specifies the URL to public HTML directory on the FTP server, e.g. &apos;ftp://ftp.ccbromley.net/public_html&apos;"/>
+	     </eAnnotations>
+	   </eStructuralFeatures>  		
+       <eStructuralFeatures xsi:type="ecore:EAttribute" name="ftpServerUrlProperty" lowerBound="0" upperBound="1" transient="false" eType="//MUrl" derived="false" volatile="false"/>
+     	<eStructuralFeatures xsi:type="ecore:EAttribute" name="ftpServerUrlPropertyHistoricValues" upperBound="3" transient="false" eType="//MUrl"/>
+	   	<eStructuralFeatures xsi:type="ecore:EReference" name="mFtpUserNameProperty"
+	      lowerBound="1" eType="#//MProperty"
+	      containment="true" resolveProxies="false">
+	     <eAnnotations source="http://www.onceforall.org/mcore">
+	       <details key="name" value="FTP user name"/>
+	       <details key="description" value="Specifies the user name for accessing the FTP server, e.g. &apos;ccb001&apos;."/>
+	     </eAnnotations>
+	   </eStructuralFeatures>  		
+       <eStructuralFeatures xsi:type="ecore:EAttribute" name="ftpUserNameProperty" lowerBound="0" upperBound="1" transient="false" eType="//MString" derived="false" volatile="false"/>
+     	<eStructuralFeatures xsi:type="ecore:EAttribute" name="ftpUserNamePropertyHistoricValues" upperBound="3" transient="false" eType="//MString"/>
+	   	<eStructuralFeatures xsi:type="ecore:EReference" name="mFtpUserPasswordProperty"
+	      lowerBound="1" eType="#//MProperty"
+	      containment="true" resolveProxies="false">
+	     <eAnnotations source="http://www.onceforall.org/mcore">
+	       <details key="name" value="FTP user password"/>
+	       <details key="description" value="Specifies the user password for accessing the FTP server."/>
+	     </eAnnotations>
+	   </eStructuralFeatures>  		
+       <eStructuralFeatures xsi:type="ecore:EAttribute" name="ftpUserPasswordProperty" lowerBound="0" upperBound="1" transient="false" eType="//MPassword" derived="false" volatile="false"/>
+	   	<eStructuralFeatures xsi:type="ecore:EReference" name="mMp3RelativeFtpPathProperty"
+	      lowerBound="1" eType="#//MProperty"
+	      containment="true" resolveProxies="false">
+	     <eAnnotations source="http://www.onceforall.org/mcore">
+	       <details key="name" value="MP3 relative FTP path"/>
+	       <details key="description" value="Specifies the path of the directory on the FTP server to publish the MP3 files to, e.g. &apos;/recordings&apos;."/>
+	     </eAnnotations>
+	   </eStructuralFeatures>  		
+       <eStructuralFeatures xsi:type="ecore:EAttribute" name="mp3RelativeFtpPathProperty" lowerBound="0" upperBound="1" transient="false" eType="//MString" derived="false" volatile="false"/>
+     	<eStructuralFeatures xsi:type="ecore:EAttribute" name="mp3RelativeFtpPathPropertyHistoricValues" upperBound="3" transient="false" eType="//MString"/>
+	   	<eStructuralFeatures xsi:type="ecore:EReference" name="mContentPageRelativeFtpPathProperty"
+	      lowerBound="1" eType="#//MProperty"
+	      containment="true" resolveProxies="false">
+	     <eAnnotations source="http://www.onceforall.org/mcore">
+	       <details key="name" value="Content page relative FTP path"/>
+	       <details key="description" value="Specifies the path of the directory relative to the FTP path where to publish the MP3 content page to, e.g. &apos;/recordings&apos;."/>
+	     </eAnnotations>
+	   </eStructuralFeatures>  		
+       <eStructuralFeatures xsi:type="ecore:EAttribute" name="contentPageRelativeFtpPathProperty" lowerBound="0" upperBound="1" transient="false" eType="//MString" derived="false" volatile="false"/>
+     	<eStructuralFeatures xsi:type="ecore:EAttribute" name="contentPageRelativeFtpPathPropertyHistoricValues" upperBound="3" transient="false" eType="//MString"/>
+	   	<eStructuralFeatures xsi:type="ecore:EReference" name="mPodcastRelativeFtpPathProperty"
+	      lowerBound="1" eType="#//MProperty"
+	      containment="true" resolveProxies="false">
+	     <eAnnotations source="http://www.onceforall.org/mcore">
+	       <details key="name" value="Podcast relative FTP path"/>
+	       <details key="description" value="Specifies the path relative to the FTP path where the podcast RSS feed should be created or updated."/>
+	     </eAnnotations>
+	   </eStructuralFeatures>  		
+       <eStructuralFeatures xsi:type="ecore:EAttribute" name="podcastRelativeFtpPathProperty" lowerBound="0" upperBound="1" transient="false" eType="//MString" derived="false" volatile="false"/>
+     	<eStructuralFeatures xsi:type="ecore:EAttribute" name="podcastRelativeFtpPathPropertyHistoricValues" upperBound="3" transient="false" eType="//MString"/>
+	   	<eStructuralFeatures xsi:type="ecore:EReference" name="mWebServerUrlProperty"
+	      lowerBound="1" eType="#//MProperty"
+	      containment="true" resolveProxies="false">
+	     <eAnnotations source="http://www.onceforall.org/mcore">
+	       <details key="name" value="Web server URL"/>
+	       <details key="description" value="Specifies the public web server URL, e.g.&apos;http://www.ccbromley.net&apos;."/>
+	     </eAnnotations>
+	   </eStructuralFeatures>  		
+       <eStructuralFeatures xsi:type="ecore:EAttribute" name="webServerUrlProperty" lowerBound="0" upperBound="1" transient="false" eType="//MUrl" derived="false" volatile="false"/>
+     	<eStructuralFeatures xsi:type="ecore:EAttribute" name="webServerUrlPropertyHistoricValues" upperBound="3" transient="false" eType="//MUrl"/>
+	   	<eStructuralFeatures xsi:type="ecore:EReference" name="mSmtpServerProperty"
+	      lowerBound="1" eType="#//MProperty"
+	      containment="true" resolveProxies="false">
+	     <eAnnotations source="http://www.onceforall.org/mcore">
+	       <details key="name" value="SMTP server"/>
+	       <details key="description" value="Specifies the name or IP address of the (SMTP) server that is responsible for sending the email."/>
+	     </eAnnotations>
+	   </eStructuralFeatures>  		
+       <eStructuralFeatures xsi:type="ecore:EAttribute" name="smtpServerProperty" lowerBound="0" upperBound="1" transient="false" eType="//MString" derived="false" volatile="false"/>
+     	<eStructuralFeatures xsi:type="ecore:EAttribute" name="smtpServerPropertyHistoricValues" upperBound="3" transient="false" eType="//MString"/>
+	   	<eStructuralFeatures xsi:type="ecore:EReference" name="mSmtpUserNameProperty"
+	      lowerBound="1" eType="#//MProperty"
+	      containment="true" resolveProxies="false">
+	     <eAnnotations source="http://www.onceforall.org/mcore">
+	       <details key="name" value="SMTP user name"/>
+	       <details key="description" value="Specifies user name used to authenticate on the (SMTP) server that is responsible for sending the email."/>
+	       <details key="readOnly" value="false"/>
+	     </eAnnotations>
+	   </eStructuralFeatures>  		
+       <eStructuralFeatures xsi:type="ecore:EAttribute" name="smtpUserNameProperty" lowerBound="0" upperBound="1" transient="false" eType="//MString" derived="false" volatile="false"/>
+     	<eStructuralFeatures xsi:type="ecore:EAttribute" name="smtpUserNamePropertyHistoricValues" upperBound="3" transient="false" eType="//MString"/>
+	   	<eStructuralFeatures xsi:type="ecore:EReference" name="mSmtpPasswordProperty"
+	      lowerBound="1" eType="#//MProperty"
+	      containment="true" resolveProxies="false">
+	     <eAnnotations source="http://www.onceforall.org/mcore">
+	       <details key="name" value="SMTP password"/>
+	       <details key="description" value="Specifies password used to authenticate on the (SMTP) server that is responsible for sending the email."/>
+	       <details key="readOnly" value="false"/>
+	     </eAnnotations>
+	   </eStructuralFeatures>  		
+       <eStructuralFeatures xsi:type="ecore:EAttribute" name="smtpPasswordProperty" lowerBound="0" upperBound="1" transient="false" eType="//MPassword" derived="false" volatile="false"/>
+	   	<eStructuralFeatures xsi:type="ecore:EReference" name="mReceipientsEmailAddressProperty"
+	      lowerBound="1" eType="#//MProperty"
+	      containment="true" resolveProxies="false">
+	     <eAnnotations source="http://www.onceforall.org/mcore">
+	       <details key="name" value="Receipients&apos; email address"/>
+	       <details key="description" value="Specifies the email addresses of the recipients, i.e. the To field of the email. Multiple email addresses can entered, separated by a semicolon &apos;;&apos;."/>
+	       <details key="readOnly" value="false"/>
+	     </eAnnotations>
+	   </eStructuralFeatures>  		
+       <eStructuralFeatures xsi:type="ecore:EAttribute" name="receipientsEmailAddressProperty" lowerBound="0" upperBound="-1" transient="false" eType="//MString" derived="false" volatile="false"/>
+     	<eStructuralFeatures xsi:type="ecore:EAttribute" name="receipientsEmailAddressPropertyHistoricValues" upperBound="3" transient="false" eType="//MString"/>
+	   	<eStructuralFeatures xsi:type="ecore:EReference" name="mBurningSoftwareDirectoryPathProperty"
+	      lowerBound="1" eType="#//MProperty"
+	      containment="true" resolveProxies="false">
+	     <eAnnotations source="http://www.onceforall.org/mcore">
+	       <details key="name" value="CD-ROM burning software directory path"/>
+	       <details key="description" value="Specifies the path to the directory that contains the &apos;nerocmd.exe&apos;."/>
+	     </eAnnotations>
+	   </eStructuralFeatures>  		
+       <eStructuralFeatures xsi:type="ecore:EAttribute" name="burningSoftwareDirectoryPathProperty" lowerBound="1" upperBound="1" transient="false" eType="//MExistingDirectory" derived="false" volatile="false"/>
+	   	<eStructuralFeatures xsi:type="ecore:EReference" name="mDriveProperty"
+	      lowerBound="1" eType="#//MProperty"
+	      containment="true" resolveProxies="false">
+	     <eAnnotations source="http://www.onceforall.org/mcore">
+	       <details key="name" value="CD-ROM Drive"/>
+	       <details key="description" value="Specifies either the full name of the CD-ROM drive or the drive letter."/>
+	     </eAnnotations>
+	   </eStructuralFeatures>  		
+       <eStructuralFeatures xsi:type="ecore:EAttribute" name="driveProperty" lowerBound="0" upperBound="1" transient="false" eType="//MString" derived="false" volatile="false"/>
+     	<eStructuralFeatures xsi:type="ecore:EAttribute" name="drivePropertyHistoricValues" upperBound="3" transient="false" eType="//MString"/>
+	   	<eStructuralFeatures xsi:type="ecore:EReference" name="mUpgradeMessageProperty"
+	      lowerBound="1" eType="#//MProperty"
+	      containment="true" resolveProxies="false">
+	     <eAnnotations source="http://www.onceforall.org/mcore">
+	       <details key="name" value="Application data upgrade message"/>
+	       <details key="description" value="Specifies important information about the last application data upgrade."/>
+	       <details key="readOnly" value="true"/>
+	     </eAnnotations>
+	   </eStructuralFeatures>  		
+       <eStructuralFeatures xsi:type="ecore:EAttribute" name="upgradeMessageProperty" lowerBound="0" upperBound="1" transient="false" eType="//MString" derived="false" volatile="false"/>
+	   	<eStructuralFeatures xsi:type="ecore:EReference" name="mUpgradeRelativeFtpPathProperty"
+	      lowerBound="1" eType="#//MProperty"
+	      containment="true" resolveProxies="false">
+	     <eAnnotations source="http://www.onceforall.org/mcore">
+	       <details key="name" value="Application data upgrade relative FTP path"/>
+	       <details key="description" value="Specifies the relative path on the FTP server to the application data upgrade file, e.g. &apos;/dms/data.xml&apos;."/>
+	     </eAnnotations>
+	   </eStructuralFeatures>  		
+       <eStructuralFeatures xsi:type="ecore:EAttribute" name="upgradeRelativeFtpPathProperty" lowerBound="0" upperBound="1" transient="false" eType="//MString" derived="false" volatile="false"/>
+	   	<eStructuralFeatures xsi:type="ecore:EReference" name="mLastUpgradeProperty"
+	      lowerBound="1" eType="#//MProperty"
+	      containment="true" resolveProxies="false">
+	     <eAnnotations source="http://www.onceforall.org/mcore">
+	       <details key="name" value="Last application data upgrade"/>
+	       <details key="description" value="Specifies the date and time when the application data was last upgraded."/>
+	       <details key="readOnly" value="true"/>
+	     </eAnnotations>
+	   </eStructuralFeatures>  		
+       <eStructuralFeatures xsi:type="ecore:EAttribute" name="lastUpgradeProperty" lowerBound="0" upperBound="1" transient="false" eType="//MDateTime" derived="false" volatile="false"/>
+	   	<eStructuralFeatures xsi:type="ecore:EReference" name="mOrganisationProperty"
+	      lowerBound="1" eType="#//MProperty"
+	      containment="true" resolveProxies="false">
+	     <eAnnotations source="http://www.onceforall.org/mcore">
+	       <details key="name" value="Organisation"/>
+	       <details key="description" value="Specifies the organisation that is using this application. Please do not change this property as some customisations may depend on its value."/>
+	       <details key="readOnly" value="false"/>
+	     </eAnnotations>
+	   </eStructuralFeatures>  		
+       <eStructuralFeatures xsi:type="ecore:EAttribute" name="organisationProperty" lowerBound="1" upperBound="1" defaultValueLiteral="Christ Church Bromley" transient="false" eType="//MString" derived="false" volatile="false"/>
+	   	<eStructuralFeatures xsi:type="ecore:EReference" name="mGetDataUpgradeInfoStep"
+	      lowerBound="1" eType="#//MDmsApplicationMGetDataUpgradeInfoStep"
+	      containment="true" resolveProxies="false">
+	   </eStructuralFeatures>
+	   	<eStructuralFeatures xsi:type="ecore:EReference" name="mUpgradeDataStep"
+	      lowerBound="1" eType="#//MDmsApplicationMUpgradeDataStep"
+	      containment="true" resolveProxies="false">
+	   </eStructuralFeatures>
+   	<eStructuralFeatures xsi:type="ecore:EReference" name="mScripts"
+      lowerBound="1" upperBound="-1" eType="#//MScript"
+      containment="true" derived="false" volatile="false"
+      transient="false" resolveProxies="false"/>					
+   	<eStructuralFeatures xsi:type="ecore:EReference" name="mMp3Folders"
+      lowerBound="1" upperBound="-1" eType="#//MMp3Folder"
+      containment="true" derived="false" volatile="false"
+      transient="false" resolveProxies="false"/>					
+	</eClassifiers>
+	<eClassifiers xsi:type="ecore:EClass" name="MDmsApplicationMGetDataUpgradeInfoStep" eSuperTypes="#//MFtpStep" abstract="false">
+ 		<eAnnotations source="http://www.onceforall.org/mcore">
+   		<details key="name" value="Get application data upgrade info"/>
+   		<details key="description" value="Tries to find the application data upgrade file at the given FTP server location and retrieves the upgrade message if present."/>
+	   	<details key="actionName" value="Get"/>
+	   	<details key="actionIconFilePath" value="Image Files\Mark as completed.gif"/>
+	   	<details key="interruptable" value="false"/>
+	   	<details key="stoppable" value="false"/>
+	   	<details key="terminatable" value="false"/>
+ 		</eAnnotations>
+	   	<eStructuralFeatures xsi:type="ecore:EReference" name="mUpgradeRelativeFtpPathProperty"
+	      lowerBound="1" eType="#//MParameter"
+	      containment="true" resolveProxies="false">
+	     <eAnnotations source="http://www.onceforall.org/mcore">
+	       <details key="name" value="Application data upgrade relative FTP path"/>
+	       <details key="description" value="Specifies the path of the directory on the FTP server to the application data upgrade file, e.g. &apos;/dms/data.xml&apos;."/>
+	     </eAnnotations>
+	   </eStructuralFeatures>  		
+       <eStructuralFeatures xsi:type="ecore:EAttribute" name="upgradeRelativeFtpPathProperty" lowerBound="1" upperBound="1" transient="false" eType="//MString" derived="false" volatile="false"/>
+	   	<eStructuralFeatures xsi:type="ecore:EReference" name="mUpgradeAvailableResult"
+	      lowerBound="1" eType="#//MResult"
+	      containment="true" resolveProxies="false">
+	     <eAnnotations source="http://www.onceforall.org/mcore">
+	       <details key="name" value="Application data upgrade available"/>
+	       <details key="description" value="Specifies whether an application data upgrade file could be found on the FTP server at the specified location."/>
+	     </eAnnotations>
+	   </eStructuralFeatures>  		
+       <eStructuralFeatures xsi:type="ecore:EAttribute" name="upgradeAvailableResult" lowerBound="0" upperBound="1" transient="true" eType="//MBoolean" derived="false" volatile="false"/>
+	   	<eStructuralFeatures xsi:type="ecore:EReference" name="mUpgradeMessageResult"
+	      lowerBound="1" eType="#//MResult"
+	      containment="true" resolveProxies="false">
+	     <eAnnotations source="http://www.onceforall.org/mcore">
+	       <details key="name" value="Application data upgrade message"/>
+	       <details key="description" value="Specifies a message that provides a description of the application data upgrade."/>
+	     </eAnnotations>
+	   </eStructuralFeatures>  		
+       <eStructuralFeatures xsi:type="ecore:EAttribute" name="upgradeMessageResult" lowerBound="0" upperBound="1" transient="true" eType="//MString" derived="false" volatile="false"/>
+	   	<eStructuralFeatures xsi:type="ecore:EReference" name="mUpgradeDateResult"
+	      lowerBound="1" eType="#//MResult"
+	      containment="true" resolveProxies="false">
+	     <eAnnotations source="http://www.onceforall.org/mcore">
+	       <details key="name" value="Application data upgrade date"/>
+	       <details key="description" value="Specifies the date and time when the application data upgrade was created."/>
+	     </eAnnotations>
+	   </eStructuralFeatures>  		
+       <eStructuralFeatures xsi:type="ecore:EAttribute" name="upgradeDateResult" lowerBound="0" upperBound="1" transient="true" eType="//MDateTime" derived="false" volatile="false"/>
+	</eClassifiers>	
+	<eClassifiers xsi:type="ecore:EClass" name="MDmsApplicationMUpgradeDataStep" eSuperTypes="#//MFtpStep" abstract="false">
+ 		<eAnnotations source="http://www.onceforall.org/mcore">
+   		<details key="name" value="Upgrade application data"/>
+   		<details key="description" value="Tried to find an upgrade file on the given FTP server location, optionally displays an upgrade message and upgrades the application data."/>
+	   	<details key="actionName" value="Upgrade"/>
+	   	<details key="actionIconFilePath" value="Image Files\Mark as completed.gif"/>
+	   	<details key="interruptable" value="false"/>
+	   	<details key="stoppable" value="false"/>
+	   	<details key="terminatable" value="false"/>
+ 		</eAnnotations>
+	   	<eStructuralFeatures xsi:type="ecore:EReference" name="mUpgradeRelativeFtpPathProperty"
+	      lowerBound="1" eType="#//MParameter"
+	      containment="true" resolveProxies="false">
+	     <eAnnotations source="http://www.onceforall.org/mcore">
+	       <details key="name" value="Application data upgrade relative FTP path"/>
+	       <details key="description" value="Specifies the path of the directory on the FTP server to the application data upgrade file, e.g. &apos;/dms/data.xml&apos;."/>
+	     </eAnnotations>
+	   </eStructuralFeatures>  		
+       <eStructuralFeatures xsi:type="ecore:EAttribute" name="upgradeRelativeFtpPathProperty" lowerBound="1" upperBound="1" transient="false" eType="//MString" derived="false" volatile="false"/>
+	   	<eStructuralFeatures xsi:type="ecore:EReference" name="mUpgradeMessageParameter"
+	      lowerBound="1" eType="#//MParameter"
+	      containment="true" resolveProxies="false">
+	     <eAnnotations source="http://www.onceforall.org/mcore">
+	       <details key="name" value="Application data upgrade message"/>
+	       <details key="description" value="Specifies a message that provides a description of the application data upgrade. If this parameter contains a message, the user has to acknowledge it before he/she can proceed."/>
+	     </eAnnotations>
+	   </eStructuralFeatures>  		
+       <eStructuralFeatures xsi:type="ecore:EAttribute" name="upgradeMessageParameter" lowerBound="0" upperBound="1" transient="true" eType="//MString" derived="false" volatile="false"/>
+	   	<eStructuralFeatures xsi:type="ecore:EReference" name="mUpgradeDateParameter"
+	      lowerBound="1" eType="#//MParameter"
+	      containment="true" resolveProxies="false">
+	     <eAnnotations source="http://www.onceforall.org/mcore">
+	       <details key="name" value="Application data upgrade date"/>
+	       <details key="description" value="Specifies the date and time when the application data upgrade was created."/>
+	       <details key="readOnly" value="false"/>
+	     </eAnnotations>
+	   </eStructuralFeatures>  		
+       <eStructuralFeatures xsi:type="ecore:EAttribute" name="upgradeDateParameter" lowerBound="0" upperBound="1" transient="true" eType="//MDateTime" derived="false" volatile="false"/>
+	</eClassifiers>	
+	<eClassifiers xsi:type="ecore:EClass" name="MEnterInformationStep" eSuperTypes="#//MStep" abstract="true">
+ 		<eAnnotations source="http://www.onceforall.org/mcore">
+   		<details key="name" value="Enter information"/>
+   		<details key="description" value="Please enter the required information and then select &apos;Mark as completed&apos;."/>
+   		<details key="iconFilePath" value="Image Files/Enter information step.gif"/>
+	   	<details key="actionName" value="Mark as completed"/>
+	   	<details key="actionIconFilePath" value="Image Files/Mark as completed.gif"/>
+	   	<details key="interruptable" value="false"/>
+	   	<details key="stoppable" value="false"/>
+	   	<details key="terminatable" value="false"/>
+ 		</eAnnotations>
+	</eClassifiers>
+	<eClassifiers xsi:type="ecore:EClass" name="MEnterWwxInformationStep" eSuperTypes="#//MEnterInformationStep" abstract="false">
+ 		<eAnnotations source="http://www.onceforall.org/mcore">
+   		<details key="name" value="Enter WordWiseXtra information"/>
+   		<details key="description" value="Please enter information about the WordWiseXtra meeting and then select &apos;Mark as completed&apos;."/>
+	   	<details key="actionIconFilePath" value="Image Files/Mark as completed.gif"/>
+	   	<details key="interruptable" value="false"/>
+	   	<details key="stoppable" value="false"/>
+	   	<details key="terminatable" value="false"/>
+ 		</eAnnotations>
+	   	<eStructuralFeatures xsi:type="ecore:EReference" name="mWwxDateParameter"
+	      lowerBound="1" eType="#//MParameter"
+	      containment="true" resolveProxies="false">
+	     <eAnnotations source="http://www.onceforall.org/mcore">
+	       <details key="name" value="Date"/>
+	       <details key="description" value="Specifies the date of the WordWiseXtra meeting."/>
+	     </eAnnotations>
+	   </eStructuralFeatures>  		
+       <eStructuralFeatures xsi:type="ecore:EAttribute" name="wwxDateParameter" lowerBound="1" upperBound="1" transient="true" eType="//MDate" derived="false" volatile="false"/>
+	   	<eStructuralFeatures xsi:type="ecore:EReference" name="mTitleOfTalkParameter"
+	      lowerBound="1" eType="#//MParameter"
+	      containment="true" resolveProxies="false">
+	     <eAnnotations source="http://www.onceforall.org/mcore">
+	       <details key="name" value="Topic"/>
+	       <details key="description" value="Specifies the title of the talk."/>
+	     </eAnnotations>
+	   </eStructuralFeatures>  		
+       <eStructuralFeatures xsi:type="ecore:EAttribute" name="titleOfTalkParameter" lowerBound="1" upperBound="1" transient="true" eType="//MString" derived="false" volatile="false"/>
+	   	<eStructuralFeatures xsi:type="ecore:EReference" name="mSpeakersNameParameter"
+	      lowerBound="1" eType="#//MParameter"
+	      containment="true" resolveProxies="false">
+	     <eAnnotations source="http://www.onceforall.org/mcore">
+	       <details key="name" value="Speaker&apos;s name"/>
+	       <details key="description" value="Specifies the name of the speaker who will give the talk."/>
+	     </eAnnotations>
+	   </eStructuralFeatures>  		
+       <eStructuralFeatures xsi:type="ecore:EAttribute" name="speakersNameParameter" lowerBound="1" upperBound="1" transient="true" eType="//MString" derived="false" volatile="false"/>
+     	<eStructuralFeatures xsi:type="ecore:EAttribute" name="speakersNameParameterHistoricValues" upperBound="10" transient="false" eType="//MString"/>
+	   	<eStructuralFeatures xsi:type="ecore:EReference" name="mFirstPartParameter"
+	      lowerBound="1" eType="#//MParameter"
+	      containment="true" resolveProxies="false">
+	     <eAnnotations source="http://www.onceforall.org/mcore">
+	       <details key="name" value="First part"/>
+	       <details key="description" value="Specifies the name of the first part of the WWX meeting, e.g. &apos;Talk&apos;."/>
+	     </eAnnotations>
+	   </eStructuralFeatures>  		
+       <eStructuralFeatures xsi:type="ecore:EAttribute" name="firstPartParameter" lowerBound="1" upperBound="1" transient="false" eType="//MString" derived="false" volatile="false"/>
+     	<eStructuralFeatures xsi:type="ecore:EAttribute" name="firstPartParameterHistoricValues" upperBound="2" transient="false" eType="//MString"/>
+	   	<eStructuralFeatures xsi:type="ecore:EReference" name="mSecondPartParameter"
+	      lowerBound="1" eType="#//MParameter"
+	      containment="true" resolveProxies="false">
+	     <eAnnotations source="http://www.onceforall.org/mcore">
+	       <details key="name" value="Second part"/>
+	       <details key="description" value="Specifies the name of the second part of the WWX meeting, e.g. &apos;Q&amp;A&apos;."/>
+	     </eAnnotations>
+	   </eStructuralFeatures>  		
+       <eStructuralFeatures xsi:type="ecore:EAttribute" name="secondPartParameter" lowerBound="1" upperBound="1" transient="false" eType="//MString" derived="false" volatile="false"/>
+     	<eStructuralFeatures xsi:type="ecore:EAttribute" name="secondPartParameterHistoricValues" upperBound="2" transient="false" eType="//MString"/>
+	   	<eStructuralFeatures xsi:type="ecore:EReference" name="mRecordingUsersNameParameter"
+	      lowerBound="1" eType="#//MParameter"
+	      containment="true" resolveProxies="false">
+	     <eAnnotations source="http://www.onceforall.org/mcore">
+	       <details key="name" value="Recording user&apos;s name"/>
+	       <details key="description" value="Specifies the name of the recording user. Please enter your name."/>
+	     </eAnnotations>
+	   </eStructuralFeatures>  		
+       <eStructuralFeatures xsi:type="ecore:EAttribute" name="recordingUsersNameParameter" lowerBound="1" upperBound="1" transient="true" eType="//MString" derived="false" volatile="false"/>
+     	<eStructuralFeatures xsi:type="ecore:EAttribute" name="recordingUsersNameParameterHistoricValues" upperBound="10" transient="false" eType="//MString"/>
+	   	<eStructuralFeatures xsi:type="ecore:EReference" name="mWwxDateResult"
+	      lowerBound="1" eType="#//MResult"
+	      containment="true" resolveProxies="false">
+	     <eAnnotations source="http://www.onceforall.org/mcore">
+	       <details key="name" value="Date"/>
+	       <details key="description" value="Specifies the date of the WordWiseXtra meeting."/>
+	     </eAnnotations>
+	   </eStructuralFeatures>  		
+       <eStructuralFeatures xsi:type="ecore:EAttribute" name="wwxDateResult" lowerBound="1" upperBound="1" transient="true" eType="//MDate" derived="false" volatile="false"/>
+	   	<eStructuralFeatures xsi:type="ecore:EReference" name="mTitleOfTalkResult"
+	      lowerBound="1" eType="#//MResult"
+	      containment="true" resolveProxies="false">
+	     <eAnnotations source="http://www.onceforall.org/mcore">
+	       <details key="name" value="Topic"/>
+	       <details key="description" value="Specifies the title of the talk."/>
+	     </eAnnotations>
+	   </eStructuralFeatures>  		
+       <eStructuralFeatures xsi:type="ecore:EAttribute" name="titleOfTalkResult" lowerBound="1" upperBound="1" transient="true" eType="//MString" derived="false" volatile="false"/>
+	   	<eStructuralFeatures xsi:type="ecore:EReference" name="mSpeakersNameResult"
+	      lowerBound="1" eType="#//MResult"
+	      containment="true" resolveProxies="false">
+	     <eAnnotations source="http://www.onceforall.org/mcore">
+	       <details key="name" value="Speaker&apos;s name"/>
+	       <details key="description" value="Specifies the name of the speaker who will give the talk."/>
+	     </eAnnotations>
+	   </eStructuralFeatures>  		
+       <eStructuralFeatures xsi:type="ecore:EAttribute" name="speakersNameResult" lowerBound="1" upperBound="1" transient="true" eType="//MString" derived="false" volatile="false"/>
+	   	<eStructuralFeatures xsi:type="ecore:EReference" name="mFirstPartResult"
+	      lowerBound="1" eType="#//MResult"
+	      containment="true" resolveProxies="false">
+	     <eAnnotations source="http://www.onceforall.org/mcore">
+	       <details key="name" value="First part"/>
+	       <details key="description" value="Specifies the name of the first part of the WWX meeting, e.g. &apos;Talk&apos;."/>
+	     </eAnnotations>
+	   </eStructuralFeatures>  		
+       <eStructuralFeatures xsi:type="ecore:EAttribute" name="firstPartResult" lowerBound="1" upperBound="1" transient="true" eType="//MString" derived="false" volatile="false"/>
+	   	<eStructuralFeatures xsi:type="ecore:EReference" name="mSecondPartResult"
+	      lowerBound="1" eType="#//MResult"
+	      containment="true" resolveProxies="false">
+	     <eAnnotations source="http://www.onceforall.org/mcore">
+	       <details key="name" value="Second part"/>
+	       <details key="description" value="Specifies the name of the second part of the WWX meeting, e.g. &apos;Q&amp;A&apos;."/>
+	     </eAnnotations>
+	   </eStructuralFeatures>  		
+       <eStructuralFeatures xsi:type="ecore:EAttribute" name="secondPartResult" lowerBound="1" upperBound="1" transient="true" eType="//MString" derived="false" volatile="false"/>
+	   	<eStructuralFeatures xsi:type="ecore:EReference" name="mRecordingUsersNameResult"
+	      lowerBound="1" eType="#//MResult"
+	      containment="true" resolveProxies="false">
+	     <eAnnotations source="http://www.onceforall.org/mcore">
+	       <details key="name" value="Recording user&apos;s name"/>
+	       <details key="description" value="Specifies the name of the recording user. Please enter your name."/>
+	     </eAnnotations>
+	   </eStructuralFeatures>  		
+       <eStructuralFeatures xsi:type="ecore:EAttribute" name="recordingUsersNameResult" lowerBound="1" upperBound="1" transient="true" eType="//MString" derived="false" volatile="false"/>
+	</eClassifiers>
+	<eClassifiers xsi:type="ecore:EClass" name="MEnterServiceInformationStep" eSuperTypes="#//MEnterInformationStep" abstract="false">
+ 		<eAnnotations source="http://www.onceforall.org/mcore">
+   		<details key="name" value="Enter service information"/>
+   		<details key="description" value="Please enter the required information about the service and then select &apos;Mark as completed&apos;."/>
+   		<details key="iconFilePath" value="Image Files/Enter information step.gif"/>
+	   	<details key="actionIconFilePath" value="Image Files/Mark as completed.gif"/>
+	   	<details key="interruptable" value="false"/>
+	   	<details key="stoppable" value="false"/>
+	   	<details key="terminatable" value="false"/>
+ 		</eAnnotations>
+	   	<eStructuralFeatures xsi:type="ecore:EReference" name="mServiceDateParameter"
+	      lowerBound="1" eType="#//MParameter"
+	      containment="true" resolveProxies="false">
+	     <eAnnotations source="http://www.onceforall.org/mcore">
+	       <details key="name" value="Service date"/>
+	       <details key="description" value="Specifies the date of the service."/>
+	     </eAnnotations>
+	   </eStructuralFeatures>  		
+       <eStructuralFeatures xsi:type="ecore:EAttribute" name="serviceDateParameter" lowerBound="1" upperBound="1" transient="true" eType="//MDate" derived="false" volatile="false"/>
+	   	<eStructuralFeatures xsi:type="ecore:EReference" name="mServiceTypeParameter"
+	      lowerBound="1" eType="#//MParameter"
+	      containment="true" resolveProxies="false">
+	     <eAnnotations source="http://www.onceforall.org/mcore">
+	       <details key="name" value="Service type"/>
+	       <details key="description" value="Specifies the type of the service, e.g. AM service, PM service, Carol service ..."/>
+	     </eAnnotations>
+	   </eStructuralFeatures>  		
+       <eStructuralFeatures xsi:type="ecore:EAttribute" name="serviceTypeParameter" lowerBound="1" upperBound="1" transient="true" eType="//MString" derived="false" volatile="false"/>
+     	<eStructuralFeatures xsi:type="ecore:EAttribute" name="serviceTypeParameterHistoricValues" upperBound="5" transient="false" eType="//MString"/>
+	   	<eStructuralFeatures xsi:type="ecore:EReference" name="mTitleOfTalkParameter"
+	      lowerBound="1" eType="#//MParameter"
+	      containment="true" resolveProxies="false">
+	     <eAnnotations source="http://www.onceforall.org/mcore">
+	       <details key="name" value="Title of talk"/>
+	       <details key="description" value="Specifies the title of the talk."/>
+	     </eAnnotations>
+	   </eStructuralFeatures>  		
+       <eStructuralFeatures xsi:type="ecore:EAttribute" name="titleOfTalkParameter" lowerBound="1" upperBound="1" transient="true" eType="//MString" derived="false" volatile="false"/>
+	   	<eStructuralFeatures xsi:type="ecore:EReference" name="mReadingParameter"
+	      lowerBound="1" eType="#//MParameter"
+	      containment="true" resolveProxies="false">
+	     <eAnnotations source="http://www.onceforall.org/mcore">
+	       <details key="name" value="Reading"/>
+	       <details key="description" value="Specifies the bible passage that the sermon is about, e.g. Acts 4:1-22."/>
+	     </eAnnotations>
+	   </eStructuralFeatures>  		
+       <eStructuralFeatures xsi:type="ecore:EAttribute" name="readingParameter" lowerBound="0" upperBound="1" transient="true" eType="//MString" derived="false" volatile="false"/>
+	   	<eStructuralFeatures xsi:type="ecore:EReference" name="mSpeakersNameParameter"
+	      lowerBound="1" eType="#//MParameter"
+	      containment="true" resolveProxies="false">
+	     <eAnnotations source="http://www.onceforall.org/mcore">
+	       <details key="name" value="Speaker&apos;s name"/>
+	       <details key="description" value="Specifies the name of the speaker who will give the talk."/>
+	     </eAnnotations>
+	   </eStructuralFeatures>  		
+       <eStructuralFeatures xsi:type="ecore:EAttribute" name="speakersNameParameter" lowerBound="1" upperBound="1" transient="true" eType="//MString" derived="false" volatile="false"/>
+     	<eStructuralFeatures xsi:type="ecore:EAttribute" name="speakersNameParameterHistoricValues" upperBound="10" transient="false" eType="//MString"/>
+	   	<eStructuralFeatures xsi:type="ecore:EReference" name="mRecordingUsersNameParameter"
+	      lowerBound="1" eType="#//MParameter"
+	      containment="true" resolveProxies="false">
+	     <eAnnotations source="http://www.onceforall.org/mcore">
+	       <details key="name" value="Recording user&apos;s name"/>
+	       <details key="description" value="Specifies the name of the recording user. Please enter your name."/>
+	     </eAnnotations>
+	   </eStructuralFeatures>  		
+       <eStructuralFeatures xsi:type="ecore:EAttribute" name="recordingUsersNameParameter" lowerBound="1" upperBound="1" transient="true" eType="//MString" derived="false" volatile="false"/>
+     	<eStructuralFeatures xsi:type="ecore:EAttribute" name="recordingUsersNameParameterHistoricValues" upperBound="10" transient="false" eType="//MString"/>
+	   	<eStructuralFeatures xsi:type="ecore:EReference" name="mServiceDateResult"
+	      lowerBound="1" eType="#//MResult"
+	      containment="true" resolveProxies="false">
+	     <eAnnotations source="http://www.onceforall.org/mcore">
+	       <details key="name" value="Service date"/>
+	       <details key="description" value="Specifies the date of the service."/>
+	     </eAnnotations>
+	   </eStructuralFeatures>  		
+       <eStructuralFeatures xsi:type="ecore:EAttribute" name="serviceDateResult" lowerBound="1" upperBound="1" transient="true" eType="//MDate" derived="false" volatile="false"/>
+	   	<eStructuralFeatures xsi:type="ecore:EReference" name="mServiceTypeResult"
+	      lowerBound="1" eType="#//MResult"
+	      containment="true" resolveProxies="false">
+	     <eAnnotations source="http://www.onceforall.org/mcore">
+	       <details key="name" value="Service type"/>
+	       <details key="description" value="Specifies the type of the service, e.g. AM service, PM service, Carol service ..."/>
+	     </eAnnotations>
+	   </eStructuralFeatures>  		
+       <eStructuralFeatures xsi:type="ecore:EAttribute" name="serviceTypeResult" lowerBound="1" upperBound="1" transient="true" eType="//MString" derived="false" volatile="false"/>
+	   	<eStructuralFeatures xsi:type="ecore:EReference" name="mTitleOfTalkResult"
+	      lowerBound="1" eType="#//MResult"
+	      containment="true" resolveProxies="false">
+	     <eAnnotations source="http://www.onceforall.org/mcore">
+	       <details key="name" value="Title of talk"/>
+	       <details key="description" value="Specifies the title of the talk."/>
+	     </eAnnotations>
+	   </eStructuralFeatures>  		
+       <eStructuralFeatures xsi:type="ecore:EAttribute" name="titleOfTalkResult" lowerBound="1" upperBound="1" transient="true" eType="//MString" derived="false" volatile="false"/>
+	   	<eStructuralFeatures xsi:type="ecore:EReference" name="mReadingResult"
+	      lowerBound="1" eType="#//MResult"
+	      containment="true" resolveProxies="false">
+	     <eAnnotations source="http://www.onceforall.org/mcore">
+	       <details key="name" value="Reading"/>
+	       <details key="description" value="Specifies the bible passage that the sermon is about, e.g. Acts 4:1-22."/>
+	     </eAnnotations>
+	   </eStructuralFeatures>  		
+       <eStructuralFeatures xsi:type="ecore:EAttribute" name="readingResult" lowerBound="0" upperBound="1" transient="true" eType="//MString" derived="false" volatile="false"/>
+	   	<eStructuralFeatures xsi:type="ecore:EReference" name="mSpeakersNameResult"
+	      lowerBound="1" eType="#//MResult"
+	      containment="true" resolveProxies="false">
+	     <eAnnotations source="http://www.onceforall.org/mcore">
+	       <details key="name" value="Speaker&apos;s name"/>
+	       <details key="description" value="Specifies the name of the speaker who will give the talk."/>
+	     </eAnnotations>
+	   </eStructuralFeatures>  		
+       <eStructuralFeatures xsi:type="ecore:EAttribute" name="speakersNameResult" lowerBound="1" upperBound="1" transient="true" eType="//MString" derived="false" volatile="false"/>
+	   	<eStructuralFeatures xsi:type="ecore:EReference" name="mRecordingUsersNameResult"
+	      lowerBound="1" eType="#//MResult"
+	      containment="true" resolveProxies="false">
+	     <eAnnotations source="http://www.onceforall.org/mcore">
+	       <details key="name" value="Recording user&apos;s name"/>
+	       <details key="description" value="Specifies the name of the recording user. Please enter your name."/>
+	     </eAnnotations>
+	   </eStructuralFeatures>  		
+       <eStructuralFeatures xsi:type="ecore:EAttribute" name="recordingUsersNameResult" lowerBound="1" upperBound="1" transient="true" eType="//MString" derived="false" volatile="false"/>
+	</eClassifiers>
+	<eClassifiers xsi:type="ecore:EClass" name="MCreateDirectoryStep" eSuperTypes="#//MStep" abstract="false">
+ 		<eAnnotations source="http://www.onceforall.org/mcore">
+   		<details key="name" value="Create directory"/>
+   		<details key="description" value="Creates a directory where the recorded files and other related files will be stored."/>
+   		<details key="iconFilePath" value="Image Files/Create directory step.gif"/>
+	   	<details key="actionName" value="Create"/>
+	   	<details key="actionIconFilePath" value="Image Files/Create directory.gif"/>
+	   	<details key="interruptable" value="false"/>
+	   	<details key="stoppable" value="false"/>
+	   	<details key="terminatable" value="false"/>
+ 		</eAnnotations>
+	   	<eStructuralFeatures xsi:type="ecore:EReference" name="mParentDirectoryParameter"
+	      lowerBound="1" eType="#//MParameter"
+	      containment="true" resolveProxies="false">
+	     <eAnnotations source="http://www.onceforall.org/mcore">
+	       <details key="name" value="Parent directory"/>
+	       <details key="description" value="Specifies the path to the directory in which the new directory is to be created."/>
+	     </eAnnotations>
+	   </eStructuralFeatures>  		
+       <eStructuralFeatures xsi:type="ecore:EAttribute" name="parentDirectoryParameter" lowerBound="1" upperBound="1" transient="false" eType="//MExistingDirectory" derived="false" volatile="false"/>
+     	<eStructuralFeatures xsi:type="ecore:EAttribute" name="parentDirectoryParameterHistoricValues" upperBound="3" transient="false" eType="//MExistingDirectory"/>
+	   	<eStructuralFeatures xsi:type="ecore:EReference" name="mDirectoryNameParameter"
+	      lowerBound="1" eType="#//MParameter"
+	      containment="true" resolveProxies="false">
+	     <eAnnotations source="http://www.onceforall.org/mcore">
+	       <details key="name" value="Directory name"/>
+	       <details key="description" value="Specifies the name of the directory to be created."/>
+	     </eAnnotations>
+	   </eStructuralFeatures>  		
+       <eStructuralFeatures xsi:type="ecore:EAttribute" name="directoryNameParameter" lowerBound="1" upperBound="1" transient="false" eType="//MDirectory" derived="false" volatile="false"/>
+	   	<eStructuralFeatures xsi:type="ecore:EReference" name="mDirectoryResult"
+	      lowerBound="1" eType="#//MResult"
+	      containment="true" resolveProxies="false">
+	     <eAnnotations source="http://www.onceforall.org/mcore">
+	       <details key="name" value="Directory"/>
+	       <details key="description" value="Specifies the path of the created service directory."/>
+	     </eAnnotations>
+	   </eStructuralFeatures>  		
+       <eStructuralFeatures xsi:type="ecore:EAttribute" name="directoryResult" lowerBound="1" upperBound="1" transient="true" eType="//MExistingDirectory" derived="false" volatile="false"/>
+	</eClassifiers>
+	<eClassifiers xsi:type="ecore:EClass" name="MCheckFreeDiskSpaceStep" eSuperTypes="#//MStep" abstract="false">
+ 		<eAnnotations source="http://www.onceforall.org/mcore">
+   		<details key="name" value="Check free disk space"/>
+   		<details key="description" value="Please make sure that there is enough disk space free on this computer. There must be at least 1 GB (i.e. 1024 MB) available for the recordings. If not enough disk space is available, please delete the oldest services till enough disk space is free."/>
+   		<details key="iconFilePath" value="Image Files/Task.gif"/>
+	   	<details key="actionName" value="Check"/>
+	   	<details key="actionIconFilePath" value="Image Files/Mark as completed.gif"/>
+	   	<details key="interruptable" value="false"/>
+	   	<details key="stoppable" value="false"/>
+	   	<details key="terminatable" value="false"/>
+ 		</eAnnotations>
+	   	<eStructuralFeatures xsi:type="ecore:EReference" name="mRequiredFreeDiskSpaceParameter"
+	      lowerBound="1" eType="#//MParameter"
+	      containment="true" resolveProxies="false">
+	     <eAnnotations source="http://www.onceforall.org/mcore">
+	       <details key="name" value="Required free disk space"/>
+	       <details key="description" value="Specifies the estimated required free disk space in bytes on the drive where the recording will be stored."/>
+	     </eAnnotations>
+	   </eStructuralFeatures>  		
+       <eStructuralFeatures xsi:type="ecore:EAttribute" name="requiredFreeDiskSpaceParameter" lowerBound="1" upperBound="1" transient="false" eType="//MLong" derived="false" volatile="false"/>
+	   	<eStructuralFeatures xsi:type="ecore:EReference" name="mDirectoryParameter"
+	      lowerBound="1" eType="#//MParameter"
+	      containment="true" resolveProxies="false">
+	     <eAnnotations source="http://www.onceforall.org/mcore">
+	       <details key="name" value="Directory"/>
+	       <details key="description" value="Specifies the path of the created directory where the recordings will be stored."/>
+	     </eAnnotations>
+	   </eStructuralFeatures>  		
+       <eStructuralFeatures xsi:type="ecore:EAttribute" name="directoryParameter" lowerBound="1" upperBound="1" transient="false" eType="//MExistingDirectory" derived="false" volatile="false"/>
+	   	<eStructuralFeatures xsi:type="ecore:EReference" name="mFreeDiskSpaceResult"
+	      lowerBound="1" eType="#//MResult"
+	      containment="true" resolveProxies="false">
+	     <eAnnotations source="http://www.onceforall.org/mcore">
+	       <details key="name" value="Free disk space"/>
+	       <details key="description" value="Specifies the actual free disk space on the drive where the recording will be stored."/>
+	     </eAnnotations>
+	   </eStructuralFeatures>  		
+       <eStructuralFeatures xsi:type="ecore:EAttribute" name="freeDiskSpaceResult" lowerBound="0" upperBound="1" transient="true" eType="//MLong" derived="false" volatile="false"/>
+	</eClassifiers>
+	<eClassifiers xsi:type="ecore:EClass" name="MAudioStep" eSuperTypes="#//MStep" abstract="true">
+ 		<eAnnotations source="http://www.onceforall.org/mcore">
+   		<details key="iconFilePath" value="Image Files/Audio step.gif"/>
+   		<details key="compositeClassName" value="org.onceforall.dms.desktop.ui.MAudioStepComposite"/>
+	   	<details key="actionIconFilePath" value="Image Files/Mark as completed.gif"/>
+	   	<details key="interruptable" value="false"/>
+	   	<details key="stoppable" value="false"/>
+	   	<details key="terminatable" value="false"/>
+ 		</eAnnotations>
+	   	<eStructuralFeatures xsi:type="ecore:EReference" name="mLeftInputLevelProperty"
+	      lowerBound="1" eType="#//MProperty"
+	      containment="true" resolveProxies="false">
+	     <eAnnotations source="http://www.onceforall.org/mcore">
+	       <details key="name" value="Left input level"/>
+	       <details key="description" value="Displays the current left input level as a value between 0 and 100.
+If the dBFS scale is used, the 100 represents 0dBFS and 0 represents -50dBFS. Otherwise it represents the (scaled) raw readings."/>
+	       <details key="readOnly" value="true"/>
+	     </eAnnotations>
+	   </eStructuralFeatures>  		
+       <eStructuralFeatures xsi:type="ecore:EAttribute" name="leftInputLevelProperty" lowerBound="1" upperBound="1" defaultValueLiteral="0" transient="true" eType="//MLong" derived="false" volatile="false"/>
+	   	<eStructuralFeatures xsi:type="ecore:EReference" name="mRightInputLevelProperty"
+	      lowerBound="1" eType="#//MProperty"
+	      containment="true" resolveProxies="false">
+	     <eAnnotations source="http://www.onceforall.org/mcore">
+	       <details key="name" value="Right input level"/>
+	       <details key="description" value="Displays the current right input level as a value between 0 and 100.
+If the dBFS scale is used, the 100 represents 0dBFS and 0 represents -50dBFS. Otherwise it represents the (scaled) raw readings."/>
+	       <details key="readOnly" value="true"/>
+	     </eAnnotations>
+	   </eStructuralFeatures>  		
+       <eStructuralFeatures xsi:type="ecore:EAttribute" name="rightInputLevelProperty" lowerBound="1" upperBound="1" defaultValueLiteral="0" transient="true" eType="//MLong" derived="false" volatile="false"/>
+	   	<eStructuralFeatures xsi:type="ecore:EReference" name="mLeftInputDistortionProperty"
+	      lowerBound="1" eType="#//MProperty"
+	      containment="true" resolveProxies="false">
+	     <eAnnotations source="http://www.onceforall.org/mcore">
+	       <details key="name" value="Left input distortion alert"/>
+	       <details key="description" value="Indicates whether the audio signal on left channel is likely to be distorted."/>
+	       <details key="readOnly" value="true"/>
+	     </eAnnotations>
+	   </eStructuralFeatures>  		
+       <eStructuralFeatures xsi:type="ecore:EAttribute" name="leftInputDistortionProperty" lowerBound="1" upperBound="1" defaultValueLiteral="false" transient="true" eType="//MBoolean" derived="false" volatile="false"/>
+	   	<eStructuralFeatures xsi:type="ecore:EReference" name="mRightInputDistortionProperty"
+	      lowerBound="1" eType="#//MProperty"
+	      containment="true" resolveProxies="false">
+	     <eAnnotations source="http://www.onceforall.org/mcore">
+	       <details key="name" value="Right input distortion alert"/>
+	       <details key="description" value="Indicates whether the audio signal on right channel is likely to be distorted."/>
+	       <details key="readOnly" value="true"/>
+	     </eAnnotations>
+	   </eStructuralFeatures>  		
+       <eStructuralFeatures xsi:type="ecore:EAttribute" name="rightInputDistortionProperty" lowerBound="1" upperBound="1" defaultValueLiteral="false" transient="true" eType="//MBoolean" derived="false" volatile="false"/>
+	   	<eStructuralFeatures xsi:type="ecore:EReference" name="mUseDbProperty"
+	      lowerBound="1" eType="#//MProperty"
+	      containment="true" resolveProxies="false">
+	     <eAnnotations source="http://www.onceforall.org/mcore">
+	       <details key="name" value="Use dBFS"/>
+	       <details key="description" value="Specifies whether the meters should show the signal readings in dBFS (logarithmic) or raw (linear). If dBFS is used then the meters show range from -50 dBFS to 0 dBFS.
+
+For an explanation of dBFS, please refer to http://en.wikipedia.org/wiki/DBFS."/>
+	     </eAnnotations>
+	   </eStructuralFeatures>  		
+       <eStructuralFeatures xsi:type="ecore:EAttribute" name="useDbProperty" lowerBound="1" upperBound="1" defaultValueLiteral="true" transient="false" eType="//MBoolean" derived="false" volatile="false"/>
+	   	<eStructuralFeatures xsi:type="ecore:EReference" name="mHeadroomProperty"
+	      lowerBound="1" eType="#//MProperty"
+	      containment="true" resolveProxies="false">
+	     <eAnnotations source="http://www.onceforall.org/mcore">
+	       <details key="name" value="Headroom (in dBFS)"/>
+	       <details key="description" value="Specifies the headroom in dBFS. This must be a number between 0 and 18. The level meters should indicate whether the signal is within the headroom using yellow and red colours.
+
+For an explanation of the headroom please refer to http://en.wikipedia.org/wiki/Headroom.
+For an explanation of dBFS, please refer to http://en.wikipedia.org/wiki/DBFS.
+ "/>
+	       <details key="readOnly" value="false"/>
+	     </eAnnotations>
+	   </eStructuralFeatures>  		
+       <eStructuralFeatures xsi:type="ecore:EAttribute" name="headroomProperty" lowerBound="1" upperBound="1" defaultValueLiteral="9" transient="false" eType="//MLong" derived="false" volatile="false"/>
+	</eClassifiers>
+	<eClassifiers xsi:type="ecore:EClass" name="MCheckInputLevelsStep" eSuperTypes="#//MAudioStep" abstract="false">
+ 		<eAnnotations source="http://www.onceforall.org/mcore">
+   		<details key="name" value="Check input levels"/>
+   		<details key="description" value="Please make sure that the input level will not exceed the maximum and the recording is not distorted. Important: Use the sounddesk &apos;Recording computer&apos; input line to verify the audio quality."/>
+   		<details key="iconFilePath" value="Image Files/Task.gif"/>
+	   	<details key="actionName" value="Mark as completed"/>
+	   	<details key="actionIconFilePath" value="Image Files/Mark as completed.gif"/>
+	   	<details key="interruptable" value="false"/>
+	   	<details key="stoppable" value="false"/>
+	   	<details key="terminatable" value="false"/>
+ 		</eAnnotations>
+	</eClassifiers>
+	<eClassifiers xsi:type="ecore:EClass" name="MRecordStep" eSuperTypes="#//MAudioStep" abstract="false">
+ 		<eAnnotations source="http://www.onceforall.org/mcore">
+   		<details key="name" value="Record"/>
+   		<details key="description" value="Records from the main audio input line to an uncompressed WAV file. Please make sure that the input level will not exceed the maximum."/>
+   		<details key="iconFilePath" value="Image Files/Record step.gif"/>
+	   	<details key="actionName" value="Record"/>
+	   	<details key="actionIconFilePath" value="Image Files/Record.gif"/>
+	   	<details key="interruptable" value="true"/>
+	   	<details key="stoppable" value="true"/>
+	   	<details key="terminatable" value="false"/>
+ 		</eAnnotations>
+	   	<eStructuralFeatures xsi:type="ecore:EReference" name="mRecordingLengthProperty"
+	      lowerBound="1" eType="#//MProperty"
+	      containment="true" resolveProxies="false">
+	     <eAnnotations source="http://www.onceforall.org/mcore">
+	       <details key="name" value="Recording length"/>
+	       <details key="description" value="Indicates the length of this recording."/>
+	       <details key="readOnly" value="true"/>
+	     </eAnnotations>
+	   </eStructuralFeatures>  		
+       <eStructuralFeatures xsi:type="ecore:EAttribute" name="recordingLengthProperty" lowerBound="0" upperBound="1" transient="true" eType="//MDuration" derived="false" volatile="false"/>
+	   	<eStructuralFeatures xsi:type="ecore:EReference" name="mDirectoryParameter"
+	      lowerBound="1" eType="#//MParameter"
+	      containment="true" resolveProxies="false">
+	     <eAnnotations source="http://www.onceforall.org/mcore">
+	       <details key="name" value="Directory"/>
+	       <details key="description" value="Specifies the path of the created directory where the recordings will be stored."/>
+	     </eAnnotations>
+	   </eStructuralFeatures>  		
+       <eStructuralFeatures xsi:type="ecore:EAttribute" name="directoryParameter" lowerBound="1" upperBound="1" transient="false" eType="//MExistingDirectory" derived="false" volatile="false"/>
+	   	<eStructuralFeatures xsi:type="ecore:EReference" name="mRecordingFileParameter"
+	      lowerBound="1" eType="#//MParameter"
+	      containment="true" resolveProxies="false">
+	     <eAnnotations source="http://www.onceforall.org/mcore">
+	       <details key="name" value="Recording file"/>
+	       <details key="description" value="Specifies the name of the WAVE file to be recorded."/>
+	     </eAnnotations>
+	   </eStructuralFeatures>  		
+       <eStructuralFeatures xsi:type="ecore:EAttribute" name="recordingFileParameter" lowerBound="1" upperBound="1" defaultValueLiteral="Recording.wav" transient="false" eType="//MFile" derived="false" volatile="false"/>
+	   	<eStructuralFeatures xsi:type="ecore:EReference" name="mRecordingFileResult"
+	      lowerBound="1" eType="#//MResult"
+	      containment="true" resolveProxies="false">
+	     <eAnnotations source="http://www.onceforall.org/mcore">
+	       <details key="name" value="Recording file"/>
+	       <details key="description" value="Specifies the path of the recorded WAVE file."/>
+	     </eAnnotations>
+	   </eStructuralFeatures>  		
+       <eStructuralFeatures xsi:type="ecore:EAttribute" name="recordingFileResult" lowerBound="1" upperBound="1" transient="true" eType="//MExistingFile" derived="false" volatile="false"/>
+	   	<eStructuralFeatures xsi:type="ecore:EReference" name="mRecordingFileSizeResult"
+	      lowerBound="1" eType="#//MResult"
+	      containment="true" resolveProxies="false">
+	     <eAnnotations source="http://www.onceforall.org/mcore">
+	       <details key="name" value="Recording file size"/>
+	       <details key="description" value="Specifies the size of the recorded WAVE file in bytes."/>
+	     </eAnnotations>
+	   </eStructuralFeatures>  		
+       <eStructuralFeatures xsi:type="ecore:EAttribute" name="recordingFileSizeResult" lowerBound="1" upperBound="1" transient="true" eType="//MLong" derived="false" volatile="false"/>
+	   	<eStructuralFeatures xsi:type="ecore:EReference" name="mRecordingLengthResult"
+	      lowerBound="1" eType="#//MResult"
+	      containment="true" resolveProxies="false">
+	     <eAnnotations source="http://www.onceforall.org/mcore">
+	       <details key="name" value="Recording length"/>
+	       <details key="description" value="Specifies the length of the recording."/>
+	     </eAnnotations>
+	   </eStructuralFeatures>  		
+       <eStructuralFeatures xsi:type="ecore:EAttribute" name="recordingLengthResult" lowerBound="1" upperBound="1" transient="true" eType="//MDuration" derived="false" volatile="false"/>
+	</eClassifiers>
+	<eClassifiers xsi:type="ecore:EClass" name="MConvertToMP3Step" eSuperTypes="#//MTagStep" abstract="false">
+ 		<eAnnotations source="http://www.onceforall.org/mcore">
+   		<details key="name" value="Convert to MP3"/>
+   		<details key="description" value="Converts a WAVE file to MP3 format using the LAME encoder."/>
+   		<details key="iconFilePath" value="Image Files/Convert to MP3 step.gif"/>
+	   	<details key="actionName" value="Convert"/>
+	   	<details key="actionIconFilePath" value="Image Files/Convert.gif"/>
+	   	<details key="interruptable" value="false"/>
+	   	<details key="stoppable" value="false"/>
+	   	<details key="terminatable" value="true"/>
+ 		</eAnnotations>
+	   	<eStructuralFeatures xsi:type="ecore:EReference" name="mDirectoryParameter"
+	      lowerBound="1" eType="#//MParameter"
+	      containment="true" resolveProxies="false">
+	     <eAnnotations source="http://www.onceforall.org/mcore">
+	       <details key="name" value="Directory"/>
+	       <details key="description" value="Specifies the directory where the converted MP3 file should be saved."/>
+	     </eAnnotations>
+	   </eStructuralFeatures>  		
+       <eStructuralFeatures xsi:type="ecore:EAttribute" name="directoryParameter" lowerBound="1" upperBound="1" transient="false" eType="//MExistingDirectory" derived="false" volatile="false"/>
+	   	<eStructuralFeatures xsi:type="ecore:EReference" name="mMp3FileNameParameter"
+	      lowerBound="1" eType="#//MParameter"
+	      containment="true" resolveProxies="false">
+	     <eAnnotations source="http://www.onceforall.org/mcore">
+	       <details key="name" value="MP3 file name"/>
+	       <details key="description" value="Specifies the name of the MP3 file."/>
+	     </eAnnotations>
+	   </eStructuralFeatures>  		
+       <eStructuralFeatures xsi:type="ecore:EAttribute" name="mp3FileNameParameter" lowerBound="1" upperBound="1" transient="false" eType="//MFile" derived="false" volatile="false"/>
+	   	<eStructuralFeatures xsi:type="ecore:EReference" name="mRecordingFileParameter"
+	      lowerBound="1" eType="#//MParameter"
+	      containment="true" resolveProxies="false">
+	     <eAnnotations source="http://www.onceforall.org/mcore">
+	       <details key="name" value="Recording file"/>
+	       <details key="description" value="Contains the name of the recorded WAVE file."/>
+	     </eAnnotations>
+	   </eStructuralFeatures>  		
+       <eStructuralFeatures xsi:type="ecore:EAttribute" name="recordingFileParameter" lowerBound="1" upperBound="1" transient="false" eType="//MExistingFile" derived="false" volatile="false"/>
+	   	<eStructuralFeatures xsi:type="ecore:EReference" name="mMp3EncoderPathParameter"
+	      lowerBound="1" eType="#//MParameter"
+	      containment="true" resolveProxies="false">
+	     <eAnnotations source="http://www.onceforall.org/mcore">
+	       <details key="name" value="MP3 encoder path"/>
+	       <details key="description" value="Specifies the path to the directory that contains the &apos;lame.exe&apos;."/>
+	     </eAnnotations>
+	   </eStructuralFeatures>  		
+       <eStructuralFeatures xsi:type="ecore:EAttribute" name="mp3EncoderPathParameter" lowerBound="1" upperBound="1" transient="false" eType="//MExistingDirectory" derived="false" volatile="false"/>
+	   	<eStructuralFeatures xsi:type="ecore:EReference" name="mAverageBitRateParameter"
+	      lowerBound="1" eType="#//MParameter"
+	      containment="true" resolveProxies="false">
+	     <eAnnotations source="http://www.onceforall.org/mcore">
+	       <details key="name" value="Average bit rate"/>
+	       <details key="description" value="Specifies the average bit rate of the MP3 file in bits per second. Valid values are 8-310."/>
+	     </eAnnotations>
+	   </eStructuralFeatures>  		
+       <eStructuralFeatures xsi:type="ecore:EAttribute" name="averageBitRateParameter" lowerBound="1" upperBound="1" transient="false" eType="//MLong" derived="false" volatile="false"/>
+	</eClassifiers>
+	<eClassifiers xsi:type="ecore:EClass" name="MPublishMp3sStep" eSuperTypes="#//MFtpStep" abstract="true">
+ 		<eAnnotations source="http://www.onceforall.org/mcore">
+   		<details key="name" value="Publish MP3s"/>
+   		<details key="description" value="Publishes or republishes MP3 recordings to the Christ Chruch Bromley web site and creates/updates the podcast RSS file accordingly."/>
+   		<details key="iconFilePath" value="Image Files/Publish MP3s step.gif"/>
+	   	<details key="actionName" value="Publish"/>
+	   	<details key="actionIconFilePath" value="Image Files/Publish.gif"/>
+	   	<details key="interruptable" value="false"/>
+	   	<details key="stoppable" value="false"/>
+	   	<details key="terminatable" value="false"/>
+ 		</eAnnotations>
+	   	<eStructuralFeatures xsi:type="ecore:EReference" name="mMaxiumumDiskSpaceParameter"
+	      lowerBound="1" eType="#//MParameter"
+	      containment="true" resolveProxies="false">
+	     <eAnnotations source="http://www.onceforall.org/mcore">
+	       <details key="name" value="Maxiumum disk space"/>
+	       <details key="description" value="Specifies the maximum disk space that the recordings are allowed to use on the FTP server in mega bytes."/>
+	     </eAnnotations>
+	   </eStructuralFeatures>  		
+       <eStructuralFeatures xsi:type="ecore:EAttribute" name="maxiumumDiskSpaceParameter" lowerBound="0" upperBound="1" transient="false" eType="//MLong" derived="false" volatile="false"/>
+	   	<eStructuralFeatures xsi:type="ecore:EReference" name="mMp3RelativeFtpPathParameter"
+	      lowerBound="1" eType="#//MParameter"
+	      containment="true" resolveProxies="false">
+	     <eAnnotations source="http://www.onceforall.org/mcore">
+	       <details key="name" value="MP3 relative FTP path"/>
+	       <details key="description" value="Specifies the path of the directory on the FTP server to publish the MP3 files to, e.g. &apos;/recordings&apos;."/>
+	     </eAnnotations>
+	   </eStructuralFeatures>  		
+       <eStructuralFeatures xsi:type="ecore:EAttribute" name="mp3RelativeFtpPathParameter" lowerBound="1" upperBound="1" transient="false" eType="//MString" derived="false" volatile="false"/>
+	   	<eStructuralFeatures xsi:type="ecore:EReference" name="mWebServerUrlParameter"
+	      lowerBound="1" eType="#//MParameter"
+	      containment="true" resolveProxies="false">
+	     <eAnnotations source="http://www.onceforall.org/mcore">
+	       <details key="name" value="Web server URL"/>
+	       <details key="description" value="Specifies the public web server URL, e.g. &apos;http://www.ccbromley.net&apos;."/>
+	     </eAnnotations>
+	   </eStructuralFeatures>  		
+       <eStructuralFeatures xsi:type="ecore:EAttribute" name="webServerUrlParameter" lowerBound="1" upperBound="1" transient="false" eType="//MUrl" derived="false" volatile="false"/>
+	   	<eStructuralFeatures xsi:type="ecore:EReference" name="mContentPageRelativeFtpPathParameter"
+	      lowerBound="1" eType="#//MParameter"
+	      containment="true" resolveProxies="false">
+	     <eAnnotations source="http://www.onceforall.org/mcore">
+	       <details key="name" value="Content page relative FTP path"/>
+	       <details key="description" value="Specifies the path of the directory relative to the FTP path where to publish the MP3 content page to, e.g. &apos;/recordings&apos;."/>
+	     </eAnnotations>
+	   </eStructuralFeatures>  		
+       <eStructuralFeatures xsi:type="ecore:EAttribute" name="contentPageRelativeFtpPathParameter" lowerBound="1" upperBound="1" transient="false" eType="//MString" derived="false" volatile="false"/>
+	   	<eStructuralFeatures xsi:type="ecore:EReference" name="mContentHeaderFilePathParameter"
+	      lowerBound="1" eType="#//MParameter"
+	      containment="true" resolveProxies="false">
+	     <eAnnotations source="http://www.onceforall.org/mcore">
+	       <details key="name" value="Content header file path"/>
+	       <details key="description" value="Specifies the file path to the header for the content web page that lists the recordings. The file path can be an abolute path or relative to the application directory."/>
+	     </eAnnotations>
+	   </eStructuralFeatures>  		
+       <eStructuralFeatures xsi:type="ecore:EAttribute" name="contentHeaderFilePathParameter" lowerBound="1" upperBound="1" transient="false" eType="//MExistingFile" derived="false" volatile="false"/>
+	   	<eStructuralFeatures xsi:type="ecore:EReference" name="mContentFooterFilePathParameter"
+	      lowerBound="1" eType="#//MParameter"
+	      containment="true" resolveProxies="false">
+	     <eAnnotations source="http://www.onceforall.org/mcore">
+	       <details key="name" value="Content footer file path"/>
+	       <details key="description" value="Specifies the file path to the footer for the content web page that lists the recordings. The file path can be an abolute path or relative to the application directory."/>
+	     </eAnnotations>
+	   </eStructuralFeatures>  		
+       <eStructuralFeatures xsi:type="ecore:EAttribute" name="contentFooterFilePathParameter" lowerBound="1" upperBound="1" transient="false" eType="//MExistingFile" derived="false" volatile="false"/>
+	   	<eStructuralFeatures xsi:type="ecore:EReference" name="mContentPageFilePathParameter"
+	      lowerBound="1" eType="#//MParameter"
+	      containment="true" resolveProxies="false">
+	     <eAnnotations source="http://www.onceforall.org/mcore">
+	       <details key="name" value="Content page file path"/>
+	       <details key="description" value="Specifies the content web page that lists the MP3s recordings. This page is generated from the header and footer files and the published MP3 files."/>
+	     </eAnnotations>
+	   </eStructuralFeatures>  		
+       <eStructuralFeatures xsi:type="ecore:EAttribute" name="contentPageFilePathParameter" lowerBound="1" upperBound="1" transient="false" eType="//MFile" derived="false" volatile="false"/>
+	   	<eStructuralFeatures xsi:type="ecore:EReference" name="mPodcastFilePathParameter"
+	      lowerBound="1" eType="#//MParameter"
+	      containment="true" resolveProxies="false">
+	     <eAnnotations source="http://www.onceforall.org/mcore">
+	       <details key="name" value="Podcast file path"/>
+	       <details key="description" value="Specifies the podcast file. This file is generated from the header file and the published MP3 files."/>
+	     </eAnnotations>
+	   </eStructuralFeatures>  		
+       <eStructuralFeatures xsi:type="ecore:EAttribute" name="podcastFilePathParameter" lowerBound="1" upperBound="1" transient="false" eType="//MFile" derived="false" volatile="false"/>
+	   	<eStructuralFeatures xsi:type="ecore:EReference" name="mPodcastRelativeFtpPathParameter"
+	      lowerBound="1" eType="#//MParameter"
+	      containment="true" resolveProxies="false">
+	     <eAnnotations source="http://www.onceforall.org/mcore">
+	       <details key="name" value="Podcast relative FTP path"/>
+	       <details key="description" value="Specifies the path relative to the FTP path where the podcast RSS feed should be created or updated."/>
+	     </eAnnotations>
+	   </eStructuralFeatures>  		
+       <eStructuralFeatures xsi:type="ecore:EAttribute" name="podcastRelativeFtpPathParameter" lowerBound="1" upperBound="1" transient="false" eType="//MString" derived="false" volatile="false"/>
+	   	<eStructuralFeatures xsi:type="ecore:EReference" name="mPodcastHeaderFilePathParameter"
+	      lowerBound="1" eType="#//MParameter"
+	      containment="true" resolveProxies="false">
+	     <eAnnotations source="http://www.onceforall.org/mcore">
+	       <details key="name" value="Podcast header file path"/>
+	       <details key="description" value="Specifies the file path to the header for the podcast file."/>
+	       <details key="readOnly" value="false"/>
+	     </eAnnotations>
+	   </eStructuralFeatures>  		
+       <eStructuralFeatures xsi:type="ecore:EAttribute" name="podcastHeaderFilePathParameter" lowerBound="1" upperBound="1" transient="false" eType="//MExistingFile" derived="false" volatile="false"/>
+	   	<eStructuralFeatures xsi:type="ecore:EReference" name="mContentIncludeMp3PlayerParameter"
+	      lowerBound="1" eType="#//MParameter"
+	      containment="true" resolveProxies="false">
+	     <eAnnotations source="http://www.onceforall.org/mcore">
+	       <details key="name" value="Include MP3 player on content page"/>
+	       <details key="description" value="Specifies whether an MP3 player should included on the content page or not."/>
+	       <details key="readOnly" value="false"/>
+	     </eAnnotations>
+	   </eStructuralFeatures>  		
+       <eStructuralFeatures xsi:type="ecore:EAttribute" name="contentIncludeMp3PlayerParameter" lowerBound="0" upperBound="1" defaultValueLiteral="true" transient="false" eType="//MBoolean" derived="false" volatile="false"/>
+	   	<eStructuralFeatures xsi:type="ecore:EReference" name="mContentGroupRecordingsParameter"
+	      lowerBound="1" eType="#//MParameter"
+	      containment="true" resolveProxies="false">
+	     <eAnnotations source="http://www.onceforall.org/mcore">
+	       <details key="name" value="Group recordings by month on content page"/>
+	       <details key="description" value="Specifies whether the recordings on the content page should be grouped by month."/>
+	       <details key="readOnly" value="false"/>
+	     </eAnnotations>
+	   </eStructuralFeatures>  		
+       <eStructuralFeatures xsi:type="ecore:EAttribute" name="contentGroupRecordingsParameter" lowerBound="1" upperBound="1" defaultValueLiteral="true" transient="false" eType="//MBoolean" derived="false" volatile="false"/>
+	   	<eStructuralFeatures xsi:type="ecore:EReference" name="mContentPageUrlResult"
+	      lowerBound="1" eType="#//MResult"
+	      containment="true" resolveProxies="false">
+	     <eAnnotations source="http://www.onceforall.org/mcore">
+	       <details key="name" value="Content page URL"/>
+	       <details key="description" value="Specifies the URL to content page."/>
+	     </eAnnotations>
+	   </eStructuralFeatures>  		
+       <eStructuralFeatures xsi:type="ecore:EAttribute" name="contentPageUrlResult" lowerBound="1" upperBound="1" transient="true" eType="//MUrl" derived="false" volatile="false"/>
+	   	<eStructuralFeatures xsi:type="ecore:EReference" name="mPodcastFileUrlResult"
+	      lowerBound="1" eType="#//MResult"
+	      containment="true" resolveProxies="false">
+	     <eAnnotations source="http://www.onceforall.org/mcore">
+	       <details key="name" value="Podcast file URL"/>
+	       <details key="description" value="Specifies the URL to podcast file."/>
+	     </eAnnotations>
+	   </eStructuralFeatures>  		
+       <eStructuralFeatures xsi:type="ecore:EAttribute" name="podcastFileUrlResult" lowerBound="1" upperBound="1" transient="true" eType="//MUrl" derived="false" volatile="false"/>
+	</eClassifiers>
+	<eClassifiers xsi:type="ecore:EClass" name="MUpdatePublishedMp3sStep" eSuperTypes="#//MPublishMp3sStep" abstract="false">
+ 		<eAnnotations source="http://www.onceforall.org/mcore">
+   		<details key="name" value="Update published MP3s"/>
+   		<details key="description" value="Updates the published MP3 recordings on the Christ Chruch Bromley web site and updates the podcast RSS file accordingly. It reads the states of the MP3 entries to determine whether to publish or unpublish."/>
+	   	<details key="actionName" value="Update published MP3s"/>
+	   	<details key="actionIconFilePath" value="Image Files/Publish.gif"/>
+	   	<details key="interruptable" value="false"/>
+	   	<details key="stoppable" value="false"/>
+	   	<details key="terminatable" value="false"/>
+ 		</eAnnotations>
+	   	<eStructuralFeatures xsi:type="ecore:EReference" name="mRepublishMp3Files"
+	      lowerBound="1" eType="#//MParameter"
+	      containment="true" resolveProxies="false">
+	     <eAnnotations source="http://www.onceforall.org/mcore">
+	       <details key="name" value="Republish MP3 files"/>
+	       <details key="description" value="Specifies whether all already published MP3 files should be uploaded to the web site again."/>
+	     </eAnnotations>
+	   </eStructuralFeatures>  		
+       <eStructuralFeatures xsi:type="ecore:EAttribute" name="republishMp3Files" lowerBound="1" upperBound="1" defaultValueLiteral="false" transient="false" eType="//MBoolean" derived="false" volatile="false"/>
+	   	<eStructuralFeatures xsi:type="ecore:EReference" name="mMp3FolderReferenceParameter"
+	      lowerBound="1" eType="#//MParameter"
+	      containment="true" resolveProxies="false">
+	     <eAnnotations source="http://www.onceforall.org/mcore">
+	       <details key="name" value="MP3 folder reference"/>
+	       <details key="description" value="Speficies a reference to the MP3 folder that contains the MP3 entries to be published or unpublished."/>
+	       <details key="readOnly" value="false"/>
+	     </eAnnotations>
+	   </eStructuralFeatures>  		
+       <eStructuralFeatures xsi:type="ecore:EReference" name="mp3FolderReferenceParameter" lowerBound="1" upperBound="1" transient="false" eType="//MMp3Folder" derived="false" volatile="false"/>
+	   	<eStructuralFeatures xsi:type="ecore:EReference" name="mMp3FolderReferenceResult"
+	      lowerBound="1" eType="#//MResult"
+	      containment="true" resolveProxies="false">
+	     <eAnnotations source="http://www.onceforall.org/mcore">
+	       <details key="name" value="MP3 folder reference"/>
+	       <details key="description" value="Speficies a reference to the MP3 folder that contains the MP3 entries that were published or unpublished."/>
+	     </eAnnotations>
+	   </eStructuralFeatures>  		
+       <eStructuralFeatures xsi:type="ecore:EReference" name="mp3FolderReferenceResult" lowerBound="1" upperBound="1" transient="true" eType="//MMp3Folder" derived="false" volatile="false"/>
+	</eClassifiers>
+	<eClassifiers xsi:type="ecore:EClass" name="MPublishNewMp3Step" eSuperTypes="#//MPublishMp3sStep" abstract="false">
+ 		<eAnnotations source="http://www.onceforall.org/mcore">
+   		<details key="name" value="Publish MP3"/>
+   		<details key="description" value="Publishes a new MP3 recording to the Christ Chruch Bromley web site and creates/updates the podcast RSS file accordingly."/>
+	   	<details key="actionName" value="Publish"/>
+	   	<details key="actionIconFilePath" value="Image Files/Publish.gif"/>
+	   	<details key="interruptable" value="false"/>
+	   	<details key="stoppable" value="false"/>
+	   	<details key="terminatable" value="false"/>
+ 		</eAnnotations>
+	   	<eStructuralFeatures xsi:type="ecore:EReference" name="mMp3EntryReferenceParameter"
+	      lowerBound="1" eType="#//MParameter"
+	      containment="true" resolveProxies="false">
+	     <eAnnotations source="http://www.onceforall.org/mcore">
+	       <details key="name" value="MP3 entry reference"/>
+	       <details key="description" value="Speficies a reference to the MP3 entry to be published."/>
+	       <details key="readOnly" value="false"/>
+	     </eAnnotations>
+	   </eStructuralFeatures>  		
+       <eStructuralFeatures xsi:type="ecore:EReference" name="mp3EntryReferenceParameter" lowerBound="1" upperBound="1" transient="false" eType="//MMp3" derived="false" volatile="false"/>
+	   	<eStructuralFeatures xsi:type="ecore:EReference" name="mLinkTextParameter"
+	      lowerBound="1" eType="#//MParameter"
+	      containment="true" resolveProxies="false">
+	     <eAnnotations source="http://www.onceforall.org/mcore">
+	       <details key="name" value="Link text"/>
+	       <details key="description" value="Specifies the link text for the published MP3 file."/>
+	     </eAnnotations>
+	   </eStructuralFeatures>  		
+       <eStructuralFeatures xsi:type="ecore:EAttribute" name="linkTextParameter" lowerBound="1" upperBound="1" transient="false" eType="//MString" derived="false" volatile="false"/>
+	   	<eStructuralFeatures xsi:type="ecore:EReference" name="mLinkDescriptionParameter"
+	      lowerBound="1" eType="#//MParameter"
+	      containment="true" resolveProxies="false">
+	     <eAnnotations source="http://www.onceforall.org/mcore">
+	       <details key="name" value="Link description"/>
+	       <details key="description" value="Specifies the link description for the published MP3 file. The description will be displayed underneath the link."/>
+	     </eAnnotations>
+	   </eStructuralFeatures>  		
+       <eStructuralFeatures xsi:type="ecore:EAttribute" name="linkDescriptionParameter" lowerBound="1" upperBound="1" transient="false" eType="//MString" derived="false" volatile="false"/>
+	   	<eStructuralFeatures xsi:type="ecore:EReference" name="mCommentParameter"
+	      lowerBound="1" eType="#//MParameter"
+	      containment="true" resolveProxies="false">
+	     <eAnnotations source="http://www.onceforall.org/mcore">
+	       <details key="name" value="Comment"/>
+	       <details key="description" value="Specifies a comment for the published MP3 file. This can be for example problems with the recording."/>
+	     </eAnnotations>
+	   </eStructuralFeatures>  		
+       <eStructuralFeatures xsi:type="ecore:EAttribute" name="commentParameter" lowerBound="0" upperBound="1" transient="true" eType="//MString" derived="false" volatile="false"/>
+	   	<eStructuralFeatures xsi:type="ecore:EReference" name="mPodcastTitleParameter"
+	      lowerBound="1" eType="#//MParameter"
+	      containment="true" resolveProxies="false">
+	     <eAnnotations source="http://www.onceforall.org/mcore">
+	       <details key="name" value="Podcast title"/>
+	       <details key="description" value="Specifies the podcast title. The title will appear as in the Name column in iTunes. If the title is omitted the MP3 will not be included in the podcast.&quot;"/>
+	     </eAnnotations>
+	   </eStructuralFeatures>  		
+       <eStructuralFeatures xsi:type="ecore:EAttribute" name="podcastTitleParameter" lowerBound="1" upperBound="1" transient="false" eType="//MString" derived="false" volatile="false"/>
+	   	<eStructuralFeatures xsi:type="ecore:EReference" name="mPodcastSubtitleParameter"
+	      lowerBound="1" eType="#//MParameter"
+	      containment="true" resolveProxies="false">
+	     <eAnnotations source="http://www.onceforall.org/mcore">
+	       <details key="name" value="Podcast subtitle"/>
+	       <details key="description" value="Specifies the podcast subtitle. The subtitle will appear as in the Description column in iTunes."/>
+	     </eAnnotations>
+	   </eStructuralFeatures>  		
+       <eStructuralFeatures xsi:type="ecore:EAttribute" name="podcastSubtitleParameter" lowerBound="1" upperBound="1" transient="false" eType="//MString" derived="false" volatile="false"/>
+	   	<eStructuralFeatures xsi:type="ecore:EReference" name="mPodcastSummaryParameter"
+	      lowerBound="1" eType="#//MParameter"
+	      containment="true" resolveProxies="false">
+	     <eAnnotations source="http://www.onceforall.org/mcore">
+	       <details key="name" value="Podcast summary"/>
+	       <details key="description" value="Specifies the podcast summary. The summary will appear when the circled (i) in the Description column is clicked."/>
+	     </eAnnotations>
+	   </eStructuralFeatures>  		
+       <eStructuralFeatures xsi:type="ecore:EAttribute" name="podcastSummaryParameter" lowerBound="0" upperBound="1" transient="false" eType="//MString" derived="false" volatile="false"/>
+	   	<eStructuralFeatures xsi:type="ecore:EReference" name="mPodcastPublishingDateParameter"
+	      lowerBound="1" eType="#//MParameter"
+	      containment="true" resolveProxies="false">
+	     <eAnnotations source="http://www.onceforall.org/mcore">
+	       <details key="name" value="Podcast publishing date"/>
+	       <details key="description" value="Specifies the publication date of the MP3 file. The publication date will appear in the Release Date column in iTunes."/>
+	     </eAnnotations>
+	   </eStructuralFeatures>  		
+       <eStructuralFeatures xsi:type="ecore:EAttribute" name="podcastPublishingDateParameter" lowerBound="1" upperBound="1" transient="true" eType="//MDateTime" derived="false" volatile="false"/>
+	   	<eStructuralFeatures xsi:type="ecore:EReference" name="mPublishedMp3EntryReferenceResult"
+	      lowerBound="1" eType="#//MResult"
+	      containment="true" resolveProxies="false">
+	     <eAnnotations source="http://www.onceforall.org/mcore">
+	       <details key="name" value="Published MP3 entry reference"/>
+	       <details key="description" value="Contains a reference to the MP3 entry that has been published."/>
+	     </eAnnotations>
+	   </eStructuralFeatures>  		
+       <eStructuralFeatures xsi:type="ecore:EReference" name="publishedMp3EntryReferenceResult" lowerBound="1" upperBound="1" transient="true" eType="//MMp3" derived="false" volatile="false"/>
+	</eClassifiers>
+	<eClassifiers xsi:type="ecore:EClass" name="MEmailEventLogStep" eSuperTypes="#//MStep" abstract="false">
+ 		<eAnnotations source="http://www.onceforall.org/mcore">
+   		<details key="name" value="Email event log"/>
+   		<details key="description" value="Sends an email with the log and application data to the Digital Media Service email post box. Please enter your name and an optional comment."/>
+   		<details key="iconFilePath" value="Image Files/Email event log step.gif"/>
+	   	<details key="actionName" value="Send"/>
+	   	<details key="actionIconFilePath" value="Image Files/Email.gif"/>
+	   	<details key="interruptable" value="false"/>
+	   	<details key="stoppable" value="false"/>
+	   	<details key="terminatable" value="false"/>
+ 		</eAnnotations>
+	   	<eStructuralFeatures xsi:type="ecore:EReference" name="mRecordingUsersNameParameter"
+	      lowerBound="1" eType="#//MParameter"
+	      containment="true" resolveProxies="false">
+	     <eAnnotations source="http://www.onceforall.org/mcore">
+	       <details key="name" value="Recording user&apos;s name"/>
+	       <details key="description" value="Specifies the name of the recording user. Please enter your name."/>
+	     </eAnnotations>
+	   </eStructuralFeatures>  		
+       <eStructuralFeatures xsi:type="ecore:EAttribute" name="recordingUsersNameParameter" lowerBound="1" upperBound="1" transient="false" eType="//MString" derived="false" volatile="false"/>
+	   	<eStructuralFeatures xsi:type="ecore:EReference" name="mCommentParameter"
+	      lowerBound="1" eType="#//MParameter"
+	      containment="true" resolveProxies="false">
+	     <eAnnotations source="http://www.onceforall.org/mcore">
+	       <details key="name" value="Comment"/>
+	       <details key="description" value="Specifies a comment for the receipient of the email."/>
+	       <details key="readOnly" value="false"/>
+	     </eAnnotations>
+	   </eStructuralFeatures>  		
+       <eStructuralFeatures xsi:type="ecore:EAttribute" name="commentParameter" lowerBound="1" upperBound="1" transient="true" eType="//MString" derived="false" volatile="false"/>
+     	<eStructuralFeatures xsi:type="ecore:EAttribute" name="commentParameterHistoricValues" upperBound="5" transient="false" eType="//MString"/>
+	   	<eStructuralFeatures xsi:type="ecore:EReference" name="mLogFileParameter"
+	      lowerBound="1" eType="#//MParameter"
+	      containment="true" resolveProxies="false">
+	     <eAnnotations source="http://www.onceforall.org/mcore">
+	       <details key="name" value="Log file"/>
+	       <details key="description" value="Specifies the file that contains the log data."/>
+	     </eAnnotations>
+	   </eStructuralFeatures>  		
+       <eStructuralFeatures xsi:type="ecore:EAttribute" name="logFileParameter" lowerBound="1" upperBound="1" transient="false" eType="//MExistingFile" derived="false" volatile="false"/>
+	   	<eStructuralFeatures xsi:type="ecore:EReference" name="mDataFileParameter"
+	      lowerBound="1" eType="#//MParameter"
+	      containment="true" resolveProxies="false">
+	     <eAnnotations source="http://www.onceforall.org/mcore">
+	       <details key="name" value="Data file"/>
+	       <details key="description" value="Specifies the file that contains the application data."/>
+	       <details key="readOnly" value="false"/>
+	     </eAnnotations>
+	   </eStructuralFeatures>  		
+       <eStructuralFeatures xsi:type="ecore:EAttribute" name="dataFileParameter" lowerBound="1" upperBound="1" transient="false" eType="//MExistingFile" derived="false" volatile="false"/>
+	   	<eStructuralFeatures xsi:type="ecore:EReference" name="mSubjectParameter"
+	      lowerBound="1" eType="#//MParameter"
+	      containment="true" resolveProxies="false">
+	     <eAnnotations source="http://www.onceforall.org/mcore">
+	       <details key="name" value="Subject"/>
+	       <details key="description" value="Specifies the subject of the email."/>
+	     </eAnnotations>
+	   </eStructuralFeatures>  		
+       <eStructuralFeatures xsi:type="ecore:EAttribute" name="subjectParameter" lowerBound="1" upperBound="1" transient="false" eType="//MString" derived="false" volatile="false"/>
+	   	<eStructuralFeatures xsi:type="ecore:EReference" name="mSendersEmailAddressParameter"
+	      lowerBound="1" eType="#//MParameter"
+	      containment="true" resolveProxies="false">
+	     <eAnnotations source="http://www.onceforall.org/mcore">
+	       <details key="name" value="Sender&apos;s email address"/>
+	       <details key="description" value="Specifies the sender&apos;s email address.
+Please enter your own email address here so that we can contact you if we have any questions. Alternatively use &apos;sounddesk@ccbromley.net&apos;."/>
+	     </eAnnotations>
+	   </eStructuralFeatures>  		
+       <eStructuralFeatures xsi:type="ecore:EAttribute" name="sendersEmailAddressParameter" lowerBound="1" upperBound="1" transient="true" eType="//MString" derived="false" volatile="false"/>
+     	<eStructuralFeatures xsi:type="ecore:EAttribute" name="sendersEmailAddressParameterHistoricValues" upperBound="6" transient="false" eType="//MString"/>
+	   	<eStructuralFeatures xsi:type="ecore:EReference" name="mReceipientsEmailAddressParameter"
+	      lowerBound="1" eType="#//MParameter"
+	      containment="true" resolveProxies="false">
+	     <eAnnotations source="http://www.onceforall.org/mcore">
+	       <details key="name" value="Receipients&apos; email address"/>
+	       <details key="description" value="Specifies the email addresses of the recipients, i.e. the To field of the email. Multiple email addresses can entered, separated by a semicolon &apos;;&apos;."/>
+	     </eAnnotations>
+	   </eStructuralFeatures>  		
+       <eStructuralFeatures xsi:type="ecore:EAttribute" name="receipientsEmailAddressParameter" lowerBound="1" upperBound="-1" transient="false" eType="//MString" derived="false" volatile="false"/>
+	   	<eStructuralFeatures xsi:type="ecore:EReference" name="mSmtpServerParameter"
+	      lowerBound="1" eType="#//MParameter"
+	      containment="true" resolveProxies="false">
+	     <eAnnotations source="http://www.onceforall.org/mcore">
+	       <details key="name" value="SMTP server"/>
+	       <details key="description" value="Specifies the name or IP address of the (SMTP) server that is responsible for sending the email."/>
+	     </eAnnotations>
+	   </eStructuralFeatures>  		
+       <eStructuralFeatures xsi:type="ecore:EAttribute" name="smtpServerParameter" lowerBound="1" upperBound="1" transient="false" eType="//MString" derived="false" volatile="false"/>
+	   	<eStructuralFeatures xsi:type="ecore:EReference" name="mSmtpUserNameParameter"
+	      lowerBound="1" eType="#//MParameter"
+	      containment="true" resolveProxies="false">
+	     <eAnnotations source="http://www.onceforall.org/mcore">
+	       <details key="name" value="SMTP user name"/>
+	       <details key="description" value="Specifies user name used to authenticate on the (SMTP) server that is responsible for sending the email."/>
+	     </eAnnotations>
+	   </eStructuralFeatures>  		
+       <eStructuralFeatures xsi:type="ecore:EAttribute" name="smtpUserNameParameter" lowerBound="1" upperBound="1" transient="false" eType="//MString" derived="false" volatile="false"/>
+	   	<eStructuralFeatures xsi:type="ecore:EReference" name="mSmtpPasswordParameter"
+	      lowerBound="1" eType="#//MParameter"
+	      containment="true" resolveProxies="false">
+	     <eAnnotations source="http://www.onceforall.org/mcore">
+	       <details key="name" value="SMTP password"/>
+	       <details key="description" value="Specifies password used to authenticate on (SMTP) server that is responsible for sending the email."/>
+	     </eAnnotations>
+	   </eStructuralFeatures>  		
+       <eStructuralFeatures xsi:type="ecore:EAttribute" name="smtpPasswordParameter" lowerBound="1" upperBound="1" transient="false" eType="//MPassword" derived="false" volatile="false"/>
+	</eClassifiers>
+	<eClassifiers xsi:type="ecore:EClass" name="MMp3Folder" eSuperTypes="#//MObject" abstract="false">
+ 		<eAnnotations source="http://www.onceforall.org/mcore">
+   		<details key="typeNameForUI" value="MP3 folder"/>
+   		<details key="name" value="MP3s"/>
+   		<details key="description" value="Contains MP3 recordings."/>
+   		<details key="iconFilePath" value="Image Files/MP3 folder.gif"/>
+ 		</eAnnotations>
+   	<eStructuralFeatures xsi:type="ecore:EReference" name="mSteps"
+      lowerBound="1" upperBound="-1" eType="#//MStep"
+      containment="true" derived="false" volatile="false"
+      transient="false" resolveProxies="false"/>					
+   	<eStructuralFeatures xsi:type="ecore:EReference" name="mMp3s"
+      lowerBound="1" upperBound="-1" eType="#//MMp3"
+      containment="true" derived="false" volatile="false"
+      transient="false" resolveProxies="false"/>					
+	</eClassifiers>
+	<eClassifiers xsi:type="ecore:EClass" name="MMp3" eSuperTypes="#//MStatefulObject" abstract="false">
+ 		<eAnnotations source="http://www.onceforall.org/mcore">
+   		<details key="typeNameForUI" value="MP3"/>
+   		<details key="name" value="MP3"/>
+   		<details key="description" value="Contains all information associated with an MP3 file that can be published."/>
+   		<details key="iconFilePath" value="Image Files/MP3.gif"/>
+ 		</eAnnotations>  		
+       <eStructuralFeatures xsi:type="ecore:EAttribute" name="stateProperty" lowerBound="1" upperBound="1" defaultValueLiteral="Not published" transient="false" eType="//MMp3State" derived="false" volatile="false"/>
+	   	<eStructuralFeatures xsi:type="ecore:EReference" name="mFileProperty"
+	      lowerBound="1" eType="#//MProperty"
+	      containment="true" resolveProxies="false">
+	     <eAnnotations source="http://www.onceforall.org/mcore">
+	       <details key="name" value="File"/>
+	       <details key="description" value="Specifies the MP3 recording file on this computer."/>
+	     </eAnnotations>
+	   </eStructuralFeatures>  		
+       <eStructuralFeatures xsi:type="ecore:EAttribute" name="fileProperty" lowerBound="1" upperBound="1" transient="false" eType="//MExistingFile" derived="false" volatile="false"/>
+	   	<eStructuralFeatures xsi:type="ecore:EReference" name="mLinkTextProperty"
+	      lowerBound="1" eType="#//MProperty"
+	      containment="true" resolveProxies="false">
+	     <eAnnotations source="http://www.onceforall.org/mcore">
+	       <details key="name" value="Link text"/>
+	       <details key="description" value="Specifies the link text for the published MP3 file."/>
+	     </eAnnotations>
+	   </eStructuralFeatures>  		
+       <eStructuralFeatures xsi:type="ecore:EAttribute" name="linkTextProperty" lowerBound="1" upperBound="1" transient="false" eType="//MString" derived="false" volatile="false"/>
+	   	<eStructuralFeatures xsi:type="ecore:EReference" name="mLinkDescriptionProperty"
+	      lowerBound="1" eType="#//MProperty"
+	      containment="true" resolveProxies="false">
+	     <eAnnotations source="http://www.onceforall.org/mcore">
+	       <details key="name" value="Link description"/>
+	       <details key="description" value="Specifies the link description for the published MP3 file. The description will be displayed underneath the link."/>
+	     </eAnnotations>
+	   </eStructuralFeatures>  		
+       <eStructuralFeatures xsi:type="ecore:EAttribute" name="linkDescriptionProperty" lowerBound="1" upperBound="1" transient="false" eType="//MString" derived="false" volatile="false"/>
+	   	<eStructuralFeatures xsi:type="ecore:EReference" name="mCommentProperty"
+	      lowerBound="1" eType="#//MProperty"
+	      containment="true" resolveProxies="false">
+	     <eAnnotations source="http://www.onceforall.org/mcore">
+	       <details key="name" value="Comment"/>
+	       <details key="description" value="Specifies a comment for the published MP3 file. This can be for example problems with the recording."/>
+	     </eAnnotations>
+	   </eStructuralFeatures>  		
+       <eStructuralFeatures xsi:type="ecore:EAttribute" name="commentProperty" lowerBound="0" upperBound="1" transient="false" eType="//MString" derived="false" volatile="false"/>
+	   	<eStructuralFeatures xsi:type="ecore:EReference" name="mPodcastTitleProperty"
+	      lowerBound="1" eType="#//MProperty"
+	      containment="true" resolveProxies="false">
+	     <eAnnotations source="http://www.onceforall.org/mcore">
+	       <details key="name" value="Podcast title"/>
+	       <details key="description" value="Specifies the podcast title. The title appears as in the Name column in iTunes. If the title is omitted the MP3 will not be included in the podcast."/>
+	       <details key="readOnly" value="false"/>
+	     </eAnnotations>
+	   </eStructuralFeatures>  		
+       <eStructuralFeatures xsi:type="ecore:EAttribute" name="podcastTitleProperty" lowerBound="0" upperBound="1" transient="false" eType="//MString" derived="false" volatile="false"/>
+	   	<eStructuralFeatures xsi:type="ecore:EReference" name="mPodcastSubtitleProperty"
+	      lowerBound="1" eType="#//MProperty"
+	      containment="true" resolveProxies="false">
+	     <eAnnotations source="http://www.onceforall.org/mcore">
+	       <details key="name" value="Podcast subtitle"/>
+	       <details key="description" value="Specifies the podcast subtitle. The subtitle appears as in the Description column in iTunes."/>
+	       <details key="readOnly" value="false"/>
+	     </eAnnotations>
+	   </eStructuralFeatures>  		
+       <eStructuralFeatures xsi:type="ecore:EAttribute" name="podcastSubtitleProperty" lowerBound="0" upperBound="1" transient="false" eType="//MString" derived="false" volatile="false"/>
+	   	<eStructuralFeatures xsi:type="ecore:EReference" name="mPodcastSummaryProperty"
+	      lowerBound="1" eType="#//MProperty"
+	      containment="true" resolveProxies="false">
+	     <eAnnotations source="http://www.onceforall.org/mcore">
+	       <details key="name" value="Podcast summary"/>
+	       <details key="description" value="Specifies the podcast summary. The summary appears  when the circled (i) in the Description column is clicked."/>
+	     </eAnnotations>
+	   </eStructuralFeatures>  		
+       <eStructuralFeatures xsi:type="ecore:EAttribute" name="podcastSummaryProperty" lowerBound="0" upperBound="1" transient="false" eType="//MString" derived="false" volatile="false"/>
+	   	<eStructuralFeatures xsi:type="ecore:EReference" name="mPodcastPublishingDateProperty"
+	      lowerBound="1" eType="#//MProperty"
+	      containment="true" resolveProxies="false">
+	     <eAnnotations source="http://www.onceforall.org/mcore">
+	       <details key="name" value="Podcast publishing date"/>
+	       <details key="description" value="Specifies the publishing date of the MP3 file. The publishing date appears in the Release Date column in iTunes."/>
+	     </eAnnotations>
+	   </eStructuralFeatures>  		
+       <eStructuralFeatures xsi:type="ecore:EAttribute" name="podcastPublishingDateProperty" lowerBound="0" upperBound="1" transient="false" eType="//MDateTime" derived="false" volatile="false"/>
+	   	<eStructuralFeatures xsi:type="ecore:EReference" name="mPublishedFileNameProperty"
+	      lowerBound="1" eType="#//MProperty"
+	      containment="true" resolveProxies="false">
+	     <eAnnotations source="http://www.onceforall.org/mcore">
+	       <details key="name" value="Published file name"/>
+	       <details key="description" value="Specifies the name of published file on the FTP server."/>
+	     </eAnnotations>
+	   </eStructuralFeatures>  		
+       <eStructuralFeatures xsi:type="ecore:EAttribute" name="publishedFileNameProperty" lowerBound="0" upperBound="1" transient="false" eType="//MString" derived="false" volatile="false"/>
+	   	<eStructuralFeatures xsi:type="ecore:EReference" name="mKeepPublishedProperty"
+	      lowerBound="1" eType="#//MProperty"
+	      containment="true" resolveProxies="false">
+	     <eAnnotations source="http://www.onceforall.org/mcore">
+	       <details key="name" value="Keep published"/>
+	       <details key="description" value="Specifies whether to keep this recording published as long as the server disk quota for recordings is not exceeded."/>
+	       <details key="readOnly" value="false"/>
+	     </eAnnotations>
+	   </eStructuralFeatures>  		
+       <eStructuralFeatures xsi:type="ecore:EAttribute" name="keepPublishedProperty" lowerBound="1" upperBound="1" defaultValueLiteral="false" transient="false" eType="//MBoolean" derived="false" volatile="false"/>
+	</eClassifiers>
+	<eClassifiers xsi:type="ecore:EClass" name="MBurnCdStep" eSuperTypes="#//MStep" abstract="false">
+ 		<eAnnotations source="http://www.onceforall.org/mcore">
+   		<details key="name" value="Burn CDs for sale"/>
+   		<details key="description" value="Burns the recordings on a writable CD for sale. Please insert a blank CD before initiating the burning process. Note that the post-sermon recording does not need to be included."/>
+   		<details key="iconFilePath" value="Image Files/Burn CD step.gif"/>
+	   	<details key="actionName" value="Burn"/>
+	   	<details key="actionIconFilePath" value="Image Files/Burn CD.gif"/>
+	   	<details key="interruptable" value="false"/>
+	   	<details key="stoppable" value="false"/>
+	   	<details key="terminatable" value="true"/>
+ 		</eAnnotations>
+	   	<eStructuralFeatures xsi:type="ecore:EReference" name="mRecordingFilesParameter"
+	      lowerBound="1" eType="#//MParameter"
+	      containment="true" resolveProxies="false">
+	     <eAnnotations source="http://www.onceforall.org/mcore">
+	       <details key="name" value="Recording files"/>
+	       <details key="description" value="Specifies the file paths (relative or absolute) of the recorded WAV files."/>
+	     </eAnnotations>
+	   </eStructuralFeatures>  		
+       <eStructuralFeatures xsi:type="ecore:EAttribute" name="recordingFilesParameter" lowerBound="1" upperBound="-1" transient="false" eType="//MExistingFile" derived="false" volatile="false"/>
+	   	<eStructuralFeatures xsi:type="ecore:EReference" name="mBurningSoftwareDirectoryPathParameter"
+	      lowerBound="1" eType="#//MParameter"
+	      containment="true" resolveProxies="false">
+	     <eAnnotations source="http://www.onceforall.org/mcore">
+	       <details key="name" value="CD-ROM burning software directory path"/>
+	       <details key="description" value="Specifies the path to the directory that contains the &apos;nerocmd.exe&apos;."/>
+	       <details key="readOnly" value="false"/>
+	     </eAnnotations>
+	   </eStructuralFeatures>  		
+       <eStructuralFeatures xsi:type="ecore:EAttribute" name="burningSoftwareDirectoryPathParameter" lowerBound="1" upperBound="1" transient="false" eType="//MExistingDirectory" derived="false" volatile="false"/>
+	   	<eStructuralFeatures xsi:type="ecore:EReference" name="mDriveParameter"
+	      lowerBound="1" eType="#//MParameter"
+	      containment="true" resolveProxies="false">
+	     <eAnnotations source="http://www.onceforall.org/mcore">
+	       <details key="name" value="Drive"/>
+	       <details key="description" value="Specifies either the full name of the CD-ROM drive or the drive letter."/>
+	     </eAnnotations>
+	   </eStructuralFeatures>  		
+       <eStructuralFeatures xsi:type="ecore:EAttribute" name="driveParameter" lowerBound="1" upperBound="1" transient="false" eType="//MString" derived="false" volatile="false"/>
+	   	<eStructuralFeatures xsi:type="ecore:EReference" name="mTotalRecordingLengthParameter"
+	      lowerBound="1" eType="#//MParameter"
+	      containment="true" resolveProxies="false">
+	     <eAnnotations source="http://www.onceforall.org/mcore">
+	       <details key="name" value="Total recording length"/>
+	       <details key="description" value="Specifies the total length of the files to be burned to CD. The total length must not exceed 01:20:00."/>
+	     </eAnnotations>
+	   </eStructuralFeatures>  		
+       <eStructuralFeatures xsi:type="ecore:EAttribute" name="totalRecordingLengthParameter" lowerBound="0" upperBound="1" transient="false" eType="//MDuration" derived="false" volatile="false"/>
+	   	<eStructuralFeatures xsi:type="ecore:EReference" name="mTotalRecordingFileSizeParameter"
+	      lowerBound="1" eType="#//MParameter"
+	      containment="true" resolveProxies="false">
+	     <eAnnotations source="http://www.onceforall.org/mcore">
+	       <details key="name" value="Total recording file size"/>
+	       <details key="description" value="Specifies the total size of the files to be burned to CD. The total size must not exceed 870,318,080."/>
+	     </eAnnotations>
+	   </eStructuralFeatures>  		
+       <eStructuralFeatures xsi:type="ecore:EAttribute" name="totalRecordingFileSizeParameter" lowerBound="0" upperBound="1" transient="false" eType="//MLong" derived="false" volatile="false"/>
+	</eClassifiers>
+	<eClassifiers xsi:type="ecore:EClass" name="MFtpStep" eSuperTypes="#//MStep" abstract="true">
+ 		<eAnnotations source="http://www.onceforall.org/mcore">
+	   	<details key="actionName" value="Mark as completed"/>
+	   	<details key="actionIconFilePath" value="Image Files\Mark as completed.gif"/>
+	   	<details key="interruptable" value="false"/>
+	   	<details key="stoppable" value="false"/>
+	   	<details key="terminatable" value="false"/>
+ 		</eAnnotations>
+	   	<eStructuralFeatures xsi:type="ecore:EReference" name="mFtpServerUrlParameter"
+	      lowerBound="1" eType="#//MParameter"
+	      containment="true" resolveProxies="false">
+	     <eAnnotations source="http://www.onceforall.org/mcore">
+	       <details key="name" value="FTP server URL"/>
+	       <details key="description" value="Specifies the URL to public HTML directory on the FTP server, e.g. &apos;ftp://ftp.ccbromley.net/public_html&apos;"/>
+	       <details key="readOnly" value="false"/>
+	     </eAnnotations>
+	   </eStructuralFeatures>  		
+       <eStructuralFeatures xsi:type="ecore:EAttribute" name="ftpServerUrlParameter" lowerBound="1" upperBound="1" transient="false" eType="//MUrl" derived="false" volatile="false"/>
+	   	<eStructuralFeatures xsi:type="ecore:EReference" name="mFtpUserNameParameter"
+	      lowerBound="1" eType="#//MParameter"
+	      containment="true" resolveProxies="false">
+	     <eAnnotations source="http://www.onceforall.org/mcore">
+	       <details key="name" value="FTP user name"/>
+	       <details key="description" value="Specifies the user name for accessing the FTP server, e.g. &apos;ccb001&apos;."/>
+	     </eAnnotations>
+	   </eStructuralFeatures>  		
+       <eStructuralFeatures xsi:type="ecore:EAttribute" name="ftpUserNameParameter" lowerBound="1" upperBound="1" transient="false" eType="//MString" derived="false" volatile="false"/>
+	   	<eStructuralFeatures xsi:type="ecore:EReference" name="mFtpUserPasswordParameter"
+	      lowerBound="1" eType="#//MParameter"
+	      containment="true" resolveProxies="false">
+	     <eAnnotations source="http://www.onceforall.org/mcore">
+	       <details key="name" value="FTP user password"/>
+	       <details key="description" value="Specifies the user password for accessing the FTP server."/>
+	     </eAnnotations>
+	   </eStructuralFeatures>  		
+       <eStructuralFeatures xsi:type="ecore:EAttribute" name="ftpUserPasswordParameter" lowerBound="0" upperBound="1" transient="false" eType="//MPassword" derived="false" volatile="false"/>
+	</eClassifiers>
+	<eClassifiers xsi:type="ecore:EClass" name="MTestStep" eSuperTypes="#//MStep" abstract="false">
+ 		<eAnnotations source="http://www.onceforall.org/mcore">
+   		<details key="name" value="Test"/>
+   		<details key="description" value="Serves as test step for automatic tests."/>
+	   	<details key="actionName" value="Test"/>
+	   	<details key="actionIconFilePath" value="Image Files\Mark as completed.gif"/>
+	   	<details key="interruptable" value="false"/>
+	   	<details key="stoppable" value="false"/>
+	   	<details key="terminatable" value="false"/>
+ 		</eAnnotations>
+	   	<eStructuralFeatures xsi:type="ecore:EReference" name="mPersistentStringParameter"
+	      lowerBound="1" eType="#//MParameter"
+	      containment="true" resolveProxies="false">
+	     <eAnnotations source="http://www.onceforall.org/mcore">
+	       <details key="name" value="Persistent string"/>
+	       <details key="description" value="Specifies a string that is saved with the application data."/>
+	     </eAnnotations>
+	   </eStructuralFeatures>  		
+       <eStructuralFeatures xsi:type="ecore:EAttribute" name="persistentStringParameter" lowerBound="0" upperBound="1" transient="true" eType="//MString" derived="false" volatile="false"/>
+	   	<eStructuralFeatures xsi:type="ecore:EReference" name="mStringParameter"
+	      lowerBound="1" eType="#//MParameter"
+	      containment="true" resolveProxies="false">
+	     <eAnnotations source="http://www.onceforall.org/mcore">
+	       <details key="name" value="String"/>
+	       <details key="description" value="Specifies a string that is not saved with the application data."/>
+	     </eAnnotations>
+	   </eStructuralFeatures>  		
+       <eStructuralFeatures xsi:type="ecore:EAttribute" name="stringParameter" lowerBound="0" upperBound="1" transient="false" eType="//MString" derived="false" volatile="false"/>
+	</eClassifiers>
+	<eClassifiers xsi:type="ecore:EClass" name="MNameTagMp3Step" eSuperTypes="#//MTagStep" abstract="false">
+ 		<eAnnotations source="http://www.onceforall.org/mcore">
+   		<details key="name" value="Tag MP3"/>
+   		<details key="description" value="Copies the given recording file to the specified directory, gives it the specified name and sets the ID3 tags."/>
+   		<details key="iconFilePath" value="Image Files/Convert to MP3 step.gif"/>
+	   	<details key="actionName" value="Tag"/>
+	   	<details key="actionIconFilePath" value="Image Files/Convert.gif"/>
+	   	<details key="interruptable" value="false"/>
+	   	<details key="stoppable" value="false"/>
+	   	<details key="terminatable" value="false"/>
+ 		</eAnnotations>
+	   	<eStructuralFeatures xsi:type="ecore:EReference" name="mDirectoryParameter"
+	      lowerBound="1" eType="#//MParameter"
+	      containment="true" resolveProxies="false">
+	     <eAnnotations source="http://www.onceforall.org/mcore">
+	       <details key="name" value="Directory"/>
+	       <details key="description" value="Specifies the directory where the renamed and tagged MP3 file should be copied to."/>
+	     </eAnnotations>
+	   </eStructuralFeatures>  		
+       <eStructuralFeatures xsi:type="ecore:EAttribute" name="directoryParameter" lowerBound="1" upperBound="1" transient="false" eType="//MExistingDirectory" derived="false" volatile="false"/>
+	   	<eStructuralFeatures xsi:type="ecore:EReference" name="mTaggedMp3FileNameParameter"
+	      lowerBound="1" eType="#//MParameter"
+	      containment="true" resolveProxies="false">
+	     <eAnnotations source="http://www.onceforall.org/mcore">
+	       <details key="name" value="Tagged MP3 file name"/>
+	       <details key="description" value="Specifies the name of the MP3 file to be named and tagged."/>
+	     </eAnnotations>
+	   </eStructuralFeatures>  		
+       <eStructuralFeatures xsi:type="ecore:EAttribute" name="taggedMp3FileNameParameter" lowerBound="1" upperBound="1" transient="false" eType="//MFile" derived="false" volatile="false"/>
+	   	<eStructuralFeatures xsi:type="ecore:EReference" name="mRecordingMp3FileParameter"
+	      lowerBound="1" eType="#//MParameter"
+	      containment="true" resolveProxies="false">
+	     <eAnnotations source="http://www.onceforall.org/mcore">
+	       <details key="name" value="Recording MP3 file path"/>
+	       <details key="description" value="Specifies the path of the MP3 file to be named and tagged."/>
+	     </eAnnotations>
+	   </eStructuralFeatures>  		
+       <eStructuralFeatures xsi:type="ecore:EAttribute" name="recordingMp3FileParameter" lowerBound="1" upperBound="1" transient="false" eType="//MExistingFile" derived="false" volatile="false"/>
+	   	<eStructuralFeatures xsi:type="ecore:EReference" name="mTagAndRenameOriginalParameter"
+	      lowerBound="1" eType="#//MParameter"
+	      containment="true" resolveProxies="false">
+	     <eAnnotations source="http://www.onceforall.org/mcore">
+	       <details key="name" value="Tag and rename original"/>
+	       <details key="description" value="Specifies whether the original file should be tagged and renamed as well."/>
+	       <details key="readOnly" value="false"/>
+	     </eAnnotations>
+	   </eStructuralFeatures>  		
+       <eStructuralFeatures xsi:type="ecore:EAttribute" name="tagAndRenameOriginalParameter" lowerBound="1" upperBound="1" defaultValueLiteral="false" transient="false" eType="//MBoolean" derived="false" volatile="false"/>
+	</eClassifiers>
+	<eClassifiers xsi:type="ecore:EClass" name="MTagStep" eSuperTypes="#//MStep" abstract="true">
+ 		<eAnnotations source="http://www.onceforall.org/mcore">
+	   	<details key="actionName" value="Mark as completed"/>
+	   	<details key="actionIconFilePath" value="Image Files\Mark as completed.gif"/>
+	   	<details key="interruptable" value="false"/>
+	   	<details key="stoppable" value="false"/>
+	   	<details key="terminatable" value="false"/>
+ 		</eAnnotations>
+	   	<eStructuralFeatures xsi:type="ecore:EReference" name="mArtistParameter"
+	      lowerBound="1" eType="#//MParameter"
+	      containment="true" resolveProxies="false">
+	     <eAnnotations source="http://www.onceforall.org/mcore">
+	       <details key="name" value="Artist"/>
+	       <details key="description" value="Determines the text that will set as the ID3 artist tag on the MP3 file."/>
+	       <details key="readOnly" value="false"/>
+	     </eAnnotations>
+	   </eStructuralFeatures>  		
+       <eStructuralFeatures xsi:type="ecore:EAttribute" name="artistParameter" lowerBound="1" upperBound="1" transient="false" eType="//MString" derived="false" volatile="false"/>
+	   	<eStructuralFeatures xsi:type="ecore:EReference" name="mTitleParameter"
+	      lowerBound="1" eType="#//MParameter"
+	      containment="true" resolveProxies="false">
+	     <eAnnotations source="http://www.onceforall.org/mcore">
+	       <details key="name" value="Title"/>
+	       <details key="description" value="Determines the text that will set as the ID3 title tag on the MP3 file."/>
+	       <details key="readOnly" value="false"/>
+	     </eAnnotations>
+	   </eStructuralFeatures>  		
+       <eStructuralFeatures xsi:type="ecore:EAttribute" name="titleParameter" lowerBound="1" upperBound="1" transient="false" eType="//MString" derived="false" volatile="false"/>
+	   	<eStructuralFeatures xsi:type="ecore:EReference" name="mAlbumParameter"
+	      lowerBound="1" eType="#//MParameter"
+	      containment="true" resolveProxies="false">
+	     <eAnnotations source="http://www.onceforall.org/mcore">
+	       <details key="name" value="Album"/>
+	       <details key="description" value="Determines the text that will set as the ID3 album tag on the MP3 file."/>
+	     </eAnnotations>
+	   </eStructuralFeatures>  		
+       <eStructuralFeatures xsi:type="ecore:EAttribute" name="albumParameter" lowerBound="1" upperBound="1" transient="false" eType="//MString" derived="false" volatile="false"/>
+	   	<eStructuralFeatures xsi:type="ecore:EReference" name="mGenreParameter"
+	      lowerBound="1" eType="#//MParameter"
+	      containment="true" resolveProxies="false">
+	     <eAnnotations source="http://www.onceforall.org/mcore">
+	       <details key="name" value="Genre"/>
+	       <details key="description" value="Determines the text that will set as the ID3 year tag on the MP3 file."/>
+	       <details key="readOnly" value="false"/>
+	     </eAnnotations>
+	   </eStructuralFeatures>  		
+       <eStructuralFeatures xsi:type="ecore:EAttribute" name="genreParameter" lowerBound="1" upperBound="1" defaultValueLiteral="Speech" transient="false" eType="//MString" derived="false" volatile="false"/>
+     	<eStructuralFeatures xsi:type="ecore:EAttribute" name="genreParameterHistoricValues" upperBound="3" transient="false" eType="//MString"/>
+	   	<eStructuralFeatures xsi:type="ecore:EReference" name="mYearParameter"
+	      lowerBound="1" eType="#//MParameter"
+	      containment="true" resolveProxies="false">
+	     <eAnnotations source="http://www.onceforall.org/mcore">
+	       <details key="name" value="Year"/>
+	       <details key="description" value="Determines the text that will set as the ID3 year tag on the MP3 file."/>
+	     </eAnnotations>
+	   </eStructuralFeatures>  		
+       <eStructuralFeatures xsi:type="ecore:EAttribute" name="yearParameter" lowerBound="1" upperBound="1" transient="false" eType="//MString" derived="false" volatile="false"/>
+	   	<eStructuralFeatures xsi:type="ecore:EReference" name="mCommentParameter"
+	      lowerBound="1" eType="#//MParameter"
+	      containment="true" resolveProxies="false">
+	     <eAnnotations source="http://www.onceforall.org/mcore">
+	       <details key="name" value="Comment"/>
+	       <details key="description" value="Determines the text that will set as the ID3 comment tag on the MP3 file."/>
+	     </eAnnotations>
+	   </eStructuralFeatures>  		
+       <eStructuralFeatures xsi:type="ecore:EAttribute" name="commentParameter" lowerBound="0" upperBound="1" transient="true" eType="//MString" derived="false" volatile="false"/>
+     	<eStructuralFeatures xsi:type="ecore:EAttribute" name="commentParameterHistoricValues" upperBound="3" transient="false" eType="//MString"/>
+	   	<eStructuralFeatures xsi:type="ecore:EReference" name="mMp3FolderReferenceParameter"
+	      lowerBound="1" eType="#//MParameter"
+	      containment="true" resolveProxies="false">
+	     <eAnnotations source="http://www.onceforall.org/mcore">
+	       <details key="name" value="MP3 folder reference"/>
+	       <details key="description" value="Specifies a reference to the folder where the new MP3 file should be stored."/>
+	     </eAnnotations>
+	   </eStructuralFeatures>  		
+       <eStructuralFeatures xsi:type="ecore:EReference" name="mp3FolderReferenceParameter" lowerBound="1" upperBound="1" transient="false" eType="//MMp3Folder" derived="false" volatile="false"/>
+	   	<eStructuralFeatures xsi:type="ecore:EReference" name="mMp3EntryNameParameter"
+	      lowerBound="1" eType="#//MParameter"
+	      containment="true" resolveProxies="false">
+	     <eAnnotations source="http://www.onceforall.org/mcore">
+	       <details key="name" value="MP3 entry name"/>
+	       <details key="description" value="Specifies the name of the new MP3 entry in the MP3 folder."/>
+	     </eAnnotations>
+	   </eStructuralFeatures>  		
+       <eStructuralFeatures xsi:type="ecore:EAttribute" name="mp3EntryNameParameter" lowerBound="1" upperBound="1" transient="false" eType="//MString" derived="false" volatile="false"/>
+	   	<eStructuralFeatures xsi:type="ecore:EReference" name="mMp3EntryReferenceResult"
+	      lowerBound="1" eType="#//MResult"
+	      containment="true" resolveProxies="false">
+	     <eAnnotations source="http://www.onceforall.org/mcore">
+	       <details key="name" value="MP3 entry reference"/>
+	       <details key="description" value="Contains a reference to the MP3 enty that has been created."/>
+	       <details key="readOnly" value="true"/>
+	     </eAnnotations>
+	   </eStructuralFeatures>  		
+       <eStructuralFeatures xsi:type="ecore:EReference" name="mp3EntryReferenceResult" lowerBound="1" upperBound="1" transient="true" eType="//MMp3" derived="false" volatile="false"/>
+	   	<eStructuralFeatures xsi:type="ecore:EReference" name="mMp3FilePathResult"
+	      lowerBound="1" eType="#//MResult"
+	      containment="true" resolveProxies="false">
+	     <eAnnotations source="http://www.onceforall.org/mcore">
+	       <details key="name" value="MP3 file path"/>
+	       <details key="description" value="Specifies the path of the converted MP3 file."/>
+	       <details key="readOnly" value="true"/>
+	     </eAnnotations>
+	   </eStructuralFeatures>  		
+       <eStructuralFeatures xsi:type="ecore:EAttribute" name="mp3FilePathResult" lowerBound="1" upperBound="1" transient="true" eType="//MExistingFile" derived="false" volatile="false"/>
+	</eClassifiers>
+	<eClassifiers xsi:type="ecore:EClass" name="MCopyDirectoryStep" eSuperTypes="#//MStep" abstract="false">
+ 		<eAnnotations source="http://www.onceforall.org/mcore">
+   		<details key="name" value="Copy directory"/>
+   		<details key="description" value="Copies a directory and its sub-directories to the given directory."/>
+   		<details key="iconFilePath" value="Image Files/Copy.gif"/>
+	   	<details key="actionName" value="Copy"/>
+	   	<details key="actionIconFilePath" value="Image Files\Mark as completed.gif"/>
+	   	<details key="interruptable" value="false"/>
+	   	<details key="stoppable" value="false"/>
+	   	<details key="terminatable" value="false"/>
+ 		</eAnnotations>
+	   	<eStructuralFeatures xsi:type="ecore:EReference" name="mSourceDirectoryParameter"
+	      lowerBound="1" eType="#//MParameter"
+	      containment="true" resolveProxies="false">
+	     <eAnnotations source="http://www.onceforall.org/mcore">
+	       <details key="name" value="Source directory"/>
+	       <details key="description" value="Specifies the path to the source directory to be copied."/>
+	     </eAnnotations>
+	   </eStructuralFeatures>  		
+       <eStructuralFeatures xsi:type="ecore:EAttribute" name="sourceDirectoryParameter" lowerBound="1" upperBound="1" transient="false" eType="//MExistingDirectory" derived="false" volatile="false"/>
+	   	<eStructuralFeatures xsi:type="ecore:EReference" name="mDestinationDirectoryParameter"
+	      lowerBound="1" eType="#//MParameter"
+	      containment="true" resolveProxies="false">
+	     <eAnnotations source="http://www.onceforall.org/mcore">
+	       <details key="name" value="Destination directory"/>
+	       <details key="description" value="Specifies the path to new destination directory. If this directory does not already exist, it will be created."/>
+	     </eAnnotations>
+	   </eStructuralFeatures>  		
+       <eStructuralFeatures xsi:type="ecore:EAttribute" name="destinationDirectoryParameter" lowerBound="1" upperBound="1" transient="false" eType="//MDirectory" derived="false" volatile="false"/>
+	   	<eStructuralFeatures xsi:type="ecore:EReference" name="mCopiedDirectoryResult"
+	      lowerBound="1" eType="#//MResult"
+	      containment="true" resolveProxies="false">
+	     <eAnnotations source="http://www.onceforall.org/mcore">
+	       <details key="name" value="Copied directory"/>
+	       <details key="description" value="Specifies the path to the copied directory (which is the destination directory)."/>
+	     </eAnnotations>
+	   </eStructuralFeatures>  		
+       <eStructuralFeatures xsi:type="ecore:EAttribute" name="copiedDirectoryResult" lowerBound="1" upperBound="1" transient="true" eType="//MExistingDirectory" derived="false" volatile="false"/>
+	</eClassifiers>
+	<eClassifiers xsi:type="ecore:EClass" name="MManualTaskStep" eSuperTypes="#//MStep" abstract="false">
+ 		<eAnnotations source="http://www.onceforall.org/mcore">
+   		<details key="name" value="Manual task"/>
+   		<details key="description" value="Marks a manual task as completed. This task does not perform any automated actions."/>
+	   	<details key="actionName" value="Mark as completed"/>
+	   	<details key="actionIconFilePath" value="Image Files\Mark as completed.gif"/>
+	   	<details key="interruptable" value="false"/>
+	   	<details key="stoppable" value="false"/>
+	   	<details key="terminatable" value="false"/>
+ 		</eAnnotations>
+	</eClassifiers>
+</ecore:EPackage>
+
+      
