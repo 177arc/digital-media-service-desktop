@@ -205,6 +205,9 @@ public abstract class MPublishMp3sStep extends MFtpStep {
 	
     /** Specifies the group date formatter. */
 	protected static final DateFormat GROUP_DATE_FORMATTER = new SimpleDateFormat("MMMM yyyy");
+	
+	/** Specifies the FTP path of the web content. */
+	protected static final String WEB_FTP_PATH = "/public_html";
 
 	/**
 	 * The cached value of the '{@link #getMaxiumumDiskSpaceParameter() <em>Maxiumum Disk Space Parameter</em>}' attribute.
@@ -2900,7 +2903,7 @@ public abstract class MPublishMp3sStep extends MFtpStep {
 	                    String linkDescription = mMp3.getLinkDescriptionProperty();
 			            String comment = mMp3.getCommentProperty();
 			            
-			            String mp3WebPath = webServerUrl.toExternalForm()+getMp3RelativeFtpPathParameter()+"/"+publishedMP3Name;
+			            String mp3WebPath = getWebUrlAndPath(webServerUrl.toExternalForm(),getMp3RelativeFtpPathParameter())+"/"+publishedMP3Name;
 	                    
 			            // Check whether to insert group separators.
 			            if(getContentGroupRecordingsParameter()) {
@@ -2995,7 +2998,7 @@ public abstract class MPublishMp3sStep extends MFtpStep {
 				            }
 			        		
 			                podcastWriter.write("<link>");
-			                podcastWriter.write(webServerUrl.toExternalForm()+getContentPageRelativeFtpPathParameter()+"/"+pageFile.getName());
+			                podcastWriter.write(getWebUrlAndPath(webServerUrl.toExternalForm(),getContentPageRelativeFtpPathParameter())+"/"+pageFile.getName());
 			                podcastWriter.write("</link>\n");
 
 			                podcastWriter.write("<guid>");
@@ -3165,8 +3168,8 @@ public abstract class MPublishMp3sStep extends MFtpStep {
         bytesPublished += podcastFile.length();
         
         // Sets the results.
-        URL podcastFileUrl = new URL(webServerUrl.toExternalForm()+getPodcastRelativeFtpPathParameter()+"/"+getPodcastFilePathParameter().getName()); //$NON-NLS-1$
-        URL contentPageUrl = new URL(webServerUrl.toExternalForm()+getContentPageRelativeFtpPathParameter()+"/"+getContentPageFilePathParameter().getName()); //$NON-NLS-1$
+        URL podcastFileUrl = new URL(getWebUrlAndPath(webServerUrl.toExternalForm(),getPodcastRelativeFtpPathParameter())+"/"+getPodcastFilePathParameter().getName()); //$NON-NLS-1$
+        URL contentPageUrl = new URL(getWebUrlAndPath(webServerUrl.toExternalForm(),getContentPageRelativeFtpPathParameter())+"/"+getContentPageFilePathParameter().getName()); //$NON-NLS-1$
         setPodcastFileUrlResult(podcastFileUrl);
         setContentPageUrlResult(contentPageUrl);
         
@@ -3186,6 +3189,21 @@ public abstract class MPublishMp3sStep extends MFtpStep {
         if(!ftpClient.changeWorkingDirectory(relativeFtpPath))
         	if(!ftpClient.makeDirectory(relativeFtpPath))
         		throw new DesktopException("The application could not change the working directory to '"+relativeFtpPath+"' on the FTP server.", "Please check the parameters. If the parameters are correct, check that the directory exists on the server and the sufficient access rights have been granted.", DesktopException.ERROR_SEVERITY, null);	            	   	
+    }
+    
+    /**
+     * Constructs the web URL including the path from the given server URL and FTP path by concatenating them.
+     * If the FTP path starts with <code>/public_html</code> then this part is removed before the concatenation.
+     *  
+     * @param webServerUrl Specifies the web server URL.
+     * @param ftpPath Specifies the relative FTP path.
+     * @return Returns the web URL including the path.
+     */
+    protected String getWebUrlAndPath(String webServerUrl, String ftpPath) {
+    	if(ftpPath.startsWith(WEB_FTP_PATH))
+    		ftpPath = ftpPath.substring(WEB_FTP_PATH.length());
+    	
+    	return webServerUrl+ftpPath;
     }
     
     /**
