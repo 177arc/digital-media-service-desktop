@@ -1,0 +1,23 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: %pluginName
+Bundle-SymbolicName: org.onceforall.metamodeller.editor; singleton:=true
+Bundle-Version: 0.2.0
+Bundle-Activator: org.onceforall.metamodeller.presentation.MetaModellerEditorPlugin$Implementation
+Bundle-Vendor: %providerName
+Bundle-Localization: plugin
+Export-Package: org.onceforall.metamodeller.presentation
+Require-Bundle: org.eclipse.core.runtime,
+ org.eclipse.core.resources;visibility:=reexport,
+ org.onceforall.metamodeller.edit;visibility:=reexport,
+ org.eclipse.emf.ecore.xmi;visibility:=reexport,
+ org.eclipse.emf.edit.ui;visibility:=reexport,
+ org.eclipse.ui.ide;visibility:=reexport,
+ org.eclipse.emf.codegen,
+ org.eclipse.emf.codegen.ecore,
+ org.eclipse.emf.codegen.ecore.ui,
+ org.eclipse.emf.codegen.ui,
+ org.eclipse.emf.ecore.change.edit,
+ org.eclipse.emf.ecore.edit,
+ org.eclipse.emf.ecore.editor
+Eclipse-LazyStart: true
