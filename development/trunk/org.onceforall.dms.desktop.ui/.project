@@ -3,6 +3,7 @@
 	<name>org.onceforall.dms.desktop.ui</name>
 	<comment></comment>
 	<projects>
+		<project>org.onceforall.dms.desktop</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>
