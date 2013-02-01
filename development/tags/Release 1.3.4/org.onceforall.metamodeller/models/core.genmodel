@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" copyrightText="Copyright 2006, Marc Maier"
+    modelDirectory="/org.onceforall.metamodeller/src" editDirectory="/org.onceforall.metamodeller.edit/src"
+    editorDirectory="/org.onceforall.metamodeller.editor/src" modelPluginID="org.onceforall.metamodeller"
+    templateDirectory="" runtimeJar="true" redirection="" modelName="MetaModeller"
+    modelPluginClass="" editPluginClass="org.onceforall.metamodeller.provider.ModelerEditPlugin"
+    rootImplementsInterface="" suppressInterfaces="true" featureMapWrapperInterface=""
+    featureMapWrapperInternalInterface="" featureMapWrapperClass="" codeFormatting="true"
+    testsDirectory="" booleanFlagsField="" importerID="org.eclipse.emf.importer.ecore"
+    suppressUnsettable="true">
+  <foreignModel>core.ecore</foreignModel>
+  <genPackages prefix="MetaModeller" basePackage="org.onceforall" resource="XMI" disposableProviderFactory="true"
+      generateExampleClass="false" multipleEditorPages="false" ecorePackage="core.ecore#/">
+    <genClasses ecoreClass="core.ecore#//ERootPackageType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference core.ecore#//ERootPackageType/eCustomDataTypeTypes"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference core.ecore#//ERootPackageType/mPrimitiveDataTypeTypes"/>
+      <genFeatures property="None" createChild="false" ecoreFeature="ecore:EReference core.ecore#//ERootPackageType/mObjectTypePlaceholder"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference core.ecore#//ERootPackageType/mStatefulObjectTypePlaceholder"/>
+      <genFeatures property="None" createChild="false" ecoreFeature="ecore:EReference core.ecore#//ERootPackageType/mApplicationTypePlaceholder"/>
+      <genFeatures property="None" createChild="false" ecoreFeature="ecore:EReference core.ecore#//ERootPackageType/mStepTypePlaceholder"/>
+      <genFeatures property="None" createChild="false" ecoreFeature="ecore:EReference core.ecore#//ERootPackageType/mScriptTypePlaceholder"/>
+      <genFeatures property="None" createChild="false" ecoreFeature="ecore:EReference core.ecore#//ERootPackageType/mFileTypePlaceholder"/>
+      <genFeatures property="None" createChild="false" ecoreFeature="ecore:EReference core.ecore#//ERootPackageType/mExistingFileTypePlaceholder"/>
+      <genFeatures property="None" createChild="false" ecoreFeature="ecore:EReference core.ecore#//ERootPackageType/mDirectoryTypePlaceholder"/>
+      <genFeatures property="None" createChild="false" ecoreFeature="ecore:EReference core.ecore#//ERootPackageType/mExistingDirectoryTypePlaceholder"/>
+      <genFeatures property="None" createChild="false" ecoreFeature="ecore:EReference core.ecore#//ERootPackageType/mStateTypePlaceholder"/>
+      <genFeatures property="None" createChild="false" ecoreFeature="ecore:EReference core.ecore#//ERootPackageType/mStepStateTypePlaceholder"/>
+      <genFeatures property="None" createChild="false" ecoreFeature="ecore:EReference core.ecore#//ERootPackageType/mBooleanTypePlaceholder"/>
+      <genFeatures property="None" createChild="false" ecoreFeature="ecore:EReference core.ecore#//ERootPackageType/mDateTimeTypePlaceholder"/>
+      <genFeatures property="None" createChild="false" ecoreFeature="ecore:EReference core.ecore#//ERootPackageType/mDateTypePlaceholder"/>
+      <genFeatures property="None" createChild="false" ecoreFeature="ecore:EReference core.ecore#//ERootPackageType/mTimeTypePlaceholder"/>
+      <genFeatures property="None" createChild="false" ecoreFeature="ecore:EReference core.ecore#//ERootPackageType/mDurationTypePlaceholder"/>
+      <genFeatures property="None" createChild="false" ecoreFeature="ecore:EReference core.ecore#//ERootPackageType/mLongTypePlaceholder"/>
+      <genFeatures property="None" createChild="false" ecoreFeature="ecore:EReference core.ecore#//ERootPackageType/mPasswordTypePlaceholder"/>
+      <genFeatures property="None" createChild="false" ecoreFeature="ecore:EReference core.ecore#//ERootPackageType/mStringTypePlaceholder"/>
+      <genFeatures property="None" createChild="false" ecoreFeature="ecore:EReference core.ecore#//ERootPackageType/mUrlTypePlaceholder"/>
+      <genFeatures property="None" createChild="false" ecoreFeature="ecore:EReference core.ecore#//ERootPackageType/eThrowableTypePlaceholder"/>
+      <genFeatures property="None" createChild="false" ecoreFeature="ecore:EReference core.ecore#//ERootPackageType/eBooleanTypePlaceholder"/>
+      <genFeatures property="None" createChild="false" ecoreFeature="ecore:EReference core.ecore#//ERootPackageType/eByteTypePlaceholder"/>
+      <genFeatures property="None" createChild="false" ecoreFeature="ecore:EReference core.ecore#//ERootPackageType/eCharTypePlaceholder"/>
+      <genFeatures property="None" createChild="false" ecoreFeature="ecore:EReference core.ecore#//ERootPackageType/eDoubleTypePlaceholder"/>
+      <genFeatures property="None" createChild="false" ecoreFeature="ecore:EReference core.ecore#//ERootPackageType/eFloatTypePlaceholder"/>
+      <genFeatures property="None" createChild="false" ecoreFeature="ecore:EReference core.ecore#//ERootPackageType/eIntTypePlaceholder"/>
+      <genFeatures property="None" createChild="false" ecoreFeature="ecore:EReference core.ecore#//ERootPackageType/eLongTypePlaceholder"/>
+      <genFeatures property="None" createChild="false" ecoreFeature="ecore:EReference core.ecore#//ERootPackageType/eShortTypePlaceholder"/>
+      <genFeatures property="None" createChild="false" ecoreFeature="ecore:EReference core.ecore#//ERootPackageType/eStringTypePlaceholder"/>
+      <genFeatures property="None" createChild="false" ecoreFeature="ecore:EReference core.ecore#//ERootPackageType/eJavaObjectTypePlaceholder"/>
+      <genFeatures property="None" createChild="false" ecoreFeature="ecore:EReference core.ecore#//ERootPackageType/eJavaClassTypePlaceholder"/>
+      <genFeatures property="None" createChild="false" ecoreFeature="ecore:EReference core.ecore#//ERootPackageType/eBooleanObjectTypePlaceholder"/>
+      <genFeatures property="None" createChild="false" ecoreFeature="ecore:EReference core.ecore#//ERootPackageType/eByteObjectTypePlaceholder"/>
+      <genFeatures property="None" createChild="false" ecoreFeature="ecore:EReference core.ecore#//ERootPackageType/eCharacterObjectTypePlaceholder"/>
+      <genFeatures property="None" createChild="false" ecoreFeature="ecore:EReference core.ecore#//ERootPackageType/eDoubleObjectTypePlaceholder"/>
+      <genFeatures property="None" createChild="false" ecoreFeature="ecore:EReference core.ecore#//ERootPackageType/eFloatObjectTypePlaceholder"/>
+      <genFeatures property="None" createChild="false" ecoreFeature="ecore:EReference core.ecore#//ERootPackageType/eIntegerObjectTypePlaceholder"/>
+      <genFeatures property="None" createChild="false" ecoreFeature="ecore:EReference core.ecore#//ERootPackageType/eLongObjectTypePlaceholder"/>
+      <genFeatures property="None" createChild="false" ecoreFeature="ecore:EReference core.ecore#//ERootPackageType/eShortObjectTypePlaceholder"/>
+      <genFeatures property="None" createChild="false" ecoreFeature="ecore:EReference core.ecore#//ERootPackageType/eByteArrayTypePlaceholder"/>
+      <genFeatures property="None" createChild="false" ecoreFeature="ecore:EReference core.ecore#//ERootPackageType/eDateTypePlaceholder"/>
+      <genFeatures property="None" createChild="false" ecoreFeature="ecore:EReference core.ecore#//ERootPackageType/eBigIntegerTypePlaceholder"/>
+      <genFeatures property="None" createChild="false" ecoreFeature="ecore:EReference core.ecore#//ERootPackageType/eBigDecimalTypePlaceholder"/>
+      <genFeatures property="None" createChild="false" ecoreFeature="ecore:EReference core.ecore#//ERootPackageType/eResourceTypePlaceholder"/>
+      <genFeatures property="None" createChild="false" ecoreFeature="ecore:EReference core.ecore#//ERootPackageType/eResourceSetTypePlaceholder"/>
+      <genFeatures property="None" createChild="false" ecoreFeature="ecore:EReference core.ecore#//ERootPackageType/eFeatureMapEntryTypePlaceholder"/>
+      <genFeatures property="None" createChild="false" ecoreFeature="ecore:EReference core.ecore#//ERootPackageType/eFeatureMapTypePlaceholder"/>
+      <genFeatures property="None" createChild="false" ecoreFeature="ecore:EReference core.ecore#//ERootPackageType/eEnumeratorTypePlaceholder"/>
+      <genFeatures property="None" createChild="false" ecoreFeature="ecore:EReference core.ecore#//ERootPackageType/eEListTypePlaceholder"/>
+      <genFeatures property="None" createChild="false" ecoreFeature="ecore:EReference core.ecore#//ERootPackageType/eETreeIteratorTypePlaceholder"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//ERootPackageType/basePackage"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//ERootPackageType/modelName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//ERootPackageType/copyrightText"/>
+    </genClasses>
+    <genClasses ecoreClass="core.ecore#//EPackageType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference core.ecore#//EPackageType/ePackageTypes"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference core.ecore#//EPackageType/mObjectTypes"/>
+    </genClasses>
+    <genClasses ecoreClass="core.ecore#//MElementType">
+      <genFeatures notify="false" createChild="false" propertyCategory="Advanced"
+          propertySortChoices="true" ecoreFeature="ecore:EReference core.ecore#//MElementType/mSuperType"/>
+      <genFeatures createChild="false" propertyCategory="Basic" propertyDescription=""
+          ecoreFeature="ecore:EAttribute core.ecore#//MElementType/defaultName"/>
+      <genFeatures createChild="false" propertyCategory="Basic" propertyDescription=""
+          propertyMultiLine="true" ecoreFeature="ecore:EAttribute core.ecore#//MElementType/defaultDescription"/>
+      <genFeatures createChild="false" propertyCategory="Basic" propertyDescription=""
+          ecoreFeature="ecore:EAttribute core.ecore#//MElementType/defaultIconFilePath"/>
+      <genFeatures createChild="false" propertyCategory="Advanced" ecoreFeature="ecore:EAttribute core.ecore#//MElementType/nameForUI"/>
+    </genClasses>
+    <genClasses ecoreClass="core.ecore#//MObjectType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference core.ecore#//MObjectType/mPropertyTypes"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference core.ecore#//MObjectType/mReferenceTypes"/>
+      <genFeatures createChild="false" propertyCategory="Advanced" ecoreFeature="ecore:EAttribute core.ecore#//MObjectType/abstract"/>
+      <genFeatures createChild="false" propertyCategory="Advanced" ecoreFeature="ecore:EAttribute core.ecore#//MObjectType/compositeClassName"/>
+      <genFeatures property="None" createChild="false" ecoreFeature="ecore:EReference core.ecore#//MObjectType/mReferenceDataTypeType"/>
+    </genClasses>
+    <genClasses ecoreClass="core.ecore#//MStepType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference core.ecore#//MStepType/mParameterTypes"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference core.ecore#//MStepType/mResultTypes"/>
+      <genFeatures createChild="false" propertyCategory="Basic" ecoreFeature="ecore:EAttribute core.ecore#//MStepType/defaultActionName"/>
+      <genFeatures createChild="false" propertyCategory="Basic" ecoreFeature="ecore:EAttribute core.ecore#//MStepType/defaultActionIconFilePath"/>
+      <genFeatures createChild="false" propertyCategory="Advanced" ecoreFeature="ecore:EAttribute core.ecore#//MStepType/interruptable"/>
+      <genFeatures createChild="false" propertyCategory="Advanced" ecoreFeature="ecore:EAttribute core.ecore#//MStepType/stoppable"/>
+      <genFeatures createChild="false" propertyCategory="Advanced" ecoreFeature="ecore:EAttribute core.ecore#//MStepType/terminatable"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="core.ecore#//MValueType">
+      <genFeatures createChild="false" propertyCategory="Basic" propertyDescription=""
+          ecoreFeature="ecore:EAttribute core.ecore#//MValueType/defaultReadOnly"/>
+      <genFeatures createChild="false" propertyCategory="Basic" propertyDescription=""
+          ecoreFeature="ecore:EAttribute core.ecore#//MValueType/defaultValue"/>
+      <genFeatures createChild="false" propertyCategory="Basic" propertyDescription="Specifies the default value type of 'value' attribute of the type instance. It must be the name of a valid EDataType."
+          propertySortChoices="true" ecoreFeature="ecore:EReference core.ecore#//MValueType/valueType"/>
+      <genFeatures createChild="false" propertyCategory="Basic" propertyDescription="Specifies the lower bound of 'value' attribute of the type instance."
+          ecoreFeature="ecore:EAttribute core.ecore#//MValueType/lowerBound"/>
+      <genFeatures createChild="false" propertyCategory="Basic" propertyDescription="Specifies the upper bound of 'value' attribute of the type instance."
+          ecoreFeature="ecore:EAttribute core.ecore#//MValueType/upperBound"/>
+      <genFeatures createChild="false" propertyCategory="Advanced" propertyDescription="Specifies whether the 'value' attribute of the type instance is derived, i.e. calculated on demand."
+          ecoreFeature="ecore:EAttribute core.ecore#//MValueType/derived"/>
+      <genFeatures createChild="false" propertyCategory="Basic" propertyDescription="Specifies whether the 'value' attribute of the type instance is transient, i.e. is not persisted."
+          ecoreFeature="ecore:EAttribute core.ecore#//MValueType/transient"/>
+      <genFeatures createChild="false" propertyCategory="Advanced" propertyDescription="Specifies whether the 'value' attribute of the type instance is volatile."
+          ecoreFeature="ecore:EAttribute core.ecore#//MValueType/volatile"/>
+      <genFeatures createChild="false" propertyCategory="Basic" ecoreFeature="ecore:EAttribute core.ecore#//MValueType/historicValuesUpperBound"/>
+      <genFeatures createChild="false" propertyCategory="Advanced" ecoreFeature="ecore:EAttribute core.ecore#//MValueType/valueEFeatureName"/>
+      <genFeatures createChild="false" propertyCategory="Advanced" ecoreFeature="ecore:EAttribute core.ecore#//MValueType/historicValuesEFeatureName"/>
+      <genFeatures createChild="false" propertyCategory="Advanced" propertyDescription="Determines whether a value feature will generated for this value type."
+          ecoreFeature="ecore:EAttribute core.ecore#//MValueType/generateValueFeature"/>
+      <genFeatures createChild="false" propertyCategory="Advanced" propertyDescription="Determines whether a containment reference to a managed value will generated for this value type."
+          ecoreFeature="ecore:EAttribute core.ecore#//MValueType/generateMValueReference"/>
+    </genClasses>
+    <genClasses ecoreClass="core.ecore#//MPropertyType"/>
+    <genClasses ecoreClass="core.ecore#//MParameterType"/>
+    <genClasses ecoreClass="core.ecore#//MResultType"/>
+    <genClasses image="false" ecoreClass="core.ecore#//EDataTypeType"/>
+    <genClasses image="false" ecoreClass="core.ecore#//EObjectType">
+      <genFeatures createChild="false" propertyCategory="Basic" ecoreFeature="ecore:EAttribute core.ecore#//EObjectType/name"/>
+    </genClasses>
+    <genClasses ecoreClass="core.ecore#//ENativeDataTypeType"/>
+    <genClasses ecoreClass="core.ecore#//ECustomDataTypeType">
+      <genFeatures createChild="false" propertyCategory="Basic" ecoreFeature="ecore:EAttribute core.ecore#//ECustomDataTypeType/instanceClassName"/>
+    </genClasses>
+    <genClasses ecoreClass="core.ecore#//MReferenceType">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference core.ecore#//MReferenceType/mObjectType"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MReferenceType/lowerBound"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MReferenceType/upperBound"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MReferenceType/derived"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MReferenceType/transient"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MReferenceType/volatile"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MReferenceType/containment"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="core.ecore#//MApplicationType"/>
+    <genClasses ecoreClass="core.ecore#//MValueDataTypeType"/>
+    <genClasses ecoreClass="core.ecore#//MReferenceValueType"/>
+    <genClasses ecoreClass="core.ecore#//MReferenceDataTypeType">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference core.ecore#//MReferenceDataTypeType/mObjectType"/>
+    </genClasses>
+    <genClasses ecoreClass="core.ecore#//MPrimitiveDataTypeType">
+      <genFeatures createChild="false" propertyCategory="Basic" ecoreFeature="ecore:EAttribute core.ecore#//MPrimitiveDataTypeType/dataTypeName"/>
+    </genClasses>
+    <genClasses ecoreClass="core.ecore#//MStatefulObjectType"/>
+    <genClasses ecoreClass="core.ecore#//MBusinessObjectType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference core.ecore#//MBusinessObjectType/mStepTypes"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

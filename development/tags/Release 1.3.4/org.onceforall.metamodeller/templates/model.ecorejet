@@ -1,0 +1,440 @@
+<%@ jet package="org.onceforall.metamodeller.generator" class="EcoreModelGenerator" skeleton="model.skeleton" imports="java.util.* org.onceforall.metamodeller.* org.eclipse.emf.ecore.* org.onceforall.dms.desktop.logic.types.*"%>
+<?xml version="1.0" encoding="UTF-8"?>
+<% class Utility {
+   void addMValueTypeReferences(List<MValueType> mValueTypes) {
+     for(MValueType mValueType: mValueTypes) {
+       if(mValueType.isGenerateMValueReference()) {%>
+	   	<eStructuralFeatures xsi:type="ecore:EReference" name="<%=mValueType.getReferenceName()%>"
+	      lowerBound="1" eType="#<%=mValueType.getESuperTypeXPath()%>"
+	      containment="true" resolveProxies="false">
+	     <eAnnotations source="http://www.onceforall.org/mcore">
+	       <details key="name" value="<%=encodeForXml(mValueType.getDefaultName())%>"/>
+<%       if(mValueType.getNameForUI() != null && mValueType.getNameForUI().length() > 0) { %>
+   		<details key="typeNameForUI" value="<%=encodeForXml(mValueType.getNameForUI())%>"/>
+<%       } %>
+<%       if(mValueType.getDefaultDescription() != null && mValueType.getDefaultDescription().length() > 0) { %>
+	       <details key="description" value="<%=encodeForXml(mValueType.getDefaultDescription())%>"/>
+<%       } %>
+<%       if(mValueType.getDefaultReadOnly() != null) { %>
+	       <details key="readOnly" value="<%=mValueType.getDefaultReadOnly()%>"/>
+<%       } %>
+<%       if(mValueType.getDefaultIconFilePath() != null && mValueType.getDefaultIconFilePath().length() > 0) { %>
+	       <details key="iconFilePath" value="<%=encodeForXml(mValueType.getDefaultIconFilePath())%>"/>
+<%       } %>
+<%       if(mValueType.getValueEFeatureName() != null && mValueType.getValueEFeatureName().length() > 0) { %>
+	       <details key="valueEFeature" value="<%=encodeForXml(mValueType.getValueEFeatureName())%>"/>
+<%       } %>
+<%       if(mValueType.getHistoricValuesEFeatureName() != null && mValueType.getHistoricValuesEFeatureName().length() > 0) { %>
+	       <details key="getHistoricValuesEFeature" value="<%=encodeForXml(mValueType.getHistoricValuesEFeatureName())%>"/>
+<%       } %>
+	     </eAnnotations>
+	   </eStructuralFeatures>
+<%     } %>  		
+<%     if(mValueType.isGenerateValueFeature()) {%>
+       <eStructuralFeatures xsi:type="<%if(mValueType.getValueType() instanceof MPrimitiveDataTypeType) {%>ecore:EAttribute<%} else {%>ecore:EReference<%}%>" name="<%=encodeForXml(mValueType.getFeatureName())%>" lowerBound="<%=mValueType.getLowerBound()%>" upperBound="<%=mValueType.getUpperBound()%>"<%if(mValueType.getDefaultValue() != null && mValueType.getDefaultValue().length() > 0) {%> defaultValueLiteral="<%=encodeForXml(mValueType.getDefaultValue())%>"<%}%> transient="<%=mValueType.getTransient()%>" eType="<%=encodeForXml(mValueType.getValueType().getETypeXPath())%>" derived="<%=mValueType.getDerived()%>" volatile="<%=mValueType.getVolatile()%>"/>
+<%       if(mValueType.getHistoricValuesUpperBound() > 0) { %>
+     	<eStructuralFeatures xsi:type="<%if(mValueType.getValueType() instanceof MPrimitiveDataTypeType) {%>ecore:EAttribute<%} else {%>ecore:EReference<%}%>" name="<%=encodeForXml(mValueType.getHistoricFeatureName())%>" upperBound="<%=mValueType.getHistoricValuesUpperBound()%>" transient="false" eType="<%=encodeForXml(mValueType.getValueType().getETypeXPath())%>"/>
+<%       }
+       }
+     }
+   }
+     
+   void addMStepTypeReferences(List<MStepType> mStepTypes) {
+     for(MStepType mStepType: mStepTypes) { %>
+	   	<eStructuralFeatures xsi:type="ecore:EReference" name="<%=mStepType.getReferenceName()%>"
+	      lowerBound="1" eType="#<%=mStepType.getETypeXPath()%>"
+	      containment="true" resolveProxies="false">
+	   </eStructuralFeatures>
+<%     } 		
+   }  
+   
+   void addMObjectTypeAnnotations(MObjectType mObjectType) { %>
+ 		<eAnnotations source="http://www.onceforall.org/mcore">
+<%     if(mObjectType.getNameForUI() != null && mObjectType.getNameForUI().length() > 0) { %>
+   		<details key="typeNameForUI" value="<%=encodeForXml(mObjectType.getNameForUI())%>"/>
+<%     } %>
+<%     if(mObjectType.getDefaultName() != null && mObjectType.getDefaultName().length() > 0) { %>
+   		<details key="name" value="<%=encodeForXml(mObjectType.getDefaultName())%>"/>
+<%     } %>
+<%     if(mObjectType.getDefaultDescription() != null && mObjectType.getDefaultDescription().length() > 0) { %>
+   		<details key="description" value="<%=encodeForXml(mObjectType.getDefaultDescription())%>"/>
+<%     } %>
+<%     if(mObjectType.getDefaultIconFilePath() != null && mObjectType.getDefaultIconFilePath().length() > 0) { %>
+   		<details key="iconFilePath" value="<%=encodeForXml(mObjectType.getDefaultIconFilePath())%>"/>
+<%     } %>
+<%     if(mObjectType.getCompositeClassName() != null && mObjectType.getCompositeClassName().length() > 0) { %>
+   		<details key="compositeClassName" value="<%=encodeForXml(mObjectType.getCompositeClassName())%>"/>
+<%     } %>
+<%    if(mObjectType instanceof MStepType) {
+				MStepType mStepType = (MStepType) mObjectType;
+				if(mStepType.getDefaultActionName() != null && mStepType.getDefaultActionName().length() > 0) { %>
+	   	<details key="actionName" value="<%=encodeForXml(mStepType.getDefaultActionName())%>"/>
+<%			}
+		    if(mStepType.getDefaultActionIconFilePath() != null && mStepType.getDefaultActionIconFilePath().length() > 0) { %>
+	   	<details key="actionIconFilePath" value="<%=encodeForXml(mStepType.getDefaultActionIconFilePath())%>"/>
+<%			} %>
+	   	<details key="interruptable" value="<%=mStepType.getInterruptable()%>"/>
+	   	<details key="stoppable" value="<%=mStepType.getStoppable()%>"/>
+	   	<details key="terminatable" value="<%=mStepType.getTerminatable()%>"/>
+<%		} %>
+ 		</eAnnotations>
+<%   }
+   String encodeForXml(String text) {
+		 if(text != null) { 
+			text = text.replaceAll("&", "&amp;");
+			text = text.replaceAll("<", "&lt;");
+			text = text.replaceAll(">", "&gt;");
+			text = text.replaceAll("'", "&apos;");
+			text = text.replaceAll("\"", "&quot;");
+		 }
+		 return(text);
+   }
+ }
+
+ final Utility UTILITY = new Utility();
+
+ try { %>
+<ecore:EPackage xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="logic"
+    nsURI="http://www.onceforall.org/dms/desktop/model.ecore" nsPrefix="org.onceforall.dms.desktop.logic">
+  <eClassifiers xsi:type="ecore:EClass" name="MObject" eSuperTypes="#//MElement">
+    <eAnnotations source="http://www.onceforall.org/mcore">
+      <details key="typeNameForUI" value="Entry"/>
+      <details key="compositeClassName" value="org.onceforall.dms.desktop.ui.MObjectComposite"/>  		
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="mNameProperty" lowerBound="1"
+        eType="#//MProperty" containment="true" resolveProxies="false">
+      <eAnnotations source="http://www.onceforall.org/mcore">
+        <details key="name" value="Name"/>
+        <details key="description" value="Specifies the name."/>
+        <details key="valueEFeature" value="name"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="mDescriptionProperty" lowerBound="1"
+        eType="#//MProperty" containment="true" resolveProxies="false">
+      <eAnnotations source="http://www.onceforall.org/mcore">
+        <details key="name" value="Description"/>
+        <details key="description" value="Specifies a detailed description."/>
+        <details key="valueEFeature" value="description"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="mIconFilePathProperty"
+        lowerBound="1" eType="#//MProperty" containment="true" resolveProxies="false">
+      <eAnnotations source="http://www.onceforall.org/mcore">
+        <details key="name" value="Icon file path"/>
+        <details key="description" value="Specifies the file path to the icon that represents this element."/>
+        <details key="valueEFeature" value="iconFilePath"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="fixedMProperties" upperBound="-1"
+        eType="#//MProperty" volatile="true" transient="true"
+        derived="true" resolveProxies="false"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="fixedMSteps" upperBound="-1"
+        eType="#//MStep" volatile="true" transient="true"
+        derived="true" resolveProxies="false"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MElement" abstract="true">
+  	<eOperations name="validate" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eParameters name="diagnosticsChain" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain"/>
+      <eParameters name="context" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EMap"/>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="#//MString"
+        defaultValueLiteral=""/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="typeName" lowerBound="1"
+        eType="#//MString" changeable="false" volatile="true" transient="true" derived="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="typeNameForUI" lowerBound="1"
+        eType="#//MString" transient="true" defaultValueLiteral="Element"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="nameForUI" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" changeable="false"
+        volatile="true" transient="true" defaultValueLiteral="Element" derived="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" lowerBound="1"
+        eType="#//MString" defaultValueLiteral=""/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="descriptionForUI" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" changeable="false"
+        volatile="true" transient="true" defaultValueLiteral="" derived="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="iconFilePath" eType="#//MFile"
+        changeable="true" transient="false"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="overlayIconFilePath" eType="#//MFile"
+        changeable="true" transient="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="compositeClassName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        transient="true" defaultValueLiteral=""/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="simulated" lowerBound="1" defaultValueLiteral="false"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MParameter" eSuperTypes="#//MValue">
+    <eAnnotations source="http://www.onceforall.org/mcore">
+      <details key="typeNameForUI" value="Parameter"/>		
+    </eAnnotations>
+	</eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MProperty" eSuperTypes="#//MValue">
+    <eAnnotations source="http://www.onceforall.org/mcore">
+      <details key="typeNameForUI" value="Property"/>		
+    </eAnnotations>
+	</eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MResult" eSuperTypes="#//MValue">
+    <eAnnotations source="http://www.onceforall.org/mcore">
+      <details key="typeNameForUI" value="Result"/>		
+    </eAnnotations>
+	</eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MStatefulObject" abstract="true" eSuperTypes="#//MObject">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="mStateProperty" lowerBound="1"
+        eType="#//MProperty" containment="true" resolveProxies="false">
+      <eAnnotations source="http://www.onceforall.org/mcore">
+        <details key="name" value="State"/>
+        <details key="description" value="Specifies the current state."/>
+        <details key="readOnly" value="true"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="mLastStateChangeProperty"
+        lowerBound="1" eType="#//MProperty" containment="true" resolveProxies="false">
+      <eAnnotations source="http://www.onceforall.org/mcore">
+        <details key="name" value="Last state change"/>
+        <details key="description" value="Specifies the date and time of the last state change."/>
+        <details key="readOnly" value="true"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="lastStateChangeProperty"
+        eType="#//MDateTime"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MStep" abstract="true" eSuperTypes="#//MStatefulObject">
+    <eAnnotations source="http://www.onceforall.org/mcore">
+      <details key="typeNameForUI" value="Task"/>
+      <details key="compositeClassName" value="org.onceforall.dms.desktop.ui.MStepComposite"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="mInputSteps" ordered="false"
+        upperBound="-1" eType="#//MStep" resolveProxies="false"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="fixedMParameters" upperBound="-1"
+        eType="#//MParameter" volatile="true" transient="true"
+        derived="true" resolveProxies="false"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="fixedMResults" upperBound="-1"
+        eType="#//MResult" volatile="true" transient="true"
+        derived="true" resolveProxies="false"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="exclusiveProperty" lowerBound="1"
+        eType="#//MBoolean" transient="false" defaultValueLiteral="false"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="stateProperty" lowerBound="1"
+        eType="#//MStepState" transient="true" defaultValueLiteral="Pending"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="mProgressProperty" lowerBound="1"
+        eType="#//MProperty" containment="true" resolveProxies="false">
+      <eAnnotations source="http://www.onceforall.org/mcore">
+        <details key="name" value="Progress"/>
+        <details key="description" value="Specifies the progress of the processing in %."/>
+        <details key="readOnly" value="true"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="progressProperty" eType="#//MLong"
+        transient="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="mProgressStatusProperty"
+        lowerBound="1" eType="#//MProperty" containment="true"
+        resolveProxies="false">
+      <eAnnotations source="http://www.onceforall.org/mcore">
+        <details key="name" value="Progress status"/>
+        <details key="description" value="Specifies a textual representation of the progress."/>
+        <details key="readOnly" value="true"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="progressStatusProperty"
+        eType="#//MString" transient="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="mStartTriggerProperty"
+        lowerBound="1" eType="#//MProperty" containment="true"
+        resolveProxies="false">
+      <eAnnotations source="http://www.onceforall.org/mcore">
+        <details key="name" value="Start trigger"/>
+        <details key="description" value="Specifies when the step should be started.&#xD;&#xA;&#xD;&#xA;It can hold the following values:&#xD;&#xA;   'Manual' means that the step only starts when you explicitly request it.&#xD;&#xA;   'Semi-automatic' means that the step will request to be started when all steps it depends on have been completed and all necessary parameters have been entered.&#xD;&#xA;   'Automatic' means that the step will automatically start all steps it depends on have been completed and all necessary parameters have been entered."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="startTriggerProperty" lowerBound="1"
+        eType="#//MString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="interruptable" lowerBound="1" transient="true"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean" changeable="false"
+        defaultValueLiteral="false"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="stoppable" lowerBound="1" transient="true"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean" changeable="false"
+        defaultValueLiteral="false"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="terminatable" lowerBound="1" transient="true"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean" changeable="false"
+        defaultValueLiteral="false"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="actionName" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" defaultValueLiteral="Mark as completed"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="actionIconFilePath" changeable="true" transient="false"
+        eType="#//MFile" defaultValueLiteral="Image Files\Mark as completed.gif"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="exception" lowerBound="1" transient="true"
+        eType="#//EThrowable" changeable="false"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MValue" abstract="true" eSuperTypes="#//MElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="mInputValues" upperBound="-1"
+        eType="#//MValue" resolveProxies="false"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="valueForUI" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" volatile="true"
+        transient="true" derived="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"
+        volatile="true" transient="true" derived="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="historicValues" ordered="false"
+        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"
+        volatile="true" transient="true" derived="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="historicValuesForUI" upperBound="-1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" volatile="true"
+        transient="true" derived="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="readOnly" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MApplication" abstract="true" eSuperTypes="#//MObject">
+    <eAnnotations source="http://www.onceforall.org/mcore">
+      <details key="typeNameForUI" value="Application"/>
+      <details key="name" value="Digital Media Service Desktop"/>
+      <details key="description" value="Represents the whole application."/>
+      <details key="compositeClassName" value="org.onceforall.dms.desktop.ui.MApplicationComposite"/>
+      <details key="iconFilePath" value="Image Files\Application.gif"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="mDataFileProperty" lowerBound="1"
+        eType="#//MProperty" containment="true"
+        resolveProxies="false">
+      <eAnnotations source="http://www.onceforall.org/mcore">
+        <details key="name" value="Data file"/>
+        <details key="description" value="Specifies the file that contains the application data."/>
+        <details key="readOnly" value="true"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="dataFileProperty" lowerBound="1"
+        eType="#//MExistingFile" changeable="false" transient="true" defaultValueLiteral="Application Data Files\Data.xml"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="infoWebPageProperty" lowerBound="1"
+        eType="#//MUrl" changeable="true" transient="false" defaultValueLiteral="http://www.onceforall.org/dms-desktop/info.php"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="mInfoWebPageProperty" lowerBound="1"
+        eType="#//MProperty" containment="true"
+        resolveProxies="false">
+      <eAnnotations source="http://www.onceforall.org/mcore">
+        <details key="name" value="Information web page URL"/>
+        <details key="description" value="Specifies the URL of a web page that provides up-to-date information that is relevant to the users of this application."/>
+        <details key="readOnly" value="true"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="dataFilePropertyHistoricValues"
+        ordered="false" upperBound="5" eType="#//MFile"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="mLogFileProperty" lowerBound="1"
+      eType="#//MProperty" containment="true" resolveProxies="false">
+      <eAnnotations source="http://www.onceforall.org/mcore">
+        <details key="name" value="Log file"/>
+        <details key="description" value="Specifies the file that contains the log data."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="logFileProperty" lowerBound="1"
+        eType="#//MFile"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="mPathProperty" lowerBound="1"
+        eType="#//MProperty" containment="true" resolveProxies="false">
+      <eAnnotations source="http://www.onceforall.org/mcore">
+        <details key="name" value="Path"/>
+        <details key="description" value="Specifies the path where this application has been started from."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="pathProperty" lowerBound="1"
+        eType="#//MExistingDirectory"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="mVersionProperty" lowerBound="1"
+        eType="#//MProperty" containment="true" resolveProxies="false">
+      <eAnnotations source="http://www.onceforall.org/mcore">
+        <details key="name" value="Version"/>
+        <details key="description" value="Specifies the version of the application."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="versionProperty" lowerBound="1"
+        eType="#//MString" defaultValueLiteral="0.9.0"/>
+	<eStructuralFeatures xsi:type="ecore:EReference" name="mLastSaveProperty"
+	  lowerBound="1" eType="#//MProperty" containment="true" resolveProxies="false">
+	  <eAnnotations source="http://www.onceforall.org/mcore">
+	    <details key="name" value="Last application data save"/>
+	    <details key="description" value="Specifies the date and time when the application data was last saved."/>
+	    <details key="readOnly" value="true"/>
+	  </eAnnotations>
+	</eStructuralFeatures>  		
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="lastSaveProperty" lowerBound="0" upperBound="1" transient="true" eType="//MDateTime" derived="false" volatile="false"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MScript" eSuperTypes="#//MStatefulObject">
+    <eAnnotations source="http://www.onceforall.org/mcore">
+      <details key="typeNameForUI" value="Script"/>
+      <details key="name" value="Script"/>
+      <details key="description" value="Contains a number of tasks that should be completed."/>
+      <details key="iconFilePath" value="Image Files\Script.gif"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="mSteps" upperBound="-1"
+        eType="#//MStep" containment="true" resolveProxies="false"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="stateProperty" lowerBound="1"
+        eType="#//MStepState" transient="true" defaultValueLiteral="Pending"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="mProgressProperty" lowerBound="1"
+        eType="#//MProperty" containment="true" resolveProxies="false">
+      <eAnnotations source="http://www.onceforall.org/mcore">
+        <details key="name" value="Progress"/>
+        <details key="description" value="Specifies the progress of the processing in %."/>
+        <details key="readOnly" value="true"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="progressProperty" eType="#//MLong"
+        transient="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="mProgressStatusProperty"
+        lowerBound="1" eType="#//MProperty" containment="true"
+        resolveProxies="false">
+      <eAnnotations source="http://www.onceforall.org/mcore">
+        <details key="name" value="Progress status"/>
+        <details key="description" value="Specifies a textual representation of the progress."/>
+        <details key="readOnly" value="true"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="progressStatusProperty"
+        eType="#//MString" transient="true"/>
+  </eClassifiers>
+<% ERootPackageType modelRoot = getModelRoot(); %>
+<% for (EReference eReference : (List<EReference>) modelRoot.eClass().getEAllReferences()) { %>
+<% 	if (eReference.getEType().getInstanceClass().isAssignableFrom(ECustomDataTypeType.class) && eReference.getUpperBound() == 1) { %>
+<% 		ECustomDataTypeType eCustomDataTypeType = (ECustomDataTypeType) modelRoot.eGet(eReference.getFeatureID(), false, false); %>
+  <eClassifiers xsi:type="ecore:EDataType" name="<%=UTILITY.encodeForXml(eCustomDataTypeType.getName())%>" instanceClassName="<%=UTILITY.encodeForXml(eCustomDataTypeType.getInstanceClassName())%>"/>		
+<% 	} %>
+<% 	if (eReference.getEType().getInstanceClass().isAssignableFrom(MPrimitiveDataTypeType.class) && eReference.getUpperBound() == 1) { %>
+<% 		MPrimitiveDataTypeType mPrimitiveDataTypeType = (MPrimitiveDataTypeType) modelRoot.eGet(eReference.getFeatureID(), false, false); %>
+  <eClassifiers xsi:type="ecore:EDataType" name="<%=UTILITY.encodeForXml(mPrimitiveDataTypeType.getName())%>" instanceClassName="<%=Type.getTypeForName(mPrimitiveDataTypeType.getDataTypeName()).getJavaClass().getName()%>">
+    <eAnnotations source="http://www.onceforall.org/mcore">
+      <details key="name" value="<%=UTILITY.encodeForXml(mPrimitiveDataTypeType.getDataTypeName())%>"/>
+    </eAnnotations>	
+  </eClassifiers>		
+<% 	} %>
+<% } %>
+<% for(ECustomDataTypeType eCustomDataTypeType: (List<ECustomDataTypeType>) modelRoot.getECustomDataTypeTypes()) { %>
+  <eClassifiers xsi:type="ecore:EDataType" name="<%=UTILITY.encodeForXml(eCustomDataTypeType.getName())%>" instanceClassName="<%=UTILITY.encodeForXml(eCustomDataTypeType.getInstanceClassName())%>"/>		
+<% } %>
+<% for(MPrimitiveDataTypeType mPrimitiveDataTypeType: (List<MPrimitiveDataTypeType>) modelRoot.getMPrimitiveDataTypeTypes()) { %>
+  <eClassifiers xsi:type="ecore:EDataType" name="<%=UTILITY.encodeForXml(mPrimitiveDataTypeType.getName())%>" instanceClassName="<%=Type.getTypeForName(mPrimitiveDataTypeType.getDataTypeName()).getJavaClass().getName()%>">
+    <eAnnotations source="http://www.onceforall.org/mcore">
+      <details key="name" value="<%=UTILITY.encodeForXml(mPrimitiveDataTypeType.getDataTypeName())%>"/>
+    </eAnnotations>	
+  </eClassifiers>		
+<% 	} %>
+<% for(MObjectType mObjectType: (List<MObjectType>) modelRoot.getMObjectTypes()) { %>
+	<eClassifiers xsi:type="ecore:EClass" name="<%=UTILITY.encodeForXml(mObjectType.getName())%>" eSuperTypes="#<%=UTILITY.encodeForXml(mObjectType.getESuperTypeXPath())%>" abstract="<%=mObjectType.getAbstract()%>">
+<%	 UTILITY.addMObjectTypeAnnotations(mObjectType); 
+     UTILITY.addMValueTypeReferences((List<MValueType>) mObjectType.getMPropertyTypes());
+     if(mObjectType instanceof MBusinessObjectType) 
+		 UTILITY.addMStepTypeReferences((List<MStepType>) ((MBusinessObjectType) mObjectType).getMStepTypes());
+
+     if(mObjectType instanceof MStepType) { 
+       MStepType mStepType = (MStepType) mObjectType;
+       UTILITY.addMValueTypeReferences((List<MValueType>) mStepType.getMParameterTypes()); 
+       UTILITY.addMValueTypeReferences((List<MValueType>) mStepType.getMResultTypes()); 
+     } 
+     for(MReferenceType mReferenceType: (List<MReferenceType>) mObjectType.getMReferenceTypes()) { %>
+   	<eStructuralFeatures xsi:type="ecore:EReference" name="<%=UTILITY.encodeForXml(mReferenceType.getName())%>"
+      lowerBound="<%=mReferenceType.getLowerBound()%>" upperBound="<%=mReferenceType.getUpperBound()%>" eType="#<%=UTILITY.encodeForXml(mReferenceType.getMObjectType().getETypeXPath())%>"
+      containment="<%=mReferenceType.getContainment()%>" derived="<%=mReferenceType.getDerived()%>" volatile="<%=mReferenceType.getVolatile()%>"
+      transient="<%=mReferenceType.getTransient()%>" resolveProxies="false"/>					
+<%	   } %>
+	</eClassifiers>
+<%	 if(mObjectType instanceof MBusinessObjectType) { 
+       for(MStepType mStepType: (List<MStepType>) ((MBusinessObjectType) mObjectType).getMStepTypes()) { %>
+	<eClassifiers xsi:type="ecore:EClass" name="<%=UTILITY.encodeForXml(mObjectType.getName()+mStepType.getName())%>" eSuperTypes="#<%=UTILITY.encodeForXml(mStepType.getESuperTypeXPath())%>" abstract="<%=mStepType.getAbstract()%>">
+<%		UTILITY.addMObjectTypeAnnotations(mStepType);
+		UTILITY.addMValueTypeReferences((List<MValueType>) mStepType.getMParameterTypes());
+		UTILITY.addMValueTypeReferences((List<MValueType>) mStepType.getMResultTypes()); %>
+	</eClassifiers>	
+<%     }
+     }	
+   } %>
+</ecore:EPackage>
+<% } catch(Throwable e) {e.printStackTrace();} %>
+
+      

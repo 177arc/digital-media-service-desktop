@@ -1,0 +1,154 @@
+<%@ jet package="org.onceforall.metamodeller.generator" class="GenModelGenerator" skeleton="model.skeleton" imports="java.util.* org.onceforall.metamodeller.* org.eclipse.emf.ecore.*"%>
+<?xml version="1.0" encoding="UTF-8"?>
+<% class Utility {
+   void addMValueTypeReferences(List<MValueType> mValueTypes) {
+     for(MValueType mValueType: mValueTypes) {
+       if(mValueType.isGenerateMValueReference()) {%>
+       <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference <%=getGeneratedEcoreFile().getName()%>#<%=mValueType.getEcoreXPath()%>"/>
+<%     } %>
+<%     if(mValueType.isGenerateValueFeature()) {%>
+       <genFeatures property="Readonly" createChild="false" ecoreFeature="<%if(mValueType.getValueType() instanceof MPrimitiveDataTypeType) {%>ecore:EAttribute<%} else {%>ecore:EReference<%}%> core.ecore#<%=((EObjectType) mValueType.eContainer()).getEcoreXPath()%>/<%=mValueType.getFeatureName()%>"/>
+<%     if(mValueType.getHistoricValuesUpperBound() > 0) { %>
+       <genFeatures property="Readonly" createChild="false" ecoreFeature="<%if(mValueType.getValueType() instanceof MPrimitiveDataTypeType) {%>ecore:EAttribute<%} else {%>ecore:EReference<%}%> core.ecore#<%=((EObjectType) mValueType.eContainer()).getEcoreXPath()%>/<%=mValueType.getHistoricFeatureName()%>"/>
+<%       }
+       }
+     }
+   } 
+ }
+
+ final Utility UTILITY = new Utility();
+
+ try { %>
+<% ERootPackageType modelRoot = getModelRoot(); %>
+<genmodel:GenModel xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" 
+    <%if(modelRoot.getCopyrightText() != null) { %>copyrightText="<%=modelRoot.getCopyrightText()%>"<% } %>
+    modelDirectory="/<%=modelRoot.getBasePackage()%>/src" editDirectory="/<%=modelRoot.getBasePackage()%>.edit/src"
+    modelPluginID="<%=modelRoot.getBasePackage()%>" templateDirectory="/<%=modelRoot.getBasePackage()%>/templates"
+    dynamicTemplates="true" redirection="" modelName="<%=modelRoot.getModelName()%>" modelPluginClass=""
+    rootExtendsInterface="org.onceforall.dms.desktop.notify.ThreadAdapter" rootImplementsInterface=""
+    suppressInterfaces="true" featureMapWrapperInterface="" featureMapWrapperInternalInterface=""
+    featureMapWrapperClass="" richClientPlatform="true" testsDirectory="" testSuiteClass=""
+    booleanFlagsField="" importerID="org.eclipse.emf.importer.ecore">
+  <foreignModel><%=getGeneratedEcoreFile().getName()%></foreignModel>
+  <genPackages prefix="<%=modelRoot.getPrefix()%>" basePackage="<%=modelRoot.getBasePackage()%>" resource="XMI"
+      disposableProviderFactory="true" utilityPackageSuffix="" multipleEditorPages="false"
+      ecorePackage="<%=getGeneratedEcoreFile().getName()%>#/">
+    <genClasses ecoreClass="<%=getGeneratedEcoreFile().getName()%>#//MObject">
+      <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference <%=getGeneratedEcoreFile().getName()%>#//MObject/mNameProperty"/>
+      <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference <%=getGeneratedEcoreFile().getName()%>#//MObject/mDescriptionProperty"/>
+      <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference <%=getGeneratedEcoreFile().getName()%>#//MObject/mIconFilePathProperty"/>
+      <genFeatures property="None" notify="false" createChild="false" propertyCategory=""
+          propertySortChoices="true" ecoreFeature="ecore:EReference <%=getGeneratedEcoreFile().getName()%>#//MObject/fixedMProperties"/>
+      <genFeatures property="None" notify="false" createChild="false" propertyCategory=""
+          propertySortChoices="true" ecoreFeature="ecore:EReference core.ecore#//MObject/fixedMSteps"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="<%=getGeneratedEcoreFile().getName()%>#//MElement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute <%=getGeneratedEcoreFile().getName()%>#//MElement/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute <%=getGeneratedEcoreFile().getName()%>#//MElement/typeName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute <%=getGeneratedEcoreFile().getName()%>#//MElement/typeNameForUI"/>
+      <genFeatures property="None" createChild="false" ecoreFeature="ecore:EAttribute <%=getGeneratedEcoreFile().getName()%>#//MElement/nameForUI"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute <%=getGeneratedEcoreFile().getName()%>#//MElement/description"/>
+      <genFeatures property="None" createChild="false" ecoreFeature="ecore:EAttribute <%=getGeneratedEcoreFile().getName()%>#//MElement/descriptionForUI"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute <%=getGeneratedEcoreFile().getName()%>#//MElement/iconFilePath"/>
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute <%=getGeneratedEcoreFile().getName()%>#//MElement/overlayIconFilePath"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute <%=getGeneratedEcoreFile().getName()%>#//MElement/compositeClassName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute <%=getGeneratedEcoreFile().getName()%>#//MElement/simulated"/>
+    </genClasses>
+    <genClasses ecoreClass="<%=getGeneratedEcoreFile().getName()%>#//MParameter"/>
+    <genClasses ecoreClass="<%=getGeneratedEcoreFile().getName()%>#//MProperty"/>
+    <genClasses ecoreClass="<%=getGeneratedEcoreFile().getName()%>#//MResult"/>
+    <genClasses image="false" ecoreClass="<%=getGeneratedEcoreFile().getName()%>#//MStatefulObject">
+      <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference <%=getGeneratedEcoreFile().getName()%>#//MStatefulObject/mStateProperty"/>
+      <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference <%=getGeneratedEcoreFile().getName()%>#//MStatefulObject/mLastStateChangeProperty"/>
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute <%=getGeneratedEcoreFile().getName()%>#//MStatefulObject/lastStateChangeProperty"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="<%=getGeneratedEcoreFile().getName()%>#//MStep">
+      <genFeatures notify="false" children="true" createChild="true" propertySortChoices="true"
+          ecoreFeature="ecore:EReference <%=getGeneratedEcoreFile().getName()%>#//MStep/mInputSteps"/>
+      <genFeatures property="None" notify="false" createChild="false" propertySortChoices="true"
+          ecoreFeature="ecore:EReference <%=getGeneratedEcoreFile().getName()%>#//MStep/fixedMParameters"/>
+      <genFeatures property="None" notify="false" createChild="false" propertySortChoices="true"
+          ecoreFeature="ecore:EReference <%=getGeneratedEcoreFile().getName()%>#//MStep/fixedMResults"/>
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute <%=getGeneratedEcoreFile().getName()%>#//MStep/stateProperty"/>
+      <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference <%=getGeneratedEcoreFile().getName()%>#//MStep/mProgressProperty"/>
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute <%=getGeneratedEcoreFile().getName()%>#//MStep/progressProperty"/>
+      <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference <%=getGeneratedEcoreFile().getName()%>#//MStep/mProgressStatusProperty"/>
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute <%=getGeneratedEcoreFile().getName()%>#//MStep/progressStatusProperty"/>
+      <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference <%=getGeneratedEcoreFile().getName()%>#//MStep/mStartTriggerProperty"/>
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute <%=getGeneratedEcoreFile().getName()%>#//MStep/startTriggerProperty"/>
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute <%=getGeneratedEcoreFile().getName()%>#//MStep/interruptable"/>
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute <%=getGeneratedEcoreFile().getName()%>#//MStep/stoppable"/>
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute <%=getGeneratedEcoreFile().getName()%>#//MStep/terminatable"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute <%=getGeneratedEcoreFile().getName()%>#//MStep/actionName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute <%=getGeneratedEcoreFile().getName()%>#//MStep/actionIconFilePath"/>
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute <%=getGeneratedEcoreFile().getName()%>#//MStep/exception"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="<%=getGeneratedEcoreFile().getName()%>#//MValue">
+      <genFeatures notify="false" children="true" createChild="true" propertySortChoices="true"
+          ecoreFeature="ecore:EReference <%=getGeneratedEcoreFile().getName()%>#//MValue/mInputValues"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute <%=getGeneratedEcoreFile().getName()%>#//MValue/valueForUI"/>
+      <genFeatures property="None" createChild="false" ecoreFeature="ecore:EAttribute <%=getGeneratedEcoreFile().getName()%>#//MValue/value"/>
+      <genFeatures property="None" createChild="false" ecoreFeature="ecore:EAttribute <%=getGeneratedEcoreFile().getName()%>#//MValue/historicValues"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute <%=getGeneratedEcoreFile().getName()%>#//MValue/historicValuesForUI"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute <%=getGeneratedEcoreFile().getName()%>#//MValue/readOnly"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="<%=getGeneratedEcoreFile().getName()%>#//MApplication">
+      <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference <%=getGeneratedEcoreFile().getName()%>#//MApplication/mDataFileProperty"/>
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute <%=getGeneratedEcoreFile().getName()%>#//MApplication/dataFileProperty"/>
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute <%=getGeneratedEcoreFile().getName()%>#//MApplication/dataFilePropertyHistoricValues"/>
+      <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference <%=getGeneratedEcoreFile().getName()%>#//MApplication/mLogFileProperty"/>
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute <%=getGeneratedEcoreFile().getName()%>#//MApplication/logFileProperty"/>
+      <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference <%=getGeneratedEcoreFile().getName()%>#//MApplication/mPathProperty"/>
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute <%=getGeneratedEcoreFile().getName()%>#//MApplication/pathProperty"/>
+      <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference <%=getGeneratedEcoreFile().getName()%>#//MApplication/mVersionProperty"/>
+      <genFeatures property="Readonly" createChild="false" propertyCategory="" ecoreFeature="ecore:EAttribute <%=getGeneratedEcoreFile().getName()%>#//MApplication/versionProperty"/>
+      <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference core.ecore#//MDmsApplication/MLastSaveProperty"/>
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//MDmsApplication/lastSaveProperty"/>
+    </genClasses>
+    <genClasses ecoreClass="<%=getGeneratedEcoreFile().getName()%>#//MScript">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference <%=getGeneratedEcoreFile().getName()%>#//MScript/mSteps"/>
+    </genClasses>
+<% for (EReference eReference: (List<EReference>) modelRoot.eClass().getEAllReferences()) { %>
+<% 	if (eReference.getEType().getInstanceClass().isAssignableFrom(ECustomDataTypeType.class) && eReference.getUpperBound() == 1) { %>
+<% 		ECustomDataTypeType eCustomDataTypeType = (ECustomDataTypeType) modelRoot.eGet(eReference.getFeatureID(), false, false); %>
+    <genDataTypes ecoreDataType="<%=getGeneratedEcoreFile().getName()%>#<%=eCustomDataTypeType.getEcoreXPath()%>"/>
+<% 	} %>
+<% 	if (eReference.getEType().getInstanceClass().isAssignableFrom(MPrimitiveDataTypeType.class) && eReference.getUpperBound() == 1) { %>
+<% 		MPrimitiveDataTypeType mPrimitiveDataTypeType = (MPrimitiveDataTypeType) modelRoot.eGet(eReference.getFeatureID(), false, false); %>
+    <genDataTypes ecoreDataType="<%=getGeneratedEcoreFile().getName()%>#<%=mPrimitiveDataTypeType.getEcoreXPath()%>"/>
+<% 	} %>
+<% } %>
+<% for(ECustomDataTypeType eCustomDataTypeType: (List<ECustomDataTypeType>) modelRoot.getECustomDataTypeTypes()) { %>
+    <genDataTypes ecoreDataType="<%=getGeneratedEcoreFile().getName()%>#<%=eCustomDataTypeType.getEcoreXPath()%>"/>
+<% } %>
+<% for(MPrimitiveDataTypeType mPrimitiveDataTypeType: (List<MPrimitiveDataTypeType>) modelRoot.getMPrimitiveDataTypeTypes()) { %>
+    <genDataTypes ecoreDataType="<%=getGeneratedEcoreFile().getName()%>#<%=mPrimitiveDataTypeType.getEcoreXPath()%>"/>
+<% 	} %>
+<% for(MObjectType mObjectType: (List<MObjectType>) modelRoot.getMObjectTypes()) { %>
+    <genClasses ecoreClass="<%=getGeneratedEcoreFile().getName()%>#<%=mObjectType.getEcoreXPath()%>">
+<%     UTILITY.addMValueTypeReferences((List<MValueType>) mObjectType.getMPropertyTypes()); %>
+<%     if(mObjectType instanceof MStepType) { %>
+<%       MStepType mStepType = (MStepType) mObjectType; %>
+<%       UTILITY.addMValueTypeReferences((List<MValueType>) mStepType.getMParameterTypes()); %>
+<%       UTILITY.addMValueTypeReferences((List<MValueType>) mStepType.getMResultTypes()); %>
+<%     } %>
+<%     for(MReferenceType mReferenceType: (List<MReferenceType>) mObjectType.getMReferenceTypes()) { %>
+       <genFeatures property="None" createChild="true" children="true" ecoreFeature="ecore:EReference <%=getGeneratedEcoreFile().getName()%>#<%=mReferenceType.getEcoreXPath()%>"/>
+<%	   } %>
+    </genClasses>
+<%	 if(mObjectType instanceof MBusinessObjectType) { 
+       for(MStepType mStepType: (List<MStepType>) ((MBusinessObjectType) mObjectType).getMStepTypes()) { %>
+    <genClasses ecoreClass="<%=getGeneratedEcoreFile().getName()%>#<%=mStepType.getEcoreXPath()%>">
+<%		UTILITY.addMValueTypeReferences((List<MValueType>) mStepType.getMParameterTypes());
+		UTILITY.addMValueTypeReferences((List<MValueType>) mStepType.getMResultTypes()); %>
+    </genClasses>
+<%     }
+     }	
+   } %>
+  </genPackages>
+</genmodel:GenModel>
+<% } catch(Throwable e) {e.printStackTrace();} %>
+
+      

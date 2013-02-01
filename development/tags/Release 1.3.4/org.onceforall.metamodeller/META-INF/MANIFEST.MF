@@ -1,0 +1,17 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: %pluginName
+Bundle-SymbolicName: org.onceforall.metamodeller;singleton:=true
+Bundle-Version: 0.2.0
+Bundle-Vendor: %providerName
+Bundle-Localization: plugin
+Bundle-ClassPath: .
+Export-Package: org.onceforall.metamodeller,
+ org.onceforall.metamodeller.util,
+ org.onceforall.metamodeller.generator
+Require-Bundle: org.eclipse.core.runtime,
+ org.eclipse.emf.ecore;visibility:=reexport,
+ org.eclipse.emf.ecore.xmi,
+ org.apache.ant,
+ org.onceforall.dms.desktop
+Eclipse-LazyStart: true
