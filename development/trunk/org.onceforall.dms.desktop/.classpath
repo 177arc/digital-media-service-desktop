@@ -7,6 +7,10 @@
 	<classpathentry kind="lib" path="lib/jid3lib-0.5.4.jar"/>
 	<classpathentry kind="lib" path="lib/org.eclipse.core.jobs_3.4.0.v20080512.jar"/>
 	<classpathentry kind="lib" path="lib/org.eclipse.core.runtime_3.4.0.v20080512.jar"/>
+	<classpathentry kind="lib" path="lib/bliki-core-3.0.19.jar"/>
+	<classpathentry kind="lib" path="lib/commons-codec-1.2.jar"/>
+	<classpathentry kind="lib" path="lib/commons-lang-2.4.jar"/>
+	<classpathentry kind="lib" path="lib/commons-logging-1.0.4.jar"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="lib" path="lib/commons-net-1.4.1.jar"/>
 	<classpathentry kind="lib" path="lib/jaf-1.1.jar"/>

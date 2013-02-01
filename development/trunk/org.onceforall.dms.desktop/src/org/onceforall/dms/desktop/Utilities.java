@@ -28,6 +28,8 @@
  */
 package org.onceforall.dms.desktop;
 
+import info.bliki.wiki.model.WikiModel;
+
 import java.io.File;
 import java.util.logging.Level;
 
@@ -207,18 +209,13 @@ public class Utilities {
     }
     
     /**
-     * Replaces reserved HTML characters with the corresponding name character entities.
+     * Resolves the MediaWiki syntax and returns the corresponding HTML.
      *
      * @param text Specifies the text to encode.
      * @return Returns the encoded text.
      */
     public static String encodeForHtml(String text) { 
-        text = text.replaceAll("&", "&amp;");
-        text = text.replaceAll("<", "&lt;");
-        text = text.replaceAll(">", "&gt;");
-        text = text.replaceAll("\"", "&quot;");
-        
-        return(text);
+    	return WikiModel.toHtml(text);
     }
     
     
