@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" version="2.0">
+<channel>
+<title>Digital Media Service recordings (for testing purposes only)</title>
+<link>http://www.onceforall.org/dms-desktop/testing</link>
+<description>This is a podcast for testing the publishing functionality of the Digital Media Service (DMS) Desktop. If you have any questions, please email: dms@onceforall.org</description>
+<itunes:subtitle>Recordings created using the DMS Desktop for testing purposes.</itunes:subtitle>
+<itunes:summary>Please note that this file may be overwritten by different tester.</itunes:summary>
+<language>en-gb</language>
+<copyright>&#xA9; 2007 Copy as you like</copyright>
+<itunes:author>Digital Media Service Desktop tester</itunes:author>
+<itunes:owner>
+    <itunes:name>Digital Media Service</itunes:name>
+    <itunes:email>dms@onceforall.org</itunes:email>
+</itunes:owner>
+<itunes:image href="http://www.onceforall.org/dms-desktop/testing/logo.jpg" />
+<!-- iTunes Browse Podcasts Category -->
+<itunes:category text="Religion &amp; Spirituality">
+    <!-- iTunes Browse Podcasts Subcategory -->
+    <itunes:category text="Christianity"/>
+</itunes:category>
+<itunes:explicit>No</itunes:explicit>
+<item>
+<title>Test title of talk - Test additional information</title>
+<description>25 Aug 2007 - Test event type - Test speaker&apos;s name</description>
+<link>http://www.onceforall.org/listen/recordings.html</link>
+<guid>http://www.onceforall.org/dms-desktop/testing/Test_title_of_talk_-_Test_additional_information.mp3</guid>
+<enclosure url="http://www.onceforall.org/dms-desktop/testing/Test_title_of_talk_-_Test_additional_information.mp3" length="8290" type="audio/mpeg"/><pubDate>Sat, 25 Aug 2007 13:46:50 +0100</pubDate>
+<itunes:subtitle>25 Aug 2007 - Test event type - Test speaker&apos;s name</itunes:subtitle>
+<itunes:summary>Test additional information</itunes:summary>
+<itunes:duration>00:00:01</itunes:duration>
+</item>
+<item>
+<title>Test title of talk - Test additional information</title>
+<description>26 Aug 2007 - Test event type - Test speaker&apos;s name</description>
+<link>http://www.onceforall.org/listen/recordings.html</link>
+<guid>http://www.onceforall.org/dms-desktop/testing/Test_title_of_talk_-_Test_additional_information.mp3</guid>
+<enclosure url="http://www.onceforall.org/dms-desktop/testing/Test_title_of_talk_-_Test_additional_information.mp3" length="8770" type="audio/mpeg"/><pubDate>Sat, 25 Aug 2007 16:07:10 +0100</pubDate>
+<itunes:subtitle>26 Aug 2007 - Test event type - Test speaker&apos;s name</itunes:subtitle>
+<itunes:summary>Test additional information</itunes:summary>
+<itunes:duration>00:00:01</itunes:duration>
+</item>
+</channel>
+</rss>
