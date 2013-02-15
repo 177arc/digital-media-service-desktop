@@ -2939,7 +2939,7 @@ public abstract class MPublishMp3sStep extends MFtpStep {
 			            
 		                publishedMP3sHTML.append("<tr>\n");
 			            publishedMP3sHTML.append("<td class=\"contentTableCell\">");
-			            publishedMP3sHTML.append("<a class=\"highlightedLink\" href=\""+mp3WebPath+"\">"+Utilities.encodeForHtml(linkText)+"</a><br/>");
+			            publishedMP3sHTML.append("<a class=\"highlightedLink\" href=\""+mp3WebPath+"\">"+Utilities.encodeForHtml(linkText)+"</a>");
 			            publishedMP3sHTML.append(Utilities.encodeForHtml(linkDescription));
 			            
 			            if(comment != null)
