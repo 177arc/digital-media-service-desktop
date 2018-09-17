@@ -301,10 +301,10 @@ public class MainComposite extends MElementComposite {
 	            // Goes to the previous mStep.
 	            if(mStep != null && mStep.eContainer() instanceof MScript) {
 	            	MScript mScript = (MScript) mStep.eContainer();
-	            	EList<MStep> mSteps = mScript.getMSteps();
+	            	EList mSteps = mScript.getMSteps();
 	            	int index = mSteps.indexOf(mStep);
 	            	if(index > 0)
-	            		selectMElement(mSteps.get(index-1), false);
+	            		selectMElement((MStep) mSteps.get(index-1), false);
 	            }
 	        }
 
@@ -312,10 +312,10 @@ public class MainComposite extends MElementComposite {
 	            // Goes to the next mStep.
 	            if(mStep != null && mStep.eContainer() instanceof MScript) {
 	            	MScript mScript = (MScript) mStep.eContainer();
-	            	EList<MStep> mSteps = mScript.getMSteps();
+	            	EList mSteps = mScript.getMSteps();
 	            	int index = mSteps.indexOf(mStep);
 	            	if(index < mSteps.size()-1)
-	            		selectMElement(mSteps.get(index+1), false);
+	            		selectMElement((MStep) mSteps.get(index+1), false);
 	            }
 	        }
 
@@ -327,10 +327,10 @@ public class MainComposite extends MElementComposite {
 	            }
 	            
                 MScript mScript = (MScript) mStep.eContainer();
-            	EList<MStep> mSteps = mScript.getMSteps();
+            	EList mSteps = mScript.getMSteps();
             	int index = mSteps.indexOf(mStep);
             	if(index < mSteps.size()-1)
-            		mNextStep = mSteps.get(index+1);
+            		mNextStep = (MStep) mSteps.get(index+1);
             	
                 if(mNextStep != null) {
                 	while(display.readAndDispatch());

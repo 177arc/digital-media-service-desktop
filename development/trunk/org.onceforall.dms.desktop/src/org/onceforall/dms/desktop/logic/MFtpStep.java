@@ -781,13 +781,13 @@ public abstract class MFtpStep extends MStep {
         URL ftpServerUrl = getFtpServerUrlParameter();
         try {
         	ftpClient.setDefaultTimeout(20000);
-        	//ftpClient.setDataTimeout(20000);
         	ftpClient.setReaderThread(false);
             ftpClient.connect(ftpServerUrl.getHost());
             try {
 	            if(!ftpClient.login(getFtpUserNameParameter(), Type.PASSWORD_TYPE.decryptPassword(getFtpUserPasswordParameter())))
 	            	throw new DesktopException("The application could not authenticate to the FTP server '"+ftpServerUrl+"' with user name '"+getFtpUserNameParameter()+"' because the user name and/or the password are incorrect.", "Please check the user name and the password. Then try again.", DesktopException.ERROR_SEVERITY, null);
-	           
+	        	ftpClient.enterLocalPassiveMode();
+	        	
 	            ftpClient.setFileType(FTPClient.IMAGE_FILE_TYPE); // Sets the transfer mode to binary.
 	            
 	            executeFtpOperationsHook(ftpClient);

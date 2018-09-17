@@ -122,7 +122,6 @@ public class MElementTreeSelectorComposite extends MElementComposite implements 
 			/**
 			 * @see org.eclipse.swt.widgets.Listener#handleEvent(org.eclipse.swt.widgets.Event)
 			 */
-			@Override
 			public void handleEvent(Event event) {
 				// Makes sure that the buttons are hidden when the mouse pointer leaves the tree area.
 				mousePosition.x = event.x;

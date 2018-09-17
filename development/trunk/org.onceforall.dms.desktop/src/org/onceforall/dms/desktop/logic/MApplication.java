@@ -1671,8 +1671,6 @@ public abstract class MApplication extends MObject {
     	// Creates a thread that touches the data file in regular intervals if such a thread has not be created yet.
     	if(touchThread == null) {
     		touchThread = new Thread(new Runnable() {
-
-				@Override
 				public void run() {
 					while(true) {
 						touchXML();
@@ -1812,7 +1810,6 @@ public abstract class MApplication extends MObject {
 		/**
 		 * @see java.util.Comparator#compare(java.lang.Object, java.lang.Object)
 		 */
-		@Override
 		public int compare(String version1, String version2) {
 			String[] version1Parts = version1.split("[\\.]");
 			String[] version2Parts = version2.split("[\\.]");				

@@ -69,7 +69,7 @@ import org.onceforall.dms.desktop.logic.types.Type;
  *        annotation="http://www.onceforall.org/mcore typeNameForUI='Task' compositeClassName='org.onceforall.dms.desktop.ui.MStepComposite'"
  * @generated
  */
-public abstract class MStep extends MStatefulObject {
+public abstract class MStep extends MStatefulObject implements Runnable {
     
     /** Specifies the progress that indicates that a managed step has been completed. */
     public static final Long COMPLETED_PROGRESS = new Long(100);
